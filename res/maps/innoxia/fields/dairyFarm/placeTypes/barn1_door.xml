@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELDS</worldRegion>
+	<name><![CDATA[锁住的门]]></name>
+	<tooltipDescription><![CDATA[一个标牌固定在锁住的大门上方，示意着这扇门通向训练棚。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在艾弗利克斯乳业的训练棚里]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<svgName>door</svgName>
+	<colour>BASE_YELLOW_LIGHT</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_dairyFarm_barn1_door</dialogue>
+	<populationPresent/>
+	<furniturePresent>false</furniturePresent>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions/>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

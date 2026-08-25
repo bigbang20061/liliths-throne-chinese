@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>800</value> 
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[实验室外套]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[实验室外套]]></namePlural>
+		<description><![CDATA[一种及膝的棉质外套，可保护穿着者免受泄漏的化学物质伤害。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>TORSO_OVER</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>SCIENTIST</clothingSet>
+		<imageName>lab_coat.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects>
+            <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_FIRE" timer="0"/>
+            <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_ICE" timer="0"/>
+            <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_POISON" timer="0"/>
+		</effects>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_DRESS_FRONT_FULL"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]穿上了实验室外套。
+		]]></self>
+		<other><![CDATA[[npc.Name]将实验室外套披在[npc2.namePos]身上并引导[npc2.namePos]的[npc2.arms]穿过实验室外套的袖子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的胳膊塞进实验室外套的袖子，然后粗暴地把它穿在[npc2.herHim]的身上。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]脱下了[npc.her]的实验室外套。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的实验室外套脱下。]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的实验室外套并粗暴地扯下来。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

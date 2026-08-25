@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<torso>
+	<race>innoxia_mouse</race>
+	
+	<transformationName><![CDATA[鼷鼠]]></transformationName>
+	
+	<coveringType>innoxia_mouse_fur</coveringType>
+	
+	<descriptorsMasculine/>
+	
+	<descriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[
+		片刻后，转化来到末尾。[npc.she]身上的瘙痒终于褪去，发出了解脱的叹息。鼷鼠毛覆盖在[npc.her]的躯干上。新生的毛发与[npc.Her]的身材线条紧密贴合，非常光滑柔软。
+		<br/>[npc.Name]现在拥有[style.boldMouse(鼷鼠般)][npc.skinFullDescription]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.Her]的躯干有着[npc.a_femininity(true)]外观，并且是[npc.materialCompositionDescriptor][npc.skinFullDescription(true)]。
+]]></bodyDescription>
+</torso>

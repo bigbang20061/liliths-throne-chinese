@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>100</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[内裤]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[内裤]]></namePlural>
+		<description><![CDATA[一条明显由柔软的棉布制成的女性内裤，]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>GROIN</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>panties.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>SHIFTS_ASIDE</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots values="CONCEALED_GENITALS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="LINGERIE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+      [npc.Name]穿上内裤，然后用内裤盖住[npc.her]的隐私部位。
+    ]]></self>
+		<other><![CDATA[
+[npc.Name]将内裤拉上[npc2.namePos]的[npc2.legs]，遮盖[npc2.her]的私密部位。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将内裤拉上[npc2.namePos]的[npc2.legs]，遮盖住[npc2.her]的私密部位。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的蕾丝内裤拉下来，然后用[npc.her]的[npc.feet]将它们踢掉。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉下[npc2.namePos]的内裤，然后将它们从[npc2.her]的[npc2.feet]上拿走。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的内裤拉下，然后用力将它们从[npc2.her]的[npc2.feet]上脱下。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

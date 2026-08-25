@@ -1,0 +1,2612 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+	
+	<!-- ENTRANCE -->
+	
+	<htmlContent tag="ENTRANCE_PACIFIED"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的建筑是否还能关上。站岗的两个阿尔法小恶魔注意到了你的靠近，他们色迷迷地盯着你和[npc.Name]的身体，领头的喊道：[npc2.speech(你可以随意进出，但我敢打赌你对小恶魔的#IFnpc2.hasPenis()#THEN鸡巴#ELSE小穴#ENDIF饥渴？我猜你肯定，快快跪下来口！)]
+	</p>
+	<p>
+		另一个阿尔法小恶魔被领队的话逗得咯咯笑，然后把[npc3.her]的胯往你那一顶，补充道：[npc3.speech(对啊，来吧荡妇！#IFnpc3.hasPenis()#THEN快来给爷唆鸡巴！#ELSE快把舌头伸进我的小穴里！#ENDIF)]
+	</p>
+	<p>
+		小恶魔们不情愿地给你与[npc.Name]让开一条路，你无视嘲弄，昂首挺胸地前进。现在你的道路畅通无阻，你继续前进，尽力过滤掉小恶魔们的污言秽语……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_PACIFIED_DEMON"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的建筑是否还能关上。站岗的两个阿尔法小恶魔注意到了你的靠近，领头的紧张地喊道：[npc2.speech(哦，欸，又是[pc.race]和[pc.her]的朋友……你你可以自便，就就是别惹麻烦……行吗……)]
+	</p>
+	<p>
+		另一个阿尔法小恶魔急忙躲到[npc3.her]的上级身后，让[npc2.herHim]当肉盾，一边补充道：[npc3.speech(我、我们只是奉命行事，不想挡尼的路！)]
+	</p>
+	<p>
+		你无视小恶魔们唯唯诺诺的话，昂首挺胸地看着小恶魔们匆忙放行。现在你与[npc.Name]的道路畅通无阻，你继续前进，尽力过滤掉小恶魔们可悲的道歉声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_PACIFIED_BY_SEX"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的建筑是否还能关上。站岗的两个阿尔法小恶魔注意到了你的靠近，他们色迷迷地盯着你和[npc.Name]的身体，领头的喊道：[npc2.speech(你可以随意进出，但我敢打赌你对小恶魔的#IFnpc2.hasPenis()#THEN鸡巴#ELSE小穴#ENDIF饥渴？我猜你肯定，快快跪下来口！)]
+	</p>
+	<p>
+		另一个阿尔法小恶魔被领队的话逗得咯咯笑，然后把[npc3.her]的胯往你那一顶，补充道：[npc3.speech(对啊，来吧荡妇！#IFnpc3.hasPenis()#THEN快来给爷唆鸡巴！#ELSE快把舌头伸进我的小穴里！#ENDIF)]
+	</p>
+	<p>
+		小恶魔们不情愿地给你与[npc.Name]让开一条路，你无视嘲弄，昂首挺胸地前进。现在你的道路畅通无阻，你继续前进，尽力过滤掉小恶魔们的污言秽语……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_PACIFIED_BY_SEX_DEMON"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的建筑是否还能关上。站岗的两个阿尔法小恶魔注意到了你的靠近，他们色迷迷地盯着你的身体，领头的喊道：[npc2.speech(你可以随意进出#IF(pc.isFeminine())魅魔#ELSE淫梦魔#ENDIF。对小恶魔的#IFnpc2.hasPenis()#THEN鸡巴#ELSE小穴#ENDIF饥渴吗？我猜你肯定，快快跪下来口！)]
+	</p>
+	<p>
+		另一个阿尔法小恶魔被领队的话逗得咯咯笑，然后把[npc3.her]的胯往你那一顶，补充道：[npc3.speech([pc.A_race]会对小恶魔下手，可没听过倒过来！嘿，来呀，恶魔，#IFnpc2.hasPenis()#THEN快来给爷嗦鸡巴！#ELSE快把舌头伸进爷的小穴里！#ENDIF大家都知道你很想要！)]
+	</p>
+	<p>
+		你无视小恶魔们的嘲弄，评价他们居然这么快就不尊重你了，这么不情愿地给你让路。现在你的道路畅通无阻，你继续前进，尽力过滤掉小恶魔们的污言秽语……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_DESERTED"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的建筑是否还能关上。曾经站在这里的一对阿尔法小恶魔守卫早已跑得无影无踪，要塞的入口完全无人防守。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_DESERTED_GUARD_RETURN_WARNING"><![CDATA[
+	<p>
+		[style.italicsBad(如果你选择现在离开要塞，可以肯定的是，当你回来时门口肯定会有新的守卫！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_DEMON"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的木门是否还能关上。两个站岗的阿尔法小恶魔注意到了你的靠近，紧张地东张西望，领队的那个叫道：[npc2.speech(Oi！你俩！站那！你不楞靠近我们的基地，还能全身而退！)]
+	</p>
+	<p>
+		你能看出这些小恶魔已经做好了战斗准备，但似乎都很害怕你。像是证实你的猜测一样，第二个小恶魔转向领队并嘶嘶说：[npc3.speech(别……别轻举妄动！[pc.SheIs]是[pc.a_race]！我们不能和恶魔打啊，[pc.She]会轻易打败我们的！)]
+	</p>
+	<p>
+		[npc2.speech(但要是被老板发现我们不听话，我们肯定也要挨打，尼个白痴！)]领队喝到，又转头对你说：[npc2.speech(所——所以尼萌会乖乖投降的对吧？尼萌不——不想被我们打趴下吧？！)]
+	</p>
+	<p>
+		小恶魔们显然很害怕与恶魔作对，你思考吓唬他们乖乖投降应该不费吹灰之力。话说回来，你也可以让他们如愿以偿……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_ELEMENTAL"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的木门是否还能关上。两个站岗的阿尔法小恶魔注意到了你的靠近，紧张地东张西望，领队的那个叫道：[npc2.speech(Oi！站站那！你你不楞靠近我们的基地，还搁辣大摇大摆的！)]
+	</p>
+	<p>
+		你能看出这些小恶魔已经做好了战斗准备，但似乎都很忌惮你的元素体[npc.name]。像是证实你的猜测一样，第二个小恶魔转向[npc3.her]的领队并嘶嘶说： [npc3.speech(别……别轻举妄动！[pc.SheHas]会奥术！我——我们不能和[pc.She]打！)]
+	</p>
+	<p>
+		[npc2.speech(但要是被老大发现我们不听话，我们肯定也要挨打，尼个白痴！)]领队喝到，又转头对你说，[npc2.speech(所——所以尼会乖乖投降的对吧？尼萌不——不想被我们打趴下吧？！)]
+	</p>
+	<p>
+		小恶魔们显然很忌惮你的元素体，你思考吓唬他们乖乖投降应该不费吹灰之力。话说回来，你也可以让他们如愿以偿……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE"><![CDATA[
+	<p>
+		临时要塞简陋的木门敞开着，当你走近时，你都怀疑这些简陋的木门是否还能关上。两个站岗的首领注意到了你的靠近，发出一声气势汹汹的咆哮，领头的叫道：[npc2.speech(站住，你这个人渣！你不能靠近我们的基地，还想全身而退！)]
+	</p>
+	<p>
+		在阿尔法小恶魔头领说这句话的时候，另一个小恶魔朝地上吐了口唾沫，然后，把[npc3.she]的臀部朝你的方向一挺，补充道：
+		#IF(game.isNonConEnabled())
+			[npc3.speech(是的，我们会把你放倒，让你尝尝他妈的#IF(npc3.hasPenis())鸡巴#ELSE蜜穴#ENDIF！)]
+		#ELSE
+			[npc3.speech(没错，你会被一通好打！)]
+		#ENDIF
+	</p>
+	<p>
+		无视小恶魔的威胁，你和[npc.Name]做好了战斗准备。它们只有两只，应该不会太难……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LEAVE_FORTRESS"><![CDATA[
+	<p>
+		在结束了这里的工作后，你走出了要塞敞开的大门。你和[npc.name]头也不回地沿着眼前的小斜坡向下走，准备再次进入屈城区隧道。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_GIVE_ORAL"><![CDATA[
+	<p>
+		你不想靠动粗来解决问题，便举起[pc.hands]表明自己没有恶意，然后坏笑着对小恶魔们问道：[pc.speech(我真的没办法进去跟你们老大谈谈吗？我肯定能做点<i>什么</i>来满足你……)]
+	</p>
+	<p>
+		小恶魔们放下武器，领队的咆哮变成了邪笑，[npc2.her]回应道：[npc2.speech(那尼为了进来又能做到哪一步呢？嗯？)] 
+	</p>
+	<p>
+		[pc.speech(后退，[npc.name]，让我来。)]你对伙伴说道，舔了舔[pc.lips+]，走到两位守卫面前跪下。你对着头领眨眨眼，用最诱人的声音提议道：[pc.speech(让二位用我的嘴巴如何？)]
+	</p>
+	<p>
+		[npc2.speech(急着要小恶魔#IFnpc2.hasPenis()#THEN肉棒#ELSE小穴#ENDIF了是不是，婊子？)]领队冷笑一声，走上前捏住你的下巴，把[npc2.her]的拇指塞进你的嘴里。你乖顺地吮吸着拇指，一边朝[npc2.herHim]眨巴眼睛，逗得[npc2.she]咯咯发笑。
+		#IF game.isNonConEnabled()
+		#THEN [npc2.speech(要是每个人都能这么饥渴就好了！)]
+		#ELSE [npc2.speech(尼很饥渴，对吧？)]
+		#ENDIF
+	</p>
+	<p>
+		领队把[npc2.her]的拇指从你嘴里抽出来，走到一旁，给[npc2.her]的伙伴腾出空位。[npc3.name]立即补上空位，咯咯笑起来：[npc3.speech(尼会#IF(npc2.hasPenis())吞我美味的精液#ELSE用舌头深入我#ENDIF，当个乖[pc.girl]对吧？)]
+	</p>
+	<p>
+		你回以肯定，准备赢取进入要塞的许可……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_GIVE_ORAL_WITH_COMPANION"><![CDATA[
+	<p>
+		你不想靠动粗来解决问题，便举起[pc.hands]表明自己没有恶意，然后坏笑着对小恶魔们问道：[pc.speech(我真的没办法进去跟你们老大谈谈吗？我肯定能做点<i>什么</i>来满足你们……)]
+	</p>
+	<p>
+		小恶魔们放下武器，领队的咆哮变成了邪笑，[npc2.her]回应道：[npc2.speech(那尼为了进来又能做到哪一步呢？嗯？)] 
+	</p>
+	<p>
+		[pc.speech(来吧，[npc.name]，稍微找点乐子吧。)]你呼来伙伴，接着跪在两个守卫面前。
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+		[npc.speech(唔嗯，听起来不错。)][npc.name]回复道，也跟着你并排跪下。
+		#ELSE
+		[npc.speech(呃，一定要这样的话。)][npc.name]回复道，也不情不愿地跟着你并排跪下。
+		#ENDIF
+	</p>
+	<p>
+		你对着头领眨眨眼，用最诱人的声音提议道：[pc.speech(让我们两个向你展示嘴巴的能耐吧，怎么样？)]
+	</p>
+	<p>
+		[npc2.speech(急着要小恶魔#IFnpc2.hasPenis()#THEN肉棒#ELSE小穴#ENDIF了是不是，婊子？)]领队冷笑一声，走上前捏住你的下巴，把[npc2.her]的拇指塞进你的嘴里。你乖顺地吮吸着拇指，一边朝[npc2.herHim]眨巴眼睛，逗得[npc2.she]咯咯发笑。
+		#IF game.isNonConEnabled()
+		#THEN [npc2.speech(要是每个人都能这么饥渴就好了！)]
+		#ELSE [npc2.speech(尼很饥渴，对吧？)]
+		#ENDIF
+	</p>
+	<p>
+		领队把[npc2.her]的拇指从你嘴里抽出来，走到一旁，给[npc2.her]的伙伴腾出空位，一边说道：[npc2.speech(来吧，你打算要那个不？还是咋地？！)]
+	</p>
+	<p>
+		[npc3.name]立即走到[npc.Name]面前，咯咯笑起来：[npc3.speech(尼会#IF(npc3.hasPenis())吞我美味的精液#ELSE用舌头深入我#ENDIF，当个乖[pc.girl]对吧？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+		[npc.name]表示同意，准备好与你一同赚取进入要塞的机会……
+		#ELSE
+		[npc.name]不置可否地呻吟一声，准备好与你一同赚取进入要塞的机会……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_GIVE_ORAL_PACIFIED"><![CDATA[
+	<p>
+		你完全不想放过给小恶魔#IFnpc2.hasPenis()#THEN唆鸡巴#ELSE舔阴#ENDIF的机会，你舔了舔[pc.lips+]，走到两位守卫面前跪下。你对着头领眨眨眼，用最诱人的声音承认道：[pc.speech(是啊……我总是忍不住去想你#IFnpc2.hasPenis()#THEN硬挺的肉棒……求求你，我还想品尝你的精液……#ELSE湿润的小穴……求求你，我还想把你吃干抹净#ENDIF……)]
+	</p>
+	<p>
+		[npc2.speech(我就知道尼想要，尼个臭婊子！)]领队冷笑一声，走上前捏住你的下巴，把[npc2.her]的拇指塞进你的嘴里。你乖顺地吮吸着拇指，一边朝[npc2.herHim]眨巴眼睛，逗得[npc2.she]咯咯发笑。
+		#IF game.isNonConEnabled()
+		#THEN [npc2.speech(要是每个人都能这么饥渴就好了！)]
+		#ELSE [npc2.speech(尼很饥渴，对吧？)]
+		#ENDIF
+	</p>
+	<p>
+		[npc.speech(我就在这里等吧。)][npc.name]说着走到一边，为你与两个小恶魔留出空间。
+	</p>
+	<p>
+		领队把[npc2.her]的拇指从你嘴里抽出来，走到一旁，给伙伴腾出空位。[npc3.name]立即补上空位，咯咯笑起来：[npc3.speech(可惜尼的朋友不加入。尼想独享所有小恶魔#IFnpc3.hasPenis()#THEN精液#ELSE小穴是吧，妓女？！)]
+	</p>
+	<p>
+		你迷乱地呜呜承认，准备为面前的两个小恶魔服务……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_GIVE_ORAL_PACIFIED_WITH_COMPANION"><![CDATA[
+	<p>
+		你完全不想放过给小恶魔#IFnpc2.hasPenis()#THEN唆鸡巴#ELSE舔阴#ENDIF的机会，你舔了舔[pc.lips+]，走到两位守卫面前跪下。你对着头领眨眨眼，用最诱人的声音承认道：[pc.speech(是啊……我总是忍不住去想你#IFnpc2.hasPenis()#THEN硬挺的肉棒……求求你，我还想品尝你的精液……#ELSE湿润的小穴……求求你，我还想把你吃干抹净#ENDIF……)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+		[npc.speech(别忘了我！)][npc.name]大叫，冲过来与你并排跪下。
+		#ELSE
+		你叫[npc.name]也来参与，[npc.she]叹息道：[npc.speech(呃，一定要这样的话……)]
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(我就知道尼萌想要，真是臭婊子！)]领队冷笑一声，走上前捏住你的下巴，把[npc2.her]的拇指塞进你的嘴里。你乖顺地吮吸着拇指，一边朝[npc2.herHim]眨巴眼睛，逗得[npc2.she]咯咯发笑。
+		#IF game.isNonConEnabled()
+		#THEN [npc2.speech(要是每个人都能这么饥渴就好了！)]
+		#ELSE [npc2.speech(尼很饥渴，对吧？)]
+		#ENDIF
+	</p>
+	<p>
+		领队把[npc2.her]的拇指从你嘴里抽出来，走到一旁，给[npc2.her]的伙伴腾出空位，一边说道：[npc2.speech(来吧，你打算要那个不？还是咋地？！)]
+	</p>
+	<p>
+		[npc3.name]立即走到[npc.Name]面前，咯咯笑起来：[npc3.speech(尼会#IF(npc3.hasPenis())吞我美味的精液#ELSE用舌头深入我#ENDIF，当个乖[pc.girl]对吧？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]表示同意，准备好与你一同服务面前这两个小恶魔……
+		#ELSE
+			[npc.name]不置可否地呻吟一声，准备好与你一同服务面前这两个小恶魔……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_ELEMENTAL_INTIMIDATE"><![CDATA[
+	<p>
+		[pc.speech([npc.Name]，)]你问，[pc.speech(你清理这些害虫要多久？)]
+	</p>
+	<p>
+		你的元素体与你不谋而合，立刻察觉到你在恐吓小恶魔，所以坏笑着答道：[npc.speech(是简单地把她们踢到一边呢，还是绑起来当奴隶呢？)]
+	</p>
+	<p>
+		[pc.speech(唔，虽然小恶魔只配做脏活儿，但我需要更多的奴隶……)]你大声说。
+	</p>
+	<p>
+		[npc.speech(这样的话，请靠边站，[pc.master]。不出三十秒我就能解决。)]
+	</p>
+	<p>
+		你注意到小恶魔守卫们随着你们的交谈变得越来越惊慌失措。你的元素体刚向前迈出一步，他们就纷纷发出了尖叫声，踉踉跄跄地急忙闪到一边。领队扔下[npc2.her]的武器，哀求道： [npc2.speech(求求您饶了我们吧！我、我们当奴隶很烂的，真的！你们想来就来，想走就走，只、只要别伤害我们！)]
+	</p>
+	<p>
+		[pc.speech(嗯，我想我今天是心慈手软了，)]你说道，又转向[npc.name]说：[pc.speech(走吧，这些人不值得你浪费时间。)]
+	</p>
+	<p>
+		你直接无视小恶魔们唯唯诺诺的话，昂首挺胸地看着她们乖乖放行。现在你的道路畅通无阻，你穿过大门，大步流星地向前走去，尽力过滤掉小恶魔们可悲的道歉声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_ELEMENTAL_SUMMON"><![CDATA[
+	<p>
+		你觉得这些小恶魔看起来特别胆小，因此认为只要召唤出你的元素就足以吓倒他们。你对着首领咧嘴一笑，宣布道：[pc.speech(你真以为有机会打败我？如果你能打败我的元素，你就有资格挑战我了！)]
+	</p>
+	<p>
+		[npc2.namePos]脸颊瞬间失去了血色，转而向[npc2.her]的上司嘶吼：[npc2.speech(喂喂！元，元素？那不，不是传说中的奥术造物吗？我，我们打不赢的！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_ELEMENTAL_SUMMON_END"><![CDATA[
+	<p>
+		你的元素体刚向前迈出一步，两个小恶魔就纷纷发出了尖叫声，踉踉跄跄地急忙闪到一边。领队扔下[npc2.her]的武器，哀求道： [npc2.speech(求求您饶了我们吧！我、我们可不想找有奥术的人麻烦！只、只要别伤害我们！)]
+	</p>
+	<p>
+		[pc.speech(嗯，我想我今天是心慈手软了，)]你说道，又转向[npc.name]说：[pc.speech(走吧，这些人不值得你浪费时间。)]
+	</p>
+	<p>
+		你直接无视小恶魔们唯唯诺诺的话，昂首挺胸地看着她们乖乖放行。现在你的道路畅通无阻，你穿过大门，大步流星地向前走去，尽力过滤掉小恶魔们可悲的道歉声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_ELEMENTAL_CONTINUE"><![CDATA[
+	<p>
+		你[pc.Walking]过畏畏缩缩的小恶魔，叫[el.name]在进入要塞时多多环顾四周，注意任何危险的迹象……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- GUARDS_AFTER_ORAL_FOR_ENTRY -->
+	
+	<htmlContent tag="GUARDS_AFTER_ORAL_FOR_ENTRY"><![CDATA[
+	<p>
+		两个小恶魔从你身边走开，小恶魔领队一边重新穿好破烂的衣服，一边讥讽道：[npc2.speech(真是个骚到不行的小恶魔#IFnpc2.hasPenis()#THEN鸡巴#ELSE小穴#ENDIF荡妇！嘿，窝们会牢牢记住尼刚才呻吟的样子的！)]
+	</p>
+	<p>
+		你刚站起来，[npc3.name]又突然摁着你的肩膀强迫你跪下去，[npc3.speech(登等，尼忘了什么！好好清理干净，荡妇！)]
+	</p>
+	<p>
+		#IFnpc3.hasPenis()
+		#THEN
+			你低头看到[npc3.herHim]提着裙子，露出[npc3.her]的鸡巴。果然，[npc3.her]的阴茎还滴着精液，你顺从地低下头舔干净。小恶魔发出满足的呻吟，终于退后一步，放下裙子，让你自己站起来整理好自己的东西。
+		#ELSE
+			你低头看到[npc3.herHim]提着裙子，露出[npc3.her]湿润的小穴。果然，[npc3.her]的股间还滴着爱液，你顺从地低下头舔干净。小恶魔发出满足的呻吟，终于退后一步，放下裙子，让你自己站起来整理好自己的东西。
+		#ENDIF
+	</p>
+	<p>
+		[npc.speech(你完事了吗？)][npc.Name]走到你的身边问道。
+	</p>
+	<p>
+		[npc2.speech(别嬉皮笑脸的，[npc.race]！)]头领朝你的伙伴喝道，[npc2.speech(尼萌俩现在可以来去自由，但要是想再尝#IFnpc2.hasPenis()#THEN肉棒#ELSE小穴#ENDIF的滋味，就得回来跪下，明白吗？)]
+	</p>
+	<p>
+		你回以肯定，对让开路的小恶魔们微笑，你与[npc.Name]无需战斗就进入要塞……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_AFTER_ORAL_FOR_ENTRY_WITH_COMPANION"><![CDATA[
+	<p>
+		两个小恶魔从你和[npc.Name]身边走开，小恶魔领队一边重新穿好破烂的衣服，一边讥讽道：[npc2.speech(真是个骚到不行的小恶魔#IF(npc2.hasPenis())鸡巴#ELSE小穴#ENDIF荡妇！嘿，窝们会牢牢记住尼刚才呻吟的样子的！)]
+	</p>
+	<p>
+		你们刚站起来，[npc3.name]又突然摁着[npc.namePos]的肩膀强迫[npc.herHim]跪下去，[npc3.speech(登等，尼忘了什么！好好清理干净，荡妇！)]
+	</p>
+	<p>
+		#IFnpc3.hasPenis()
+		#THEN
+			向对面望去，你看到[npc3.herHim]撩起裙子，向你的同伴露出阴茎。果然，[npc3.her]的阴茎还滴着精液，[npc.name]顺从地低下头舔干净。随着一声满足的呻吟，小恶魔突然走过来抓住你的头，然后强迫你做出和[npc.name]一样的下流动作。你们俩把[npc3.name]肉棒上的精液都舔干净后，[npc3.her]才放下裙子，允许你们站起身来，整理好自己的东西。
+		#ELSE
+			低头一看，你看到[npc3.herHim]撩起裙子，向你的同伴露出湿漉漉的小穴。果然，爱液还顺着[npc3.her]的大腿内侧滑落，[npc.name]顺从地低下头舔了起来。随着一声满足的呻吟，小恶魔突然走过来抓住你的头，然后强迫你做出和[npc.name]一样的下流动作。你们俩把[npc3.name]的大腿都舔干净后，[npc3.her]才放下裙子，允许你们站起身来，整理好自己的东西。
+		#ENDIF
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(我们真是最佳拍档！)][npc.name]感叹道，朝你坏笑。
+		</p>
+		<p>
+			[npc2.speech(别得意，[npc.race]！我们以前还享受过更好的！)]头领朝你的伙伴喝道，[npc2.speech(尼萌俩现在可以来去自由，但要是想再尝#IFnpc2.hasPenis()#THEN肉棒#ELSE小穴#ENDIF的滋味，就得回来跪下，明白吗？)]
+		#ELSE
+			[npc.speech(下次，我们能不能打完就结束了？)][npc.name]皱着眉头问你。
+		</p>
+		<p>
+			[npc2.speech(别得意，[npc.race]！你心里清楚，你其实超喜欢！)]头领朝你的伙伴喝道，[npc2.speech(尼萌俩现在可以来去自由，但要是想再尝#IFnpc2.hasPenis()#THEN肉棒#ELSE小穴#ENDIF的滋味，就得回来跪下，明白吗？)]
+		#ENDIF
+	</p>
+	<p>
+		你们回以肯定，一起对让开路的小恶魔们微笑，无需战斗就进入要塞……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	<!-- ENTRANCE_DEMONIC_COMMAND -->
+	
+	<htmlContent tag="ENTRANCE_DEMONIC_COMMAND"><![CDATA[
+	<p>
+		[pc.speech(你<i>敢</i>这么对恶魔说话？)]你冷声威吓道，[pc.speech(看来你<i>很想</i>当我一辈子的贱奴啊。)]
+	</p>
+	<p>
+			[npc2.speech(不——不敢！等……等等！我们只是奉命行事哇！)]头领踉跄着后退，一把扔下武器，结结巴巴地说，[npc.speech(你……您没必要这么做啊……)]
+		</p>
+	<p>
+		[npc3.name]精神崩溃了，[npc3.Her]赶忙站到首领身边一起道歉：[npc3.speech(是啊是啊！我……我们平时可不会这么粗鲁！都是老大让我们这么说的！)]
+	</p>
+	<p>
+		[pc.speech(滚！)]你瞪着头领命令道。
+	</p>
+	<p>
+		[npc2.speech(对——对不起！)][npc2.She]立马喊道，[npc2.she]急忙闪开时把自己绊倒了，[npc2.speech(当然，你可以随意进出！抱……抱歉给你添麻烦了！)]
+	</p>
+	<p>
+		你直接无视小恶魔们唯唯诺诺的话，昂首挺胸地看着她们乖乖放行。现在你的道路畅通无阻，你穿过大门，大步流星地向前走去，尽力过滤掉小恶魔们可悲的道歉声……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- GUARDS_AFTER_COMBAT_VICTORY -->
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_VICTORY_ALL_ENSLAVED"><![CDATA[
+	<p>
+		在奴役了小恶魔守卫之后，你除了继续进入要塞，没有什么可做的了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_VICTORY"><![CDATA[
+	<p>
+		两名守卫瘫倒在地，手中的武器掉落在脚下的岩石上，发出无害的碰撞声。领头的喘息着，抬头看着你，恳求道：[npc2.speech(够，够了……你，你赢了……)]
+	</p>
+	<p>
+		低头看着眼前这些被打败的身影，是应该利用他们，还是干脆继续进入要塞……
+	</p>
+	<p>
+		[style.italicsBad(如果你选择把守卫留下，可以肯定的是，等你回来时，他们已经跑到屈城区了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_VICTORY_SCARE_OFF"><![CDATA[
+	<p>
+		你不想再和这些小恶魔有任何瓜葛，于是朝这些家伙吼道：[pc.speech(快滚吧！在我改主意之前滚蛋！)]
+	</p>
+	<p>
+		小恶魔们互相看了一眼，就挣扎着站了起来，然后踉踉跄跄地飞速溜进传送隧道……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_SEX"><![CDATA[
+	<p>
+		你想和这些曾经肆无忌惮的小恶魔爽爽，便叫[npc.Name]到旁边观看，自己则伸手给小恶魔们摆好位置。领队感受到身体上的触感，发出了色情的呻吟：[npc2.speech(唔嗯！来吧宝贝，尼想给我一通爆操对吧？)]
+	</p>
+	<p>
+		[npc3.speech(嗯啊，窝他妈已经很久没有真正爽过了！)][npc3.Name]呻吟着，高兴地挤到[npc3.herself]的领队身边，两人准备与你做爱……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_SEX_GENTLE"><![CDATA[
+	<p>
+		你想和这些曾经肆无忌惮的小恶魔爽爽，便叫[npc.Name]到旁边观看，自己则伸手温柔地帮小恶魔们摆好位置。领队感受到身体上的温柔爱抚，发出了色情的呻吟：[npc2.speech(唔嗯！来吧宝贝，尼想给我一通爆操对吧？)]
+	</p>
+	<p>
+		[npc3.speech(嗯啊，窝他妈已经很久没有真正爽过了！)][npc3.Name]呻吟着，高兴地挤到[npc3.herself]的领队身边，两人准备与你做爱……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_SEX_ROUGH"><![CDATA[
+	<p>
+		你想和这些曾经肆无忌惮的小恶魔爽爽，便叫[npc.Name]到旁边观看，自己则伸手粗暴地把小恶魔们推到位置上。领队感受到身体上的粗鲁触碰，发出了色情的呻吟：[npc2.speech(唔嗯！来吧宝贝，尼想给我一通爆操对吧？)]
+	</p>
+	<p>
+		[npc3.speech(嗯啊，窝他妈已经很久没有被狠狠捅过了！)][npc3.Name]呻吟着，高兴地挤到[npc3.herself]的领队身边，两人准备被你支配……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_SEX_SUBMIT"><![CDATA[
+	<p>
+		你看到两个小恶魔可怜兮兮地躺在你面前，不禁感到无比愧疚。你跪在她们身边，问道：[pc.speech(你们还好吗？我不是故意的……刚刚确实有点过分了……)]
+	</p>
+	<p>
+		[npc2.speech(啊？！)]小恶魔领队被你突然转变的态度打得措手不及，惊呼道，[npc2.speech(尼刚刚唆什魔？)]
+	</p>
+	<p>
+		[npc3.name]感觉你态度突然软了，撑起身，走上前瞪着你：[npc3.speech(该死，尼太过分了！那尼是想道歉，还是怎么着？)]
+	</p>
+	<p>
+		[pc.speech(啊，是的，对不起！)]你大叫。[pc.speech(我可以怎么弥补亻——)]
+	</p>
+	<p>
+		你的问题被刚刚站起来的小恶魔领队打断了，[npc2.she]走上前捏住你的下巴：[npc2.speech(让尼当个乖荡妇，#IFnpc2.hasPenis()#THEN给我们唆鸡巴#ELSE给我们舔阴#ENDIF，如何？)]
+	</p>
+	<p>
+		[npc.speech(嘿！)]你的同伴叫着，[npc.speech(把你的手从[pc.herHim]身上撒开！)]
+	</p>
+	<p>
+		[pc.speech(不用，磨事，[npc.name]！)]小恶魔领队伸手捏住你[pc.lips+]，使你口齿不清，[pc.speech(你久沾旁边看吧！)]
+	</p>
+	<p>
+		[npc3.speech(我要#IF(npc3.hasPenis())给尼灌满精液#ELSE让尼尝尝我的逼#ENDIF，好好给我们赔罪！)][npc3.Name]嘲弄道，把你的伙伴推到一边，抓住你[pc.hips+]。
+	</p>
+	<p>
+		你的顺从天性占据了上风，一边发出色情的[pc.moans]，一边高兴地让小恶魔把你摆好位置。你看着刚才还任你摆布的守卫，笑嘻嘻地等着他们操你来报仇……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_GROUP_SEX"><![CDATA[
+	<p>
+		你想和这些曾经肆无忌惮的小恶魔爽爽，便伸手摆好位置，招呼[npc.Name]加入你。领队感受到身体上的触碰，发出了色情的呻吟：[npc2.speech(唔嗯！来吧宝贝，尼想给我一通爆操对吧？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+		[npc.speech(唔嗯，是啊，会很舒服的。)]你的同伴[npc.moans]道。
+		#ELSE
+		[npc.speech(呃，我倒是没这个意思。)]你的同伴抱怨着，却还是乖乖照你的要求做了。
+		#ENDIF
+	</p>
+	<p>
+		[npc3.speech(嗯啊，窝他妈已经很久没有真正爽过了！)][npc3.Name]呻吟着，高兴地挤到[npc3.herself]的领队身边，两人准备与你和[npc.Name]做爱……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_GROUP_SEX_SUBMISSION"><![CDATA[
+	<p>
+		你看到两个小恶魔可怜兮兮地躺在你面前，不禁感到无比愧疚。你跪在她们身边，问道：[pc.speech(你们还好吗？我不是故意的……刚刚确实有点过分了……)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			有你来开头，[npc.name]也挨着你跪下，一起朝小恶魔道歉：[npc.speech(就是啊，我们没打算伤害你们……)]
+		#ELSE
+			你示意[npc.name]和你一起向小恶魔道歉，[npc.she]不情愿地跪在你身边，对小恶魔说道：[npc.speech(呃……当然……对不起了……)]
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(啊？！)]小恶魔领队被你突然转变的态度打得措手不及，惊呼道，[npc2.speech(尼刚刚唆什魔？)]
+	</p>
+	<p>
+		[npc3.name]感觉你态度突然软了，撑起身，走上前瞪着[npc.Name]：[npc3.speech(该死，尼萌太过分了！那尼是想道歉，还是怎么着？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(对不起！)][npc.name]叫着。
+		#ELSE
+			[npc.speech(我就打算说对不起啊……)][npc.name]喃喃道。
+		#ENDIF
+	</p>
+	<p>
+		[pc.speech(啊，是的，对不起！)]你大叫。[pc.speech(我可以怎么弥补亻——)]
+	</p>
+	<p>
+		你的问题被刚刚站起来的小恶魔领队打断了，[npc2.she]走上前捏住你的下巴，[npc2.speech(让尼当个乖荡妇，#IF(npc2.hasPenis())给我们唆鸡巴#ELSE给我们舔#ENDIF，如何？)]
+	</p>
+	<p>
+		[pc.speech(好的，当然口以！)]小恶魔领队伸手捏住你[pc.lips+]，使你口齿不清，[pc.speech(窝萌可以！)]
+	</p>
+	<p>
+		[npc3.speech(我要#IF(npc3.hasPenis())给尼灌满精液#ELSE让尼尝尝我的逼#ENDIF，好好给我们赔罪！)][npc3.Name]嘲弄道，绕到你的伙伴身后，抓住[npc.her][npc.ass+]。
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+		你的顺从天性占据了上风，一边发出色情的[pc.moans]，一边高兴地让小恶魔把你们摆好位置，全然无视[npc.Name]的抗议。你看着刚才还任你摆布的守卫，笑嘻嘻地等着小恶魔操你们来报仇……
+		#ELSE
+		你的顺从天性占据了上风，一边发出色情的[pc.moans]，一边高兴地让小恶魔把你与[npc.Name]摆好位置。你看着刚才还任你摆布的守卫，笑嘻嘻地等着小恶魔操你们来报仇……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_GIVE_TO_COMPANION"><![CDATA[
+	<p>
+		你想让[npc.Name]和这些曾经肆无忌惮的小恶魔爽爽，便伸手摆好位置，招呼[npc.herHim]在你面前做爱。你的伙伴乖乖照做，领队感受到身体上的触碰，发出了色情的呻吟：[npc2.speech(唔嗯！来吧宝贝，尼想给我一通爆操对吧？)]
+	</p>
+	<p>
+		[npc3.speech(嗯啊，窝他妈已经很久没有真正爽过了！)][npc3.Name]呻吟着，高兴地挤到[npc3.herself]的领队身边，两人准备与你与[npc.Name]做爱……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_COMBAT_VICTORY_OFFER_COMPANION"><![CDATA[
+	<p>
+		你想看这些小恶魔对[npc.Name]为所欲为，便转向你的同伴说道：[pc.speech(你该跪下，把身子给小恶魔们看。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(好耶！)][npc.name]兴致勃勃地走到小恶魔面前趴下，[npc.speech(你就站旁边看我被操吧，[pc.name]！)]
+		#ELSE
+			[npc.speech(我——我不是很想。)][npc.name]咕哝着，不情不愿地照做，在小恶魔面前趴下了。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(啊？！)]小恶魔领队被这突然转变的状况打得措手不及，惊呼道，[npc2.speech(尼干嘛？)]
+	</p>
+	<p>
+		[npc3.name]比头领更快抓住机会，[npc3.her]站起身来，一边坏笑，一边朝[npc.Name]走近：[npc3.speech(尼就是小恶魔#IFnpc3.hasPenis()#THEN肉棒#ELSE骚逼#ENDIF荡妇，是不是？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(是！)][npc.name][npc.moansVerb]着，[npc.speech(求求你，#IFnpc3.hasPenis()#THEN我想要你的精液#ELSE让我给你口吧#ENDIF！)]
+		#ELSE
+			[npc.speech(不是……)]你的同伴逆来顺受地呜咽着。
+		#ENDIF
+	</p>
+	<p>
+		[npc.name]的反应反而鼓舞了小恶魔头领，[npc2.she]站起身来，走到你的伙伴面前，捏住[npc.herHim]的下巴：[npc2.speech(尼想当个乖荡妇，#IFnpc2.hasPenis()#THEN给我们唆鸡巴#ELSE给我们舔阴#ENDIF，是不是？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(当南是嘟！)][npc.name][npc.lips+]被小恶魔头领捏在一起，口齿不清。
+		#ELSE
+			[npc.Name][npc.lips+]被小恶魔头领捏在一起，发出可怜的呜咽声，拒绝回答这个问题。
+		#ENDIF
+	</p>
+	<p>
+		[npc3.speech(我要#IF(npc3.hasPenis())给尼灌满精液#ELSE让尼尝尝我的逼#ENDIF，好好给我们赔罪！)][npc3.Name]嘲弄道，绕到你的伙伴身后，抓住[npc.her][npc.ass+]。
+	</p>
+	<p>
+		小恶魔把你的同伴摆好位置，你乐呵呵地欣赏这出好戏，一边发出色情的[pc.moans]。你看着刚才还任你摆布的守卫，笑嘻嘻地等着小恶魔们操[npc.Name]来报仇……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	<!-- GUARDS_AFTER_COMBAT_DEFEAT -->
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_DEFEAT_THROWN_OUT"><![CDATA[
+	<p>
+		随着最后一丝力气的耗尽，你与[npc.Name]瘫倒在地上，挫败地叹息。你还没来得及喘口气，就被小恶魔们拉着[pc.arms]拖上斜坡，向屈城区隧道走去，期间两只小恶魔攀谈起来：
+	</p>
+	<p>
+		[npc3.speech(为什么我们不楞爽爽？)][npc3.Name]对[npc3.her]的上级问道。
+	</p>
+	<p>
+		[npc2.speech(如果老大发现我们不好好看门反而去做爱，被操的就是我们！)]领队厉声喝到，[npc2.speech(我们只要把这两个家伙扔到辣里，让帮派的大家来爽一爽。)]
+	</p>
+	<p>
+		不知不觉中，你已经被拖得离要塞远远的了。小恶魔们毫不客气地把你扔到了地上，威胁你别再回来后又抓来了你的同伴，把[npc.sheIs]扔到你旁边……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_DEFEAT"><![CDATA[
+	<p>
+		最后一丝力气也耗尽了，你与[npc.Name]瘫倒在地上，挫败地叹息。你还没来得及喘口气，就感觉到小恶魔们伸手摸索起你脆弱的身体。在猥亵期间，两个小恶魔攀谈起来：
+	</p>
+	<p>
+		[npc3.speech(不知道这两个家伙会不会也变成我们的#IFnpc2.hasPenis()#THEN鸡巴#ELSE小穴#ENDIF荡妇？)]小恶魔领队对[npc2.her]的下属问道。
+	</p>
+	<p>
+		[npc3.speech(无所谓，窝就想#IFnpc3.hasPenis()#THEN进到这个[npc.race]里面#ELSE让[npc.her]把舌头伸到我的小穴里#ENDIF！)][npc3.Name]答道，[npc3.speech(总之，只要尝到了我的#IFnpc3.hasPenis()#THEN鸡巴#ELSE蜜穴#ENDIF，马上就会爱上！就像我们上次抓到的那个荡妇一样，她很快就费乞求#IFnpc3.hasPenis()#THEN我的精液#ELSE我坐在她脸上#ENDIF！)]
+	</p>
+	<p>
+		不知不觉中，两个小恶魔已经把你和[npc.Name]移到合适的位置，准备使用你们的身体……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_DEFEAT_SEX"><![CDATA[
+	<p>
+		你很乐意让小恶魔爽爽，[pc.moan]道：[pc.speech(唔，嗯……我会乖乖的……)]
+	</p>
+	<p>
+		[npc2.speech(嘿！所以<i>这家伙</i>就是个小恶魔#IF(npc2.hasPenis())鸡巴#ELSE小穴#ENDIF荡妇！)]小恶魔领队讥讽道，引得[npc2.her]的下属一阵奸笑。[npc2.she]又转头去看[npc.Name]，继续说道：[npc2.speech(那尼嘞？要乞求我的朋友给尼#IFnpc3.hasPenis()#THEN鸡巴#ELSE骚逼#ENDIF吗，荡妇？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+				[npc.speech(唔嗯，是的。)][npc.name]渴望地答复着，[npc.speech(请#IFnpc3.hasPenis()#THEN用精液灌满我#ELSE让我舔你的小穴#ENDIF吧！)]
+			</p>
+			<p>
+				[npc3.speech(正合我意！我这就好好操尼一顿，妓女！)][npc3.Name]说着，揉搓着[npc.namePos]的身体，[npc3.she]与头领准备好开始了……
+		#ELSE
+				[npc.speech(什么？！不要！)][npc.name]警惕地大叫，[npc.speech(走——走开！)]
+			</p>
+			<p>
+				[npc3.speech(等会尼就该改口啦！我可是很想听你呻吟着要我的#IFnpc3.hasPenis()#THEN精液#ELSE小穴#ENDIF呢！)][npc3.Name]说着，摸索起[npc.namePos]的身体，准备和[npc3.her]的上级一起开始……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_DEFEAT_SEX_EAGER"><![CDATA[
+	<p>
+		你一想到自己马上就要被征服者使用，就感到无比兴奋，[pc.moan]道：[pc.speech(哦，就是这样！快来操我啊！给我小恶魔#IF(npc2.hasPenis())肉棒#ELSE小穴#ENDIF！)]
+	</p>
+	<p>
+		[npc2.speech(嘿！所以<i>这家伙</i>就是个小恶魔#IF(npc2.hasPenis())鸡巴#ELSE小穴#ENDIF荡妇！)]小恶魔领队讥讽道，引得[npc2.her]的下属一阵奸笑。[npc2.she]又转头去看[npc.Name]，继续说道：[npc2.speech(那尼嘞？要乞求我的朋友给尼#IFnpc3.hasPenis()#THEN鸡巴#ELSE骚逼#ENDIF吗，荡妇？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+				[npc.speech(唔嗯，是的。)][npc.name]渴望地答复着，[npc.speech(请#IFnpc3.hasPenis()#THEN用精液灌满我#ELSE让我舔你的小穴#ENDIF吧！)]
+			</p>
+			<p>
+				[npc3.speech(正合我意！我这就好好操尼一顿，妓女！)][npc3.Name]说着，揉搓着[npc.namePos]的身体，[npc3.she]与头领准备好开始了……
+		#ELSE
+				[npc.speech(什么？！不要！)][npc.name]警惕地大叫，[npc.speech(走——走开！)]
+			</p>
+			<p>
+				[npc3.speech(等会尼就该改口啦！我可是很想听你呻吟着要我的#IFnpc3.hasPenis()#THEN精液#ELSE小穴#ENDIF呢！)][npc3.Name]说着，摸索起[npc.namePos]的身体，准备和[npc3.her]的上级一起开始……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARDS_AFTER_COMBAT_DEFEAT_SEX_RESIST"><![CDATA[
+	<p>
+		一想到这些小恶魔在占你便宜，你就感到恶心，尖叫道：[pc.speech(不要！离我远点儿！住手！)]
+	</p>
+	<p>
+		[npc2.speech(嘿！所以[pc.sheIs]在欲擒咕棕是吧？！)]小恶魔领队嘲讽道，引得[npc2.her]的下属一阵奸笑，[np,2.speech(等尼尝到小恶魔#IF(npc2.hasPenis())肉棒#ELSE小穴#ENDIF，尼会改口的！)]
+	</p>
+	<p>
+		[npc3.name]又转头去看[npc.Name]，问道：[npc3.speech(那尼嘞？要乞求我给尼#IFnpc3.hasPenis()#THEN鸡巴#ELSE骚逼#ENDIF吗，荡妇？还是假装不想要？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+				[npc.speech(唔嗯，是的。)][npc.name]渴望地答复着，[npc.speech(请#IFnpc3.hasPenis()#THEN用精液灌满我#ELSE让我舔你的小穴#ENDIF吧！)]
+			</p>
+			<p>
+				[npc3.speech(正合我意！我这就好好操尼一顿，妓女！)][npc3.Name]说着，揉搓着[npc.namePos]的身体，[npc3.she]与头领准备好开始了……
+		#ELSE
+				[npc.speech(什么？！不要！)][npc.name]警惕地大叫，[npc.speech(走——走开！)]
+			</p>
+			<p>
+				[npc3.speech(骗谁呢！等会尼就会呻吟着要我的#IFnpc3.hasPenis()#THEN精液#ELSE逼#ENDIF啦！)][npc3.Name]说着，摸索起[npc.namePos]的身体，准备和[npc3.her]的上级一起开始……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	<!-- GUARDS_AFTER_SEX_VICTORY -->
+	
+	<htmlContent tag="GUARDS_AFTER_SEX_VICTORY"><![CDATA[
+	<p>
+		你爽够了之后，拉开了小恶魔们的距离，先前的战斗终于让他们疲惫得喘不过气来。守卫们瘫倒在地上，一边喘息一边呻吟。
+	</p>
+	<p>
+		你整理好东西后，考虑着要不要在他们跑掉之前拿走他们的东西……
+	</p>
+	<p>
+		[style.italicsBad(可以肯定的是，等你回来时，小恶魔们已经跑到屈城区了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	<!-- AFTER_DEFEAT_SEX -->
+	
+	<htmlContent tag="AFTER_DEFEAT_SEX"><![CDATA[
+	<p>
+		小恶魔们爽够了之后，让你精疲力竭地瘫倒在地上。你还没来得及喘口气，就被她们拉着[pc.arms]拖上斜坡，向屈城区隧道走去，期间两只小恶魔攀谈起来。
+	</p>
+	<p>
+		[npc3.speech(操这家伙好爽啊，)][npc3.name]对[npc3.her]的上级说道。
+	</p>
+	<p>
+		[npc2.speechNoEffects(嗯，我觉得他们不错。我敢打赌，当小恶魔的肉便器可谓是前途一片光明啊。)]为首者轻蔑地回应道，[npc3.speech(等下我们就把他们扔到内里去，让帮派的大家都轮牛抓着他们爽一爽。)]
+	</p>
+	<p>
+		不知不觉中，你已经被拖得离要塞远远的了。小恶魔们毫不客气地把你扔到了地上，威胁你别再回来后又抓来了你的同伴，把[npc.sheIs]扔到你旁边……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	<!-- COURTYARD -->
+	
+	<htmlContent tag="COURTYARD"><![CDATA[
+	<p>
+		大门与要塞的木质主楼之间，只有一片空荡、肮脏的庭院。空酒瓶、堆积如山的垃圾随意散落，显得此处穷阎漏屋，破败不堪。
+	</p>
+	<p>
+		主楼伫立在一个角落里。虽然其建造质量高于外围墙，但仍然结构简单且显得十分破旧。这座孤独的建筑主要由粗糙的木桩搭建而成，覆盖着古怪的金属片和胶合板，成为要塞墙内唯一引人注目的存在。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FORTRESS_FLY_EXIT"><![CDATA[
+	<p>
+		虽然围墙的危险结构禁止任何人翻越，但没有什么能阻止你利用飞行能力到达另一边。在短距离冲刺后，你迅速腾空而起，在飞过防御屏障后又俯冲而下，落在了洞穴外的地面上。你回头望去，看到[npc.name]也紧随其后，当[npc.she]落在你身后时，你对[npc.herHim]笑了笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP -->
+	
+	<htmlContent tag="KEEP"><![CDATA[
+	<p>
+		尽管建筑师大量使用了金属板和木材余料，但主楼的墙壁仍有许多小缝隙。一缕缕光线从缝隙中透出，将淡淡的金色光芒投射在要塞庭院的地面和墙壁上。
+	</p>
+	<p>
+		墙壁的裂缝中不止渗出了光芒，你逐渐靠近身前简陋的木门，偷听到门内传出咯咯的笑声和片段污言秽语。虽然你听出三个又尖又细的是小恶魔叽叽喳喳的声音，但是里面显然还有第四个，一个低沉且不祥的[npc2.feminine]声音。
+	</p>
+	<p>
+		如果你进入主楼，毫无疑问，把守者会立刻发现你。你得做好最坏的打算，不止要打过这三只小恶魔，还要打过在附近隧道里游荡的帮派头头……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_DEFEATED"><![CDATA[
+	<p>
+		你打败了[impAlphaLeader.name]。[impAlphaLeader.race]带着他的小恶魔手下逃去了附近的隧道里游荡，所以[impAlphaLeader.her]的主楼现在荒无人烟。你朝大开着的前门里面匆匆瞥了一眼，没看到有意思的东西。你没什么好干的，除了转身离开……
+	</p>
+	<p>
+		[style.italicsBad(你感觉[impAlphaLeader.name]迟早会回来重夺要塞！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED"><![CDATA[
+	<p>
+		尽管建筑师大量使用了金属板和木材余料，但主楼的墙壁仍有许多小缝隙。一缕缕光线从缝隙中透出，将淡淡的金色光芒投射在要塞庭院的地面和墙壁上。
+	</p>
+	<p>
+		墙壁的裂缝中不止逃出了光芒。你逐渐靠近身前结构简单的木门，偷听到门内咯咯的笑声和片段污言秽语。你听到了[impAlphaLeader.name]独特而不祥的声音，[impAlphaLeader.she]正在和[impAlphaLeader.her]的三名阿尔法小恶魔护卫的谈话。
+	</p>
+	<p>
+		因为[impAlphaLeader.name]不再对你虎视眈眈，你可以不用打架就随意进入主楼……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP_ENTRY -->
+	
+	<htmlContent tag="KEEP_ENTRY"><![CDATA[
+	<p>
+		你推开主楼简陋的木门，欣喜地发现门并没有上锁。随着一声足以让人退缩的嘎吱声，木门在你面前打开了，你迈入其中，发现建筑内部是个开放大厅。墙壁上固定着许多奥术驱动的灯笼，淡金色的光芒照亮了起伏不平的木地板和杂乱无章地挤在墙边的桌椅。
+	</p>
+	<p>
+		你发现这座要塞的居住者正坐在大厅另一端的木桌旁。其中三个女性阿尔法小恶魔和门口的守卫差不多，她们的首领则是一个穿着黑色服装、苍白色皮肤的魅魔。
+	</p>
+	<p>
+		魅魔侧剃的及肩短发与衣着一样纯黑。她转过身看你，你注意到她还画着浓黑的眼线与眼影。​你们对视的瞬间，她黑色的嘴唇扬出嘶吼的弧度，拳头猛地砸向桌面，嚷嚷道：[npc2.speech(你们他妈是谁？！哈，没人告诉你们要远离[npc2.namePos]的地盘吗？！)]
+	</p>
+	<p>
+		[npc2.Name]怒气冲天，把椅子往后一摔，双脚一蹬，腾空跳起。她穿着皮夹克、做旧牛仔裤和哥特风及膝长靴，皆是纯黑一色；夹克的拉链敞开，黑色裹胸布紧紧缠着她一般大小的C罩杯乳房。她看起来在你能想到的身体部位都打了银质环钉，如果没有恶魔尾巴和布满部落图腾花纹的角，这就是个典型的暴怒哥特女孩。她甚至没等你们回答，就握紧拳头上的黄铜指虎向你们冲来，吼道：[npc2.speech(你妈个臭逼，是不是讨打？！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔紧随首领身后支援。抉择时间紧迫，你要么缓和局势，要么准备战斗……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_RETURN"><![CDATA[
+	<p>
+		你再次推开主楼简陋的木门，发现它依旧没有上锁。随着熟悉的嘎吱声，木门被推开了。外面的大厅和你上次来时差不多，墙上挂着许多奥术灯笼，柔和的金色光芒投射在腐朽的木地板上，许多奇形怪状的桌椅被推到了墙边。
+	</p>
+	<p>
+		在与你进入的地方相对的另一端，你看到了熟悉的要塞主人，他们正围坐在一张普通的木桌旁。[npc2.Name]是第一个注意到你的到来的人，[npc2.she]愤怒地将拳头砸在[npc2.herHim]面前的桌子上，大声喊道，[npc2.speech(妈的！你们两个在这里干什么？！)]
+	</p>
+	<p>
+		[npc2.she]一跃而起时，愤怒地将[npc2.her]的椅子往后一扔，然后大步向前走去，握紧了[npc2.她]拳头中的黄铜指虎，惊呼道，[npc2.speech(我要把你们打成肉酱，你们这群婊子！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔紧随首领身后支援。抉择时间紧迫，你要么缓和局势，要么准备战斗……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_PACIFIED"><![CDATA[
+	<p>
+		你再次推开主楼简陋的木门，发现它依旧没有上锁。随着熟悉的嘎吱声，木门被推开了。外面的大厅和你上次来时差不多，墙上挂着许多奥术灯笼，柔和的金色光芒投射在腐朽的木地板上，许多奇形怪状的桌椅被推到了墙边。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_PACIFIED_DEMAND_BOTH_ORAL"><![CDATA[
+	<p>
+		在与你进入的位置相对的另一端，你看到了这间要塞熟悉的主人，他们正围坐在那张普通的木桌旁。[npc2.name]把[npc2.her]的椅子往后推了一点，[npc2.she]分开[npc2.her]的腿，向你和[npc.Name]投来一个阴险的笑容。当[npc2.her]的小恶魔卫兵转过身去看是什么引起了他们首领的注意时，[npc2.she]叫了起来，[npc2.speech(好好好，看来这群饥渴的荡妇，又想吃我的精液了！过来，婊子们，用你们的嘴唇包住我的鸡巴！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_PACIFIED_DEMAND_ORAL_COMPANION_IMPS"><![CDATA[
+	<p>
+		在与你进入的位置相对的另一端，你看到了这间要塞熟悉的主人，他们正围坐在那张普通的木桌旁。[npc2.name]把[npc2.her]的椅子往后推了一点，[npc2.she]分开[npc2.her]的腿，向你投来一个阴险的笑容。当[npc2.her]的小恶魔卫兵转过身去看是什么引起了他们首领的注意时，[npc2.she]叫了起来，[npc2.speech(好好好，看来这群饥渴的荡妇，又想吃我的精液了！过来，婊子，用你的嘴唇包住我的鸡巴！)]
+	</p>
+	<p>
+		看看你的同伴，[npc2.name]不屑地撇撇嘴，[npc2.speech(至于<i>你</i>，我看你的嘴都被封住了。在我操你朋友喉咙的时候，你可以当我的姑娘们的肉便器。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_PACIFIED_DEMAND_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		在与你进入的位置相对的另一端，你看到了这间要塞熟悉的主人，他们正围坐在那张普通的木桌旁。[npc2.name]把[npc2.her]的椅子往后推了一点，[npc2.she]分开[npc2.her]的腿，向[npc.Name]投来一个阴险的笑容。当[npc2.her]的小恶魔卫兵转过身去看是什么引起了他们首领的注意时，[npc2.she]叫了起来，[npc2.speech(好好好，看来这群饥渴的荡妇，又想吃我的精液了！过来，婊子，用你的嘴唇包住我的鸡巴！)]
+	</p>
+	<p>
+		看着你，[npc2.name]不屑地撇撇嘴，[npc2.speech(至于<i>你</i>，我看你的嘴都被封住了。在我操你朋友喉咙的时候，你可以当我的姑娘们的肉便器。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_PACIFIED_DEMAND_BOTH_IMPS"><![CDATA[
+	<p>
+		在与你进入的位置相对的另一端，你看到了这间要塞熟悉的主人，他们正围坐在那张普通的木桌旁。[npc2.name]把[npc2.her]的椅子往后推了一点，朝[npc2.her]的守卫点点头，向你和[npc.Name]投来一个阴险的笑容。当阿尔法小恶魔转过身来看是什么引起了他们首领的注意时，[npc2.she]喊道，[npc2.speech(好好好，你们俩的嘴都还封着，是吧？既然你们不想尝尝我的鸡巴，我猜你们是来找我的姑娘们的来吧，婊子们，像狗一样趴下。你们很快就会被我的鸡巴填满的！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED_LEAVE"><![CDATA[
+	<p>
+		你现在不想嗦[npc2.namePos]牛子，于是赶紧脱口而出，[pc.speech(啊，对不起，[npc2.name]，我只是在检查一切是否正常。我现在得走了！)]
+	</p>
+	<p>
+		你不顾别人对你的粗俗咒骂，迅速背对着[npc2.name]和[npc2.her]一伙人，快速冲出了城堡……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED_REPEAT_SEX"><![CDATA[
+	<p>
+		你顺从地按照[npc.sheIs]的吩咐，匆匆跑到[npc2.name]坐着的地方，跪倒在[npc2.herHim]面前。[npc2.race]对着你的同伴冷笑，提高[npc2.her]的声音，让[npc2.her]可以听到[npc2.her]的小恶魔卫兵发出的嘲讽笑声和命令，[npc2.speech(真是#IFpc.isFeminine()#THEN个忠诚的婊子#ELSE条忠诚的狗#ENDIF。你还会听命令玩其他把戏吗？来吧，荡妇，求我。)]
+	</p>
+	<p>
+		为了取悦[npc2.name]，你再一次按照命令去做。你抬起[pc.hands]作乞求状，盯着[npc2.herHim]哀鸣道：[pc.speech(求求你，让我吸你的肉棒吧！)]
+	</p>
+	<p>
+		虐待狂[npc2.race]站起来，伸手粗暴地抓住你的后脑勺，用力向前一扯，把你的[pc.face]紧紧地贴在[npc2.her]裤子里迅速变硬的凸起上，[npc2.she]冷笑着，[npc2.speech(我要把你捅到恶心，婊子。)]
+	</p>
+	<p>
+		你发出了模模糊糊的赞同声，准备好为[npc2.namePos]口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED_REPEAT_SEX_IMPS"><![CDATA[
+	<p>
+		你听话地走到[npc2.name]和[npc2.her]小恶魔坐的地方，然后双手抱膝跪在他们面前。[npc2.race]对你冷笑着，提高了[npc2.her]的声音，让[npc2.her]的声音能够盖过[npc2.her]的小恶魔守卫们发出的嘲讽笑声，命令道，[npc2.speech(真是#IFpc.isFeminine()#THEN个忠诚的婊子#ELSE条忠诚的狗#ENDIF。你还会听命令玩其他把戏吗？来吧，荡妇，向我的女孩们展示你自己。)]
+	</p>
+	<p>
+		为了取悦[npc2.name]，你再一次按照命令去做。你扭动着向小恶魔露出[pc.ass+]，一边俯低肩膀，一边翘起自己[pc.hips+]，哀鸣道：[pc.speech(求求你，操我！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，各种揉捏。在你身后的那个则冷笑一声，[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音，做好了被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED_REPEAT_SEX_DOUBLE_ORAL"><![CDATA[
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			你听话地走到[npc2.name]坐着的地方，手脚并用地跪在[npc2.herHim]面前。你的同伴和你一样渴望尝尝[npc2.namePos]的鸡巴，[npc.she]跪在你身边，饥渴地注视着[npc2.namePos]裤子里的隆起。
+		#ELSE
+			你听话地走到[npc2.name]坐着的地方，手脚并用地跪在[npc2.herHim]面前。[npc.姓名]拖着的脚步，不情愿地跟在你后面，无奈地叹了口气，[npc.she]跪在你身边，把[npc.her]的视线从[npc2.namePos]裤子上凸起的部分移开。
+		#ENDIF
+	</p>
+	<p>
+		这[npc2.race]发出得意的笑声，随后，在[npc2.she]的小恶魔护卫们一浪高过一浪的嘲笑声中，[npc2.she]提高了音量，命令道，[npc2.speech(真是#IFpc.isFeminine()#THEN两个忠诚的婊子#ELSE两条忠诚的狗#ENDIF。我想，你们还能听懂别的命令吧？继续，婊子，现在求我。)]
+	</p>
+	<p>
+		为了取悦[npc2.name]，你再一次按照命令去做。你抬起[pc.hands]作乞求状，盯着[npc2.herHim]哀鸣道：[pc.speech(求求你，让我吸你的肉棒吧！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(是的！让我尝你的精液！)][npc.name]兴奋地回答。
+		#ELSE
+			[npc.speech(呃……当然，随便了……)][npc.name]叹了口气，明确表示[npc.sheIs]这么做是因为[npc.sheHasFull]被要求了。
+		#ENDIF
+	</p>
+	<p>
+		虐待狂[npc2.race]站起身来时，伸手粗暴地抓住你们的后脑勺，把你们两个拽到前面，把你们的脸紧紧地贴在[npc2.her]裤子里迅速变硬的凸起上。[npc2.she]发出嘲弄的笑声，讥讽道：[npc2.speech(我要把你捅到恶心，婊子。)]
+	</p>
+	<p>
+		你发出了模模糊糊的赞同声，准备好为[npc2.namePos]口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED_REPEAT_SEX_ORAL_COMPANION_IMPS"><![CDATA[
+	<p>
+		你顺从地按照[npc.sheIs]的吩咐，匆匆跑到[npc2.name]坐着的地方，跪倒在[npc2.herHim]面前。[npc2.race]对着你的同伴冷笑，提高[npc2.her]的声音，让[npc2.her]可以听到[npc2.her]的小恶魔卫兵发出的嘲讽笑声和命令，[npc2.speech(真是#IFpc.isFeminine()#THEN个忠诚的婊子#ELSE条忠诚的狗#ENDIF。你还会听命令玩其他把戏吗？来吧，荡妇，求我。)]
+	</p>
+	<p>
+		为了取悦[npc2.name]，你再一次按照命令去做。你抬起[pc.hands]作乞求状，盯着[npc2.herHim]哀鸣道：[pc.speech(求求你，让我吸你的肉棒吧！)]
+	</p>
+	<p>
+		虐待狂[npc2.race]跪倒在[npc.her]的膝盖上，将[npc.her][npc.hips]向前推，将[npc2.her]裤子中迅速胀大的凸起紧紧压在你的[npc.face]上，同时冷笑着，[npc2.speech(我想把你痛到恶心，荡妇。至于你，[npc.race]，趴到我的#IFnpc.isFeminine()#THEN婊子#ELSE狗#ENDIF边上来，让我的小恶魔们操你！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(好的！请使用我！)][npc.Name]愉悦地大叫，与你挨着跪下。
+		#ELSE
+			[npc.speech(呃……我不敢相信……)][npc.name]叹了口气，明确表示[npc.sheIs]这么做是因为被逼无奈。[npc.she]走向你，与你挨着跪下，一边抱怨着，[npc.speech(赶紧做完吧。)]
+		#ENDIF
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将[npc.herHim]团团围住，开始对着[npc.her]的身体上下其手，尽情揉捏。在[npc.her]身后的那个小恶魔则冷笑一声道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED_REPEAT_SEX_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		[npc.Name]顺从地按照[npc.sheIs]的吩咐，匆匆跑到[npc2.name]坐着的地方，跪倒在[npc2.herHim]面前。[npc2.race]对着你的同伴冷笑，提高[npc2.her]的声音，让[npc2.her]可以听到[npc2.her]的小恶魔卫兵发出的嘲讽笑声和命令，[npc2.speech(真是#IFpc.isFeminine()#THEN个忠诚的婊子#ELSE条忠诚的狗#ENDIF。你还会听命令玩其他把戏吗？来吧，荡妇，求我。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			为了讨[npc2.name]的欢心，[npc.name]再次按照[npc.sheIs]的命令行事，举起[npc.her][npc.hands]做出乞求的动作，抬头看着[npc2.herHim]，发出呜呜声，[npc.speech(求求你，让我嗦你的屌！)]
+		#ELSE
+			尽管不情愿，[npc.name]还是再次按照[npc.sheIs]的吩咐，举起[npc.her][npc.hands]做出乞求的动作，抬头看着[npc2.herHim]，叹了口气，[npc.speech(呃……让我嗦你的屌吧……)]
+		#ENDIF
+	</p>
+	<p>
+		虐待狂[npc2.race]跪倒在[npc.her]的膝盖上，将[npc.her][npc.hips]向前推，将[npc2.her]裤子中迅速胀大的凸起紧紧压在[npc.namePos][npc.face]上，同时冷笑着，[npc2.speech(我想把你痛到恶心，荡妇。至于你，[pc.race]，趴到我的#IFnpc.isFeminine()#THEN婊子#ELSE狗#ENDIF边上来，让我的小恶魔们操你！)]
+	</p>
+	<p>
+		[pc.speech(好的！请使用我！)]你愉悦地大叫，与你的同伴挨着跪下。
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，各种揉捏。在你身后的那个则冷笑一声，[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出温顺的声音表示赞同，做好被小恶魔守卫爆操一顿的准备，而他们的老大则准备使用[npc.namePos]的口穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_PACIFIED_REPEAT_SEX_DOUBLE_IMPS"><![CDATA[
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			你听话地走到[npc2.name]坐着的地方，手脚并用地跪在[npc2.herHim]面前。你的同伴和你一样渴望被[npc2.namePos]的小恶魔干，[npc.she]落在你身边，发出饥渴的[npc.moan]。
+		#ELSE
+			你听话地走到[npc2.name]坐着的地方，手脚并用地跪在[npc2.herHim]面前。[npc2.name]拖着脚步，不情愿地跟在你后面，无奈地叹了口气，[npc.she]在你身边坐下，目光盯着地板。
+		#ENDIF
+	</p>
+	<p>
+		这[npc2.race]发出得意的笑声，随后，在[npc2.she]的小恶魔护卫们一浪高过一浪的嘲笑声中，[npc2.she]提高了音量，命令道，[npc2.speech(真是#IFpc.isFeminine()#THEN两个忠诚的婊子#ELSE两条忠诚的狗#ENDIF。我想，你们还能听懂别的命令吧？继续，婊子，向我的姑娘们献上你们。)]
+	</p>
+	<p>
+		为了取悦[npc2.name]，你再一次按照命令去做。你扭动着向小恶魔露出[pc.ass+]，一边俯低肩膀，一边翘起自己[pc.hips+]，哀鸣道：[pc.speech(求求你，操我！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(好的！请使用我！)][npc.Name]愉悦地大叫，效仿你的动作，向小恶魔展示自己的身体。
+		#ELSE
+			[npc.speech(呃……我不敢相信……)][npc.name]叹了口气，明确表示[npc.sheIs]这么做是因为被逼无奈。[npc.she]效仿你的动作，向小恶魔展示自己的身体，一边抱怨着，[npc.speech(赶紧做完吧。)]
+		#ENDIF
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你们俩团团围住，开始对着你们的身体上下其手，各种揉捏。在你身后的那个则冷笑一声，[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音表示赞同，做好了同伙伴一起被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_OFFER_SEX"><![CDATA[
+	<p>
+		看到这群暴怒的[npc2.race]和[npc2.her]的小恶魔卫兵冲向你，你无法承受，一边哭喊一边举起[pc.hands]，[pc.speech(等等，先别动手！)]
+	</p>
+	<p>
+		你转过头看着你的同伴，命令道，[pc.speech(退后，[npc.name]。我来搞定。)]
+	</p>
+	<p>
+		[npc2.namePos]意识到你不愿意和[npc2.herHim]战斗，[npc2.she]气势汹汹的咆哮迅速转变成了奸诈的笑容。[npc2.she]在你面前停下，伸手抓住了你的手腕，在你反应过来之前，[npc2.she]将你们两个向前拉，在[npc2.she]的咆哮声中将你们两个紧紧地压在[npc2.herHim]身上，[npc2.speech(你们这些婊子不请自来，要怎么道歉？)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc2.her]的粗大鸡巴在牛仔裤上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推到在[npc2.herHim]面前，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]把肉棒顶向你的唇，准备被你口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_OFFER_SEX_IMPS"><![CDATA[
+	<p>
+		看到这群暴怒的[npc2.race]和[npc2.her]的小恶魔卫兵冲向你，你无法承受，你举起[pc.hands]一边用衣服堵住嘴巴，一边喃喃自语：[pc.speech(等等，先别动手！)]
+	</p>
+	<p>
+		你转过头看着你的同伴，命令道，[pc.speech(退后，[npc.name]。我来搞定。)]
+	</p>
+	<p>
+		[npc2.namePos]意识到你不愿意和[npc2.herHim]战斗，[npc2.she]气势汹汹的咆哮迅速转变成了奸诈的笑容。[npc2.she]在你面前停下，伸手抓住了你的手腕，在你反应过来之前，[npc2.she]将你们两个向前拉，在[npc2.she]的咆哮声中将你们两个紧紧地压在[npc2.herHim]身上，[npc2.speech(你们这些婊子不请自来，要怎么道歉？)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc2.her]的粗大鸡巴在袴上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(你嘴怎么被封得这么严实？！)][npc2.Name]厉声道，猛然把你推得趴倒在[npc2.herHim]面前，[npc2.speech(不，要是我操不到喉咙的话，那我可毫无兴趣。不过，说到我的姑娘们嘛……)]
+	</p>
+	<p>
+		[npc2.she]正说着，三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，尽情揉捏。[npc2.Name]嘲笑出声，退回到自己的椅子上，只留你与欲火中烧的小恶魔们相处。你[pc.a_moan]着，那个正在摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音，做好了被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_OFFER_SEX_DOUBLE_ORAL"><![CDATA[
+	<p>
+		看到这群暴怒的[npc2.race]和[npc2.her]的小恶魔卫兵冲向你，你无法承受，一边哭喊一边举起[pc.hands]，[pc.speech(等等，先别动手！)]
+	</p>
+	<p>
+		你转过头看着你的同伴，命令道：[pc.speech(来吧，[npc.name]。帮我一把。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(当然！[pc.name]！)][npc.name]兴奋地回答。
+		#ELSE
+			[npc.speech(呃……我不敢相信……算了……)][npc.name]叹了口气，明确表示[npc.sheIs]这么做是因为[npc.sheHasFull]被要求了。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.namePos]意识到你不愿意和[npc2.herHim]战斗，[npc2.she]气势汹汹的咆哮迅速转变成了奸诈的笑容。[npc2.she]在你和[npc.name]面前停下，伸手抓住了你的手腕，在你反应过来之前，[npc2.she]将你们两个向前拉，在[npc2.she]的咆哮声中将你们两个紧紧地压在[npc2.herHim]身上，[npc2.speech(你们这些婊子不请自来，要怎么道歉？)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在牛仔裤上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推到在[npc2.herHim]面前，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。[npc.Name]帮你拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]先是把肉棒顶向[npc.namePos]的[npc.lips]，接着是你的唇，准备被你们两个一起口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_OFFER_SEX_ORAL_COMPANION_IMPS"><![CDATA[
+	<p>
+		看到这群暴怒的[npc2.race]和[npc2.her]的小恶魔卫兵冲向你，你无法承受，一边哭喊一边举起[pc.hands]，[pc.speech(等等，先别动手！)]
+	</p>
+	<p>
+		你转过头看着你的同伴，命令道：[pc.speech(来吧，[npc.name]。帮我一把。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(当然！[pc.name]！)][npc.name]兴奋地回答。
+		#ELSE
+			[npc.speech(呃……我不敢相信……算了……)][npc.name]叹了口气，明确表示[npc.sheIs]这么做是因为[npc.sheHasFull]被要求了。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.namePos]意识到你不愿意和[npc2.herHim]战斗，[npc2.she]气势汹汹的咆哮迅速转变成了奸诈的笑容。[npc2.she]在你和[npc.name]面前停下，伸手抓住了你的手腕，在你反应过来之前，[npc2.she]将你们两个向前拉，在[npc2.she]的咆哮声中将你们两个紧紧地压在[npc2.herHim]身上，[npc2.speech(你们这些婊子不请自来，要怎么道歉？)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在牛仔裤上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推到在[npc2.herHim]面前，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[npc.race]，既然你的嘴巴被封住了，那你就给我的姑娘们当精厕吧！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将[npc.Name]团团围住，开始对着[npc.her]的身体上下其手，尽情揉捏。在[npc.her]身后的那个小恶魔则冷笑一声道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_OFFER_SEX_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		看到这群暴怒的[npc2.race]和[npc2.her]的小恶魔卫兵冲向你，你无法承受，你举起[pc.hands]一边用衣服堵住嘴巴，一边喃喃自语：[pc.speech(等等，先别动手！)]
+	</p>
+	<p>
+		你转过头看着你的同伴，命令道：[pc.speech(来吧，[npc.name]。帮我一把。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(当然！[pc.name]！)][npc.name]兴奋地回答。
+		#ELSE
+			[npc.speech(呃……我不敢相信……算了……)][npc.name]叹了口气，明确表示[npc.sheIs]这么做是因为[npc.sheHasFull]被要求了。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.namePos]意识到你不愿意和[npc2.herHim]战斗，[npc2.she]气势汹汹的咆哮迅速转变成了奸诈的笑容。[npc2.she]在你和[npc.name]面前停下，伸手抓住了你的手腕，在你反应过来之前，[npc2.she]将你们两个向前拉，在[npc2.she]的咆哮声中将你们两个紧紧地压在[npc2.herHim]身上，[npc2.speech(你们这些婊子不请自来，要怎么道歉？)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在牛仔裤上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推倒在[npc2.herHim]面前，把自己的腹股沟挺向[npc.namePos]的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[pc.race]，既然你的嘴巴被封住了，那你就给我的姑娘们当精厕吧！)]
+	</p>
+	<p>
+		你的同伴遵从指示，把[npc2.her]的牛仔裤解开，还没等牛仔裤脱下，[npc.NamePos]被丁字裤勉强包裹的下体的凸起就显露了出来。[npc.she]看见[npc2.namePos]下体的样子，眼睛瞪圆了。[npc2.sheHas]有着一套部落风格纹身，上面有着“给我含住，母狗！”的流纹斜体字样。[npc.her]继续自己的动作，把[npc2.race]的丁字裤拉了下来，瞬间解放了[npc2.her][npc2.penisGirth]、[npc2.penisValue]的肉棒，上面还穿着银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，各种揉捏。在你身后的那个则冷笑一声，[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出温顺的声音表示赞同，做好被小恶魔守卫爆操一顿的准备，而他们的老大则准备使用[npc.namePos]的口穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_OFFER_SEX_DOUBLE_IMPS"><![CDATA[
+	<p>
+		看到这群暴怒的[npc2.race]和[npc2.her]的小恶魔卫兵冲向你，你无法承受，你举起[pc.hands]一边用衣服堵住嘴巴，一边喃喃自语：[pc.speech(等等，先别动手！)]
+	</p>
+	<p>
+		你转过头看着你的同伴，命令道：[pc.speech(来吧，[npc.name]。帮我一把。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(当然！[pc.name]！)][npc.name]兴奋地回答。
+		#ELSE
+			[npc.speech(呃……我不敢相信……算了……)][npc.name]叹了口气，明确表示[npc.sheIs]这么做是因为[npc.sheHasFull]被要求了。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.namePos]意识到你不愿意和[npc2.herHim]战斗，[npc2.she]气势汹汹的咆哮迅速转变成了奸诈的笑容。[npc2.she]在你和[npc.name]面前停下，伸手抓住了你的手腕，在你反应过来之前，[npc2.she]将你们两个向前拉，在[npc2.she]的咆哮声中将你们两个紧紧地压在[npc2.herHim]身上，[npc2.speech(你们这些婊子不请自来，要怎么道歉？)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在牛仔裤上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(你们的嘴怎么都被封住了？！)][npc2.Name]厉声道，猛然把你们两人都推得趴倒在[npc2.herHim]面前，[npc2.speech(不，要是我操不到喉咙的话，那我可毫无兴趣。不过，说到我的姑娘们嘛……)]
+	</p>
+	<p>
+		[npc2.she]正说着，三个阿尔法小恶魔迅速上前将你与[npc.Name]团团围住，开始对着你们的身体上下其手，尽情揉捏。[npc2.Name]嘲笑出声，退回到自己的椅子上，只留你和同伴与欲火中烧的小恶魔们相处。你[pc.a_moan]着，那个正在摸索[npc.namePos]腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你们的逼马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	
+	<!-- KEEP_ALPHA_BRAWLER -->
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER"><![CDATA[
+	<p>
+		你对自己的徒手格斗能力很有信心，于是你招了招手，示意[npc2.name]靠近一点。[pc.speech(来啊，有本事来单挑啊！哦，往后站一点，[npc.Name]，在我身后看好了。)]
+	</p>
+	<p>
+		[npc2.namePos]的怒容扭曲成了怪样，[npc2.she]冲上前，右拳朝你挥去。眼见这一招袭来，你后退了一小步，让[npc2.race]打空了，[pc.speech(你这水平，还得再提高啊。)]
+	</p>
+	<p>
+		你的嘲讽让[npc2.name]出离愤怒，[npc2.her]吼叫着又挥了一拳。你再次轻松侧身躲过[npc2.her]的攻击，咧嘴一笑，让[npc2.herHim]的前进势头带着[npc2.herHim]从你身边错过。这时，你转过身，伸手抓住[npc2.her]皮夹克的袖口，用力向下一扯，成功地将它从[npc2.name]身上脱下一半。
+	</p>
+	<p>
+		[npc2.speech(哦？！你想让我动真格是不是？！)][npc2.name]厉声道，[npc2.speech(姑娘们靠边站，我要亲自解决这家伙！)]
+	</p>
+	<p>
+		三只小恶魔似乎被你的举动惊呆了，即使[npc2.name]刚刚没有禁止他们参战，你觉得他们也不敢掺和进来。你把注意力集中在眼前这个已经有了些许变化的[npc2.race]身上，看着[npc2.she]脱下外套，露出了[npc2.her]横跨上背的黑色部落图腾纹身。[npc2.name]把衣服扔到大厅一边，啐了一口，说道：[npc2.speech(我要让你漂亮的小嘴变成我的精厕！)]
+	</p>
+	<p>
+		这一次，[npc2.name]向你扑来的速度比之前慢了一点，但你的嘲讽似乎对[npc2.her]的情绪稳定产生了很大影响，[npc2.she]似乎无法控制自己的怒火。尽管[npc2.race]的指虎有时离击中你只有一英寸的距离，看起来很危险，但你还是能够躲过[npc2.her]的每一次仓促攻击。
+	</p>
+	<p>
+		没过多久，[npc2.name]就气喘吁吁、大汗淋漓，[npc2.her]的每一次攻击愈发容易躲避。你认为是时候结束这一切了，于是迅速向前飞奔，
+		#IF npc2.isVisiblyPregnant()
+		#THEN你意识到[npc2.she]怀孕了，就反拧[npc2.her]的[npc2.arm]，然后小心翼翼但坚定地把[npc2.herHim]按倒在地。
+		#ELSE先是一拳结结实实地打在[npc2.her]的肚子上，接着将[npc2.herHim]绊倒在地。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(停！)][npc2.name]喘息着，[npc2.speech(求求你……别打了……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER_KEY"><![CDATA[
+	<p>
+		看到自己的首领被如此羞辱，三只阿尔法小恶魔悄悄溜到了城堡的出口，当它们目睹了你的碾压式胜利后，它们冲出了大门，消失在了屈城区的黑暗巷道中。而被打败的[npc2.race]被留在了原地，你问[npc2.herHim]，[pc.speech(你为什么要这么做？我的意思是，为什么要放任那些小恶魔袭击屈城区的居民？)]
+	</p>
+	<p>
+		[npc2.speech(她命令我们……)][npc2.name]喘息道，[npc2.speech(我们的首领，暗夜塞壬……她说我们得维护统治地位……你既然在这，那么也许已经看到了……她就在屈城区隧道正中央的城堡里。)]
+	</p>
+	<p>
+		[pc.speech(我懂了。也就是说你也只是按命令行事，是吗？)]你问到，你的语气表明着你并不满意这样的借口。
+	</p>
+	<p>
+		[npc2.speech(好的……请……请让我走……我可以给你一把进入那个地方的钥匙)][npc2.name]说着，把手伸进[npc2.her]牛仔裤的口袋，拿出一把细长的银钥匙，长度不超过三英寸。把它交给你后，[npc2.name]继续说道，仍然气喘吁吁：[npc2.speech(如果你想和她对峙，就需要另外两个帮派头头的钥匙……现在……请放过我吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER_DEFEATED"><![CDATA[
+	<p>
+		看到自己的首领被如此羞辱，三只阿尔法小恶魔悄悄溜到了城堡的出口，当它们目睹了你的碾压式胜利后，它们冲出了大门，消失在了屈城区的黑暗巷道中。而被打败的[npc2.race]被留在了原地，你问[npc2.herHim]，[pc.speech(你怎么回来了？我告诉过你从这里滚出去！)]
+	</p>
+	<p>
+		[npc.speech(暗夜塞壬……)][npc2.name]喘着粗气。[npc.speech(她告诉过我，必须……)]
+	</p>
+	<p>
+		[pc.speech(还在盲目地遵从她的命令是吗？)]你问，语气表明着你并不满意这样的借口。
+	</p>
+	<p>
+		[npc2.speech(好的……那……求你了，放我走吧……)][npc2.name]乞求着，[npc2.speech(我不会再惹麻烦了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER_DEFEATED_DS_DEALT_WITH"><![CDATA[
+	<p>
+		看到自己的首领被如此羞辱，三只阿尔法小恶魔悄悄溜到了城堡的出口，当它们目睹了你的碾压式胜利后，它们冲出了大门，消失在了屈城区的黑暗巷道中。而被打败的[npc2.race]被留在了原地，你问[npc2.herHim]，[pc.speech(你怎么还回来了？我已经解决了你们的老大，而上次我已经告诉过你从这里滚出去！)]
+	</p>
+	<p>
+		[npc2.speech(暗夜塞壬一定会重返此地……)][npc2.name]喘息着，[npc2.speech(所以我会忠诚地执行她最后给我下达的命令……)]
+	</p>
+	<p>
+		[pc.speech(你明知道她已经被关在莉西丝的宫殿里了，对吧？)]你问。
+	</p>
+	<p>
+		[npc2.speech(那不重要……她一定会找到办法逃出来……现在，求你了，让我走吧……)][npc2.name]乞求道，[npc2.speech(我不会再惹是生非了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Please don't do this O_O -->
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER_SEX"><![CDATA[
+	<p>
+		你决定要在[npc2.herHim]离开之前先给[npc.name]一个深刻的教训，你伸手扯下了她胸前的裹胸布，[npc2.she]放声尖叫的同时，[npc2.race]那[npc2.breastShape]的[npc2.cupSize]罩杯胸部暴露在了空气当中。[npc2.speech(呀！你他妈要干什么！？)]
+	</p>
+	<p>
+		就在[npc2.Name]想向前伸手拼命想拿回[npc2.herHim]面前的裹胸布时，你在后面狠狠的推了她一把，随后就在她趴在地上哀嚎的时候，你趴在[npc2.herHim]的背上并用力拽下[npc2.herHim]的牛仔裤，[npc2.name]原本的哀嚎声变成了震惊的尖叫声，伴着[npc2.her]撕心裂肺的叫声，你顺势将[npc2.her]的丁字裤也扯了下来，这让她的阴部彻底暴露在了空气当中。
+	</p>
+	<p>
+		[npc2.speech(不要！停下！)][npc2.name]哭喊着按住自己的裤子，但这样无力的动作在你面前无疑是徒劳的。[npc2.speech(我，我真的没打算对你做任何事！)]
+	</p>
+	<p>
+		[pc.speech(你觉得我在乎吗？)]你边说边上前捏住[npc2.her][npc2.hips+]，在[npc2.her]的[npc2.ass]上磨蹭你的胯部，[pc.speech(我应该给你来点教训，像你这样的败类，只听得进这一种语言！)]
+	</p>
+	<p>
+		你无视[npc2.namePos]的哀求和哭嚎，决定好好和[npc.herHim]玩玩……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER_SEX_WITH_COMPANION"><![CDATA[
+	<p>
+		你决定要在[npc2.herHim]离开之前先给[npc.name]一个深刻的教训，你伸手扯下了她胸前的裹胸布，[npc2.she]放声尖叫的同时，[npc2.race]那[npc2.breastShape]的[npc2.cupSize]罩杯胸部暴露在了空气当中。[npc2.speech(呀！你他妈要干什么！？)]
+	</p>
+	<p>
+		就在[npc2.Name]想向前伸手拼命想拿回[npc2.herHim]面前的裹胸布时，你在后面狠狠的推了她一把，随后就在她趴在地上哀嚎的时候，你趴在[npc2.herHim]的背上并用力拽下[npc2.herHim]的牛仔裤，[npc2.name]原本的哀嚎声变成了震惊的尖叫声，伴着[npc2.her]撕心裂肺的叫声，你顺势将[npc2.her]的丁字裤也扯了下来，这让她的阴部彻底暴露在了空气当中。
+	</p>
+	<p>
+		[npc2.speech(不要！停下！)][npc2.name]哭喊着按住自己的裤子，但这样无力的动作在你面前无疑是徒劳的。[npc2.speech(我，我真的没打算对你做任何事！)]
+	</p>
+	<p>
+		[pc.speech(你觉得我在乎吗？)]说完之后，你转向你的伙伴，[pc.speech(有必要给这个婊子来点教训，到我这边来，[npc.name]。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.Name]无视[npc2.namePos]的哀求和哭嚎，兴高采烈地听命照做。[npc.she]急切地与你交换位置，朝[npc2.namePos][npc2.ass+]猛扇了一巴掌：[npc.speech(接下来会很爽哦！)]
+		#ELSE
+			[npc.Name]无视[npc2.namePos]的哀求和哭嚎，不情愿地地听命照做。[npc.she]与你交换位置，朝[npc2.namePos][npc2.ass+]猛扇了一巴掌：[npc.speech(闭嘴！很快就会结束……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER_SEX_WITH_BOTH"><![CDATA[
+	<p>
+		你决定要在[npc2.herHim]离开之前先给[npc.name]一个深刻的教训，你伸手扯下了她胸前的裹胸布，[npc2.she]放声尖叫的同时，[npc2.race]那[npc2.breastShape]的[npc2.cupSize]罩杯胸部暴露在了空气当中。[npc2.speech(呀！你他妈要干什么！？)]
+	</p>
+	<p>
+		就在[npc2.Name]想向前伸手拼命想拿回[npc2.herHim]面前的裹胸布时，你在后面狠狠的推了她一把，随后就在她趴在地上哀嚎的时候，你趴在[npc2.herHim]的背上并用力拽下[npc2.herHim]的牛仔裤，[npc2.name]原本的哀嚎声变成了震惊的尖叫声，伴着[npc2.her]撕心裂肺的叫声，你顺势将[npc2.her]的丁字裤也扯了下来，这让她的阴部彻底暴露在了空气当中。
+	</p>
+	<p>
+		[npc2.speech(不要！停下！)][npc2.name]哭喊着按住自己的裤子，但这样无力的动作在你面前无疑是徒劳的。[npc2.speech(我，我真的没打算对你做任何事！)]
+	</p>
+	<p>
+		[pc.speech(你觉得我在乎吗？)]说完之后，你转向你的伙伴，[pc.speech(有必要给这个婊子来点教训，抓住[npc2.her]的嘴，[npc.name]。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.Name]无视[npc2.namePos]的哀求和哭嚎，兴高采烈地听命照做。[npc.she]立马在[npc2.name]面前跪下，急切地抓住[npc2.her][npc2.horns+]：[npc.speech(接下来会很爽哦！)]
+		#ELSE
+			[npc.Name]无视[npc2.namePos]的哀求和哭嚎，不情愿地地听命照做。[npc.she]在[npc2.name]面前跪下，抓住[npc2.her][npc2.horns+]：[npc.speech(闭嘴！很快就会结束……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ALPHA_BRAWLER_SCARED_OFF"><![CDATA[
+	<p>
+		你处理完[npc2.name]，不想再继续了。你站在[npc2.herHim]面前呵斥：[pc.speech(快滚，从这里给我滚开！别再回来了！)]
+	</p>
+	<p>
+		[npc2.speech(不——不会的！)][npc2.name]结结巴巴地说，[npc2.she]站了起来，甚至没有再向后看你一眼，就沿着走廊跑开了，[npc2.she]从敞开的大门冲了出去，消失在屈城区。
+	</p>
+	<p>
+		你叹了口气，发现[npc2.name]弃夹克而逃。尽管你下达了了命令，但还是有一股强烈的预感：等你一走，[npc2.she]就会回来取衣服的。但是，只要你想，你可以把它没收，作为额外的惩罚。除了那件衣服，要塞没有任何有价值的东西。你因此无事可做，准备离开这里，继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_SEX_ALPHA_FORCED"><![CDATA[
+	<p>
+		[npc2.Name]精疲力竭地倒在地上，你站在[npc2.herHim]旁边，对着已经充分享用过的[npc2.race]笑了笑，[pc.speech(也许你在命令你的帮派攻击别人之前该三思而后行了！)]
+	</p>
+	<p>
+		伴随着楚楚可怜的呻吟，[npc2.name]跪坐起来。当你整理好自己的衣物后，[npc2.she]喘了口气，然后站起身来，跌跌撞撞地朝门走去。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_SEX_ALPHA_FORCED_SCARED_OFF"><![CDATA[
+	<p>
+		在解决了[npc2.name]之后，你在[npc2.herHim]身后喊道，[pc.speech(滚，滚出这里！别再回来！)]
+	</p>
+	<p>
+		[npc2.she]甚至没有向后看你一眼，就溜出敞开的大门，消失在屈城区中。
+	</p>
+	<p>
+		你叹了口气，发现[npc2.name]弃夹克而逃。尽管你下达了了命令，但还是有一股强烈的预感：等你一走，[npc2.she]就会回来取衣服的。但是，只要你想，你可以把它没收，作为额外的惩罚。除了那件衣服，要塞没有任何有价值的东西。你因此无事可做，准备离开这里，继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- KEEP_AUDIENCE -->
+	
+	<htmlContent tag="KEEP_AUDIENCE"><![CDATA[
+	<p>
+		[pc.speech(等等，先别动手，)]你举起手说，[pc.speech(我只是想问些问题，关于那个自称「暗夜塞壬」的恶魔。)]
+	</p>
+	<p>
+		这个名字让[npc2.name]停下了脚步，[npc2.her]眯起了[npc2.she]的[npc2.eyes]，问道：[npc2.speech(哦，好，你想知道关于我们头儿的什么？)]
+	</p>
+	<p>
+		[pc.speech(我正希望能有个机会见见她呢，)]你解释道，[pc.speech(不知道你能不能帮帮我。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_DOUBLE_ORAL"><![CDATA[
+	<p>
+		当[npc2.namePos]听到你的要求时，[npc2.she]脸上露出了邪恶的笑容，带着俏皮的语气提出了条件：[npc2.speech(但是，我的鸡巴已经很久没有被嗦过了，所以如果你们两个能蹲下屈服，我就会帮你们去见我们的老大。)]
+	</p>
+	<p>
+		揉了揉牛仔裤的鼓包，[npc2.she]继续说道，[npc2.speech(当然，你也可以说不，不过那样的话，我们就只能因为你不请自来而揍你一顿了。所以，不管怎么说，我很快就会操你们的嘴，所以你们也不妨从中得到点什么，对吧？)]
+	</p>
+	<p>
+		当他们的首领说出这句话时，三个阿尔法小恶魔对你又笑又讥讽，你又该如何抉择……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_ORAL_COMPANION_IMPS"><![CDATA[
+	<p>
+		[npc2.namePos]听到你的要求，脸上露出了邪恶的笑容，以俏皮的语气提出了条件：[npc2.speech(但是，我的鸡巴已经很久没有被嗦过了，所以如果你的朋友能蹲下屈服，我就会帮你们去见我们的老大。哦，既然你小伙伴的嘴被堵住了，[npc.she]可以给我的姑娘们当精厕。)]
+	</p>
+	<p>
+		揉了揉牛仔裤的鼓包，[npc2.she]继续说道，[npc2.speech(当然，你也可以说不，不过那样的话，我们就只能因为你不请自来而揍你一顿了。所以，不管怎么说，我很快就会操你的嘴，而你的[npc.race]同伴会被我的姑娘们射满身，所以你们不妨从中得到点什么好处，对吧？)]
+	</p>
+	<p>
+		当他们的首领说出这句话时，三个阿尔法小恶魔对你又笑又讥讽，你又该如何抉择……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		当[npc2.namePos]听到你的要求时，[npc2.she]脸上露出了邪恶的笑容，带着俏皮的语气提出了条件：[npc2.speech(但是，我的鸡巴已经很久没有被嗦过了，所以如果你的朋友能蹲下屈服，我就会帮你们去见我们的老大。哦，既然你的嘴被堵住了，你可以给我的姑娘们当精厕。)]
+	</p>
+	<p>
+		揉了揉牛仔裤的鼓包，[npc2.she]继续说道，[npc2.speech(当然，你也可以说不，不过那样的话，我们就只能因为你不请自来而揍你一顿了。所以，不管怎么说，我很快就会操你[npc.race]同伴的嘴，而你会被我的姑娘们射满身，所以你们不妨从中得到点什么好处，对吧？)]
+	</p>
+	<p>
+		当他们的首领说出这句话时，三个阿尔法小恶魔对你又笑又讥讽，你又该如何抉择……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_DOUBLE_IMPS"><![CDATA[
+	<p>
+		当[npc2.name]听到你的要求时，[npc2.she]的脸上露出坏笑，玩味地提出了条件：[npc2.speech(好吧，我很想让你们俩都给我口交，但看来这是不可能的了。不如这样，你们两个趴下，乖乖让我的姑娘们操，我就会帮你们去见我们的老大。)]
+	</p>
+	<p>
+		握紧着拳头，[npc2.her]继续说道，[npc2.speech(当然，你也可以说不，不过那样的话，我们就只能以你不请自来为由把你揍一顿了。所以，不管怎么说，你们俩很快就会被操了，所以还不如从中捞点好处，对吧？)]
+	</p>
+	<p>
+		当他们的首领说出这句话时，三个阿尔法小恶魔对你又笑又讥讽，你又该如何抉择……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_SEX"><![CDATA[
+	<p>
+		你叹了口气，决定顺从[npc2.name]的要求，[pc.speech(好吧，我照做。)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]笑着走上前来，猛然把你推倒在[npc2.herHim]面前。[npc2.she]不愿浪费时间， 也低下身来，把自己的腹股沟挺向你的脸，冷笑道：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]把肉棒顶向你的唇，准备被你口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_SEX_IMPS"><![CDATA[
+	<p>
+		你叹了口气，决定顺从[npc2.name]的要求，[pc.speech(好吧，我照做。)]
+	</p>
+	<p>
+		不等你说一个字，三个阿尔法小恶魔就迅速冲上前。两个阿尔法小恶魔飞起来抓着你的[pc.arms]，接着利用身体重量将你摁倒在地。小恶魔将你团团围住，开始对着你的身体上下其手，调整姿势。[npc2.Name]响亮地笑出声，退回椅子上，只留你与欲火中烧的小恶魔们相处。你发出[pc.a_moan]，那个正在摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音，做好了被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_SEX_DOUBLE_ORAL"><![CDATA[
+	<p>
+		你叹了口气，决定按照[npc2.name]的要求做，[pc.speech(好吧，那就做。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(哦，是啊，看起来会很有趣！)][npc.name]插话道。
+		#ELSE
+			[npc.speech(呃……真的要这样吗……)][npc.name]叹了口气，明显[npc.sheIs]是因为别无选择才这么做。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]笑着走上前来，猛然把你们推到在[npc2.herHim]面前。[npc2.she]不愿浪费时间， 也低下身来，把自己的腹股沟挺向你的脸，冷笑道：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。[npc.Name]帮你拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]先是把肉棒顶向[npc.namePos]的[npc.lips]，接着是你的唇，准备被你们两个一起口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_SEX_ORAL_COMPANION_IMPS"><![CDATA[
+	<p>
+		你叹了口气，决定按照[npc2.name]的要求做，[pc.speech(好吧，那就做。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(哦，是啊，看起来会很有趣！)][npc.name]插话道。
+		#ELSE
+			[npc.speech(呃……真的要这样吗……)][npc.name]叹了口气，明显[npc.sheIs]是因为别无选择才这么做。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]笑着走上前来，猛然把你们两人都推到在[npc2.herHim]面前。[npc2.she]不愿浪费时间， 也低下身来，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			与此同时，三个阿尔法小恶魔已经将[npc.Name]团团围住，带着调皮的窃笑和粗俗的评论，对着[npc.her]的身体上下其手，尽情揉捏。你的同伴发出[npc.a_moan]，而在摸索着[npc.her]腹股沟的那个小恶魔则咯咯笑道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+		#ELSE
+			与此同时，三个阿尔法小恶魔已经将[npc.Name]团团围住，带着调皮的窃笑和粗俗的评论，对着[npc.her]的身体上下其手，尽情揉捏。你的同伴反抗着又推又踢，而在摸索着[npc.her]腹股沟的那个小恶魔则咯咯笑道：[npc3.speech(别反抗了，尼谁都骗不了！我们都知道尼会爱上我的肉棒！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_SEX_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		你叹了口气，决定按照[npc2.name]的要求做，[pc.speech(好吧，那就做。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(哦，是啊，看起来会很有趣！)][npc.name]插话道。
+		#ELSE
+			[npc.speech(呃……真的要这样吗……)][npc.name]叹了口气，明显[npc.sheIs]是因为别无选择才这么做。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]笑着走上前来，猛然把你们两人都推到在[npc2.herHim]面前。[npc2.she]不愿浪费时间， 也低下身来，把自己的腹股沟挺向[npc.namePos]的脸，冷笑道：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你的同伴遵从指示，把[npc2.her]的牛仔裤解开，还没等牛仔裤脱下，[npc.NamePos]被丁字裤勉强包裹的下体的凸起就显露了出来。[npc.she]看见[npc2.namePos]下体的样子，眼睛瞪圆了。[npc2.sheHas]有着一套部落风格纹身，上面有着“给我含住，母狗！”的流纹斜体字样。[npc.her]继续自己的动作，把[npc2.race]的丁字裤拉了下来，瞬间解放了[npc2.her][npc2.penisGirth]、[npc2.penisValue]的肉棒，上面还穿着银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		与此同时，三个阿尔法小恶魔已经将你团团围住，带着调皮的窃笑和粗俗的评论，对着你的身体上下其手，尽情揉捏。你发出[pc.a_moan+]，而在[npc.name]身后的那个小恶魔则咯咯笑道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AUDIENCE_SEX_DOUBLE_IMPS"><![CDATA[
+	<p>
+		你叹了口气，决定按照[npc2.name]的要求做，[pc.speech(好吧，那就做。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(哦，是啊，看起来会很有趣！)][npc.name]插话道。
+		#ELSE
+			[npc.speech(呃……真的要这样吗……)][npc.name]叹了口气，明显[npc.sheIs]是因为别无选择才这么做。
+		#ENDIF
+	</p>
+	<p>
+		不等你说一个字，三个阿尔法小恶魔就迅速冲上前。两个阿尔法小恶魔飞起来抓着你和[npc.Name]的[pc.arms]，接着利用身体重量将你们摁倒在地。小恶魔将你们团团围住，开始对着你的身体上下其手，调整姿势。[npc2.Name]响亮地笑出声，退回椅子上，只留你们与欲火中烧的小恶魔们相处。你发出[pc.a_moan]，那个正在摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音表示赞同，做好了同[npc.Name]一起被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	
+	
+	<!-- KEEP_AFTER_SEX_AUDIENCE -->
+	
+	<htmlContent tag="KEEP_AFTER_SEX_AUDIENCE"><![CDATA[
+	<p>
+		[npc2.speech(我想，这足够了。)][npc2.name]看向倒在地上的你，坏笑道，[npc2.speech(一言既出，驷马难追，我相信我们的老大不会介意见见像你这样温顺的人。)]
+	</p>
+	<p>
+		你站起来整理好自己的衣物，[npc2.name]继续说，[npc2.speech(打开屈城区中央石制城堡的大门需要三把钥匙，这就是其中一把。那里是‘暗夜塞壬’的领地。如果你没有集齐剩下的两把钥匙的话，你得去其他要塞找。噢，对了，记得要对暗夜塞壬大人尊重些，她是被莉西丝本人承认的女儿。你要是惹恼了她，她会立刻把你锁起来，放任她手下的小恶魔操你。)]
+	</p>
+	<p>
+		你终于整理好自己的东西，随后，你抬头看到[npc2.name]拿着一把长度不超过两英寸的短粗银色钥匙。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_SEX_AUDIENCE_WITH_COMPANION"><![CDATA[
+	<p>
+		[npc2.speech(我想，这足够了。)][npc2.name]低头看向倒在地上的你和[npc.Name]，坏笑道，[npc2.speech(一言既出，驷马难追，我相信我们的老大不会介意见见像你们两个这样温顺的婊子。)]
+	</p>
+	<p>
+		你站起来整理好自己的衣物，[npc2.name]继续说，[npc2.speech(打开屈城区中央石制城堡的大门需要三把钥匙，这就是其中一把。那里是‘暗夜塞壬’的领地。如果你没有集齐剩下的两把钥匙的话，你得去其他要塞找。噢，对了，记得要对暗夜塞壬大人尊重些，她是被莉西丝本人承认的女儿。你要是惹恼了她，她会立刻把你锁起来，放任她手下的小恶魔操你。)]
+	</p>
+	<p>
+		你终于整理好自己的东西，随后，你抬头看到[npc2.name]拿着一把长度不超过两英寸的短粗银色钥匙。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	<!-- KEEP_AFTER_JOINING_GAIN_KEY -->
+	
+	<htmlContent tag="KEEP_AFTER_SEX_AUDIENCE_KEY"><![CDATA[
+	<p>
+		你接下钥匙，向[npc2.name]表示感谢并转身离开。你走到门口，[npc2.race]在你身后喊道，[npc2.speech(随时再来！我和我的女孩们随时可以跟你玩玩！)]
+	</p>
+	<p>
+		在小恶魔的嘲笑和奚落声中，你们俩走出了主楼，来到庭院里，你攥紧了手中的小钥匙，思考着接下来该去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	
+	
+	<!-- KEEP_AFTER_COMBAT_VICTORY -->
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_VICTORY_KEY"><![CDATA[
+	<p>
+		当[npc2.name]和[npc2.her]的卫兵被打倒在地，你长舒了一口气。你走向前，低头质问[npc.race]：[pc.speech(你为什么要这样做？我是说让这些小恶魔攻击屈城区中的人。)]
+	</p>
+	<p>
+		[npc2.speech(她命令我们……)][npc2.name]喘息道，[npc2.speech(我们的首领，暗夜塞壬……她说我们得维护统治地位……你既然在这，那么也许已经看到了……她就在屈城区隧道正中央的城堡里。)]
+	</p>
+	<p>
+		[pc.speech(我懂了。也就是说你也只是按命令行事，是吗？)]你问到，你的语气表明着你并不满意这样的借口。
+	</p>
+	<p>
+		[npc2.speech(好的……请……请让我走……我可以给你一把进入那个地方的钥匙)][npc2.name]说着，把手伸进[npc2.her]牛仔裤的口袋，拿出一把细长的银钥匙，长度不超过三英寸。把它交给你后，[npc2.name]继续说道，仍然气喘吁吁：[npc2.speech(如果你想和她对峙，就需要另外两个帮派头头的钥匙……现在……请放过我吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_VICTORY"><![CDATA[
+	<p>
+		当[npc2.name]和[npc2.her]的卫兵在你面前颓然倒地，败下阵来，你松了一口气，走上前，低头看着[npc2.race]问，[pc.speech(你为什么回来？我告诉过你离这里远点！)]
+	</p>
+	<p>
+		[npc.speech(暗夜塞壬……)][npc2.name]喘着粗气。[npc.speech(她告诉过我，必须……)]
+	</p>
+	<p>
+		[pc.speech(还在盲目地遵从她的命令是吗？)]你问，语气表明着你并不满意这样的借口。
+	</p>
+	<p>
+		[npc2.speech(好的……那……求你了，放我走吧……)][npc2.name]乞求着，[npc2.speech(我不会再惹麻烦了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_VICTORY_DS_DEFEATED"><![CDATA[
+	<p>
+		当[npc2.name]和[npc2.her]的卫兵在你面前颓然倒地，败下阵来，你松了一口气，走上前，低头看着[npc2.race]问，[pc.speech(你为什么回来？我告诉过你离这里远点！)]
+	</p>
+	<p>
+		[npc2.speech(暗夜塞壬一定会重返此地……)][npc2.name]喘息着，[npc2.speech(所以我会忠诚地执行她最后给我下达的命令……)]
+	</p>
+	<p>
+		[pc.speech(你明确知道她被关在莉西丝的宫殿里了，对吧？)]你问。
+	</p>
+	<p>
+		[npc2.speech(那不重要……她一定会找到办法逃出来……现在，求你了，让我走吧……)][npc2.name]乞求道，[npc2.speech(我不会再惹是生非了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_VICTORY_SCARE_OFF"><![CDATA[
+	<p>
+		你处理完[npc2.name]，不想再继续了。你站在[npc2.herHim]和[npc2.her]的小恶魔面前呵斥：[pc.speech(快滚，滚开这，你们所有人！别再回来了！)]
+	</p>
+	<p>
+		[npc2.speech(不、不会的！)][npc2.name]结结巴巴地说，[npc2.she]站了起来，甚至没有再向后看你一眼，就沿着走廊跑开了。小恶魔卫兵们紧随其后，从敞开的大门冲出去，这帮人就这样消失在屈城区，只留下你一个人在已经空无一人的城堡里。
+	</p>
+	<p>
+		环顾四周，你发现这个要塞完全没有任何有价值的东西，因为无事可做，你准备离开这里，继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_SEX"><![CDATA[
+	<p>
+		在放走小恶魔之前，你还想再和[npc2.name]与[npc2.her]的小恶魔们找点乐子，于是你吩咐[npc.Name]在一旁观看，自己则把她们摆好位置。你一这么做，[npc2.race]就意外地发出淫荡的呻吟，将[npc2.her]的[npc2.hips]推向你：[npc2.speech(哦！来啊！含住我的鸡巴！)]
+	</p>
+	<p>
+		[pc.speech(我想怎么做就怎么做。)]你回答，并在[npc2.her][npc.ass]上快速地扇了一巴掌，提醒[npc2.herHim]现在是谁说了算。
+	</p>
+	<p>
+		你的惩罚让[npc2.name]又发出一阵快乐的呻吟，意识到她被如此对待反而会变得更兴奋时，你笑了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_SEX_GENTLE"><![CDATA[
+	<p>
+		在放走小恶魔之前，你还想再和[npc2.name]与[npc2.her]的小恶魔们找点乐子，于是你吩咐[npc.Name]在一旁观看，自己则温柔地把她们摆好位置。你一这么做，[npc2.race]就意外地发出淫荡的呻吟，将[npc2.her]的[npc2.hips]推向你：[npc2.speech(哦！来啊！含住我的鸡巴！)]
+	</p>
+	<p>
+		[pc.speech(我想怎么做就怎么做。)]你回答，并在[npc2.her][npc2.ass]上轻轻地地打一巴掌，提醒[npc2.herHim]谁说了算。
+	</p>
+	<p>
+		你的惩罚让[npc2.name]又发出一阵快乐的呻吟，意识到她被如此对待会变得更兴奋时，你笑了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_SEX_ROUGH"><![CDATA[
+	<p>
+		在放走小恶魔之前，你还想再和[npc2.name]与[npc2.her]的小恶魔们找点乐子，于是你吩咐[npc.Name]在一旁观看，自己则粗暴地把她们摆好位置。你一这么做，[npc2.race]就意外地发出淫荡的呻吟，将[npc2.her]的[npc2.hips]推向你：[npc2.speech(哦！来啊！含住我的鸡巴！)]
+	</p>
+	<p>
+		[pc.speech(<i>用不着</i>你告诉我怎么做！)]你愤怒地回答，并在[npc2.her][npc2.ass]上狠狠地打一巴掌，提醒[npc2.herHim]现在谁说了算。
+	</p>
+	<p>
+		你的惩罚让[npc2.name]又发出一阵快乐的呻吟，意识到她被如此对待会变得更兴奋时，你笑了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_GROUP_SEX"><![CDATA[
+	<p>
+		在放走小恶魔之前，你还想再和[npc2.name]与[npc2.her]的小恶魔们找点乐子，于是你吩咐[npc.Name]加入进来，自己则温柔地把她们摆好位置。你一这么做，[npc2.race]就意外地发出淫荡的呻吟，将[npc2.her]的[npc2.hips]推向你：[npc2.speech(哦！来啊！含住我的鸡巴！)]
+	</p>
+	<p>
+		[pc.speech(我想怎么做就怎么做。)]你回答，并在[npc2.her][npc.ass]上快速地打一巴掌，提醒[npc2.herHim]谁说了算。
+	</p>
+	<p>
+		你的惩罚让[npc2.name]又发出一阵快乐的呻吟，意识到她被如此对待反而会变得更兴奋时，你笑了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_SEX_SUBMIT"><![CDATA[
+	<p>
+		你对[npc2.name]和[npc2.her]的小恶魔感到抱歉，在[npc2.herHim]身边弯下腰问：[pc.speech(你还好吗？抱歉，我好像做得太过分了……)]
+	</p>
+	<p>
+		[npc2.name]意识到你很容易被占便宜，于是，[npc2.she]烦躁的表情很快变成了淫荡的笑容。[npc2.she]抓住你的手腕，厉声说：[npc2.speech(不！我一点不好！扶我起来！就现在！)]
+	</p>
+	<p>
+		你顺从地按照指示去做，帮助[npc2.name]站起来。[npc2.she]没有松开你的手腕，反而突然把你拉过去，将你紧紧地压在[npc2.herHim]身上，[npc2.she]低吼道：[npc2.speech(那么，你打算如何为你的所作所为道歉，你这臭婊子？！)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc2.her]的粗大鸡巴在袴上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推到在[npc2.herHim]面前，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]把肉棒顶向你的唇，准备被你口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_SEX_SUBMIT_IMPS"><![CDATA[
+	<p>
+		你对[npc2.name]和[npc2.her]的小恶魔感到抱歉，在[npc2.herHim]身边弯下腰问：[pc.speech(你还好吗？抱歉，我好像做得太过分了……)]
+	</p>
+	<p>
+		[npc2.name]意识到你很容易被占便宜，于是，[npc2.she]烦躁的表情很快变成了淫荡的笑容。[npc2.she]抓住你的手腕，厉声说：[npc2.speech(不！我一点不好！扶我起来！就现在！)]
+	</p>
+	<p>
+		你顺从地按照指示去做，帮助[npc2.name]站起来。[npc2.she]没有松开你的手腕，反而突然把你拉过去，将你紧紧地压在[npc2.herHim]身上，[npc2.she]低吼道：[npc2.speech(那么，你打算如何为你的所作所为道歉，你这臭婊子？！)]
+	</p>
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc2.her]的粗大鸡巴在牛仔裤上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(你嘴怎么被封得这么严实？！)][npc2.Name]厉声道，猛然把你推得趴倒在[npc2.herHim]面前，[npc2.speech(不，要是我操不到喉咙的话，那我可毫无兴趣。不过，说到我的姑娘们嘛……)]
+	</p>
+	<p>
+		[npc2.she]正说着，三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，尽情揉捏。[npc2.Name]嘲笑出声，退回到自己的椅子上，只留你与欲火中烧的小恶魔们相处。你[pc.a_moan]着，那个正在摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音，做好了被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_GROUP_SEX_SUBMISSION_APOLOGY"><![CDATA[
+	<p>
+		你对朝着[npc2.name]和[npc2.her]的小恶魔们做出这种举动感到很抱歉，于是弯下腰凑到[npc2.herHim]旁边，问道，[pc.speech(你还好吗？对不起，我想我的朋友和我做的有点过火了，是吧，[npc.Name]？)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(是啊，[pc.namePos]说得对，我很抱歉。)][npc.name]与你一同向[npc2.name]道歉。
+		#ELSE
+			[npc.speech(呃……不敢相信……当然，我很抱歉。)][npc.name]叹了口气，明白马上要发生什么事，但[npc.her]也认命了。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.name]意识到你很容易被占便宜，于是，[npc2.she]烦躁的表情很快变成了淫荡的笑容。[npc2.she]抓住你的手腕，厉声说：[npc2.speech(不！我一点不好！扶我起来！就现在！)]
+	</p>
+	<p>
+		你顺从地按照指示去做，帮助[npc2.name]站起来。[npc2.she]没有松开你的手腕，反而突然把你与同伴一起拉过去，都紧紧地贴在[npc2.herHim]身上，[npc2.she]低吼道：[npc2.speech(那么，你们打算如何为自己的所作所为道歉，两个臭婊子？！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_GROUP_SEX_SUBMISSION_DOUBLE_ORAL"><![CDATA[
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在袴上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推到在[npc2.herHim]面前，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。[npc.Name]帮你拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]先是把肉棒顶向[npc.namePos]的[npc.lips]，接着是你的唇，准备被你们两个一起口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_GROUP_SEX_SUBMISSION_ORAL_COMPANION_IMPS"><![CDATA[
+	
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在袴上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推到在[npc2.herHim]面前，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[npc.race]，既然你的嘴巴被封住了，那你就给我的姑娘们当精厕吧！)]
+	</p>
+	<p>
+		你听命行事，伸手解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将[npc.Name]团团围住，开始对着[npc.her]的身体上下其手，尽情揉捏。在[npc.her]身后的那个小恶魔则冷笑一声道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_GROUP_SEX_SUBMISSION_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在袴上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把你们两人都推到在[npc2.herHim]面前，把自己的腹股沟挺向[npc.namePos]的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[pc.race]，既然你的嘴巴被封住了，那你就给我的姑娘们当精厕吧！)]
+	</p>
+	<p>
+		你的同伴遵从指示，把[npc2.her]的牛仔裤解开，还没等牛仔裤脱下，[npc.NamePos]被丁字裤勉强包裹的下体的凸起就显露了出来。[npc.she]看见[npc2.namePos]下体的样子，眼睛瞪圆了。[npc2.sheHas]有着一套部落风格纹身，上面有着“给我含住，母狗！”的流纹斜体字样。[npc.her]继续自己的动作，把[npc2.race]的丁字裤拉了下来，瞬间解放了[npc2.her][npc2.penisGirth]、[npc2.penisValue]的肉棒，上面还穿着银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，各种揉捏。在你身后的那个则冷笑一声，[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出温顺的声音表示赞同，做好被小恶魔守卫爆操一顿的准备，而他们的老大则准备使用[npc.namePos]的口穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_GROUP_SEX_SUBMISSION_DOUBLE_IMPS"><![CDATA[
+	<p>
+		被拉过去的时候，你感觉有什么硬硬的东西顶着你的[pc.leg]。你低头一看，[npc.her]的粗大鸡巴在袴上撑起了帐篷。你咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[pc.speech(我……我们能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(你们的嘴怎么都被封住了？！)][npc2.Name]厉声道，猛然把你们两人都推得趴倒在[npc2.herHim]面前，[npc2.speech(不，要是我操不到喉咙的话，那我可毫无兴趣。不过，说到我的姑娘们嘛……)]
+	</p>
+	<p>
+		[npc2.she]正说着，三个阿尔法小恶魔迅速上前将你与[npc.Name]团团围住，开始对着你们的身体上下其手，尽情揉捏。[npc2.Name]嘲笑出声，退回到自己的椅子上，只留你和同伴与欲火中烧的小恶魔们相处。你[pc.a_moan]着，那个正在摸索[npc.namePos]腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你们的逼马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_GIVE_TO_COMPANION"><![CDATA[
+	<p>
+		你想让[npc2.Name]和[npc2.name]的小恶魔爽爽，再让他们走，便招呼[npc.herHim]在你面前做爱。[npc2.name]听后发出了色情的呻吟，把[npc2.her]的[npc2.hips]挺向你的同伴：[npc2.speech(好啊！来吧宝贝，含住我的鸡巴！)]
+	</p>
+	<p>
+		[npc.speech(我想怎么做就怎么做。)][npc.Name]回答，往[npc2.her]的[npc.ass]上快速地打一巴掌，提醒[npc2.herHim]谁说了算。
+	</p>
+	<p>
+		[npc.her]的惩罚让[npc2.name]又发出一阵快乐的呻吟，意识到她被如此对待反而会变得更兴奋时，你笑了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_OFFER_COMPANION"><![CDATA[
+	<p>
+		你想看[npc2.name]对你的同伴为所欲为，便转向[npc.name]说道：[pc.speech(你应该给[npc2.name]一个特别的道歉，因为你太过分了。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(好耶！)][npc.name]兴致勃勃地走向前，[npc.speech(你就站旁边看着吧，[pc.name]！)]
+		#ELSE
+			[npc.speech(我——我不是很想。)][npc.name]咕哝着，不情不愿地照做，走向前去。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.name]搞清了状况，担忧的表情很快变成了淫荡的坏笑。[npc2.she]抓住[npc.namePos]的手腕，厉声道：[npc2.speech(快扶我起来！)]
+	</p>
+	<p>
+		[npc.Name]顺从地按照指示去做，帮助[npc2.name]站起来。这个[npc2.race]没有松手，反而突然把你的同伴拉过去，紧紧地压在[npc.she]身上，[npc2.she]低吼着，[npc2.speech(那么，你打算如何为你的所作所为道歉，你这蠢货婊子？)]
+	</p>
+	<p>
+		被拉过去的时候，[npc.NameIs]感觉有什么硬硬的东西顶着[npc.her]的[npc.leg]。[npc.her]低头一看，[npc2.namePos]的粗大鸡巴在牛仔裤上撑起了帐篷。[npc.NameIs]咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[npc.speech(我……我能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(正合我意！)][npc2.Name]厉声道，猛然把[npc.Name]推到在[npc2.herHim]面前，把自己的腹股沟挺向[npc.her]的脸：[npc2.speech(来吧，掏出来吧，荡妇！)]
+	</p>
+	<p>
+		你的同伴遵从指示，把[npc2.her]的牛仔裤解开，还没等牛仔裤脱下，[npc.NamePos]被丁字裤勉强包裹的下体的凸起就显露了出来。[npc.she]看见[npc2.namePos]下体的样子，眼睛瞪圆了。[npc2.sheHas]有着一套部落风格纹身，上面有着“给我含住，母狗！”的流纹斜体字样。[npc.her]继续自己的动作，把[npc2.race]的丁字裤拉了下来，瞬间解放了[npc2.her][npc2.penisGirth]、[npc2.penisValue]的肉棒，上面还穿着银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc2) || !game.isNonConEnabled()
+		#THEN
+			[npc2.name]把肉棒顶向[npc.namePos]的唇，看着你的同伴立马急切地舔起来，发出冷笑……
+		#ELSE
+			[npc2.name]把肉棒顶向[npc.namePos]的唇，看到你的同伴扭头嘟囔，发出冷笑……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COMBAT_VICTORY_OFFER_COMPANION_IMPS"><![CDATA[
+	<p>
+		你想看[npc2.name]对你的同伴为所欲为，便转向[npc.name]说道：[pc.speech(你应该给[npc2.name]一个特别的道歉，因为你太过分了。)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.speech(好耶！)][npc.name]兴致勃勃地走向前，[npc.speech(你就站旁边看着吧，[pc.name]！)]
+		#ELSE
+			[npc.speech(我——我不是很想。)][npc.name]咕哝着，不情不愿地照做，走向前去。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.name]搞清了状况，担忧的表情很快变成了淫荡的坏笑。[npc2.she]抓住[npc.namePos]的手腕，厉声道：[npc2.speech(快扶我起来！)]
+	</p>
+	<p>
+		[npc.Name]顺从地按照指示去做，帮助[npc2.name]站起来。这个[npc2.race]没有松手，反而突然把你的同伴拉过去，紧紧地压在[npc.she]身上，[npc2.she]低吼着，[npc2.speech(那么，你打算如何为你的所作所为道歉，你这蠢货婊子？)]
+	</p>
+	<p>
+		被拉过去的时候，[npc.NameIs]感觉有什么硬硬的东西顶着[npc.her]的[npc.leg]。[npc.her]低头一看，[npc2.namePos]的粗大鸡巴在牛仔裤上撑起了帐篷。[npc.NameIs]咽了咽口水，看着[npc2.race]的[npc2.eyeColour]眼睛，提议道：[npc.speech(我……我能帮你处理一下……)]
+	</p>
+	<p>
+		[npc2.speech(你嘴怎么被封得这么严实？！)][npc2.Name]厉声道，猛然把[npc.Name]推得趴倒在[npc2.herHim]面前，[npc2.speech(不，要是我操不到喉咙的话，那我可毫无兴趣。不过，说到我的姑娘们嘛……)]
+	</p>
+	<p>
+		[npc2.she]正说着，三个阿尔法小恶魔迅速上前将你的同伴团团围住，开始对着[npc.her]的身体上下其手，尽情揉捏。[npc2.Name]嘲笑出声，退回到自己的椅子上，只留[npc.Name]与欲火中烧的小恶魔们相处。[npc.she][npc.a_moan]着，那个正在摸索[npc.namePos]腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			你的同伴发出一声顺从的咕哝表示同意，做好了被小恶魔守卫们操的准备…… 
+		#ELSE
+			你的同伴发出一声沮丧的哀嚎，做好了被小恶魔守卫们操的准备…… 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	
+	<!-- KEEP_AFTER_COMBAT_DEFEAT -->
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_DOUBLE_ORAL"><![CDATA[
+	<p>
+		[npc2.name]看着你和[npc.Name]败倒在地，脸上掠过一丝邪恶的笑容。[npc2.she]低吼着走向前，语气中满是恶意，[npc2.speech(上次吸恶魔屌是什么时候了，你们这两个婊子？)]
+	</p>
+	<p>
+		你抬头看见[npc2.race]正隔着牛仔裤摩擦着那块明显的凸起，发出一声含糊的呻吟。[npc2.she]看你瞪大了眼睛，朝你打了个响指，指了指[npc2.her]的下体，[npc2.speech(过来给我拿出来，你这个笨蛋荡妇。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_ORAL_COMPANION_IMPS"><![CDATA[
+	<p>
+		[npc2.name]看着你和[npc.Name]败倒在地，脸上掠过一丝邪恶的笑容。[npc2.she]低吼着走向前，语气中满是恶意，[npc2.speech(上次吸恶魔屌是什么时候了，婊子？)]
+	</p>
+	<p>
+		你抬头看见[npc2.race]正隔着牛仔裤摩擦着那块明显的凸起，发出一声含糊的呻吟。[npc2.she]看你瞪大了眼睛，朝你打了个响指，指了指[npc2.her]的下体，说道：[npc2.speech(过来给我拿出来，你这个笨蛋荡妇。还有你，[npc.race]，你就给我的姑娘们当精厕吧。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		[npc2.name]看着你和[npc.Name]败倒在地，脸上掠过一丝邪恶的笑容。[npc2.she]低吼着走向你的同伴，语气中满是恶意，[npc2.speech(上次吸恶魔屌是什么时候了，婊子？)]
+	</p>
+	<p>
+		[npc.Name]抬头看见[npc2.race]正隔着牛仔裤摩擦着那块明显的凸起，发出一声含糊的呻吟。[npc2.she]看你的同伴瞪大了眼睛，朝其打了个响指，指了指[npc2.her]的下体，说道：[npc2.speech(过来给我拿出来，你这个蠢荡妇。还有你，[pc.race]，你就给我的姑娘们当精厕吧。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_DOUBLE_IMPS"><![CDATA[
+	<p>
+		[npc2.she]看着你战败倒地，[npc2.namePos]的脸上浮出邪恶的笑容。[npc2.she]向前走去，语气邪恶地低吼[npc.2speech(你的嘴巴被这么封住可真丢脸，我看来要把你送给我的女孩们了。)]
+	</p>
+	<p>
+		你抬起头闷哼一声，只见三只小恶魔正冲上前来，想占你和你同伴的便宜……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX"><![CDATA[
+	<p>
+		你听命行事，匍匐前进，迅速解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]把肉棒顶向你的唇，准备被你口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_EAGER"><![CDATA[
+	<p>
+		你欣然听命，匍匐前进，迅速解开[npc2.namePos]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你急切地继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		你发出[pc.a_moan+]，向前倾身，在[npc2.her]阴茎顶端饥渴地舔了一下，迫切地想要开始给[npc.herHim]口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_RESIST"><![CDATA[
+	<p>
+		你拒绝照做，转而试图爬向出口，但你甚至没能爬出一步，[npc2.name]就绕到你前方，无情地把你踢倒在地：[npc2.speech(蠢婊子，敢违抗我！你会付出代价的！)]
+	</p>
+	<p>
+		你看着[npc2.name]很快解开牛仔裤，将其往下一拉，就露出了[npc2.her]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续手中的工作，拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(你要被捅到<i>犯恶心</i>了！)]
+	</p>
+	<p>
+		你发出疯狂的哀号，再一次试图爬离[npc2.name]，但你的努力是徒劳的，只因[npc2.she]抓住了
+		#IF pc.hasHorns()
+		#THEN你的[pc.horns]
+		#ELSE
+			#IF pc.hasHair()
+			#THEN你的[pc.hair(true)]
+			#ELSE你的头
+			#ENDIF
+		#ENDIF
+		，迫使你的脸贴向[npc2.her]的腹股沟。你挣扎着捶打[npc2.race]的[npc2.legs]，但你除了尖叫外什么都做不到，[npc2.she]用自己[npc2.cock+]抽打你的[pc.face]，说道：[npc2.speech(省省力气吧，婊子。你会需要它的！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_IMPS"><![CDATA[
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，尽情揉捏。[npc2.Name]响亮地笑出声，退回椅子上，只留你与欲火中烧的小恶魔们相处。你发出[pc.a_moan]，那个正在摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音，做好了被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_IMPS_EAGER"><![CDATA[
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，尽情揉捏。[npc2.Name]响亮地笑出声，退回椅子上，只留你与欲火中烧的小恶魔们相处。你发出[pc.a_moan+]，那个正在摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出了顺从的声音，急忙做好被[npc2.namePos]的守卫操一顿的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_IMPS_RESIST"><![CDATA[
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，尽情揉捏。[npc2.Name]响亮地笑出声，退回椅子上，只留你与欲火中烧的小恶魔们相处。你挣扎着爬开，那个正在摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(你哪也去不了！别担心，婊子，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你疯狂发出尖叫，竭力避免被[npc2.namePos]的守卫操一顿……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_DOUBLE_ORAL"><![CDATA[
+	<p>
+		你和[npc.name]听命行事，匍匐前进，然后伸手吵着要解开[npc2.namePos]的牛仔裤。你们俩把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]先是把肉棒顶向[npc.namePos]的[npc.lips]，接着是你的唇，准备被你们两个一起口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_ORAL_COMPANION_IMPS"><![CDATA[
+	<p>
+		你听命行事，朝[npc2.name]爬去。[npc2.name]也低下身来，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[npc.race]，快露出来给我的姑娘们看看！)]
+	</p>
+	<p>
+		你再次照做，解开[npc2.name]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续手中的工作，拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		与此同时，三个阿尔法小恶魔迅速上前将[npc.Name]团团围住，开始对着[npc.her]的身体上下其手，尽情揉捏。在[npc.her]身后的那个则冷笑一声，说道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_IMPS_COMPANION_ORAL"><![CDATA[
+	<p>
+		你的同伴听命行事，朝[npc2.name]爬去。[npc2.name]也低下身来，把自己的腹股沟挺向[npc.her]的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[pc.race]，快露出来给我的姑娘们看看！)]
+	</p>
+	<p>
+		[npc.Name]再次遵从指示，把[npc2.name]的牛仔裤解开，还没等牛仔裤脱下，[npc.NamePos]被丁字裤勉强包裹的下体的凸起就显露了出来。[npc.she]看见[npc2.namePos]下体的样子，眼睛瞪圆了。[npc2.sheHas]有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。[npc.her]继续自己的动作，把[npc2.race]的丁字裤拉了下来，瞬间解放了[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒，上面还穿着银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，各种揉捏。在你身后的那个则冷笑一声，[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出温顺的声音表示赞同，做好被小恶魔守卫爆操一顿的准备，而他们的老大则准备使用[npc.namePos]的口穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_DOUBLE_IMPS"><![CDATA[
+	<p>
+		三个阿尔法小恶魔迅速上前将你与[npc.Name]团团围住，开始对着你的身体上下其手，尽情揉捏。[npc2.Name]响亮地笑出声，退后等着看欲火中烧的小恶魔们会怎么对付你与同伴。你[pc.a_moan]着，那个正在摸索[npc.namePos]腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你的逼马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_DOUBLE_ORAL_EAGER"><![CDATA[
+	<p>
+		你和[npc.name]欣然听命，匍匐前进，然后伸手吵着要解开[npc2.namePos]的牛仔裤。你们俩把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]先是把肉棒顶向[npc.namePos]的[npc.lips]，接着是你的唇，准备被你们两个一起口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_ORAL_COMPANION_IMPS_EAGER"><![CDATA[
+	<p>
+		你欣然听命，朝[npc2.name]爬去。[npc2.name]也低下身来，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[npc.race]，快露出来给我的姑娘们看看！)]
+	</p>
+	<p>
+		你再次急切地照做，解开[npc2.name]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续手中的工作，拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		与此同时，三个阿尔法小恶魔迅速上前将[npc.Name]团团围住，开始对着[npc.her]的身体上下其手，尽情揉捏。在[npc.her]身后的那个则冷笑一声，说道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_IMPS_COMPANION_ORAL_EAGER"><![CDATA[
+	<p>
+		你的同伴欣然听命，朝[npc2.name]爬去。[npc2.name]也低下身来，把自己的腹股沟挺向[npc.her]的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[pc.race]，快露出来给我的姑娘们看看！)]
+	</p>
+	<p>
+		[npc.Name]再次遵从指示，把[npc2.name]的牛仔裤解开，还没等牛仔裤脱下，[npc.NamePos]被丁字裤勉强包裹的下体的凸起就显露了出来。[npc.she]看见[npc2.namePos]下体的样子，眼睛瞪圆了。[npc2.sheHas]有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。[npc.her]继续自己的动作，把[npc2.race]的丁字裤拉了下来，瞬间解放了[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒，上面还穿着银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，各种揉捏。在你身后的那个则冷笑一声，[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你发出欣喜的[pc.moan]表示赞同，做好被小恶魔守卫爆操一顿的准备，而他们的头领则准备使用[npc.namePos]的口穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_DOUBLE_IMPS_EAGER"><![CDATA[
+	<p>
+		三个阿尔法小恶魔迅速上前将你与[npc.Name]团团围住，开始对着你的身体上下其手，尽情揉捏。[npc2.Name]响亮地笑出声，退后等着看欲火中烧的小恶魔们会怎么对付你与同伴。你[pc.a_moan]着，那个正在摸索[npc.namePos]腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(唔嗯，好啊，你的逼马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了在你旁边一同被小恶魔守卫们操的准备……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_DOUBLE_ORAL_RESIST"><![CDATA[
+	<p>
+		你和[npc.name]在小恶魔手下挣扎，被迫解开[npc2.namePos]的牛仔裤。你们俩把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		[npc2.name]先是把肉棒顶向[npc.namePos]的[npc.lips]，接着是你的唇，准备被你们两个一起口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_ORAL_COMPANION_IMPS_RESIST"><![CDATA[
+	<p>
+		[npc2.namePos]的小恶魔手下强迫你爬向[npc2.Name]，你拼命反抗。[npc2.name]也低下身来，把自己的腹股沟挺向你的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[npc.race]，快露出来给我的姑娘们看看！)]
+	</p>
+	<p>
+		在重重胁迫下，你只得解开[npc2.name]的牛仔裤。你把牛仔裤往下一拉，就露出了[npc2.namePos]的黑色丁字裤，勉强遮住了[npc2.her]的巨大凸起。你的眼睛睁得浑圆，因为你看到就在[npc2.namePos]的腹股沟上方，有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。你继续手中的工作，拉下[npc2.her]的丁字裤，让[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒弹出，你能看到上面挂着一个银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		与此同时，三个阿尔法小恶魔迅速上前将[npc.Name]团团围住，开始对着[npc.her]的身体上下其手，尽情揉捏。在[npc.her]身后的那个则冷笑一声，说道：[npc3.speech(嗯，好啊，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		#IFnpc.isAttractedTo(npc3) || !game.isNonConEnabled()
+		#THEN
+			[npc.name]发出一声顺从的咕哝表示同意，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ELSE
+			[npc.name]发出一声沮丧的哀嚎，做好了被小恶魔守卫们操的准备，而他们的首领则准备好使用你的口穴…… 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_IMPS_COMPANION_ORAL_RESIST"><![CDATA[
+	<p>
+		你的同伴欣然听命，朝[npc2.name]爬去。[npc2.name]也低下身来，把自己的腹股沟挺向[npc.her]的脸：[npc2.speech(来吧，掏出来吧，荡妇！还有你，[pc.race]，快露出来给我的姑娘们看看！)]
+	</p>
+	<p>
+		[npc.Name]再次遵从指示，把[npc2.name]的牛仔裤解开，还没等牛仔裤脱下，[npc.NamePos]被丁字裤勉强包裹的下体的凸起就显露了出来。[npc.she]看见[npc2.namePos]下体的样子，眼睛瞪圆了。[npc2.sheHas]有一个黑色的部落图腾纹身，上面用流畅的斜体字体写着“窒息吧，婊子！”。[npc.her]继续自己的动作，把[npc2.race]的丁字裤拉了下来，瞬间解放了[npc2.her][npc2.penisGirth]的[npc2.penisValue]肉棒，上面还穿着银环。
+	</p>
+	<p>
+		[npc2.speech(这可不仅是纹好看的，婊子。)][npc2.name]指着[npc2.her]的纹身冷笑，[npc2.speech(我要把你捅到<i>犯恶心</i>！)]
+	</p>
+	<p>
+		三个阿尔法小恶魔迅速上前将你团团围住，开始对着你的身体上下其手，尽情揉捏。你抗拒地哀嚎着，在你身后的小恶魔坏笑道：[npc3.speech(别装出一副不喜欢的样子！我完事前就能让你求着要我的肉棒！)]
+	</p>
+	<p>
+		你疯狂发出尖叫，竭力避免被[npc2.namePos]的守卫操一顿……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_DOUBLE_IMPS_RESIST"><![CDATA[
+	<p>
+		三个阿尔法小恶魔迅速上前将你与[npc.Name]团团围住，开始对着你们的身体上下其手，尽情揉捏。[npc2.Name]响亮地笑出声，退后等着看欲火中烧的小恶魔们会怎么对付你们。你挣扎着爬走，那个摸索你腹股沟的小恶魔咯咯笑着，说道：[npc3.speech(你哪也去不了！别担心，婊子，你马上就会爱上我的鸡巴！)]
+	</p>
+	<p>
+		你疯狂发出尖叫，竭力避免你和[npc.Name]被[npc.namePos]的守卫操一顿……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	
+	<!-- KEEP_AFTER_SEX_PACIFIED -->
+	
+	<htmlContent tag="KEEP_AFTER_SEX_PACIFIED_WITH_COMPANION"><![CDATA[
+	<p>
+		你与[npc.Name]满意地发出呻吟，瘫倒在地上，抬头看到[npc2.name]正朝你们咧嘴笑。
+	</p>
+	<p>
+		[npc2.speech(还不赖，荡妇们。)][npc2.she]说，[npc2.speech(如果你们就喜欢这样，随时可以回来！不过现在，我和我的姑娘们有事要谈，我相信门口的守卫会让你们这些妓女口交的，去找他们吧。)]
+	</p>
+	<p>
+		[npc2.namePos]不耐烦地踏着木地板，你与[npc.Name]就伴随着这声音收拾东西。整理完毕后，你最后发出一声顺从的呜咽，走向主楼的大门，准备离开……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_SEX_PACIFIED"><![CDATA[
+	<p>
+		你满意地发出[pc.moan]，瘫倒在地上，抬头看到[npc2.name]正朝你咧嘴笑。
+	</p>
+	<p>
+		[npc2.speech(还不赖，荡妇。)][npc2.she]说，[npc2.speech(如果你就喜欢这样，随时可以回来！不过现在，我和我的姑娘们有事要谈。我相信门口的守卫会让你吸鸡巴的，去找他们吧。)]
+	</p>
+	<p>
+		[npc2.namePos]的脚不耐烦地踮着木地板，你伴随着这声音收拾东西。整理完毕后，你最后发出一声顺从的呜咽，招呼[npc.Name]跟你走向主楼的大门，准备离开……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	<!-- KEEP_AFTER_SEX_VICTORY -->
+	
+	<htmlContent tag="KEEP_AFTER_SEX_VICTORY"><![CDATA[
+	<p>
+		[npc2.Name]和[npc2.her]的小恶魔精疲力竭地倒在地上。你快速地收拾好自己的东西，听到[npc2.race]喘息着说：[npc2.speech(哦……该死……)]。你忍不住露出了笑容。
+	</p>	
+	<p>
+		你笑看着这群疲惫不堪的家伙，想着是让她们赶紧离开这里，还是趁这个机会收走她们的财物……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_SEX_VICTORY_SCARE_OFF"><![CDATA[
+	<p>
+		[pc.speech(你们所有人！离开这里！不准回来！)]你低头笑着对她们命令到。
+	</p>
+	<p>
+		[npc2.speech(不、不会的！)][npc2.name]结结巴巴地说，[npc2.she]站了起来，甚至没有再向后看你一眼，就沿着走廊跑开了。小恶魔卫兵们紧随其后，从敞开的大门冲出去，这帮人就这样消失在屈城区，只留下你一个人在已经空无一人的城堡里。
+	</p>
+	<p>
+		环顾四周，你发现这个要塞完全没有任何有价值的东西，因为无事可做，你和[npc.Name]准备离开这里，继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP_AFTER_SEX_DEFEAT -->
+	
+	<htmlContent tag="KEEP_AFTER_SEX_DEFEAT"><![CDATA[
+	#IF impAlphaLeader.isAbleToEquipGag(pc)
+	#THEN
+	<p>
+		你瘫倒在地，发出筋疲力尽的[pc.moan]。你抬起头，[npc2.name]正看着你坏笑。[npc2.speech(不错啊，骚货。)][npc2.she]说，[npc2.speech(但别以为我忘了你之前做了什么。我得让你明白，区区顺服下贱的口交婊子，不该管的事情别来管。)]
+	</p>
+	<p>
+		你抬头看看[npc2.race]，发现[npc2.herHim]手里拿着一件白色的小口枷，口枷上有金色的金属装饰，而最显眼的是口枷前端的金色圆环。[npc2.speech(张开嘴，荡妇。你又可以假装在给我口交，如果这对你有帮助的话。)]
+	</p>
+	<p>
+		你别无选择，只能乖乖张嘴。[npc2.name]立刻把金色的口枷塞进你的嘴里，随后，这个[npc2.race]又粗暴地将带子系在你的后脑勺上，发出阵阵不怀好意的笑声，退后一步欣赏[npc2.her]的杰作。[npc2.speech(怎么样，我的口交小荡妇？你现在有感觉到渴望一根湿漉漉的大鸡巴吗？)]
+	</p>
+	<p>
+				当[npc2.name]这么说的时候，你不由自主想到自己跪下来，顺从地吮吸一根粗大、搏动的肉棒的场景，口水不自觉地流了下来。你本能地向前晃动着脑袋，想象着把滚烫的肉棒深深地吞进喉咙，随后，你突然意识到自己在做什么，于是用力摇了摇头，摆脱了这些杂念。你擦了擦从你那被口枷撑开的嘴里流出的口水，抬头看向[npc2.namePos]的胯下，然后发出了恳求的哀鸣。
+			</p>
+	<p>
+		[npc2.speech(哈！还想再来一轮啊，你这饥渴的小口便器？)][npc2.she]大笑起来，然后不屑地挥舞一只手把你赶走，[npc2.speech(下次再来吧，我还有事。你的装饰会确保你成为一个顺从的口交荡妇，所以我相信很快就能再见到你了。)]
+	</p>
+	#ELSE
+	<p>
+		你发出筋疲力尽的[pc.moan]，瘫倒在地，抬头看向露出狰狞笑容的[npc2.name]。[npc2.speech(还不错，骚货。)][npc2.she]说道，[npc2.speech(你总有一天会变成一流的口便器。)]
+	</p>
+	#ENDIF
+	<p>
+		小恶魔们发出高亢的笑声，随意地把你与[npc.Name]一前一后地拖出了主楼，穿过要塞大门。不知不觉间，你们已经离[npc2.namePos]的基地很远了，都被粗鲁地扔在地上。小恶魔们威胁你们永远不要回来，转身回到主楼，留你们躺在地上喘着粗气……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_SEX_DEFEAT_WITH_COMPANION"><![CDATA[
+	#IF impAlphaLeader.isAbleToEquipGag(pc)
+	#THEN
+		#IF impAlphaLeader.isAbleToEquipGag(npc)
+		#THEN
+			<p>
+				你和[npc.name]倒在地上，发出筋疲力尽的[pc.moan]。你抬起头，[npc2.name]正看着你们两个，肆意笑着，[npc2.speech(不错，骚货们。)][npc2.she]说，[npc2.speech(但别以为我忘了你们之前做了什么。我还得给你们点颜色瞧瞧，让你们明白，区区顺服下贱的口交婊子，不该管的事情别来管。)]
+			</p>
+			<p>
+				你抬头看看[npc2.race]，发现[npc2.herHim]手里拿着一件白色的小口枷，口枷上有金色的金属装饰，而最显眼的是口枷前端的金色圆环。[npc.her]的另一只手也拿着类似的口枷，但它的颜色更朴素，深棕色的皮革、黑色的金属装饰和一个钢环。[npc2.speech(张开嘴，荡妇们。你们又可以假装在给我口交，如果这对你们有帮助的话。)]
+			</p>
+			<p>
+				你与[npc.Name]别无选择，只能服从[npc2.namePos]的命令。[npc2.she]立刻把金色的口枷塞进你的嘴里，随后，这个[npc2.race]粗暴地将带子系在你的后脑勺上，[npc2.she]又同样把棕色口枷绑到你的同伴头上。结束后，[npc2.name]发出阵阵不怀好意的笑声，退后一步欣赏[npc2.her]的杰作：[npc2.speech(怎么样，我可怜的口便器？你们现在有感觉到渴望一根湿漉漉的大鸡巴，狠狠插进你的喉咙深处吗？)]
+			</p>
+			<p>
+				当[npc2.name]这么说的时候，你不由自主想到自己跪下来，顺从地吮吸一根粗大、搏动的肉棒的场景，口水不自觉地流了下来。你本能地向前晃动着脑袋，想象着把滚烫的肉棒深深地吞进喉咙，随后，你突然意识到自己在做什么，于是用力摇了摇头，摆脱了这些杂念。你擦了擦从你那被口枷撑开的嘴里流出的口水，抬头看向[npc2.namePos]的胯下，然后发出了恳求的哀鸣。
+			</p>
+			<p>
+				在你旁边，[npc.name]似乎也感受到类似的体验，开始色迷迷地盯着[npc2.namePos]腹股沟上的凸起，迷离地嘟囔着：[npc.speech(就……就舔一下……求你了……)]
+			</p>
+			<p>
+				[npc2.speech(哈！还想再来一轮啊，你这饥渴的小口便器？)][npc2.she]大笑起来，然后不屑地挥舞双手把你赶走，[npc2.speech(下次再来吧，我还有事。你们的装饰会确保你们成为顺从的口交荡妇，所以我相信很快我们就能再见了。)]
+			</p>
+		#ELSE
+			<p>
+				你瘫倒在地，发出筋疲力尽的[pc.moan]。你抬起头，[npc2.name]正看着你坏笑。[npc2.speech(不错啊，骚货。)][npc2.she]说，[npc2.speech(但别以为我忘了你之前做了什么。我得让你明白，区区顺服下贱的口交婊子，不该管的事情别来管。)]
+			</p>
+			<p>
+				你抬头看看[npc2.race]，发现[npc2.herHim]手里拿着一件白色的小口枷，口枷上有金色的金属装饰，而最显眼的是口枷前端的金色圆环。[npc2.speech(张开嘴，荡妇。你又可以假装在给我口交，如果这对你有帮助的话。)]
+			</p>
+			<p>
+				你别无选择，只能服从[npc2.namePos]的命令。[npc2.she]立刻把金色的口枷塞进你的嘴里，随后，这个[npc2.race]又粗暴地将带子系在你的后脑勺上，发出阵阵不怀好意的笑声，退后一步欣赏[npc2.her]的杰作。[npc2.speech(怎么样，我可怜的口便器？你现在有感觉到渴望一根湿漉漉的大鸡巴，狠狠插进你的喉咙深处吗？)]
+			</p>
+			<p>
+				当[npc2.name]这么说的时候，你不由自主想到自己跪下来，顺从地吮吸一根粗大、搏动的肉棒的场景，口水不自觉地流了下来。你本能地向前晃动着脑袋，想象着把滚烫的肉棒深深地吞进喉咙，随后，你突然意识到自己在做什么，于是用力摇了摇头，摆脱了这些杂念。你擦了擦从你那被口枷撑开的嘴里流出的口水，抬头看向[npc2.namePos]的胯下，然后发出了恳求的哀鸣。
+			</p>
+			<p>
+				[npc2.speech(哈！还想再来一轮啊，你这饥渴的小口便器？)][npc2.she]大笑起来，然后不屑地挥舞双手把你和[npc.name]赶走，[npc2.speech(下次再来吧，我还有事。你的装饰会确保你成为一个顺从的口交荡妇，所以我相信很快就能再见到你了。)]
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你和[npc.name]倒在地上，发出筋疲力尽的[pc.moan]。你抬起头，[npc2.name]正看着你肆意笑着，[npc2.speech(不错，骚货们。)][npc2.she]说，[npc2.speech(我们随时欢迎像你们这样的精厕。)]
+		</p>
+	#ENDIF
+	<p>
+		小恶魔们嘎嘎笑着，随意地把你与[npc.Name]拖出了主楼，扔出要塞大门。不知不觉间，你们已经离[npc2.namePos]的基地很远了，而且被粗鲁地扔在地上。小恶魔们威胁你们永远不要回来，转身回到主楼，留你们在地上喘着粗气……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

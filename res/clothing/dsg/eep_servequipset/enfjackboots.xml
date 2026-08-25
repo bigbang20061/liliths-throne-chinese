@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[在每只靴子的胫处，淡淡的橡胶油墨写着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>300</value> 
+
+		<determiner><![CDATA[一双]]></determiner>
+
+		<name><![CDATA[执法者的长筒军靴]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者的长筒军靴]]></namePlural> 
+
+		<description><![CDATA[一双长至小腿中部钉有平头钉的靴子，由光滑的皮革制成。鞋跟底部有一条金属带，当相互碰撞时会发出明显的咔嗒声。]]></description> 
+
+		<physicalResistance>1</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>FOOT</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/> 
+
+		<imageName>enfjackboots.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts/> 
+
+				<clothingAccessBlocked>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked> 
+
+				<concealedSlots/> 
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿上了军靴。]]></self>
+		<other><![CDATA[[npc.Name]引导[npc2.namePos]的[npc2.feet]踩进靴子里。]]></other>
+		<otherRough><![CDATA[[npc.Name]将[npc2.namePos]的[npc2.feet]踩进靴子里。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]脱下了[npc.her][npc.feet]上的军靴。]]></self>
+		<other><![CDATA[
+			[npc.Name]把[npc2.namePos]靴子从[npc2.her]的[npc2.feet]上脱下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将靴子从[npc2.namePos]的[npc2.feet]上拽了下来。]]></otherRough>
+	</displacementText>
+	
+</clothing>

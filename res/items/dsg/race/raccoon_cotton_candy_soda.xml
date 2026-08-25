@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[罐子底下刻着细小的字迹，写着“DSG食品有限公司制罐”。]]></authorTag>
+		
+		<value>10</value> 
+		<determiner><![CDATA[一杯]]></determiner>
+		<name><![CDATA[棉花糖汽水]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[棉花糖汽水]]></namePlural>
+		<description><![CDATA[一个大号透明塑料杯，里面是蓝莓棉花糖味苏打。杯子上的标签上画着一只穿着实验服的浣熊男，他将一团棉花糖悬挂在装有碳酸水的碗上。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">raccoon_cotton_candy_soda.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_ARCANE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_ARCANE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(1)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(1)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股清爽的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_ARCANE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]将棉花糖汽水杯提到嘴边。杯子上有糖和覆盆子的香味，当[npc.she]把嘴唇包住吸管并开始喝起来时，感觉到液体的刺激，让[npc.her]感到更加爽快。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]将棉花糖苏打杯提到[npc2.namePos]等待[npc2.lips]边。杯子上有糖和覆盆子的香味，当[npc2.she]的嘴唇包住吸管并开始吸饮那种刺激的液体时，[npc.she]感到更加爽快。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

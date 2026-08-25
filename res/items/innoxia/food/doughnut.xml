@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>15</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[甜甜圈]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[甜甜圈]]></namePlural>
+		<description><![CDATA[一个小圈状的甜面团，经过炸制并涂上轻盈的糖霜。]]></description>
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>COMMON</rarity>
+		
+		<imageName>doughnut.svg</imageName>
+		<colourPrimary>BASE_BROWN_LIGHT</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<associatedRace/>
+		<enchantmentItemTypeId/>
+		<enchantmentEffectId/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感觉自己好像更有能量了……
+			</p>
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[[npc.Name]将甜甜圈塞到[npc.her]嘴里，然后开始吃了起来。只花了几秒钟，[npc.name]就吃光了，之后[npc.she]发出了满足的嗯声。]]></selfUse>
+		<otherUse><![CDATA[[npc.Name]将甜甜圈塞到[npc2.namePos]的嘴里，然后开始喂[npc2.herHim]吃。只花了几秒钟，[npc2.name]就吃光了，[npc2.she]发出了满足的嗯声。]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

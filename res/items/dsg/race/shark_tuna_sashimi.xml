@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[盘底刻着细小的字迹，写着“DSG食品有限公司包装”。]]></authorTag>
+		
+		<value>300</value> 
+		<determiner><![CDATA[一盘]]></determiner>
+		<name><![CDATA[金枪鱼刺身]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[金枪鱼刺身]]></namePlural>
+		<description><![CDATA[一盘金枪鱼腹刺身，搭配芥末和装饰性蔬菜，所有这些都在一个玻璃罩下。罩子上的标签描绘了一个穿比基尼的鲨鱼女，肩上背着钓鱼竿，脸上露出一个露齿的微笑。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName>shark_tuna_sashimi.svg</imageName>
+		
+		<colourPrimary>dsg_sharkGrey</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[鲨鱼]]></potionDescriptor>
+		<associatedRace>dsg_shark</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]移开玻璃罩，并对金枪鱼腹部肥美的大理石纹路赞叹不已。在无法抵挡内部美味的诱惑下，[npc.she]
+		#IF(npc.getFaceType()==FACE_TYPE_dsg_shark_face)
+			将盘子倾斜到[npc.her]的巨大鲨鱼嘴巴前，不太优雅地将里面的食物倾倒进去，毫不费力地将所有食物都吞咽下去……甚至不需要咀嚼。
+		#ELSE
+			品尝每一口有芥末味的食物，很快就[npc.has]把盘子里的东西全部吃光了。
+		#ENDIF
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]取下盘子上的玻璃盖，将盘子拿给[npc2.name]，让[npc2.herHim]欣赏那块油脂丰富的金枪鱼肉的华丽纹理。无法抵挡盘子里美味的海鲜内容，[npc2.she]很快就开始享用了，[npc2.she]
+		#IF(npc.getFaceType()==FACE_TYPE_dsg_shark_face)
+			将盘子倾斜朝向[npc2.her]深不可测的鲨鱼嘴里，粗鲁地将里面的食物倒了进去，完全不费吹灰之力地吞咽下去……几乎没有咀嚼。
+		#ELSE
+			品尝每一口富含芥末味的食物，只用了片刻，[npc2.has]把盘子里的食物全部都吃光了。
+		#ENDIF
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

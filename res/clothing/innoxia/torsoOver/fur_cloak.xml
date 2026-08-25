@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1000</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[皮毛斗篷]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[皮毛斗篷]]></namePlural>
+		<description><![CDATA[一种无袖的宽松服装，穿在衣物上，目的是保暖并保护穿着者免受外界环境的影响。这个特定的款式还带有毛皮内衬和装饰。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+	<equipSlots>
+		<slot>TORSO_OVER</slot>
+		<slot>NECK</slot>
+	</equipSlots>
+	<rarity>COMMON</rarity>
+	<clothingSet/>
+	<imageName>fur_cloak.svg</imageName>
+	<imageEquippedName/>
+	<effects/>
+	<blockedPartsList slot="TORSO_OVER"> 
+		<blockedParts>
+			<displacementType>REMOVE_OR_EQUIP</displacementType>
+			<clothingAccessRequired/>
+			<blockedBodyParts>
+				<bodyPart>BACK</bodyPart>
+			</blockedBodyParts>
+			<clothingAccessBlocked/>
+			<concealedSlots/>
+		</blockedParts>
+		<blockedParts>
+			<displacementType>OPEN</displacementType> 
+			<clothingAccessRequired/>
+			<blockedBodyParts>
+				<bodyPart>ARMPITS</bodyPart>
+				<bodyPart>BREASTS</bodyPart>
+				<bodyPart>NIPPLES</bodyPart>
+				<bodyPart>STOMACH</bodyPart>
+				<bodyPart>MOUND</bodyPart>
+				<bodyPart>PENIS</bodyPart>
+				<bodyPart>TESTICLES</bodyPart>
+				<bodyPart>VAGINA</bodyPart>
+				<bodyPart>THIGHS</bodyPart>
+			</blockedBodyParts>
+			<clothingAccessBlocked>
+				<clothingAccess>GROIN</clothingAccess>
+				<clothingAccess>CHEST</clothingAccess>
+				<clothingAccess>WAIST</clothingAccess>
+			</clothingAccessBlocked>
+			<concealedSlots>
+				<slot>ANKLE</slot>
+				<slot>ANUS</slot>
+				<slot>CHEST</slot>
+				<slot>FINGER</slot>
+				<slot>FOOT</slot>
+				<slot>GROIN</slot>
+				<slot>HAND</slot>
+				<slot>HIPS</slot>
+				<slot>LEG</slot>
+				<slot>NECK</slot>
+				<slot>NIPPLE</slot>
+				<slot>PENIS</slot>
+				<slot>PIERCING_NIPPLE</slot>
+				<slot>PIERCING_PENIS</slot>
+				<slot>PIERCING_STOMACH</slot>
+				<slot>PIERCING_VAGINA</slot>
+				<slot>SOCK</slot>
+				<slot>STOMACH</slot>
+				<slot>TAIL</slot>
+				<slot>TORSO_UNDER</slot>
+				<slot>VAGINA</slot>
+				<slot>WEAPON_MAIN_1</slot>
+				<slot>WEAPON_MAIN_2</slot>
+				<slot>WEAPON_MAIN_3</slot>
+				<slot>WEAPON_OFFHAND_1</slot>
+				<slot>WEAPON_OFFHAND_2</slot>
+				<slot>WEAPON_OFFHAND_3</slot>
+				<slot>WRIST</slot>
+			</concealedSlots>
+		</blockedParts>
+		<blockedParts>
+			<displacementType>PULLS_UP</displacementType>
+			<clothingAccessRequired/>
+			<blockedBodyParts>
+				<bodyPart>ASS</bodyPart>
+				<bodyPart>ANUS</bodyPart>
+				<bodyPart>MOUND</bodyPart>
+				<bodyPart>PENIS</bodyPart>
+				<bodyPart>TESTICLES</bodyPart>
+				<bodyPart>VAGINA</bodyPart>
+				<bodyPart>THIGHS</bodyPart>
+			</blockedBodyParts>
+			<clothingAccessBlocked>
+				<clothingAccess>ANUS</clothingAccess>
+				<clothingAccess>GROIN</clothingAccess>
+			</clothingAccessBlocked>
+			<concealedSlots>
+				<slot>ANUS</slot>
+				<slot>ANKLE</slot>
+				<slot>ANUS</slot>
+				<slot>FOOT</slot>
+				<slot>GROIN</slot>
+				<slot>HIPS</slot>
+				<slot>LEG</slot>
+				<slot>PENIS</slot>
+				<slot>PIERCING_NIPPLE</slot>
+				<slot>PIERCING_PENIS</slot>
+				<slot>PIERCING_VAGINA</slot>
+				<slot>SOCK</slot>
+				<slot>TAIL</slot>
+				<slot>VAGINA</slot>
+			</concealedSlots>
+		</blockedParts>
+	</blockedPartsList>
+	<blockedPartsList slot="NECK"> 
+		<blockedParts>
+			<displacementType>REMOVE_OR_EQUIP</displacementType>
+			<clothingAccessRequired/>
+			<blockedBodyParts>
+				<bodyPart>BACK</bodyPart>
+			</blockedBodyParts>
+			<clothingAccessBlocked/>
+			<concealedSlots/>
+		</blockedParts>
+		<blockedParts>
+			<displacementType>OPEN</displacementType> 
+			<clothingAccessRequired/>
+			<blockedBodyParts>
+				<bodyPart>ARMPITS</bodyPart>
+				<bodyPart>BREASTS</bodyPart>
+				<bodyPart>NIPPLES</bodyPart>
+				<bodyPart>STOMACH</bodyPart>
+				<bodyPart>MOUND</bodyPart>
+				<bodyPart>PENIS</bodyPart>
+				<bodyPart>TESTICLES</bodyPart>
+				<bodyPart>VAGINA</bodyPart>
+				<bodyPart>THIGHS</bodyPart>
+			</blockedBodyParts>
+			<clothingAccessBlocked>
+				<clothingAccess>GROIN</clothingAccess>
+				<clothingAccess>CHEST</clothingAccess>
+				<clothingAccess>WAIST</clothingAccess>
+			</clothingAccessBlocked>
+			<concealedSlots>
+				<slot>ANKLE</slot>
+				<slot>ANUS</slot>
+				<slot>CHEST</slot>
+				<slot>FINGER</slot>
+				<slot>FOOT</slot>
+				<slot>GROIN</slot>
+				<slot>HAND</slot>
+				<slot>HIPS</slot>
+				<slot>LEG</slot>
+				<slot>NECK</slot>
+				<slot>NIPPLE</slot>
+				<slot>PENIS</slot>
+				<slot>PIERCING_NIPPLE</slot>
+				<slot>PIERCING_PENIS</slot>
+				<slot>PIERCING_STOMACH</slot>
+				<slot>PIERCING_VAGINA</slot>
+				<slot>SOCK</slot>
+				<slot>STOMACH</slot>
+				<slot>TAIL</slot>
+				<slot>TORSO_UNDER</slot>
+				<slot>VAGINA</slot>
+				<slot>WEAPON_MAIN_1</slot>
+				<slot>WEAPON_MAIN_2</slot>
+				<slot>WEAPON_MAIN_3</slot>
+				<slot>WEAPON_OFFHAND_1</slot>
+				<slot>WEAPON_OFFHAND_2</slot>
+				<slot>WEAPON_OFFHAND_3</slot>
+				<slot>WRIST</slot>
+			</concealedSlots>
+		</blockedParts>
+		<blockedParts>
+			<displacementType>PULLS_UP</displacementType>
+			<clothingAccessRequired/>
+			<blockedBodyParts>
+				<bodyPart>ASS</bodyPart>
+				<bodyPart>ANUS</bodyPart>
+				<bodyPart>MOUND</bodyPart>
+				<bodyPart>PENIS</bodyPart>
+				<bodyPart>TESTICLES</bodyPart>
+				<bodyPart>VAGINA</bodyPart>
+				<bodyPart>THIGHS</bodyPart>
+			</blockedBodyParts>
+			<clothingAccessBlocked>
+				<clothingAccess>ANUS</clothingAccess>
+				<clothingAccess>GROIN</clothingAccess>
+			</clothingAccessBlocked>
+			<concealedSlots>
+				<slot>ANUS</slot>
+				<slot>ANKLE</slot>
+				<slot>ANUS</slot>
+				<slot>FOOT</slot>
+				<slot>GROIN</slot>
+				<slot>HIPS</slot>
+				<slot>LEG</slot>
+				<slot>PENIS</slot>
+				<slot>PIERCING_NIPPLE</slot>
+				<slot>PIERCING_PENIS</slot>
+				<slot>PIERCING_VAGINA</slot>
+				<slot>SOCK</slot>
+				<slot>TAIL</slot>
+				<slot>VAGINA</slot>
+			</concealedSlots>
+		</blockedParts>
+	</blockedPartsList>
+		
+	<incompatibleSlots slot="TORSO_OVER"/>
+	<incompatibleSlots slot="NECK"/>
+		
+	<primaryColours>
+		<colour>CLOTHING_BLACK</colour>
+		<colour>CLOTHING_RED_VERY_DARK</colour>
+		<colour>CLOTHING_DESATURATED_BROWN</colour>
+		<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+		<colour>CLOTHING_PURPLE_VERY_DARK</colour>
+	</primaryColours>
+	<primaryColoursDye values="ALL"/>
+	<secondaryColours>
+		<colour>CLOTHING_WHITE</colour>
+		<colour>CLOTHING_GREY_LIGHT</colour>
+	</secondaryColours>
+	<secondaryColoursDye values="ALL"/>
+	<tertiaryColours>
+		<colour>CLOTHING_WHITE</colour>
+		<colour>CLOTHING_BLACK</colour>
+	</tertiaryColours>
+	<tertiaryColoursDye values="ALL"/>
+
+	<itemTags>
+		<tag>SOLD_BY_NYAN</tag>
+		<tag>FITS_ARM_WINGS</tag>
+		<tag>FITS_FERAL_ALL_BODY</tag>
+	</itemTags>
+	
+	</coreAttributes>
+
+	<replacementText slot="NECK" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把斗篷披在[npc.her]的肩膀上，然后把带子系在[npc.her]的脖子上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把斗篷披在了[npc2.namePos]的肩上，并把带子系在[npc2.her]的脖子上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把斗篷套在[npc2.namePos]的肩上，并紧紧地把带子系在[npc2.her]的脖子上。
+]]></otherRough>
+	</replacementText>
+	<displacementText slot="NECK" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了[npc.her]系在脖子上的带子，然后脱下了[npc.her]的斗篷。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把[npc2.namePos]脖子上的带子解开，并脱下了[npc2.her]的斗篷。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把[npc2.namePos]脖子上系的带子扯开，并把[npc2.her]的斗篷拽了下来。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText slot="TORSO_OVER" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把斗篷披在[npc.her]的肩膀上，然后把带子系在[npc.her]的脖子上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把斗篷披在了[npc2.namePos]的肩上，并把带子系在[npc2.her]的脖子上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把斗篷套在[npc2.namePos]的肩上，并紧紧地把带子系在[npc2.her]的脖子上。
+]]></otherRough>
+	</replacementText>
+	<displacementText slot="TORSO_OVER" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了[npc.her]系在脖子上的带子，然后脱下了[npc.her]的斗篷。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把[npc2.namePos]脖子上的带子解开，并脱下了[npc2.her]的斗篷。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把[npc2.namePos]脖子上系的带子扯开，并把[npc2.her]的斗篷拽了下来。
+]]></otherRough>
+	</displacementText>
+
+</clothing>

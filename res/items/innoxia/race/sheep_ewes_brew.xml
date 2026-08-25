@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>35</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[母羊酿]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[母羊酿]]></namePlural>
+		<description><![CDATA[一个小玻璃瓶里装满了淡棕黄色的液体。瓶子正面的标签上简单地标明这是 "母羊酿"，仔细查看配料表才发现这是一种蒲公英茶，由蒲公英的叶子和花制成。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">sheep_ewes_brew.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股丝滑的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		首先拧开瓶盖后，[npc.name]把母羊酿的玻璃瓶送到[npc.her]的嘴边。仰起头，[npc.she]开始喝这冰凉的液体，很高兴地发现它有着淡雅的花香味，还带有一丝甜味。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		首先拧开瓶盖后，[npc.name]把母羊酿的玻璃瓶送到[npc2.namePos]等待[npc2.lips]前。仰起头，[npc2.she]开始喝这冰凉的液体，很高兴地发现它有着淡雅的花香味，还带有一丝甜味。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

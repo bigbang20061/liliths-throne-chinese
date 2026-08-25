@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<arm>
+	<race>NoStepOnSnek_capybara</race>
+	<transformationName><![CDATA[水豚]]></transformationName>
+	<coveringType>NoStepOnSnek_capybara_fur</coveringType>
+	<allowsFlight>false</allowsFlight>
+	<tags>
+		<tag>ARM_STANDARD</tag>
+	</tags>
+	<name><![CDATA[前肢]]></name>
+	<namePlural><![CDATA[前肢]]></namePlural>
+	<descriptorsMasculine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[覆盖皮毛]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[覆盖皮毛]]></descriptor>
+	</descriptorsFeminine>
+	<handName><![CDATA[掌]]></handName>
+	<handNamePlural><![CDATA[掌]]></handNamePlural>
+	<handDescriptorsMasculine>
+		<descriptor><![CDATA[水豚般]]></descriptor>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[爪般]]></descriptor>
+	</handDescriptorsMasculine>
+	<handDescriptorsFeminine>
+		<descriptor><![CDATA[柔软]]></descriptor>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[水豚般]]></descriptor>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[爪般]]></descriptor>
+	</handDescriptorsFeminine>
+	<fingerName><![CDATA[手指]]></fingerName>
+	<fingerNamePlural><![CDATA[指爪]]></fingerNamePlural>
+	<fingerDescriptorsMasculine>
+		<descriptor><![CDATA[带肉垫]]></descriptor>
+		<descriptor><![CDATA[水豚般]]></descriptor>
+	</fingerDescriptorsMasculine>
+	<fingerDescriptorsFeminine>
+		<descriptor><![CDATA[柔软]]></descriptor>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[带肉垫]]></descriptor>
+		<descriptor><![CDATA[水豚般]]></descriptor>
+	</fingerDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		不一会儿，[npc.her]的手臂上迅速长出了一层[npc.armFullDescription]，[npc.she]低头一看，就看到[npc.her]的手背上长出了新的毛发，指间生出蹼。[npc.Her]的手掌迅速变成了[npc.materialDescriptor]稍有革质感的肉垫，在[npc.her]的肱二头肌上部，[npc.her]皮毛自然过渡成了覆盖[npc.her]身体其他部位的[npc.skin]。
+		<br/>转化来到尾声，[npc.nameIsFull]得到了似人非人的[style.boldCapybara(水豚一般的手臂和手)]，[npc.materialDescriptor][npc.armFullDescription]。
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+	[npc.She]有着[npc.armRows]手臂，[npc.materialCompositionDescriptor]的[npc.armFullDescription(true)]。[npc.Her]拥有水豚般拟人的手，配有手指间的蹼和硬质肉垫。
+]]></bodyDescription>
+</arm>

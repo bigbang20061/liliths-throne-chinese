@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		#IF(sex.getNumberOfOrgasms(pc)==0)
+			[#pc.getClothingInSlot(IS_MOUTH)==null]
+		#ELSE
+			[#pc.getClothingInSlot(IS_MOUTH).getColour(0)==COLOUR_CLOTHING_PURPLE_VERY_DARK]
+		#ENDIF
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>ZERO_NONE</arousalPerformer>
+	<arousalTarget>FIVE_EXTREME</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		#IF(pc.getClothingInSlot(IS_MOUTH)==null)
+			[##pc.equipClothingFromNowhere(itemGen.generateClothing(CLOTHING_norin_dildos_realistic_dildo, COLOUR_CLOTHING_PURPLE_VERY_DARK, false), IS_MOUTH, true, doll)]
+		#ELSE
+			[##pc.unequipClothingIntoVoid(IS_MOUTH, true, doll)]
+			[##pc.equipClothingFromNowhere(itemGen.generateClothing(CLOTHING_innoxia_vagina_equine_dildo, COLOUR_CLOTHING_BLUE_VERY_DARK, COLOUR_CLOTHING_BLUE, COLOUR_CLOTHING_BLUE_LIGHT, false), IS_MOUTH, true, doll)]
+			[##pc.getClothingInSlot(IS_MOUTH).setSticker('colour', 'three_soft')]
+		#ENDIF
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[口交检测]]></title>
+	<tooltip><![CDATA[
+		在玩偶上检测下一个假阳具。
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)==0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				玩偶从桌上拿起一根深紫色的假阳具，向你走来并命令道，[doll.speech(张大嘴巴，第一根要进入你的喉咙了。)]
+				
+				<br/><br/>
+				
+				你其实什么都不用做，只要保持静止听从玩偶的命令就行了，你丰满的嘴唇已经变成了一个静止的“O”形，玩偶小心翼翼地把假阳具的尖端塞进你的嘴里，然后突然把整根假阳具塞入你的喉咙，让你发出一声低沉模糊的哭喊。
+				
+				<br/><br/>
+				
+				[doll.speech(用那个玩具操你自己的喉咙，)]红色玩偶用毫无情感的语气命令道，然后转身走向桌子去拿下一根假阳具……
+			]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)>0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				玩偶将深紫色的假阳具从你的嘴里拔出，放在桌子上，然后拿出下一根要塞进你喉咙的玩具。
+				#IF(pc.getClothingInSlot(IS_ANUS)==null)
+					她取出了一根巨大的假阳具，有[units.sizeShort(45)]长，形状像一根逼真的马阴茎，拥有蓝色的底纹，根部是深色的，到了宽大的喇叭形尖端就渐变成了浅色。
+				#ELSE
+					她取出的巨大的马形假阳具与你屁股里的那根很相似，但这根特殊的玩具拥有蓝色的底纹，根部是深色的，到了宽大的喇叭形尖端就渐变成了浅色。
+				#ENDIF
+				玩偶把你当成了她的测试用具，毫不客气地把假阳具的尖端推过你“O”形的嘴唇，塞进你的嘴里，然后用她的手掌按压平坦的底座，把整根假阳具塞入你的喉咙。
+				
+				<br/><br/>
+				
+				[doll.speech(保持这个姿势，用舌头按摩它，)]红色玩偶一边命令道，一边转身去拿下一个玩具。
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

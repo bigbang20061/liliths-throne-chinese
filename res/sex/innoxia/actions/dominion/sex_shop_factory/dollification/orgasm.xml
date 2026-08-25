@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+
+	<buttonPriority>0</buttonPriority>
+	<actionConditional><![CDATA[
+		[#npc.isPlayer()]
+	]]></actionConditional>
+	<type>ORGASM</type>
+	<pace/>
+	<endsSex><![CDATA[
+		true
+	]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>ZERO_PURE</associatedCorruption>	
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>	
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>	
+	<applyEffects><![CDATA[
+		[##saellatrix.completeDollBodySiliconeDollification(pc)]
+		
+		[##sex.incrementNumberOfOrgasms(sleip, 1)]
+		[##sleip.setArousal(0)]
+		[##pc.ingestFluid(sleip, sleip.getCum(), ORIFICE_VAGINA, sleip.getPenisRawOrgasmCumQuantity())]
+		
+		[##sex.incrementNumberOfOrgasms(nir, 1)]
+		[##nir.setArousal(0)]
+		[##pc.ingestFluid(nir, nir.getCum(), ORIFICE_MOUTH, nir.getPenisRawOrgasmCumQuantity())]
+		
+		[##fia.setPetName(pc, pc.getName(false))]
+		[##pc.setName('Doll')]
+		[##pc.setSurname(pc.getTattooInSlot(IS_EYES).getWriting().getText())]
+	]]></applyEffects>	
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>	
+	<areasCummedIn/>
+	<areasCummedOn/>
+	
+	<!-- Information displayed to the player: -->
+	
+	<title><![CDATA[
+		高潮
+	]]></title>
+	
+	<tooltip><![CDATA[
+		你无法阻止自己高潮！
+	]]></tooltip>
+	
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				true
+			]]></descriptionConditional>
+			<text><![CDATA[
+				安吉莉克丝察觉到你即将高潮，愉悦地跳到你身边，抓住仍夹在你摇动的两硅乳间的注射器，拇指放在活塞上，轻笑道，[angelixx.speech(继续，要去了吧！你作为傻瓜性爱玩偶的新生活要开始了！)]
+				
+				<br/><br/>
+				
+				斯雷普和尼尔巨大而颤动的马肉棒一根操进抽出你濡湿的小穴，另一根撑开你的喉咙，你无法自控，情欲愈发高涨。安吉莉克丝一声令下，你达到顶点，排山倒海般的快感冲刷着你的身体，你感觉自己的硅胶穴道裹挤榨弄着斯雷普粗大的棒柱。尼尔颤动的肉棒深深操入，迷乱的尖叫声被顶进喉咙。你只能发出些喑哑的淫叫。
+				
+				<br/><br/>
+				
+				[angelixx.speech(乖乖玩偶！)]安吉莉克丝笑笑，然后推入注射器活塞，由你的精华堕落而成的、淤泥般墨黑的能量排泄而出。随着精华重新注入灵气空壳，高潮的强度增加了十倍。你体会着想象中无上的快感，超乎限度的幸福感充盈，愉悦感达到顶峰。你隐约意识到异样的粘稠温暖感缓慢渗入固体核心，那是之前心脏的位置。空注射器仍然卡在你完美的双峰间，安吉莉克丝用纤细的手指挑逗着你勃起的黑乳头，嘲弄道，[angelixx.speech(傻瓜贱货，你还以为自己能赢过我和孩子们……现在成了玩偶！)]
+				
+				<br/><br/>
+				
+				那些词句进入你的大脑，身体做出最后的徒劳挣扎，因为那些堕落精华终于抵达了你的核心。你被深重的黑暗瞬间吞没。在最后，作为“[pc.name]”而存在的最终时刻，你因为意识到自己即将成为顺服的傻瓜性玩具而感到一丝可耻的兴奋。
+				
+				<br/><br/>
+				
+				黑暗褪去，你的视野回归，人格、身份认知与自由意识的全部痕迹已被彻底抹消。你觉得自己就是顺服的性爱玩偶，你再也无法认知安吉莉克丝，那是你的主人、合法的拥有者，你将本能遵从她的任何指令。证明自己的机会来了，她笑着下令，[angelixx.speech(你去感谢我孩子们的帮助，把他们榨干。)]
+				
+				<br/><br/>
+				
+				你急于取悦主人，一边迷乱地啜吸尼尔的肉棒，一边熟练地收紧挤压裹着斯雷普肉棒的小穴肉壁。不知疲倦的一挤一收也将他们送上了高潮。有节奏的，不知疲倦的动作对他们来说太难以忍受了。瞬间，他们一起高潮，贪婪地哼哼。你继续迫切地榨着肉棒，想要用小穴和喉咙清空他们的囊袋。绝对服从主人的命令，饥渴吞下尼尔的精液，湿答答的小穴裹紧斯雷普的肉棒，榨干最后一滴。
+				
+				<br/><br/>
+				
+				多亏了你这么努力，两个梦魇很快把浓厚的淫味精子全射给了你， 然后从你体内抽出软下来的马肉棒，性爱结束了……
+			]]></text>
+		</description>
+	</descriptions>
+	
+</sexAction>

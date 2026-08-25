@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>600</value>
+		<determiner><![CDATA[一顶]]></determiner>
+		<name><![CDATA[安全帽]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[安全帽]]></namePlural>
+		<description><![CDATA[一种防护装备，通常由建筑工人在工地上佩戴。它由坚硬的塑料制成，旨在保护佩戴者的头部免受坠落碎片和其他类似危险物的伤害。]]></description>
+		<physicalResistance>3</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>hard_hat.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_YELLOW</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将安全帽戴在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将安全帽戴在[npc2.namePos]的头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将安全帽戴到[npc2.namePos]的头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的安全帽脱下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的安全帽脱下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地夺走[npc2.namePos]的安全帽。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

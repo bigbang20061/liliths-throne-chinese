@@ -1,0 +1,3930 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+	
+	<htmlContent tag="OUTSIDE_NIGHT"><![CDATA[
+	<p>
+		你发现自己正走在御城区被称为“夜生活”的区域，确实名副其实。霓虹灯的流光溢彩与灯柱的柔和光芒交相辉映，照亮了眼前的街道。街道上挤满了狂欢的人群，其中许多人显然都喝多了，在众多夜店和酒吧之间踉踉跄跄跌跌撞撞，大声喧哗，并对周围的人说着下流的话。
+	</p>
+	<p>
+		时不时地，你路过一些情侣——甚至是一群人，他们在酒精的刺激下屈服于欲望，公开与对方发生性关系。巡逻的执法者似乎对这些猥亵行为毫不关心，有时甚至会停下来观看这些暴露狂的表演。
+	</p>
+	<p>
+		越过这些人群，向吸引他们的场所望去，你会看到各种不同的酒吧和夜店正在营业。不过，绝大多数酒吧和夜店不是客满，就是大排长龙。
+	</p>
+	<p>
+		在经过的所有店铺中，今晚唯一有希望进入的就是“饮水洼夜店”。虽然看起来和其他夜店一样好，但它位于街道的尽头，注定不受大多数人欢迎。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OUTSIDE_NIGHT_STORM"><![CDATA[
+	<p>
+		你发现自己正走在御城区被称为“夜生活”的区域，由于持续不断的奥术风暴，这里目前荒无人烟。霓虹灯的流光溢彩与灯柱的柔和光芒交相辉映，照亮了你面前空无一人的街道。
+	</p>
+	<p>
+		虽然附近所有酒吧和夜店都还在营业，但绝大多数都已客满。只有“饮水洼夜店”看起来还有一些空位。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OUTSIDE_DAY"><![CDATA[
+	<p>
+		你发现自己正走在御城区被称为“夜生活”的区域，毕竟是白天，这里几乎无人问津。街道两旁的夜店和酒吧都已关门，只有一些打此路过的人。
+	</p>
+	<p>
+		你路过一家夜店，牌子上写着：这里所有夜店都是夜间七点开门，次日凌晨五点关门。如果你想去夜店或酒吧，就必须在那个时间再来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OUTSIDE_DAY_STORM"><![CDATA[
+	<p>
+		你发现自己正走在御城区被称为“夜生活”的区域，由于持续不断的奥术风暴，这里已经荒无人烟。鳞次栉比的夜店和酒吧已全部关门，好安静啊，街上也没有非恶魔的生物。
+	</p>
+	<p>
+		你路过一家夜店，牌子上写着：这里所有夜店都是夜间七点开门，次日凌晨五点关门。如果你想去夜店或酒吧，就必须在那个时间再来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OUTSIDE_LIGHTS_OUT"><![CDATA[
+	<p>
+		[style.boldYellow(影液)]
+		<br/>
+		一个写着“影液”二字的霓虹灯招牌位于通往地下室酒吧的短而陡的楼梯上方。另一组霓虹灯招牌上写着酒吧的营业时间是
+		#IF(game.isHourBetween(18, 4))
+			[style.colourMinorGood([unit.time(18)]-[unit.time(4)])]，所以酒吧目前[style.colourGood(营业)]。
+		#ELSE
+			[style.colourMinorBad([unit.time(18)]-[unit.time(4)])]，所以酒吧目前[style.colourBad(打烊)]。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Interior: -->
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE"><![CDATA[
+	<p>
+		你走到夜店门前，推门步入其中。门在身后缓缓合拢，你发现自己站在一个宽敞明亮的入口大厅，面前是一条蜿蜒曲折的队伍，一直通向一扇纯白之门。墙壁周围装饰着热带草原主题的壁画，配合“饮水洼夜店”这个夜店招牌，再加上站在队列前方的一对威风凛凛的斑马保镖，整个夜店充斥着非洲风情。
+	</p>
+	<p>
+		你刚进门，个头较大的那个斑马保镖就看见你了，他在店内传来的微弱的重低音乐中朝你喊道：[jules.speech(嘿，后面那个！如果你愿意，可以不用排队！)]
+	</p>
+	<p>
+		你看着他不加掩饰的得意笑容，显然是在耍你。但还没等你回应，他就继续说：[jules.speech(只要你来含我的鸡鸡！)]
+	</p>
+	#IF(pc.getRace()==RACE_DEMON)
+		<p>
+			还没等你反应过来，这斑马男就被同事抡了一拳，骂道：[style.speechMasculine(你他妈在说什么逼话？！朱勒斯，[pc.sheIs]可是位恶魔！)]
+		</p>
+		<p>
+			[jules.speech(啊呀，息怒，我这是逗[pc.herHim]玩儿呢！)]朱勒斯转身冲你笑笑，[jules.speech(只是玩笑！)]
+		</p>
+		<p>
+			看来你得排在队伍后面，然后排队进入夜店，你猜大概需要半个小时。不过，你也可以利用恶魔身份来插队，甚至接受朱勒斯的提议……
+		</p>
+	#ELSE
+		<p>
+			另一个斑马男叹了口气，双手叉腰，然后转向他的同伴，斥责道：[style.speechMasculine(朱勒斯，别这样。克鲁格已经警告过你不要吓跑顾客了。)]
+		</p>
+		<p>
+			[jules.speech(啊呀，息怒，我这是逗[pc.herHim]玩儿呢！)]朱勒斯转身冲你笑笑，[jules.speech(只是玩笑！)]
+		</p>
+		<p>
+			看来你得排在队伍后面，然后排队进入夜店，你猜大概需要半个小时。不过如果你想插队，也可以考虑朱勒斯的提议……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE_REPEAT"><![CDATA[
+	<p>
+		你走到夜店门前，推门步入其中。门在身后缓缓合拢，你发现自己站在一个宽敞明亮的入口大厅，面前是一条蜿蜒曲折的队伍，一直通向一扇纯白之门。墙壁周围装饰着热带草原主题的壁画，配合“饮水洼夜店”这个夜店招牌，再加上站在队列前方的一对威风凛凛的斑马保镖，整个夜店充斥着非洲风情。
+	</p>
+	<p>
+		朱勒斯看到了你，在店内传来的微弱的重低音乐中叫你：
+		#IF(game.getDialogueFlags().hasFlag(FLAG_suckedJulesCock))
+			[jules.speech(嘿，我的小喇叭花儿回来了！过来跪下，你又可以不用排队了！)]
+		#ELSE
+			[jules.speech(嘿，又是你！这次你是要给我吹箫还是怎么着？)]
+		#ENDIF
+	</p>
+	#IF(pc.getRace()==RACE_DEMON)
+		<p>
+			还没等你反应过来，另一个斑马男就愤怒地斥责朱勒斯：[style.speechMasculine(你会让我们两个都被炒鱿鱼的，你个白痴！你看不出[pc.sheIs]她是位恶魔？！)]
+		</p>
+		<p>
+			[jules.speech(唉哟，消气，[pc.she]知道我只是在拿[pc.herHim]开玩笑啦。)]朱勒斯哈哈笑道。
+		</p>
+		<p>
+			看来你得排在队伍后面，然后排队进入夜店，你猜大概需要半个小时。不过，你也可以利用恶魔身份来插队，甚至接受朱勒斯的提议……
+		</p>
+	#ELSE
+		<p>
+			另一个斑马男靠在墙上，叹了口气，[style.speechMasculine(妈的，我说老朱……)]
+		</p>
+		<p>
+			看来你得排在队伍后面，然后排队进入夜店，你猜大概需要半个小时。不过如果你想插队，也可以考虑朱勒斯的提议……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE_START_BLOWJOB"><![CDATA[
+	<p>
+		你决定接受朱勒斯的建议，插队走到大个子斑马男面前，告诉他你会为他口交。
+	</p>
+	<p>
+		#IF(pc.getRace()==RACE_DEMON)
+			[jules.speech(瞧见没！我就说今晚会有人帮我口的，还是个恶魔！)]
+		#ELSE
+			[jules.speech(瞧见没！我就说今晚会有人帮我口的！)]
+		#ENDIF
+		朱勒斯兴高采烈地对同事炫耀，然后回头对你吩咐道：[jules.speech(来吧骚货，跪下。)]
+	</p>
+	<p>
+		你听话地跪在朱勒斯面前。当你向前挪动并准备为斑马男口交时，你听到后面排队等候的几个人开始发出惊叹和笑声。
+	</p>
+	<p>
+		[jules.speech(帮我口出来！)]朱尔斯命令道，然后顶起他的胯。
+	</p>
+	<p>
+		你赶紧照做，兴奋地拉下他的黑色牛仔裤。由于朱尔斯穿的是开裆内裤，你的脸离他那迅速勃起的巨大马屌只有[unit.sizes]的距离。毫无征兆地，斑马男将胯部向前一顶，肥大的乌黑阴茎啪地甩拍在你的脸上，他发出胜利的笑声：[jules.speech(哈！快让我们来见识一下你的嘴上功夫吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE_JULES_SEX"><![CDATA[
+	<p>
+		回到夜店门口，你
+		#IF(flags.hasFlag(FLAG_fuckedJules))
+			抑制不住地回想起，朱勒斯在办公室里给你的“好好来一炮”。
+		#ELSE
+			想起朱勒斯说要在办公室里给你“好好来一炮”。
+		#ENDIF
+		你认为斑马男的大鸡巴正是你现在所需要的，于是你[pc.step]出大门，立刻吸引了他的目光。
+	</p>
+	<p>
+		[jules.speech(已经要走了？)]他说，[jules.speech(嘿，改天再给我口交怎么样？你的口技也不赖嘛！)]
+	</p>
+	<p>
+		[pc.Walking]到朱勒斯跟前，告诉他口交是不行的，你现在需要的是“真正的做爱”。
+	</p>
+	<p>
+		[jules.speech(嘿，在我上这个骚货的时候，帮我掩护十分钟吧！)]对他的同事说，然后拉着你的[pc.hand(true)]把你带到附近一扇标有“游客止步”的门。
+	</p>
+	<p>
+		[style.speechMasculine(看在性爱的份上，)]另一个斑马男叹了口气，朱尔斯带你走进一间逼仄乏味的办公室。门要关上的时候，那位斑马同事在你身后喊道：[style.speechMasculine(这次可别把里面弄得到处都是了！)]
+	</p>
+	<p>
+		朱勒斯霸道地把你揉进他的胸膛，贪婪地摸索着你的身体，并用低沉的声音哼唧着：[jules.speech(是时候给你好好来一炮了，骚货！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_JULES_BLOWJOB"><![CDATA[
+	<p>
+		口交完毕，你在朱勒斯面前站起身来。他一边向你微笑，一边为你让出道路。
+		#IF(flags.hasFlag(FLAG_fuckedJules))
+			[jules.speech(干得好，骚货！进去吧，如果你找不到想操你的家伙，那就来找我，我会再给你好好来一炮。)]
+		#ELSE
+			[jules.speech(干得好，骚货！进去吧，你肯定能找到更多鸡巴喂你。找不到的话就来找我，我会再给你好好来一炮。)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE_PASSED"><![CDATA[
+	<p>
+		你发现自己正站在通往夜店入口大厅的那对纯白大门旁。你可以从这里离开，或者转身返回夜店。
+	</p>
+	#IF(!flags.hasFlag(FLAG_fuckedJulesTonight))
+		#IF(flags.hasFlag(FLAG_fuckedJules))
+			<p>
+				在上次朱勒斯给你“好好来一炮”后，你可以回到斑马男保镖那里，告诉他你想再来一次……
+			</p>
+		#ELSEIF(flags.hasFlag(FLAG_suckedJulesCock))
+			<p>
+				记住，朱勒斯答应在给你口交之后，会给你“好好来一炮”，你可以回到斑马男保镖那里，告诉他你想要他……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE_WAITING"><![CDATA[
+	<p>
+		你<i>绝对不要</i>给朱勒斯口交，于是向前走了一步，排在了队伍的后面。
+	</p>
+	<p>
+		大约过了三十分钟，你才站在这对斑马男保镖面前。又过了一分钟，朱勒斯走到一边，给你让出通路。[jules.speech(进去吧。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE_SKIP_QUEUE"><![CDATA[
+	<p>
+		你决定利用自己的恶魔身份，于是大步向前，冷冷地问朱勒斯是否知道你是谁。
+	</p>
+	<p>
+		[jules.speech(嘿，我只是开个玩笑，并没有冒犯你的意思。)]斑马男怯懦地回应。他意识到自己可能惹大麻烦了，赶紧走到一旁请你入内，致歉道：[jules.speech(不好意思啊，您里边请！祝您今晚玩得开心！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_ENTRANCE_END"><![CDATA[
+	<p>
+		跨过双开的大门，你进入了夜店，发现里面挤满了不同种族的生物。嘈杂、低沉的背景音乐伴随着人群的聊天声、笑声和叫喊声，除非你就站在他们身边，否则很难听懂他们在说什么。
+	</p>
+	<p>
+		就像入口大厅一样，内部主厅看起来也以非洲为主题，虽然灯光很暗，但你可以清楚地看到墙上画着斑马条纹、豹斑和热带草原风格的树木。脚下铺着浅色木地板，再加上浅蓝色的高高天花板，给人一种宽敞的感觉。
+	</p>
+	<p>
+		虽然隔着眼前的人群，你看不到吧台。但夜店宽敞的内部远处，天花板上悬挂着一块木牌，指示着吧台的位置。你不知道是应该直接去那里喝一杯，还是先找个人调调情……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_JULES_SEX"><![CDATA[
+	<p>
+		#IF(jules.isSatisfiedFromLastSex())
+			[jules.speech(操，我今晚就需要这个。你他娘的真是天生的肉便器啊，骚货！)]朱勒斯一边咕哝着，一边结束了一切。
+		#ELSE
+			[jules.speech(你这就完事啦？操，假冒伪劣飞机杯！)]朱勒斯恼怒地哼了一声，因为你在他达到高潮之前就结束了一切。
+		#ENDIF
+		他迅速用湿巾擦拭干净，然后穿上衣服，说：[jules.speech(我得回去上工了，不能把你留在这儿。快点儿收拾干净！)]
+	</p>
+	<p>
+		你按照吩咐，迅速把自己的东西收拾好，然后从进来的那扇门离开了这间昏暗的办公室。跟在你身后的朱勒斯狠狠地拍了你[pc.ass+]一下，然后回到了夜店门口的岗位上。
+	</p>
+	<p>
+		[jules.speech(去吧，你可能会想喝点营养快线以外的东西。)]朱勒斯对你说，然后打开门，示意你进去。
+	</p>
+	<p>
+		[style.speechMasculine(何等浪漫！)]同事讥讽他。
+	</p>
+	<p>
+		按照朱勒斯说的，你与他擦肩而过，再次进入夜店。人群中传来叽叽喳喳的笑声和叫喊声，再加上嘈杂、低沉的背景音乐，除非你就站在他们身边，否则很难听懂他们在说什么。
+	</p>
+	<p>
+		就像入口大厅一样，内部主厅看起来也以非洲为主题，虽然灯光很暗，但你可以清楚地看到墙上画着斑马条纹、豹斑和热带草原风格的树木。脚下铺着浅色的木地板，再加上高高的浅蓝色天花板，给人一种宽敞的感觉。
+	</p>
+	<p>
+		虽然隔着眼前的人群，你看不到吧台。但夜店宽敞的内部远处，天花板上悬挂着一块木牌，指示着吧台的位置。你不知道是应该直接去那里喝一杯，还是找个人再寻云雨之欢……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- Main club content: -->
+	
+	<htmlContent tag="WATERING_HOLE_MAIN"><![CDATA[
+	<p>
+		“饮水洼夜店”内部挤满了不同种族的人。嘈杂、低沉的背景音乐伴随着人群的聊天声、笑声和叫喊声，除非你就站在他们身边，否则很难听懂他们在说什么。
+	</p>
+	<p>
+		就像入口大厅一样，内部主厅看起来也以非洲为主题，虽然灯光很暗，但你可以清楚地看到墙上画着斑马条纹、豹斑和热带草原风格的树木。脚下铺着浅色木地板，再加上浅蓝色的高高天花板，给人一种宽敞的感觉。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEARCH_GENDER"><![CDATA[
+	<p>
+		夜店里有很多不同类型的人，你一定能找到自己想要的类型。首先，你需要决定你期望的伴侣性别……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEARCH_RACE"><![CDATA[
+	<p>
+		在确定了想共度良宵的伴侣性别后，你现在需要弄清楚伴侣应该是什么种族……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEARCH_GENERATE"><![CDATA[
+	<p>
+		决定了要找的人之后，你开始在熙熙攘攘的夜店人群中寻找。没过多久，你发现[npc.a_raceFull(true)]独自一人站在那里，这正是你要找的人！你走到[npc.herHim]跟前介绍自己。[npc.she]回你以微笑，应答道：
+		#IF npc.isShy()
+		#THEN [npc.speech(哦……噢！你，你好！我叫[npc.name]。我和朋友一起来的，但他们去跳舞了……)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(嗨！我叫[npc.name]！这家店真的太棒了，对不对？)]
+			#ELSE [npc.speech(你好呀，我叫[npc.name]！我从没在这见到你！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你俩一见如故相谈甚欢。很快你就发现[npc.name]想与你共度良宵。带着你的新同伴，接下来去哪好呢……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_CONTACTS"><![CDATA[
+	<p>
+		虽然夜店里似乎有无穷无尽的新朋友等着你去结识，但你发现自己还是想和以前的某个伙伴多呆一会儿。带着这种想法，你开始在人群中寻找，看看能否找到你的旧识……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_FIND_CONTACT"><![CDATA[
+	<p>
+		没过多久，你就看到一个[npc.a_raceFull(true)]独自站在那里，走近一看，原来是[npc.name]！这正是你要找的人！走到[npc.herHim]面前，你打了个招呼，[npc.she]也认出你了，高兴地冲你笑了笑：
+		#IF npc.isShy()
+		#THEN [npc.speech(哦……噢！[pc.name]！嗨！你最近……过得如何呢？我和朋友来的，但他们又把我留在这里……)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech([pc.Name]！嗨嗨嗨！最近混得不赖吧？)]
+			#ELSE [npc.speech(噢！[pc.name]！近来可好？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你俩叙了会儿旧。很快你就发现[npc.name]想与你共度良宵。带着你的老熟人，接下来去哪好呢……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_IMPORT_DOM"><![CDATA[
+	<p>
+		你可以导入以前导出的任何角色，以便将其添加到联系列表中。导入后，此角色将显示在你的'联系(作为攻)'列表中。
+	</p>
+	<p>
+		<i>你可以查看游戏中任意角色的角色卡，然后点击屏幕右下方的导出按钮，导出该角色。</i>
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_IMPORT_SUB"><![CDATA[
+	<p>
+		你可以导入以前导出的任何角色，以便将其添加到联系人列表中。导入后，此角色将显示在你的'联系人(作为受)'列表中。
+	</p>
+	<p>
+		<i>你可以查看游戏中任意角色的角色卡，然后点击屏幕右下方的导出按钮，导出该角色。</i>
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_PARTNER_LEAVES"><![CDATA[
+	<p>
+		[npc.name]彻底受够了你的野蛮行径，
+		#IF npc.isShy()
+		#THEN 发出一声叹息，[npc.eyes]盯着地面，结结巴巴说道：[npc.speech(你！你太不体贴了！我……我要去找我的朋友了。再……再见……)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN 交叉双臂愤怒地瞪着你：[npc.speech(你真的真的是个[pc.bitch]，知道吗？！)]
+			#ELSE 白了你一眼，叹道：[npc.speech(我走了，你真的很没意思！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		还没等你开口改变[npc.name]的想法，[npc.she]就转身冲进了人群。你叹了口气，希望下一次运气会更好……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_PARTNER_TOO_WASTED"><![CDATA[
+	<p>
+		[npc.Name]喝得太多了，[npc.she]跌跌撞撞地走到一旁，绊倒在地。你正要去扶[npc.herHim]，便听到一个尖锐的声音在你身后呼喊：[genericFemale.speech([npc.Name]！你还好吗？！)]
+	</p>
+	<p>
+		从你身边冲过，[npc.namePos]朋友跪下来，抓住[npc.her]的[npc.feet]。你也来搭把手，你们两个把[npc.herHim]拖到最近的座位区，然后把[npc.herHim]安置在一张空沙发上。[npc.her]的朋友转身对你叹了口气：[genericFemale.speech(多谢你的帮忙。[npc.Name]已经不是第一次这样了。我会陪着[npc.herHim]醒酒。下次你再来找[npc.herHim]玩吧？)]
+	</p>
+	<p>
+		鉴于你已经帮不上什么忙了，你向[npc.namePos]朋友道别，然后返回[npc.she]倒下的地方。也许你应该尽量避免让你的下一个伙伴陷入那种状态……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_TALK"><![CDATA[
+	<p>
+		你向[npc.name]靠拢，为了让自己的声音被听到，你在背景噪音中大声喊叫，并在接下来的几分钟里与[npc.herHim]交谈。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TALK_CONTENT"><![CDATA[
+	<p>
+		#IF npc.isShy()
+		#THEN[npc.She]似乎有点害羞，最后就变成你一直在说。
+		#ELSE
+			#IF npc.isConfident()
+			#THEN[npc.She]举手投足之间意气风发，激动时高亢嘹亮的声音响彻夜店。
+			#ELSE[npc.She]总是认真地听完你说话，才愉快地表达自己的想法。
+			#ENDIF
+		#ENDIF
+		聊完了夜店的装修和人潮后，[npc.name]聊到了一些关于
+		#IF npc.getHistory()==OCCUPATION_NPC_UNEMPLOYED || npc.getHistory()==OCCUPATION_NPC_UNIVERSITY_STUDENT
+		#THEN [npc.her]的朋友们，以及他们在御城区的所作所为。
+		#ELSE [npc.her]的[npc.a_jobName]工作。
+		#ENDIF
+	</p>
+	<p>
+		[npc.Name]似乎很感激你愿意花时间多了解[npc.herHim]一下。谈话结束时，[npc.she]开心地对你笑，问你接下来想做什么。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_FLIRT"><![CDATA[
+	<p>
+		你靠近[npc.name]，为了让自己的声音盖过背景噪音，你又进了一步，提高声音称赞[npc.herHim]的外表。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_FLIRT_CONTENT"><![CDATA[
+	<p>
+		#IF npc.isShy()
+		#THEN[npc.She]听清你的褒奖后，[npc.feet]一个趔趄差点跌倒，脸上飞了红霞。[npc.she]回你一个羞赧的微笑，示意你继续。
+		#ELSE
+			#IF npc.isConfident()
+			#THEN[npc.She]听到你的赞扬后朝你邪魅一笑，靠近你说，爱夸人是好事，能让你走遍天下都不怕。
+			#ELSE[npc.She]听完你的夸奖，朝你投来一个俏皮的微笑，然后身子微微前倾，问你还喜欢[npc.herHim]哪一点。
+			#ENDIF
+		#ENDIF
+		接下来的几分钟里，你们两个互相调情，在背景音乐和鼎沸人声里卿卿我我。
+	</p>
+	<p>
+		从[npc.her]的肢体语言和[npc.her]脸上的笑容可以看出，你给[npc.herHim]留下了很好的印象。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_KISS"><![CDATA[
+	<p>
+		贴着[npc.name]，你向前倾身，用[pc.lips+]堵上了对方温热的嘴唇，含糊不清地发出低沉的[npc.moan]。[npc.she]也痛快地回应，用身体紧紧黏着你，用[npc.tongue]在你的口中翻搅，拼命地吮吸。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KISS_CONTENT"><![CDATA[
+	<p>
+		你灵巧的
+		#IF pc.getTongueLengthValue() > 2
+		#THEN[pc.tongueLength]
+		#ENDIF
+		嫩舌在[npc.namePos]湿润的口中滑动。你勾着[npc.her]的脖子，忘情地发出[pc.a_moan+]，热情地深吻[npc.herHim]。[npc.she]也用[npc.arms]与你相拥，贪婪地索求。你明白，[npc.name]也很享受这段时光。
+	</p>
+	<p>
+		过了一小会儿，你松开了对方，在[npc.she]发出渴望的轻微[npc.moan]时，你开心地对[npc.name]微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_KISS_REJECTED"><![CDATA[
+	<p>
+               你走近[npc.name]，身体向前倾试图亲吻[npc.herHim]。你撅起[pc.lips]，[npc.name]却迅速退缩了，露出惊讶的表情，诉说着不爽。
+</p>
+	<p>
+		[npc.speech(喂！小心点儿！)][npc.she]大叫，然后皱着眉头看着你。[npc.she]把你推开。
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_GROPE"><![CDATA[
+	<p>
+		你靠在[npc.name]身上，然后把你的[pc.hands]放在了[npc.her]的[npc.hips]上，然后开始让你的触摸传遍[npc.her]的整个身体。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_GROPE_CONTENT"><![CDATA[
+	<p>
+		你的[pc.hand]滑过了[npc.her]的[npc.legs]，你开始摸索和抚摸[npc.her]的腹股沟。
+		#IF npc.hasPenis()
+		#THEN 移动你的[pc.fingers]放在了[npc.her]隆起的[npc.penisSize]鸡巴上。你发出一阵笑声，然后用力拍打了几下。
+		#ENDIF
+		#IF npc.hasBreasts()
+		#THEN 把你空闲的[pc.hand]放到了[npc.her]的胸上，你摸索并挤压着[npc.her]一边的[npc.breastSize][npc.breasts]，然后移开了，给了
+			#IF npc.getBreastRows()>1
+			#THEN 其他地方一些注意。
+			#ELSE 另一边一些注意。
+			#ENDIF
+		#ENDIF
+		#IF npc.isShy()
+		#THEN [npc.Name]因为你的触碰口中溢出了一声[npc.moan]，然后轻轻地靠在你身上，深深地喘着气，那声音不断地传入你的[pc.ear]，[npc.speech(~啊！~好，好棒！不，不要停……)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.Name]在你的触碰下发出[npc.a_moan+]，在急切地把[npc.herself]靠在你身上之前，那声音不断地传入你的[pc.ear]，[npc.speech(~啊！~好棒，继续！~嗯嗯嗯！~好，就是这样！)]
+			#ELSE [npc.Name]在你的触碰下发出[npc.a_moan+]，然后轻轻地靠在你身上，深深地喘着气，那声音不断地传入你的[pc.ear]，[npc.speech(~啊！~ 对……继续！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你受到[npc.her]热情反应鼓舞，接下来几分钟都爱抚着[npc.name]，最后终于分开，思考下一步该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_GROPE_REJECTED"><![CDATA[
+	<p>
+		你倾斜倚靠着[npc.name]，将[pc.hands]放在[npc.her][npc.hips]上，随后尝试向下摸去，触碰[npc.her]的胯。[npc.She]发现自己被摸，立马满脸怒气地推开了你，喊叫声压过了夜店的背景噪音，
+		#IF npc.isShy()
+		#THEN [npc.speech(停，停下！太过分了！)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(你他妈干嘛？管好你的[pc.hands]！)]
+			#ELSE [npc.speech(嘿，停下！管好你的[pc.hands]！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你后退并给[npc.name]留出空间，好让[npc.herHim]冷静下来。当[npc.her]的表情缓和一些后，你又走上前去，同时考虑着接下来做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_SAVE_CLUBBER"><![CDATA[
+	<p>
+		你决定和[npc.Name]暂时分开一会，于是大声压过夜店噪音高喊道，[pc.speech(我要离开一会儿，但一会就会来找你，好吗？)]
+	</p>
+	<p>
+		[npc.Name]看起来有些泄气，但[npc.she]还是微笑着回应道，[npc.speech(当然了，咱们过会再见。)]
+	</p>
+	<p>
+		随后，[npc.she]融进了人群中，留下你一人站在原地……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_MAIN_LOSE_COMPANY"><![CDATA[
+	<p>
+		你认为[npc.name]并不是你喜欢的类型，于是你用盖过夜店噪音的音量喊道，[pc.speech(我要走了，祝你今晚玩的开心！)]
+	</p>
+	<p>
+		[npc.Name]看起来有些泄气，但你已经从[npc.herHim]身边离开了。[npc.she]耸了耸肩并融入到人群之中。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING"><![CDATA[
+	<p>
+		在夜店主楼层的角落里有几个雨林主题的座椅区，你正身处其中之一。你环顾四周，发现这里满是小隔间，都被假热带植物和深色木栅栏半封闭着。这些隔间内，半弧形的黑色皮沙发环绕着干净的木桌。这些沙发大多被正在聊天或者亲热的情侣占据，但你还是找到几张空沙发。
+	</p>
+	<p>
+		尽管没有墙把这些座椅区和主楼拥挤的人群隔开，但它们仍然是夜店里最安静的区域，因为它们离中央舞池上方的扬声器最远。
+	</p>
+	<p>
+		如果想找个人在夜店主区域的后面聊聊天，你可以在这些隔间中的一个和他们坐坐。但如果你形单影只，在这里就没什么好做的。你扭头看向夜店的主区域，准备回到人群之中……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_WITH_PARTNER"><![CDATA[
+	<p>
+		在夜店主楼层的角落里有几个雨林主题的座椅区，你正身处其中之一。你环顾四周，发现这里满是小隔间，都被假热带植物和深色木栅栏半封闭着。这些隔间内，半弧形的黑色皮沙发环绕着干净的木桌。这些沙发大多被正在聊天或者亲热的情侣占据，但你还是找到几张空沙发。
+	</p>
+	<p>
+		尽管没有墙把这些座椅区和主楼拥挤的人群隔开，但它们仍然是夜店里最安静的区域，因为它们离中央舞池上方的扬声器最远。
+	</p>
+	<p>
+		#IF(!pc.isTaur())
+			#IF(!npc.isTaur())
+				你将[npc.name]带到卡座坐下，然后向前倾身靠在桌上，准备采取下一步行动……
+			#ELSE
+				你扫了眼周围，看到有空着的特大号卡座，似乎是专门为有着[npc.namePos]这种下半身的客人设计的。你将[npc.herHim]带到宽大的沙发上坐下，然后向他挪近，准备采取下一步行动……
+			#ENDIF
+		#ELSE
+			#IF(!npc.isTaur())
+				你扫了眼周围，看到有空着的特大号卡座，似乎是专门为有着你这种下半身的客人设计的。你将[npc.name]带到宽大的沙发上坐下，然后向他挪近，准备采取下一步行动……
+			#ELSE
+				你扫了眼周围，看到有空着的特大号卡座，似乎是专门为有着你和[npc.namePos]这种下半身的客人设计的。你将[npc.herHim]带到宽大的沙发上坐下，然后向他挪近，准备采取下一步行动……
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_FOOTSIE"><![CDATA[
+	#IF(!pc.isTaur() && !npc.isTaur())
+		<p>
+			你挪动着桌子下的[pc.foot]，慢慢沿着[npc.namePos]的[npc.legs]爬了上去。
+			#IF(npc.isShy())
+				[npc.She]意识到你忽然的触碰，顿时红了脸，在位子上扭了扭身子，轻咬下唇，向你羞涩一笑。
+			#ELSE
+				#IF(npc.isConfident())
+					[npc.She]意识到你忽然的触碰，玩味地笑了起来，随后直接[npc.spreadingHerLegs]，诱使你进一步行动。
+				#ELSE
+					[npc.She]意识到你的触碰，玩味地微笑起来，随后[npc.spreadingHerLegs]，轻咬下唇，邀请你更进一步。
+				#ENDIF
+			#ENDIF
+		</p>
+		<p>
+			你受到[npc.her]反应的鼓舞，将[pc.foot]完全滑向[npc.namePos][npc.leg+]之间，用[pc.toes]轻压向[npc.her]的下体。随着你用[pc.foot]对
+			#IF npc.hasPenis() && npc.hasVagina()
+			#THEN[npc.her]肉棒和小穴
+			#ELSE
+				#IF npc.hasPenis()
+				#THEN[npc.her]肉棒
+				#ELSE
+					#IF npc.hasVagina()
+					#THEN[npc.her]小穴
+					#ELSE[npc.her]光滑的下体
+					#ENDIF
+				#ENDIF
+			#ENDIF
+			的刺激，[npc.She]连连发出[npc.a_moan+]。看到对方的反应，你不仅扬起了嘴角。
+		</p>
+		<p>
+			你继续在桌子下玩弄着[npc.herHim]，几分钟后，你才终于放下了[pc.foot]，笑面坐看着已经气喘吁吁的[npc.race]。
+		</p>
+	#ELSE
+		#IF(!npc.isTaur())
+			<p>
+				你将人形的上半身紧贴着[npc.name]，[pc.hand]则滑到了[npc.her]的[npc.legs]间，开始对着下体轻揉爱抚起来。
+				#IF(npc.hasPenis())
+					你用[pc.fingers]在那[npc.penisSize]的帐篷上游走，一面发出嘻嘻的窃笑，一面又用力摸了几把。
+				#ENDIF
+				#IF(npc.hasBreasts())
+					随后你抬起另一只[pc.hand]搭在了[npc.her]的胸口，捧起[npc.her]一个[npc.breastSize]的[npc.breasts]揉弄了一会儿，随后又移到
+					#IF(npc.getBreastRows()>1)
+						其他的上面“照顾”起来。
+					#ELSE
+						另一个上面“照顾”起来。
+					#ENDIF
+				#ENDIF
+			</p>
+			<p>
+				#IF(npc.isShy())
+					[npc.Name]发出了一声轻微的[npc.moan]，回应着你的抚摸，随后轻轻倚在你的身上，在你[pc.ear]旁喘息起来，[npc.speech(~啊啊！~很，很舒服……别，别停下来……)]
+				#ELSE
+					#IF(npc.isConfident())
+						[npc.Name]发出[npc.a_moan+]，回应着你的抚摸，随后紧紧将身体跟你贴在一起，在你[pc.ear]旁喘息起来，[npc.speech(~啊啊！~继续吧，宝贝！~姆嗯！~对，就是这样！)]
+					#ELSE
+						[npc.Name]发出[npc.a_moan+]，回应着你的抚摸，随后倚在你的身上，在你[pc.ear]旁喘息起来，[npc.speech(~啊啊！~没错……继续！)]
+					#ENDIF
+				#ENDIF
+			</p>
+			<p>
+				你受到[npc.her]热情反应鼓舞，接下来几分钟都爱抚着[npc.name]，最后终于分开，思考下一步该做什么……
+			</p>
+		#ELSE
+			<p>
+				由于你们二人的下半身都不同寻常，所以你和[npc.name]只能让人形上半身紧贴着坐着。可这样的姿势就绝对不可能摸到[npc.namePos]的下体了，于是你对[npc.herHim]编了个借口，说沙发的坐垫看着快掉了，以此为由移到了[npc.her]的下半身附近。
+			</p>
+			<p>
+				你让对方继续坐着，自己起身快步到前面，跪下身子塞了塞沙发的坐垫。之后你并没有起身，而是偷偷用[pc.hand]向着[npc.namePos]兽化的臀部摸过去，随后渐渐探向[npc.her]的后腿之间。
+				#IF(npc.hasPenis())
+					你用[pc.fingers]在那[npc.penisSize]的帐篷上游走，一面发出嘻嘻的窃笑，一面又用力摸了几把。
+				#ENDIF
+				#IF(npc.hasVagina())
+					随后你抬起另一只[pc.hand]放到[npc.her]的身后，对着[npc.her][npc.pussy+]周围的敏感区域挑弄起来，扬着嘴角按揉着[npc.her][npc.labia+]
+				#ENDIF
+			</p>
+			<p>
+				#IF(npc.isShy())
+					[npc.Name]发出了一声轻微的[npc.moan]，回应着你的抚摸，随后慢慢将兽化的下半身朝你顶过来，口中不断喘息，[npc.speech(~啊啊！~很，很舒服……别，别停下来……)]
+				#ELSE
+					#IF(npc.isConfident())
+						[npc.Name]发出[npc.a_moan+]，回应着你的抚摸，随后慢慢将兽化的下半身朝你顶过来，口中不断喘息，[npc.speech(~啊啊！~继续吧，宝贝！~姆嗯！~对，就是这样！)]
+					#ELSE
+						[npc.Name]发出[npc.a_moan+]，回应着你的抚摸，随后慢慢将兽化的下半身朝你顶过来，口中不断喘息，[npc.speech(~啊啊！~没错……继续！)]
+					#ENDIF
+				#ENDIF
+			</p>
+			<p>
+				你受到[npc.her]热情反应鼓舞，接下来几分钟都爱抚着[npc.name]，最后终于起身坐了回去，思考下一步该做什么……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_FOOTSIE_REJECTED"><![CDATA[
+	#IF(!pc.isTaur() && !npc.isTaur())
+		<p>
+			你挪动着桌子下的[pc.foot]，慢慢沿着[npc.namePos]的[npc.legs]爬了上去。
+			#IF(npc.isShy())
+				[npc.She]顿时红了脸，连忙往后挪，羞答答地说道，[npc.speech(请，请不要这样！)]
+			#ELSE
+				#IF(npc.isConfident())
+					[npc.She]生气地喊了一声，一把就从桌子下面抓住了你的[pc.foot]，推了开来。[npc.speech(管好你的脏[pc.feet]！)]
+				#ELSE
+					[npc.She]惊呼一声，随后就从你的[pc.foot]边挪开了。[npc.speech(别这样了！)]
+				#ENDIF
+			#ENDIF
+		</p>
+		<p>
+			玩笑被拒绝后，你就把[pc.foot]放回了地板上。[npc.Name]环抱着胸口，倚坐在沙发上，瞪了你一会儿，随后表情才柔和下来。
+		</p>
+	#ELSE
+		#IF(!npc.isTaur())
+			<p>
+				你靠在[npc.name]身上，把[pc.hands]搭在了[npc.her]的[npc.hips]上，企图摸向[npc.her]的下体。
+				#IF(npc.isShy())
+					[npc.She]顿时红了脸，连忙躲开，羞答答地说道，[npc.speech(请，请不要这样！)]
+				#ELSE
+					#IF(npc.isConfident())
+						[npc.She]生气地喊了一声，随后就挪了开来，怒斥道。[npc.speech(管好你的脏[pc.feet]！)]
+					#ELSE
+						[npc.She]惊呼一声，随后就挪了开来，怒斥道。[npc.speech(别这样了！)]
+					#ENDIF
+				#ENDIF
+			</p>
+			<p>
+		你也退开给[npc.name]留出空间，好让[npc.herHim]冷静下来。[npc.her]的表情缓和一些后，你又上前去，同时考虑着接下来做什么……
+	</p>
+		#ELSE
+			<p>
+				由于你们二人的下半身都不同寻常，所以你和[npc.name]只能让人形上半身紧贴着坐着。可这样的姿势就绝对不可能摸到[npc.namePos]的下体了，于是你对[npc.herHim]编了个借口，说沙发的坐垫看着快掉了，以此为由移到了[npc.her]的下半身附近。
+			</p>
+			<p>
+				你让对方继续坐着，自己起身快步到前面，跪下身子塞了塞沙发的坐垫。之后你并没有起身，而是偷偷用[pc.hand]向着[npc.namePos]兽化的臀部摸过去，随后渐渐探向[npc.her]的后腿之间。
+			</p>
+			<p>
+				#IF(npc.isShy())
+					[npc.She]感觉到之后顿时红了脸，连忙躲开，羞答答地说道，[npc.speech(请，请不要这样！)]
+				#ELSE
+					#IF(npc.isConfident())
+						[npc.She]生气地喊了一声，随后就挪了开来，怒斥道。[npc.speech(管好你的脏[pc.hands]！)]
+					#ELSE
+						[npc.She]惊呼一声，随后就挪了开来，怒斥道。[npc.speech(别这样了！)]
+					#ENDIF
+				#ENDIF
+			</p>
+			<p>
+				既然你冒失地更进一步的行为遭到拒绝，你也就站起身回到座位上，给[npc.name]留出空间，好让[npc.herHim]冷静下来。[npc.her]的表情缓和一些后，你又上前去，同时考虑着接下来做什么……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_SEX_AS_SUB"><![CDATA[
+	#IF(!pc.isTaur())
+		#IF(!npc.isTaur())
+			<p>
+				你从半环形的沙发一边凑到了[npc.name]身旁，惹得[npc.herHim]饥渴地[npc.moan]了一小声。你权当对方就是同意了，直接起身坐到了[npc.her]的大腿上，接着扭头将[pc.lips+]贴了上去。
+	</p>
+			<p>
+				[npc.Name]见你如此举动，便用[npc.arms]抱住了你，慢慢将你紧锁在环抱之中，同时回应着你的热吻。亲热片刻后，你抽回身，然后低头对着[npc.name][pc.moaning]道，[pc.speech(来吧，[npc.name]！干我吧！)]
+			</p>
+			<p>
+				[pc.speech(~唔嗯~~来呀，)][npc.she][npc.moan]着应道，按着你的请求，将你拉入了一场淫荡的接吻……
+			</p>
+		#ELSE
+			<p>
+				你从半环形的沙发上起身，跪在了[npc.namePos]的后半身旁，惹得[npc.herHim]饥渴地[npc.moan]了一小声。你权当对方就是同意了，凑上前对着[npc.her]的下体摸了一把，接着亲了[npc.her]兽化的私处一口。
+	</p>
+			<p>
+				[npc.Name]见你如此举动，先是又一声淫荡的[npc.moan]，接着一边小心别踩到你，一边起身往前迈了几步，将后半身完完全全地展现给你。[pc.speech(~唔嗯~快来吧，)][npc.she]呻吟着回头望来， [npc.speech(这里很宽敞，怎么玩都可以……)]
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(!npc.isTaur())
+			<p>
+				你急切地想跟[npc.name]做爱，于是让[npc.herHim]好好坐着，自己快速起身转了过去，将自己兽化的后半身对准了伴侣，接着你向后退了一步，慢慢放下下体在[npc.her]的腿上，[pc.moan]起来，[pc.speech(拜托了……操我吧……)]
+			</p>
+			<p>
+				[npc.speech(~唔嗯！~这怎么会有人拒绝呢？)][npc.Name][npc.moans]着应道，一把握住了你的后半身，准备按你的请求做了……
+			</p>
+		#ELSE
+			<p>
+				你急切地想跟[npc.name]做爱，于是直截了当地告诉[npc.herHim]这是个特制的超大隔间，足够两人寻欢作乐。说完你就握住了伴侣的[npc.hands]，让[npc.herHim]跟你一同起身，[pc.moan]道，[pc.speech(拜托了……操我吧……)]
+			</p>
+			<p>
+				[npc.speech(~唔嗯！~这怎么会有人拒绝呢？)][npc.Name][npc.moans]着应道，饥渴地向你露出淫笑，准备按你的请求做了……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_SEX_AS_SUB_REJECTED"><![CDATA[
+	<p>
+		你急切地想跟[npc.name]做爱，于是开始了行动，但[npc.she]注意到你的意图后，立刻恼怒地叹了口气，把你一把推开。
+		#IF(npc.isShy())
+			[npc.she]有些慌乱，尴尬地喊道，[npc.speech(请，请待在你那边可以吗！)]
+		#ELSE
+			#IF(npc.isConfident())
+				[npc.she]皱起眉头，斥责道，[npc.speech(喂！别上脑了！坐回你沙发的那边！)]
+			#ELSE
+				[npc.she]皱起眉头，直言道，[npc.speech(坐回你沙发的那边！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你只得照做，挪回了原来的位置。等过了一会儿[npc.name]收起了眉头，你便思索起接下来做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_SEX_AS_DOM"><![CDATA[
+	#IF(!pc.isTaur())
+		#IF(!npc.isTaur())
+			<p>
+				你从半环形的沙发一边凑到了[npc.name]身旁，惹得[npc.herHim]不禁[npc.moan]了一小声。你权当对方就是同意了，直接把[npc.herHim]环抱住拉到了你的大腿上，接着扭头将[pc.lips+]贴了上去。
+	</p>
+			<p>
+				[npc.Name]见你如此举动，重重地靠在你身上，发出低沉的[npc.moans]，[npc.she]回应你热情的吻。亲热片刻后，[npc.name]抽回身，然后低头对着你[npc.moaning]，
+				#IF(npc.isShy())
+					[npc.speech(请-请……操我……)]
+				#ELSE
+					#IF(npc.isConfident())
+						[npc.speech(~唔嗯~来吧宝贝！快来操我！)]
+					#ELSE
+						[npc.speech(好厉害！干我吧！)]
+					#ENDIF
+				#ENDIF
+			</p>
+			<p>
+				[pc.speech(~唔嗯~~来吧~，)]你[npc.moan]着回应，按照[npc.name]的要求，将[npc.she]拉入了一场淫荡的接吻……
+			</p>
+		#ELSE
+			<p>
+				你早就迫不及待要同[npc.name]做爱，便告诉[npc.herHim]说是时候来点乐子了。听到[npc.her]兴奋的[npc.moan]，就是说[npc.sheIs]也跟你一样不能再等了，你立刻让[npc.herHim]站起转身，将[npc.her]兽化的下体对向你。
+			</p>
+			<p>
+				你又继续命令，让[npc.Name]将后半身坐到你的腿上，[npc.she]也立刻照做了，随后回头望来，[npc.moaning]道，
+				#IF(npc.isShy())
+					[npc.speech(求，求你了……操我吧……)]
+				#ELSE
+					#IF(npc.isConfident())
+						[npc.speech(~唔姆~来吧宝贝！赶紧干我！)]
+					#ELSE
+						[npc.speech(没错！操我吧！)]
+					#ENDIF
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+				你早就迫不及待要同[npc.name]做爱，便告诉[npc.herHim]说是时候来点乐子了。听到[npc.her]兴奋的[npc.moan]，就是说[npc.sheIs]也跟你一样不能再等了，你立刻让攥住[npc.her]的[npc.hands]，带着[npc.her]跟你一起站了起来。
+			</p>
+		<p>
+			你见[npc.name]迫切地纵身向前贴了上来，顿时喜笑颜开，立刻向[npc.herHim]保证说，这个特别定制的隔间绝对够宽敞，随便怎样骑都可以。
+			#IF(npc.isShy())
+				[npc.name]听后顿时满脸通红，结结巴巴地说道，[npc.speech(好，好的……请，请你……来操我吧……)]
+			#ELSE
+				#IF(npc.isConfident())
+					[npc.name]听后轻咬下唇，[npc.moans]道，[npc.speech(~姆嗯~那就来吧，宝贝！赶紧干我！)]
+				#ELSE
+					[npc.name]听后轻咬下唇，[npc.moans]道，[npc.speech(那太好了！操我吧！)]
+				#ENDIF
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_SEX_AS_DOM_REJECTED"><![CDATA[
+	<p>
+		你从半环形的沙发一边凑到了[npc.name]身旁，惹得[npc.herHim]不满地哼了一声，把你推到一旁，
+		#IF(npc.isShy())
+			[npc.she]结结巴巴的，[npc.speech(请，请坐在你那边！)]
+		#ELSE
+			#IF(npc.isConfident())
+				[npc.she]斥责道，[npc.speech(喂！别上脑了！坐回你沙发的那边！)]
+			#ELSE
+				[npc.she]朝你皱了皱眉头，直言道，[npc.speech(坐回你沙发的那边！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	#IF(npc.hasFetish(FETISH_NON_CON_SUB))
+		<p>
+			尽管[npc.her]拒绝了你的挑逗，但[npc.Name]突然淫荡地呻吟了一声，让你知道[npc.her]有着非自愿性爱的怪癖。如果你尝试在不太公开的地方，比如厕所里主动出击，[npc.herHim]也许就会和你玩强奸游戏……
+		</p>
+	#ELSE
+		<p>
+			你只得照做，挪回了原来的位置。等过了一会儿[npc.name]收起了眉头，你便思索起接下来做什么……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_AFTER_SEX"><![CDATA[
+	<p>
+		你们两人从缠绵中分开后，不约而同满足地长叹一声。[npc.Name]贴着你瘫坐在沙发上，满面春光，又对着你的嘴唇啄了一下，[npc.speech(~唔嗯~真是太棒了……)]
+	</p>
+	<p>
+		你们两个用了几分钟穿好了衣服。[npc.name]扭过头来微笑道，
+		#IF npc.isShy()
+		#THEN [npc.speech(我，我得走了。下次再在这见面，可以吗？)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(我要走了，你要找我我还会来的。下回再在这儿见，行吧？)]
+			#ELSE [npc.speech(我得离开了。下次再见面，行吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_AFTER_SEX_NO_ORGASM"><![CDATA[
+	<p>
+		你们两人从缠绵中分开后，不约而同地长叹一声。[npc.Name]贴着你瘫坐在沙发上，抱起胸抱起了胸，有些不满地哼哼道，[npc.speech(我说，你可没真正满足我……)]
+	</p>
+	<p>
+		你们两个用了几分钟穿好了衣服。[npc.name]扭过头来微笑道，
+		#IF npc.isShy()
+		#THEN [npc.speech(我，我得走了。虽然不能算最舒服的一次，但我也很满意了……下次再在这见面了，可以吗？)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(我要走了。你床上技术很烂，但你要找我我还会来的。下回再在这儿见，行吧？)]
+			#ELSE [npc.speech(我得离开了。这一次，不是很满意，不过我无所谓，下次再见面，行吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_AFTER_SEX_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(我们当然还要再见面了！)]你热情地笑看着[npc.name]起了身。
+	</p>
+	<p>
+		[npc.speech(好！祝你一路顺风！)][npc.she]说完又俯身亲了你一口，随后转身离开了。
+	</p>
+	<p>
+		[npc.namePos][npc.scent+]依旧弥漫在空气中，你瘫坐下来，满足地深叹一声。见到[npc.herHim]混入人群之中后，你便站了起来，思索着接下来该怎么办……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_AFTER_SEX_DO_NOT_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(嗯……行啊，)]你有些迟疑，暗自却希望永远不要再见到[npc.name]了。
+	</p>
+	<p>
+		[npc.speech(呃，你至少<i>努力一下</i>，显得真诚些吧，)][npc.she]恼火地哼了一声，便转身离去了。
+	</p>
+	<p>
+		[npc.namePos][npc.scent+]依旧弥漫在空气中，你瘫坐下来，放松地长叹一声。见到[npc.herHim]混入人群之中后，你便站了起来，思索着接下来该怎么办……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_AFTER_SEX_DO_NOT_SEE_AGAIN_RUDE"><![CDATA[
+	<p>
+		[pc.speech(算了吧，)]你倚坐在沙发上，朝着[npc.name]蔑笑道，[pc.speech(我只不过想随便找个人操。现在滚吧。)]
+	</p>
+	<p>
+		#IF npc.isShy()
+		#THEN[npc.speech(你，你个混蛋！你，你装都不装一下吗！)][npc.name]顿时结巴起来，泪水从[npc.eyes]中汩汩流出，随即转身跑走了。
+		#ELSE
+			#IF npc.isConfident()
+			#THEN[npc.speech(行吧。既然如此了，那就去你妈的吧，你个[pc.bitch]。)][npc.name]撂下话，狠狠地瞪了你一会儿，这才转身离去。
+			#ELSE[npc.speech(呃。真是个[pc.a_bitch]。滚蛋吧。)][npc.name]撂下话，立马转身离去了。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		[npc.namePos][npc.scent+]依旧弥漫在空气中，你瘫坐下来，放松地长叹一声。见到[npc.herHim]混入人群之中后，你便站了起来，思索着接下来该怎么办……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_SAVE_CLUBBER"><![CDATA[
+	<p>
+		你决定和[npc.Name]暂时分开一会，于是撑在桌子上说道，[pc.speech(抱歉[npc.Name]，我要离开一会儿，但一会就会来找你，好吗？)]
+	</p>
+	<p>
+		[npc.Name]明显往沙发下面滑了一下，但还是笑容着回应道，[npc.speech(没问题，[pc.name]，再找时间再见。)]
+	</p>
+	<p>
+		说完[npc.she]就起身向你投来最后一抹微笑，扭头走入了人群之中。你长叹一声，起身思索着接下来该怎么做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_LOSE_COMPANY"><![CDATA[
+	<p>
+		你不想再跟[npc.name]待在一起了，于是撑在桌子上叹道，[pc.speech(其实我有点无聊。祝你今晚愉快吧。)]
+	</p>
+	<p>
+		[npc.Name]立马起身，皱着眉头回应道，[npc.speech(那，好吧。再见。)]
+	</p>
+	<p>
+		说完[npc.she]就扭头走入了人群之中。你长叹一声，起身思索着接下来该怎么做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_TALK"><![CDATA[
+	<p>
+		#IF(!pc.isTaur() && !npc.isTaur())
+			你撑在桌子上，靠近了[npc.name]，用盖过背景噪声的声音，跟[npc.herHim]聊了好几分钟。
+		#ELSE
+			你微微向[npc.name]倾了倾身子，用盖过背景噪声的声音，跟[npc.herHim]聊了好几分钟。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEATING_FLIRT"><![CDATA[
+	<p>
+		你在沙发上稍微挪了挪身子，贴近了[npc.name]，为了让对方在背景噪声中听清，倾身向着[npc.herHim]提高了声音，对[npc.her]的外貌赞扬起来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR"><![CDATA[
+	<p>
+		吧台跟夜店其他地方别无二致，同样是非洲风情，墙上绘制着稀树草原风格的壁画，天花板上垂落下人造的雨林植被。柜台后大概有五六个酒保，也很符合装修的风格，基本都是斑马女，除了一只看上去格外有活力的母狮。
+	</p>
+	<p>
+		她经常吩咐斑马女做事，很明显应该是酒保里面的领导。而且她刚好是离你站的位置最近的那个，所以她给某位撑在柜台上的顾客服务完后，就转身微笑着面向了你。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_INTRO"><![CDATA[
+	<p>
+		[kalahari.speech(嘿呀，亲爱的！)]那狮女上前迎接过来，[kalahari.speech(我在这还没见过你这张#IFpc.isFeminine()#THEN漂亮的#ELSE帅气的#ENDIF脸蛋呢！)]
+	</p>
+	<p>
+		[pc.speech(我第一次来这儿，)]你回答，友善地冲狮女笑笑。
+	</p>
+	<p>
+		[kalahari.speech(叫我卡拉哈利就好，)]她说，双手撑在柜台上，冲你眨了眨眼睛。作为交换，你告诉了她自己的名字。卡拉哈利向前探身，你的目光不自觉地落到乳沟上。她[kalahari.breastSize]的乳房几乎完全从裹胸里露了出来，随着身体的动作乳摇。她大笑一声，[kalahari.speech(吼吼！抱歉，别介意，我只是想给所有可爱的客人小小展示一下！)]
+	</p>
+	<p>
+		你还没回答，她直起身，挑逗地笑了笑，问道，[kalahari.speech(来点什么喝，嗯？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_REPEAT"><![CDATA[
+	<p>
+		吧台跟夜店其他地方别无二致，同样是非洲风情，墙上绘制着稀树草原风格的壁画，天花板上垂落下人造的雨林植被。柜台后大概有五六个酒保，也很符合装修的风格，基本都是斑马女，除了一只母狮，卡拉哈利。
+	</p>
+	<p>
+		卡拉哈利经常吩咐斑马女做事，很明显她应该是酒保里面的领导。而且她刚好是离你站的位置最近的那个，所以她给某位撑在柜台上的顾客服务完后，就转身微笑着面向了你。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_TALK"><![CDATA[
+	<p>
+		你转向[npc.name]，依靠在吧台上，为了能让对方听清，用盖过噪音的声音大喊了一声，随后跟[npc.herHim]聊了几分钟。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_FLIRT"><![CDATA[
+	<p>
+		你靠近[npc.name]，倚靠在吧台上，抬高音量以盖过背景的噪音，称赞了[npc.herHim]的外表。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KISS"><![CDATA[
+	<p>
+		贴着[npc.name]，你向前倾身，用[pc.lips+]堵上了对方温热的嘴唇，含糊不清地发出低沉的[npc.moan]。[npc.she]也痛快地回应，用身体紧紧黏着你，用[npc.tongue]在你的口中翻搅，拼命地吮吸。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KISS_REJECTED"><![CDATA[
+	<p>
+		你朝着[npc.name]过去，靠上前想要亲[npc.herHim]。可没等你的[pc.lips]贴上去，[npc.she]就立马退了回去，喊道，
+		#IF npc.isShy()
+		#THEN [npc.speech(喂！你，你冷静点！)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(哇哦！你可悠着点！)]
+			#ELSE [npc.speech(嘿！你冷静点！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		求爱被拒绝了。你倚在吧台上，考虑下一步该怎么办……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_GROPE"><![CDATA[
+	<p>
+		你对着[npc.name]上下其手。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_GROPE_REJECTED"><![CDATA[
+	<p>
+		你倾斜倚靠着[npc.name]，将[pc.hands]放在[npc.her][npc.hips]上，随后尝试向下摸去，触碰[npc.her]的胯。[npc.She]发现自己被摸，立马满脸怒气地推开了你，喊叫声压过了夜店的背景噪音，
+		#IF npc.isShy()
+		#THEN [npc.speech(停，停下！太过分了！)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(你他妈干嘛？管好你的[pc.hands]！)]
+			#ELSE [npc.speech(嘿，停下！管好你的[pc.hands]！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你后退并靠上吧台，以此给[npc.name]留出一些空间。当[npc.her]的表情缓和一些后，你考虑起接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_SAVE_CLUBBER"><![CDATA[
+	<p>
+		你决定和[npc.Name]暂时分开一会，于是大声压过夜店噪音高喊道，[pc.speech(抱歉[npc.Name]，我要离开一会儿，但一会就会来找你，好吗？)]
+	</p>
+	<p>
+		[npc.Name]靠着吧台，看上去有些泄了气，但还是挤出一个笑容，回应道，[npc.speech(当然可以，[pc.name]，希望下次再见。)]
+	</p>
+	<p>
+		[npc.Name]最后朝你送来一抹笑容，接着便转头没入了人群当中。你叹了口气，也扭头看向吧台，思索着接下来该怎么做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_LOSE_COMPANY"><![CDATA[
+	<p>
+		你受够了[npc.Name]，便向前倾身，大声叫嚷来盖过夜店的噪音，[pc.speech(喂，[npc.name]，我不想这样，让我自己待一会。)]
+	</p>
+	<p>
+		[npc.Name]叹了口气，朝着你摆了摆[npc.hand]，回应道，[npc.speech(行吧。那祝你愉快。)]
+	</p>
+	<p>
+			说罢，[npc.she]转身离去，只留下你独自在吧台，考虑接下来做什么……
+		</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI"><![CDATA[
+	#IFkalahari.isVisiblyPregnant()
+	#THEN
+		#IFkalahari.isCharacterReactedToPregnancy(pc)
+		#THEN
+			<p>
+				[kalahari.speech(嘿呀，亲爱的！)]那还处在孕期的母狮说完，就朝你眨了眨眼，双手撑在了吧台上。你向卡拉哈利也打过招呼，只见她心不在焉地抚摸着自己鼓起的肚皮，又一倾身子露出了乳沟给你看。[kalahari.speech(喂，你说我的奶子是不是怀孕之后更大了啊？)]
+			</p>
+		#ELSE
+			<p>
+				卡拉哈利打着招呼朝你走过来的时候，你才发现她走路似乎跟平时不太一样，朝下面一看，这才见到她的肚子已经明显鼓起来了。那狮女看到你的目光，立刻开心地笑了起来，上前几步便重重地靠在了吧台上。[npc.speech(嘿，[pc.name]！你注意到了吧？我怀孕了！)]
+			</p>
+			<p>
+				[pc.speech(是啊，)]你微笑着回答了卡拉哈利。
+			</p>
+			#IFkalahari.getPregnantLitter().getFatherId()==kruger.getId()
+			#THEN
+			<p>
+				狮女又微微向前倾，向你露出个健康的笑容，接着说，[kalahari.speech(我找了个验孕仪，这才弄明白我爹地才是孩子的父亲！那场3p确实不一般……)] 
+			</p>
+			#ELSE
+			<p>
+				狮女又微微向前倾，向你露出个健康的笑容，接着说，[kalahari.speech(我找了个验孕仪，这才弄明白你就是孩子的父亲！怀着你的孩子我肯定会照顾好自己的，别担心啦！)] 
+			</p>
+			<p>
+				[pc.speech(好吧，如果我能帮上什么忙，尽管问，)]你回答道。
+			</p>
+			<p>
+				[kalahari.speech(谢啦，不过没什么好担心的，爹地已经全都打点好了！哦，说起来，我已经告诉他是你让我中奖的了，他看着没什么意见。)]
+			</p>
+			#ENDIF
+		#ENDIF
+	#ELSE
+	<p>
+		[kalahari.speech(嘿呀，亲爱的！)]那狮女说着朝你眨了眨眼，双手撑在了吧台上。你向卡拉哈利也打过招呼，她于是微微前倾身子，把乳沟露了出来。那件裹胸几乎盛不下她[kalahari.breastSize]的乳房，而且还晃来晃去的，她忽然哈哈笑起来，[kalahari.speech(哈哈！喜欢吗？)]
+	</p>
+	#ENDIF
+	<p>
+		你还没来得及回应，她就直起身，挑逗地朝你笑着问道，[npc.speech(总之，我能为你做什么呢，亲爱的？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_TALK"><![CDATA[
+	<p>
+		你还想再多认识认识卡拉哈利，于是撑在吧台上，问她今晚过得如何。卡拉哈利倒是很想招人聊聊，于是连忙跟你讲述起来自己今天的经历，接着又谈起今晚招待过的客人。
+	</p>
+	<p>
+		眼看还有几个客人没人服务，卡拉哈利就直接吩咐一个斑马女酒保去负责了，自己则是继续跟你聊她的工作。你和卡拉哈利一直说笑了好几分钟，那合群的狮女才架起胳膊，等你接下来准备干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_FLIRT"><![CDATA[
+	<p>
+		你向着卡拉哈利微微一笑，便美言起来，惹得她俏皮地笑了，同时反过来也奉承起你。两人你一言我一语时，卡拉哈利把身子靠了过来，让乳沟亮在了你面前，随后就捧着胸挤弄起来。
+	</p>
+	<p>
+		你的目光立刻被那狮女意义明确的举动吸引住了，对方见你这个样子，开心地笑了起来。她随后环顾四周，确定自己没太招惹到其他顾客的注意，便突然拉起裹胸，两颗乳房跳进了你的眼前。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_FLIRT_END"><![CDATA[
+	<p>
+		卡拉哈利起身之后，立刻就把裹胸拉下来盖住了她[kalahari.breasts+]。看她脸上愉悦的微笑，她肯定跟你玩得很满意，你思索起来是否能够更进一步……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_BREAK_KRUGER_INTRO"><![CDATA[
+	<p>
+		卡拉哈利不住地朝你的身体投来饥渴的目光，显然她想陪你一会儿了。你于是撑在吧台上，问道，[pc.speech(有没有时间停下来休息一会儿？想跟我找地方坐坐吗？)]
+	</p>
+	<p>
+		卡拉哈利连忙就同意了，接着朝背后的一个斑马女喊道，[kalahari.speech(嘿，阿莎，我要休息一下！你来帮我！)]
+	</p>
+	<p>
+		这母狮满面春光，扭头朝着吧台末端一指，笑道，[kalahari.speech(在那边见！)]
+	</p>
+	<p>
+		你照着指示，走到了吧台的末端，卡拉哈利也同时从吧台后走了出来。那活力满满的狮女激动地一把握住你的[pc.hand]，朝着你往夜店的一角拉去。[kalahari.speech(来啊！去VIP区坐坐吧！)]
+	</p>
+	<p>
+		你让卡拉哈利在前面带路，没多一会儿就见到一对狮子保镖守着VIP区的入口。他们看到卡拉哈利，便一齐让向一旁，让你们两个进去了。踏入夜店里的专区后，你立刻扫了一眼，只见有许多的半封闭式的坐式隔间，沙发是一眼看上去就很昂贵的真皮，桌子则是黑色大理石的。
+	</p>
+	<p>
+		卡拉哈利并没有带你去空着的隔间，而是直接拉着你去了仅有的某个已经有人的位置。[kalahari.speech(来嘛，去玩之前我见带你去见见老板！)]
+	</p>
+	<p>
+		你被带去了房间最远端的那个隔间，只见座上客是个身形壮硕的雄狮，他身侧则坐着几个斑马女和狮女。卡拉哈利在隔间前面停下来，高高兴兴地介绍起来，[kalahari.speech(嗨，爹地！这是我的朋友，[pc.name]。[pc.Name]，这是克鲁格，我爸爸，这家夜店的主人。)]
+	</p>
+	<p>
+		你打过招呼，克鲁格咕哝了一声表示知道了，就抬头看向卡拉哈利低吼道，[kruger.speech(你玩够了吗？天天装成个女招待一样？你不用总是这样的，你知道的吧。)]
+	</p>
+	<p>
+		[kalahari.speech(呃啊！你怎么<i>每次</i>都要提这个？！我工作的时候才高兴呢，我才不愿意像你这样整天坐着屁事不干！)]卡拉哈利回应得很尖锐，说完就扭头对你说。[kalahari.speech(走，[pc.name]。找个地方坐下吧。)]
+	</p>
+	<p>
+		卡拉哈利又抓住你的[pc.hand]，迅速领你到了个离克鲁格最远的隔间。她拉着你一起坐到沙发上，皱成一团的眉头一下子就化作了友善的笑容。卡拉哈利挪了挪身子，跟你紧贴在一起，就叹气道，[kalahari.speech(抱歉，我爸爸总是那个样子。不过没事，我可以休息三十分钟呢，我们玩开心点吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_BREAK"><![CDATA[
+	<p>
+		卡拉哈利不住地朝你的身体投来饥渴的目光，显然她想陪你一会儿了。你于是撑在吧台上，问道，[pc.speech(嘿，卡拉哈利，准备休息了吗？想不想再去VIP区坐坐？)]
+	</p>
+	<p>
+		卡拉哈利热情地点头同意了，接着朝背后的一个斑马女喊道，[kalahari.speech(阿莎，我要休息一下！你来帮我！)]
+	</p>
+	<p>
+		这母狮满面春光，扭头朝着吧台末端一指，笑道，[kalahari.speech(在那边见！)]
+	</p>
+	<p>
+		你照着指示，走到了吧台的末端，卡拉哈利也同时从吧台后走了出来。那活力满满的狮女激动地一把握住你的[pc.hand]，朝着你往夜店的一角拉去。[kalahari.speech(来啊！去玩玩吧！)]
+	</p>
+	<p>
+		没过一会儿，你就穿过狮子保镖，进入了VIP区。朝克鲁格打过招呼后，你和卡拉哈利就找了个她父亲看不见的空隔间。狮女瘫倒在沙发上，拉着你坐到一旁。卡拉哈利挪了挪身子，跟你贴得更紧，长叹一声道，[kalahari.speech(好了，我又有三十分钟可以休息了。我们玩开心点吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_TALK"><![CDATA[
+	<p>
+		为了更好地了解卡拉哈利，你询问了她为父亲克鲁格工作的经历，随后又继续聊起了她在御城区的生活。
+	</p>
+	<p>
+		虽然卡拉哈利不喜欢父亲不让她工作的这种方式，但她透露自己仍然是非常喜欢父亲的。她告诉你，她住在她父亲家的一个单独的厢房里，从你能收集到的信息来看，她家似乎非常富有。
+	</p>
+	<p>
+		在聊了一会儿城市里发生的杂事后，卡拉哈利找了个舒服的姿势坐了下来，并发出愉快的叹息，你可以趁这机会和她继续聊点别的……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_FLIRT"><![CDATA[
+	<p>
+		你又朝卡拉哈利挪得更近，竭尽全力投去了#IFpc.isFeminine()#THEN魅惑#ELSE迷人#ENDIF的微笑，对她的美貌大加赞赏。那狮女听了脸颊微微一红，也向着你奉承起来。
+	</p>
+	<p>
+		两人你一言我一语时，卡拉哈利稍稍凑近来，用腿微微磨蹭，渴望地望向你的眼睛。就这样过了好几分钟，她才坐开一点，静候着你的举动……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_KISS"><![CDATA[
+	<p>
+		你还想更进一步，便向着卡拉哈利倾过身去，微微歪头邀请她亲上来。那狮女也同样回应，闭上双眼，俯身将[kalahari.lips+]送上，你甚至能感受到她温热的呼吸扑打在脸上。你将舌头探入她的口中，伴随着模糊的呻吟，你们二人便亲热起来。
+	</p>
+	<p>
+		你忽然感觉到卡拉哈利握住了你的[pc.hand]，甚至跟你贴得更紧了，她拉起你的[pc.hand]，送进了她的抹胸之中。你自然要满足这欲求不满的母狮，开始在柔软的布料之下揉捏着她[kalahari.breasts+]。你慢慢觉得她[kalahari.nipples+]在你的抚摸之下挺立起来，便朝那里轻轻一捏，继续揉弄，引得卡拉哈利顿时冒出了一声[kalahari.a_moan+]。
+	</p>
+	<p>
+		你一面玩弄着狮女的胸部，一面同她热吻，就这样过了好几分钟。最终还是卡拉哈利与你分开，她舔了舔嘴唇，口中挤出服从的呜咽声，已经准备好与你进入下一步了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_GROPE"><![CDATA[
+	<p>
+		卡拉哈利那双水汪汪的[kalahari.eyeColour]的眼睛中充满了渴望屈服的热烈期待，你于是挺身向前一只[pc.hand]摸着她的大腿，#IFpc.getArmRows()==1#THEN另一只#ELSE另外的#ENDIF则瞄准了她[kalahari.breasts+]。
+	</p>
+	<p>
+		[kalahari.speech(~唔嗯~想瞧瞧吗？)]卡拉哈利咯咯笑了起来，言语之中都充满了情欲。你立马表示愿意，笑嘻嘻地看着卡拉哈利掀起了抹胸，[kalahari.breasts+]一下子跳了出来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_GROPE_AFTER_BREAST_REVEAL"><![CDATA[
+	<p>
+		卡拉哈利拿起你的[pc.hand]，放在了她的胸口，你也自然对着那对白兔揉弄起来，惹得她深深地呻吟了一声。接着你把[pc.hand]搭在了她的大腿上，慢慢向着那狮女两腿之间游走，也多亏了她穿着的那条超短裙，没一会儿你就隔着内裤挑弄起那蜜穴来。
+	</p>
+	<p>
+		[kalahari.speech(啊啊……对了……)]卡拉哈利长叹一声，主动伸到腿间将内裤拉到一旁。[kalahari.speech(摸摸我的小穴吧……)]
+	</p>
+	<p>
+		你朝卡拉哈利的腿间瞥了一眼，看到她[kalahari.pussy+]完全展露了出来。
+	
+]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_GROPE_AFTER_PUSSY_REVEAL"><![CDATA[
+	<p>
+		你依着这欲火难耐的狮女，用[pc.fingers]上下挑弄着她的[kalahari.labia]，接着又将注意力集中到那颗小小的阴蒂上，环绕着轻揉起来。卡拉哈利禁不住喘息起来，尽显受态，性欲逐渐占领高地，脸颊由于兴奋变得绯红，她枕在你的肩头，呻吟道，[kalahari.speech(就是这样……~啊啊~太棒了……来吧……来做吧……)]
+	</p>
+	<p>
+		你思索起来，是否应该听她的，直接在沙发上开干呢……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_BREAK_SEX_AS_DOM"><![CDATA[
+	#IF(!pc.isTaur())
+		<p>
+			卡拉哈利淫荡地喘息着，她完全暴露在你面前，你别无选择，只能满足她的欲望。你向前伸手，抱住这个淫荡的狮女，一下子把她拉到自己的腿上。
+		</p>
+		<p>
+			[kalahari.speech(没错！~嗯嗯！~干我吧，就这样，操我！)]她连连呻吟，倾身在你唇上留下一记湿吻。
+		</p>
+		<p>
+			你决定就听卡拉哈利的，一把捏住了她的奶子，惹得她不禁浪叫一声，随后你把她拉到跟前，准备开始和她做爱了……
+		</p>
+	#ELSE
+		<p>
+			卡拉哈利淫荡的喘息声，加上明明白白摆在面前的那一丝不挂的躯体，让你脑子里容不得别的想法，只愿满足她的渴求。你拉住了那欲望高涨的母狮，自己则站起身，轻轻一扯便让她跪在了你兽化下半身的前面。
+		</p>
+		<p>
+			[kalahari.speech(没错！~嗯嗯！~这里可大着呢……快来……赶紧操我吧！)]她呻吟着，发了疯似的扑上来朝你嘴上吻了过去。
+		</p>
+		<p>
+			你决定就听卡拉哈利的，一把捏住了她的奶子，惹得她不禁浪叫一声，随后你把她拉到跟前，准备开始和她做爱了……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<!-- Not used as of 0.3.3.10 as Kalahari was meant to be too submissive to want to dom. -->
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_BREAK_SEX_AS_SUB"><![CDATA[
+	<p>
+			卡拉哈利淫荡的喘息声，加上明明白白摆在面前的那一丝不挂的躯体，让你脑子里容不得别的想法，只愿满足她的渴求。你挪了挪身子，接着就要扑倒她的腿上。
+		</p>
+	<p>
+		[pc.speech(来吧，卡拉哈利，来干我！)]你[pc.moan]着，发了疯似的扑上去朝她嘴上送上一吻。
+	</p>
+	<p>
+			卡拉哈利决定就听你的，便一把攥住了你的[pc.hands]，搭在了自己胸上。你轻轻捏了一把，便让那狮女浪叫起来，随后她把你拉到跟前，准备开始和你做爱了……
+		</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_BREAK_AFTER_SEX"><![CDATA[
+	<p>
+		你和卡拉哈利双双气喘吁吁瘫倒在沙发上。你看向那母狮，只见她满意地朝你露出了笑容，接着她呻吟道，[kalahari.speech(操……真是太棒了……)]
+	</p>
+	<p>
+		[pc.speech(是啊，真不错，)]你说完就去把衣物穿戴整齐了。
+	</p>
+	<p>
+		卡拉哈利同样也穿好了丁字裤和抹胸，最后套上迷你裙。[kalahari.speech(我得去工作了。另找一晚再来一次吧！)]
+	</p>
+	<p>
+		你答应了现在心情正好的母狮，也起身跟着她从一对狮子保镖中间穿过。忽然卡拉哈利转头在你脸颊上啄了一下，发出一阵银铃般的笑声，在你耳边轻语道，[kalahari.speech(我已经等不及下一次了！)]
+	</p>
+	<p>
+		接着她就三两步朝着吧台跑去，只剩你一个人站在VIP区域外。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_BAR_KALAHARI_BREAK_AFTER_SEX_NO_ORGASM"><![CDATA[
+	<p>
+		你和卡拉哈利都气喘吁吁地瘫倒在沙发上。看向那头母狮，你看见她向你噘嘴，感叹道，[kalahari.speech(这还蛮不错，不过你可没完全满足我……)]
+	</p>
+	<p>
+		[pc.speech(下次会让你爽到的，)]你说完，就去把衣物穿戴整齐了。
+	</p>
+	<p>
+		卡拉哈利又是郁闷地出了口气，把丁字裤和抹胸穿上，最后套上迷你裙，站到了你身前。[kalahari.speech(我得回去工作了。我们得另找一晚再来一次，不过下次你必须得让我去！)]
+	</p>
+	<p>
+		你答应了这只不饶人的母狮，也站起身跟着她从一对狮子保镖中间穿过。忽然卡拉哈利转头在你脸颊上啄了一下，发出一阵银铃般的笑声，在你耳边轻语道，[kalahari.speech(我已经等不及下一次了！)]
+	</p>
+	<p>
+		接着她就三两步朝着吧台跑去，只剩你一个人站在VIP区域外。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_END"><![CDATA[
+	<p>
+		你觉得已经跟卡拉哈利玩够了，坐下来长叹一声，[pc.speech(抱歉，卡拉哈利，我今晚累得很。或许另找时间吧？)]
+	</p>
+	<p>
+		[kalahari.speech(哦……好吧……)]卡拉哈利看起来有些闷闷不乐的，很快起身穿好了衣服。[kalahari.speech(那我们还是回吧台吧。)]
+	</p>
+	<p>
+		你也起身跟着卡拉哈利，从那一对狮子保镖中间穿过。卡拉哈利忽然转身在你脸上轻啄了一下，笑着在你耳边细语道，[kalahari.speech(下次我倒要看看你有什么‘本事’！)]
+	</p>
+	<p>
+		接着她就三两步朝着吧台跑去，只剩你一个人站在VIP区域外。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_KALAHARI_BREAK_OUT_OF_TIME"><![CDATA[
+	<p>
+		[kalahari.speech(哦，我的休息似乎到时间了，)]卡拉哈利叹了口气，便起身穿好了衣服。[kalahari.speech(我得回吧台了。)]
+	</p>
+	<p>
+		你也起身跟着卡拉哈利，从那一对狮子保镖中间穿过。卡拉哈利忽然转身在你脸上轻啄了一下，笑着在你耳边细语道，[kalahari.speech(下次得动点真格的了！)]
+	</p>
+	<p>
+		接着她就三两步朝着吧台跑去，只剩你一个人站在VIP区域外。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP"><![CDATA[
+	<p>
+		在夜店的一角，有一个与众不同的座位区。大部分正面都被一堵深色玻璃墙挡住了，只有一个开口由一对肌肉发达的狮子保镖把守着。透过这个开口，可以看到内部摆放着许多半圆形的卡座，每个卡座都摆放着一张抛光的黑色大理石桌子和一张长长的弧形皮沙发。
+	</p>
+	<p>
+		当你走近时，一名保镖认出了你，并问道：[style.speechMasculineStrong(你是卡拉哈利的朋友，对吗？)]
+	</p>
+	<p>
+		[pc.speech(对，就是我，)]你回复。
+	</p>
+	<p>
+		[style.speechMasculineStrong(克鲁格说如果你回来了就可以进去，他肯定想和你谈谈。)]保安解释道，然后走到一边让你通过。
+	</p>
+	<p>
+		你可以去克鲁格那里，也可以回到夜店的主要区域……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_BLOCKED"><![CDATA[
+	<p>
+		在夜店的一角，有一个与众不同的座位区。大部分正面都被一堵深色玻璃墙挡住了，只有一个开口由一对肌肉发达的狮子保镖把守着。透过这个开口，可以看到内部摆放着许多半圆形的卡座，每个卡座都摆放着一张抛光的黑色大理石桌子和一张长长的弧形皮沙发。
+	</p>
+	<p>
+		当你走近时，一名保镖向你摇了摇头，明确表示不允许你进入。也许如果你能与其中一位工作人员交好，就能进入这个贵宾区，但现在，你还得留在夜店的主楼里。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER"><![CDATA[
+	<p>
+		你决定去拜访一下克鲁格，于是迈步走进贵宾区，开始向房间的最里面走去。你立刻发现这头大狮子正坐在他常坐的位置上，周围是一群斑马女和母狮。克鲁格注意到了你的靠近，他向旁边的座位点了点头，示意你坐到他旁边来。
+	</p>
+	<p>
+		[kruger.speech(走开，卓娅。)]克鲁格对身边的斑马女咆哮道。卓娅迅速站了起来，腾出沙发让你坐在她的位置上。
+	</p>
+	<p>
+		[kruger.speech(来吧，[pc.name]。坐下吧。我不咬人……不太咬人，)]狮子咆哮着，但尽管他的措辞和语气中略带威胁，你却从他的提议背后感受不到任何真正的恶意。	
+</p>
+	<p>
+		#IF(!pc.isTaur())
+			你按照克鲁格的指示坐在他身边，他转过身来对你笑笑，咆哮道，
+		#ELSE
+			你按照克鲁格的指示，找了一张足以容纳你下半身的沙发坐在他身边，他转过身来对你笑笑，咆哮道，
+		#ENDIF
+		#IF(pc.isVisiblyPregnant())
+			#IF(pc.isCharacterReactedToPregnancy(kruger))
+				[kruger.speech(还怀着孕呢，看出来了。)]
+			#ELSE
+				#IF(pc.isCharacterPossiblyFather(kruger.getId()))
+					[kruger.speech(我明白了，你把自己肚子搞大了。如果是我的孩子，那会很强壮的，所以没什么好担心的。)]
+				#ELSE
+					[kruger.speech(我看你是把自己肚子搞大了。)]
+				#ENDIF
+			#ENDIF
+		#ELSE
+			[kruger.speech(卡拉哈利告诉我你是个正经人，这对我来说就足够了。)]
+		#ENDIF
+	</p>
+	<p>
+		坐在你周围的女孩们靠在沙发上听着，她们知道当克鲁格的注意力集中在你身上时要保持安静。你看着对面龇牙咧嘴的狮子，考虑着接下来做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER_TALK"><![CDATA[
+	<p>
+		你决定多了解一下克鲁格，于是问他的夜总会经营得怎么样，然后把话题转移到他的女儿卡拉哈利身上。
+	</p>
+	<p>
+		从他的咆哮声和隆隆的回应中，你可以了解到他的生意似乎做得不错。当你们俩开始谈论卡拉哈利时，他的语气变得柔和起来，克鲁格解释说他喜欢密切关注他的女儿，以确保她最终不会重蹈她母亲的覆辙。至于是什么错误，你就不得而知了，因为每当你试图把话题引向那个方向时，克鲁格就会发出一声低沉的咆哮。
+	</p>
+	<p>
+		围坐在你们周围的女孩们都装作很放松的样子，小声地相互交谈着，但你可以看出，她们在偷听克鲁格透露的关于自己的一切。
+	</p>
+	<p>
+		尽管克鲁格的表情没有变化，但你可以察觉到他在和你说话时语气略微缓和，让你知道他很享受和你聊天的时光。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER_FLIRT"><![CDATA[
+	<p>
+		你决定和克鲁格调调情，你先夸奖了他的外表，然后向前挪了挪，用你的[pc.hand]擦了擦他的腿。这头大狮子发出一声欢快的咆哮，转过身来完全面对着你，把胳膊搭在沙发的顶端，就在你的脖子后面，然后回敬你一句赞美。
+	</p>
+	<p>
+		接下来的几分钟里，你和克鲁格有说有笑，互相调情，同时继续用你的[pc.hand]抚摸他的腿。时不时地，坐在你周围的一个女孩会提出一些建议，其中总是包括让克鲁格“把你变成他的母狗”。
+	</p>
+	<p>
+		每次克鲁格听到这句话，都会发出一声愉悦的咆哮，而且，他并不阻止女孩们说这些话，你可以看出他内心也是这么想的……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER_KISSED"><![CDATA[
+	<p>
+		你可以看出克鲁格急切地想要亲吻你，这种感觉是相互的，于是你在沙发上挪了挪，以便把身体贴在他的身上。你把头微微偏向一边，抿着[pc.lips]，轻轻地叹了一口气。
+	</p>
+	<p>
+		你的挑衅举动立刻得到了你想要的结果，因为这头巨大的狮子发出了低沉、隆隆的咆哮声，然后霸道地抱住你的头，将嘴唇贴在你的嘴唇上。当你发出一声低沉的呻吟并闭上眼睛时，你感觉到他的舌头伸进了你的嘴里，当他热情地与你亲热时，你将自己完全交给了这头霸道的狮子。
+	</p>
+	<p>
+		几分钟后，克鲁格中断了亲吻，你突然意识到周围的女孩们都在咯咯笑着，互相说着闲话。当你向后靠在沙发上时，其中一只雌狮走了过来，对着克鲁格说，[genericFemale.speech(继续，克鲁格。操[pc.herHim]！我们都想看你干[pc.herHim]……)]
+	</p>
+	<p>
+		对此，克鲁格只是发出了一声有趣的咆哮。虽然你可以看出他对这个想法很热衷，但在没有得到你的同意之前，他似乎对做任何事都不感兴趣。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER_FELT_UP"><![CDATA[
+	<p>
+		你感觉到克鲁格想和你有一些身体接触，而且非常渴望他强壮的手在你身上游走的感觉，于是你靠在他身上，然后非常暗示性地把手放在他的大腿内侧。瞬间，克鲁格的手就摸遍了你的全身，你发出了[pc.a_moan+]，因为他开始霸道地摸索和揉捏你的[pc.breasts+]。
+	</p>
+	<p>
+		#IF(pc.hasLegs())
+			你另一边的斑马女俯身过来，抓住你的大腿，猛地一拉，厉声道，[genericFemale.speech(把腿打开，贱货。)]
+		#ELSE
+			你另一边的斑马女俯身过来，对着你的[pc.leg]拍了一巴掌，厉声道，[genericFemale.speech(给我看看，骚货。)]
+		#ENDIF
+	</p>
+	#IF(!pc.isTaur())
+		<p>
+			#IF(pc.hasLegs())
+				你照做了，倚坐在沙发上，对着克鲁格张开了[pc.legs]，
+			#ELSE
+				你照做了，倚坐在沙发上，对着克鲁格展露了私处，
+			#ENDIF
+			克鲁格立刻伸出空下来的那只手，对着
+			#IF pc.hasPenis() && pc.hasVagina()
+			#THEN你的肉棒和小穴
+			#ELSE
+				#IF pc.hasPenis()
+				#THEN你的肉棒
+				#ELSE
+					#IF pc.hasVagina()
+					#THEN你的小穴
+					#ELSE你光滑的下体
+					#ENDIF
+				#ENDIF
+			#ENDIF
+			爱抚、刺激起来。
+		</p>
+		<p>
+			[kruger.speech(好[pc.girl]……)]克鲁格对着你的[pc.ear]咆哮。[kruger.speech(你喜欢这样，对吧？)]
+		</p>
+		<p>
+			你拼命地[pc.moan]，用你的[pc.hips+]抵着支配者狮子的手，他继续上下抚摸着。这样做了一会儿后，他终于抽了回来，高兴地冲你咧嘴一笑。
+		</p>
+		<p>
+			激动人心的时刻即将结束，那个告诉你介绍自己的斑马女从你的肩膀上靠过去，然后在你的耳边低声说了几句，[genericFemale.speech(来吧，婊子，让克鲁格操你这个饥渴的荡妇。)]
+		</p>
+	#ELSE
+		<p>
+			你照做了，倚坐在沙发上，对着那斑马女张开了[pc.legs]，旁边一只狮女也立马凑了过来。她们一起伸出手来，时而爱抚、时而摸索着你兽化的下体，一下子注意到
+			#IF(pc.hasPenis() && pc.hasVagina())
+				你既有肉棒又有小穴。
+				</p>
+				<p>
+					[genericFemale.speech([pc.SheIs]下面两个活儿都有，老板，)]那狮女报告道，[genericFemale.speech(而且已经又硬又湿了……)]
+			#ELSE
+				#IF(pc.hasPenis())
+					你有[pc.a_cock+]。
+				</p>
+				<p>
+					[genericFemale.speech([pc.SheHas]下面只有根肉棒，老板，)]那狮女报告道，[genericFemale.speech(而且[pc.sheIs]已经硬得不行了……)]
+				#ELSE
+					#IF(pc.hasVagina())
+						你有[pc.a_pussy+]。
+					</p>
+					<p>
+						[genericFemale.speech([pc.SheHas]下面有个漂亮的小穴给你呢，老板。)]那狮女报告道，[genericFemale.speech(而且[pc.sheIs]已经湿透了，就等着你的肉棒深深地送进去了……)]
+					#ELSE
+						你有着光滑的下体。
+						</p>
+						<p>
+							[genericFemale.speech([pc.SheHas]下面没有，老板，)]那狮女报告道，[genericFemale.speech(你得用后面了……)]
+					#ENDIF
+				#ENDIF
+			#ENDIF
+		</p>
+		<p>
+			[kruger.speech(是这样吗？)]克鲁格对着你的[pc.ear]咆哮、 [kruger.speech(你很喜欢这个，是不是，[pc.girl]？)]
+		</p>
+		<p>
+			你拼命[pc.moan]表示肯定，挺起胸膛抵住支配者狮子的双手，他继续摸索着你。过了一会儿，他终于抽回了手，高兴地冲你咧嘴笑着，而你则兴奋地娇喘吁吁。
+		</p>
+		<p>
+			你们还没来得及进一步行动，那个叫你张开双腿的斑马女就从你的肩膀上靠了过来，然后在你耳边厉声说道：[genericFemale.speech(来吧，婊子，让克鲁格操你这个饥渴的荡妇。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER_SEX_AS_SUB"><![CDATA[
+	#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		<p>
+			你渴望与克鲁格做爱，于是你靠向他把头偏向一边，把嘴唇贴在他的嘴唇上。你们俩激情拥吻了一会儿，然后你抽回身，拼命恳求他和你做爱。狮男听到你的请求后，发出了低沉的咆哮声，然后伸手抓住你的肩膀，把你推倒跪在他面前。他用饥渴的眼神瞪着你，随后咆哮道：[kruger.speech(你可以先帮我口交，然后我再好好操你！)]
+		</p>
+		<p>
+			你右边的一个斑马女发出一阵咯咯的笑声，然后向你靠了过来，从容不迫地拉下了克鲁格的裤子和内裤。就这样，你突然发现自己面前出现了狮男的[kruger.cockLengthValue]，乌黑的阴茎迅速勃起。就像克鲁格身体的其他部分一样，他那跳动的阴茎也具有拟人化的猫科动物特质，当你看到阴茎上一排向后的柔软倒钩时，你会情不自禁地发出一声急切而顺从的低吟。周围的狮子和斑马女听到你的反应后，发出了一阵咯咯的笑声，还没等你有所动作，露出克鲁格鸡巴的斑马女突然把你的脸按到了狮男的腹股沟上，并命令道：[genericFemale.speech(对克鲁格尊重点，荡妇。开始舔吧。)]
+		</p>
+		<p>
+			克鲁格又一次发出低沉、隆隆的呻吟声，他稍微张开双腿，不耐烦地把臀部顶到你的脸上，使他火热的阴茎在你[pc.lips+]上磨擦。你被眼前发生的一切弄得兴奋不已，迫不及待地伸出[pc.tongue+]，开始舔狮男坚硬、乌黑的阴茎。当狮男的后宫们兴奋地评论着你的表现时，你开始为克鲁格口交……
+		</p>
+	#ELSEIF(pc.isTaur())
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			<p>
+				你此时此刻只想和克鲁格做爱，于是你靠在他身上，拼命恳求他和你做爱。狮男听到你的请求后，发出了低沉、隆隆的赞许咆哮声，然后伸手抓住你的肩膀，用力一推，发出了咆哮声，[kruger.speech(我不能给你口交，所以把你的小穴放在我腿上！)]
+			</p>
+			<p>
+				你右边的一个斑马女发出一阵咯咯的笑声，然后向狮男靠了过去，她轻松地拉下了克鲁格的裤子和内裤。这样一来，狮男那根乌黑的[kruger.cockLengthValue]鸡巴一下子就完全暴露了出来，你欣喜地看着它迅速勃起。就像克鲁格身体的其他部分一样，他那跳动的阴茎也具有拟人化的猫科动物特质，当你看到它的阴茎上长着一排向后的柔软倒刺时，你情不自禁地发出一声急切而顺从的低吟。周围的狮女和斑马女听到你的反应后，发出了一阵咯咯的笑声，还没等你有所动作，露出克鲁格阴茎的斑马女突然拉着你的[pc.legRace]下半身转过来面对狮男，露出你[pc.pussy+]并把你推倒在他的腹股沟里。她快速拍打你的臀部，命令道，[genericFemale.speech(放尊重点，荡妇。用你那淫荡的小[pc.legRace]屄蹭蹭他的鸡巴，求他操你！)]
+			</p>
+			<p>
+				克鲁格又一次发出低沉、隆隆的呻吟声，他张开双腿，不耐烦地扭动臀部，用他火热的阴茎磨擦着你[pc.labia+]。你被眼前发生的一切弄得兴奋不已，急切地按他说的做，你朝狮男扭动着[pc.hips+]，当他坚硬、乌黑的阴茎滑过你[pc.pussy+]时，你拼命地乞求他操你。显然，狮男也迫不及待地想要开始，他回应了你的请求，给了你想要的东西，当你感觉到他的阴茎插入你[pc.pussy+]时，你情不自禁地发出了[pc.a_moan+]。当他插入你身体的那一刻，克鲁格的后宫们开始兴奋地评论你的表现，而你在他们面前被干的时候，也不断发出色情的[pc.moans]……
+			</p>
+		#ELSE
+			<p>
+				你此时此刻只想和克鲁格做爱，于是你靠在他身上，拼命恳求他和你做爱。狮子男听到你的请求后，发出了低沉、隆隆的赞许咆哮声，然后伸手抓住你的肩膀，用力一推，发出了咆哮声，[kruger.speech(我不能让你给我口交，所以把你的屁股放在我腿上！)]
+			</p>
+			<p>
+				你右边的一个斑马女发出一阵咯咯的笑声，然后向狮男靠了过去，她轻松地拉下了克鲁格的裤子和内裤。这样一来，狮男那根乌黑的[kruger.cockLengthValue]鸡巴一下子就完全暴露了出来，你欣喜地看着它迅速勃起。就像克鲁格身体的其他部分一样，他那跳动的阴茎也具有拟人化的猫科动物特质，当你看到它的阴茎上长着一排向后的柔软倒刺时，你情不自禁地发出一声急切而顺从的低吟。周围的狮女和斑马女听到你的反应后，发出了一阵咯咯的笑声，还没等你有所动作，露出克鲁格阴茎的斑马女突然拉着你的[pc.legRace]下半身转过来面对狮男，然后露出你[pc.asshole+]并把你推倒在他的腹股沟里。她快速拍打你的臀部，命令道，[genericFemale.speech(放尊重点，荡妇。用你那淫荡的小[pc.legRace]屁眼蹭蹭他的鸡巴，求他操你！)]
+			</p>
+			<p>
+				克鲁格又一次发出低沉、隆隆的呻吟声，他稍微张开双腿，不耐烦地扭动臀部，用他火热的阴茎在你[pc.ass+]上磨擦。你被眼前发生的一切弄得兴奋不已，急切地朝狮男扭动着[pc.hips+]，当他坚硬、乌黑的阴茎滑过你[pc.asshole+]时，你拼命求他操你。显然，狮男也迫不及待地想要开始，他回应了你的请求，给了你想要的东西，当你感觉到他的阴茎插入你[pc.asshole+]时，你情不自禁地发出了[pc.a_moan+]。当他插入你身体的那一刻，克鲁格的后宫们开始兴奋地评论你的表现，而你在他们面前被干的时候，也不断发出色情的[pc.moans]……
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			<p>
+				你此时此刻只想和克鲁格做爱，于是你靠在他身上，拼命恳求他和你做爱。狮男听到你的请求后，发出了低沉、隆隆的赞许咆哮声，并霸道地把手伸到你的[pc.legs]之间，狠狠地摸索你[pc.pussy+]，咆哮道，[kruger.speech(我不能让你给我口交，所以把你的骚逼放到我腿上！)]
+			</p>
+			<p>
+				听到这句话后，你右边的一个斑马女迅速向狮男靠过去，然后以一种轻松的姿态迅速拉下了克鲁格的裤子和内裤。这样一来，狮男的[kruger.cockLengthValue]，乌黑阴茎突然完全暴露出来，你欣喜地看着它迅速勃起。就像克鲁格身体的其他部分一样，他那跳动的阴茎也具有拟人化的猫科动物特质，当你看到它的阴茎上长着一排向后的柔软倒刺时，你情不自禁地发出一声急切而顺从的低吟。周围的狮女和斑马女听到你的反应后，发出了一阵咯咯的笑声，还没等你有所动作，露出克鲁格阴茎的斑马女突然把你拉起来，在确保你[pc.pussy+]完全暴露后，她把你按倒在狮男的腿上。她快速拍打你的臀部，命令道，[genericFemale.speech(对克鲁格尊重点，荡妇。用你那淫荡的小屄蹭蹭他的鸡巴，求他操你！)]
+			</p>
+			<p>
+				克鲁格又一次发出低沉、隆隆的呻吟声，他张开双腿，不耐烦地扭动臀部，使他火热的阴茎在你[pc.labia+]上磨擦。当他坚硬、乌黑的阴茎滑过你[pc.pussy+]时，你看着他[kruger.eyes+]，拼命求他操你。显然，狮男也迫不及待地想要开始了，他回应你的请求，握住你[pc.hips+]把你拉了下来，当你感觉到他的阴茎插入你[pc.pussy+]时，你情不自禁地发出[pc.a_moan+]。当他插入你身体的那一刻，克鲁格的后宫们开始兴奋地评论你的表现，而你在他们面前被干的时候，也不断发出色情的[pc.moans]……
+			</p>
+		#ELSE
+			<p>
+				此时此刻，你只想和克鲁格做爱，于是你靠在他身上，拼命恳求他和你做爱。狮男听到你的请求后，发出了低沉、隆隆的赞许咆哮声，一边霸道地伸手在你[pc.ass+]上狠狠地摸索，一边咆哮着，[kruger.speech(我不能让你给我口交，所以把你的热屁股放在我腿上！)]
+			</p>
+			<p>
+				听到这句话后，你右边的一个斑马女迅速向狮男靠过去，然后以一种轻松的姿态迅速拉下了克鲁格的裤子和内裤。这样一来，狮男的[kruger.cockLengthValue]，乌黑阴茎一下子完全暴露出来，你欣喜地看着它迅速勃起。就像克鲁格身体的其他部分一样，他那跳动的阴茎也具有拟人化的猫科动物特质，当你看到它的阴茎上长着一排向后的柔软倒刺时，你情不自禁地发出一声急切而顺从的低吟。周围的狮女和斑马女听到你的反应后，发出了一阵咯咯的笑声，还没等你有所动作，露出克鲁格阴茎的斑马女突然把你拉起来，在确保你[pc.asshole+]完全暴露后，她把你推倒在狮男的腿上。她快速拍打你的臀部，命令道，[genericFemale.speech(对克鲁格尊重点，荡妇。用你那淫荡的小屁眼蹭蹭他的鸡巴，求他操你吧！)]
+			</p>
+			<p>
+				克鲁格又一次发出低沉、隆隆的呻吟声，他稍微张开双腿，不耐烦地扭动臀部，使他火热的阴茎在你[pc.ass+]上磨擦。当他坚硬、乌黑的阴茎滑过你[pc.ass+]时，你看着他[kruger.eyes+]，拼命求他操你。显然，狮男也迫不及待地想要开始了，他回应你的请求，握住你[pc.hips+]把你拉了下来，当你感觉到他的阴茎插入你[pc.asshole+]时，你情不自禁地发出了[pc.a_moan+]。当他插入你身体的那一刻，克鲁格的后宫们开始兴奋地评论你的表现，而你在他们面前被干的时候，也不断发出色情的[pc.moans]……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER_AFTER_SEX"><![CDATA[
+	<p>
+		你倒在克鲁格的一侧，累得气喘吁吁。当你喘息片刻后，这头雄狮发出一声满意的咆哮，然后开始整理自己的衣服。[kruger.speech(很有趣。)]
+	</p>
+	<p>
+		[pc.speech(是啊，)]你喘息着，对他回以微笑。
+	</p>
+	<p>
+		[genericFemale.speech(嗯，是的，真是精彩，)]其中一只母狮对你微笑着说，其他女孩也点头表示赞同。
+	</p>
+	<p>
+		整理好自己的东西，你站起来告诉克鲁格，你需要离开一会儿。他咕哝了一声，抬起头微笑着看着你。[kruger.speech(早点回来，[pc.name]。我想再带你兜兜风。)]
+	</p>
+	<p>
+		道别后，你穿过贵宾区，再次回到夜店的主区。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_VIP_KRUGER_LEAVE"><![CDATA[
+	<p>
+		你决定做其他事情，于是转向克鲁格解释道：[pc.speech(我得走了，克鲁格。也许以后有空再来。)]
+	</p>
+	<p>
+		克鲁格靠在沙发上，发出一声低沉的咆哮，回答道：[kruger.speech(好吧。再见。)]
+	</p>
+	<p>
+		说完，你站起身来，穿过贵宾区，回到夜店的主区。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR"><![CDATA[
+	<p>
+		重低音的背景音乐从夜店中央的巨大舞池传来，一大群人正在这儿狂欢。你仰头望向天花板，看到一组由奥术驱动的扬声器，这些设备显然负责播放夜店常用音乐。
+	</p>
+	<p>
+		舞池里虽然待了不少人，但还有一些空间。如果你很想跳舞，可以步入其中。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_DANCE_SOLO"><![CDATA[
+	<p>
+		你踏进了舞池，随着音乐的节奏晃动着身躯，与周围的狂欢者共舞起来。
+	</p>
+	<p>
+		虽然一开始还算有趣，但你却总想着，如果有个人当舞伴肯定会更享受。这个想法萦绕在你的脑中，你渐渐失去了热情，退回了舞池边缘。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_DANCE"><![CDATA[
+	<p>
+		由于夜店各处都是嘈杂的音乐，你不得不提高声音，喊着跟[npc.name]交流。你贴在[npc.her]的耳边，问道，[pc.speech(想跟我共舞一会儿吗？)]
+	</p>
+	<p>
+		你看到[npc.her]微微一笑，点了点头，想必对方也十分乐意。于是你握住了[npc.namePos]的[npc.hand]，领着[npc.herHim]进入了舞池，同时也回以微笑。
+	</p>
+	<p>
+		接下来几分钟，你和[npc.name]一同起舞，随着音乐的节奏洋溢起笑容，渐渐地沉浸其中。然而很快你们两个就觉得有些疲累，还有些口渴，[npc.namePos]已经把[npc.arms]耷拉在身旁，[npc.sheHas]估计是跳够了。
+	</p>
+	<p>
+		你带着[npc.name]回到了舞池边缘，扭头向[npc.herHim]送去了个微笑，看到[npc.her]脸上享受的表情，你明白跳舞的邀请非常正确。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_KISS"><![CDATA[
+	<p>
+		你看得出来[npc.name]很想接吻，你也很乐意满足[npc.herHim]的愿望，于是把住[npc.her]的[npc.hips]，将[npc.herHim]拉得很近。你前倾身子，微微歪头，将[pc.lips]贴了上了。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_KISS_REJECTED"><![CDATA[
+	<p>
+               你走近[npc.name]，身体向前倾试图亲吻[npc.herHim]。你撅起[pc.lips]，[npc.name]却迅速退缩了，露出惊讶的表情，诉说着不爽。
+</p>
+	<p>
+		[npc.speech(嘿！怎么回事！)][npc.she]盖过舞池汇总嘈杂的声音喊起来，怒皱着眉头将你推了开来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_GROPE"><![CDATA[
+	<p>
+		在众多舞者中间，你贴着[npc.name]，同时抓住了[npc.her]的[npc.hips]。[npc.She]也很开心地靠了上来，在你的[pc.ear]边[npc.moaning]着，任由你的[pc.hands]在[npc.her]的身躯上下游走。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_GROPE_REJECTED"><![CDATA[
+	<p>
+		你贴着[npc.name]，把[pc.hands]放在了[npc.her]的[npc.hips]上，慢慢地向私处摸去。感受到你试探的动作，[npc.She]顿时退开，面露怒色，盖过舞池汇总嘈杂的声音喊起来，
+		#IF npc.isShy()
+		#THEN [npc.speech(别，别这样！太过分了！)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(我操？！管好你的[pc.hands]！)]
+			#ELSE [npc.speech(喂！住手！管好你的[pc.hands]！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你后退并给[npc.name]留出空间，好让[npc.herHim]冷静下来。当[npc.her]的表情缓和一些后，你又走上前去，同时考虑着接下来做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_SAVE_CLUBBER"><![CDATA[
+	<p>
+		你决定和[npc.Name]暂时分开一会，于是大声压过人群和音乐的噪音高喊道，[pc.speech(抱歉[npc.Name]，我要离开一会儿，但一会就会来找你，好吗？)]
+	</p>
+	<p>
+		[npc.Name]听到你说要走了，顿时面色失落，但很快就恢复了微笑，倾着身子喊道，[npc.speech(当然可以，[pc.name]，希望下次再见！)]
+	</p>
+	<p>
+		[npc.Name]最后朝你送来一抹笑容，接着便转头没入了人群当中。你叹了口气，思索着接下来该怎么做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DANCE_FLOOR_LOSE_COMPANY"><![CDATA[
+	<p>
+		你认为[npc.name]并不是你喜欢的类型，于是你用盖过夜店噪音的音量喊道，[pc.speech(我要走了，祝你今晚玩的开心！)]
+	</p>
+	<p>
+		[npc.Name]看起来有些泄气，但你已经从[npc.herHim]身边离开了。[npc.she]也只是转身继续跟舞池其他的某个人跳起舞来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS"><![CDATA[
+	<p>
+		夜店的厕所比一般的夜总会大得多，也干净得多，一面墙上至少有二十个独立的隔间。隔间对面是水池和镜子，为夜店的狂欢者提供了一个清洗自己的地方，远处的墙上贴着几十张海报。
+	</p>
+	<p>
+		当你走过其中一个敞开的隔间时，你发现有人在两边的墙上开了个洞，每个洞旁边都写满了淫秽的文字。从地板上飞溅的精液可以看出，这个隔间经常被人使用……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_USING_GET_READY"><![CDATA[
+	<p>
+		你走进一个空着的隔间，紧挨着那些陌生人通过寻欢洞接受服务的隔间，你关上身后的门，然后转身面对墙上的洞口。就在这时，你听到另一侧隔间有人进来，片刻后，你看到寻欢洞对面闪过一道身影。
+	</p>
+	<p>
+		[game.random(
+		[npc.speech(快来，快把鸡巴插进来！)]
+		|[npc.speech(看看鸡巴！看看精液！)]
+		|[npc.speech(来嘛宝贝，操死我！)])]一个充满情欲的声音突然从洞里喊了出来。
+	</p>
+	<p>
+		你不知道是应该按照[npc.name]说的去做，还是改变主意匆忙离开。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_START_USING"><![CDATA[
+	<p>
+		已经等了足够长时间，你快速地走到寻欢洞前，
+		#IF(pc.hasPenis())
+			准备让对面的陌生人吮吸你[pc.cock+]。
+		#ELSEIF(pc.hasVagina())
+			准备让对面的陌生人舔你[pc.pussy+]。
+		#ELSE
+			准备让对面的陌生人舔你的无性的下体。
+		#ENDIF
+	</p>
+	<p>
+		[npc.she]看到你的腹股沟靠近时，[npc.name]发出[npc.a_moan+]，然后贴近墙壁，将[npc.her]张开的嘴紧紧地贴在洞口上。
+		#IF(!npc.isMute())
+			[npc.she]发出[npc.a_moan+]，不耐烦地鼓励你开始行动[game.random(
+			[npc.speech(哦~来吧！让我这个荡妇向你展示一下[npc.sheIs]能做些什么！)]
+			|[npc.speech(~嗯！~哦！让我们开始吧！)]
+			|[npc.speech(哦~宝贝！我来让你看看我有多淫荡！)])]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_USING_POST_SEX"><![CDATA[
+	<p>
+		你从寻欢洞前退开，听到[npc.name]发出欢快的[npc.moan]，你咧嘴一笑。当你整理好自己的东西时，你看到洞中一闪而过的人影，随后隔间的门吱嘎作响，宣告了那个骚货的离开。
+	</p>
+	<p>
+		片刻之后，你准备好继续回到夜店，伸手打开你的隔间门锁，打开门，走回厕所。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_SERVICING_GET_READY"><![CDATA[
+	<p>
+		你顿感性欲高涨，想在寻欢洞里帮帮陌生人，于是走进了那个溅满精液的隔间。有人看到你进去后，也立刻走进你隔壁的隔间，迅速把[npc.her][npc.a_cock+]推到了洞里。你看向那[npc.cock+]，这玩意的主人便
+		#IFnpc.isFeminine()
+		#THEN尖声命令道，
+		#ELSE用低沉的声音道，
+		#ENDIF
+		[game.random(
+		[npc.speech(来啊骚货，该干活儿了！)]
+		|[npc.speech(舔啊，骚逼！)]
+		|[npc.speech(来啊，你个小贱货，赶紧开工！)])]
+	</p>
+	<p>
+		还没等你回应，你就听到另一边又有一个人进到了隔间里，扭头一看身后的寻欢洞，正撞见[npc2.a_cock+]捅了进来。第二位“顾客”一挺腰，接着喊道，
+		[game.random(
+		[npc2.speech(过来你个婊子。用嘴可以，但要是下面长了缝，那就也让我好好操一操！)]
+		|[npc2.speech(赶紧的，婊子！给我操操你的屁股，你要是长了屄，那就更好了！)]
+		|[npc2.speech(用嘴也可以，不过我更想操你的屁股，婊子！你要是长了屄，那就更好了！)])]
+	</p>
+	<p>
+		你来回打量着这些鸡巴，开始思考自己是否应该按照这些陌生人说的那样，开始为他们服务。不过，你也可以改变主意，离开这里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_START_SERVICING_PUBLIC"><![CDATA[
+	<p>
+		你决定开着隔间的门，这样任何人都可以来看你为这些陌生人的鸡巴服务，于是你跪在了厕所的地板上。你咬着嘴唇，情不自禁地发出[pc.a_moan+]，准备向所有人展示你是个多么淫荡的荡妇……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_START_SERVICING"><![CDATA[
+	<p>
+		你关上并锁上隔间的门，跪在厕所的地板上，准备为这些陌生人的鸡巴服务。你咬着嘴唇，情不自禁地发出[pc.a_moan+]，准备向他们展示你是个多么淫荡的荡妇……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_SERVICING_POST_SEX_PUBLIC"><![CDATA[
+	<p>
+		你从寻欢洞前退开，听到陌生人发出满意的呻吟，你忍不住咧嘴一笑。围观你放荡表演的人群开始散去，随着他们离开，你开始整理自己的东西。
+	</p>
+	<p>
+		片刻之后，你准备好继续回到夜店，便走出隔间，回到厕所。你回头看了一眼两边的隔间，发现里面的人都已经离开了，你也不知道刚才是在为谁的鸡巴服务……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_GLORY_HOLE_SERVICING_POST_SEX"><![CDATA[
+	<p>
+		你从寻欢洞前退开，听到陌生人发出满意的呻吟，忍不住咧嘴一笑。当你整理好自己的东西时，你看到两边的洞里闪过人影，随后门吱嘎作响，宣告每个陌生人都已相继离开。
+	</p>
+	<p>
+		片刻之后，你准备好继续回到夜店，伸手打开你的隔间门锁，走回厕所。你回头看了一眼两边的隔间，发现里面的人都已经离开了，你也不知道刚才是在为谁的鸡巴服务……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_SEX"><![CDATA[
+	<p>
+		你握住[npc.namePos]的[npc.hand]，牵着[npc.herHim]走进一个隔间，随后转过身锁上身后的门。
+	</p>
+	<p>
+		[npc.speech(是的……我们做爱吧)][npc.she]呻吟着，向前走了一步，重重地靠在你身上，然后把[npc.her][npc.lips+]贴在你的嘴上。
+	</p>
+	<p>
+		你回吻了[npc.name]，将[pc.arms]环过[npc.her]的身体，双手不安分地探索着[npc.her]身体的各个部位，直到[npc.her]渐入佳境。片刻的挑逗后，[npc.she]拉开距离，呻吟着向你乞求进一步的欢愉，看向你的眼神里充满了不加掩饰的欲望， [npc.speech(~嗯姆！~来吧，[pc.name]，来干我……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_RAPE"><![CDATA[
+	<p>
+		你拉着[npc.namePos]的[npc.hand]，把[npc.herHim]拉到其中一个隔间，以便与[npc.herHim]做爱。[npc.she]知晓你想要做什么，愤怒地低声嘶吼道，[npc.speech(我<i>不要</i>在厕所里做……停下！)]
+	</p>
+	<p>
+		虽然[npc.her]嘴上这么说，但[npc.namePos]的声音里还是带着强烈的兴奋，这促使你强行把[npc.herHim]拉进其中一个隔间，然后转身锁上身后的门。[npc.her]脸上闪过一丝夸张的惊恐表情，但还没等[npc.she]再说什么，你就粗暴地用[pc.lips+]抵住[npc.herHim]的嘴，让[npc.her]噤声。
+	</p>
+	<p>
+		[npc.her]用双拳无力地击打着你，设法挣脱了你的吻，大喊道，[npc.speech(不要！请停下，[pc.name]！别强奸我！)]
+	</p>
+	<p>
+		从[npc.her]淫荡的语气中可以明显地听出，[npc.Name]正乐在其中。于是[npc.she]假装反抗，而你就准备在夜店的厕所里“强奸”[npc.her]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_RAPE_PLAY"><![CDATA[
+	<p>
+		你拉着[npc.namePos]的[npc.hand]，把[npc.herHim]拉到其中一个隔间，以便与[npc.herHim]做爱。[npc.she]知晓你想要做什么，高兴地[npc.moansVerb]道，[npc.speech(呐……来做吧！)]
+	</p>
+	<p>
+		你用力把[npc.Name]拉进一个隔间，转身锁好门，随后告诉[npc.herHim]你想玩强奸游戏。[npc.herHim]立即按照你的要求，夸张地摆出恐慌的表情，愤怒地低声嘶吼道，[npc.speech(我<i>不要</i>在厕所里做……停下！)]
+	</p>
+	<p>
+		在[npc.she]开口之前，你粗暴地将[pc.lips+]抵住[npc.herHim]的嘴，让[npc.her]噤声。[npc.her]用双拳无力地击打着你，设法挣脱了你的吻，大喊道，[npc.speech(不要！请停下，[pc.name]！别强奸我！)]
+	</p>
+	<p>
+		从[npc.her]淫荡的语气中可以明显地听出，[npc.Name]正乐在其中。于是[npc.she]假装反抗，而你就准备在夜店的厕所里“强奸”[npc.her]……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_AFTER_SEX"><![CDATA[
+	<p>
+		和[npc.Name]玩得尽兴后，你们俩靠在厕所的墙壁上，累得气喘吁吁。
+	</p>
+	<p>
+		[npc.speech(妈的……太爽了……)][npc.name]长叹一声，开心地向你露出了笑容。
+	</p>
+	<p>
+		你也深有同感，等二人整理好衣物后，你们打开了隔间的门锁，朝洗手台过去了。[npc.Name]往脸上泼了一把水，扭头向你微笑道。
+		#IF npc.isShy()
+		#THEN [npc.speech(我，我得走了。下次再在这见面，可以吗？)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(我要走了，你要找我我还会来的。下回再在这儿见，行吧？)]
+			#ELSE [npc.speech(我得离开了。下次再见面，行吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_AFTER_SEX_NO_ORGASM"><![CDATA[
+	<p>
+		和[npc.name]玩得尽兴后，你们俩靠在厕所隔间的墙壁上，气喘吁吁。过了一会儿，[npc.name]划过[npc.her][npc.arms]，发出沮丧的哼声，[npc.speech(你知道的，你并没有完全满足我……)]。
+	</p>
+	<p>
+		你们二人整理好衣物后，你打开了隔间的门锁，朝洗手台走去。[npc.Name]往脸上泼了一把水，扭头向你微笑道。
+		#IF npc.isShy()
+		#THEN[npc.speech(我，我得走了。虽然不能算最舒服的一次，但我也很满意了……下次再在这见面了，可以吗？)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN[npc.speech(我要走了。你的技术很烂，但你要找我我还会来的。下回再在这儿见，行吧？)]
+			#ELSE[npc.speech(我得离开了。这一次，不是很满意，不过我无所谓，下次再见面，行吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_AFTER_SEX_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(当然，我们会再见面的！)]你热情洋溢地回答，在[npc.she]从水槽边后退时，对[npc.name]微笑。
+	</p>
+	<p>
+		[npc.speech(太好了！一路顺风！)][npc.she]回应道，上前亲吻了你的脸颊，然后转身离开了厕所。
+	</p>
+	<p>
+		[npc.namePos][npc.scent+]仍然萦绕在空气中，你发出了一声深深的满足的叹息，在回味了片刻刚才发生的一切后，你开始思考现在应该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_AFTER_SEX_DO_NOT_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(嗯……行啊，)]你有些迟疑，暗自却希望永远不要再见到[npc.name]了。
+	</p>
+	<p>
+		[npc.speech(呃，你至少<i>努力一下</i>，显得真诚些吧，)][npc.she]恼火地哼了一声，便转身离去了。
+	</p>
+	<p>
+		[npc.namePos][npc.scent+]还在空气中徘徊，你松了一口气，回想了一会儿刚才发生的事情，你开始思考现在应该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_AFTER_SEX_DO_NOT_SEE_AGAIN_RUDE"><![CDATA[
+	<p>
+		[pc.speech(不太可能。)]你回答说，交叉你的[pc.arms]并对[npc.name]微笑。[pc.speech(我不认为和一个喜欢在夜店厕所里被操的荡妇谈恋爱是个好主意。)]
+	</p>
+	<p>
+		#IF npc.isShy()
+		#THEN[npc.speech(你，你个混蛋！你，你装都不装一下吗！)][npc.name]顿时结巴起来，泪水从[npc.eyes]中汩汩流出，随即转身跑走了。
+		#ELSE
+			#IF npc.isConfident()
+			#THEN[npc.speech(行吧。既然如此了，那就去你妈的吧，你个[pc.bitch]。)][npc.name]撂下话，狠狠地瞪了你一会儿，这才转身离开房间。
+			#ELSE[npc.speech(呃。真是个[pc.a_bitch]。滚蛋吧。)][npc.name]撂下话，立马转身离开了房间。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		[npc.namePos][npc.scent+]还在空气中徘徊，你松了一口气，回想了一会儿刚才发生的事情，你开始思考现在应该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_SEX_REJECTED"><![CDATA[
+	<p>
+		你拉着[npc.namePos][npc.hand]试图把[npc.herHim]拉到其中一个隔间，以便与[npc.herHim]做爱，但[npc.she]愤怒地推开了你，并大喊大叫，[npc.speech(我才不会在厕所里和你做爱呢！)]
+	</p>
+	<p>
+		水槽旁的几个人听到后转过头来笑了起来，你没有理会他们的笑声，转过身朝[npc.name]叹了口气，[pc.speech(好吧，好吧。那我们干点别的吧。)]
+	</p>
+	<p>
+		[npc.name]翻了个白眼，双手抱胸着等着你说接下来想干嘛。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_USE"><![CDATA[
+	<p>
+		走进其中一个空隔间，转身锁上身后的门，然后上厕所。过了一会儿，你冲了马桶并打开隔间的门锁，然后走到水池边洗[pc.hands]。
+	</p>
+	<p>
+		结束后，你转身面向房间，思考着下一步该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_WASH"><![CDATA[
+	<p>
+		你觉得自己可以做个快速清洁，于是走到水池边仔细洗了洗[pc.hands]，然后往[pc.face]上扑了些水。结束后，你从旁边的纸巾机抽出纸巾，迅速擦干皮肤，然后转身面向房间，下一步要做什么呢……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_TOILETS_POSTERS"><![CDATA[
+	<p>
+		走到房间的远处，你停下脚步，看了看贴满墙壁的海报。它们大多是宣传性质的，展示的是音乐乐队、最新的化妆品和服装品牌，或是不同种类的食品和饮料。
+	</p>
+	<p>
+		其中有几张海报更为恶劣，上面明明白白展示出几张凶神恶煞的罪犯的面部照片。这些罪犯的通缉罪名从抢劫、#IF(game.isNonConEnabled())强奸#ELSE猥亵#ENDIF到绑架、反动，无所不有。海报上保证这些罪犯终将绳之以法，凡藏匿者同受终身奴役的惩罚。
+	</p>
+	<p>
+		最后一张值得注意的海报上面，竟是田园牧歌般的场面，一家人幸福地生活在乡村。下方的配字承诺，任何人只要自愿离开御城区，踏上“无尽之海”的航程，前往更远的土地，就肯定能过上更美好的生活。
+		#IF(game.isPlotDiscovered())
+			你很清楚所谓土地就是欧洲大陆了，不禁怀疑移民到那里的御城区市民到底能否过上海报宣传的生活。
+		#ELSE
+			你又瞧了一眼海报上的场景，不禁怀疑起所谓的土地是否真的存在。
+		#ENDIF
+	</p>
+	<p>
+		你全部看过之后，便从海报旁退开，思索着接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<htmlContent tag="AUNT_HOME_PLAYERS_ROOM_CLUBBER_TAKEN_HOME"><![CDATA[
+	<p>
+		不想让自己的声音被背景噪音所掩盖，你靠近[npc.name]的肩膀，提高声音挑逗道，[pc.speech(要跟我回家吗？)]
+	</p>
+	<p>
+		你说完之后坐回原位，只见[npc.Name]笑着点了点头，[npc.speech(好啊，带路吧！)]
+	</p>
+	<p>
+		你带着那[npc.race]就离开了夜店，沿着御城区宽阔的中心大道想莉莱雅的宅邸走去。
+		#IFgame.getCurrentWeather()==WEATHER_MAGIC_STORM
+		#THEN
+			#IFnpc.isVulnerableToArcaneStorm()
+			#THEN 由于奥术风暴正在肆虐，[npc.name]总想着把你拉到路旁直接开始做爱，但你回家在大干一场的心意已决，就跟[npc.herHim]你扯着我，我扯着你，走在归途上。
+			#ELSE 尽管奥术风暴正在肆虐，[npc.name]却能跟你一样不受影响，你们两个愉快畅谈着走在回家路上。
+			#ENDIF
+		#ELSE 一路上风平浪静，你们两个愉快畅谈着走在回家路上。
+		#ENDIF
+	</p>
+	<p>
+		不久后，你和[npc.name]来到了宅邸的前门，[npc.her]停下脚步，惊呼道，
+		#IF npc.isShy()
+		#THEN [npc.speech(不，不会吧？你是住在这儿的吗？太大了吧……)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(哇噢！你住这儿！？这地方可真大！)]
+			#ELSE [npc.speech(哇，你住的地方是这里？好大呀！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		[pc.speech(简而言之，是这么回事，可以把这里看成是我们家的庄园，)]你边说边敲了敲门。
+	</p>
+	<p>
+		片刻后，门打开了，萝丝向你屈膝行礼，[rose.speech(欢迎回来，[pc.name]。我看到你带了朋友回来，要我再准备一间房间吗？)]
+	</p>
+	<p>
+		你进了门，回应道，[pc.speech(不用，一间就够了萝丝，就去我的房间。)]
+	</p>
+	<p>
+		你领着[npc.name]上了楼梯，走过过道，听到[npc.herHim]惊叹于宅邸的宽阔，你也不禁扬起了嘴角。你打开房间门，让[npc.name]看向里面，同时向[npc.herHim]露出了笑容。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AUNT_HOME_PLAYERS_ROOM_CLUBBER_TAKEN_HOME_CHANGE_MIND"><![CDATA[
+	<p>
+		把[npc.name]送回房间后，你猛然发现自己对整件事有了新的想法，于是你看向对面的[npc.herHim]，解释道，[pc.speech(嘿，[npc.name]，我很抱歉，我现在确实什么也感受不到。)]
+	</p>
+	<p>
+		[npc.speech(哎……)][npc.name]叹了口气，看上去相当沮丧。
+	</p>
+	<p>
+		[pc.speech(我还想和你在夜店再见一次面呢~也许下次我们可以一起玩玩？)]
+	</p>
+	<p>
+		[npc.speech(是，挺好的，)][npc.name]回答道，敷衍地朝你笑了笑，然后转身离开。
+	</p>
+	<p>
+		你带着[npc.name]回到了楼下的前门，互道晚安，然后回到自己的房间。你整个人瘫倒在床上，在被窝里深深叹了口气。你默默在床上躺着休息了一小会儿，爬起来，站着思考接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AUNT_HOME_PLAYERS_ROOM_CLUBBER_TAKEN_HOME_CHANGE_MIND_RUDE"><![CDATA[
+	<p>
+		在把[npc.name]带回房间后，你猛然发现自己对整件事有了新的想法，看向对面的[npc.herHim]，你直言不讳地说，[pc.speech(实话告诉你，我是真的不想操你。)]
+	</p>
+	<p>
+		[npc.speech(哼！你至少可以稍微委婉一点，)][npc.name]激动地说，转身走向门口。
+	</p>
+	<p>
+		[pc.speech(萝丝可以带你离开，)]你在[npc.name]身后大声提醒，并在手里摇响了拉铃，等候猫女仆回应召唤。
+	</p>
+	<p>
+		在[npc.name]气冲冲地离开了你的房间后，萝丝及时出现，带[npc.herHim]回到了楼下的前门。你后退几步，整个人都瘫倒在床上，在被窝里深深叹了口气。默默躺了一小会儿，你从床上爬起来，站着思考接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AUNT_HOME_PLAYERS_ROOM_CLUBBER_TAKEN_HOME_SEX_AS_DOM"><![CDATA[
+	<p>
+		你握住[npc.name]的[npc.hand]，牵着[npc.herHim]走到床边，然后转过身拉近了彼此之间的距离。
+	</p>
+	<p>
+		[npc.speech(是的……让我们开始吧！)][npc.she]呻吟着靠在你身上，然后将[npc.lips+]抵在了你的嘴上。
+	</p>
+	<p>
+		你回吻了[npc.name]，将[pc.arms]环过[npc.her]的身体，双手不安分地探索着[npc.her]身体的各个部位，直到[npc.her]渐入佳境。片刻的挑逗后，[npc.she]拉开距离，呻吟着向你乞求进一步的欢愉，看向你的眼神里充满了不加掩饰的欲望， [npc.speech(~嗯姆！~来吧，[pc.name]，来干我……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AUNT_HOME_PLAYERS_ROOM_CLUBBER_TAKEN_HOME_SEX_AS_SUB"><![CDATA[
+	<p>
+		你握住[npc.namePos]的[npc.hand]，带着[npc.herHim]去了床边，随后转身揽住了[npc.herHim]。
+	</p>
+	<p>
+		[npc.speech(没错……我们开始吧！)][npc.she]呻吟着上前，一下子倒在你的怀里，然后将[npc.lips+]抵在了你的嘴上。
+	</p>
+	<p>
+		你也应着[npc.namePos]的亲吻，发出一声模糊的[pc.moan]，将舌头探进了[npc.her]的口中。两人互相深吻了几分钟，你才分别开来，轻声呻吟道，[pc.speech(~姆嗯！~来吧，[npc.name]，来干我吧……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BACK_HOME_AFTER_CLUBBER_SEX"><![CDATA[
+	<p>
+		你和[npc.name]大干一场后，两人瘫倒在床上，筋疲力竭地喘息着。
+	</p>
+	<p>
+		[npc.speech(妈的……太爽了……)][npc.name]长叹一声，开心地向你露出了笑容。
+	</p>
+	<p>
+		你也跟[npc.namePos]是同样想法，休息了一会儿后，你们就都起身穿好了一副。[npc.name]向你靠过来，飞快地在你的脸颊上留下一枚轻吻，便微笑道，
+		#IF npc.isShy()
+		#THEN [npc.speech(我，我得走了。下次再在夜店见面了，可以吗？)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(我要走了。夜店再见了，行吧？)]
+			#ELSE [npc.speech(我得离开了。下次再在夜店见面，行吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BACK_HOME_AFTER_CLUBBER_SEX_NO_ORGASM"><![CDATA[
+	<p>
+		你和[npc.name]大干一场后，瘫倒在床上，筋疲力竭地喘息着。过了一会儿，[npc.name]却抱起了胸，有些不满地哼哼道，[npc.speech(我说，你可没真正满足我……)]
+	</p>
+	<p>
+		你们两个休息了一会儿，就都起身穿好了衣服。[npc.name]向你靠过来，飞快地在你的脸颊上留下一枚轻吻，便微笑道，
+		#IF npc.isShy()
+		#THEN [npc.speech(我，我得走了。虽然不能算最舒服的一次，但我也很满意了……下次再在夜店见面了，可以吗？)]
+		#ELSE
+			#IF npc.isConfident()
+			#THEN [npc.speech(我要走了。你床上技术很烂，但你要找我我还会来的。夜店再见了，行吧？)]
+			#ELSE [npc.speech(我得离开了。这一次，不是很满意，不过我无所谓，下次再在夜店见面，行吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BACK_HOME_AFTER_SEX_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(我们当然还要再见面了！)]你热情地笑看着[npc.name]。
+	</p>
+	<p>
+		[npc.speech(好啊！已经等不及下次见面了！)][npc.she]说完便转身向门外走去。
+	</p>
+	<p>
+		你带着[npc.name]回到了楼下的前门，互道晚安，然后回到自己的房间。你整个人瘫倒在床上，在被窝里深深叹了口气。你默默在床上躺着休息了一小会儿，爬起来，站着思考接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BACK_HOME_AFTER_SEX_DO_NOT_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(嗯……行啊，)]你有些迟疑，暗自却希望永远不要再见到[npc.name]了。
+	</p>
+	<p>
+		[npc.speech(呃，你至少<i>努力一下</i>，显得真诚些吧，)][npc.she]恼火地哼了一声，便转身出门离去了。
+	</p>
+	<p>
+		[pc.speech(萝丝可以带你离开，)]你在[npc.name]身后大声提醒，并在手里摇响了拉铃，等候猫女仆回应召唤。
+	</p>
+	<p>
+		在[npc.name]气冲冲地离开了你的房间后，萝丝及时出现，带[npc.herHim]回到了楼下的前门。你后退几步，整个人都瘫倒在床上，在被窝里深深叹了口气。默默躺了一小会儿，你从床上爬起来，站着思考接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BACK_HOME_AFTER_SEX_DO_NOT_SEE_AGAIN_RUDE"><![CDATA[
+	<p>
+		[pc.speech(算了吧，)]你抱起胸，朝着[npc.name]蔑笑道，[pc.speech(我只是想狠狠操你一顿。没兴趣再见你。)]
+	</p>
+	<p>
+		#IF(npc.isShy())
+			[npc.speech(你，你个混蛋！你，你装都不装一下吗！)][npc.name]顿时结巴起来，泪水从[npc.eyes]中汩汩流出，随即转身跑出了门。
+		#ELSE
+			#IF(npc.isConfident())
+				[npc.speech(行吧。既然如此了，那就去你妈的吧，你个[pc.bitch]。)][npc.name]撂下话，狠狠地瞪了你一会儿，这才转身出门离去。
+			#ELSE
+				[npc.speech(呃。真是个[pc.a_bitch]。滚蛋吧。)][npc.name]撂下话，立马转身出门离去了。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		[pc.speech(萝丝可以带你离开，)]你在[npc.name]身后大声提醒，并在手里摇响了拉铃，等候猫女仆回应召唤。
+	</p>
+	<p>
+		在[npc.name]气冲冲地离开了你的房间后，萝丝及时出现，带[npc.herHim]回到了楼下的前门。你后退几步，整个人都瘫倒在床上，在被窝里深深叹了口气。默默躺了一小会儿，你从床上爬起来，站着思考接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- Dominant partner content -->
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_CHANGE_LOCATION_BAR"><![CDATA[
+	<p>
+		#IF(npc.isKind())
+			[npc.speech(这地方可真热，来吧，我们去找点喝的，)][npc.name]说，然后牵起你的[pc.hand]，向酒吧的方向走去。[npc.speech(让我给你整点好东西！)]
+		#ELSE
+			#IF(npc.isSelfish())
+				[npc.speech(操了，这里都快开锅了！来吧[pc.babe]，我渴了，)][npc.name]说，然后抓住你的[pc.hand]，拉着你跟在[npc.herHim]身后，向酒吧的方向走去。
+			#ELSE
+				[npc.speech(这里可真热，来吧，我们去找点喝的，)][npc.name]说道，然后牵起你的[pc.hand]，向酒吧的方向走去。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		在夜店主楼熙熙攘攘的人群中穿梭，你和[npc.name]很快就意识到自己站在吧台前。值得庆幸的是，聚集在一起点饮料的人群中出现了一个空隙，你和你的伙伴上前填补了这个空隙。你靠在柜台上，想知道既然你们来了，[npc.name]会做想点点儿什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_CHANGE_LOCATION_DANCE_FLOOR"><![CDATA[
+	<p>
+		#IF(npc.isKind())
+			[npc.speech(我们去舞池吧，)][npc.name]建议，然后牵起[npc.hers]的[pc.hand]，向舞池走去。[npc.speech(我喜欢跳舞！)]
+		#ELSE
+			#IF(npc.isSelfish())
+				[npc.speech(来吧[pc.babe]，我想看你为我摇起你那火辣的身体，)][npc.name]说，然后抓住你的[pc.hand]，拉着你跟在[npc.herHim]身后，向舞池的方向走去。[npc.speech(还有！别想跟别人跳舞！今晚你是我的！)]
+			#ELSE
+				[npc.speech(嘿，[pc.name]，我们去舞池看看吧，)][npc.name]说，然后牵起你的[pc.hand]，向舞池中间走去。[npc.speech(毕竟，跳舞才是来夜店的目的！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你和[npc.name]在熙熙攘攘的人群中穿梭，很快就走到了舞池的边缘。[npc.name]转身面对你，你想知道[npc.sheIs]是否想马上开始跳舞……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_CHANGE_LOCATION_SEATING_AREA"><![CDATA[
+	<p>
+		#IF(npc.isKind())
+			[npc.speech(我想，如果我们能坐下来，彼此间的交流会更容易一些，)][npc.name]说，然后牵起你的[pc.hand]，向最近的座位区走去。[npc.speech(我们还可以在那里让[npc.legs]放松一会！)]
+		#ELSE
+			#IF(npc.isSelfish())
+				[npc.speech(我的[npc.legs]真他妈了个逼的要了命了！)][npc.name]抱怨着，然后抓住你的[pc.hand]，拉着你跟在[npc.herHim]身后，向最近的座位区走去。[npc.speech(来吧，我想坐下来休息一会儿！)]
+			#ELSE
+				[npc.speech(来吧，[pc.name]，我们坐着歇一会儿去，)][npc.name]说，然后牵起你的[pc.hand]，向最近的座位区走去。[npc.speech(我站的时间太长了，现在疼的要命！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你和[npc.name]穿过夜店大厅熙熙攘攘的人群，很快就走到了夜店众多座位中的一个。
+		#IF(!pc.isTaur())
+			#IF(!npc.isTaur())
+				你和[npc.name]在其中一个空位坐下来，不知道[npc.sheIs]是否想借此机会和你聊一会儿……
+			#ELSE
+				[npc.name]快速环顾了一下四周，发现了一个空着的特大包厢，似乎是专门为[npc.she]这种下半身的客人设计的。[npc.name]把你带到宽大的沙发前，让你在[npc.herHim]旁边坐下，不知道[npc.sheIs]会不会想借此机会和你聊一会儿……
+			#ENDIF
+		#ELSE
+			#IF(!npc.isTaur())
+				[npc.name]快速环顾了一下四周，发现了一个空着的特大包厢，似乎是专门为有着你这种下半身的客人设计的。[npc.name]把你带到宽大的沙发前，让你在[npc.herHim]身边坐下，不知道[npc.sheIs]是否想借此机会和你聊一会儿……
+			#ELSE
+				[npc.name]快速环顾了一下四周，发现了一个空着的特大包厢，似乎是专门为有着你和[npc.hers]这种下半身的客人设计的。[npc.name]把你带到宽大的沙发前，让你在[npc.herHim]旁边坐下，不知道[npc.sheIs]是否想借此机会和你聊一会儿……
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_CHANGE_LOCATION_TOILETS"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.speech(抱歉，[pc.name]，我得去上个厕所，)][npc.name]道歉道，[npc.speech(我马上就回来，你在那边等我没问题吧？)]
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(来吧，[pc.babe]！整晚看着你火辣的身材让我欲火焚身，保镖才不管人们在厕所里乱搞呢！我们就在里面干吧！)][npc.name]粗鲁地说道，然后抓住你的[pc.hand]，拉着你跟在[npc.herHim]后面，向厕所走去。[npc.speech(我希望你比我上次在这里干的那个人强！)]
+			#ELSE [npc.speech(来吧，[pc.name]，我们去找点乐子！)][npc.name]说，然后牵起你的[pc.hand]，向厕所走去。[npc.speech(保镖们才不在乎有人在里面乱搞呢！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你和[npc.name]穿过熙熙攘攘的人群，很快就来到了夜店的厕所。这里只能听到夜店扬声器发出的砰砰低音，当[npc.name]带你走进去时，你听到从墙壁一侧的许多隔间中传出一些非常色情的呻吟声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_SEARCH_GENERATE_DOM"><![CDATA[
+	<p>
+		在决定要找什么样的人之后，你就开始在熙熙攘攘的夜店人群中寻找。没过多久，你就看到一个[npc.a_raceFull(true)]正独自站在那里，正好是你想要找的人！你有意无意地晃荡过去，并试图吸引[npc.her]的目光，没过多久，你就欣喜地发现[npc.she]注意到了你，并开始向你靠近。
+	</p>
+	<p>
+		#IF npc.isKind()
+		#THEN 随着[npc.she]在你身前站定，这个[npc.race]向你投来迷人的微笑，并开始介绍自己，[npc.speech(不好意思，我注意到你正一个人呆在这里，我是[npc.name]，不知今晚你是不是打算找个伴呢？)]
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(嘿，[pc.babe]！你看起来好孤单啊，我敢说你来这绝对是想找点乐子的。我是[npc.name]，不如今晚你就陪着我吧，如何？)]
+			#ELSE [npc.speech(你好！我看到你整一个人呆在这，想着也许你会需要一些陪伴。我是[npc.name]，你愿意与我共度一段时光吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		[pc.speech(嗯，可以啊，)]你说完就介绍了一下自己，也表示自己今晚并没有伴侣。你跟[npc.name]聊了几分钟，让[npc.herHim]引导话题。[npc.she]看来很想让你经历一个难忘的夜晚，你也可以稍作暗示，看[npc.she]会带你去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_CONTACTS_DOM"><![CDATA[
+	<p>
+		虽然夜店里似乎有无穷无尽的新朋友等着你去结识，但你发现自己还是想和以前的某个伙伴多呆一会儿。带着这种想法，你开始在人群中寻找，看看能否找到你的旧识……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_FIND_CONTACT_DOM"><![CDATA[
+	<p>
+		没过多久，你就看到一个[npc.a_raceFull(true)]独自站在那里，走近一看，原来是[npc.name]！这正是你要找的人！你先是在周围晃悠了一会儿，希望能吸引[npc.herHim]的注意，没想到很快[npc.she]就发现了你，朝你走来。
+	</p>
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.name]在你身前站定，脸上浮现出一抹暖心的微笑，打了个招呼，[npc.speech(又见面了，[pc.name]，最近过得怎样？是在找今晚的伙伴吗？)]
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(嘿，[pc.babe]！又来找快活了是不是？那么，今晚就跟我，怎样？)]
+			#ELSE [npc.speech(嗨，[pc.name]！我看你一个人站在这，是想找人一起吧。愿意今晚再跟我过吗？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		[pc.speech(嗯，可以啊，)]你说完就跟[npc.name]聊了几分钟，让[npc.herHim]引导话题。[npc.she]看来很想让你经历一个难忘的夜晚，你也可以稍作暗示，看[npc.she]会带你去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_LEAVES"><![CDATA[
+	<p>
+		无奈地叹了口气，[npc.name]离你而去，说道，
+		#IF(npc.isKind())
+			[npc.speech(这样下去真的不行。我想我要走了……)]
+		#ELSE
+			#IF(npc.isSelfish())
+				[npc.speech(你真是个贱人。去他妈的，我要走了。)]
+			#ELSE
+				[npc.speech(这样不行。我走了。)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		[npc.race]转身准备离开夜店，你思考着该如何回应……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_LEAVES_SAVE_CLUBBER"><![CDATA[
+	<p>
+		你不想就此结束与[npc.name]的关系，于是赶紧说，尽管今晚发生了很多事，但你希望能再见到[npc.herHim]。
+	</p>
+	<p>
+		#IF(npc.isKind())
+			[npc.speech(好吧……我想我可以改天再来这里找你……下次见，)][npc.name]叹了口气，然后继续向前走，离开了这里。
+		#ELSE
+			#IF(npc.isSelfish())
+				[npc.speech(真的吗？在你刚刚做了那么多逼事之后？下次我们再这么做的时候，你最好别这么拽，)][npc.name]直截了当地回答，然后突然转身离开了。
+			#ELSE
+				[npc.speech(真的吗？嗯……我想我们可以再试一次。改天再找你吧，)][npc.name]回应道，然后继续向前走，离开了这里。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		现在你再次独自一人，你想知道接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_LEAVES_LOSE_COMPANY"><![CDATA[
+	<p>
+		你觉得自己已经受够[npc.namePos]的陪伴了，于是在[npc.herHim]后面喊道，你再也不想见到[npc.herHim]了。
+	</p>
+	<p>
+		#IF(npc.isKind())
+			[npc.speech(那好吧，再见，[pc.name]，)][npc.name]不高兴地回应，然后继续向前走，离开了这里。
+		#ELSE
+			#IF(npc.isSelfish())
+				[npc.speech(是啊，去你妈的，[pc.bitch]。祝你被你的其他荡妇朋友操得爽歪歪的，)][npc.name]粗鲁地回应，然后冲向夜店的另一个地方。
+			#ELSE
+				[npc.speech(这种感觉是相互的，)][npc.name]轻蔑地回应道，然后继续向前走，离开了这里。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		现在你再次独自一人，你想知道接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_DRINK"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN
+			#IF pc.isFeminine()
+			#THEN [npc.speech(让我请你一杯吧，[pc.name]。这儿卖的大多数饮品都很够劲，但他们也提供猫猫幻想。是你喜欢的吧？)][npc.name]问道，微笑着等待你的回答。
+			#ELSE [npc.speech(让我请你一杯吧，[pc.name]。这儿卖的大多数饮品都很够劲，但他们也提供犬根宝。是你喜欢的吧？)][npc.name]问道，微笑着等待你的回答。
+			#ENDIF
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(我要请你喝一杯，[pc.babe]！可不是那些没劲的，他们这儿卖黑鼠朗姆酒呢，我要请你来一杯，)][npc.name]说，转身试图引起一个斑马女招侍的注意，[npc.speech(嗨，这儿！我们要点单！)]
+			#ELSE [npc.speech(你想来一杯吗，[pc.name]？他们这儿买的野狼威士忌是最出彩的。来，我请你一杯，)][npc.name]说道，转身试图引起一个斑马女招侍的注意。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你可以接受[npc.namePos]请你一杯，这肯定会让[npc.herHim]很高兴，你也可以告诉[npc.herHim]你现在并不渴，而这无疑会让[npc.herHim]感到失望……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_ACCEPT_WOLF_WHISKEY"><![CDATA[
+	<p>
+		[pc.speech(谢谢，[npc.name]！)]你的喊声穿透夜店背景的嘈杂，[pc.speech(给我来一杯！)]
+	</p>
+	<p>
+		[npc.name]冲你一笑，随即招来一个女招侍点单，[npc.speech(嗯哼，请来两杯野狼威士忌！)]
+	</p>
+	<p>
+		没一会儿，斑马女就把饮品摆上了你们面前的吧台。[npc.name]付了酒钱，你们俩就开始边聊天边享用这浓醇的威士忌。[npc.Name]先喝完了自己那份，随后凑近了你一些，开始友善地揶揄你喝完一杯居然得花这么久。
+	</p>
+	<p>
+		你笑着继续和[npc.name]调情，很快便把喝完的酒杯摆回吧台。你冲着自己的同伴微笑，感觉到酒精的效力在身体里慢慢发酵。你羞赧地轻蹭了一下[npc.herHim]，感谢[npc.herHim]招待你喝这一杯。
+	</p>
+	<p>
+		你们俩喝完饮料，没那么渴了。，不知道[npc.name]接下来想要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_REFUSE_WOLF_WHISKEY"><![CDATA[
+	<p>
+		[pc.speech(嘿！等等！)]你喊道，拽住[npc.namePos]的[npc.arm]并阻止[npc.herHim]为你点酒。[pc.speech(我今晚不想喝醉，好吗？野狼威士忌太劲了。)]
+	</p>
+	<p>
+		[npc.speech(呵，随你便吧，)][npc.name]直截了当地回答，丝毫不掩饰语气中的恼怒。[npc.speech(我想我们还是接着喝水吧，嗯？)]
+	</p>
+	<p>
+		[pc.speech(行，喝水挺好的。)]你回复道，[npc.Name]对你的拒绝耿耿于怀，让你很失望。
+	</p>
+	<p>
+		[npc.Name]确认你可以喝不含酒精的饮料后，就招呼最近的酒吧女侍过来，买了两瓶香草水。[npc.she]转过身来递给你一瓶，叹了口气道：[npc.speech(好吧，除了喝酒，我们还可以找些有趣的事情做。)]
+	</p>
+	<p>
+		你同意同伴的意见，并急于弥补拒绝威士忌的遗憾，于是开始与[npc.name]聊天。几分钟后，[npc.she]似乎已经忘记了刚才[npc.she]的恼怒，在你们俩喝完水后，你想知道[npc.she]接下来想做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_ACCEPT_FELINES_FANCY"><![CDATA[
+	<p>
+		[pc.speech(谢谢你，[npc.name]！)]你在夜店嘈杂的声音中喊道，[pc.speech(我想要一杯猫猫幻想！)]
+	</p>
+	<p>
+		[npc.name]冲你露出一个迷人的微笑，然后转向吧台，招呼最近的一个斑马女侍，点了
+		#IF npc.isFeminine()
+		#THEN 两杯奶油雪顶酒精饮料。
+		#ELSE 一杯奶油雪顶酒精饮料，然后为自己点上了一杯犬根宝。
+		#ENDIF
+	</p>
+	<p>
+		没一小会儿，斑马女就把两份饮品放在了你们面前的吧台上，[npc.name]付完钱，你们开始边聊天边享受饮品。[npc.Name]先喝完了自己的那份，然后继续边引导谈话内容，边平静地等待你喝完饮料。
+	</p>
+	<p>
+		在听完[npc.name]谈论了一会儿自己后，你很快意识到自己已经喝完全部的饮料。你冲自己的同伴笑笑，感觉到酒精开始产生影响。你向[npc.herHim]表达对饮品招待的感谢时，脸悄悄有些发红。
+	</p>
+	<p>
+		你们俩喝完饮料，没那么渴了。，不知道[npc.name]接下来想要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_ACCEPT_BEER"><![CDATA[
+	<p>
+		[pc.speech(谢谢你，[npc.name]！)]你在夜店嘈杂的声音中喊道，[pc.speech(我想要一瓶啤酒！)]
+	</p>
+	<p>
+		[npc.name]冲你露出一个迷人的微笑，然后转向吧台，招呼最近的一个斑马女侍，点了
+		#IF npc.isFeminine()
+		#THEN 一瓶犬根宝，然后为自己点上了一杯猫猫幻想。
+		#ELSE 两瓶犬根宝。
+		#ENDIF
+	</p>
+	<p>
+		没一小会儿，斑马女就把两份饮品放在了你们面前的吧台上，[npc.name]付完钱，你们开始边聊天边享受饮品。[npc.Name]先喝完了自己的那份，然后继续边引导谈话内容，边平静地等待你喝完饮料。
+	</p>
+	<p>
+		在听完[npc.name]谈论了一会儿自己后，你很快意识到自己已经喝完全部的饮料。你冲自己的同伴笑笑，感觉到酒精开始产生影响。你向[npc.herHim]表达对饮品招待的感谢时，脸悄悄有些发红。
+	</p>
+	<p>
+		你们俩喝完饮料，没那么渴了。，不知道[npc.name]接下来想要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_REFUSE_FELINES_FANCY"><![CDATA[
+	<p>
+		[pc.speech(谢谢，但我不想喝酒，)]你解释道，[pc.speech(我只要来点水就可以了。)]
+	</p>
+	<p>
+		[npc.speech(这很合理，)][npc.name]回答道，尽力掩饰[npc.her]语气中的失望。[npc.speech(那我去拿几瓶水来。)]
+	</p>
+	<p>
+		就这样，[npc.name]引起了最近的吧台女服务员的注意，然后买了两瓶香草水。[npc.she]转过身来，把饮料递给你，然后靠在吧台上开始和你聊天。几分钟后，你们俩喝完了水，你想知道[npc.she]接下来想做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_REFUSE_BEER"><![CDATA[
+	<p>
+		[pc.speech(谢谢，但我不想喝酒，)]你解释道，[pc.speech(我只要来点水就可以了。)]
+	</p>
+	<p>
+		[npc.speech(这很合理，)][npc.name]回答道，尽力掩饰[npc.her]语气中的失望。[npc.speech(那我去拿几瓶水来。)]
+	</p>
+	<p>
+		就这样，[npc.name]引起了最近的吧台女服务员的注意，然后买了两瓶香草水。[npc.she]转过身来，把饮料递给你，然后靠在吧台上开始和你聊天。几分钟后，你们俩喝完了水，你想知道[npc.she]接下来想做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_ACCEPT_RUM"><![CDATA[
+	<p>
+		[npc.namePos]点了两杯朗姆酒，你在一旁等待着。没一小会儿，酒吧女侍就把两份饮品放在了你们面前的吧台上。[npc.name]付完钱，转向你，露出灿烂的笑容。[npc.speech(喝吧，[pc.babe]！你可以感激一下，毕竟这东西可不便宜！)]
+	</p>
+	<p>
+		你照做了，很快就把整杯朗姆酒喝完了。[npc.name]称赞着你喝酒的速度，你冲[npc.she]微笑起来。几乎在下一刹那，你开始感觉到高度数酒精带给你的冲击，一下栽倒在身边的同伴身上，你发出诱惑的大笑，同时感觉到[npc.herHim]开始揉捏你[pc.ass+]。
+	</p>
+	<p>
+		你靠着酒吧的吧台，不知道[npc.name]接下来想做点什么呢……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_REFUSE_RUM"><![CDATA[
+	<p>
+		[pc.speech(嘿，等等)]你喊道，在[npc.she]下单之前阻止[npc.name]，[pc.speech(我不想喝醉，好吗？)]
+	</p>
+	<p>
+		[npc.speech(呃，你这个忘恩负义的[pc.bitch]！)][npc.name]冷笑一声，然后转向为[npc.her]点餐的酒吧女侍。[npc.speech(算了吧，我不会点任何东西。去招待别人吧。)]
+	</p>
+	<p>
+		你从[npc.name]身边退开，皱着眉头看着[npc.herHim]，回应[npc.her]无理的侮辱。还没等你开口，[npc.her]又走到你身边向你道歉，[npc.speech(对不起，[pc.babe]，我不该那么说。不管怎么说，没有伤到你吧，对吧？)]
+	</p>
+	<p>
+		[pc.speech(我想是的，)]你回答说，不知道是否应该抛弃这个粗鲁的[npc.race]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_FLIRT"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.name]靠在吧台上，跟你调起情来，对你的外貌和举止大加赞扬。[npc.Her]每一个字词都精心准备过，也并不主动身体接触，而是静待你的反应，斟酌过后才继续娓娓道来……
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.name]靠在吧台上，随意地同你调起情来，对你的体态和外貌赞不绝口。[npc.Her]的字句虽然不那样有魅力，但似乎格外真诚，可还没等你回应这直白的调情，[npc.she]便已经开始了身体接触。[npc.hand]摸在了你[pc.hips+]上，立刻对着你[pc.ass+]揉搓起来，满面笑意地跟你说，光揉一揉[npc.she]可并不满足……
+			#ELSE [npc.name]靠在吧台上，跟你调起情来，对你的外貌和举止大加赞扬。[npc.Her]的字句经常没什么味道，但[npc.her]心中似乎确实这样想，况且[npc.she]是静待你的反应，斟酌过后才继续娓娓道来，更说明[npc.she]的确是携好意而来……
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_FLIRT_ACCEPT"><![CDATA[
+		#IF npc.isKind()
+		#THEN
+		<p>
+			你冲着自己的同伴害羞地微笑，恭维了[npc.herHim]几句。你们的调情愈发往火辣大胆的方向驶。没过多久，你们便开始调笑着玩闹般触抚彼此，尽管[npc.name]尽全力想让事情不要变得太脱轨，但调情结束前你们都情难自矜地发表了一些非常涩涩而且充满暗示的言论。
+		</p>
+		<p>
+			你们二人相视一笑，你猜测起[npc.name]接下来会做什么……
+		</p>
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN
+			<p>
+				在[npc.namePos]轻浮的话语下，你发现自己被[npc.her]直白和淫语和身体接触挑逗得情欲高涨。你把自己[pc.ass+]紧紧地靠向[npc.her]的[npc.hand]，身子向[npc.name]那边歪去，也送上了格外露骨的调情话。这引得对方更加口无遮拦，肆无忌惮地对你[pc.ass+]揉捏、摸索起来。
+			</p>
+			<p>
+				过了一会儿，[npc.name]推了开来，一番挑弄到此结束。你向那[npc.race]投去钟情的微笑，猜测起[npc.she]接下来会做什么……
+			</p>
+			#ELSE
+			<p>
+				你向对方羞涩一笑，回赠了[npc.herHim]几句赞美，对话中暗含的性意味愈发浓厚。不久之后，你们两人便笑语连连，相互嬉戏般触碰着彼此，随后[npc.name]的触碰更加大胆起来——在嬉笑打闹之中，还好几次颇为强势地拍了拍你的屁股。
+			</p>
+			<p>
+				你们二人互送着充满暗示的挑逗话语，一番挑弄到此结束。两人互相坏笑着，你猜测起[npc.name]接下来会做什么……
+			</p>
+			#ENDIF
+		#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_FLIRT_DECLINE"><![CDATA[
+		#IF npc.isKind()
+		#THEN
+		<p>
+			你丝毫没有感受到[npc.name]散发出的吸引力，于是稍稍从[npc.herHim]身边退开，告诉[npc.herHim]你希望谈话能稍微冷静些。[npc.name]有些遗憾地同意了，靠回到吧台边，一阵沉重的沉默萦绕在二人之间，然后两人才以比之前更为冷静的方式继续谈起话来。
+		</p>
+		<p>
+			你们的对话越来越寡淡，你猜测起[npc.name]接下来会做什么……
+		</p>
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN
+			<p>
+				[npc.name]忽然狠狠地捏了一把你[pc.ass+]，你顿时倒吸了一口凉气，把[npc.herHim]推了开来，大喊道，[pc.speech(你干什么？！住手！)]
+			</p>
+			<p>
+				[npc.Name]戏谑一笑，回应道，[npc.speech(哎呀，还挺泼辣的，啊？！别装了，我知道你喜欢这样的！)]
+			</p>
+			<p>
+				尽管[npc.namePos]玩笑似的应对着你的怒火，但你还是能从[npc.her]的语气中听出，[npc.sheIs]不太乐意。[npc.she]随后转身倚在了吧台边，更表现出[npc.her]的不满，一阵沉重的沉默萦绕在二人之间。
+			</p>
+			<p>
+				正当你准备转身离开，[npc.name]却从吧台边退开，又一次面向了你……
+			</p>
+			#ELSE
+			<p>
+			你丝毫没有感受到[npc.name]散发出的吸引力，于是稍稍从[npc.herHim]身边退开，告诉[npc.herHim]你希望谈话能稍微冷静些。[npc.name]有些气恼地啧了一声，靠回到吧台边，一阵沉重的沉默萦绕在二人之间。
+		</p>
+			<p>
+				过了一会儿，[npc.name]从吧台边退开， 又一次面向了你……
+			</p>
+			#ENDIF
+		#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_GROPE"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.name]感受到你们二人之间的气氛逐渐浓烈，于是一步踏道你身旁，玩笑似的挑逗了一句，[npc.hand]便放到了你[pc.hips+]上。[npc.she]对着你[pc.ass+]揉来摸去，你便思考起来，是否该配合一下，让[npc.herHim]继续抚弄，还是迅速制止这种未经你许可的身体接触。
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.name]突然上前一步，身子跟你贴在了一起，同时飞快地将[npc.hands]放到了你[pc.hips+]上，接着对着你[pc.ass+]又揉又搓。[npc.she]微倾身体，[npc.moans]道，[npc.speech(姆嗯，你这对骚屁股今晚就归我了！)]
+			#ELSE [npc.name]突然上前一步，身子跟你贴在了一起，同时飞快地将[npc.hands]放到了你[pc.hips+]上，接着对着你[pc.ass+]揉来摸去。[npc.she]微倾身体，[npc.moans]道，[npc.speech(姆嗯，你真性感……)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_GROPE_ACCEPT"><![CDATA[
+	<p>
+		你被[npc.namePos]支配的举动所触动，心甘情愿地依偎在[npc.herHim]身上，感受着对方的摸索，连连发出[pc.a_moan+]。
+		#IF pc.hasBreasts()
+		#THEN
+				#IF npc.isKind()
+				#THEN [npc.name]用一只[npc.hands]摸来摸去，轻轻爱抚着你[pc.ass+]，而另一只则对着你[pc.breasts+]结结实实地捏了一把，引得你口中又冒出一声[pc.moan]。[npc.name]见你如此反应，更加大胆，直接将[npc.lips+]贴了上来，与你热吻起来，而抚摸的动作则毫不停歇。
+				#ELSE
+					#IF npc.isSelfish()
+					#THEN [npc.name]用两只[npc.hands]饥渴地揉搓了你[pc.ass+]好一会儿后，[npc.she]将目标转向了你的胸部，于是松开你的[pc.ass]，毫不留情地对着你[pc.breasts+]就是狠狠一捏，引得你口中又冒出一声[pc.moan]，[npc.she]接着不由分说，对着你[pc.lips+]便用力吻了下去，同时也不忘上下其手。
+					#ELSE [npc.name]用一只[npc.hands]摸来摸去，轻轻爱抚着你[pc.ass+]，而另一只则对着你[pc.breasts+]结结实实地捏了一把，引得你口中又冒出一声[pc.moan]。[npc.name]见你如此反应，更加大胆，直接将[npc.lips+]贴了上来，与你热吻起来，同时也不忘上下其手。
+					#ENDIF
+				#ENDIF
+		#ELSE
+				#IF npc.isKind()
+				#THEN [npc.she]听到你淫荡的叫声，便更进一步，本来抱住你腰身的[npc.hands]滑到了你[pc.ass+]上面，结结实实地捏了一把。你又是一声[pc.moan]，[npc.name]趁势将[npc.lips+]贴了上来，与你热吻起来，而抚摸[pc.ass]的动作则毫不停歇。
+				#ELSE
+					#IF npc.isSelfish()
+					#THEN [npc.she]听到你淫荡的叫声，立刻朝着你[pc.ass+]用力揉搓起来。你又是一声[pc.moan]，[npc.name]接着不由分说，对着你[pc.lips+]便用力吻了下去，同时也不忘用你的[pc.ass]好好爽一把。
+					#ELSE [npc.she]听到你淫荡的叫声，便更进一步，本来抱住你腰身的[npc.hands]滑到了你[pc.ass+]上面，结结实实地用力捏了一把。你又是一声[pc.moan]，[npc.name]趁势将[npc.lips+]贴了上来，与你热吻起来，而抚摸[pc.ass]的动作则毫不停歇。
+					#ENDIF
+				#ENDIF
+		#ENDIF
+	</p>
+	#IF pc.hasPenis()
+	#THEN
+		<p>
+			#IF npc.isKind()
+			#THEN 你们二人相互亲热之中，[npc.name]忽然用一只[npc.hands]向着你的大腿内侧摸去。你发出几声朦胧而色情的[pc.Moaning]，主动向着[npc.name]靠去，[npc.her]的[npc.fingers]摸索着，对着下体轻拢慢捻。[npc.she]揉动着你[pc.cock+]，也终于从亲吻中分开，笑看着你，调笑道，[npc.speech(姆嗯，已经硬起来了呢？)]
+			#ELSE
+				#IF npc.isSelfish()
+				#THEN 你们二人相互亲热之中，[npc.name]突然用一只[npc.hands]对着你的大腿内侧揉搓起来。你发出几声朦胧而色情的[pc.Moaning]，主动向着[npc.name]靠去，[npc.her]的[npc.fingers]摸索着，对着下体又揉又捏。[npc.she]揉动着你[pc.cock+]，也终于从亲吻中分开，调笑道，[npc.speech(已经硬了吧？满脑子等着我操你呢……)]
+				#ELSE 你们二人相互亲热之中，[npc.name]忽然用一只[npc.hands]对着你的大腿内侧抚摸起来。你发出几声朦胧而色情的[pc.Moaning]，主动向着[npc.name]靠去，[npc.her]的[npc.fingers]摸索着，对着下体轻拢慢捻。[npc.she]揉动着你[pc.cock+]，也终于从亲吻中分开，笑看着你，调笑道，[npc.speech(姆嗯，已经硬起来了？得找个安静的地方了……)]
+				#ENDIF
+			#ENDIF
+		</p>
+		#IF pc.hasVagina()
+		#THEN
+			<p>
+				#IF npc.isKind()
+				#THEN [npc.name]又继续向你[pc.cock+]下方探索，用[npc.fingers]对着你[pc.pussy+]温柔地揉弄起来。[npc.she]呵呵一笑，咬住下唇，叹了口气，[npc.speech(你下面也湿了？那最好赶紧回我那里了。我保证满足你……)]
+				#ELSE
+					#IF npc.isSelfish()
+					#THEN [npc.name]又继续向你[pc.cock+]下方探索，用[npc.fingers]对着你[pc.pussy+]揉搓起来。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(骚货，你下面都湿透了啊？真是不害臊，早就习惯在大庭广众之下这样了是吧！妈的，真想今晚就操了你……)]
+					#ELSE [npc.name]又继续向你[pc.cock+]下方探索，用[npc.fingers]对着你[pc.pussy+]揉弄起来。[npc.she]也[npc.moan]一声，咬住下唇，叹了口气，[npc.speech(你湿了吧，[pc.name]？妈的，你真的好骚啊……)]
+					#ENDIF
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		#IF pc.hasVagina()
+		#THEN
+			<p>
+				#IF npc.isKind()
+				#THEN 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，轻揉着你[pc.pussy+]。[npc.she]呵呵一笑，咬住下唇，叹了口气，[npc.speech(你下面也湿了？那最好赶紧回我那里了。我保证满足你……)]
+				#ELSE
+					#IF npc.isSelfish()
+					#THEN 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，强势地揉弄着你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(骚货，你下面都湿透了啊？真是不害臊，早就习惯在大庭广众之下这样了是吧！妈的，真想今晚就操了你……)]
+					#ELSE 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，揉弄着你[pc.pussy+]。[npc.she]也[npc.moan]一声，咬住下唇，叹了口气，[npc.speech(你湿了吧，[pc.name]？妈的，你真的好骚啊……)]
+					#ENDIF
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				#IF npc.isKind()
+				#THEN 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，轻揉着你光溜溜的耻部。[npc.she]呵呵一笑，咬住下唇，叹了口气，[npc.speech(姆嗯，下面什么也没有呢？罢了，反正我们还是能好好开心一下的。那最好赶紧回我那里了……)]
+				#ELSE
+					#IF npc.isSelfish()
+					#THEN 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，强势地揉弄着你光溜溜的耻部。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(一套都没有啊？罢了，反正我还能用嘴巴和屁股。妈的，下面什么也没有，真想看看你高潮是什么个样子……)]
+					#ELSE 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，揉弄着你光溜溜的耻部。[npc.she]也[npc.moan]一声，咬住下唇，叹了口气，[npc.speech(姆嗯，下面什么也没有呢？罢了，反正我们还是能好好开心一下的。妈的，你真的好骚啊……)]
+					#ENDIF
+				#ENDIF
+			</p>
+		#ENDIF
+	#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_GROPE_DECLINE"><![CDATA[
+	<p>
+		[npc.namePos]竟在酒吧众目睽睽之下，就对你上下其手，你一把将[npc.herHim]推开，用盖过夜店闹声的声音大喊道，[pc.speech(你干什么？！住手！)]
+	</p>
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.speech(抱歉！我刚刚有点冲动了，)][npc.name]小心翼翼地道了歉，松开了[npc.hand]，退开一步给你留出了一些空间。
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(嗷，别这样嘛，[pc.babe]，)][npc.name]说着，仍旧紧捏着你[pc.ass+]。你见[npc.her]如此顽固，格外震惊，又把[npc.herHim]往外推了一把，这次用上了些力气。所幸[npc.name]为了稳住身子终于还是松了[npc.hand]，你怒气冲冲地吼了[npc.herHim]，让[npc.herHim]别再做这种事情。
+			#ELSE [npc.speech(抱歉！我还以为你喜欢呢，)][npc.name]企图解释刚刚的行为，同时松开了[npc.hand]，退开一步给你留出了一些空间。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你对[npc.her]的抚摸一点感觉也没有，只是生气地告诉[npc.name]管好自己的[npc.hands]。向[npc.herHim]倾泻过后，你的怒气便迅速消散了，你叹了口气，只是告诉[npc.name]你还是愿意让[npc.herHim]继续的。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_INVITE_HOME"><![CDATA[
+	<p>
+		[npc.name]靠了过来，压过噪音喊道，[npc.speech(嘿，[pc.name]，这有点太吵闹了，我准备回去了。想跟我回家吗？)]
+	</p>
+	<p>
+		今夜与[npc.Name]这番调情过后，你们二人都被挑起了情欲，你也很清楚这次邀请就是让你去[npc.namePos]家里做爱。你思索起来，是否应该接受提议，还是拒绝[npc.herHim]。如果选择拒绝，[npc.Name]将会离开夜店，但根据你表达拒绝的方式，你还是有可能再在此见到[npc.herHim]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BAR_INVITE_HOME_REFUSE_GENTLE"><![CDATA[
+	<p>
+		[pc.speech(对不起，[npc.name]。)]你回答，[pc.speech(我今晚真的没心情去。我还是希望下次能在夜店见到你，也许到时候我会再去你家？)]
+	</p>
+	<p>
+		[npc.speech(听起来不错，那我改天再来找你。[pc.name]。)][npc.name]回答，然后倾身在你的脸颊上轻轻一吻。[npc.speech(我要走了，再见！)]
+	</p>
+	<p>
+		你对[npc.her]道别。[npc.she]朝出口的方向冲进人群。转身向酒吧，你不知道现在该怎么办……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BAR_INVITE_HOME_REFUSE_RUDE"><![CDATA[
+	<p>
+		[pc.speech(是的，我不这么认为，)]你断然回答。[pc.speech(今晚真是太无聊了，我想你在床上的表现会和上次带我玩得一样糟糕。再见。)]
+	</p>
+	<p>
+		[npc.speech(如果你是这么想的，那好吧，)][npc.name]回答，然后转身背对着你，朝着出口的方向向人群走去。
+	</p>
+	<p>
+		你沮丧地叹了口气，转身走向吧台，不知道下一步该怎么办……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_KISS"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.name]上前来，将头侧向一遍，身子朝你越贴越近，定是要亲吻你了。在[npc.her]的[npc.lips]碰上来之前这短暂的时间内，你必须决定是回应[npc.her]的爱意，还是躲让并且告诉[npc.herHim]退开……
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.name]上前来，将头侧向一遍，同时抓住了你的[pc.hips]，把你向[npc.herHim]拉去。[npc.she]身子逐渐前倾，向你亲了过来。在[npc.her]的[npc.lips]碰上来之前这短暂的时间内，你必须决定是回应[npc.her]的爱意，还是躲让并且告诉[npc.herHim]退开……
+			#ELSE [npc.name]上前来，将头侧向一遍，身子朝你越贴越近，定是要亲吻你了。在[npc.her]的[npc.lips]碰上来之前这短暂的时间内，你必须决定是回应[npc.her]的爱意，还是躲让并且告诉[npc.herHim]退开……
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_KISS_ACCEPT"><![CDATA[
+	<p>
+		你愉悦地[pc.moan]一声，便贴在了[npc.name]的身上，也学着[npc.her]的动作，微微歪头，与[npc.her][npc.lips+]吻在了一起。
+		#IF npc.isSelfish()
+		#THEN
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
+			#THEN [npc.name]对着你[pc.hips+]又是用力一抓，接着就把[npc.tongue]伸进了你的嘴里，贪婪地与你亲热起来。[npc.tongue+]与你的交缠时，你忽然感到[npc.her]的[npc.hands]愈向后伸，结结实实地捏了一把你[pc.ass+]，并借此强行把你拉得更近。
+			#ELSE 由于你的嘴巴被阻挡了，[npc.name]只得亲吻你的[pc.lips]和面庞。[npc.she]很强势地对着你[pc.hips+]用力一抓，随后[npc.hands]愈向后伸，轻轻捏了一把你[pc.ass+]，并借此强行把你拉得更近。
+			#ENDIF
+		#ELSE
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
+			#THEN [npc.name]对着你[pc.hips+]又是用力一抓，接着就把[npc.tongue]伸进了你的嘴里，热烈地与你亲热起来。[npc.tongue+]与你的交缠时，你忽然感到[npc.her]的[npc.hands]愈向后伸，结结实实地捏了一把你[pc.ass+]，并借此把你拉得更近。
+			#ELSE 由于你的嘴巴被阻挡了，[npc.name]只得亲吻你的[pc.lips]和面庞。[npc.she]很强势地对着你[pc.hips+]用力一抓，随后[npc.hands]愈向后伸，轻轻捏了一把你[pc.ass+]，并借此把你拉得更近。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		几分钟之后，你们二人终于分开，你得以连忙喘了几口气，便向[npc.herHim]投以笑容。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_KISS_DECLINE"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN 你并不想被[npc.name]亲，连忙让开了，让[npc.herHim]保持距离。[npc.she]立马照做，道歉道，[npc.speech(抱歉，[pc.name]！我有点太冲动了，没太搞清楚气氛。)]
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN 你并不想被[npc.name]亲，连忙让开了，让[npc.herHim]保持距离。[npc.she]勉强照做，往旁边一让，顺势拍了一把你[pc.ass+]，色眯眯地笑道，[npc.speech(怎么这样啊，[pc.name]！别骗自己了！你很想要的……)]
+			#ELSE 你并不想被[npc.name]亲，连忙让开了，让[npc.herHim]保持距离。[npc.she]勉强照做，叹道，[npc.speech(好好好，[pc.name]。希望你准备好今晚来点真正的乐事了……)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		既然也无伤大雅，你还是向那[npc.race]挤出了个微笑，猜测起[npc.she]接下来会做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_TALK"><![CDATA[
+	<p>
+	#IF npc.isKind()
+	#THEN [npc.name]靠在吧台边，向你投来一个迷人的微笑，然后试图与你攀谈起来。在花了几分钟谈论
+	#ELSE [npc.name]靠在吧台边对你微笑着，然后试图开启一段对话。在花了几分钟谈论
+	#ENDIF
+	#IF npc.getHistory()==OCCUPATION_NPC_UNEMPLOYED || npc.getHistory()==OCCUPATION_NPC_UNIVERSITY_STUDENT
+	#THEN [[npc.her]的一些朋友谈论他们在御城区的日常生活趣事。随后[npc.she]停下来，给你一个发表意见的机会。
+	#ELSE [npc.her]职业——[npc.a_jobName]后，[npc.she]停顿了一下，邀请你分享你的观点。
+	#ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_TALK_ACCEPT"><![CDATA[
+	<p>
+		你愉快地就[npc.namePos]的日常生活进行了交谈，然后与[npc.herHim]讨论起了其他一些事情。谈话很快就开始了，没过多久，你们俩就像老朋友一样聊着笑着。
+	</p>
+	<p>
+		然而，很快，你们两个准备从闲聊中走出来，你想知道[npc.name]下一步想做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_BAR_TALK_DECLINE"><![CDATA[
+	<p>
+	你无奈地翻了个白眼，重重地叹了口气，明显表现出你对讨论[npc.namePos]的日常琐事并无半点兴趣。起初，[npc.namePos]并未察觉到这一点，仍然坚持与你交谈了几分钟，但你持续不断的敷衍哼声和深沉的叹息声很快让[npc.herHim]陷入了沉默。
+</p>
+	<p>
+	寄希望于[npc.sheHasFull]今晚能有一些更有趣的安排，你静待着了解[npc.she]接下来想要做的事情……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE"><![CDATA[
+	<p>
+		[npc.Name]牵起你的[pc.hand]，然后试图带你走向舞池。[npc.speech(来吧，[pc.name]！让我们一起跳舞！)]
+	</p>
+	<p>
+		你可以让自己被拉到舞池中，或者告诉[npc.name]你现在对跳舞不感兴趣……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_ACCEPT"><![CDATA[
+	<p>
+		你很高兴能和[npc.name]一起跳舞，于是让[npc.herHim]带着你来到舞池。很快，[npc.name]发现自己置身于喧闹的狂欢人群中，[npc.she]转过身来面对着你，向你露出一个微笑，开始随着音乐起舞。你跟着[npc.namePos]的舞步，两人并肩起舞，欢声笑语，与狂欢的人群一起尽情享受这个夜晚。
+	</p>
+	<p>
+		过了一会儿，人群的热度和活力开始让你们俩有点受不了，[npc.name]再次握住你的[pc.hand]，带你回到舞池边缘，[npc.she]转过身来对你微笑。[npc.speech(这太好玩了！但是我想我现在需要喘口气。)]
+	</p>
+	<p>
+		同意[npc.namePos]的评价，你和[npc.herHim]一起喘了口气，然后想知道[npc.she]接下来要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_DECLINE"><![CDATA[
+	<p>
+		你真的不想跳舞，于是把你的[pc.hand]从[npc.namePos]上拉开。[npc.she]转过身来看你怎么了，你在轰鸣的音乐声中大声告诉[npc.herHim]，你不打算跳舞了。
+	</p>
+	<p>
+		[npc.race]的脸上明显闪过一丝失望，但[npc.she]并没有因为你没有兴趣和[npc.herHim]跳舞而怪你。走回舞池边缘，你想知道[npc.she]接下来会想做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_GROPE"><![CDATA[
+	<p>
+		#IF npc.isSelfish()
+		#THEN 以拥挤的舞池人群作掩护，[npc.name]突然向前一步，将[npc.herself]紧贴在你身上。[npc.she]迅速将[npc.hands]放在你[pc.hips+]上，然后向下滑动并环绕到你[pc.ass+]，牢牢抓住。[npc.she]身体前倾，[npc.moans]在你[pc.ear]旁低语，[npc.speech(嗯，今晚你性感的屁股属于我！)]
+		#ELSE 趁着拥挤的舞池人群作掩护，[npc.name]突然向前一步，将[npc.herself]紧贴在你身上。[npc.she]迅速将[npc.hands]放在你[pc.hips+]上，开始向下滑动并环绕到你[pc.ass+]。[npc.she]身体前倾，在你[pc.ear]旁[npc.moans]低语，[npc.speech(嗯，你真是性感……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_GROPE_ACCEPT"><![CDATA[
+	<p>
+		[npc.namePos]的支配举动让你兴奋不已，你开心地靠在[npc.herHim]身上，[npc.she]开始摸你，而你发出[pc.a_moan+]。
+		#IF pc.hasBreasts()
+		#THEN
+			#IF npc.isSelfish()
+			#THEN [npc.name]用[npc.her]的[npc.hands]贪婪地摸索你[pc.ass+]片刻后，又将[npc.her]的注意力转移到你的胸部。放开你的[pc.ass]后，[npc.she]迅速伸手对你[pc.breasts+]进行粗鲁有力的挤压，引来你口中又一声[pc.moan]。受到你急切反应的鼓励，[npc.she]接着霸道地将[npc.her][npc.lips+]压在你的身上，粗暴地亲吻你，同时继续摸索和爱抚你身体的每个部位。
+			#ELSE [npc.her]的一只[npc.hands]滑到周围贪婪地摸索你[pc.ass+]，[npc.name]抬起[npc.her]的另一只手用力捏你[pc.breasts+]，引来你口中又一声[pc.moan]。在你的热切回应的鼓励下，[npc.name]支配性地将[npc.her][npc.lips+]紧紧贴在你的嘴唇上，热情地亲吻你，同时继续将[npc.her]的[npc.hands]摸遍你的全身。
+			#ENDIF
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN 在你淫荡娇喘的刺激下，[npc.she]开始粗暴地挤压和摸索你[pc.ass+]。你开始发出另一声[pc.moan]，[npc.she]又霸道地将[npc.her][npc.lips+]压在你的[pc.lips]上，一边粗暴地亲吻你，一边继续尽情地玩弄你的[pc.ass]。
+			#ELSE 在你淫荡娇喘的刺激下，[npc.name]将[npc.her]的[npc.hands]环绕在你的腰间，然后向下移动，对你[pc.ass+]施以粗鲁有力的挤压。你开始发出另一声[pc.moan]，[npc.she]将[npc.lips+]贴在你的[pc.lips]上，热情地吻你，同时继续摸索和揉捏你的[pc.ass]。
+			#ENDIF
+		#ENDIF
+	</p>
+	#IF pc.hasPenis()
+	#THEN
+		<p>
+			#IF npc.isSelfish()
+			#THEN 你们继续亲热，[npc.name]的一只[npc.hands]开始粗暴地摩擦你的大腿内侧。[npc.her]的[npc.fingers]游走在你的下体上粗暴地摸索和揉捏，你淫荡地对着[npc.her]的嘴呻吟，将自己与[npc.name]紧紧贴在一起。用[npc.her]的[npc.hand]在你[pc.cock+]上摩擦，[npc.she]从亲吻中回过神来，开始挑逗你，[npc.speech(你已经硬了？嗯？你就等着我操你吧……)]
+			#ELSE 你们继续亲热，[npc.name]的一只[npc.hands]开始摩擦你的大腿内侧。[npc.her]的[npc.fingers]游走在你的下体上摸索和揉捏，你淫荡地对着[npc.her]的嘴呻吟，将自己与[npc.name]紧紧贴在一起。用[npc.her]的[npc.hand]在你[pc.cock+]上摩擦，[npc.she]从亲吻中回过神来，开始挑逗你，[npc.speech(唔……已经硬起来了？也许我们应该找个安静的地方……)]
+			#ENDIF
+		</p>
+		#IF pc.hasVagina()
+		#THEN
+			<p>
+				#IF npc.isSelfish()
+				#THEN [npc.her]继续向你[pc.cock+]下面探索，[npc.name]将[npc.her]的[npc.fingers]蜷曲起来，开始粗暴地摩擦你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(你下面都湿了，是吗，骚货？真是个婊子，让自己在大庭广众之下被人玩弄！操，我等不及今晚操你了……)]
+				#ELSE [npc.her]继续向你[pc.cock+]下面探索，[npc.name]将[npc.her]的[npc.fingers]蜷曲起来，开始粗暴地摩擦你[pc.pussy+]。发出淫荡的[npc.moan]，咬住下唇，叹了口气，[npc.speech(你湿了，是不是？操，你可真他妈的性感……)]
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		#IF pc.hasVagina()
+		#THEN
+			<p>
+				#IF npc.isSelfish()
+				#THEN 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，强势地揉着你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(你下面都湿了，是吗，骚货？真是个婊子，让自己在大庭广众之下被人玩弄！操，我等不及今晚操你了……)]
+				#ELSE 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，粗暴地揉着你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(你湿了，是不是？操，你可真他妈的性感……)]
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				#IF npc.isSelfish()
+				#THEN 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，强势地揉着你光溜溜的耻部。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(一套都没有啊？罢了，反正我还能用嘴巴和屁股。他妈的，真想看看你高潮是什么个样子……尤其是在下面什么都没有的情况下……)]
+				#ELSE 你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，轻揉着你光溜溜的耻部。[npc.she]咬住下唇，叹了口气，[npc.speech(姆嗯，下面什么也没有呢？罢了，无论如何我们还是能好好开心一下的，无论如何……操……你可太他妈的火辣了……)]
+				#ENDIF
+			</p>
+		#ENDIF
+	#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_GROPE_DECLINE"><![CDATA[
+	<p>
+		当着舞池里所有人的面，[npc.namePos]厚颜无耻地试图开始对你动手动脚，这让你感到震惊，你把[npc.herHim]从你身边推开，然后在震耳欲聋的音乐声中大声喊道，[pc.speech(你在干什么？！停下了！)]
+	</p>
+	<p>
+		#IF npc.isSelfish()
+		#THEN [npc.speech(噢，别这样，[pc.babe]，)][npc.name]回答说，[npc.her]一直紧紧抓住你[pc.ass+]。由于[npc.her]拒绝听话，你完全被吓到了，结果你再次把[npc.herHim]推了回去，这次你用了相当大的力气。这下[npc.name]不得不放开你，以稳住[npc.self]自己，而你则愤怒地对[npc.herHim]喊道，不要再做这样的事情了。
+		#ELSE [npc.speech(抱歉，我以为这是你想要的，)][npc.name]试图解释，松开了[npc.her]抓住你[pc.hips]的手，并后退一步，给你一些空间。
+		#ENDIF
+	</p>
+	<p>
+		你对[npc.her]的抚摸一点感觉也没有，只是生气地告诉[npc.name]管好自己的[npc.hands]。向[npc.herHim]倾泻过后，你的怒气便迅速消散了，你叹了口气，只是告诉[npc.name]你还是愿意让[npc.herHim]继续的。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_KISS"><![CDATA[
+	<p>
+		#IF npc.isSelfish()
+		#THEN [npc.name]向前一步，歪着头，然后伸手抓住你的[pc.hips]，将你拉近[npc.herHim]。[npc.she]身体前倾，准备给你一个吻。在[npc.her]的[npc.lips]即将贴上你的嘴唇前的片刻，你需要决定是回应[npc.her]的热情举动，还是退开并告诉[npc.herHim]离远点……
+		#ELSE [npc.name]向前一步，歪着[npc.her]的头，倚靠在你身上，试图给你一个吻。在[npc.her]的[npc.lips]即将贴上你的嘴唇前的片刻，你需要决定是回应[npc.her]的热情举动，还是退开并告诉[npc.herHim]离远点……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_KISS_ACCEPT"><![CDATA[
+	<p>
+		你愉悦地[pc.moan]一声，便贴在了[npc.name]的身上，也学着[npc.her]的动作，微微歪头，与[npc.her][npc.lips+]吻在了一起。
+		#IF npc.isSelfish()
+		#THEN
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
+			#THEN [npc.name]对着你[pc.hips+]又是用力一抓，接着就把[npc.tongue]伸进了你的嘴里，贪婪地与你亲热起来。[npc.tongue+]与你的交缠时，你忽然感到[npc.her]的[npc.hands]愈向后伸，结结实实地捏了一把你[pc.ass+]，并借此强行把你拉得更近。
+			#ELSE 由于你的嘴巴被阻挡了，[npc.name]只得亲吻你的[pc.lips]和面庞。[npc.she]很强势地对着你[pc.hips+]用力一抓，随后[npc.hands]愈向后伸，轻轻捏了一把你[pc.ass+]，并借此强行把你拉得更近。
+			#ENDIF
+		#ELSE
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
+			#THEN [npc.name]对着你[pc.hips+]又是用力一抓，接着就把[npc.tongue]伸进了你的嘴里，热烈地与你亲热起来。[npc.tongue+]与你的交缠时，你忽然感到[npc.her]的[npc.hands]愈向后伸，结结实实地捏了一把你[pc.ass+]，并借此把你拉得更近。
+			#ELSE 由于你的嘴巴被阻挡了，[npc.name]只得亲吻你的[pc.lips]和面庞。[npc.she]很强势地对着你[pc.hips+]用力一抓，随后[npc.hands]愈向后伸，轻轻捏了一把你[pc.ass+]，并借此把你拉得更近。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		几分钟之后，你们二人终于分开，你得以连忙喘了几口气，便向[npc.herHim]投以笑容。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_DANCE_KISS_DECLINE"><![CDATA[
+	<p>
+		#IF npc.isSelfish()
+		#THEN 你不想被[npc.name]亲吻，于是从[npc.herHim]身边退开，告诉[npc.herHim]保持距离。[npc.she]不情愿地照你说的做，退到一旁，然后调皮地拍了下你[pc.ass+]，对你淫荡地笑了笑。[npc.speech(来吧，[pc.name]！你骗不了自己!你知道你想要我……)]
+		#ELSE 你不想被[npc.name]亲吻，于是从[npc.herHim]身边退开，告诉[npc.herHim]保持距离。[npc.she]不情愿地照你说的做，叹了口气，[npc.speech(当然没问题，[pc.name]。也许你晚些时候会想找些真正的乐子……)]
+		#ENDIF
+	</p>
+	<p>
+		既然也无伤大雅，你还是向那[npc.race]挤出了个微笑，猜测起[npc.she]接下来会做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_FLIRT"><![CDATA[
+	<p>
+		#IF(!pc.isTaur() && !npc.isTaur())
+			#IF(npc.isKind())
+				[npc.name]把身子越过面前的小桌，跟你调起情来，对你的外貌和举止大加赞扬。[npc.Her]每一个字词都精心准备过，也并不主动身体接触，而是静待你的反应，斟酌过后才继续娓娓道来……
+			#ELSE
+				[npc.name]把身子越过面前的小桌，跟你调起情来，对你的外貌和举止大加赞扬。[npc.Her]的字句经常没什么味道，但[npc.her]心中似乎确实这样想，况且[npc.she]是静待你的反应，斟酌过后才继续娓娓道来，更说明[npc.she]的确是携好意而来……
+			#ENDIF
+		#ELSE
+			#IF(npc.isKind())
+				[npc.name]微微前倾了身子，跟你调起情来，对你的外貌和举止大加赞扬。[npc.Her]每一个字词都精心准备过，也并不主动身体接触，而是静待你的反应，斟酌过后才继续娓娓道来……
+			#ELSE
+				[npc.name]微微前倾了身子，跟你调起情来，对你的外貌和举止大加赞扬。[npc.Her]的字句经常没什么味道，但[npc.her]心中似乎确实这样想，况且[npc.she]是静待你的反应，斟酌过后才继续娓娓道来，更说明[npc.she]的确是携好意而来……
+			#ENDIF
+
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_FLIRT_ACCEPT"><![CDATA[
+		#IF npc.isKind()
+		#THEN
+		<p>
+			你冲着自己的同伴害羞地微笑，恭维了[npc.herHim]几句。你们的调情愈发往火辣大胆的方向驶。没过多久，你们便开始调笑着玩闹般触抚彼此，尽管[npc.name]尽全力想让事情不要变得太脱轨，但调情结束前你们都情难自矜地发表了一些非常涩涩而且充满暗示的言论。
+		</p>
+		<p>
+			你们二人相视一笑，你猜测起[npc.name]接下来会做什么……
+		</p>
+		#ELSE
+			<p>
+				你向对方羞涩一笑，回赠了[npc.herHim]几句赞美，对话中暗含的性意味愈发浓厚。不久之后，你们两人便笑语连连，相互嬉戏般触碰着彼此，随后[npc.name]的触碰更加大胆起来——在嬉笑打闹之中，还好几次颇为强势地拍了拍你的屁股。
+			</p>
+			<p>
+				你们二人互送着充满暗示的挑逗话语，一番挑弄到此结束。两人互相坏笑着，你猜测起[npc.name]接下来会做什么……
+			</p>
+		#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_FLIRT_DECLINE"><![CDATA[
+		#IF npc.isKind()
+		#THEN
+			<p>
+				你丝毫没有感受到[npc.name]散发出的吸引力，于是朝后坐了坐，告诉[npc.herHim]你希望谈话能稍微冷静些。[npc.name]有些遗憾地同意了，也退让开，一阵沉重的沉默萦绕在二人之间，然后两人才以比之前更为冷静的方式继续谈起话来。
+			</p>
+			<p>
+				你们的对话越来越寡淡，你猜测起[npc.name]接下来会做什么……
+			</p>
+		#ELSE
+			<p>
+				你丝毫没有感受到[npc.name]散发出的吸引力，于是稍稍从[npc.herHim]身边退开，告诉[npc.herHim]你希望谈话能稍微冷静些。[npc.name]有些气恼地啧了一声，往座位后移了移，一阵沉重的沉默萦绕在二人之间。
+			</p>
+			<p>
+				过了一会儿，[npc.name]又把身子靠了过来，你思索起[npc.sheIs]又有什么主意来……
+			</p>
+		#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_FOOTSIE"><![CDATA[
+	<p>
+		#IF(!pc.isTaur() && !npc.isTaur())
+			[npc.Name]朝你抛来一个玩味的微笑，没等你询问[npc.herHim]有何用意，就忽然感受到[npc.her]的[npc.foot]贴在了你的[pc.leg]上。你的伴侣戏谑一笑，慢慢将[npc.foot]上抬，引向你的下体，你意识到如果再不说点什么，[npc.sheIs]就要顶住你的胯部了！
+		#ELSE
+			#IF(!pc.isTaur())
+				#IF(npc.isKind())
+					[npc.name]感受到你们二人之间的气氛逐渐浓烈，于是一步踏道你身旁，玩笑似的挑逗了一句，[npc.hand]便放到了你[pc.hips+]上。[npc.she]对着你[pc.ass+]揉来摸去，你便思考起来，是否该配合一下，让[npc.herHim]继续抚弄，还是迅速制止这种未经你许可的身体接触。
+				#ELSE
+					#IF(npc.isSelfish())
+						[npc.name]突然上前一步，身子跟你贴在了一起，同时飞快地将[npc.hands]放到了你[pc.hips+]上，接着对着你[pc.ass+]又揉又搓。[npc.she]微倾身体，[npc.moans]道，[npc.speech(姆嗯，你这对骚屁股今晚就归我了！)]
+					#ELSE
+						[npc.name]突然上前一步，身子跟你贴在了一起，同时飞快地将[npc.hands]放到了你[pc.hips+]上，接着对着你[pc.ass+]揉来摸去。[npc.she]微倾身体，[npc.moans]道，[npc.speech(姆嗯，你真性感……)]
+					#ENDIF
+				#ENDIF
+			#ELSE
+				<p>
+					由于你的下半身异于常人，身体后端就不在[npc.namePos]的触及范围之内了。这可让你的伴侣犯了难，只得随口找了个接口，说你坐着的沙发垫子快要掉了，随后起身快步走向你身后，跪了下来。
+	</p>
+				#IF(npc.isKind())
+					[npc.name]利索地塞紧坐垫，脸上不经意露出一个玩味而戏谑的表情，接着就把[npc.hand]放在了你[pc.hips+]上。[npc.she]慢慢地将向你的[pc.legs]间摸去，你便思考起来，是否该配合一下，让[npc.herHim]继续抚弄，还是迅速制止这种未经你许可的身体接触。
+				#ELSE
+					#IF(npc.isSelfish())
+						[npc.name]利索地塞紧坐垫，毫不忌讳地把[npc.hands]放在了你[pc.hips+]上，接着迅速向着你的[pc.legs]间摸去。[npc.she]把身子探过来，[npc.moans]道，[npc.speech(姆嗯，你这对骚屁股今晚就归我了！)]
+					#ELSE
+						[npc.name]利索地塞紧坐垫，接着就把[npc.hands]放在了你[pc.hips+]上，慢慢地将向你的[pc.legs]间摸去。[npc.she]把身子探过来，[npc.moans]道，[npc.speech(姆嗯，你真性感……)]
+					#ENDIF
+				#ENDIF
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_FOOTSIE_ACCEPT"><![CDATA[
+	#IF(!pc.isTaur() && !npc.isTaur())
+		<p>
+			你欣然地让[npc.name]随心所欲，同时[pc.spreadYourLegs]，微微瘫坐在了座位上，把下半身从桌子底下想着[npc.herHim]送去。你轻咬[pc.lip]，挤出个魅惑的笑容，轻声[pc.moanVerb]道，[pc.speech(好舒服……不要停……)]
+		</p>
+		<p>
+			[npc.Name]似乎也早就迫不及待，按着你的意思抬起[npc.foot]就伸到了你的大腿之间，可[npc.she]并没有继续压向下体，反而忽然撤了回去。你也注意到[npc.her]忽然改变了动作，发出一串央求的[pc.moan]，这正是[npc.name]想要的，[npc.she]戏谑地笑了笑，[npc.speech(哈哈！很想让我继续，是吗？)]
+		</p>
+		<p>
+			[pc.speech(啊啊，好舒服！)]你立刻发出了回应，语气中的热情让[npc.namePos]顿时喜笑颜开。
+		</p>
+		<p>
+			#IF(pc.hasLegs())
+				[npc.speech(既然你这么说了，)][npc.she]说着就用[npc.foot+]爬上了你的[pc.leg]，接着又向大腿内侧伸去。你又稍稍张开[pc.legs]，咬住[pc.lip]乞求着[npc.name]继续。
+			#ELSE
+				[npc.speech(既然你都这么说了，)][npc.she]说着就用[npc.foot+]爬上了你的[pc.leg]。你感觉到[npc.herHim]越来越接近下体，便咬住[pc.lip]乞求着[npc.name]继续。
+			#ENDIF
+			这一次对方完全按你的要求做了，立刻将[npc.foot]踩在了你的股跨之间。
+		</p>
+		#IF(pc.hasPenis())
+			<p>
+				你感受到有什么在顶着你[pc.cock+]，顿时发出[pc.a_moan+]。你看向[npc.namePos][npc.eyes+]，央求着对方继续，下一声[pc.moans]几乎要脱口而出，而[npc.she]也确实照做了。
+			</p>
+			#IF(pc.hasVagina())
+				<p>
+					[npc.Name]又将[npc.foot]移动到你[pc.cock+]的下方，忽然向前一戳，[npc.toes]就顶住了你[pc.pussy+]。你又是一声[pc.moan+]，[npc.namePos]用[npc.foot]给你[pc.clit+]带来的强烈刺激让你不禁脸红起来。
+				</p>
+			#ENDIF
+		#ELSE
+			#IF(pc.hasVagina())
+				<p>
+				你感受到[npc.her]的[npc.toes]压着你[pc.pussy+]，顿时发出[pc.a_moan+]。你看向[npc.namePos][npc.eyes+]，央求着对方继续，下一声[pc.moans]几乎要脱口而出，而[npc.she]也确实照做了。
+			</p>
+			#ELSE
+				<p>
+				你感受到[npc.her]的[npc.toes]压着你无性的耻部，顿时发出[pc.a_moan+]。你看向[npc.namePos][npc.eyes+]，央求着对方继续，下一声[pc.moans]几乎要脱口而出，而[npc.she]也确实照做了。
+			</p>
+			#ENDIF
+		#ENDIF
+		<p>
+			就这样又持续了几分钟，你在[npc.namePos][npc.foot+]的刺激下扭动着身子，不断[pc.moaning]。不过最后[npc.she]还是把[npc.foot]收了回来，放回在地面上，饶有兴致地朝你投以微笑。[npc.speech(你很喜欢这样嘛？)]
+		</p>
+		<p>
+			你开开心心地肯定了，口中却还因为强烈的刺激喘息着，你瘫在座位上，准备好[npc.namePos]接下来的动作……
+		</p>
+	#ELSE
+		#IF(!pc.isTaur())
+			<p>
+			你被[npc.namePos]支配的举动所触动，心甘情愿地依偎在[npc.herHim]身上，感受着对方的摸索，连连发出[pc.a_moan+]。
+			#IF pc.hasBreasts()
+			#THEN
+					#IF npc.isSelfish()
+						[npc.name]用两只[npc.hands]饥渴地揉搓了你[pc.ass+]好一会儿后，[npc.she]将目标转向了你的胸部，贪婪地摸索上去，毫不留情地对着你[pc.breasts+]就是狠狠一捏，引得你口中又冒出一声[pc.moan]，[npc.she]接着不由分说，对着你[pc.lips+]便用力吻了下去，舌头向着你的口中入侵，同时也不忘上下其手。
+					#ELSE
+						[npc.name]用一只[npc.hands]摸来摸去，轻轻爱抚着你[pc.ass+]，而另一只则对着你[pc.breasts+]结结实实地捏了一把，引得你口中又冒出一声[pc.moan]。[npc.name]见你如此反应，更加大胆，直接将[npc.lips+]贴了上来，与你热吻起来，同时也不忘上下其手。
+					#ENDIF
+				#ELSE
+					#IF npc.isSelfish()
+					#THEN
+						[npc.she]听到你淫荡的叫声，立刻朝着你[pc.ass+]用力揉搓起来。你又是一声[pc.moan]，[npc.name]接着不由分说，对着你[pc.lips+]便用力吻了下去，同时也不忘用你的[pc.ass]好好爽一把。
+					#ELSE 
+						[npc.she]听到你淫荡的叫声，便更进一步，本来抱住你腰身的[npc.hands]滑到了你[pc.ass+]上面，结结实实地用力捏了一把。你又是一声[pc.moan]，[npc.name]趁势将[npc.lips+]贴了上来，与你热吻起来，而抚摸[pc.ass]的动作则毫不停歇。
+					#ENDIF
+			#ENDIF
+		</p>
+			#IF pc.hasPenis()
+			#THEN
+				<p>
+					#IF npc.isSelfish()
+						你们二人相互亲热之中，[npc.name]突然用一只[npc.hands]对着你的大腿内侧揉搓起来。你发出几声朦胧而色情的[pc.Moaning]，主动向着[npc.name]靠去，[npc.her]的[npc.fingers]摸索着，对着下体又揉又捏。[npc.she]揉动着你[pc.cock+]，也终于从亲吻中分开，调笑道，[npc.speech(已经硬了吧？满脑子等着我操你呢……)]
+					#ELSE
+						你们二人相互亲热之中，[npc.name]忽然用一只[npc.hands]对着你的大腿内侧抚摸起来。你发出几声朦胧而色情的[pc.Moaning]，主动向着[npc.name]靠去，[npc.her]的[npc.fingers]摸索着，对着下体轻拢慢捻。[npc.she]揉动着你[pc.cock+]，也终于从亲吻中分开，笑看着你，调笑道，[npc.speech(姆嗯，已经硬起来了？得找个安静的地方了……)]
+				#ENDIF
+		</p>
+				#IF(pc.hasVagina())
+					<p>
+						#IF npc.isSelfish()
+							[npc.her]继续向你[pc.cock+]下面探索，[npc.name]将[npc.her]的[npc.fingers]蜷曲起来，开始粗暴地摩擦你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(你下面都湿了，是吗，骚货？真是个婊子，让自己在大庭广众之下被人玩弄！操，我等不及今晚操你了……)]
+						#ELSE
+							[npc.her]继续向你[pc.cock+]下面探索，[npc.name]将[npc.her]的[npc.fingers]蜷曲起来，开始粗暴地摩擦你[pc.pussy+]。发出淫荡的[npc.moan]，咬住下唇，叹了口气，[npc.speech(你湿了，是不是？操，你可真他妈的性感……)]
+						#ENDIF
+					</p>
+				#ENDIF
+			#ELSE
+				#IF(pc.hasVagina())
+				#THEN
+					<p>
+						#IF npc.isSelfish()
+							你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，强势地揉着你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(你下面都湿了，是吗，骚货？真是个婊子，让自己在大庭广众之下被人玩弄！操，我等不及今晚操你了……)]
+						#ELSE
+							你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，粗暴地揉着你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(你湿了，是不是？操，你可真他妈的性感……)]
+						#ENDIF
+					</p>
+				#ELSE
+					<p>
+						#IF npc.isSelfish()
+						#THEN
+							你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，强势地揉着你光溜溜的耻部。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(一套都没有啊？罢了，反正我还能用嘴巴和屁股。他妈的，真想看看你高潮是什么个样子……尤其是在下面什么都没有的情况下……)]
+						#ELSE
+							你们二人继续亲热着，[npc.name]用一只[npc.hands]移向你的胯部，随后微曲[npc.fingers]，轻揉着你光溜溜的耻部。[npc.she]咬住下唇，叹了口气，[npc.speech(姆嗯，下面什么也没有呢？罢了，无论如何我们还是能好好开心一下的，无论如何……操……你可太他妈的火辣了……)]
+						#ENDIF
+					</p>
+				#ENDIF
+			#ENDIF
+			</p>
+		#ELSE
+			<p>
+				你在[npc.namePos]不容抗拒的举动下兴致渐浓，将自己动物化的下半身向[npc.herHim]靠去，随着[npc.she]的挑逗发出了[pc.a_moan+]。
+			</p>
+			#IF pc.hasPenis()
+			#THEN
+				<p>
+					#IF(npc.isSelfish())
+						[npc.name]也毫不客气，直接用[npc.fingers]对着你的下体揉搓起来。[npc.her]用[npc.hand]摩擦着你[pc.cock+]，调戏道，[npc.speech(已经这么硬了，嗯？就等着我来操你了……)]
+					#ELSE
+						[npc.Name]受到你热情回应的带动，也将[npc.hands]慢慢下移，在你的大腿内侧摩擦起来。你淫荡地[pc.Moaning]着，应和着[npc.her]的爱抚，身子还更向[npc.name]挪去，终于让[npc.herHim]将[npc.fingers]伸到你的下体，不停地抚摸。[npc.her]用[npc.hand]摩擦着你[pc.cock+]，笑嘻嘻地看着你调戏道，[npc.speech(姆嗯，已经硬了？或许该找个安静点的地方了……)]
+					#ENDIF
+				</p>
+				#IF(pc.hasVagina())
+					<p>
+						#IF npc.isSelfish()
+							[npc.her]的触摸慢慢爬上了你[pc.cock+]，[npc.name]将[npc.fingers]蜷曲起来，开始粗暴地摩擦你[pc.pussy+]。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(你下面都湿了，是吗，骚货？真是个婊子，让自己在大庭广众之下被人玩弄！操，我等不及今晚操你了……)]
+						#ELSE
+							[npc.her]的触摸慢慢爬上了你[pc.cock+]，[npc.name]将[npc.her]的[npc.fingers]蜷曲起来，开始粗暴地摩擦你[pc.pussy+]。[npc.she]发出淫荡的[npc.moan]，咬住下唇，叹了口气，[npc.speech(你湿了，是不是？操，你可真他妈的性感……)]
+						#ENDIF
+					</p>
+				#ENDIF
+			#ELSE
+				#IF(pc.hasVagina())
+				#THEN
+					<p>
+					#IF(npc.isSelfish())
+						[npc.name]也毫不客气，直接用[npc.fingers]对着你[pc.pussy+]揉搓起来。[npc.she]贴了上来，以命令的语气低声道，[npc.speech(你下面都湿了，是吗，骚货？真是个婊子，让自己在大庭广众之下被人玩弄！操，我等不及今晚操你了……)]
+					#ELSE
+						[npc.Name]受到你热情回应的带动，也将[npc.hands]慢慢下移，在你的大腿内侧摩擦起来。你淫荡地[pc.Moaning]着，应和着[npc.her]的爱抚，身子还更向[npc.name]挪去，终于让[npc.herHim]将[npc.fingers]伸到你的下体，不停地抚摸着你[pc.pussy+]。[npc.she]发出一声淫荡的[npc.moan]，咬住下唇，叹了口气，[npc.speech(你湿了，是不是？操，你可真他妈的性感……)]
+					#ENDIF
+				</p>
+				#ELSE
+					<p>
+					#IF(npc.isSelfish())
+					#THEN
+						[npc.name]也毫不客气，直接用[npc.fingers]对着你光溜溜的耻部揉搓起来。[npc.she]把身子靠向你，以命令的语气低声道，[npc.speech(一套都没有啊？罢了，反正我还能用嘴巴和屁股。他妈的，真想看看你高潮是什么个样子……尤其是在下面什么都没有的情况下……)]
+					#ELSE
+						[npc.Name]受到你热情回应的带动，也将[npc.hands]慢慢下移，在你的大腿内侧摩擦起来。你淫荡地[pc.Moaning]着，应和着[npc.her]的爱抚，身子还更向[npc.name]挪去，终于让[npc.herHim]将[npc.fingers]伸到你的下体，不停地抚摸着你光溜溜的耻部。[npc.she]发出一声淫荡的[npc.moan]，咬住下唇，叹了口气，[npc.speech(姆嗯，下面什么也没有呢？罢了，无论如何我们还是能好好开心一下的，无论如何……操……你可太他妈的火辣了……)]
+					#ENDIF
+				</p>
+				#ENDIF
+			#ENDIF
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_FOOTSIE_DECLINE"><![CDATA[
+	#IF(!pc.isTaur() && !npc.isTaur())
+		<p>
+			你并不想让[npc.namePos]的[npc.feet]再接近下体，于是马上躲到了一旁，怒而蹙眉向[npc.herHim]。[pc.speech(喂！住手！)]
+		</p>
+		<p>
+			[npc.speech(啊，抱歉，[pc.name]，)][npc.name]道歉道。[npc.speech(我还以为你喜欢这个……)]
+		</p>
+		<p>
+			你斩钉截铁地告诉[npc.name]你一点也不喜欢，而两人之间几分钟沉重的沉默过后，[npc.she]似乎有准备有所动作了……
+		</p>
+	#ELSE
+		<p>
+			你并不想让[npc.namePos]的[npc.feet]再接近下体，于是马上躲到了一旁，怒而蹙眉向[npc.herHim]。[pc.speech(喂！住手！)]
+		</p>
+		<p>
+			[npc.speech(啊，抱歉，[pc.name]，)][npc.name]道歉道。[npc.speech(我还以为你喜欢这个……)]
+		</p>
+		<p>
+			你斩钉截铁地告诉[npc.name]你一点也不喜欢，而两人之间几分钟沉重的沉默过后，[npc.she]似乎有准备有所动作了……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_INVITE_HOME"><![CDATA[
+	<p>
+		[npc.Name]靠了过来，忽然问，[npc.speech(嘿，[pc.name]，时间有点晚了，我想要不要回家。你愿意一起来吗？)]
+	</p>
+	<p>
+		今夜与[npc.Name]这番调情过后，你们二人都被挑起了情欲，你也很清楚这次邀请就是让你去[npc.namePos]家里做爱。你思索起来，是否应该接受提议，还是拒绝[npc.herHim]。如果选择拒绝，[npc.Name]将会离开夜店，但根据你表达拒绝的方式，你还是有可能再在此见到[npc.herHim]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SIT_DOWN_INVITE_HOME_REFUSE_GENTLE"><![CDATA[
+	<p>
+		[pc.speech(对不起，[npc.name]。)]你回答，[pc.speech(我今晚真的没心情去。我还是希望下次能在夜店见到你，也许到时候我会再去你家？)]
+	</p>
+	<p>
+		[npc.speech(好像也不错，那另找时间在这里见面吧，[pc.name]，)][npc.name]说完就小心翼翼地转身，靠过身子在你的脸颊上轻轻亲了一下。[npc.speech(我要走咯，拜拜！)]
+	</p>
+	<p>
+		你也向[npc.her]道了别，目送着[npc.she]起身向着出口处离去。等到[npc.sheHas]完全消失在视线中，你便开始思索接下来该干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SIT_DOWN_INVITE_HOME_REFUSE_RUDE"><![CDATA[
+	<p>
+		[pc.speech(是的，我不这么认为，)]你断然回答。[pc.speech(今晚真是太无聊了，我想你在床上的表现会和上次带我玩得一样糟糕。再见。)]
+	</p>
+	<p>
+		[npc.speech(哈，行吧，如果你真这么觉得，那就这样吧，)][npc.name]说完，就起身向着出口的方向走去。
+	</p>
+	<p>
+		你有些恼火地叹了口气，等到[npc.sheHas]完全消失在视线中，你便开始思索接下来该干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_KISS"><![CDATA[
+	<p>
+		[npc.Name]挪了挪身子，跟你紧贴在一起，接着就歪头倾身，想跟你接吻。在她[npc.her]的[npc.lips]与你接触前的这一瞬间，你需要决定是回应[npc.her]的热情举动，还是退开并告诉[npc.herHim]离远点……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_KISS_ACCEPT"><![CDATA[
+	<p>
+		你愉悦地[pc.moan]一声，便贴在了[npc.name]的身上，也学着[npc.her]的动作，微微歪头，与[npc.her][npc.lips+]吻在了一起。
+		#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, false)
+		#THEN [npc.name]抱住你的脑袋，接着就把[npc.tongue]伸进了你的嘴里，热烈地与你亲热起来。[npc.tongue+]与你的交缠时，你忽然感到[npc.her]的身体贴得越来越近，惹得你也不禁发出一声模糊而满足的叹息。
+		#ELSE 由于你的嘴巴被阻挡了，[npc.name]只得亲吻你的[pc.lips]和面庞。[npc.she]抱住你的脑袋，随后[npc.hands]愈向后伸，你忽然感到[npc.her]的身体贴得越来越近，惹得你也不禁发出一声模糊而满足的叹息。
+		#ENDIF
+	</p>
+	<p>
+		几分钟之后，你们二人终于分开，你得以连忙喘了几口气，便向[npc.herHim]投以笑容。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_KISS_DECLINE"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN 你并不想被[npc.name]亲，连忙让开了，让[npc.herHim]保持距离。[npc.she]立马照做，道歉道，[npc.speech(抱歉，[pc.name]！我有点太冲动了，没太搞清楚气氛。)]
+		#ELSE 你并不想被[npc.name]亲，连忙让开了，让[npc.herHim]保持距离。[npc.she]勉强照做，叹道，[npc.speech(好好好，[pc.name]。希望你准备好今晚来点真正的乐事了……)]
+		#ENDIF
+	</p>
+	<p>
+		既然也无伤大雅，你还是向那[npc.race]挤出了个微笑，猜测起[npc.she]接下来会做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_SEX"><![CDATA[
+	<p>
+		[npc.Name]挪了挪身子，跟你贴在一起，附身向前，以调笑的口吻轻声道，[npc.speech(在这个隔间里做的话，没人会注意到的哦。来嘛，很刺激的！)]
+	</p>
+	<p>
+		#IF(npc.isTaur())
+			[npc.she]说着就握住了你的[pc.hands]，想让你跟[npc.herHim]一起站起来。[npc.SheIs]看上去很想跟你做爱，有点憋不住了……
+		#ELSE
+			#IF(!pc.isTaur())
+				[npc.she]说着就想把你拉到[npc.her]的怀中，看上去很想跟你做爱，有点憋不住了……
+			#ELSE
+				[npc.she]说着就想让你站起来，把你动物般的后半身坐到[npc.her]的腿上。[npc.SheIs]看上去很想跟你做爱，有点憋不住了……
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_SEX_START"><![CDATA[
+	#IF(npc.isTaur())
+		<p>
+			随着[npc.namePos]的举动，你愉悦地[pc.moan]回应着，任由对方带着你站了起来。随后[npc.name]立刻倾身向前，对着你[pc.lips+]热吻了起来。你也急切地回应着[npc.her]的爱意，你们两个逐渐步入缠绵。
+		</p>
+		<p>
+			就这样过了一会儿，[npc.name]与你分开，露出灿烂的笑容，[npc.a_moan]道，[npc.speech(姆嗯，对了，该动点真格了！)]
+		</p>
+	#ELSE
+		#IF(!pc.isTaur())
+			<p>
+				随着[npc.namePos]的举动，你愉悦地[pc.moan]回应着，任由对方带着你坐在了[npc.her]的大腿上。随后[npc.name]立刻倾身向前，对着你[pc.lips+]热吻了起来。你也急切地回应着[npc.her]的爱意，你们两个逐渐步入缠绵。
+			</p>
+			<p>
+				就这样过了一会儿，[npc.name]与你分开，露出灿烂的笑容，[npc.a_moan]道，[npc.speech(姆嗯，对了，该动点真格了！)]
+			</p>
+		#ELSE
+			<p>
+				随着[npc.namePos]的举动，你愉悦地[pc.moan]回应着，任由对方引导你站了起来，接着转过身让动物般的下体朝向了[npc.herHim]。你轻咬下唇，回头一望，随后降下下半身，坐在了[npc.her]的腿上，一阵[pc.a_moan+]过后，便准备好让[npc.herHim]随时使用你了。
+			</p>
+			<p>
+				成功让你照[npc.her]的意愿行事后，[npc.name]咧嘴一笑，[npc.a_moan]道，[npc.speech(姆嗯，对了，该动点真格了！)]
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_SEX_REFUSE_GENTLE"><![CDATA[
+	<p>
+		你轻轻将[npc.name]推开，叹道，[pc.speech(抱歉，[npc.name]，我还没准备好。不过另找时间再在这里见面也可以，但我现在确实还不想做。)]
+	</p>
+	<p>
+		[npc.speech(好吧，也行。现在事件也有些晚了，我也该走了，)][npc.name]回应道，说完就轻轻地在你脸颊上啄了一下。[npc.speech(那我走了，拜！)]
+	</p>
+	<p>
+		你也向[npc.her]道了别，目送着[npc.she]起身向着出口处离去。等到[npc.sheHas]完全消失在视线中，你便开始思索接下来该干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_SEX_REFUSE_RUDE"><![CDATA[
+	<p>
+		你一把将[npc.name]推开，害得[npc.herHim]一屁股坐回到了座位上。你皱着眉头，怒目道，[pc.speech(我他妈死也不会碰你！赶紧滚！)]
+	</p>
+	<p>
+		[npc.speech(你个[pc.bitch]，)][npc.name]也厉声回应，接着就起身向着出口离去了。
+	</p>
+	<p>
+		你有些恼火地叹了口气，等到[npc.sheHas]完全消失在视线中，你便开始思索接下来该干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_TALK"><![CDATA[
+	<p>
+		#IF(npc.isKind())
+			[npc.Name]身体前倾架在桌子上，朝你抛来一个魅惑的微笑，准备跟你搭话。跟你聊了几分钟
+		#ELSE
+			[npc.Name]身体前倾架在桌子上，朝你微微一笑，准备跟你搭话。跟你聊了几分钟
+		#ENDIF
+		#IF(npc.getHistory()==OCCUPATION_NPC_UNEMPLOYED || npc.getHistory()==OCCUPATION_NPC_UNIVERSITY_STUDENT)
+			[npc.her]朋友和最近在御城区碰见的事情后，[npc.she]停了下来，给你了一个表达意见的机会。
+		#ELSE
+			[npc.her]的[npc.a_jobName]工作后，[npc.she]停了下来，给你了一个表达意见的机会。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_TALK_ACCEPT"><![CDATA[
+	<p>
+		你愉快地就[npc.namePos]的日常生活进行了交谈，然后与[npc.herHim]讨论起了其他一些事情。谈话很快就开始了，没过多久，你们俩就像老朋友一样聊着笑着。
+	</p>
+	<p>
+		然而，很快，你们两个准备从闲聊中走出来，你想知道[npc.name]下一步想做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SIT_DOWN_TALK_DECLINE"><![CDATA[
+	<p>
+	你无奈地翻了个白眼，重重地叹了口气，明显表现出你对讨论[npc.namePos]的日常琐事并无半点兴趣。起初，[npc.namePos]并未察觉到这一点，仍然坚持与你交谈了几分钟，但你持续不断的敷衍哼声和深沉的叹息声很快让[npc.herHim]陷入了沉默。
+</p>
+	<p>
+	寄希望于[npc.sheHasFull]今晚能有一些更有趣的安排，你静待着了解[npc.she]接下来想要做的事情……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS"><![CDATA[
+	<p>
+		[npc.Name]紧紧攥住你的[pc.hand]，想把你拉进最近一间空隔间，[npc.she]回头满面笑意地看着你，说道，[npc.speech(来啊，[pc.babe]！你调戏了我一整晚，也该是时候好好干一场了！)]
+	</p>
+	<p>
+		几个站在洗手池旁的人听到[npc.namePos]这么明目张胆的宣言，扭过头笑了起来，而你也准备好告诉对方你这一整晚都想说的话了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_SEX_START"><![CDATA[
+	<p>
+		[pc.speech(啊，太好了！来吧，[npc.name]！)]你屈从地叫了起来，一想到要跟如此强势的一个[npc.race]做爱，就不免心跳加速。
+	</p>
+	<p>
+		[npc.speech(我就爱听这个！)][npc.she]低声道，一把就将你拉进隔间锁了门。[npc.she]没等你在说话，就把[npc.her][npc.lips+]硬生生贴了上来，一只[npc.hands]直接就伸到你的胯间，揉搓挑弄着。
+	</p>
+	<p>
+		就这样过了一会儿，[npc.name]与你分开，露出灿烂的笑容，[npc.a_moan]道，[npc.speech(姆嗯，好了，赶紧开始吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_SEX_START_REFUSE_GENTLE"><![CDATA[
+	<p>
+		[pc.speech(我，我才不会在厕所里做！)]你喊道，一下子把[pc.hand]抽了出来，定站在原地。
+	</p>
+	<p>
+		[npc.speech(呃！你个蠢货[pc.bitch]！)][npc.name]厉声回应，接着咆哮着跟你对峙起来，[npc.speech(下回我再在这见到你，你就给我滚出去！)]
+	</p>
+	<p>
+		没等你回应[npc.her]这番疯话，[npc.she]就怒气冲冲地冲出了厕所，只留你一人在几个旁观者之间，一阵耳语嬉笑顿时响起……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_SEX_START_REFUSE_RUDE"><![CDATA[
+	<p>
+		[pc.speech(我绝对不可能在厕所里做！)]你喊道，一下子把[pc.hand]抽了出来，定站在原地。
+	</p>
+	<p>
+		[npc.speech(呃！你个蠢货[pc.bitch]！)][npc.name]厉声回应，接着咆哮着跟你对峙起来，[npc.speech(下回我再在这见到你，你就给我滚出去！)]
+	</p>
+	<p>
+		#IF pc.isFeminine()
+		#THEN [pc.speech(滚啊！)]你大喊一声，一巴掌拍在了[npc.name]的脸上。
+		#ELSE [pc.speech(滚蛋！)]你大喊一声，把[npc.name]推了开来。.
+		#ENDIF
+	</p>
+	<p>
+		[npc.speech(你他妈个[pc.bitch]！闭上你的嘴吧！)][npc.name]也喊了过来，接着就怒气冲冲地冲出了厕所，只留你一人在几个旁观者之间，一阵耳语嬉笑顿时响起……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_SAVE_CLUBBER"><![CDATA[
+	<p>
+		你觉得今晚已经受够了[npc.name]，但又不想和[npc.herHim]完全断绝关系，于是你清了清嗓子，解释道，[pc.speech(嘿，[npc.name]，抱歉，但是我现在感觉有点累了，我现在得走了，不过我们会在这里再见面的，对吗？)]
+	</p>
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.speech(哦，好的，当然可以，我改天再找你。再见，[pc.name]，)][npc.name]回应道，对你微笑，然后转身离开。
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(好吧，如果你要这样，那……好吧。我希望下次我们再这么做的时候不要再这么拖拉了，)][npc.name]直截了当地回答，然后突然转身离开。
+			#ELSE [npc.speech(好的，没问题，[pc.name]。我改天再找你，保重，)][npc.name]回应道，对你微笑，然后转身离开。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		现在你再次独自一人，你想知道接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_LOSE_COMPANY"><![CDATA[
+	<p>
+		你觉得自己已经受够[npc.namePos]的陪伴了，于是发出了一声恼怒的叹息，[pc.speech(我受够你了！我要走了，如果你再见到我，也别来打招呼了，好吗？)]
+	</p>
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.speech(真是出乎我的意料，不过，如果你想的话，当然可以。再见，[pc.name]，)][npc.name]不高兴地回应，然后转身离开了。
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(好吧，去你妈的，[pc.bitch]。祝你被你的其他婊子朋友操得开心，)][npc.name]粗鲁地回应，然后转身冲向夜店的另一处。
+			#ELSE [npc.speech(这也太直白了吧，随便啦，再见。)][npc.name]不屑一顾地回应，然后转身离开了。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		现在你再次独自一人，你想知道接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME"><![CDATA[
+	<p>
+		[pc.speech(当然可以了，好像很有意思，)]你朝着[npc.name]微微一笑，[npc.she]便牵起你的[pc.hand]，带你离开了夜店。
+	</p>
+	<p>
+		#IF game.getCurrentWeather()==WEATHER_RAIN
+		#THEN 你们二人刚一踏进街道，狂风暴雨便扑面而来。多亏[npc.name]带了雨伞，你们二人便肩并肩紧贴在这伞盖之下，向着[npc.her]的家走去。
+		#ELSE
+			#IF game.getCurrentWeather()==WEATHER_SNOW
+			#THEN 你们二人刚一踏进街道，鹅毛大雪便扑面而来。多亏[npc.name]带了雨伞，你们二人便肩并肩紧贴在这伞盖之下，向着[npc.her]的家走去。
+			#ELSE
+				#IF game.getCurrentWeather()==WEATHER_MAGIC_STORM
+				#THEN 你们二人刚一踏进街道，奥术雷霆的巨响便震耳欲聋。[npc.Name]顿时被其催情效果影响，毫无预兆地紧抱住了你，向你送上了一记热吻。互相亲热了好一会儿， 你才将[npc.herHim]推开，提醒[npc.herHim]此行的目的地。[npc.she]晃了晃脑袋，稍微恢复了一些清醒，随后挽起你的[pc.hand]，二人小跑着向[npc.her]家的方向去了，期间还时不时停下亲吻起来。
+				#ELSE 你们二人踏进热闹的街道，[npc.name]转过头朝你微笑了一下。[npc.she]紧紧握住你的[pc.hand]，告诉了你[npc.her]家的方位，接着向着那个方向出发了。
+				#ENDIF
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		回到[npc.Name]的家并没有花太多时间，[npc.her]的家原来是御城区一栋保存完好的大楼里的其中一个公寓。进屋后，你们俩沿着楼梯来到二楼，[npc.Name]拿出一把钥匙，打开了[npc.her]公寓的门。
+	</p>
+	<p>
+		从[npc.her]家昂贵的装饰以及位于御城区最繁华地段之一的黄金地段，你可以看出[npc.Name]的家境非常富裕。不过，你没有太多时间欣赏周围的环境，因为你身后的门一关上，你的伴侣就用[npc.arms]把你搂在怀里，然后拉着你热烈地亲吻。
+	</p>
+	<p>
+		相互亲热了好一会儿之后，[npc.name]又一次挽起了你的[pc.hand]，拉着你向公寓的一扇内门走去。[npc.speech(来啊，[pc.name]，朝这走就到我的卧室了！)]
+	</p>
+	<p>
+		你意识到这是你反悔的最后时机，如果有其他想法，最好立刻告诉[npc.name]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_SEX"><![CDATA[
+	<p>
+		不顾一切地想要开始与[npc.name]做爱，你高兴地让[npc.name]带你进了[npc.her]的卧室。最后你们停在了[npc.her]的双人床前，[npc.name]转向你，然后再一次热情地亲吻你。
+	</p>
+	<p>
+		你在[npc.namePos]的唇间快乐地[pc.Moaning]着，你顺从地被拉向了[npc.her]的胸口。当你们俩准备做爱时，你不禁想着拥有这样一个夜晚是多么幸运啊……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_CHANGE_MIND"><![CDATA[
+	<p>
+		你站在原地，摩挲着[pc.feet]，然后你告诉了[npc.name]你的想法，[pc.speech(对不起，[npc.name]，我正在重新考虑这一切……我不知道我能不能坚持下去。)]
+	</p>
+	<p>
+		[npc.Name]放开了你的[pc.hand]，然后转身微笑着面对你。[npc.speech(没关系，不用担心，[pc.name]！如果你觉得不舒服，我不会勉强。)]
+	</p>
+	<p>
+		[pc.speech(谢谢理解。也许下次我能在夜店见到你？)]你回答。
+	</p>
+	<p>
+		[npc.speech(我也希望，我真的很享受我们今晚在一起的时光。祝你一路平安。)][npc.name]说着，又一次对你微笑。[npc.she]带你到前门。
+	</p>
+	<p>
+		在说再见之后，[npc.Name]向前倾身，亲吻你的脸颊。当门在你身后关上时，你松了一口气。当你走下楼梯，走到外面的街道上时，你为自己没有和[npc.name]发生性关系而感到高兴。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_CHANGE_MIND_RUDE"><![CDATA[
+	<p>
+		[pc.speech(转念一想，我真的不想被你这样的人操，)]你直言不讳地说，然后把手从[npc.name]的手中抽出就想要离开。[pc.speech(我不知道我在想什么……)]
+	</p>
+	<p>
+		[npc.speech(哦……好吧，再见，)][npc.name]回答，显然对你态度的突然转变有点慌乱。
+	</p>
+	<p>
+		[pc.speech(如果你再在夜店见到我，就不用跟我打招呼了，)]当你拉开前门的时候，你大声喊道。在[npc.name]还没来得及回应时，你就走出去，把门摔在身后，然后走下楼梯，走到外面的街道上。
+	</p>
+	<p>
+		很高兴你没有忘乎所以和[npc.name]发生关系，你离开了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_AFTER_SEX"><![CDATA[
+	<p>
+		你们两个倒在床上，气喘吁吁，满头大汗，你们盯着天花板。当你躺在那里时，[npc.name]在你身边翻了个身，把你拉进一个充满爱的拥抱。
+	</p>
+	<p>
+		接下来的十分钟左右，你躺在[npc.namePos]的怀抱中，告诉[npc.herHim]你需要离开了。你站起来收拾好你的东西，走向前门，[npc.herHim]走在你身边。
+	</p>
+	<p>
+		[npc.she]为你开门，然后开口询问[npc.name]是否还能在夜店再次见到你，你转身面对[npc.herHim]回答……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_AFTER_SEX_NO_ORGASM"><![CDATA[
+	<p>
+		你们两个倒在床上，气喘吁吁、汗流浃背地注视着天花板。[npc.name]叹了口气，朝你滚过来，沮丧地抱怨道：[npc.speech(你应该知道吧？这次你没让我爽到……)]
+	</p>
+	<p>
+		你躺在[npc.name]旁边发了十分钟呆，最后告诉[npc.herHim]你该上路了。你站起来收拾好东西，走向前门，[npc.name]在你身边走着。
+	</p>
+	<p>
+		[npc.she]为你开了门，然后问下次还能不能在夜店见到你，你的回答是……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_AFTER_SEX_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(当然啰，我们还会在这家店相遇的。)]你愉快地回答。[pc.speech(今晚和你真的~做得很爽。)]
+	</p>
+	<p>
+		[npc.speech(太好了，我今晚也过得很甜蜜！)][npc.name]说完，倾身浅浅吻了一下你的脸颊，[npc.speech(掰啦[pc.name]！下次再见！)]
+	</p>
+	<p>
+		互相道别后，你走下楼梯，来到外面的街道上。带着灿烂的笑容，你踏上了旅程……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_AFTER_SEX_DO_NOT_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(是啊，我是那种喜欢一夜情的人)]你回答。[pc.speech(今晚和你在一起我真的很开心，但我不知道再见到你是不是个好主意。)]
+	</p>
+	<p>
+		[npc.speech(啊，)][npc.name]回答，听起来有点失望。[npc.speech(至少我们一起度过了一个美好的夜晚。)]
+	</p>
+	<p>
+		匆匆道别后，你走下楼梯，走到外面的街道上。你心满意足地叹了口气，上路了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TAKEN_HOME_AFTER_SEX_DO_NOT_SEE_AGAIN_RUDE"><![CDATA[
+	<p>
+		[pc.speech(我真的只是想跟你来一发，)]你回答。[pc.speech(我知道你很享受，但现在我已经满意了，我再也不想见到你了。)]
+	</p>
+	<p>
+		[npc.speech(好吧，我也没想到。)][npc.name]回答，听起来有点惊讶。
+	</p>
+	<p>
+		在[npc.she]说什么前，你就转身离开走下了楼梯，走到远处的街道上，你满意地叹了口气，然后上路了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_PARTNER_DOM_LEAVES"><![CDATA[
+	<p>
+		#IF npc.isKind()
+		#THEN [npc.speech(不好意思，[pc.name]，我玩得并不开心。不过祝你今晚愉快，再见！)][npc.name]说着，挤出了一个难看的笑容，然后转身挤入人群。
+		#ELSE
+			#IF npc.isSelfish()
+			#THEN [npc.speech(你这[pc.a_bitch]根本不值得我浪费时间，再见！)][npc.name]说完，干脆地转身向人群走去。
+			#ELSE [npc.speech(我不是很开心，[pc.name]。我得走了。也许你以后可以试着不做[pc.a_bitch]。)][npc.name]说完，干脆地转身向人群走去。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		现在你又孑然一身了，该怎么办呢……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_AFTER_SEX"><![CDATA[
+	<p>
+		乐趣结束之后，[npc.name]很快把[npc.her]的衣服整理好了，开心地对着你咧嘴笑。[npc.speech(你表现的很好，荡妇。你不知道有多少假正经在我想干她们的最后一刻跑掉了。)]
+	</p>
+	<p>
+		在[npc.name]粗鲁地赞美你时，你开始整理自己的衣服，但在你收拾好之前，[npc.Name]突然打开隔间门，把你暴露在房间的其他人面前。还没反应过来，[npc.name]就走出去，当着大家的面说道，[npc.speech(如果你想再来一炮，就到夜店来找我，好吗，[pc.name]？)]
+	</p>
+	<p>
+		匆匆收拾好最后一件东西，你走上前去回答……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_AFTER_SEX_NO_ORGASM"><![CDATA[
+	<p>
+		结束性爱后，你很快开始整理你的东西，完全忽略了[npc.name]，[npc.her]抱怨说，[npc.speech(你都没让我满意，你就想结束了？看在他妈的份上……我还不如带别的荡妇回来呢。)]
+	</p>
+	<p>
+		当[npc.name]继续喋喋不休时，你走过[npc.name]并打开隔间门，把[npc.her]暴露在了所有人面前。[npc.Name]快速捡起了衣物把自己整理好，[npc.name]跟着你走出去，当着所有人的面问道，[npc.speech(如果你真想做爱，就到夜店来找我，好吗？你刚才做的事一定要补偿我。)]
+	</p>
+	<p>
+		你转身面对[npc.name]，说出了你的答复……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_AFTER_SEX_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(好的，当然，下次见。)]
+	</p>
+	<p>
+		[npc.speech(好，)][npc.name]回答。[npc.speech(我今晚玩得很开心，不过你刚才可以再努力一点。)]
+	</p>
+	<p>
+		还没等你回答，[npc.name]就从你身边走过，匆匆离开房间，留下你一个人站在厕所里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_AFTER_SEX_DO_NOT_SEE_AGAIN"><![CDATA[
+	<p>
+		[pc.speech(我不知道……我是说，我觉得做一次对我来说已经足够了……)]
+	</p>
+	<p>
+		[npc.speech(好，无论如何，)][npc.name]轻蔑地回答。[npc.speech(你本来就是个讨厌的混蛋。我会找更好的。)]
+	</p>
+	<p>
+		还没等你回答，[npc.name]就从你身边走过，匆匆离开房间，留下你一个人站在厕所里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WATERING_HOLE_DOM_PARTNER_TOILETS_AFTER_SEX_DO_NOT_SEE_AGAIN_RUDE"><![CDATA[
+	<p>
+		[pc.speech(不太可能。我不可能再和你做爱了。)]
+	</p>
+	<p>
+		[npc.speech(去你妈的，[pc.bitch]。)][npc.name]扇了你一耳光。[npc.speech(你本来就是个讨厌的混蛋。)]
+	</p>
+	<p>
+		还没等你回答，[npc.name]就从你身边走过，匆匆离开房间，留下你一个人站在厕所里……
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

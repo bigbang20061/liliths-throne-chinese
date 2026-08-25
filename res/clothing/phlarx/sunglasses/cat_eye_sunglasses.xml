@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[鬓角边巧妙地印着的标志告诉你这是由"Phlarx"设计的。]]></clothingAuthorTag>
+		<value>1050</value>
+		<determiner><![CDATA[一副]]></determiner>
+		<name><![CDATA[猫眼太阳镜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[猫眼太阳镜]]></namePlural>
+		<description><![CDATA[一片非常女性化的猫眼太阳镜，搭配经典妆容和诱人装束使其造型完美。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>EYES</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>cat_eye_sunglasses.svg</imageName> 
+		<imageEquippedName/>
+		<effects/>
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>EYES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/>
+		<primaryColours values="ALL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="SHADES_OF_GREY"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="ALL_METAL"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		<defaultPatterns patternChance="0.2" colourNameDerivedFromPattern="false">
+			<pattern>polka_dots_small</pattern>
+			<pattern>polka_dots_big</pattern>
+			<pattern>cow_patterned</pattern>
+			<pattern>horizontally_tiger_striped</pattern>
+			<pattern>tiger_striped</pattern>
+		</defaultPatterns>
+		<patternPrimaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_WHITE</colour>
+		</patternPrimaryColours>
+		<patternPrimaryColoursDye values="ALL"/>
+		<patternSecondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_WHITE</colour>
+		</patternSecondaryColours>
+		<patternSecondaryColoursDye values="ALL"/>
+		<patternTertiaryColours/>
+		<patternTertiaryColoursDye/>
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>PRESCRIPTION_GLASSES</tag>
+		</itemTags>
+	</coreAttributes>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]摘下[npc.her]的太阳镜。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]摘下[npc2.namePos]的太阳镜。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]像挑衅般摘下[npc2.namePos]的太阳镜。
+		]]></otherRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]戴上[npc.her]的太阳镜。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]给[npc2.namePos]戴上太阳镜。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]像挑衅般给[npc2.namePos]戴上太阳镜。
+		]]></otherRough>
+	</replacementText>
+</clothing>

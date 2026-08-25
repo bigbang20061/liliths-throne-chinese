@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<authorTag><![CDATA[机匣上刻着细小的字迹，写着“执法者官方分配，DSG铸造厂生产。”]]></authorTag>
+		<value>5000</value>
+		<melee>false</melee>
+		<twoHanded>true</twoHanded>
+		<determiner><![CDATA[一把]]></determiner>
+		<name appendDamageName="true"><![CDATA[催泪弹霰弹枪]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[催泪弹霰弹枪]]></namePlural>
+		<description><![CDATA[一把装满催泪弹的四号口径霰弹枪，上面的执法者标记已被刮掉，取而代之的是你不认识的标记。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用你的霰弹枪射向[npc2.name]。]]></attackTooltipDescription>
+		<rarity>RARE</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]拿出霰弹枪，装填子弹，向前移动前端，发出一声恐吓性的咔嗒声，然后松开保险。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]收回前护把，确认弹膛已空，才将霰弹枪收起。]]></unequipText>
+		<imageName>gbshotgun_uneq.svg</imageName>
+		<imageEquippedName>gbshotgun.svg</imageEquippedName>
+		<physicalResistance>0</physicalResistance>
+		<damage>50</damage>
+		<aoe chance="80">45</aoe> 
+		<aoe chance="80">45</aoe>
+		<aoe chance="50">30</aoe> 
+		<aoe chance="50">30</aoe>
+		<arcaneCost>4</arcaneCost>
+		<damageVariance>MEDIUM</damageVariance>
+		<availableDamageTypes>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		<spells/>
+		<combatMoves/>
+		<effects/>
+		
+		<extraEffects>
+			<effect><![CDATA[
+				[style.boldPoison(毒云术)]命中后持续两个回合。
+			]]></effect>
+		</extraEffects>
+		
+		<onHitEffect><![CDATA[
+			#IF (!npc2.hasStatusEffect(SE_POISON_VAPOURS))
+				[##npc2.addStatusEffect(SE_POISON_VAPOURS, 2)]
+			#ENDIF
+		]]></onHitEffect>
+		
+		<onCriticalHitEffect><![CDATA[
+			#IF (!npc2.hasStatusEffect(SE_POISON_VAPOURS_CHOKING_HAZE))
+				[##npc2.addStatusEffect(SE_POISON_VAPOURS_CHOKING_HAZE , 4)][npc2.name]的周围弥漫着一团[style.boldPoison(极其浓厚的催泪瓦斯)]。
+			#ENDIF
+		]]></onCriticalHitEffect>
+		
+		<primaryColours>
+			<colour>CLOTHING_GUNMETAL</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours values="JUST_BLACK"/>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_HEAVY</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]扣下了扳机。榴弹在空中划出一道优美的弧线，落在[npc2.namePos][npc2.feet]边，[style.boldPoison(释放出了一团呛人的催泪瓦斯。)]
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]用瞄准镜对准[npc2.name]，扣动了扳机。催泪弹完全没击中[npc2.herHim]，无用地落到远处。
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

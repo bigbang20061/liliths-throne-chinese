@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+		
+		<authorTag><![CDATA[帽冠内侧缝着一个标签写着“MFD纺织厂生产。”]]></authorTag>
+
+		<value>100</value> 
+
+		<determiner><![CDATA[一顶]]></determiner>
+
+		<name><![CDATA[浅顶软呢帽]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[浅顶软呢帽]]></namePlural> 
+
+		<description><![CDATA[帽子上装饰着凹入的皇冠和缎带，与许多其他风格的帽子相比，它的帽檐较宽。由羊毛毡制成，经久耐用。]]></description> 
+
+		<physicalResistance>0</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>HEAD</slot> 
+
+		<rarity>COMMON</rarity> 
+
+		<clothingSet/>
+
+		<imageName>fedora.svg</imageName> 
+
+		<imageEquippedName/>
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired> 
+
+				<blockedBodyParts>
+					<bodyPart>HAIR</bodyPart>
+				</blockedBodyParts>
+
+				<clothingAccessBlocked/> 
+
+				<concealedSlots/> 
+			</blockedParts>
+			
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="ALL"/> 
+		<secondaryColoursDye values="ALL"/>
+
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+  [npc.Name]戴上了浅顶软呢帽。
+]]></self>
+		<other><![CDATA[
+  [npc.Name]把浅顶软呢帽扣在[npc2.namePos]头上。
+]]></other>
+		<otherRough><![CDATA[
+  [npc.Name]强迫[npc2.namePos]摘下了浅顶软呢帽。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+  [npc.Name]摘下了浅顶软呢帽。
+]]></self>
+		<other><![CDATA[
+  [npc.Name]摘下了[npc2.namePos]头上的浅顶软呢帽。
+]]></other>
+		<otherRough><![CDATA[
+  [npc.Name]扇掉了[npc2.namePos]头上的浅顶软呢帽。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

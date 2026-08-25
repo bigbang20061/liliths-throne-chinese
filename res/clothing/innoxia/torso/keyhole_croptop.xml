@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>120</value>
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[镂空短上衣]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[镂空短上衣]]></namePlural> 
+		<description><![CDATA[一件小巧的无袖露脐上衣，时尚的镂空设计可以露出乳沟。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>keyhole_croptop.svg</imageName>
+		<imageEquippedName/>
+		<stickers/>
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将[npc.arms]穿过镂空短上衣的袖口，然后从脑袋上拽了下去。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]引导[npc2.namePos]把[npc2.arms]穿过镂空短上衣的袖口，然后从脑袋上套了下去。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]的[npc2.arms]塞进镂空短上衣的袖口，同时用力将衣服套过[npc2.her]头顶。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]脱下了[npc.her]的镂空短上衣。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]扯下[npc2.namePos]的镂空短上衣。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地扯下[npc2.namePos]的镂空短上衣。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

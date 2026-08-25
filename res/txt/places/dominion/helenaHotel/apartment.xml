@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- PLACE_HALLWAY -->
+	
+	<htmlContent tag="PLACE_HALLWAY"><![CDATA[
+	<p>
+		海伦娜的公寓里的走廊。沿途的哈比仆人偶尔会停下来向你施屈膝礼。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_BALCONY -->
+	
+	<htmlContent tag="PLACE_BALCONY"><![CDATA[
+	<p>
+		阳台在高处俯视御城区的街道，它高过大部分建筑，营造出一种私密性(如果不考虑偶尔有哈比在上方飞过的话)。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_ENTRANCE_HALL -->
+	
+	<htmlContent tag="PLACE_ENTRANCE_HALL"><![CDATA[
+	<p>
+		超大门厅，极致奢华。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_HELENA_BEDROOM -->
+	
+	<htmlContent tag="PLACE_HELENA_BEDROOM"><![CDATA[
+	<p>
+		海伦娜的卧室相当宽敞，特大号床和巨大的步入式衣柜在她的卧室里丝毫不显得大。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_SCARLETT_BEDROOM -->
+	
+	<htmlContent tag="PLACE_SCARLETT_BEDROOM"><![CDATA[
+	<p>
+		海伦娜的卧室相当宽敞，特大号床和巨大的步入式衣柜在她的卧室里丝毫不显得大。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_BEDROOM -->
+	
+	<htmlContent tag="PLACE_BEDROOM"><![CDATA[
+	<p>
+		客房。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_OFFICE -->
+	
+	<htmlContent tag="PLACE_OFFICE"><![CDATA[
+	<p>
+		海伦娜的书房里有几个大的多层书柜，里面堆满了昂贵的大部头书。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_KITCHEN -->
+	
+	<htmlContent tag="PLACE_KITCHEN"><![CDATA[
+	<p>
+		厨房配备了专业的哈比厨师。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_DINING_ROOM -->
+	
+	<htmlContent tag="PLACE_DINING_ROOM"><![CDATA[
+	<p>
+		豪华的长餐桌周围摆设着十几把高档的椅子。哈比女仆正站在一旁准备上菜。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_LOUNGE -->
+	
+	<htmlContent tag="PLACE_LOUNGE"><![CDATA[
+	<p>
+		宽敞的休息室四周摆放着十几张典雅舒适的沙发。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- PLACE_HOT_TUB -->
+	
+	<htmlContent tag="PLACE_HOT_TUB"><![CDATA[
+	<p>
+		阳台的一角设置了一个由灵气驱动的热水浴缸。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<breast>
+	<race>innoxia_mouse</race>
+	
+	<transformationName><![CDATA[鼷鼠]]></transformationName>
+	
+	<coveringType>innoxia_mouse_fur</coveringType>
+	
+	<nippleType>innoxia_mouse_nipple</nippleType>
+	
+	<fluidType>innoxia_mouse_milk</fluidType>
+	
+	<names/>
+	<namesPlural/>
+	<descriptors/>
+	
+	<namesFlat/>
+	<namesPluralFlat/>
+	<descriptorsFlat/>
+	
+	<transformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldMouse(鼷鼠般)][npc.nipplesFullDescription]，[npc.she]在哺乳期会分泌[style.boldMouse(鼷鼠乳汁)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.her]每个[npc.breastSize]的[npc.breasts]上都长着[npc.nipplesPerBreast]颗鼷鼠般[npc.nipplesFullDescription]。
+]]></bodyDescription>
+	
+	<crotchBoobsTransformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldMouse(鼷鼠般)][npc.crotchNipplesFullDescription]，[npc.she]在哺乳期内会分泌[style.boldMouse(鼷鼠乳汁)]。
+	]]></crotchBoobsTransformationDescription>
+	
+	<crotchBoobsBodyDescription><![CDATA[
+		[npc.her]的每个[npc.crotchBoobSize][npc.crotchBoobs]上都长着[npc.crotchNipplesPerBreast]颗鼷鼠般[npc.crotchNipplesFullDescription]。
+]]></crotchBoobsBodyDescription>
+</breast>

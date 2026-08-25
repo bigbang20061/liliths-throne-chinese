@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[特弥斯库拉广场]]></name>
+	<tooltipDescription><![CDATA[特弥斯库拉的主广场位于宫殿前面，用大理石马赛克铺成，上面有几十尊雕像，描绘了该镇以前的女王。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在特弥斯库拉的广场里]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<colour>BASE_BLUE_LIGHT</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_themiscyra_plaza</dialogue>
+	<populationPresent>
+		<population>
+			<populationType plural="true" density="HUNDREDS">LUNETTE_DAUGTHER</populationType>
+			<subspeciesPresent>
+				<subspecies>DEMON</subspecies>
+			</subspeciesPresent>
+		</population>
+	</populationPresent>
+	<furniturePresent>false</furniturePresent>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[true]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

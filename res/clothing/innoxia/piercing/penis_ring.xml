@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>120</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[穿孔环]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[穿孔环]]></namePlural>
+		<description><![CDATA[一种设计用于插入阴茎穿孔的戒指。一侧的可拆卸部分使佩戴者能够轻松地将穿孔转滑动到位。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_PENIS</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>penis_ring.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将滑块滑开，把[npc.cock]戴在[npc.her]的[npc.cock]穿孔。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把穿孔环戴在[npc2.namePos]的[npc2.cock]穿孔。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把穿孔环戴在[npc2.namePos]的[npc2.cock]穿孔。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将滑块滑开，把[npc.her]的穿孔环从[npc.her]的[npc.cock]穿孔中取下。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把[npc2.namePos]的穿孔环从[npc2.her]的[npc2.cock]穿孔中取下。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把将滑块崩开，并将[npc2.namePos]的穿孔环从[npc2.her]的[npc2.cock]穿孔中取下。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

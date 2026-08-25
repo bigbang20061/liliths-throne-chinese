@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一枚]]></determiner>
+		<name><![CDATA[素圈戒指]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[素圈戒指]]></namePlural>
+		<description><![CDATA[与形成完整圆圈不同，形成这个戒指的纤细金属带被缠绕成一个圆形，两端重叠的地方留有一小段缝隙。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>FINGER</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>wrap_ring.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>FINGERS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将素圈戒指轻轻戴在[npc.her]的[npc.finger]上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将素圈戒指轻轻戴在[npc2.namePos]的[npc2.finger]上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将素圈戒指戴在[npc2.namePos]的[npc2.finger]上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将素圈戒指从[npc.her]的[npc.finger]上摘下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将素圈戒指戴到[npc2.namePos]的[npc2.finger]上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]抢下了[npc2.namePos][npc2.finger]上的素圈戒指。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

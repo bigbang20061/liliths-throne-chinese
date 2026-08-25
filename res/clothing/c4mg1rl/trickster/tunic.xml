@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[在长袍的衬里隐秘地缝着一个标签，告诉你它是由“C4MG1RL”制造的。]]></clothingAuthorTag>
+		<value>8000</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[诡术师的长袍]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[带袖长袍]]></namePlural> 
+		<description><![CDATA[有几十个隐藏口袋的及膝束腰外衣。这些隐蔽的隔间非常适合存放各种各样的惊喜或偷来的小饰品。专业设计，不妨碍穿着者的灵活性，可以适用于舞池或是战斗！]]></description> 
+		<physicalResistance>3</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>TORSO_UNDER</slot> 
+		<rarity>LEGENDARY</rarity> 
+		<clothingSet>c4mg1rl_trickster</clothingSet>
+		<imageName>tunic.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_DRESS_FRONT_FULL"> 
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN">
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots>
+		</incompatibleSlots>
+		
+		<primaryColours>
+			<colour>CLOTHING_RED_DARK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK_JET</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_GOLD</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		<tertiaryColoursDye/>
+		<itemTags> 
+			<tag>DRESS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了腰带，把长袍拉过[npc.her]头顶脱下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开了腰带，把[npc2.namePos]的长袍拉过[npc2.her]头顶。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]解开了腰带，粗暴地把[npc2.namePos]的长袍拉过[npc2.her]头顶。
+]]></otherRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把长袍从[npc.her]的头上拉到肚子上，随后系紧了腰带。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把长袍从[npc2.namePos]的头上套到肚子上，随后系紧了腰带。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把长袍从[npc2.namePos]的头上套到肚子上，随后系紧了腰带。
+]]></otherRough>
+	</replacementText>
+
+	
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]拉起[npc.her]的长袍的一角。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉起[npc2.namePos]的长袍的一角。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拉起[npc2.namePos]的长袍的一角。
+]]></otherRough>
+	</displacementText><replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]放下[npc.her]长袍的边缘。
+]]></self>
+		<other><![CDATA[
+[npc.Name]放下[npc2.namePos]的长袍的边缘。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地放下[npc2.namePos]的长袍的边缘。
+]]></otherRough>
+	</replacementText>
+</clothing>

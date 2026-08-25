@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[“DSG卫生用品有限公司制造”轻轻压印在包装一侧的边缘。]]></authorTag>
+		
+		<value>50</value> 
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[奥术湿巾]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[奥术湿巾]]></namePlural>
+		<description><![CDATA[一些包裹在箔纸中的酒精湿巾。包装袋的背面写着，这些湿巾已经被“奥术强化”能够去除所有气味。]]></description> 
+		
+		<useDescriptor><![CDATA[使用]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>COMMON</rarity> 
+		
+		<imageName>wetwipes.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_WHITE</colourPrimary>
+		<colourSecondary>CLOTHING_GOLD</colourSecondary>
+		<colourTertiary>CLOTHING_GOLD</colourTertiary>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(清洁所有已装备衣物)]]]></line>
+			<line><![CDATA[[style.boldGood(清洁所有已装备衣物)]]]></line>
+			<line><![CDATA[#IF(game.isMuskContentEnabled())
+    [style.boldGood(移除“被淫味标记”)]
+#ENDIF
+]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.cleanAllClothing(false, false)]
+			[##npc.cleanAllDirtySlots(true)]
+			[##npc.clearMuskMarkers()]
+			<p style='text-align:center; margin-top:0; padding-top:0;'>
+				就在[npc.she]开始找地方扔脏兮兮的抹布时，<b>抹布消失了，顺便把吸收的污物也带走了</b>！
+			</p>
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[[npc.Name]撕开箔纸包装袋，取出湿巾，然后迅速用它清洁[npc.herself]。
+]]></selfUse>
+		<otherUse><![CDATA[[npc.Name]撕开箔纸包装袋，取出湿巾，然后迅速用它清洁[npc2.name]。
+]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

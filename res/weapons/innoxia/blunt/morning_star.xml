@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<value>5000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[]]></determiner>
+		
+		<name><![CDATA[晨星锤]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[晨星锤]]></namePlural>
+		
+		<description><![CDATA[一把类似棍棒的武器，由一个手柄和一根坚固的杆组成，杆顶固定有一个尖球。这个尖球是由奥术能量形成的，使用时不会对人造成永久性伤害。]]></description> 
+		
+		<attackDescriptor><![CDATA[砸]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用晨星锤砸向[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>COMMON</rarity> 
+		
+		<weaponSet/> 
+		
+		<equipText><![CDATA[[npc.Name]将晨星锤放在[npc.her]的腰间，以便[npc.she]拔出。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]放下[npc.her]的晨星锤。]]></unequipText>
+		
+		<imageName>morning_star.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<damage>30</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>ICE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_DAMAGE" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METAL"/>
+		<secondaryColours> 
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		
+		<customColours/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]挥舞晨星锤打向[npc2.name]，虚幻的奥术锤头撞向了[npc2.her]的身体，[npc.Name]不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用晨星锤砸向[npc2.name]，[npc.she]看到虚幻的奥术锤头直直撞向了[npc2.namePos]的身体，不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]舞着晨星锤挥向[npc2.name]，虚幻的锤头砸穿了[npc2.her]的胸膛，使得[npc2.herHim]向后踉跄！
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]用晨星锤挥向[npc2.name]，但最终没有击中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+[npc.Name]挥舞晨星锤砸向[npc2.name]，但最终没有击中[npc2.herHim]，[npc.her]发出一声沮丧的呼喊！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]前踏一步，用晨星锤猛地砸向[npc2.name]，却没能击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

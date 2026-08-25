@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<authorTag><![CDATA[在弹巢的一侧刻着细小的字迹，写着“DSG铸造厂生产。”]]></authorTag>
+		<value>1500</value>
+		<melee>false</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[一把]]></determiner>
+		<name appendDamageName="true"><![CDATA[胡椒弹转轮手枪]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[胡椒弹转轮手枪]]></namePlural>
+		<description><![CDATA[这把武器看起来像是在其他武器的基础上改造而成的，根据使用痕迹看像是长期放在口袋里而非枪套中。枪身上印有一个你不认识的标记。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用你的转轮手枪射向[npc2.name]。]]></attackTooltipDescription>
+		<rarity>RARE</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]拿出转轮手枪，小心地装填子弹，然后松开保险。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]摇了摇弹巢，以确保里面是空的，然后收起转轮手枪。]]></unequipText>
+		<imageName>pbrevolver.svg</imageName>
+		<imageEquippedName>pbrevolver.svg</imageEquippedName>
+		<physicalResistance>0</physicalResistance>
+		<damage>20</damage>
+		<arcaneCost>1</arcaneCost>
+		<damageVariance>LOW</damageVariance>
+		<availableDamageTypes>
+			<damageType>FIRE</damageType>
+		</availableDamageTypes>
+		<spells/>
+		<combatMoves/>
+		<effects/>
+		
+		<primaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BROWN_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_GUNMETAL</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_HEAVY</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]用瞄准镜对准[npc2.name]，扣动了扳机。明胶弹在与[npc2.namePos]的灵气碰撞时爆裂，溅[npc2.herHim]一身滚烫的油。
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]用瞄准镜对准[npc2.name]，扣动了扳机。弹药完全没击中[npc2.herHim]，无用地飞溅到远处。
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

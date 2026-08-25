@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1500</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[缰绳]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[缰绳]]></namePlural>
+		<description><![CDATA[一种设计用来套在马头上并用来指挥马的设备。得益于奥术附魔，皮革背带和颈带可以自行调整大小，以适合任何戴缰绳的人或野兽。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+			<slot>MOUTH</slot>
+		</equipSlots>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_sturdy_steed</clothingSet>
+		<imageName>bridle.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		
+		<stickers>
+			<category id="reins" priority="1">
+				<categoryName><![CDATA[Reins]]></categoryName>
+				<sticker id="present" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[赠送]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[这种特殊的笼头配有缰绳。]]></descriptionModification>
+					<imageName zLayer="-1">bridle_reins.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="removed" priority="2" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[取下]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[缰绳从笼头上取下。]]></descriptionModification>
+					<imageName zLayer="-1">bridle_bit.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+		
+		<effects>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_OUT</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>MOUTH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+			
+		<incompatibleSlots/>
+			
+		<primaryColours>
+			<colour>CLOTHING_TAN</colour>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+			<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours values="JUST_WHITE"/>
+		<tertiaryColoursDye values="ALL"/>
+
+		<itemTags>
+			<tag>FITS_MUZZLES_EXCLUSIVE</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]张开[npc.her]嘴部并塞入缰绳的嚼子，然后伸手扣上针扣并固定好笼头。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]张开[npc2.namePos]的嘴部并塞入缰绳的嚼子，然后伸手扣上针扣并固定好笼头。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]强行张开[npc2.namePos]的嘴部并塞入缰绳的嚼子，然后伸手扣上针扣并固定好笼头。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了缰绳并把它脱了下来。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开了缰绳并把它脱了下来。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]匆忙的解开了缰绳并把它拽了下来。
+]]></otherRough>
+	</displacementText>
+</clothing>

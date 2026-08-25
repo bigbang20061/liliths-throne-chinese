@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1200</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[吊链耳坠]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[吊链耳坠]]></namePlural>
+		<description><![CDATA[一对由一个实心金属半环组成吊链耳环。可以插入穿孔中，上面连接着一对细金属链和实心金属条。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>PIERCING_EAR</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>ear_chain_dangle.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_GOLD</colour>
+			<colour>CLOTHING_SILVER</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]把吊链耳坠戴在[npc.her]的[npc.ears]上。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]将吊链耳坠戴在[npc2.namePos][npc2.ears]上。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]强行将吊链耳坠戴在[npc2.namePos][npc2.ears]上。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的吊链耳坠从[npc.her]的[npc.ears]上取下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将吊链耳坠从[npc2.namePos]的[npc2.ears]里摘下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]强行将吊链耳坠从[npc2.namePos]的[npc2.ears]上摘下。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

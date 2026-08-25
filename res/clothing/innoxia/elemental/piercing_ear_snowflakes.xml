@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1000</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[雪花耳坠]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[雪花耳坠]]></namePlural>
+		<description><![CDATA[一对雪花耳环。它们通常是在附魔前出售的，具有增强佩戴者奥术寒冷伤害和抵抗力的效果。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_EAR</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>SNOWFLAKE</clothingSet>
+		<imageName>piercing_ear_snowflakes.svg</imageName>
+		<imageEquippedName/>
+		<effects>
+			<effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_ICE" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_ICE" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="JUST_SILVER"/> 
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>REINDEER_GIFT</tag>
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将雪花耳坠戴在[npc.her]的[npc.ears]上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将雪花耳坠戴在[npc2.namePos]的[npc2.ears]上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将雪花耳坠穿在[npc2.namePos]的[npc2.ears]上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的雪花耳坠摘了下来。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的雪花耳坠摘了下来。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的雪花耳坠扯了下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

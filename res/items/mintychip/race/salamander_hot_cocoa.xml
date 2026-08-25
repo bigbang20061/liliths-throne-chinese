@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>150</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[热巧克力]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[热巧克力]]></namePlural>
+		<description><![CDATA[一个装有热可可的保温金属瓶。瓶子侧面的贴纸宣称，在寒冷的冬夜，这种甜美的饮料是最好的慰藉。贴纸上还描绘了一个火焰蝾螈男在露天火炉旁用类似的瓶子喝热饮的情景。]]></description> 
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<!-- There is a fully commented example of this in 'hyena_bone_crunchers.xml' -->
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">salamander_insulated_bottle.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary>mintychip_salamander</colourSecondary>
+		<colourTertiary>CLOTHING_STEEL</colourTertiary>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_ICE.getFormattedValue(5)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股温暖的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_ICE, 5)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		打开瓶盖后，[npc.name]将热巧克力瓶端到[npc.her]的[npc.mouth]边。[npc.She]高兴地发现标签并没有夸大它的甜度，迅速地喝下了这杯巧克力饮料。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		在拧开瓶盖后，[npc.name]将热巧克力瓶递到[npc2.namePos]等待[npc2.lips]边。[npc2.name]高兴地发现标签并没有夸大它的甜度，迅速地喝下了这杯巧克力饮料。
+		]]></otherUse>
+	</useDescriptions>
+</item>

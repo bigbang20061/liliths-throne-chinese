@@ -1,0 +1,508 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Place type id: innoxia_fields_elis_tavern_f1_corridor -->
+	<scene id="corridor">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_f1">CORRIDOR</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+
+	<!-- Place type id: innoxia_fields_elis_tavern_f1_room_generic -->
+	<scene id="room_generic">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_f1">ROOM_GENERIC</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_f1_room_meraxis -->
+	<scene id="room_meraxis">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_f1">ROOM_MERAXIS</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_places_fields_elis_tavern_f1_room_player -->
+	<scene id="room_player">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_f1">ROOM_PLAYER</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responseTabs>
+			<tab index="0"><![CDATA[
+				行动
+			]]></tab>
+			<tab index="1"><![CDATA[
+				快速旅行
+			]]></tab>
+			<tab index="2"><![CDATA[
+				浴室
+			]]></tab>
+		</responseTabs>
+		<responses>
+			<!-- Tab index 0, resting: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[休息 (1小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息一小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_REST'))]
+					[#pc.applySleep(60)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[休息(4小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息四小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[240]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_REST'))]
+					[#pc.applySleep(240)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[休息(8小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息八小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[480]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_REST'))]
+					[#pc.applySleep(480)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[休息(12小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息十二小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[720]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_REST'))]
+					[#pc.applySleep(720)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[
+					休息直到
+					#IF(game.isDayTime())
+						日落
+					#ELSE
+						日出
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					五分钟后，休息
+					#IF(game.getMinutesUntilNextMorningOrEvening() >= 60)
+						[#~~(game.getMinutesUntilNextMorningOrEvening()/60)]时
+					#ENDIF
+					#IF(game.getMinutesUntilNextMorningOrEvening() % 60 != 0)
+						[#~~(game.getMinutesUntilNextMorningOrEvening()%60)]分
+					#ENDIF
+					直到
+					#IF(game.isDayTime())
+						日落。
+					#ELSE
+						天明。
+					#ENDIF
+					不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]和[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					[#~~(game.getMinutesUntilNextMorningOrEvening() + 5)]
+				]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_REST'))]
+					[#pc.applySleep(~~(game.getMinutesUntilNextMorningOrEvening() + 5))]
+				]]></effects>
+			</response>
+
+			<!-- Alarm Clock: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[调闹钟]]></responseTitle>
+				<responseTooltip><![CDATA[在手机上设置闹钟，这样你就能在特定时间醒来。]]></responseTooltip>
+				<nextDialogue stripContent="false"><![CDATA[ROOM_SET_ALARM]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[[#game.saveDialogueNode()]]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.getSavedLong('player_phone_alarm') < 0)
+						睡到闹铃响起(未设置)
+					#ELSE
+						睡到闹铃响起 ([#
+							var alarm = flags.getSavedLong('player_phone_alarm');
+							var alarmObj = game.getCustomTime(alarm/60, alarm%60, 0);
+							game.getDisplayTime(alarmObj)
+						])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.getSavedLong('player_phone_alarm') < 0)
+						[style.colourBad(未设定闹铃！)]
+					#ELSE
+						休息
+						#IF(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))==0)
+							24小时
+						#ELSE
+							#IF(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm')) >= 60)
+								[#~~((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))) / 60)]小时，
+							#ENDIF
+							#IF((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))) % 60 != 0)
+								[#~~((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))) % 60)]分钟，
+							#ENDIF
+						#ENDIF
+						直到闹钟响起。除了恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能使你获得“充分休息”效果。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.getSavedLong('player_phone_alarm') < 0)
+						null
+					#ELSE
+						innoxia_places_fields_elis_tavern_f1_room_player
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					#IF(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))==0)
+						1440
+					#ELSE
+						[#~~(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm')))]
+					#ENDIF
+				]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_REST'))]
+					#IF(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))==0)
+						[#pc.applySleep(24*60)]
+					#ELSE
+						[#pc.applySleep(~~(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))))]
+					#ENDIF
+				]]></effects>
+			</response>
+			
+			<!-- Tab index 1, fast travel: -->
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[入口]]></responseTitle>
+				<responseTooltip><![CDATA[快速前往旅店入口。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_tavern_f0_exit"/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_FAST_TRAVEL_ENTRANCE'))]
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_elis_tavern_f0, PLACE_TYPE_innoxia_fields_elis_tavern_f0_exit)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[你的房间]]></responseTitle>
+				<responseTooltip><![CDATA[你已经在你的房间里了！]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			
+			<!-- Tab index 2, cleaning: -->
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[快速淋浴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					使用卧室的独立浴室快速淋浴。
+					<br/>[style.italicsGood(只清洗腔穴内<b>最多[style.fluid(500)]</b>液体。)]
+					<br/>[style.italicsGood(这将只清洁<b>当前装备</b>的衣服。)]
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_SHOWER_QUICK'))]
+					[#game.appendToTextStartStringBuilder(pc.applyWash(false, false, SE_CLEANED_SHOWER, 120+10))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[全身冲淋]]></responseTitle>
+				<responseTooltip><![CDATA[
+					在套间里洗澡，花些时间彻底洗净自己。
+					<br/>[style.italicsExcellent(清洗腔穴内<b>所有</b>液体)]
+					<br/>[style.italicsGood(只清洁<b>当前装备</b>的衣服。)]
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_SHOWER'))]
+					[#game.appendToTextStartStringBuilder(pc.applyWash(true, false, SE_CLEANED_SHOWER, 240+20))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[入浴时间]]></responseTitle>
+				<responseTooltip><![CDATA[
+					使用卧室的独立浴室，花一些时间仔细清洗自己。
+					<br/>[style.italicsExcellent(清洗腔穴内<b>所有</b>液体。)]
+					<br/>[style.italicsExcellent(清洗持有的<b>所有</b>衣服。)]
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_f1_room_player]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_PLAYER_BATH'))]
+					[#game.appendToTextStartStringBuilder(pc.applyWash(true, true, SE_CLEANED_BATH, 240+30))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_f1_room_owner -->
+	<scene id="room_owner">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_f1">ROOM_OWNER</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_f1_room_sex -->
+	<scene id="room_sex">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_f1">ROOM_SEX</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getNonCompanionCharactersPresent().size()>1 && ncom.hasPenis()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[锁眼]]></responseTitle>
+				<responseTooltip><![CDATA[透过锁眼窥探里面发生了什么……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#jess.setLust(80)]
+					[#ncom.setLust(80)]
+				]]></effects>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_VOYEURIST]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[TWO_HORNY]]></corruptionLevel>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_jess_peeping]]></id>
+					<startingPosition><![CDATA[
+						#IF(ncom.getFetishDesire(FETISH_ANAL_GIVING).isPositive() || ncom.getFetishDesire(FETISH_DOMINANT).isPositive())
+							ALL_FOURS
+						#ELSE
+							LYING_DOWN
+						#ENDIF
+					]]></startingPosition>
+					<dominants>
+						<character>
+							<id>ncom</id>
+							<slot><![CDATA[
+								#IF(ncom.getFetishDesire(FETISH_ANAL_GIVING).isPositive() || ncom.getFetishDesire(FETISH_DOMINANT).isPositive())
+									ALL_FOURS_BEHIND
+								#ELSE
+									LYING_DOWN_MISSIONARY
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>jess</id>
+							<slot><![CDATA[
+								#IF(ncom.getFetishDesire(FETISH_ANAL_GIVING).isPositive() || ncom.getFetishDesire(FETISH_DOMINANT).isPositive())
+									ALL_FOURS_ALL_FOURS
+								#ELSE
+									LYING_DOWN_LYING_DOWN
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators>
+						<character><![CDATA[pc]]></character>
+					</submissiveSpectators>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_tavern_f1_room_sex_post_peeping]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/tavern_f1">ROOM_SEX_PEEPING_JESS_FUCKED</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[
+								#IF(ncom.getFetishDesire(FETISH_ANAL_GIVING).isPositive())
+									PenisAnus_PENIS_FUCKING_START
+								#ELSE
+									PenisVagina_PENIS_FUCKING_START
+								#ENDIF
+							]]></id>
+							<performer><![CDATA[ncom]]></performer>
+							<target><![CDATA[jess]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[false]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getNonCompanionCharactersPresent().size()>1 && !ncom.hasPenis() && ncom.hasVagina()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[锁眼]]></responseTitle>
+				<responseTooltip><![CDATA[透过锁眼窥探里面发生了什么……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#jess.setLust(80)]
+					[#ncom.setLust(80)]
+				]]></effects>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_VOYEURIST]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[TWO_HORNY]]></corruptionLevel>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_jess_peeping]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>jess</id>
+							<slot><![CDATA[LYING_DOWN_SCISSORING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>ncom</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators>
+						<character><![CDATA[pc]]></character>
+					</submissiveSpectators>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_tavern_f1_room_sex_post_peeping]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/tavern_f1">ROOM_SEX_PEEPING_JESS_SCISSOR</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[ClitClit_TRIBBING_START]]></id>
+							<performer><![CDATA[jess]]></performer>
+							<target><![CDATA[ncom]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[false]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getNonCompanionCharactersPresent().size()>1 && !ncom.hasPenis() && !ncom.hasVagina()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[锁眼]]></responseTitle>
+				<responseTooltip><![CDATA[透过锁眼窥探里面发生了什么……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#jess.setLust(80)]
+					[#ncom.setLust(80)]
+				]]></effects>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_VOYEURIST]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[TWO_HORNY]]></corruptionLevel>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_jess_peeping]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>jess</id>
+							<slot><![CDATA[LYING_DOWN_FACE_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>ncom</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators>
+						<character><![CDATA[pc]]></character>
+					</submissiveSpectators>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_tavern_f1_room_sex_post_peeping]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/tavern_f1">ROOM_SEX_PEEPING_JESS_FACE_SITTING</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[jess]]></performer>
+							<target><![CDATA[ncom]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[false]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="room_sex_post_peeping">
+		<author><![CDATA[Innoxia]]></author>
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_tavern_f1, PLACE_TYPE_innoxia_fields_elis_tavern_f1_room_player)]
+			[#jess.applyWash(true, false, SE_CLEANED_SHOWER, 240+20)]
+			[#jess.hourlyUpdate()]
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'ROOM_SEX_PEEPING_AFTER_SEX'))]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[[ncom.Name]和婕斯已经结束做爱……]]></tooltip>
+		<content folderPath="txt/places/fields/elis/tavern_f1">ROOM_PLAYER</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_tavern_f1_room_player"/>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_f1_stairs -->
+	<scene id="stairs">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_f1">STAIRS</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[下楼]]></responseTitle>
+				<responseTooltip><![CDATA[沿楼梯下到旅店一楼。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_tavern_f0_stairs"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_tavern_f0, PLACE_TYPE_innoxia_fields_elis_tavern_f0_stairs)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_f1', 'STAIRS_DOWN'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

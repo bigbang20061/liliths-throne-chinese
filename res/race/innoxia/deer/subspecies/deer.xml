@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<subspecies>
+	<race>innoxia_deer</race>
+	<colour>innoxia_deer</colour>
+	<secondaryColour>innoxia_deer</secondaryColour>
+	<tertiaryColour>innoxia_deer</tertiaryColour>
+	<mainSubspecies>true</mainSubspecies>
+	<baseSlaveValue>12000</baseSlaveValue>
+	<attributeItemId>innoxia_race_deer_glade_springs</attributeItemId>
+	<transformativeItemId>innoxia_race_deer_tree_shoots_salad</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<nocturnality>CREPUSCULAR</nocturnality>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>true</bipedalSubspecies>
+	<applySubspeciesChanges/>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_innoxia_deer)
+			100
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="80">icon</iconName>
+	<backgroundName>background</backgroundName>
+	<bookIconName>icon</bookIconName>
+	<bookName><![CDATA[麚与麀]]></bookName>
+	<basicDescriptionId>DEER_BASIC</basicDescriptionId>
+	<advancedDescriptionId>DEER_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<name><![CDATA[鹿化形]]></name>
+	<namePlural><![CDATA[鹿化形]]></namePlural>
+	<singularMaleName><![CDATA[鹿男]]></singularMaleName>
+	<singularFemaleName><![CDATA[鹿女]]></singularFemaleName>
+	<pluralMaleName><![CDATA[鹿男]]></pluralMaleName>
+	<pluralFemaleName><![CDATA[鹿女]]></pluralFemaleName>
+	<description><![CDATA[一种人形的鹿，当下肢为双足时称为“鹿化形”，而下肢呈现出鹿兽态时称为“半鹿人”。]]></description>
+	<nameHalfDemon>
+		<namesDefault>
+			<name><![CDATA[佩里顿]]></name>
+			<namePlural><![CDATA[佩里顿]]></namePlural>
+			<singularMaleName><![CDATA[佩里顿]]></singularMaleName>
+			<singularFemaleName><![CDATA[佩里顿]]></singularFemaleName>
+			<pluralMaleName><![CDATA[佩里顿]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[佩里顿]]></pluralFemaleName>
+		</namesDefault>
+	</nameHalfDemon>
+	<feralAttributes>
+		<feralName><![CDATA[鹿]]></feralName>
+		<feralNamePlural><![CDATA[鹿]]></feralNamePlural>
+		<feralSingularMaleName><![CDATA[公鹿]]></feralSingularMaleName>
+		<feralSingularFemaleName><![CDATA[母鹿]]></feralSingularFemaleName>
+		<feralPluralMaleName><![CDATA[公鹿]]></feralPluralMaleName>
+		<feralPluralFemaleName><![CDATA[母鹿]]></feralPluralFemaleName>
+		<legConfiguration>QUADRUPEDAL</legConfiguration>
+		<sizeHeight>true</sizeHeight>
+		<size>75</size>
+		<breastRowCount>0</breastRowCount>
+		<nipplesPerBreastCount>1</nipplesPerBreastCount>
+		<crotchBreastRowCount>1</crotchBreastRowCount>
+		<nipplesPerCrotchBreastCount>2</nipplesPerCrotchBreastCount>
+		<armsOrWingsPresent>false</armsOrWingsPresent>
+		<fingerActionsAvailable>false</fingerActionsAvailable>
+		<hairPresent>false</hairPresent>
+	</feralAttributes>
+	<statusEffectDescription><![CDATA[
+		[npc.NamePos]强健紧实的身体能帮助[npc.herHim]承受物理伤害，并为[npc.her]自身提供一定的攻击加成。
+]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="10">MAJOR_PHYSIQUE</attribute>
+		<attribute value="0">MAJOR_ARCANE</attribute> 
+		<attribute value="0">MAJOR_CORRUPTION</attribute>
+		<attribute value="10">DAMAGE_PHYSICAL</attribute>
+		<attribute value="5">RESISTANCE_PHYSICAL</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="5" feminineWeighting="5">PHYSICAL</category>
+		<category masculineWeighting="1" feminineWeighting="2">LUST</category>
+		<category masculineWeighting="0" feminineWeighting="0">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="ONE_VERY_RARE">DOMINION</region>
+		<region rarity="FOUR_COMMON">WOODLAND</region>
+		<region rarity="THREE_UNCOMMON">FIELDS</region>
+		<region rarity="THREE_UNCOMMON">FIELD_CITY</region>
+	</regionLocations>
+	<worldLocations>
+		<world rarity="ONE_VERY_RARE">NIGHTLIFE_CLUB</world>
+	</worldLocations>
+	<flags/>
+</subspecies>

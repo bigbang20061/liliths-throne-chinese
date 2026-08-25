@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>100</value>
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[鹿角头饰]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[鹿角头饰]]></namePlural>
+		<description><![CDATA[一个顶部附有一对新奇的绒毛驯鹿鹿角盖着毡毯的头带，]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>antler_headband.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BROWN_DARK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_TAN</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]把鹿角头饰戴到[npc.her]的头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将鹿角头饰戴到[npc2.namePos]头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将鹿角头饰推到[npc2.namePos]的头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]摘掉了[npc.her]的鹿角头饰。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将鹿角头饰从[npc2.namePos]头上取下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地将[npc2.namePos]的鹿角头饰夺下。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

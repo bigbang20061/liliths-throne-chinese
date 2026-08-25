@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[湖]]></name>
+	<tooltipDescription><![CDATA[伊利斯东北部有一片很大的湖，里面可以发现各种各样的鱼。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在伊利斯东北部的湖里]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<colour>BASE_BLUE</colour>
+	<backgroundColour>MAP_BACKGROUND_BLUE</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_elis_generic_lake</dialogue>
+	<furniturePresent>false</furniturePresent>
+	<loiteringEnabled>false</loiteringEnabled>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[MIXED]]></aquatic>
+	<darkness><![CDATA[DAYLIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

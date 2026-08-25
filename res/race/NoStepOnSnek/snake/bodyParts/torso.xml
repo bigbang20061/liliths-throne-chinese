@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<torso>
+	<race>NoStepOnSnek_snake</race>
+	<transformationName><![CDATA[蛇]]></transformationName>
+	<coveringType>SNAKE_SCALES</coveringType>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<transformationDescription><![CDATA[
+		片刻后，转化来到末尾。[npc.she]身上的瘙痒终于褪去，发出了解脱的叹息。蛇鳞片覆盖在[npc.her]的躯干上。新生的鳞片触感光滑。
+		<br/>[npc.Name]现在拥有[style.boldSnake(蛇般)][npc.skinFullDescription]。
+]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.Her]的躯干有着[npc.a_femininity(true)]外观，并且是[npc.materialCompositionDescriptor][npc.skinFullDescription(true)]。
+]]></bodyDescription>
+</torso>

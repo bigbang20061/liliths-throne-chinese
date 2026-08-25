@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <clothingAuthorTag><![CDATA[小小的刻字告诉你这些穿孔是由'Norin'制作的。]]></clothingAuthorTag>
+    <value>500</value> <!--10 flames = £1 ~ $1.5-->
+    <determiner><![CDATA[一条]]></determiner>
+    <name><![CDATA[乳链]]></name>
+    <namePlural pluralByDefault="true"><![CDATA[乳链]]></namePlural>
+    <description><![CDATA[一对有着金属链条相连的乳环。]]></description>
+    
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity> <!-- FEMININE, MASCULINE ANDROGYNOUS -->
+    <slot>PIERCING_NIPPLE</slot> <!-- slot values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/InventorySlot.java -->
+    <rarity>COMMON</rarity> <!-- rarity values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/Rarity.java -->
+    
+    <imageName>piercing_nipple_chain.svg</imageName>
+    
+    <clothingSet/> <!-- No way to define custom sets yet -->
+    <imageEquippedName/> <!-- The file path for this clothing's image while equipped -->
+    <effects/> <!-- Default enchantments -->
+
+    <blockedPartsList>
+      <blockedParts>
+        
+        <displacementType>REMOVE_OR_EQUIP</displacementType> <!-- displacementType values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/DisplacementType.java -->
+        
+        <clothingAccessRequired> <!-- clothingAccess values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/ClothingAccess.java -->
+          <clothingAccess>CHEST</clothingAccess>
+        </clothingAccessRequired>
+        
+        <blockedBodyParts/> <!--bodyPart values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/character/body/CoverableArea.java -->
+        <clothingAccessBlocked/> <!-- clothingAccess -->
+        <concealedSlots/> <!-- slot -->
+        
+      </blockedParts>
+    </blockedPartsList>
+    
+    <incompatibleSlots/> <!-- slot(s) not compatible -->
+    
+    <primaryColours values="ALL_METAL"/>
+    <primaryColoursDye/>
+    <secondaryColours/>
+    <secondaryColoursDye/>
+    <tertiaryColours/>
+    <tertiaryColoursDye/>
+    
+    <itemTags>
+      <tag>SOLD_BY_KATE</tag>
+    </itemTags>
+    
+  </coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把乳链戴在[npc.her][npc.nipples+]。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把乳链戴在[npc2.namePos][npc2.nipples+]。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]把乳链戴在[npc2.namePos][npc2.nipples+]，然后用力扯了一下链条。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把[npc.her]的乳链从[npc.her][npc.nipples+]上取下。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把乳链从[npc2.namePos][npc2.nipples+]上取下。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]用力扯了一下[npc2.namePos]的乳链然后才取下来。
+]]></otherRough>
+  </displacementText>
+  
+  
+</clothing>

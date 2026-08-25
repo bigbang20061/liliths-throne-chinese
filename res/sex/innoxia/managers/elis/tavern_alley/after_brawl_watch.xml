@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexManager>
+	<deskName><![CDATA[桌子]]></deskName>
+	<title/>
+	<consensual><![CDATA[true]]></consensual>
+	<subHasEqualControl><![CDATA[false]]></subHasEqualControl>
+	<canSkipSex><![CDATA[true]]></canSkipSex>
+	<washingScene><![CDATA[false]]></washingScene>
+	<sadisticActionsAllowed><![CDATA[true]]></sadisticActionsAllowed>
+	<canItemsBeUsed><![CDATA[true]]></canItemsBeUsed>
+	<exposingReactions><![CDATA[false]]></exposingReactions>
+	<positionsAvailable exclusive="false">
+		<position><![CDATA[OVER_DESK]]></position>
+	</positionsAvailable>
+	<publicSex>
+		<isPublic><![CDATA[true]]></isPublic>
+		<startingDescription><![CDATA[
+			混乱的斗殴已经结束，酒馆的顾客坐下来欣赏[attacker.name]和奥格利克斯的元素体为他们带来的表演……
+		]]></startingDescription>
+		<randomDescriptions enabled="true">
+			<description><![CDATA[附近的一些围观者大笑起来，对着面前色情的表演发出欢呼。]]></description>
+			<description><![CDATA[人们围观着[attacker.name]和奥格利克斯的元素体的激情表演，你听见旅店某处的一声流氓哨。]]></description>
+			<description><![CDATA[在大笑声和醉醺醺的欢呼声中，你听见了附近某人评价起[attacker.namePos]的表现。]]></description>
+			<description><![CDATA[在欢呼声和大笑声中，聚集起来的人群令奥格利克斯的元素体更兴奋地操起了[attacker.name] 。]]></description>
+			<description><![CDATA[你看向四周，发现一些醉鬼在围观[attacker.name]和奥格利克斯的元素体性爱表演的过程中，逐渐开始用手抚摸起自己。]]></description>
+		</randomDescriptions>
+	</publicSex>
+	<characterInformationContainer>
+		<characterInformation>
+			<characterId>attacker</characterId>
+			<slotsAvailable excluded="false">
+				<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+			</slotsAvailable>
+			<canStopSex><![CDATA[false]]></canStopSex>
+			<canChangePositions><![CDATA[false]]></canChangePositions>
+			<endSexAffectionChanges><![CDATA[false]]></endSexAffectionChanges>
+			<showStartingExposedDescriptions><![CDATA[false]]></showStartingExposedDescriptions>
+			<sexPace/>
+			<canSelfTransform><![CDATA[true]]></canSelfTransform>
+			<hidden><![CDATA[false]]></hidden>
+			<control><![CDATA[SELF]]></control>
+			<sexClothingEquippable><![CDATA[true]]></sexClothingEquippable>
+			<selfClothingRemoval><![CDATA[true]]></selfClothingRemoval>
+			<partnerClothingRemoval><![CDATA[false]]></partnerClothingRemoval>
+			<startNaked><![CDATA[false]]></startNaked>
+			<exposeAtStart preferRemoval="false">
+				<coverableArea><![CDATA[
+					#IF(attacker.hasVagina() && attacker.isAbleToAccessCoverableArea(CA_VAGINA, true))
+						VAGINA
+					#ELSEIF(game.isAnalContentEnabled() && attacker.isAbleToAccessCoverableArea(CA_ANUS, true))
+						ANUS
+					#ELSE
+						MOUTH
+					#ENDIF
+				]]></coverableArea>
+			</exposeAtStart>
+			<forcedCreampiesDisabled/>
+			<orgasmBehaviour><![CDATA[DEFAULT]]></orgasmBehaviour>
+			<orgasmCumTarget/>
+			<orgasmCumTargetsBlocked/>
+			<orgasmEncourageBehaviours/>
+			<concealedSlots/>
+			<preferredTarget/>
+			<preferences/>
+			<uniqueSexActions/>
+			<sexTypesBanned/>
+			<areasBanned/>
+			<stopSexCondition/>
+			<dirtyTalk/>
+		</characterInformation>
+		
+		<characterInformation>
+			<characterId>oglixElemental</characterId>
+			<slotsAvailable excluded="false">
+				<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+				<slot><![CDATA[OVER_DESK_RECEIVING_ORAL]]></slot>
+			</slotsAvailable>
+			<canStopSex><![CDATA[true]]></canStopSex>
+			<canChangePositions><![CDATA[false]]></canChangePositions>
+			<endSexAffectionChanges><![CDATA[false]]></endSexAffectionChanges>
+			<showStartingExposedDescriptions><![CDATA[false]]></showStartingExposedDescriptions>
+			<sexPace locked="true"><![CDATA[DOM_ROUGH]]></sexPace>
+			<canSelfTransform><![CDATA[true]]></canSelfTransform>
+			<hidden><![CDATA[false]]></hidden>
+			<control/>
+			<sexClothingEquippable><![CDATA[false]]></sexClothingEquippable>
+			<selfClothingRemoval><![CDATA[true]]></selfClothingRemoval>
+			<partnerClothingRemoval><![CDATA[false]]></partnerClothingRemoval>
+			<startNaked><![CDATA[false]]></startNaked>
+			<exposeAtStart/>
+			<forcedCreampiesDisabled/>
+			<orgasmBehaviour><![CDATA[DEFAULT]]></orgasmBehaviour>
+			<orgasmCumTarget/>
+			<orgasmCumTargetsBlocked/>
+			<orgasmEncourageBehaviours/>
+			<concealedSlots/>
+			<preferredTarget/>
+			<preferences>
+				<character id="attacker">
+					<foreplay copyForMain="true">
+						<performing><![CDATA[
+							PENETRATION_PENIS
+						]]></performing>
+						<targeted><![CDATA[
+							#IF(attacker.hasVagina() && attacker.isAbleToAccessCoverableArea(CA_VAGINA, true))
+								ORIFICE_VAGINA
+							#ELSEIF(game.isAnalContentEnabled() && attacker.isAbleToAccessCoverableArea(CA_ANUS, true))
+								ORIFICE_ANUS
+							#ELSE
+								ORIFICE_MOUTH
+							#ENDIF
+						]]></targeted>
+					</foreplay>
+				</character>
+			</preferences>
+			<uniqueSexActions/>
+			<sexTypesBanned/>
+			<areasBanned/>
+			<stopSexCondition/>
+			<dirtyTalk>
+				<character id="attacker">
+					<standard additionToDefault="false">
+						<line><![CDATA[这就是你的惩罚，坏[attacker.girl]！]]></line>
+						<line><![CDATA[主人让你记住教训！]]></line>
+						<line><![CDATA[这就是你的惩罚！]]></line>
+						<line><![CDATA[不听话的坏[attacker.girl]！]]></line>
+						<line><![CDATA[千万别忘了这点！]]></line>
+					</standard>
+				</character>
+			</dirtyTalk>
+		</characterInformation>
+		
+	</characterInformationContainer>
+		
+</sexManager>

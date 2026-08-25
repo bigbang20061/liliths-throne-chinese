@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="START_SEX_2KOMA"><![CDATA[
+	<p>
+		当[npc2.name]看见[npc.Name]攥紧拳头，紧盯着[npc2.she]时，[npc2.she]笑个不停。[npc2.she]用戏谑的语气奚落道，[npc2.speech(哈，你还没弄清现状吗？你这可怜虫！跪下摇尾乞怜，不然别怪我心狠手辣！)]
+	</p>
+	<p style='text-align:center;'>
+		[style.italics(过了一会儿……)]
+	</p>
+	<p>
+		[npc2.speechNoEffects(~哈啊~哦~太爽了，操烂我的婊子小穴吧~我是荡妇，我是不要脸的婊子~尽管操我！
+		#IF(npc2.isVisiblyPregnant())用力操我！#ELSE给我播种！让我怀上你的孩子！#ENDIF
+		~哈~对，就是那里，用力~)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="POST_SEX_2KOMA"><![CDATA[
+	<p>
+	你把[npc.Name]放在原地，收拾你的东西转身离开了。从你身后传来隐约的喘息声和呻吟声……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="POST_SEX_2KOMA_AS_SUB"><![CDATA[
+	<p>
+	[npc.Name]捡起[npc.her]的东西，把你留在那里，转身走了。你躺在地上呻吟着，喘息着，过了几分钟才缓过气来。你站起来，捡起你的东西，掸掉了身上的灰尘，继续前进……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="A_WILD_CENTAUR_APPEARS"><![CDATA[
+	<p>
+	当你沉浸在对半人马习性的思考时，一只半人马突然出现在你面前！从[npc.her][npc.eyes]中，你看到了燃起的性欲的火焰，[npc.she]已经发情……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="POST_SEX_CENTAUR"><![CDATA[
+	<p>
+	你把[npc.Name]放在原地，收拾你的东西转身离开了。从你身后传来隐约的喘息声和呻吟声……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="POST_SEX_CENTAUR_AS_SUB"><![CDATA[
+	<p>
+	[npc.Name]捡起[npc.her]的东西，把你留在那里，转身走了。你躺在地上呻吟着，喘息着，过了几分钟才缓过气来。你站起来，捡起你的东西，掸掉了身上的灰尘，继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- MASTURBATION -->
+
+	<htmlContent tag="MASTURBATION"><![CDATA[
+	<p>
+		你性奋起来，急欲释放性欲，决定抽出点时间自慰。
+		#IF(game.getPlayerCell().getPlace().isPopulated())
+			周围有人在围观，你比以往更兴奋了。便用[pc.hands]抚下身子，准备开始自摸……
+		#ELSEIF(game.getPlayer().hasCompanions())
+			#IF(pc.hasFetish(FETISH_EXHIBITIONIST))
+				[npc.name]正注视着你。你比以往更兴奋了。告诉[npc.herHim]别移开目光。便用[pc.hands]抚下身子，准备开始自摸……
+			#ELSE
+				你不想让[npc.name]看着你自慰，便让[npc.herHim]走开，别盯着你。便用[pc.hands]抚下身子，准备开始自摸……
+			#ENDIF
+		#ELSE
+			即将到来的高潮让你比以往更兴奋了。你用[pc.hands]抚下身子，准备开始自摸……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="AFTER_MASTURBATION"><![CDATA[
+	<p>
+		#IF(pc.isSatisfiedFromLastSex())
+			你满足地长叹一声，感觉自慰过后已经心满意足，于是整理好衣服，准备继续赶路……
+		#ELSE
+			你有些烦躁地叹了一声，感觉必须要到别的地方寻一番快活，于是结束了自慰，准备继续赶路……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- INCUBATION_EGG_LAYING -->
+
+	<!-- Womb incubation: -->
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_VAGINA"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你觉得在过路的陌生人面前表演一番或许不错，于是你决定停下来，把你子宫里孕育着的[#SPECIAL_PARSE_1]卵就在这儿大大方方下了。想到要做这样的事，你兴奋不已，赶紧找了个合适的地方并蹲好。小声地在喜悦中[pc.moaning]着，你裸出[pc.pussy+]并开始用你的[pc.fingers]在[pc.labia+]上挑逗，而这显而易见足以吸引来一些好奇的路人。
+		</p>
+	#ELSE
+		<p>
+			你几乎忍耐不住，马上就要将肚子中孵化的[#SPECIAL_PARSE_1]产下，连忙在附近找了个合适的隐秘场所，在保证没人偷看后便蹲了下来。你还是压抑不住那轻声的[pc.moan]，将[pc.pussy+]露了出来，用[pc.fingers]挑逗着[pc.labia+]。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_VAGINA_SINGLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你体内孕育着的那颗卵让你释放出更多荷尔蒙，催熟着你的子宫，你的小穴随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，#IF(pc.hasLegs())伸展着你的[pc.legs]#ELSE把[pc.hips]低向地面#ENDIF并开始用力，在周围的陌生人围聚过来色迷迷地盯着你淫液滴答的阴户时情不自禁地微笑着。
+		</p>
+		<p>
+			几乎是瞬间，你便感到一颗浑圆的卵顺着阴道，从你暴露在大庭广众下阴户口中滑出。你无法忍受地泄出一声尖叫，等你缓过来后，那颗蛋早已从你湿滑的洞口中出来，安安稳稳地躺在你身下的地面上。
+		</p>
+		<p>
+			人群中响起了一阵下流的呼喝和低沉的口哨声，便逐渐散开了，只留下你倒在了那颗蛋旁边。忽然，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ELSE
+		<p>
+			你体内孕育着的那颗卵让你释放出更多荷尔蒙，催熟着你的子宫，你的小穴随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，感到一股激烈的热潮冲刷过躯体，你#IF(pc.hasLegs())伸展着你的[pc.legs]#ELSE把[pc.hips]低向地面#ENDIF并开始用力。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的小穴里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的阴唇淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的阴户里滚落，被你安置在下方的地板。在你反应过来之前，一股巨大的疲惫感突然涌上你的心头。在你休息并试图恢复一些体力的过程中，你费尽全身力气才没有晕过去……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_VAGINA_MULTIPLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你体内孕育着的卵让你释放出更多荷尔蒙，催熟着你的子宫，你的小穴随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，#IF(pc.hasLegs())伸展着你的[pc.legs]#ELSE把[pc.hips]低向地面#ENDIF并开始用力，在周围的陌生人围聚过来色迷迷地盯着你淫液滴答的阴户时情不自禁地微笑着。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的小穴里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的阴唇淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的阴户里滚落，被你安置在下方的地上。你的小穴痉挛着收缩着，开始把下一颗卵从你的子宫里挤出，让你在用这个粘滑一片的小穴产下一颗卵时激烈地喘息着——它和第一颗在地上靠在一起。
+		</p>
+		<p>
+			在你淫荡的表演下，人群中接连响起下流的呼喝和低沉的口哨声，不一会儿，你就倒在了那刚才阴道里排出的，还黏糊糊的[#SPECIAL_PARSE_0]枚卵旁，人群发现表演结束后，准备散开时，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ELSE
+		<p>
+			你体内孕育着的卵让你释放出更多荷尔蒙，催熟着你的子宫，你的小穴随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，感到一股激烈的热潮冲刷过躯体，你#IF(pc.hasLegs())伸展着你的[pc.legs]#ELSE把[pc.hips]低向地面#ENDIF并开始用力。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的小穴里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的阴唇淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的阴户里滚落，被你安置在下方的地上。你的小穴痉挛着收缩着，开始把下一颗卵从你的子宫里挤出，让你在用这个粘滑一片的小穴产下一颗卵时激烈地喘息着——它和第一颗在地上靠在一起。
+		</p>
+		<p>
+			你还没意识到发生了什么，便倒在了那[#SPECIAL_PARSE_0]枚卵旁，它们都是从那黏糊糊且被撑开的阴道里挤出来的。当你的阴户终于停止颤抖时，一股巨大的疲惫感突然涌上心头，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<!-- Stomach incubation: -->
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_ANUS"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你觉得在路过的陌生人面前表演肯定很有趣，便停下脚步，准备在大庭广众之下将肚子里孵化的[#SPECIAL_PARSE_1]产下。你只是想想就兴奋得不得了，立马找到了一个合适的位置，蹲在地上。你欣喜地发出轻声的[pc.moaning]，将[pc.assCloaca]露了出来，用[pc.fingers]挑逗着[pc.asshole+]，仅仅这样就足以引起一些好奇的过路人关注了。
+		</p>
+	#ELSE
+		<p>
+			你几乎忍耐不住，马上就要将肚子中孵化的[#SPECIAL_PARSE_1]产下，连忙在附近找了个合适的隐秘场所，保证没人偷看，就蹲了下来。你还是压抑不住那轻声的[pc.moan]，将[pc.assCloaca]露了出来，用[pc.fingers]挑逗着[pc.asshole+]。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_ANUS_SINGLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			由于体内的卵已经成熟，大量激素被释放到循环系统中，你的菊花刚受到触碰便做出了反应，分泌出一滩浓稠、黏滑、无味的天然润滑剂。你呼哧呼哧地喘息，兴奋地[pc.moaning]着张开了[pc.assCloaca]，面带着微笑鼓励自己用力起来，周围的陌生人都贪婪地凝视着你那滴出水来的[pc.asshole]。
+		</p>
+		<p>
+			几乎是瞬间，你便感到一颗浑圆的卵顺着肠道，从你暴露在大庭广众下的[pc.assCloaca]中滑出。你无法忍受，从[pc.lips]间泄出一声尖叫，[pc.asshole]淫靡地扩张着，等你缓过来后，那颗蛋早已从你湿滑的洞口中出来，安安稳稳地躺在你身下的地面上。
+		</p>
+		<p>
+			人群中响起了一阵下流的呼喝和低沉的口哨声，便逐渐散开了，只留下你倒在了那颗蛋旁边。忽然，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ELSE
+		<p>
+			由于体内的卵已经成熟，大量激素被释放到循环系统中，你的菊花刚受到触碰便做出了反应，分泌出一滩浓稠、黏滑、无味的天然润滑剂。你忽然激动万分，呼哧呼哧地喘息，兴奋地[pc.moaning]着张开了[pc.assCloaca]，用力起来。
+		</p>
+		<p>
+			几乎是瞬间，你便感到一颗浑圆的卵顺着肠道，从你暴露在大庭广众下的[pc.assCloaca]中滑出。你无法忍受，从[pc.lips]间泄出一声尖叫，[pc.asshole]淫靡地扩张着，等你缓过来后，那颗蛋早已从你湿滑的洞口中出来，安安稳稳地躺在你身下的地面上。忽然，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_ANUS_MULTIPLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			由于体内的卵已经成熟，大量激素被释放到循环系统中，你的菊花刚受到触碰便做出了反应，分泌出一滩浓稠、黏滑、无味的天然润滑剂。你呼哧呼哧地喘息，兴奋地[pc.moaning]着张开了[pc.assCloaca]，面带着微笑鼓励自己用力起来，周围的陌生人都贪婪地凝视着你那滴出水来的[pc.asshole]。
+		</p>
+		<p>
+			几乎是瞬间，你便感到第一颗浑圆的卵顺着肠道，从你暴露在大庭广众下的[pc.assCloaca]中滑出。你无法忍受，从[pc.lips]间泄出一声尖叫，[pc.asshole]淫靡地扩张着，等你缓过来后，那颗蛋早已从你湿滑的洞口中出来，安安稳稳地躺在你身下的地面上。你的[pc.asshole]也像是有自己的思想一般，开始痉挛、收缩，将下一枚卵送出了你的[pc.assCloaca]，将你的[pc.asshole]撑得大开，害得你不停大口呼吸着空气。最终也从那湿润的洞穴中逃出来，跟早先地上那颗组成了一对。
+		</p>
+		<p>
+			在你淫荡的表演下，人群中接连响起下流的呼喝和低沉的口哨声，不一会儿，你就倒在了那[#SPECIAL_PARSE_0]枚卵旁，它们都是从你大张着的黏滑的[pc.asshole]中挤出来的。人群发现表演结束后，准备散开时，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ELSE
+		<p>
+			由于体内的卵已经成熟，大量激素被释放到循环系统中，你的菊花刚受到触碰便做出了反应，分泌出一滩浓稠、黏滑、无味的天然润滑剂。你忽然激动万分，呼哧呼哧地喘息，兴奋地[pc.moaning]着张开了[pc.assCloaca]，用力起来。
+		</p>
+		<p>
+			几乎是瞬间，你便感到第一颗浑圆的卵顺着肠道，从你暴露在大庭广众下的[pc.assCloaca]中滑出。你无法忍受，从[pc.lips]间泄出一声尖叫，[pc.asshole]淫靡地扩张着，等你缓过来后，那颗蛋早已从你湿滑的洞口中出来，安安稳稳地躺在你身下的地面上。你的[pc.asshole]也像是有自己的思想一般，开始痉挛、收缩，将下一枚卵送出了你的[pc.assCloaca]，将你的[pc.asshole]撑得大开，害得你不停大口呼吸着空气。最终也从那湿润的洞穴中逃出来，跟早先地上那颗组成了一对。
+		</p>
+		<p>
+			你还没意识到发生了什么，便倒在了那[#SPECIAL_PARSE_0]枚卵旁，它们都是从你大张着的黏滑的[pc.asshole]中挤出来的。看到每一颗蛋都安安全全地排了出来，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<!-- Breasts incubation: -->
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_NIPPLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你心血来潮，想在路人面前表演一下找点乐子，于是便停下脚步，打算在公众场合里把[pc.breasts]中的[#SPECIAL_PARSE_1]卵产下。<br>光是这样想想，就让你性奋地不能自已。于是你找了个合适的地方蹲下，露出用胸部，用[pc.fingers]在[pc.nipples+]上来回挑逗，让自己愉悦地小声[pc.moaning]起来——这着实引来了几个好奇的路人。
+		</p>
+	#ELSE
+		<p>
+			你迫切地想将[pc.breasts]中的[#SPECIAL_PARSE_1]产出，于是急忙在附近找了个隐蔽的地方。确定周遭没有人注意，你立马就蹲了下来，开始抑制不住小声的[pc.moan]起来。你露出[pc.breasts]用[pc.fingers]在[pc.nipples+]上来回挑逗。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_NIPPLE_SINGLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你体内孕育着的那颗卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.nipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，开始摩挲你的[pc.breasts]，在周围的陌生人围聚过来色迷迷地盯着你淫液滴答的[pc.nipples]时情不自禁地微笑着。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.breasts(true)]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.nipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地上。
+		</p>
+		<p>
+			人群中响起了一阵下流的呼喝和低沉的口哨声，便逐渐散开了，只留下你倒在了那颗蛋旁边。忽然，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ELSE
+		<p>
+			你体内孕育着的那颗卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.nipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，感到一股热潮涌过，并开始摩挲你的[pc.breasts]。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.breasts(true)]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.nipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地板。在你能做出其他举动前，一股巨大的疲惫感突然涌上你的心头。在你休息并试图恢复一些体力的过程中，你费尽全身力气才没有晕过去……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_NIPPLE_MULTIPLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你体内孕育着的卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.nipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，开始摩挲你的[pc.breasts]，在周围的陌生人围聚过来色迷迷地盯着你淫液滴答的[pc.nipples]时情不自禁地微笑着。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.breasts]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.nipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地上。你的[pc.nipples]似乎有它自己的想法，痉挛着收缩着，开始把下一颗卵从你的另一个[pc.breast(true)]里挤出。不过片刻，你就又从你粘滑一片的[pc.nipple(true)]里产下了下一颗卵——它和第一颗在地上靠在一起。你拼命喘着气。
+		</p>
+		<p>
+			看到你淫荡的表演，人群中爆发出一阵阵低俗的议论声和低沉的口哨声。没过多久，你就累得瘫倒在那枚[#SPECIAL_PARSE_0]蛋旁——你的[pc.nipples]被它撑大了好一圈，里面还淌着黏糊糊的液体。观众们意识到表演已经结束，于是缓缓开始散去。一股巨大的疲惫感突然涌来，你努力放松身体以恢复体力，好不容易才没让自己晕倒……
+		</p>
+	#ELSE
+		<p>
+			你体内孕育着的卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.nipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，感到一股热潮涌过，并开始摩挲你的[pc.breasts]。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.breasts]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.nipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地上。你的[pc.nipples]似乎有它自己的想法，痉挛着收缩着，开始把下一颗卵从你的另一个[pc.breast(true)]里挤出。不过片刻，你就又从你粘滑一片的[pc.nipple(true)]里产下了下一颗卵——它和第一颗在地上靠在一起。你拼命喘着气。
+		</p>
+		<p>
+			没过多久，你就累得瘫倒在那枚[#SPECIAL_PARSE_0]蛋旁——你的[pc.nipples]被它撑大了好一圈，里面还淌着黏糊糊的液体。安全产完卵后，一股巨大的疲惫感突然涌来，你努力放松身体以恢复体力，好不容易才没让自己晕倒……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<!-- Crotch-boobs incubation: -->
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_NIPPLE_CROTCH"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你觉得在过路的陌生人面前表演一番或许不错，于是你决定停下来，把你[pc.crotchBoobs]里孕育着的[#SPECIAL_PARSE_1]卵就在这儿大大方方下了。想到要做这样的事，你兴奋不已，赶紧找了个合适的地方并蹲好。小声地在喜悦中[pc.moaning]着，你裸出[pc.crotchBoobs]并开始用你的[pc.fingers]在[pc.crotchNipples+]上挑逗，而这显而易见足以吸引来一些好奇的路人。
+		</p>
+	#ELSE
+		<p>
+			你迫切地想将[pc.crotchBoobs]中的[#SPECIAL_PARSE_1]产出，于是急忙在附近找了个隐蔽的地方。确定周遭没有人注意，你立马就蹲了下来，开始抑制不住小声的[pc.moan]起来。你露出[pc.crotchBoobs]，用[pc.fingers]在[pc.crotchNipples+]上来回挑逗。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_NIPPLE_CROTCH_SINGLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你体内孕育着的卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.crotchNipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，开始摩挲你的[pc.crotchBoobs]，在周围的陌生人色迷迷地盯着你淫液滴答的[pc.crotchNipples]时情不自禁地微笑着。
+		</p>
+		<p>
+			就在那一瞬间，你感到那颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.crotchBoob(true)]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.crotchNipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地上。
+		</p>
+		<p>
+			人群中响起了一阵下流的呼喝和低沉的口哨声，便逐渐散开了，只留下你倒在了那颗蛋旁边。忽然，一阵巨大的疲惫感突然向你袭来，你竭尽全力避免自己昏迷过去，稍作休息并恢复起体力来……
+		</p>
+	#ELSE
+		<p>
+			你体内孕育着的那颗卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.crotchNipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，感受到一股激烈的情潮冲刷过身体，你开始摩挲你的[pc.crotchBoobs]。
+		</p>
+		<p>
+			就在那一瞬间，你感到那颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.crotchBoob(true)]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.crotchNipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地上。在你可以做出其他举动前，一股巨大的疲惫感突然涌上你的心头。在你休息并试图恢复一些体力的过程中，你费尽全身力气才没有晕过去……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_NIPPLE_CROTCH_MULTIPLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			你体内孕育着的卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.crotchNipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，开始摩挲你的[pc.crotchBoobs]，在周围的陌生人围聚过来色迷迷地盯着你淫液滴答的[pc.crotchNipples]时情不自禁地微笑着。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.crotchBoobs]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.crotchNipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地上。你的[pc.crotchNipples]似乎有它自己的想法，痉挛着收缩着，开始把下一颗卵从你的另一个[pc.crotchBoob(true)]里挤出。不过片刻，你就又从你粘滑一片的[pc.crotchNipple(true)]里产下了下一颗卵——它和第一颗在地上靠在一起。你拼命喘着气。
+		</p>
+		<p>
+			观赏着你的淫荡表演，人群中爆发出下流的议论和口哨声，不知不觉中，你倒在了[#SPECIAL_PARSE_0]卵旁——刚从你被撑开的、黏糊糊的[pc.crotchNipples]里新鲜出炉。当观众们意识到表演已经结束并开始散去时，一股巨大的疲惫感突然涌上你的心头。在你休息并试图恢复一些体力的过程中，你费尽全身力气才没有晕过去……
+		</p>
+	#ELSE
+		<p>
+			你体内孕育着的卵让你释放出更多荷尔蒙，催熟着你的肉体，你的[pc.crotchNipples]随着你的抚摸，立刻泌出一涌粘稠的天然润滑剂。你兴奋地[pc.moaning]，感受到一股激烈的情潮冲刷过身体，你开始摩挲你的[pc.crotchBoobs]。
+		</p>
+		<p>
+			就在那一瞬间，你感到第一颗大鼓鼓、圆滚滚的卵从你赤裸的[pc.crotchBoobs]里挤出。一声迷乱的喊叫从你的[pc.lips]中逸出，而你的[pc.crotchNipple(true)]淫乱地舒展开，在你还来不及思考到底发生了什么时，那颗卵就从你黏糊糊的洞洞里滚落，被你安置在下方的地上。你的[pc.crotchNipples]似乎有它自己的想法，痉挛着收缩着，开始把下一颗卵从你的另一个[pc.crotchBoob(true)]里挤出。不过片刻，你就又从你粘滑一片的[pc.crotchNipple(true)]里产下了下一颗卵——它和第一颗在地上靠在一起。你拼命喘着气。
+		</p>
+		<p>
+			不知不觉中，你倒在了[#SPECIAL_PARSE_0]卵旁——刚从你被撑开的、黏糊糊的[pc.crotchNipples]里新鲜出炉。母卵平安，一股巨大的疲惫感突然涌上你的心头。在你休息并试图恢复一些体力的过程中，你费尽全身力气才没有晕过去……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<!-- Spinneret incubation: -->
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_SPINNERET"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			在公众场合产卵。
+		</p>
+		<p>
+			露出丝囊，然后蹲下来开始产卵。有路人驻足围观。
+		</p>
+	#ELSE
+		<p>
+			偷偷产卵。
+		</p>
+		<p>
+			露出丝囊，然后蹲下来开始产卵。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_SPINNERET_SINGLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			产下了一个蛋。围观群众见此纷纷议论了几句而后慢慢散去。
+		</p>
+	#ELSE
+		<p>
+			产下了一个蛋。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_SPINNERET_MULTIPLE"><![CDATA[
+	#IF(game.getPlayerCell().getPlace().isPopulated())
+		<p>
+			[#SPECIAL_PARSE_0]卵顺利产出，围观群众见此纷纷议论了几句而后慢慢散去。
+		</p>
+	#ELSE
+		<p>
+			[#SPECIAL_PARSE_0]卵顺利产出。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- INCUBATION_EGG_LAYING_FINISHED -->
+
+	<htmlContent tag="INCUBATION_EGG_LAYING_FINISHED_SINGLE"><![CDATA[
+	<p>
+		产下卵的过程让你吃尽苦头，你再无余力做任何事，只能尽力支开眼睛看着它们孵化。当它们破壳时，你感到奥术正在抽取你的能量，而你的后代在你面前快速成熟。你彻底地精疲力竭了，在失去意识之前，你最后深深看了一眼你的孩子们：
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="INCUBATION_EGG_LAYING_FINISHED_MULTIPLE"><![CDATA[
+	<p>
+		产下[#SPECIAL_PARSE_0]卵的过程让你吃尽苦头，你再无余力做任何事，只能尽力支开眼睛看着它们孵化。当它们破壳时，你感到奥术正在抽取你的能量，而你的后代在你面前快速成熟。你彻底地精疲力竭了，在失去意识之前，你最后深深看了一眼你的孩子们：
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_FINISHED_END_SINGLE"><![CDATA[
+	<p style='text-align:center;'>
+		……
+	</p>
+	<p>
+		过了不久，你醒来了。那[#SPECIAL_PARSE_0]已经离开，你只能艰难地站起来，准备继续上路……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INCUBATION_EGG_LAYING_FINISHED_END_MULTIPLE"><![CDATA[
+	<p style='text-align:center;'>
+		……
+	</p>
+	<p>
+		过了不久，你醒来了。你的孩子们已经离开，你只能艰难地站起来，准备继续上路……
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

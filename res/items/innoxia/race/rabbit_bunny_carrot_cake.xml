@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>40</value> 
+		<determiner><![CDATA[一块]]></determiner>
+		<name><![CDATA[兔兔萝卜蛋糕]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[兔兔萝卜蛋糕]]></namePlural>
+		<description><![CDATA[一片独立包装的糖霜胡萝卜蛋糕，顶部还有一个装饰性的糖霜胡萝卜。在包装纸上，有一个非常淫荡的图像，一个兔子女正在被一个肌肉发达的兔子男配种。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/rabbit/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">rabbit_bunny_carrot_cake.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_RABBIT_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[兔子]]></potionDescriptor>
+		<associatedRace>RABBIT_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_FERTILITY.getFormattedValue(15)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_VIRILITY.getFormattedValue(15)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_LUST.getFormattedValue(-25)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始[npc.she]感到需要交配……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_FERTILITY, 15)]
+			[#npc.addPotionEffect(ATTRIBUTE_VIRILITY, 15)]
+			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_LUST, -25)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.name]撕掉兔兔萝卜蛋糕的塑料包装，把一小块蛋糕送进[npc.her]的嘴里。蛋糕很明显非常美味，在[npc.she]吞下甜蜜的蛋糕后，一股令人愉悦的胡萝卜余味停留在[npc.tongue]上。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.name]撕掉兔兔萝卜蛋糕的塑料包装，把一小块蛋糕送进[npc2.namePos]的嘴里。蛋糕很明显非常美味，在[npc2.name]吞下甜蜜的蛋糕后，一股令人愉悦的胡萝卜余味停留在[npc2.she]的[npc2.tongue]上。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

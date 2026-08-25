@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <value>500</value>
+    <determiner><![CDATA[一张]]></determiner>
+    <name><![CDATA[“仅限肛门”标贴]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[“仅限肛门”标贴]]></namePlural>
+    <description><![CDATA[一张柔性塑料胶条，用于粘贴在某人的阴部，“仅限肛门"的字样清楚地表明了这个人喜欢使用哪个腔穴。]]></description>
+
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <slot>VAGINA</slot>
+    <rarity>COMMON</rarity>
+
+    <imageName>sticker_anal_only.svg</imageName>
+
+    <clothingSet/>
+    <imageEquippedName/>
+    <effects/>
+
+    <blockedPartsList>
+      <blockedParts>
+
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+
+        <clothingAccessRequired>
+          <clothingAccess>GROIN</clothingAccess>
+        </clothingAccessRequired>
+		<blockedBodyParts>
+          <bodyPart>VAGINA</bodyPart>
+        </blockedBodyParts>
+		<clothingAccessBlocked/>
+        <concealedSlots/>
+
+      </blockedParts>
+    </blockedPartsList>
+
+    <incompatibleSlots/>
+
+    <primaryColours>
+		<colour>CLOTHING_WHITE</colour>
+    </primaryColours>
+    <primaryColoursDye values="ALL"/>
+    <secondaryColours>
+		<colour>CLOTHING_RED_DARK</colour>
+    </secondaryColours>
+    <secondaryColoursDye values="ALL"/>
+    <tertiaryColours>
+		<colour>CLOTHING_WHITE</colour>
+    </tertiaryColours>
+    <tertiaryColoursDye values="ALL"/>
+
+    <itemTags>
+      <tag>SOLD_BY_FINCH</tag>
+      <tag>REQUIRES_VAGINA</tag>
+      <tag>SEALS_VAGINA</tag>
+      <tag>ENABLE_SEX_EQUIP</tag>
+    </itemTags>
+
+  </coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+			[npc.Name]将“仅限肛门”标贴贴在[npc.her][npc.pussy+]上。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把“仅限肛门”标贴贴在[npc2.namePos][npc2.pussy+]上。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把“仅限肛门”标贴贴在[npc2.namePos][npc2.pussy+]上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]撕下了[npc.her][npc.pussy+]上的“仅限肛门”标贴。
+    ]]></self>
+    <other><![CDATA[
+			[npc.Name]把“仅限肛门”标贴从[npc2.her][npc2.pussy+]上撕下。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]迅速地将“仅限肛门”标贴从[npc2.namePos][npc2.pussy+]上拽了下来。导致[npc2.herHim]发出一声惊叫。
+    ]]></otherRough>
+  </displacementText>
+
+
+</clothing>

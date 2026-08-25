@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>4000</value>
+		<determiner><![CDATA[一套]]></determiner>
+		<name><![CDATA[弓道服]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[弓道服]]></namePlural>
+		<description><![CDATA[由和服与护胸组成，是专为弓道而设计的简朴服饰。]]></description> 
+		<physicalResistance>2</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>TORSO_UNDER</slot>
+		<rarity>LEGENDARY</rarity>
+		<clothingSet>c4mg1rl_benevolent</clothingSet>
+		<imageName>kyudogi.svg</imageName>
+		<imageEquippedName/>
+		<stickers/>
+		<effects>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="CRITICAL_DAMAGE" potency="BOOST" timer="3500" type="CLOTHING"/>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="CRITICAL_DAMAGE" potency="BOOST" timer="3500" type="CLOTHING"/>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_FIRE" potency="MAJOR_BOOST" timer="3500" type="CLOTHING"/>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_FIRE" potency="MAJOR_BOOST" timer="3500" type="CLOTHING"/>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_FIRE" potency="MAJOR_BOOST" timer="3500" type="CLOTHING"/>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_FIRE" potency="MINOR_BOOST" timer="3500" type="CLOTHING"/>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_RANGED_WEAPON" potency="MAJOR_BOOST" timer="3500" type="CLOTHING"/>
+              <effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="DAMAGE_RANGED_WEAPON" potency="MAJOR_BOOST" timer="3500" type="CLOTHING"/>
+		</effects>
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_DRESS_FRONT_FULL"> 
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN">
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/>
+		<primaryColours values="JUST_WHITE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK_JET"/>
+		<tertiaryColoursDye values="ALL"/>
+		<itemTags>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]披上弓道服，[npc.arms]穿过袖子，随后将护胸调整到了合适的位置。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]为[npc2.namePos]披上弓道服，并引导其[npc2.arms]穿过袖子，随后将护胸调整到合适的位置。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗鲁地给[npc2.namePos]披上弓道服，强拉着其[npc2.arms]穿过袖子，随后将护胸调整到合适的位置。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将护胸与弓道服从[npc.her]身上脱下。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将护胸与弓道服从[npc2.namePos]的身上脱下。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]将护胸与弓道服从[npc2.namePos]的身上粗暴地脱下。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

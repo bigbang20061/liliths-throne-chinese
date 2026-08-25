@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>1500</value> 
+		
+		<determiner><![CDATA[一双]]></determiner>
+		
+		<name><![CDATA[魔女靴]]></name>
+		
+		<namePlural pluralByDefault="true"><![CDATA[魔女靴]]></namePlural> 
+		
+		<description><![CDATA[一双时尚的靴子，是女巫穿的款式。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>FEMININE</femininity> 
+		
+		<slot>FOOT</slot> 
+		
+		<rarity>EPIC</rarity> 
+		
+		<clothingSet>WITCH</clothingSet> 
+		
+		<imageName>witch_boots.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+		</effects>
+		
+		<blockedPartsList> 
+		
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				
+				<concealedSlots/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="BLACK_OR_WHITE"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_GOLD"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours values="JUST_BLACK"/>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags/>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的脚穿进靴子中。
+]]></self>
+		<other><![CDATA[[npc.Name]让[npc2.namePos]将[npc2.feet]穿进靴子。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地将[npc2.namePos]的脚强行塞进靴中。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]脱下了[npc.her]的靴子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的靴子脱下。]]></other>
+		<otherRough><![CDATA[[npc.Name]猛地将[npc2.namePos]的靴子扯掉。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

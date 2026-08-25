@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<fluid>
+	<race>innoxia_raptor</race>
+	
+	<transformationName><![CDATA[猛禽]]></transformationName>
+	
+	<baseFluidType>MILK</baseFluidType>
+	
+	<flavour>MILK</flavour>
+	
+	<namesMasculine/>
+	<namesFeminine/>
+	
+	<descriptorsMasculine>
+		<name><![CDATA[猛禽]]></name>
+	</descriptorsMasculine>
+	
+	<descriptorsFeminine>
+		<name><![CDATA[猛禽]]></name>
+	</descriptorsFeminine>
+	
+	<defaultFluidModifiers/>
+</fluid>

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>600</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[牛铃项圈]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[牛铃项圈]]></namePlural>
+		<description><![CDATA[一条皮质项圈，前面有一个牛铃，会随着穿戴者的动作而响起。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		  <slot>NECK</slot>
+		</equipSlots>
+
+		<rarity>EPIC</rarity>
+		<clothingSet>CATTLE</clothingSet>
+		<imageName>cowbell_collar.svg</imageName>
+		<imageEquippedName/>
+		<effects>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList slot="NECK">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+			
+		<incompatibleSlots/>
+			
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]戴上牛铃项圈，然后把手伸向[npc.her]的脖子后面拉紧皮带并扣上针扣。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将牛铃项圈戴在[npc2.namePos]的脖子上，然后拉紧皮带并扣上针扣。
+    ]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]牢牢抓住[npc2.name]，然后粗暴地把牛铃项圈扣紧[npc2.her]脖子上。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]解开[npc.her]的牛铃项圈，然后从[npc.her]的脖子上取下。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]解开[npc2.namePos]的牛铃项圈，然后从[npc2.her]的脖子上取下。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地解开[npc2.namePos]的牛铃项圈，然后从[npc2.her]的脖子上扯下。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

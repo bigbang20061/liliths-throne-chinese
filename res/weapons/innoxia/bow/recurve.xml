@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>2500</value>
+		<melee>false</melee>
+		<twoHanded>true</twoHanded>
+		<determiner><![CDATA[一把]]></determiner>
+		<name><![CDATA[奥术反曲弓]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[奥术反曲弓]]></namePlural>
+		<description><![CDATA[这把弓的弓臂在通常情况下会朝使用者弯曲，增强弓的蓄能，拉弓时，弓箭手储存的精华会形成一个奥术箭矢。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用反曲弓射向[npc.Name]。]]></attackTooltipDescription>
+		<rarity>COMMON</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]给[npc.her]的奥术反曲弓注入奥术精华。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]放下了[npc.her]的奥术反曲弓。]]></unequipText>
+		<imageName>recurve.svg</imageName> 
+		<imageEquippedName>recurve_equipped.svg</imageEquippedName> 
+		<damage>40</damage>
+		<arcaneCost>2</arcaneCost>
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_RANGED_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_RANGED_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_RANGED_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+			<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours> 
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_GREY</colour>
+		</tertiaryColours> 
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]拉开奥术反曲弓并射出一道虚幻的箭矢，正中[npc2.name]胸部并让[npc2.herHim]喘息着向后踉跄。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用[npc.her]奥术反曲弓对着[npc2.name]射出一发虚幻的箭矢，射在[npc2.herHim]的胸部上！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]拉开奥术反曲弓瞄准[npc2.name]并松开弓弦，一支虚幻的箭矢呼啸着击中了[npc2.herHim]的胸部！
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]瞄准并用奥术反曲弓射击，[npc.Name]未命中[npc2.name]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]奥术反曲弓对着[npc2.name]射出一发虚幻的箭矢，但没有命中！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]的奥术反曲弓瞄准[npc2.name]并松开弓弦，但是[npc.she]最终还是没有击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

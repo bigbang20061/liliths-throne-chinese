@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>60</value>
+		<determiner><![CDATA[一根]]></determiner>
+		<name><![CDATA[基础细杆穿钉]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[基础细杆穿钉]]></namePlural>
+		<description><![CDATA[一根薄的金属圆柱，两端有一个可以拧下的球体。它可以穿过舌头穿孔或“工业”耳洞。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		  <slot>PIERCING_TONGUE</slot>
+		  <slot>PIERCING_EAR</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>basic_barbell.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList slot="PIERCING_TONGUE">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<blockedPartsList slot="PIERCING_EAR">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="PIERCING_TONGUE"/>
+		<incompatibleSlots slot="PIERCING_EAR"/>
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText slot="PIERCING_TONGUE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将细杆穿钉插入[npc.tongue]穿孔。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将细杆穿钉插入[npc2.namePos]的[npc2.tongue]穿孔。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将细杆穿钉穿进[npc2.namePos]的[npc2.tongue]的穿孔。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="PIERCING_TONGUE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的细杆穿钉从[npc.tongue]穿孔中摘下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc.her]的细杆穿钉从[npc.her]的[npc2.tongue]穿孔中摘下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的细杆穿钉从[npc2.her]的[npc2.tongue]穿孔上拔出来。
+]]></otherRough>
+  </displacementText>
+
+  <replacementText slot="PIERCING_EAR" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将细杆穿钉插入[npc.her]的[npc.ear]穿孔。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将细杆穿钉穿进[npc2.namePos]的[npc2.ear]的工业穿孔。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将细杆穿钉插入[npc2.namePos][npc2.ear]的工业穿孔。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="PIERCING_EAR" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的细杆穿钉从[npc.her]的[npc.ear]穿孔中摘下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的穿钉从[npc2.her]的[npc2.ear]的工业穿孔中取下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的穿钉从[npc2.her]的[npc2.ear]的工业穿孔中拔出。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

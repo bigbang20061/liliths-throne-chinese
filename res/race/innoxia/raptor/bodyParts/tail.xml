@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tail>
+	<race>innoxia_raptor</race>
+	
+	<transformationName><![CDATA[猛禽]]></transformationName>
+	
+	<coveringType>innoxia_raptor_feathers</coveringType>
+	
+	<spinneret>false</spinneret>
+	
+	<defaultGirth>3</defaultGirth>
+	
+	<defaultLengthAsPercentageOfHeight>0.5</defaultLengthAsPercentageOfHeight>
+	
+	<tags>
+		<tag>TAIL_SLEEP_HUGGING</tag>
+		<tag>TAIL_TYPE_FEATHER</tag>
+		<tag>TAIL_TAPERING_NONE</tag>
+		<tag>TAIL_NEVER_SUITABLE_FOR_PENETRATION</tag>
+	</tags>
+	
+	<determiner><![CDATA[簇]]></determiner>
+	<determinerPlural><![CDATA[plumes of]]></determinerPlural> 
+	
+	<name><![CDATA[尾羽]]></name>
+	<namePlural><![CDATA[尾羽]]></namePlural> 
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[猛禽般]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[猛禽般]]></descriptor>
+	</descriptorsFeminine>
+	
+	<tipName><![CDATA[末端]]></tipName>
+	<tipNamePlural><![CDATA[末端]]></tipNamePlural>
+	<tipDescriptorsMasculine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+	</tipDescriptorsMasculine>
+	<tipDescriptorsFeminine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+	</tipDescriptorsFeminine>
+	
+	<transformationDescription><![CDATA[
+		#IF(npc.getTailCount()==1)
+			一簇尾羽从尾椎处延伸而出，迅速散开至大概有[npc.tailLength]长。[npc.She]很快发现[npc.she]可以快速上下抖动[npc.her]新的鸟尾，这可以帮助[npc.her]保持平衡。
+			<br/>[npc.Name]现在拥有一簇[style.boldRaptor(猛禽的鸟尾)]，[npc.materialDescriptor][npc.tailFullDescription(true)]。
+		#ELSE
+			[npc.TailCount]簇尾羽从尾椎处延伸而出，迅速散开至大概有[npc.tailLength]长。[npc.She]很快发现[npc.she]可以快速上下抖动[npc.her]新的鸟尾，这可以帮助[npc.her]保持平衡。
+			<br/>[npc.Name]现在拥有[npc.tailCount]簇[style.boldRaptor(猛禽的鸟尾)]，[npc.materialDescriptor][npc.tailFullDescription(true)]。
+		#ENDIF
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.sheHasFull]的尾椎处延伸出
+		#IF(npc.getTailCount()==1)
+			一簇#IF(npc.isTailFeral())[style.colourFeral(兽态的)]#ENDIF[npc.tailColour(true)]的尾羽，能够随意上下移动帮助在飞行中保持平衡。
+		#ELSE
+			[npc.tailCount]簇#IF(npc.isTailFeral()) [style.colourFeral(兽态的)]#ENDIF[npc.tailColour(true)]的尾羽，能够随意上下移动帮助在飞行中保持平衡。
+		#ENDIF
+	]]></bodyDescription>
+</tail>

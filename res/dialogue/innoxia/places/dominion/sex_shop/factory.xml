@@ -1,0 +1,2094 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Quest dialogues for when meeting Fia: -->
+	
+	<scene id="meet_fia_start">
+		<preParsingEffects><![CDATA[
+			[#fia.equipMainWeaponFromNowhere(itemGen.generateWeapon('innoxia_utility_flashlight'))]
+			[#fia.setLocation(pc)]
+			[#flags.setFlag(FLAG_innoxia_doll_factory_exterior_population_hidden, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">MEET_FIA_START</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[躲藏]]></responseTitle>
+				<responseTooltip><![CDATA[躲避正在接近的人……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_meet_fia_wait</nextDialogue>
+				<effects><![CDATA[
+					[#game.addNPC('misc.GenericSexualPartner', 'fia_friend')]
+					[#fia.initFriend(fia_friend)]
+					[#fia_friend.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="meet_fia_wait">
+		<content folderPath="txt/places/dominion/sex_shop/factory">MEET_FIA_WAIT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[等鼠男离开后再跟菲亚一起进入洛维耶纳奢侈品店。]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_meet_fia_enter</nextDialogue>
+			</response>
+			<!-- Sex scene: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasSpell(SPELL_ARCANE_AROUSAL, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[快感]]></responseTitle>
+				<responseTooltip><![CDATA[你还没有学会“[#SPELL_ARCANE_AROUSAL.getName()]”法术，所以你什么也干不了……]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasSpell(SPELL_ARCANE_AROUSAL, true)]]]></availabilityConditional>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_VOYEURIST]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[快感]]></responseTitle>
+				<responseTooltip><![CDATA[你可以悄悄地对那只鼠男和菲亚施展奥术狂欲，看看会发生什么……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#fia.setLust(75)]
+					[#fia_friend.setLust(75)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_sex_shop_factory_fia_friend]]></id>
+					<startingPosition><![CDATA[AGAINST_WALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>fia</id>
+							<slot><![CDATA[
+								#IF(game.isAnalContentEnabled())
+									AGAINST_WALL_FACE_TO_WALL
+								#ELSE
+									AGAINST_WALL_PERFORMING_ORAL_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>fia_friend</id>
+							<slot><![CDATA[
+								#IF(game.isAnalContentEnabled())
+									AGAINST_WALL_STANDING_WALL
+								#ELSE
+									AGAINST_WALL_BACK_TO_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators>
+						<character><![CDATA[pc]]></character>
+					</submissiveSpectators>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_meet_fia_wait_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">MEET_FIA_WAIT_SEX</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[
+								[#game.isAnalContentEnabled()]
+							]]></condition>
+							<id><![CDATA[PenisAnus_USING_PENIS_START]]></id>
+							<performer><![CDATA[fia]]></performer>
+							<target><![CDATA[fia_friend]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[
+								[#!game.isAnalContentEnabled()]
+							]]></condition>
+							<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START]]></id>
+							<performer><![CDATA[fia]]></performer>
+							<target><![CDATA[fia_friend]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="meet_fia_wait_after_sex">
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[这一对恋人已经爽够了……]]></tooltip>
+		<content folderPath="txt/places/dominion/sex_shop/factory">MEET_FIA_WAIT_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[等鼠男离开后再跟菲亚一起进入洛维耶纳奢侈品店。]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_meet_fia_enter</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="meet_fia_enter">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MEET_FIA_ENTER'))]
+			[#game.banishNPC(fia_friend)]
+			[#pc.setLocation(WORLD_TYPE_innoxia_dominion_sex_shop, PLACE_TYPE_innoxia_dominion_sex_shop_back_door)]
+			[#fia.setLocation(pc)]
+			[#saellatrix.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+			[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_DOLL_FACTORY, QUEST_DOLL_FACTORY_3))]
+			[#flags.setFlag(FLAG_innoxia_doll_factory_exterior_population_hidden, false)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[让菲亚随你一起探索洛维耶纳奢侈品店。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_sex_shop_back_door"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- First time entering factory: -->
+	
+	<scene id="elevator_entrance">
+		<content folderPath="txt/places/dominion/sex_shop/factory">ELEVATOR_ENTRANCE</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[准备]]></responseTitle>
+				<responseTooltip><![CDATA[去发现电梯门的另一侧是什么……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_elevator_entrance_end</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="elevator_entrance_end">
+		<content folderPath="txt/places/dominion/sex_shop/factory">ELEVATOR_ENTRANCE_END</content>
+		<secondsPassed minutes="true"><![CDATA[3]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type dialogues: -->
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_exit -->
+	<scene id="exit">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">EXIT</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.isDoll() && pc.isQuestProgressGreaterThan(QUEST_LINE_SIDE_DOLL_FACTORY, QUEST_DOLL_FACTORY_4)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[逃跑！]]></responseTitle>
+				<responseTooltip><![CDATA[使用电梯逃离工厂。]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_exit_escape</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="exit_escape">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+			[#fia.setLocation(pc)]
+			[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_DOLL_FACTORY, QUEST_DOLL_FACTORY_6))]
+			[#flags.setSavedLong('fia_factory_finished', game.getSecondsPassed())]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">EXIT_ESCAPE</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[你的任务完成了，现在的你只需要在几天后到莉莱雅宅邸的入口处报到即可。]]></responseTooltip>
+				<nextDialogue>default</nextDialogue>
+				<effects><![CDATA[
+					[#fia.returnToHome()]
+					[#fia.equipClothing()]
+					[#saellatrix.returnToHome()]
+					[#saellatrix.resetFactoryCharacters()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_storage_corridor -->
+	<scene id="storage_corridor">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">STORAGE_CORRIDOR</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_intro_triggered)]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_intro_triggered)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[躲藏]]></responseTitle>
+				<responseTooltip><![CDATA[跟菲亚一起躲在板条箱后面。]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_storage_corridor_hide</nextDialogue>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_dominion_sex_shop_factory_storage_crates)]
+					[#flags.setFlag(FLAG_innoxia_doll_factory_intro_triggered, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="storage_corridor_hide">
+		<content folderPath="txt/places/dominion/sex_shop/factory">STORAGE_CORRIDOR_HIDE</content>
+		<secondsPassed minutes="true"><![CDATA[3]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[跟菲亚探索地下工厂。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_sex_shop_factory_storage_crates"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'STORAGE_CORRIDOR_HIDE_END'))]
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_DOLL_FACTORY, QUEST_DOLL_FACTORY_4))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_storage_crates -->
+	<scene id="storage_crates">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">STORAGE_CRATES</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[翻找板条箱]]></responseTitle>
+				<responseTooltip><![CDATA[翻找那些没有锁好的板条箱，看看有什么能找到的……]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_dominion_sex_shop_factory_storage_crates_searched"/>
+				<effects><![CDATA[
+					[#pc.getCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_storage_crates_searched)]
+					#IF(pc.getLocation().getY()==7)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'STORAGE_CRATES_SEARCH_OIL'))]
+						[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_race_doll_silic_oil), 6, false, true))]
+						[#game.appendToTextEndStringBuilder(pc.addClothing(itemGen.generateClothing('norin_dildos_realistic_dildo', COLOUR_CLOTHING_PINK_HOT, false), 1, false, true))]
+					#ELSE
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'STORAGE_CRATES_SEARCH_FOX'))]
+						[#game.appendToTextEndStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_bdsm_muzzle', COLOUR_CLOTHING_SILVER, COLOUR_CLOTHING_ORANGE_DARK, COLOUR_CLOTHING_SILVER, false), 1, false, true))]
+						[#game.appendToTextEndStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_buttPlugs_butt_plug_tail', COLOUR_CLOTHING_ORANGE_DARK, COLOUR_CLOTHING_WHITE, COLOUR_CLOTHING_SILVER, false), 1, false, true))]
+						[#game.appendToTextEndStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_bdsm_blindfold', COLOUR_CLOTHING_ORANGE_DARK, COLOUR_CLOTHING_SILVER, COLOUR_CLOTHING_SILVER, false), 1, false, true))]
+					#ENDIF
+					[#game.appendToTextEndStringBuilder(fia.incrementAffection(pc, -2))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_storage_crates_searched -->
+	<scene id="storage_crates_searched">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">STORAGE_CRATES_SEARCHED</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_storage_dolls -->
+	<scene id="storage_dolls">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">STORAGE_DOLLS</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<scene id="storage_event">
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_doll_factory_encountered_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_vents_discovered_1))
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'STORAGE_VENT_DISCOVERY'))]
+			#ELSE
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'STORAGE_DOLLS'))]
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#flags.hasFlag(FLAG_innoxia_doll_factory_encountered_locked_door_1)
+			&& !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1)
+			&& !flags.hasFlag(FLAG_innoxia_doll_factory_vents_discovered_1)]
+		]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_encountered_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_vents_discovered_1)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[通风口]]></responseTitle>
+				<responseTooltip><![CDATA[撬开通风管道的盖子，看看能不能挤进去……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_storage_open_vent</nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_vents_discovered_1, true)]
+					[#game.getWorlds().get(WORLD_TYPE_innoxia_dominion_sex_shop_factory).getCell(8, 4).getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_vents)]
+					[#game.getWorlds().get(WORLD_TYPE_innoxia_dominion_sex_shop_factory).getCell(8, 6).getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_vents)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="storage_open_vent">
+		<content folderPath="txt/places/dominion/sex_shop/factory">STORAGE_VENT_OPENING</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_door_1 -->
+	<scene id="door_1">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_1'))]
+			#IF(saellatrix.isAnySisterPresent())
+				[#game.setParserTarget('sister', saellatrix.getSisterPresent())]
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_sister', 'SISTER_DEFEATED'))]
+			#ENDIF
+			[#flags.setFlag(FLAG_innoxia_doll_factory_encountered_locked_door_1, true)]
+			[#flags.setFlag(FLAG_innoxia_doll_factory_sister_talked, false)]
+			
+			#IF(flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_1))
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_1)]
+		]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_sex_shop_factory_sister_combat_won"> <!-- Succubus is present (copied from post-combat scene to get the Talk & Sex actions) -->
+			<!-- Approaching from factory side: -->
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_main_floor && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[解锁！]]></responseTitle>
+					<responseTooltip><![CDATA[你解锁了门！]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_door_1]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_1, true)]
+						[#pc.getCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_1_unlocked)]
+					]]></effects>
+				</response>
+			<!-- Door is locked: -->
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()!=PLACE_TYPE_innoxia_dominion_sex_shop_factory_main_floor && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_1)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[返回]]></responseTitle>
+					<responseTooltip><![CDATA[看来你得另想办法绕过这扇门……]]></responseTooltip>
+					<nextDialogue stripContent="true"><![CDATA[
+						[#pc.getLastCell().getDialogue(false).getId()]
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setLocation(pc.getLastCell())]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_1_BACK'))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()!=PLACE_TYPE_innoxia_dominion_sex_shop_factory_main_floor && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_1)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[撞破它]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)>=50)
+							使用蛮力来破坏这扇门！
+							<br/>[style.italicsCombat(如果你这样做，肯定会引起某人的警觉！)]
+						#ELSE
+							你没有足够的力气把门撞开……
+							<br/>[style.italicsMinorBad(需要你的[#ATTRIBUTE_MAJOR_PHYSIQUE.getName()]至少为50！)]
+						#ENDIF
+					]]></responseTooltip>
+					<colour><![CDATA[GENERIC_COMBAT]]></colour>
+					<nextDialogue><![CDATA[
+						#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)>=50)
+							innoxia_places_dominion_sex_shop_factory_door_1_break
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_broken_locked_door_1, true)]
+						[#pc.getCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_1_unlocked)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_1_BREAK'))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()!=PLACE_TYPE_innoxia_dominion_sex_shop_factory_main_floor && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_1) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_1)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[释放[#SPELL_SLAM.getName()]]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.hasSpell(SPELL_SLAM, true))
+							施放‘[#SPELL_SLAM.getName()]’法术来把门打开。
+							<br/>[style.italicsCombat(如果你这样做，肯定会引起某人的警觉！)]
+						#ELSE
+							你还没有学会‘[#SPELL_SLAM.getName()]’法术，所以你什么也干不了……
+						#ENDIF
+					]]></responseTooltip>
+					<colour><![CDATA[GENERIC_COMBAT]]></colour>
+					<nextDialogue><![CDATA[
+						#IF(pc.hasSpell(SPELL_SLAM, true))
+							innoxia_places_dominion_sex_shop_factory_door_1_break
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_broken_locked_door_1, true)]
+						[#pc.getCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_1_unlocked)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_1_SLAM'))]
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="door_1_break">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_1_BREAK_END'))]
+			#IF(saellatrix.isAnySistersAvailable())
+				[#saellatrix.generateSister()]
+				[#sister.setLocation(pc)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#saellatrix.isAnySisterPresent()]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#saellatrix.isAnySisterPresent()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[魅魔]]></responseTitle>
+				<responseTooltip><![CDATA[你不得不面对这个逼近的恶魔……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_door_1_break_succubus]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="door_1_break_succubus">
+		<content folderPath="txt/places/dominion/sex_shop/factory_sister">SISTER_INTRO</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					除了与魅魔战斗以外别无选择！
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_dominion_sex_shop_factory_sister_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_dominion_sex_shop_factory_sister_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies/>
+					<enemies>
+						<enemy leader="true"><![CDATA[sister]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[魅魔逼近了你，眼神里满是狂乱和渴求，你准备自卫！]]></combatant>
+						<combatant id="sister"><![CDATA[[sister.speech(主人会奖励我抓住你的！)]魅魔开心地欢呼着，[sister.speech(臣服于我！)]]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+				</combatVariables>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Ventilation ducts: -->
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_vents -->
+	<scene id="vents">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">VENTS</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Main factory area: -->
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_main_floor -->
+	<scene id="main_floor">
+		<preParsingEffects><![CDATA[
+			#IF(saellatrix.isAnySisterPresent())
+				[#game.setParserTarget('sister', saellatrix.getSisterPresent())]
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_sister', 'SISTER_DEFEATED'))]
+			#ENDIF
+			[#flags.setFlag(FLAG_innoxia_doll_factory_sister_talked, false)]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">MAIN_FLOOR</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_main_area_discovered)]]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_sex_shop_factory_sister_combat_won"> <!-- Succubus is present (copied from post-combat scene to get the Talk & Sex actions) -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_main_area_discovered)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[继续探索工厂……]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_main_area_discovered, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_main_floor_event -->
+	<scene id="main_floor_event">
+		<preParsingEffects><![CDATA[
+			#IF(pc.isDoll())
+				#IF(flags.hasFlag(FLAG_innoxia_doll_factory_vents_event_triggered_2))
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MAIN_FLOOR_VENT_LOCKED'))]
+				#ELSE
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MAIN_FLOOR'))]
+				#ENDIF
+			#ELSEIF(flags.hasFlag(FLAG_innoxia_doll_factory_vents_locked_2))
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MAIN_FLOOR_VENT_LOCKED'))]
+			#ELSEIF(flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_2))
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MAIN_FLOOR_VENT_DISCOVERY_REPEAT'))]
+			#ELSEIF(flags.hasFlag(FLAG_innoxia_doll_factory_encountered_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_vents_discovered_2))
+				#IF(!flags.hasFlag(FLAG_innoxia_doll_factory_vents_event_triggered_2))
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MAIN_FLOOR_VENT_DISCOVERY'))]
+				#ELSE
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MAIN_FLOOR_VENT_DISCOVERY_REPEAT'))]
+				#ENDIF
+			#ELSE
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'MAIN_FLOOR'))]
+			#ENDIF
+			[#flags.setFlag(FLAG_innoxia_doll_factory_sister_talked, false)]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!pc.isDoll() && flags.hasFlag(FLAG_innoxia_doll_factory_encountered_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_vents_event_triggered_2)]
+		]]></travelDisabled>
+		<responses> <!-- Succubus cannot be present here so no need to copy from post-combat scene to get the Talk & Sex actions -->
+			<!-- Vents are available: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!pc.isDoll() && flags.hasFlag(FLAG_innoxia_doll_factory_encountered_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_vents_discovered_2)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[打开]]></responseTitle>
+					<responseTooltip><![CDATA[撬开维修舱口，然后通过通道绕过锁着的门……]]></responseTooltip>
+					<nextDialogue>innoxia_places_dominion_sex_shop_factory_main_floor_event_open_cover</nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_vents_event_triggered_2, true)]
+						[#flags.setFlag(FLAG_innoxia_doll_factory_vents_discovered_2, true)]
+						[#game.getWorlds().get(WORLD_TYPE_innoxia_dominion_sex_shop_factory).getCell(2, 1).getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_vents_2)]
+						[#game.getWorlds().get(WORLD_TYPE_innoxia_dominion_sex_shop_factory).getCell(0, 3).getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_vents_2)]
+						[#game.appendToTextEndStringBuilder(fia.incrementLust(100, false))]
+						[#flags.setFlag(FLAG_innoxia_doll_factory_fia_horny, true)]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#!pc.isDoll() && flags.hasFlag(FLAG_innoxia_doll_factory_encountered_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_vents_discovered_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_vents_event_triggered_2)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[还不行]]></responseTitle>
+					<responseTooltip><![CDATA[告诉菲亚你想在前进到下一个区域前先完成对玩具工厂的探索……]]></responseTooltip>
+					<nextDialogue>innoxia_places_dominion_sex_shop_factory_main_floor_event_delay</nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_vents_event_triggered_2, true)]
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="main_floor_event_delay">
+		<content folderPath="txt/places/dominion/sex_shop/factory">MAIN_FLOOR_VENT_DELAY</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[false]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_sex_shop_factory_main_floor_event"/>
+	</scene>
+	
+	<scene id="main_floor_event_open_cover">
+		<content folderPath="txt/places/dominion/sex_shop/factory">MAIN_FLOOR_VENT_OPENING</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[先进入通道，这样可以绕过锁着的门……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_vents_2</nextDialogue>
+				<effects><![CDATA[
+					[#pc.walkPathNoEffects(-2, 0, false, 1)]
+					[#flags.setFlag(FLAG_innoxia_doll_factory_vents_locked_2, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_main_machines -->
+	<scene id="main_machines">
+		<preParsingEffects><![CDATA[
+			[#saellatrix.initFactoryMachineParsing()]
+			#IF(saellatrix.isAnySisterPresent())
+				[#game.setParserTarget('sister', saellatrix.getSisterPresent())]
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_sister', 'SISTER_DEFEATED'))]
+			#ENDIF
+			[#flags.setFlag(FLAG_innoxia_doll_factory_sister_talked, false)]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">MAIN_MACHINES</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_sex_shop_factory_sister_combat_won"/> <!-- Succubus is present (copied from post-combat scene to get the Talk & Sex actions) -->
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_vents_2 -->
+	<scene id="vents_2">
+		<preParsingEffects><![CDATA[
+			#IF(pc.getCellFromLocation(1, 0).getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_main_floor_event)
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'VENTS_2_LOCKED'))]
+			#ELSE
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'VENTS_2'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#pc.getCellFromLocation(1, 0).getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_main_floor_event]
+		]]></travelDisabled>
+		<responses>
+			<!-- Vents are locked: -->
+			<response>
+				<availabilityConditional><![CDATA[[#pc.getCellFromLocation(1, 0).getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_main_floor_event]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[你得掉头回到维修井道里去……]]></responseTooltip>
+				<nextDialogue><![CDATA[[#pc.getLastCell().getDialogue(false).getId()]]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'VENTS_2_LOCKED_BACK'))]
+					[#pc.setLocation(pc.getLastCell())]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_vents_2_event -->
+	<scene id="vents_2_event">
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny))
+				[#fia.unequipAllClothing(fia, false, true)]
+				[#fia.setLust(100)]
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'VENTS_2_EVENT'))]
+			#ELSE
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'VENTS_2'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny)]]]></travelDisabled>
+		<responses>
+			<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝菲亚，让她有时间整理自己的情绪……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_vents_2_event_refused_sex</nextDialogue>
+				<effects/>
+			</response>
+			<!-- Blowjob: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && (!pc.hasPenisIgnoreDildo() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[接受口交]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!pc.hasPenisIgnoreDildo())
+							你没有阴茎，所以你不能接受口交……
+						#ELSE
+							你的阴茎目前被限制了，所以不能接受口交……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue>null</nextDialogue>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+					<requiredFetishes>
+						<fetish><![CDATA[FETISH_ORAL_RECEIVING]]></fetish>
+					</requiredFetishes>
+					<corruptionLevel><![CDATA[ONE_VANILLA]]></corruptionLevel>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[接受口交]]></responseTitle>
+					<responseTooltip><![CDATA[让菲亚吸你的鸡巴……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_fia_vents_blowjob]]></id>
+						<startingPosition><![CDATA[STANDING]]></startingPosition>
+						<dominants>
+							<character>
+								<id>fia</id>
+								<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_vents_2_event_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">VENTS_2_EVENT_BLOWJOB</sexStartContent>
+						<ongoingActionsAtStart>
+							<action>
+								<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START]]></id>
+								<performer><![CDATA[fia]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						</ongoingActionsAtStart>
+					</sexVariablesWithManager>
+				</response>
+			<!-- Cunnilingus: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && (!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[接受舔阴]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!pc.hasVagina())
+							你没有阴道，所以你不能接受舔阴……
+						#ELSE
+							你的小穴目前被限制了，所以你不能接受舔阴……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue>null</nextDialogue>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+					<requiredFetishes>
+						<fetish><![CDATA[FETISH_ORAL_RECEIVING]]></fetish>
+					</requiredFetishes>
+					<corruptionLevel><![CDATA[ONE_VANILLA]]></corruptionLevel>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[接受舔阴]]></responseTitle>
+					<responseTooltip><![CDATA[让菲亚把你吃掉……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_fia_vents_cunnilingus]]></id>
+						<startingPosition><![CDATA[STANDING]]></startingPosition>
+						<dominants>
+							<character>
+								<id>fia</id>
+								<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_vents_2_event_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">VENTS_2_EVENT_CUNNILINGUS</sexStartContent>
+						<ongoingActionsAtStart>
+							<action>
+								<id><![CDATA[TongueVagina_CUNNILINGUS_START]]></id>
+								<performer><![CDATA[fia]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						</ongoingActionsAtStart>
+					</sexVariablesWithManager>
+				</response>
+			<!-- Titjob: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && (!pc.hasPenisIgnoreDildo() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[接受乳交]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!pc.hasPenisIgnoreDildo())
+							你没有阴茎，所以你不能接受乳交……
+						#ELSE
+							你的阴茎目前被限制了，所以不能接受乳交……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue>null</nextDialogue>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+					<requiredFetishes>
+						<fetish><![CDATA[FETISH_BREASTS_OTHERS]]></fetish>
+					</requiredFetishes>
+					<corruptionLevel><![CDATA[ONE_VANILLA]]></corruptionLevel>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[接受乳交]]></responseTitle>
+					<responseTooltip><![CDATA[让菲亚给你的鸡巴来一个大保健……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_fia_vents_titjob]]></id>
+						<startingPosition><![CDATA[STANDING]]></startingPosition>
+						<dominants>
+							<character>
+								<id>fia</id>
+								<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_vents_2_event_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">VENTS_2_EVENT_TITJOB</sexStartContent>
+						<ongoingActionsAtStart>
+							<action>
+								<id><![CDATA[PenisBreasts_USING_COCK_START]]></id>
+								<performer><![CDATA[fia]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						</ongoingActionsAtStart>
+					</sexVariablesWithManager>
+				</response>
+			<!-- Anal: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && game.isAnalContentEnabled() && (!pc.hasPenisIgnoreDildo() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[肛交]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!pc.hasPenisIgnoreDildo())
+							你没有阴茎，所以你不能操菲亚的后穴……
+						#ELSE
+							你的阴茎目前被限制了，所以你不能操菲亚的后穴……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue>null</nextDialogue>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && game.isAnalContentEnabled() && pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+					<requiredFetishes>
+						<fetish><![CDATA[FETISH_ANAL_GIVING]]></fetish>
+					</requiredFetishes>
+					<corruptionLevel><![CDATA[TWO_HORNY]]></corruptionLevel>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[肛交]]></responseTitle>
+					<responseTooltip><![CDATA[操菲亚的后穴……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_fia_vents_anal]]></id>
+						<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+						<dominants>
+							<character>
+								<id>fia</id>
+								<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_vents_2_event_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">VENTS_2_EVENT_ANAL</sexStartContent>
+						<ongoingActionsAtStart>
+							<action>
+								<id><![CDATA[PenisAnus_USING_PENIS_START]]></id>
+								<performer><![CDATA[fia]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						</ongoingActionsAtStart>
+					</sexVariablesWithManager>
+				</response>
+			<!-- Anilingus: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && game.isAnalContentEnabled() && !pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[吻肛]]></responseTitle>
+					<responseTooltip><![CDATA[
+						你无法使用你的嘴，因此无法对菲亚吻肛……
+					]]></responseTooltip>
+					<nextDialogue>null</nextDialogue>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_fia_horny) && game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+					<requiredFetishes>
+						<fetish><![CDATA[FETISH_ANAL_GIVING]]></fetish>
+						<fetish><![CDATA[FETISH_ORAL_GIVING]]></fetish>
+					</requiredFetishes>
+					<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[吻肛]]></responseTitle>
+					<responseTooltip><![CDATA[对菲亚吻肛……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_fia_vents_anilingus]]></id>
+						<startingPosition><![CDATA[STANDING]]></startingPosition>
+						<dominants>
+							<character>
+								<id>fia</id>
+								<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[STANDING_PERFORMING_ORAL_BEHIND]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_vents_2_event_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">VENTS_2_EVENT_ANILINGUS</sexStartContent>
+						<ongoingActionsAtStart>
+							<action>
+								<id><![CDATA[TongueAnus_RECEIVING_ANILINGUS_START]]></id>
+								<performer><![CDATA[fia]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						</ongoingActionsAtStart>
+					</sexVariablesWithManager>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="vents_2_event_refused_sex">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_doll_factory_fia_horny, false)]
+			[#fia.setLust(0)]
+			[#fia.equipClothing()]
+			[#fia.equipMainWeaponFromNowhere(itemGen.generateWeapon('innoxia_utility_flashlight'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">VENTS_2_EVENT_NO_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[既然菲亚的性欲已经被处理，你们俩可以继续上路了……]]></responseTooltip>
+				<nextDialogue>default</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'VENTS_2_EVENT_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="vents_2_event_after_sex">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_doll_factory_fia_horny, false)]
+			[#fia.setLust(0)]
+			[#fia.equipClothing()]
+			[#fia.equipMainWeaponFromNowhere(itemGen.generateWeapon('innoxia_utility_flashlight'))]
+		]]></preParsingEffects>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[菲亚已经被满足了……]]></tooltip>
+		<content folderPath="txt/places/dominion/sex_shop/factory">VENTS_2_EVENT_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_sex_shop_factory_vents_2_event_refused_sex"/>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_door_2 -->
+	<scene id="door_2">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_2'))]
+			#IF(saellatrix.isAnySisterPresent())
+				[#game.setParserTarget('sister', saellatrix.getSisterPresent())]
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_sister', 'SISTER_DEFEATED'))]
+			#ENDIF
+			[#flags.setFlag(FLAG_innoxia_doll_factory_encountered_locked_door_2, true)]
+			[#flags.setFlag(FLAG_innoxia_doll_factory_sister_talked, false)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_2)]
+		]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_sex_shop_factory_sister_combat_won"> <!-- Succubus is present (copied from post-combat scene to get the Talk & Sex actions) -->
+			<!-- Approaching from milking chamber side: -->
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_slime_milking && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_2)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[解锁！]]></responseTitle>
+					<responseTooltip><![CDATA[你解锁了门！]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_door_2]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_2, true)]
+						[#pc.getCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_2_unlocked)]
+					]]></effects>
+				</response>
+			<!-- Door is locked: -->
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()!=PLACE_TYPE_innoxia_dominion_sex_shop_factory_slime_milking && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_2)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[返回]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.isDoll())
+							你现在得去找到菲亚，而不是返回玩偶转化室！
+						#ELSE
+							看来你得另想办法绕过这扇门…… 
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue stripContent="true"><![CDATA[
+						[#pc.getLastCell().getDialogue(false).getId()]
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setLocation(pc.getLastCell())]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_2_BACK'))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()!=PLACE_TYPE_innoxia_dominion_sex_shop_factory_slime_milking && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_2)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[撞破它]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.isDoll())
+							你的新身体太虚弱了，无法破坏这扇坚固的门！
+						#ELSEIF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)>=80)
+							使用你的蛮力来破坏这扇门！
+							<br/>[style.italicsCombat(如果你这样做，肯定会引起某人的警觉！)]
+						#ELSE
+							你没有足够的力气把门撞开……
+							<br/>[style.italicsMinorBad(需要你的[#ATTRIBUTE_MAJOR_PHYSIQUE.getName()]至少为80！)]
+						#ENDIF
+					]]></responseTooltip>
+					<colour><![CDATA[GENERIC_COMBAT]]></colour>
+					<nextDialogue><![CDATA[
+						#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)>=80 && !pc.isDoll())
+							innoxia_places_dominion_sex_shop_factory_door_2_break
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_broken_locked_door_2, true)]
+						[#pc.getCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_2_unlocked)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_2_BREAK'))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.getLastCell().getPlaceType()!=PLACE_TYPE_innoxia_dominion_sex_shop_factory_slime_milking && !flags.hasFlag(FLAG_innoxia_doll_factory_broken_locked_door_2) && !flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_2)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[释放[#SPELL_SLAM.getName()] ([#SPELL_UPGRADE_SLAM_2.getName()])]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.isDoll())
+							你的新身体没有任何奥术灵气，你无法施展法术！
+						#ELSEIF(!pc.hasSpell(SPELL_SLAM, true))
+							你还没有学会‘[#SPELL_SLAM.getName()]’法术，所以你什么也干不了……
+						#ELSEIF(!pc.hasSpellUpgrade(SPELL_UPGRADE_SLAM_2))
+							单靠‘[#SPELL_SLAM.getName()]’法术并不能将门打开。你需要对法术进行‘[#SPELL_UPGRADE_SLAM_2.getName()]’升级。
+						#ELSE
+							对这扇门释放‘[#SPELL_SLAM.getName()]’法术，将其轰开！
+							<br/>[style.italicsCombat(如果你这样做，肯定会引起某人的警觉！)]
+						#ENDIF
+					]]></responseTooltip>
+					<colour><![CDATA[GENERIC_COMBAT]]></colour>
+					<nextDialogue><![CDATA[
+						#IF(pc.hasSpell(SPELL_SLAM, true) && pc.hasSpellUpgrade(SPELL_UPGRADE_SLAM_2) && !pc.isDoll())
+							innoxia_places_dominion_sex_shop_factory_door_2_break
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_broken_locked_door_2, true)]
+						[#pc.getCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_2_unlocked)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_2_SLAM'))]
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="door_2_break">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_2_BREAK_END'))]
+			#IF(saellatrix.isAnySistersAvailable())
+				[#saellatrix.generateSister()]
+				[#sister.setLocation(pc)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#saellatrix.isAnySisterPresent()]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#saellatrix.isAnySisterPresent()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[魅魔]]></responseTitle>
+				<responseTooltip><![CDATA[你不得不面对这个逼近的恶魔……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_door_2_break_succubus]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="door_2_break_succubus">
+		<content folderPath="txt/places/dominion/sex_shop/factory_sister">SISTER_INTRO</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					除了与魅魔战斗以外别无选择！
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_dominion_sex_shop_factory_sister_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_dominion_sex_shop_factory_sister_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies/>
+					<enemies>
+						<enemy leader="true"><![CDATA[sister]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[魅魔逼近了你，眼神里满是狂乱和渴求，你准备自卫！]]></combatant>
+						<combatant id="sister"><![CDATA[[sister.speech(主人会奖励我抓住你的！)]魅魔开心地欢呼着，[sister.speech(臣服于我！)]]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+				</combatVariables>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Slime milking: -->
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_slime_milking -->
+	<scene id="slime_milking">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLIME_MILKING</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_doll_factory_slimes_discovered) || (pc.isDoll() && (pc.getCellFromLocation(1, 0).getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_2 || pc.getCellFromLocation(1, 0).getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_2_unlocked))]
+		]]></travelDisabled>
+		<responses>
+			<!-- Doll: -->
+			<response>
+				<availabilityConditional><![CDATA[[#pc.isDoll() && !flags.hasFlag(FLAG_innoxia_doll_factory_slimes_discovered)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[继续走……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLIME_MILKING_DOLL_CONTINUE'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.isDoll() && flags.hasFlag(FLAG_innoxia_doll_factory_slimes_discovered) && (pc.getCellFromLocation(1, 0).getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_2 || pc.getCellFromLocation(1, 0).getPlaceType()==PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_2_unlocked)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[深入工厂]]></responseTitle>
+				<responseTooltip><![CDATA[在安吉莉克丝发现你之前，迅速冲进门，躲进工厂里！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_bad_end_factory_hide]]></nextDialogue>
+			</response>
+			<!-- Normal: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_slimes_discovered) && !pc.isDoll()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[调查]]></responseTitle>
+				<responseTooltip><![CDATA[仔细观察史莱姆……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_slime_milking_first_visit]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="slime_milking_first_visit">
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLIME_MILKING_FIRST_VISIT</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[继续探索工厂……]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_slimes_discovered, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_slime_milking_sleip_nir -->
+	<scene id="slime_milking_sleip_nir">
+		<preParsingEffects><![CDATA[
+			#IF(!pc.isDoll())
+				[#sleip.setLocation(pc)]
+				[#sleip.setPlayerKnowsName(true)]
+				[#nir.setLocation(pc)]
+				[#nir.setPlayerKnowsName(true)]
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLEIP_NIR_INTRO'))]
+			#ELSE
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLIME_MILKING'))]
+			#ENDIF
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_sleip_nir_seen) && !pc.isDoll()]]]></travelDisabled>
+		<responses>
+			<!-- First time: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_sleip_nir_seen) && !pc.isDoll()]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[等待]]></responseTitle>
+					<responseTooltip><![CDATA[在你的藏身之处等待，直到斯雷普和尼尔分神……]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_slime_milking_sleip_nir_hide]]></nextDialogue>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_sleip_nir_seen) && !pc.isDoll()]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[对抗他们]]></responseTitle>
+					<responseTooltip><![CDATA[在斯雷普和尼尔利用史莱姆之前阻止他们！]]></responseTooltip>
+					<colour><![CDATA[GENERIC_COMBAT]]></colour>
+					<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_slime_milking_sleip_nir_confront]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLEIP_NIR_CONFRONT_IMMEDIATE'))]
+					]]></effects>
+				</response>
+			<!-- Repeat: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_sleip_nir_defeated) && flags.hasFlag(FLAG_innoxia_doll_factory_sleip_nir_seen) && !pc.isDoll()]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[对抗他们]]></responseTitle>
+					<responseTooltip><![CDATA[与斯雷普和尼尔直面对峙，避免他们利用史莱姆！]]></responseTooltip>
+					<colour><![CDATA[GENERIC_COMBAT]]></colour>
+					<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_slime_milking_sleip_nir_confront]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLEIP_NIR_CONFRONT'))]
+					]]></effects>
+				</response>
+			<!-- Defeated them: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_sleip_nir_defeated) && !pc.isDoll()]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[用他们爽一爽]]></responseTitle>
+					<responseTooltip><![CDATA[趁此机会操了斯雷普和尼尔……]]></responseTooltip>
+					<nextDialogue/>
+					<effects><![CDATA[
+						#IF(fia.getAffection(pc)>=-15)
+							[#game.appendToTextEndStringBuilder(fia.incrementAffection(pc, -5))]
+						#ELSEIF(fia.getAffection(pc)>-20)
+							[#game.appendToTextEndStringBuilder(fia.setAffection(pc, -20))]
+						#ENDIF
+					]]></effects>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_sleip_nir_sex]]></id>
+						<startingPosition><![CDATA[STANDING]]></startingPosition>
+						<dominants>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>sleip</id>
+								<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+							</character>
+							<character>
+								<id>nir</id>
+								<slot><![CDATA[STANDING_PERFORMING_ORAL_TWO]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_SEX_START</sexStartContent>
+						<ongoingActionsAtStart/>
+					</sexVariablesWithManager>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="slime_milking_sleip_nir_hide">
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_HIDE</content>
+		<secondsPassed minutes="true"><![CDATA[3]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_sleip_nir_seen)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[趁着斯雷普和尼尔分神，你可以轻松潜行而过……]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_sleip_nir_seen, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="slime_milking_sleip_nir_confront">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[3]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[抵御这些愤怒梦魇的进攻！]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_sleip_nir_seen, true)]
+				]]></effects>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies/>
+					<enemies>
+						<enemy leader="true"><![CDATA[sleip]]></enemy>
+						<enemy leader="false"><![CDATA[nir]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[梦魇奔袭而来，你准备自卫！]]></combatant>
+						<combatant id="sleip"><![CDATA[[sleip.speech(我会给你点颜色看看，贱人！)]斯雷普怒吼着。]]></combatant>
+						<combatant id="nir"><![CDATA[[nir.speech(你完了！)]尼尔愤怒地喊着。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+				</combatVariables>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sleip_nir_combat_won">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_doll_factory_sleip_nir_defeated, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_COMBAT_WON</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[锁上]]></responseTitle>
+				<responseTooltip><![CDATA[锁上梦魇脖子上的金属项圈。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_combat_won_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sleip_nir_combat_won_end">
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_COMBAT_WON_END</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="default"/>
+	</scene>
+	
+	<scene id="sleip_nir_after_sex">
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[你已经爽够了，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_SEX_END</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[你玩够了，决定继续上路……]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sleip_nir_combat_lost">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_doll_factory_fia_in_hiding, true)]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLEIP_NIR_COMBAT_LOST'))]
+			[#game.addSavedInventory(pc)]
+			[#pc.resetInventory(true, true)]
+			#IF(!game.isNonConEnabled() || !sleip.isAttractedTo(pc))
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLEIP_NIR_COLLARED'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- No non-con: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!game.isNonConEnabled() || !sleip.isAttractedTo(pc)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[
+						#IF(pc.isTaur())
+							保持移动
+						#ELSE
+							爬行……
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.isTaur())
+							以你现在的状态，只得踩着碎步在梦魇之前，被他们赶进工厂深处……
+						#ELSE
+							以你现在的状态，只得在梦魇身边爬行，让她带着你到工厂的深处……
+						#ENDIF
+				]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_travel]]></nextDialogue>
+					<effects/>
+				</response>
+			<!-- Non-con: -->
+				<response>
+					<availabilityConditional><![CDATA[[#game.isNonConEnabled() && sleip.isAttractedTo(pc)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[挨操]]></responseTitle>
+					<responseTooltip><![CDATA[当斯雷普和尼尔来报复时，你再也无力招架……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_sleip_nir_submissive_sex]]></id>
+						<startingPosition><![CDATA[
+							#IF(pc.hasVagina() || game.isAnalContentEnabled())
+								LYING_DOWN
+							#ELSE
+								STANDING
+							#ENDIF
+						]]></startingPosition>
+						<dominants>
+							<character>
+								<id>sleip</id>
+								<slot><![CDATA[
+									#IF(pc.hasVagina() || game.isAnalContentEnabled())
+										LYING_DOWN_LYING_DOWN
+									#ELSE
+										STANDING_STANDING_DOMINANT
+									#ENDIF
+								]]></slot>
+							</character>
+							<character>
+								<id>nir</id>
+								<slot><![CDATA[
+									#IF(pc.hasVagina() || game.isAnalContentEnabled())
+										LYING_DOWN_MISSIONARY
+									#ELSE
+										STANDING_STANDING_DOMINANT_TWO
+									#ENDIF
+								]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[
+									#IF(pc.hasVagina() || game.isAnalContentEnabled())
+										LYING_DOWN_COWGIRL
+									#ELSE
+										STANDING_PERFORMING_ORAL
+									#ENDIF
+								]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_after_submissive_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_SUBMISSIVE_SEX_START</sexStartContent>
+						<ongoingActionsAtStart>
+							<!-- Vaginal: -->
+								<action>
+									<condition><![CDATA[[#pc.hasVagina()]]]></condition>
+									<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+									<performer><![CDATA[sleip]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+								<action>
+									<condition><![CDATA[[#pc.hasVagina()]]]></condition>
+									<id><![CDATA[PenisVagina_PENIS_FUCKING_START_ADDITIONAL]]></id>
+									<performer><![CDATA[nir]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+							<!-- Anal: -->
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+									<performer><![CDATA[sleip]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[PenisAnus_PENIS_FUCKING_START_ADDITIONAL]]></id>
+									<performer><![CDATA[nir]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+							<!-- Oral: -->
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && !game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+									<performer><![CDATA[sleip]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && !game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[FingerPenis_COCK_MASTURBATED_START]]></id>
+									<performer><![CDATA[nir]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+						</ongoingActionsAtStart>
+					</sexVariablesWithManager>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#game.isNonConEnabled() && sleip.isAttractedTo(pc)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[抵抗]]></responseTitle>
+					<responseTooltip><![CDATA[当斯雷普和尼尔来报复时，你竭尽全力招架……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_sex_shop_factory_sleip_nir_submissive_sex_resist]]></id>
+						<startingPosition><![CDATA[
+							#IF(pc.hasVagina() || game.isAnalContentEnabled())
+								LYING_DOWN
+							#ELSE
+								STANDING
+							#ENDIF
+						]]></startingPosition>
+						<dominants>
+							<character>
+								<id>sleip</id>
+								<slot><![CDATA[
+									#IF(pc.hasVagina() || game.isAnalContentEnabled())
+										LYING_DOWN_LYING_DOWN
+									#ELSE
+										STANDING_STANDING_DOMINANT
+									#ENDIF
+								]]></slot>
+							</character>
+							<character>
+								<id>nir</id>
+								<slot><![CDATA[
+									#IF(pc.hasVagina() || game.isAnalContentEnabled())
+										LYING_DOWN_MISSIONARY
+									#ELSE
+										STANDING_STANDING_DOMINANT_TWO
+									#ENDIF
+								]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[
+									#IF(pc.hasVagina() || game.isAnalContentEnabled())
+										LYING_DOWN_COWGIRL
+									#ELSE
+										STANDING_PERFORMING_ORAL
+									#ENDIF
+								]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_after_submissive_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_SUBMISSIVE_SEX_START_RESIST</sexStartContent>
+						<ongoingActionsAtStart>
+							<!-- Vaginal: -->
+								<action>
+									<condition><![CDATA[[#pc.hasVagina()]]]></condition>
+									<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+									<performer><![CDATA[sleip]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+								<action>
+									<condition><![CDATA[[#pc.hasVagina()]]]></condition>
+									<id><![CDATA[PenisVagina_PENIS_FUCKING_START_ADDITIONAL]]></id>
+									<performer><![CDATA[nir]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+							<!-- Anal: -->
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+									<performer><![CDATA[sleip]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[PenisAnus_PENIS_FUCKING_START_ADDITIONAL]]></id>
+									<performer><![CDATA[nir]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+							<!-- Oral: -->
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && !game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+									<performer><![CDATA[sleip]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+								<action>
+									<condition><![CDATA[[#!pc.hasVagina() && !game.isAnalContentEnabled()]]]></condition>
+									<id><![CDATA[FingerPenis_COCK_MASTURBATED_START]]></id>
+									<performer><![CDATA[nir]]></performer>
+									<target><![CDATA[pc]]></target>
+									<showDescription><![CDATA[false]]></showDescription>
+									<showEffects><![CDATA[true]]></showEffects>
+								</action>
+						</ongoingActionsAtStart>
+					</sexVariablesWithManager>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="sleip_nir_after_submissive_sex">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'SLEIP_NIR_COLLARED'))]
+		]]></preParsingEffects>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[梦魇们爽够了，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_SUBMISSIVE_SEX_END</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isTaur())
+						保持移动
+					#ELSE
+						爬行……
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isTaur())
+						以你现在的状态，只得踩着碎步在梦魇之前，被他们赶进工厂深处……
+					#ELSE
+						以你现在的状态，只得在梦魇身边爬行，让她带着你到工厂的深处……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_sleip_nir_travel]]></nextDialogue>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sleip_nir_travel">
+		<preParsingEffects><![CDATA[
+			[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_dominion_sex_shop_factory_door_3, false, 1)]
+			[#saellatrix.resetFactoryCharacters()]
+			[#sleip.setLocation(pc)]
+			[#nir.setLocation(pc)]
+			[#angelixx.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">SLEIP_NIR_TRAVEL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被抓住]]></responseTitle>
+				<responseTooltip><![CDATA[你被安吉莉克丝和她的儿子们抓住了，现在只能任由她们摆布……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_sex_shop_factory_bad_end_start]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_door_3 -->
+	<scene id="door_3">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">DOOR_3</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#pc.isQuestProgressLessThan(QUEST_LINE_SIDE_DOLL_FACTORY, QUEST_DOLL_FACTORY_5) && !pc.isDoll()]]]></travelDisabled>
+		<responses>
+			<!-- Locked: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_3) && !pc.isDoll()]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[返回]]></responseTitle>
+					<responseTooltip><![CDATA[看来你得另想办法绕过这扇门……]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						[#pc.getLastCell().getDialogue(false).getId()]
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setLocation(pc.getLastCell())]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOOR_3_BACK'))]
+					]]></effects>
+				</response>
+			<!-- Unlocked: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_3) && pc.isQuestProgressLessThan(QUEST_LINE_SIDE_DOLL_FACTORY, QUEST_DOLL_FACTORY_5) && !pc.isDoll()]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[继续]]></responseTitle>
+					<responseTooltip><![CDATA[继续向前，看看这个诡异的走廊通向何处……]]></responseTooltip>
+					<nextDialogue>innoxia_places_dominion_sex_shop_factory_doll_machine_discovery</nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_doll_factory_seen_dollification_machine, true)]
+						[#pc.setNearestLocation(PLACE_TYPE_innoxia_dominion_sex_shop_factory_doll_machine)]
+						[#angelixx.setLocation(pc)]
+						[#saellatrix.setLocation(pc)]
+						[#pc.getCell().getInventory().addItem(itemGen.generateItem(ITEM_DOLL_CONSOLE))]
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<!-- Corridor linking slime chamber to doll machine: -->
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_corridor -->
+	<scene id="corridor">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">CORRIDOR</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Final area: -->
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_cages -->
+	<scene id="cages">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">CAGES</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_3) && !pc.isDoll()]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_3) && !pc.isDoll()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[搜寻]]></responseTitle>
+				<responseTooltip><![CDATA[帮助菲亚搜索这个地区，寻找被绑架难民的蛛丝马迹……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_cages_search</nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_unlocked_locked_door_3, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="cages_search">
+		<content folderPath="txt/places/dominion/sex_shop/factory">CAGES_SEARCH</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[文件]]></responseTitle>
+				<responseTooltip><![CDATA[浏览一下文件夹……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_cages_search_final</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="cages_search_final">
+		<content folderPath="txt/places/dominion/sex_shop/factory">CAGES_SEARCH_FINAL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[现在剩下的就是找到玩具工厂了……]]></responseTooltip>
+				<nextDialogue>default</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- TODO -->
+	
+	<!-- Place type id: innoxia_dominion_sex_shop_factory_doll_machine -->
+	<scene id="doll_machine_discovery">
+		<content folderPath="txt/places/dominion/sex_shop/factory">DOLL_MACHINE_DISCOVERY</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[听]]></responseTitle>
+				<responseTooltip><![CDATA[继续听姐妹们的争吵……]]></responseTooltip>
+				<nextDialogue>innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_2</nextDialogue>
+				<effects><![CDATA[
+					[#angelixx.returnToHome()]
+					[#saellatrix.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="doll_machine_discovery_2">
+		<content folderPath="txt/places/dominion/sex_shop/factory">DOLL_MACHINE_DISCOVERY_2</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[搜索机器]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_doll_factory_search_machines))
+						你已经搜索了这个机器……
+					#ELSE
+						在机器四周寻找赛拉特里克斯参与这次非法玩偶化的实物证据……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_doll_factory_search_machines))
+						null
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_doll_factory_search_table) && flags.hasFlag(FLAG_innoxia_doll_factory_search_desk))
+						innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_3
+					#ELSE
+						innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_2_search
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_search_machines, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOLL_MACHINE_DISCOVERY_2_SEARCH_MACHINES'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[搜索桌子]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_doll_factory_search_table))
+						你已经搜索了房间中央的桌子……
+					#ELSE
+						在房间中央的桌子上寻找赛拉特里克斯参与这次非法玩偶化的实物证据……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_doll_factory_search_table))
+						null
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_doll_factory_search_desk) && flags.hasFlag(FLAG_innoxia_doll_factory_search_machines))
+						innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_3
+					#ELSE
+						innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_2_search
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_search_table, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOLL_MACHINE_DISCOVERY_2_SEARCH_TABLE'))]
+					[#game.appendToTextEndStringBuilder(game.getBookEffect(SUBSPECIES_DOLL, false))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[搜索办公桌]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_doll_factory_search_desk))
+						你已经搜索了办公桌……
+					#ELSE
+						在房间里唯一的一张办公桌上寻找赛拉特里克斯参与这次非法玩偶化的实物证据……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_doll_factory_search_desk))
+						null
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_doll_factory_search_table) && flags.hasFlag(FLAG_innoxia_doll_factory_search_machines))
+						innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_3
+					#ELSE
+						innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_2_search
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_doll_factory_search_desk, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory', 'DOLL_MACHINE_DISCOVERY_2_SEARCH_DESK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="doll_machine_discovery_2_search">
+		<content/>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_sex_shop_factory_doll_machine_discovery_2"/>
+	</scene>
+	
+	<scene id="doll_machine_discovery_3">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_DOLL_FACTORY, QUEST_DOLL_FACTORY_5))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">DOLL_MACHINE_DISCOVERY_3</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="default"/>
+	</scene>
+	
+	<scene id="doll_machine">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/sex_shop/factory_bad_end', 'PLAYER_OBEDIENCE_POSTFIX'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/sex_shop/factory">DOLL_MACHINE</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+</dialogueNodes>

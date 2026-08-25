@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<fluid>
+	<race>NoStepOnSnek_snake</race>
+	<transformationName><![CDATA[蛇]]></transformationName>
+	<baseFluidType>CUM</baseFluidType>
+	<flavour>CUM</flavour>
+	<namesMasculine>
+		<name><![CDATA[蛇]]></name>
+	</namesMasculine>
+	<namesFeminine>
+		<name><![CDATA[蛇]]></name>
+	</namesFeminine>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<defaultFluidModifiers>
+		<modifier>STICKY</modifier>
+		<modifier>SLIMY</modifier>
+	</defaultFluidModifiers>
+</fluid>

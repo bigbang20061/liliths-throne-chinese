@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>750</value> 
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[佩普罗斯长袍]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[佩普罗斯长袍]]></namePlural>
+		<description><![CDATA[这是一种长款服装，由一块长方形的布料组成，腰部围起然后用别针别在肩膀上。裙子的上半部分被折叠下来，看起来就像是第二件衣物。]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>peplos.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO_STOMACH_VISIBLE"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_MONICA</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>DRESS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]将佩普罗斯长袍围在[npc.her]的腰间，然后将上边的边缘折叠到[npc.her]的肩膀上并别在那里。]]></self>
+		<other><![CDATA[[npc.Name]将佩普罗斯长袍围在[npc2.namePos]的腰间，然后将上边的边缘折叠到[npc2.her]的肩膀上并别在那里。]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地将佩普罗斯长袍围在[npc2.namePos]的腰间，然后将上边的边缘折叠到[npc2.her]的肩膀上并别在那里。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]取下了佩普罗斯长袍的固定，并将它脱下。]]></self>
+		<other><![CDATA[[npc.Name]取下了[npc2.namePos]的佩普罗斯长袍的固定，并将它脱下。]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地扯下了[npc2.namePos]的佩普罗斯长袍的固定，并将它脱下。]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]佩普罗斯长袍的裙子下摆放到正确的位置。]]></self>
+		<other><![CDATA[
+		[npc.Name]将[npc2.namePos]佩普罗斯长袍的裙子下摆放到正确的位置。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地将[npc2.namePos]佩普罗斯长袍的裙摆拉回原位。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]拉起[npc.her]佩普罗斯长袍的裙子。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]佩普罗斯长袍的裙子拉起。]]></other>
+		<otherRough><![CDATA[[npc.Name]抓住[npc2.namePos]佩普罗斯长袍的裙子，并粗暴地拉起来。]]></otherRough>
+	</displacementText>
+
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[
+[npc.Name]取下了佩普罗斯长袍的固定，并让佩普罗斯长袍的上半部分耷拉到[npc.her]的腰部。]]></self>
+		<other><![CDATA[
+[npc.Name]取下了[npc2.namePos]佩普罗斯长袍的固定，并让佩普罗斯长袍的上半部分耷拉到[npc2.her]的腰部。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拽下了[npc2.namePos]佩普罗斯长袍的固定，并将佩普罗斯长袍的上半部分拽到[npc2.her]的腰部。]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[[npc.Name]将[npc.her]佩普罗斯长袍的上半部分拉起并固定到[npc.her]的肩膀上。]]></self>
+		<other><![CDATA[
+		[npc.Name]掀起[npc2.namePos]的佩普罗斯长袍的上半部分，固定到[npc2.her]的肩膀上。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地掀起[npc2.namePos]的佩普罗斯长袍的上半部分，固定到[npc2.her]的肩膀上。
+		]]></otherRough>
+	</replacementText>
+
+	
+</clothing>

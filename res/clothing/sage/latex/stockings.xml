@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>150</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[乳胶长袜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[乳胶长袜]]></namePlural>
+		<description><![CDATA[一双乳胶过膝长袜。由闪亮的乳胶制成，让人无法想象。]]></description>
+		<physicalResistance>1</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>SOCK</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet>  
+		<imageName>stockings.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED</colour>
+			<colour>CLOTHING_PURPLE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚塞进乳胶长袜中，然后将它们拉到大腿中间。
+]]></self>
+    <other><![CDATA[
+[npc.Name]给[npc2.namePos]的[npc2.feet]套上乳胶长袜，然后将它们拉到[npc2.her]的大腿中部。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进乳胶长袜中，然后用力将它们拉到[npc2.her]的大腿中部。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下[npc.her]的乳胶踩脚袜。]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的乳胶长袜脱下。]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的乳胶长袜并粗暴地扯下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

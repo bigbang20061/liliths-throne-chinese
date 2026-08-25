@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<subspecies>
+	<race>NoStepOnSnek_capybara</race>
+	<colour>NoStepOnSnek_capybara</colour>
+	<secondaryColour>NoStepOnSnek_capybara</secondaryColour>
+	<tertiaryColour>NoStepOnSnek_capybara</tertiaryColour>
+	<mainSubspecies>true</mainSubspecies>
+	<baseSlaveValue>10000</baseSlaveValue>
+	<attributeItemId>NoStepOnSnek_race_capybara_tea2go</attributeItemId>
+	<transformativeItemId>NoStepOnSnek_race_capybara_brownie</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<nocturnality>CREPUSCULAR</nocturnality>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>true</bipedalSubspecies>
+	<applySubspeciesChanges/>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_NoStepOnSnek_capybara)
+			100
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="80">capybara</iconName>
+	<backgroundName>background</backgroundName>
+	<bookIconName>capybara</bookIconName>
+	<bookName><![CDATA[从容友谊的化身]]></bookName>
+	<basicDescriptionId>CAPYBARA_BASIC</basicDescriptionId>
+	<advancedDescriptionId>CAPYBARA_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<nameAnthro>
+		<namesDefault>
+			<name><![CDATA[水豚化形]]></name>
+			<namePlural><![CDATA[水豚化形]]></namePlural>
+			<singularMaleName><![CDATA[水豚男]]></singularMaleName>
+			<singularFemaleName><![CDATA[水豚女]]></singularFemaleName>
+			<pluralMaleName><![CDATA[水豚男]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[水豚女]]></pluralFemaleName>
+		</namesDefault>
+	</nameAnthro>
+	<description><![CDATA[一种人形的水豚，两足行走时被称为“水豚化形”，而下半身是典型的超大兽态水豚时，则被称为“半水豚人”。]]></description>
+	<nameHalfDemon>
+		<namesDefault>
+			<name><![CDATA[恶魔水豚]]></name>
+			<namePlural><![CDATA[恶魔水豚]]></namePlural>
+			<singularMaleName><![CDATA[恶魔水豚男]]></singularMaleName>
+			<singularFemaleName><![CDATA[恶魔水豚女]]></singularFemaleName>
+			<pluralMaleName><![CDATA[恶魔水豚男]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[恶魔水豚女]]></pluralFemaleName>
+		</namesDefault>
+	</nameHalfDemon>
+	<feralAttributes>
+		<feralName><![CDATA[水豚]]></feralName>
+		<feralNamePlural><![CDATA[水豚]]></feralNamePlural>
+		<feralSingularMaleName><![CDATA[水豚]]></feralSingularMaleName>
+		<feralSingularFemaleName><![CDATA[水豚]]></feralSingularFemaleName>
+		<feralPluralMaleName><![CDATA[水豚]]></feralPluralMaleName>
+		<feralPluralFemaleName><![CDATA[水豚]]></feralPluralFemaleName>
+		<legConfiguration>QUADRUPEDAL</legConfiguration>
+		<sizeHeight>true</sizeHeight>
+		<size>50</size>
+		<breastRowCount>0</breastRowCount>
+		<nipplesPerBreastCount>1</nipplesPerBreastCount>
+		<crotchBreastRowCount>5</crotchBreastRowCount>
+		<nipplesPerCrotchBreastCount>1</nipplesPerCrotchBreastCount>
+		<armsOrWingsPresent>false</armsOrWingsPresent>
+		<fingerActionsAvailable>false</fingerActionsAvailable>
+		<hairPresent>false</hairPresent>
+	</feralAttributes>
+	<statusEffectDescription><![CDATA[
+		[npc.NamePos]水豚般的身体使[npc.herHim]倾向于宁静，从而有更好地奥术专注力，更容易处理性欲。
+	]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="0">MAJOR_PHYSIQUE</attribute>
+		<attribute value="10">MAJOR_ARCANE</attribute> 
+		<attribute value="5">RESISTANCE_LUST</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="0" feminineWeighting="0">PHYSICAL</category>
+		<category masculineWeighting="1" feminineWeighting="1">LUST</category>
+		<category masculineWeighting="5" feminineWeighting="5">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="THREE_UNCOMMON">JUNGLE</region>
+		<region rarity="ONE_VERY_RARE">RIVER</region>
+		<region rarity="THREE_UNCOMMON">JUNGLE_CITY</region>
+		<region rarity="ONE_VERY_RARE">DOMINION</region>
+	</regionLocations>
+	<worldLocations/>
+	<flags/>
+</subspecies>

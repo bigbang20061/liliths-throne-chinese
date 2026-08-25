@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>40</value> 
+		<determiner><![CDATA[一杯]]></determiner>
+		<name><![CDATA[浆果松饼]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[浆果松饼]]></namePlural>
+		<description><![CDATA[一个小塑料杯，里面装着一碗看起来美味的浆果松饼。盖子的黑色背景上有一对白色条纹，从罐子侧面的描述可以推断，这款甜点是面向獾化形宣传的。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/badger/subspecies/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">badger_berry_trifle.svg</imageName> <!-- Thanks to DSG for making this svg! -->
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>innoxia_badger</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[獾]]></potionDescriptor>
+		<associatedRace>innoxia_badger</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加健康……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]揭开浆果松饼盖上的薄膜，然后开始吃其中的水果、奶油和蛋奶糊。这种巧妙的莓果组合使这款甜点绝对美味，不一会儿，[npc.herHim]就把整个杯子里的食物吃光了。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]揭开浆果松饼盖上的薄膜，然后将它呈现给[npc2.name]，并让[npc2.herHim]吃其中的水果、奶油和蛋奶糊。这种巧妙的莓果组合使这款甜点非常美味，不一会儿，[npc2.name]就把整个杯子里的食物吃光了。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

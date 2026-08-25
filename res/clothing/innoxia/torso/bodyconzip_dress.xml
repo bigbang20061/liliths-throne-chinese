@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>500</value> 
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[前拉链连衣裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[前拉链连衣裙]]></namePlural>
+		<description><![CDATA[一条紧身连衣裙，前胸从上到下由一条拉链贯穿，很修身。]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>bodyconzip_dress.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>UNZIPS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_DRESS_FRONT_FULL"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>DRESS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]穿上前拉链连衣裙并拉上拉链。]]></self>
+		<other><![CDATA[
+			[npc.Name]引导[npc2.name]穿上前拉链连衣裙，并帮[npc2.herHim]拉上拉链。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.name]塞进前拉链连衣裙里，然后帮[npc2.herHim]拉上拉链。
+	]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]完全拉开[npc.her]的前拉链连衣裙并脱下它。]]></self>
+		<other><![CDATA[
+			[npc.Name]完全拉开[npc2.namePos]的前拉链连衣裙并将其脱下。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]匆忙拉开[npc2.namePos]前拉链连衣裙并粗暴地将其拽下。
+		]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+			[npc.Name]将前拉链连衣裙的下摆拉回正确的位置。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]前拉链连衣裙的下摆拉回正确的位置。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]前拉链连衣裙的下摆拉回正确位置。
+	]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[[npc.Name]拉起[npc.her]前拉链连衣裙的下摆。]]></self>
+		<other><![CDATA[
+			[npc.Name]拉起[npc2.namePos]前拉链连衣裙的下摆。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]前拉链连衣裙的下摆，粗暴地拉了起来。
+]]></otherRough>
+	</displacementText>
+
+	<displacementText type="UNZIPS">
+		<self><![CDATA[[npc.Name]完全拉下[npc.her]裙子胸前的拉链。]]></self>
+		<other><![CDATA[
+			[npc.Name]完全拉开[npc2.namePos]连衣裙胸前的拉链。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地拉开[npc2.namePos]连衣裙胸前的拉链。
+	]]></otherRough>
+	</displacementText>
+
+	<replacementText type="UNZIPS">
+		<self><![CDATA[
+			[npc.Name]拉上了连衣裙前面的拉链。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]拉上了[npc2.namePos]连衣裙前面的拉链。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地拉上了[npc2.namePos]连衣裙前面的拉链。
+]]></otherRough>
+	</replacementText>
+	
+</clothing>

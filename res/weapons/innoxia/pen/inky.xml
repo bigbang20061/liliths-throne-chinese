@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>100000</value>
+		<melee>true</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[​]]></determiner>
+		<name appendDamageName="false"><![CDATA[墨墨的钢笔]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[墨墨的钢笔]]></namePlural>
+		<description><![CDATA[这支外观奇特的钢笔带有极其强大的附魔。如果先将笔帽拧转三圈再拔下，就能对持有者的敌人释放出一个只知道名字叫“墨墨”的奥术实体……]]></description>
+		<attackDescriptor><![CDATA[戳]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用你的钢笔戳向[npc2.name]。]]></attackTooltipDescription>
+		<rarity>LEGENDARY</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]拿出墨墨的钢笔，准备将其用于战斗。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]收起了墨墨的钢笔。]]></unequipText>
+		<imageName>inky.svg</imageName> 
+		<imageEquippedName/>
+		<damage>1</damage> 
+		<arcaneCost>0</arcaneCost> 
+		<damageVariance>LOW</damageVariance> 
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		<spells/>
+		<combatMoves>
+			<move>INKY_SUMMON</move>
+		</combatMoves>
+		<effects/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_BRASS</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<customColours>
+			<customColour c0="#6C5353" c1="#916F6F" c2="#AC9393" c3="#C8B7B7" c4="#E3DBDB">
+				<defaultColours>
+					<colour>CLOTHING_BRASS</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]用钢笔刺向[npc2.name]，虽然它击中了[npc2.her]的身体，但是并没有造成任何伤害……
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]用钢笔刺向[npc2.name]，但没能命中……
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

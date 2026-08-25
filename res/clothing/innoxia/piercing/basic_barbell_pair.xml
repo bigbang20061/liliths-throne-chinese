@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>120</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[基础细杆穿钉]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[基础细杆穿钉]]></namePlural>
+		<description><![CDATA[每个基本的杆状耳环都由一根金属圆柱体组成，两端都有可拧下的球形物。它们可以穿过已穿孔的乳头或“工业”耳环。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		  <slot>PIERCING_NIPPLE</slot>
+		  <slot>PIERCING_EAR</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>basic_barbell_pair.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList slot="PIERCING_NIPPLE">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<blockedPartsList slot="PIERCING_EAR">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="PIERCING_NIPPLE"/>
+		<incompatibleSlots slot="PIERCING_EAR"/>
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将穿钉戴在[npc.her]的乳头穿孔。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将穿钉戴在[npc2.namePos]的乳头穿孔里。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将穿钉插入[npc2.namePos]的乳头穿孔里。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的细杆穿钉从[npc.her]的乳头穿孔上取下。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]将[npc2.namePos]的穿钉从[npc2.her]的乳头穿孔中取下。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把[npc2.namePos]的穿钉从[npc2.her]的乳头穿孔中取下。
+]]></otherRough>
+  </displacementText>
+
+  <replacementText slot="PIERCING_EAR" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将穿钉戴在[npc.her][npc.ear]上的工业穿孔。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将穿钉戴在[npc2.namePos]的[npc2.ear]的工业穿孔。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将细杆穿钉插入[npc2.namePos][npc2.ear]的工业穿孔。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="PIERCING_EAR" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的穿钉从[npc.her][npc.ear]的工业穿孔上取下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的穿钉从[npc2.her]的[npc2.ear]的工业穿孔中取下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的穿钉从[npc2.her]的[npc2.ear]的工业穿孔中拔出。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

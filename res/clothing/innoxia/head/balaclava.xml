@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>180</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[巴拉克拉瓦头套]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[巴拉克拉瓦头套]]></namePlural>
+		<description><![CDATA[一种几乎覆盖住佩戴者整个头部的头套，只留下一个水平的缝隙，让他们的眼睛暴露出来。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HAIR</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>balaclava.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>MOUTH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots>
+					<slot>PIERCING_NOSE</slot>
+					<slot>PIERCING_LIP</slot>
+					<slot>PIERCING_TONGUE</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_GREY_DARK</colour>
+			
+			<colour>CLOTHING_GREEN_VERY_DARK</colour>
+			<colour>CLOTHING_BLUE_NAVY</colour>
+			<colour>CLOTHING_KHAKI</colour>
+			<colour>CLOTHING_GREEN_DRAB</colour>
+			<colour>CLOTHING_OLIVE</colour>
+			<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>IGNORE_HAIR_RESTRICTION</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将面罩拉下，盖在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]拉下头套，盖在[npc2.namePos]头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将头套拉下，盖在[npc2.namePos]头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]拉下头套，盖在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]摘下[npc2.namePos]的头套。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地将[npc2.namePos]的面罩扯掉。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

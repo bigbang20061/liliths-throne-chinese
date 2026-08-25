@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="ENSLAVEMENT_SUCCESS_COLLAR"><![CDATA[
+	<p>
+		你把项圈提到[npc.namePos]的脖子上，看到项圈前面的环开始发出绿光：这毫无疑问表明它把你的[npc.daughter]当成了一个潜在的奴役目标。你看到绿光，准备完成捕获奴隶的预备工作。随着金属撞击发出“叮”的一声，你将项圈扣在了[npc.namePos]的脖子上。
+	</p>
+	<p>
+		项圈的奥术附魔识别出新的佩戴者是犯罪分子，金属带投射出不祥的紫色字母，写道：
+	</p>
+	<p style='text-align:center;'>
+		[style.italicsArcane(奴隶注册。
+			<br/>身份：[npc.nameFull(true)]
+			<br/>种族：[npc.Race])]
+	</p>
+	<p>
+		#IF(npc.isMute())
+			[npc.name]终于意识到发生了什么。[npc.her]抬起头来看着你，[npc.eyes]里充满了恐惧，发出几不可闻的呜咽声。
+		#ELSE
+			[npc.name]终于意识到发生了什么。[npc.her]抬起头来看着你，[npc.eyes]里充满了恐惧，惊呼道，[npc.speech(等等，[npc.pcName]，那不会是奴隶项圈吧？)]
+		#ENDIF
+	</p>
+	<p>
+		你对着[npc.daughter]笑了笑，来不及做出更多回应。因为随着一道亮紫色的闪光，[npc.she]瞬间便从视线中消失了。[npc.sheIs]被传送走的那一瞬间，你看到的是她震惊于你的背叛的愤怒表情。你已经想象到下次见到[npc.herHim]时[npc.she]会有多生气。
+	</p>
+	<p>
+		你听过芬奇的指导，知道<b>[npc.sheHas]被传送到奴隶巷的“奴隶行政管理”大楼</b>，[npc.she]会在那等你来接[npc.herHim]。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENSLAVEMENT_SUCCESS"><![CDATA[
+	<p>
+		当你将[#SPECIAL_PARSE_0]伸向[npc.name]时，你手上的[#SPECIAL_PARSE_1]正在发出有规律地嗡嗡声。这也代表着你的[npc.daughter]正在被检测为可行地奴役对象。你决定将工作完成下去，并迅速强迫[npc.name]配合你的工作。
+	</p>
+	<p>
+		这个东西上的奥术附魔识别出新的装备者是犯罪分子，于是投射出不祥的紫色字母，写道：
+	</p>
+	<p style='text-align:center;'>
+		[style.italicsArcane(奴隶注册。
+			<br/>身份： [npc.nameFull(true)]
+			<br/>种族： [npc.Race])]
+	</p>
+	<p>
+		#IF(npc.isMute())
+			[npc.name]终于意识到发生了什么，她抬起头来看着你，[npc.her][npc.eyes]里充满了恐惧，并发出一声几乎听不见的呜咽。
+		#ELSE
+			[npc.name]终于意识到发生了什么，她抬起头来看着你，[npc.her][npc.eyes]里充满了恐惧，惊呼道，[npc.speech(等等，[npc.pcName]！那是奴役我的装备么？不要！求你放过我！！)]
+		#ENDIF
+	</p>
+	<p>
+		你对着[npc.daughter]笑了笑，来不及做出更多回应。因为随着一道亮紫色的闪光，[npc.she]瞬间便从视线中消失了。[npc.sheIs]被传送走的那一瞬间，你看到的是她震惊于你的背叛的愤怒表情。你已经想象到下次见到[npc.herHim]时[npc.she]会有多生气。
+	</p>
+	<p>
+		你听过芬奇的指导，知道<b>[npc.sheHas]被传送到奴隶巷的“奴隶行政管理”大楼</b>，[npc.she]会在那等你来接[npc.herHim]。
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_ALREADY_SLAVE"><![CDATA[
+	<p>
+		你用一只[pc.hand]拿着[#SPECIAL_PARSE_0]，然后向[npc.name]靠了过去。当[npc.she]看到你要做什么时，[npc.she]发出了一声叹息，然后说道：[npc.speech(如果你想奴役我，那是行不通的……我已经是奴隶了……)]
+	</p>
+	<p>
+		你无视[npc.her]的警告，强行将衣服穿到了[npc.name]的身上，然后退后一步，等待观察是否会发生什么。然而，正如[npc.her]所言，[#SPECIAL_PARSE_0]的奥术魔法识别出[npc.name]已经是一名奴隶，这一点可以从投射到空中的绿色发光字体上得到证明，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.boldGreen(奴隶已注册！)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_NOT_WANTED_DEMON"><![CDATA[
+	<p>
+		你一只[pc.hand]拿着[#SPECIAL_PARSE_0]，向[npc.name]靠过去。[npc.she]看到你的举动，冷笑了两声，嘲笑道：[npc.speech(你想奴役我的话，那可是行不通的！可没有哪个执法者敢在恶魔的奴役令上签字！)]
+	</p>
+	<p>
+		你无视[npc.her]的警告，强行将衣服穿到[npc.name]身上，退后一步静静观察。然而，正如[npc.her]所言，[#SPECIAL_PARSE_0]的奥术附魔鉴定出[npc.name]并不是罪犯。空中投射出发光的红色字体：
+	</p>
+	<p style='text-align:center;'>
+		[style.italicsBad(无法奴役该目标！)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_NOT_WANTED"><![CDATA[
+	<p>
+		你用一只[pc.hand]拿着[#SPECIAL_PARSE_0]，然后向[npc.name]靠了过去。当[npc.she]看到你要做什么时，[npc.she]冷笑了一声，然后嘲笑道：[npc.speech(你想奴役我的话，那可是行不通的！我可没有被执法者通缉！)]
+	</p>
+	<p>
+		你无视[npc.her]的警告，强行将衣服穿到了[npc.name]的身上，然后退后一步，等待观察是否会发生什么。然而，正如[npc.her]所言，[#SPECIAL_PARSE_0]的奥术魔法识别出[npc.name]已经是一名奴隶，这一点可以从投射到空中的红色发光字体上得到证明，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.italicsBad(不被通缉的奴役目标！)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_NO_LICENSE"><![CDATA[
+	<p>
+		你用一只[pc.hand]拿着[#SPECIAL_PARSE_0]，向[npc.race]走了一步。强行给[npc.herHim]穿上衣服，你后退一步，低头看到一张充满恐惧的脸。尽管[npc.sheIs]是通缉犯，[#SPECIAL_PARSE_0]的奥术魔法识别出你事实上并没有贩奴许可，这一点可以从投射到空气中的红色发光字看出，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.italicsBad(持有人无效！需要贩奴许可！<br/>
+		请联系最近的执法者，告知他们此目标是通缉犯！)]
+	</p>
+	<p>
+		[npc.race]松了一口气，因为[npc.she]意识到自己避免了被奴役的后果。你不想浪费时间去寻找另一个可以对付[npc.race]的执法者，当你退后一步并思考下一步该怎么做时，忍不住发出失望的声音……
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

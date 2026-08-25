@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<leg>
+	<race>NoStepOnSnek_snake</race>
+	<transformationName><![CDATA[蛇]]></transformationName>
+	<coveringType>SNAKE_SCALES</coveringType>
+	<defaultFootStructure>PLANTIGRADE</defaultFootStructure>
+	<footType>REPTILIAN</footType>
+	<spinneret>false</spinneret>
+	<tentacleType>NONE</tentacleType>
+	<tentacleCount>0</tentacleCount>
+	<allowedLegConfigurations>
+		<configuration>TAIL_LONG</configuration>
+		<configuration>BIPEDAL</configuration>
+	</allowedLegConfigurations>
+	<name><![CDATA[腿]]></name>
+	<namePlural><![CDATA[腿]]></namePlural>
+	<descriptorsMasculine>
+		<descriptor><![CDATA[男性]]></descriptor>
+		<descriptor><![CDATA[有鳞]]></descriptor>
+		<descriptor><![CDATA[爬行动物般拟人]]></descriptor>
+		<descriptor><![CDATA[覆盖鳞片]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[有鳞]]></descriptor>
+		<descriptor><![CDATA[爬行动物般拟人]]></descriptor>
+		<descriptor><![CDATA[覆盖鳞片]]></descriptor>
+	</descriptorsFeminine>
+	<footDescriptorsMasculine>
+		<descriptor><![CDATA[爬虫类]]></descriptor>
+	</footDescriptorsMasculine>
+	<footDescriptorsFeminine>
+		<descriptor><![CDATA[爬虫类]]></descriptor>
+	</footDescriptorsFeminine>
+	<toeDescriptorsMasculine>
+		<descriptor><![CDATA[爬虫类]]></descriptor>
+	</toeDescriptorsMasculine>
+	<toeDescriptorsFeminine>
+		<descriptor><![CDATA[爬虫类]]></descriptor>
+	</toeDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		[npc.her]的双腿转化成了新的形式，一层爬行动物鳞片迅速覆盖了上去。[npc.her]的新鳞片覆盖到了其脚趾的末端，[npc.her]的脚趾甲变粗成了锐利的爪子，鳞片从脚底板长出，将脚完全变成爬行动物的形状。转变完成时，[npc.she]看到鳞片自然过渡成了覆盖到大腿上部的[npc.skin]。
+	<br/>[npc.Name]现在拥有似人非人的[style.boldSnake(爬行动物一般的腿和脚)]，[npc.materialDescriptor][npc.legFullDescription]。
+]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.Her]的腿[npc.materialCompositionDescriptor][npc.legFullDescription(true)]，脚却变成了拟人的爬行动物的脚，指爪锋利。
+	]]></bodyDescription>
+</leg>

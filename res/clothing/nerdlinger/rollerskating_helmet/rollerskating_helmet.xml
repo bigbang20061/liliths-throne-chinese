@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+	<authorTag><![CDATA[一个标签隐秘地印在内部，上面写着：“友好邻里公司助你安全游戏。”]]></authorTag>
+		<value>650</value>
+		<determiner><![CDATA[一顶]]></determiner>
+		<name><![CDATA[轮滑头盔]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[轮滑头盔]]></namePlural>
+		<description><![CDATA[一款低调轻便的头盔，由坚固的塑料外壳、吸震泡沫填充和吸汗内衬组成。]]></description>
+		<physicalResistance>3.0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>rollerskating_helmet.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="ALL"/> 
+		<tertiaryColoursDye values="ALL"/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	
+</clothing>

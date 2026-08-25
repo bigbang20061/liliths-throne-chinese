@@ -1,0 +1,970 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- ELIS SCENES: -->
+	
+    <!-- Place type id: innoxia_fields_elis_town_abandoned_bakery -->
+	<scene id="exterior">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">EXTERIOR</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[探索]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(ENCOUNTER_innoxia_elis_alleyway.isAnyEncounterAvailable())
+						你花了些时间探索周围的小巷寻找感兴趣的东西。
+					#ELSE
+						你觉得在周围的小巷里找不到任何感兴趣的东西，所以没有浪费时间去探索……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(ENCOUNTER_innoxia_elis_alleyway.isAnyEncounterAvailable())
+						defaultForceEncounter
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	
+	<!-- ENFORCER MISSION SCENES: -->
+	
+	<scene id="mission_start">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_START</content>
+		<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[准备就绪]]></responseTitle>
+				<responseTooltip><![CDATA[等待锤子和幽灵穿好装备。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_mission_start_geared_up</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="mission_start_geared_up">
+		<preParsingEffects><![CDATA[
+			[#hammer.equipOpsGear()]
+			[#ghost.equipOpsGear()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_START_GEARED_UP</content>
+		<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Talk: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[武器]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_weapons))
+						你已经问过了锤子和幽灵他们带的什么武器……
+					#ELSE
+						问锤子和幽灵他们带的什么武器。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_weapons))
+						null
+					#ELSE
+						innoxia_places_fields_elis_abandoned_bakery_mission_start_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'MISSION_START_TALK_WEAPONS'))]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_talk_weapons, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[帮派人力]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_gang))
+						你已经问过了锤子和幽灵在帮派藏身处会遇到什么……
+					#ELSE
+						你问锤子和幽灵会在帮派藏身处遇到什么。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_gang))
+						null
+					#ELSE
+						innoxia_places_fields_elis_abandoned_bakery_mission_start_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'MISSION_START_TALK_GANG'))]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_talk_gang, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[后援]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_backup))
+						你已经问过了锤子和幽灵他们是否会请求其他SWORD执法者后援……
+					#ELSE
+						问锤子和幽灵他们是否会请求其他SWORD执法者后援。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_backup))
+						null
+					#ELSE
+						innoxia_places_fields_elis_abandoned_bakery_mission_start_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'MISSION_START_TALK_BACKUP'))]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_talk_backup, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[魅魔]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_succubus))
+						你已经问过了锤子和幽灵当你们遇到安吉莉克丝时有什么计划……
+					#ELSE
+						问锤子和幽灵当你们遇到安吉莉克丝时有什么计划。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_succubus))
+						null
+					#ELSE
+						innoxia_places_fields_elis_abandoned_bakery_mission_start_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'MISSION_START_TALK_SUCCUBUS'))]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_talk_succubus, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[SWORD]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_history))
+						你已经问过了锤子和幽灵关于SWORD的事了……
+					#ELSE
+						问锤子和幽灵在SWORD是什么感觉。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_talk_history))
+						null
+					#ELSE
+						innoxia_places_fields_elis_abandoned_bakery_mission_start_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'MISSION_START_TALK_HISTORY'))]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_talk_history, true)]
+				]]></effects>
+			</response>
+			
+			<!-- Proceed: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[开始]]></responseTitle>
+				<responseTooltip><![CDATA[与锤子和幽灵一起等待帮派会议开始然后开始行动。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_mission_start_wait</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="mission_start_talk">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(hammer.incrementAffection(pc, 2))]
+			[#game.appendToTextEndStringBuilder(ghost.incrementAffection(pc, 2))]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_abandoned_bakery_mission_start_geared_up"/>
+	</scene>
+	
+	<scene id="mission_start_wait">
+		<preParsingEffects><![CDATA[
+			[#hammer.equipOpsGearHead()]
+			[#ghost.equipOpsGearHead()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_START_WAIT</content>
+		<secondsPassed minutes="true"><![CDATA[
+			[#~~(game.getMinutesUntilTimeInMinutes(1430))]
+		]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[锤子]]></responseTitle>
+				<responseTooltip><![CDATA[决定和锤子从正门进入建筑。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_mission_start_hammer</nextDialogue>
+				<effects><![CDATA[
+					[#hammer.resetBarricade()]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_chose_hammer, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[幽灵]]></responseTitle>
+				<responseTooltip><![CDATA[决定和幽灵从后门进入建筑。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_mission_start_ghost</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+
+	<scene id="mission_start_hammer">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_START_HAMMER</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[跟随锤子进入面包店。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_abandoned_bakery_f0_exit"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f0, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f0_exit)]
+					[#hammer.setLocation(pc)]
+					[#flags.setFlag(FLAG_innoxia_hammer_following, true)]
+					[#ghost.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f0, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f0_back_door)]
+					[#ghost.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f0_kitchen)]
+					[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberGhost1')]
+					[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberGhost2')]
+					[#gangMemberGhost1.setLocation(ghost, true)]
+					[#gangMemberGhost2.setLocation(ghost, true)]
+					[#angelixx.setDefeatedName(gangMemberGhost1, true)]
+					[#angelixx.setDefeatedName(gangMemberGhost2, false)]
+					
+					[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberGhost3')]
+					[#gangMemberGhost3.setBody(GENDER_M_P_MALE, SUBSPECIES_ALLIGATOR_MORPH, RACE_STAGE_GREATER, true)]
+					[#gangMemberGhost3.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f0, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f0_back_door, true)]
+					[#angelixx.setDefeatedName(gangMemberGhost3, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="mission_start_ghost">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_START_GHOST</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[跟随幽灵进入面包店。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_abandoned_bakery_f0_back_door"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f0, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f0_back_door)]
+					[#ghost.setLocation(pc)]
+					[#flags.setFlag(FLAG_innoxia_ghost_following, true)]
+					[#hammer.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f0, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f0_shop_floor)]
+					[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberHammer1')]
+					[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberHammer2')]
+					[#gangMemberHammer1.setLocation(hammer, true)]
+					[#gangMemberHammer2.setLocation(hammer, true)]
+					[#angelixx.setDefeatedName(gangMemberHammer1, true)]
+					[#angelixx.setDefeatedName(gangMemberHammer2, false)]
+					
+					[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberHammer3')]
+					[#gangMemberHammer3.setBody(GENDER_M_P_MALE, SUBSPECIES_CAT_MORPH, RACE_STAGE_GREATER, true)]
+					[#gangMemberHammer3.setLocation(hammer)]
+					[#angelixx.setDefeatedName(gangMemberHammer3, false)]
+					
+					[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberGhost3')]
+					[#gangMemberGhost3.setBody(GENDER_M_P_MALE, SUBSPECIES_ALLIGATOR_MORPH, RACE_STAGE_GREATER, true)]
+					[#gangMemberGhost3.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f0, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f0_back_door, true)]
+					[#angelixx.setDefeatedName(gangMemberGhost3, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="mission_combat_won">
+		<preParsingEffects><![CDATA[
+			[#angelixx.setDefeatedNamesPostCombat()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_COMBAT_WON</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					跟着
+					#IF(flags.hasFlag(FLAG_innoxia_hammer_following))
+						锤子
+						#IF(flags.hasFlag(FLAG_innoxia_ghost_following))
+						和幽灵
+						#ENDIF
+					#ELSE
+						幽灵
+					#ENDIF
+					继续清理黑帮的藏身之处。
+				]]></responseTooltip>
+				<nextDialogue>default</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- This scene really should be impossible to encounter... -->
+	<scene id="mission_combat_lost">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_sword_mission_fought, false)]
+			[#angelixx.setDefeatedNamesPostCombat()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_COMBAT_LOST</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_abandoned_bakery_mission_combat_won"/>
+	</scene>
+	
+	
+	
+	<!-- GROUND FLOOR SCENES: -->
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f0_back_door -->
+	<scene id="back_door">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BACK_DOOR</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_back_door) && !flags.hasFlag(FLAG_innoxia_hammer_following)]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_back_door) && !flags.hasFlag(FLAG_innoxia_hammer_following)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟随幽灵进入破败的面包店。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_abandoned_bakery_f0_back_door"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_back_door, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_fields_elis_abandoned_bakery_f0_kitchen -->
+	<scene id="kitchen">
+		<preParsingEffects><![CDATA[
+			#IF(!flags.hasFlag(FLAG_innoxia_sword_mission_kitchen) && !flags.hasFlag(FLAG_innoxia_hammer_following))
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember1')]
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember2')]
+				[#angelixx.initGangMember(gangMember1, true)]
+				[#angelixx.initGangMember(gangMember2, false)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">KITCHEN</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#(!flags.hasFlag(FLAG_innoxia_sword_mission_kitchen) && !flags.hasFlag(FLAG_innoxia_hammer_following)) || (flags.hasFlag(FLAG_innoxia_hammer_following) && !flags.hasFlag(FLAG_innoxia_ghost_following))]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_kitchen) && !flags.hasFlag(FLAG_innoxia_hammer_following)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					加入幽灵和帮派成员战斗。
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_kitchen, true)]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_fought, true)]
+				]]></effects>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_fields_elis_abandoned_bakery_mission_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_fields_elis_abandoned_bakery_mission_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies companionsAreAllies="true">
+						<ally><![CDATA[ghost]]></ally>
+					</allies>
+					<enemies>
+						<enemy leader="true"><![CDATA[gangMember1]]></enemy>
+						<enemy leader="false"><![CDATA[gangMember2]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[你决定帮助幽灵，与帮派成员战斗。]]></combatant>
+						<combatant id="ghost"><![CDATA[[ghost.speech(我能自己解决，)][ghost.race]说，然后笑着补充道，[ghost.speech(但我想这样会快一些。)]]]></combatant>
+						<combatant id="gangMember1"><![CDATA[[gangMember1.speech(你他妈是谁？！)]帮派成员说道。]]></combatant>
+						<combatant id="gangMember2"><![CDATA[[gangMember2.speech(他们看起来很严肃！)]第二个帮派成员呼叫[gangMember2.her]的同伙。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+					<submitBlocked><![CDATA[true]]></submitBlocked>
+				</combatVariables>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_kitchen) && !flags.hasFlag(FLAG_innoxia_hammer_following)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[后退]]></responseTitle>
+				<responseTooltip><![CDATA[按照幽灵说的做，在她解决那些帮派成员的时候待在后面。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_kitchen, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'KITCHEN_NO_FIGHT'))]
+				]]></effects>
+			</response>
+			<!-- Linking up with Ghost: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_hammer_following) && !flags.hasFlag(FLAG_innoxia_ghost_following)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[现在你已经和幽灵联系上了，你们三人需要继续前往破败的面包店一楼。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_ghost_following, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_fields_elis_abandoned_bakery_f0_barricade -->
+	<scene id="barricade">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BARRICADE</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[现在没时间拆除路障，回去寻找其他的路。]]></responseTooltip>
+				<nextDialogue><![CDATA[[#pc.getLastCell().getDialogue(false).getId()]]]></nextDialogue>
+				<secondsPassed><![CDATA[30]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(pc.getLastCell())]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_fields_elis_abandoned_bakery_f0_door -->
+	<scene id="door">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">DOOR</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+    <!-- Place type id: innoxia_fields_elis_abandoned_bakery_f0_shop_floor -->
+	<scene id="shop_floor">
+		<preParsingEffects><![CDATA[
+			#IF(!flags.hasFlag(FLAG_innoxia_sword_mission_shop_floor) && !flags.hasFlag(FLAG_innoxia_ghost_following))
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember1')]
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember2')]
+				[#angelixx.initGangMember(gangMember1, true)]
+				[#angelixx.initGangMember(gangMember2, false)]
+				
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMemberHammer3')]
+				[#gangMemberHammer3.setBody(GENDER_M_P_MALE, SUBSPECIES_CAT_MORPH, RACE_STAGE_GREATER, true)]
+				[#gangMemberHammer3.setLocation(pc, true)]
+				[#gangMemberHammer3.setGenericName('瘫倒在地的猫男')]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">SHOP_FLOOR</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#(!flags.hasFlag(FLAG_innoxia_sword_mission_shop_floor) && !flags.hasFlag(FLAG_innoxia_ghost_following)) || (!flags.hasFlag(FLAG_innoxia_hammer_following) && game.getCharactersPresent().contains(hammer))]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_shop_floor) && !flags.hasFlag(FLAG_innoxia_ghost_following)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					加入锤子和帮派成员战斗。
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_shop_floor, true)]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_fought, true)]
+				]]></effects>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_fields_elis_abandoned_bakery_mission_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_fields_elis_abandoned_bakery_mission_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies companionsAreAllies="true">
+						<ally><![CDATA[hammer]]></ally>
+					</allies>
+					<enemies>
+						<enemy leader="true"><![CDATA[gangMember1]]></enemy>
+						<enemy leader="false"><![CDATA[gangMember2]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[你决定为锤子提供支援，帮助他与黑帮成员作战。]]></combatant>
+						<combatant id="hammer"><![CDATA[[hammer.speech(让我们速战速决，)]锤子哼了一声，然后用霰弹枪指向敌人。]]></combatant>
+						<combatant id="gangMember1"><![CDATA[[gangMember1.speech(你他妈是谁？！)]帮派成员说道。]]></combatant>
+						<combatant id="gangMember2"><![CDATA[[gangMember2.speech(他们看起来很严肃！)]第二个帮派成员呼叫[gangMember2.her]的同伙。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+					<submitBlocked><![CDATA[true]]></submitBlocked>
+				</combatVariables>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_shop_floor) && !flags.hasFlag(FLAG_innoxia_ghost_following)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[后退]]></responseTitle>
+				<responseTooltip><![CDATA[按照锤子说的做，在他解决那些帮派成员的时候待在后面。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_shop_floor, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'SHOP_FLOOR_NO_FIGHT'))]
+				]]></effects>
+			</response>
+			<!-- Linking up with Hammer: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_hammer_following) && game.getCharactersPresent().contains(hammer)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[现在你已经和锤子联系上了，你们三人需要继续前往破败的面包店一楼。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_hammer_following, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f0_exit -->
+	<scene id="exit">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">EXIT</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_exit) && !flags.hasFlag(FLAG_innoxia_ghost_following)]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_exit) && !flags.hasFlag(FLAG_innoxia_ghost_following)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟随锤子进入破败的面包店。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_abandoned_bakery_f0_exit"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_exit, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f0_stairs -->
+	<scene id="stairs">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">STAIRS</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[上楼]]></responseTitle>
+				<responseTooltip><![CDATA[前往破败的面包店一楼。]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_elis_abandoned_bakery_stairs_top</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f1, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f1_stairs)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'STAIRS_UP'))]
+					[#angelixx.banishGangMembers(0)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- FIRST FLOOR SCENES: -->
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f1_stairs_top -->
+	<scene id="stairs_top">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">STAIRS_TOP</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f1_corridor -->
+	<scene id="corridor">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">CORRIDOR</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f1_storage -->
+	<scene id="storage">
+		<preParsingEffects><![CDATA[
+			#IF(!flags.hasFlag(FLAG_innoxia_sword_mission_storage))
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember1')]
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember2')]
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember3')]
+				[#angelixx.initGangMember(gangMember1, true)]
+				[#angelixx.initGangMember(gangMember2, false)]
+				[#angelixx.initGangMember(gangMember3, false)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">STORAGE</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_storage)]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_storage)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					加入锤子和幽灵并与帮派成员战斗。
+]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_storage, true)]
+					[#flags.setFlag(FLAG_innoxia_sword_mission_fought, true)]
+				]]></effects>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_fields_elis_abandoned_bakery_mission_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_fields_elis_abandoned_bakery_mission_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies companionsAreAllies="true">
+						<ally><![CDATA[hammer]]></ally>
+						<ally><![CDATA[ghost]]></ally>
+					</allies>
+					<enemies>
+						<enemy leader="true"><![CDATA[gangMember1]]></enemy>
+						<enemy leader="false"><![CDATA[gangMember2]]></enemy>
+						<enemy leader="false"><![CDATA[gangMember3]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[你决定为锤子和幽灵提供支援，帮助他们与黑帮成员作战。]]></combatant>
+						<combatant id="hammer"><![CDATA[[hammer.speech(你完蛋了，)]锤子一边吠叫，一边举起猎枪朝最近的帮派成员射击。]]></combatant>
+						<combatant id="ghost"><![CDATA[[ghost.speech(现在这里是我们的地盘了，)]幽灵说，试图让人觉得你是敌对帮派的人。]]></combatant>
+						<combatant id="gangMember1"><![CDATA[[gangMember1.speech(操你妈！)][gangMember1.name]喊道。]]></combatant>
+						<combatant id="gangMember2"><![CDATA[[gangMember2.speech(我要把你操翻！)][gangMember2.name]怒吼着冲了上去。]]></combatant>
+						<combatant id="gangMember3"><![CDATA[[gangMember3.speech(来干吧！)][gangMember3.name]哭了起来。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+					<submitBlocked><![CDATA[true]]></submitBlocked>
+				</combatVariables>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_storage)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[后退]]></responseTitle>
+				<responseTooltip><![CDATA[按照幽灵说的做，在她和锤子解决黑帮成员的时候待在后面。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_storage, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'STORAGE_NO_FIGHT'))]
+				]]></effects>
+			</response>
+			<!-- After beating gang members: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_sword_mission_storage)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[拿走火币]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_searched_storage))
+						你已经拿走了那三个帮派成员互相争夺的火币，现在没有时间再彻底搜查了。
+					#ELSE
+						拿走那三个帮派成员互相争夺的火币。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_searched_storage))
+						null
+					#ELSE
+						default
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_searched_storage, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'STORAGE_SEARCH'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(1964))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f1_bathroom -->
+	<scene id="bathroom">
+		<preParsingEffects><![CDATA[
+			#IF(!flags.hasFlag(FLAG_innoxia_sword_mission_bathroom))
+				[#game.addNPC('fields.ElisAlleywayAttacker', 'gangMember1')]
+				[#gangMember1.setBody(GENDER_M_P_MALE, SUBSPECIES_HORSE_MORPH_DONKEY, RACE_STAGE_GREATER, true)]
+				[#angelixx.initGangMember(gangMember1, true)]
+				
+				#IF(game.isNonConEnabled())
+					[#game.addNPC('misc.GenericSexualPartner', 'victim')]
+					[#angelixx.initVictim(victim, gangMember1)]
+				#ENDIF
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BATHROOM</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_bathroom)]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_sword_mission_bathroom)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[等待]]></responseTitle>
+				<responseTooltip><![CDATA[等幽灵处理完帮派成员。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_bathroom_wait</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_bathroom, true)]
+					[#angelixx.setDefeatedName(gangMember1, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="bathroom_wait">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BATHROOM_WAIT</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled><![CDATA[[#game.isNonConEnabled()]]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[俘虏]]></responseTitle>
+				<responseTooltip><![CDATA[等待锤子释放俘虏。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_bathroom_captive</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#victim.getClothingInSlot(IS_MOUTH).setSealed(false)]
+					[#victim.unequipClothingOntoFloor(victim.getClothingInSlot(IS_MOUTH), true, victim)]
+					[#victim.getClothingInSlot(IS_NECK).setSealed(false)]
+					[#victim.unequipClothingOntoFloor(victim.getClothingInSlot(IS_NECK), true, victim)]
+					
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'BATHROOM_CAPTIVE'))]
+					[#game.banishNPC(victim)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="bathroom_captive">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_abandoned_bakery_bathroom"/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_abandoned_bakery_f1_bedroom -->
+	<scene id="bedroom">
+		<preParsingEffects><![CDATA[
+			[#angelixx.setLocation(WORLD_TYPE_innoxia_fields_elis_abandoned_bakery_f1, PLACE_TYPE_innoxia_fields_elis_abandoned_bakery_f1_bedroom)]
+			[#pc.getCell().getInventory().addItem(itemGen.generateItem(ITEM_innoxia_quest_angelixx_diary))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BEDROOM</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[听]]></responseTitle>
+				<responseTooltip><![CDATA[听听安吉莉克丝怎么说。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_bedroom_angelixx_escape</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="bedroom_angelixx_escape">
+		<preParsingEffects><![CDATA[
+			[#angelixx.initGangMemberGuards()]
+			[#angelixx.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BEDROOM_ANGELIXX_ESCAPE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					加入锤子和幽灵并与安吉莉克丝的保镖战斗。
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_sword_mission_fought, true)]
+				]]></effects>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_fields_elis_abandoned_bakery_bedroom_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_fields_elis_abandoned_bakery_bedroom_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies companionsAreAllies="true">
+						<ally><![CDATA[hammer]]></ally>
+						<ally><![CDATA[ghost]]></ally>
+					</allies>
+					<enemies>
+						<enemy leader="true"><![CDATA[sleip]]></enemy>
+						<enemy leader="false"><![CDATA[nir]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[你决定为锤子和幽灵提供支援，帮助他们与安吉莉克丝的保镖作战。]]></combatant>
+						<combatant id="hammer"><![CDATA[[hammer.speech(我要把你放倒！)]锤子吠道。]]></combatant>
+						<combatant id="ghost"><![CDATA[[ghost.speech(你没有机会的，)]幽灵挑逗道。]]></combatant>
+						<combatant id="sleip"><![CDATA[[sleip.speech(现在投降，我会对你网开一面的！)][sleip.name]喊道。]]></combatant>
+						<combatant id="nir"><![CDATA[[nir.speech(打败你们，我们有赏！)][nir.name]兴高采烈地叫道。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+					<submitBlocked><![CDATA[true]]></submitBlocked>
+				</combatVariables>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[后退]]></responseTitle>
+				<responseTooltip><![CDATA[按照幽灵说的做，在她和锤子解决梦魇的时候待在后面。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_abandoned_bakery_bedroom_combat_no_fight]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="bedroom_combat_won">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'BEDROOM_COMBAT_END'))]
+			[#pc.getCell().getInventory().removeItemByType(ITEM_innoxia_quest_angelixx_diary)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BEDROOM_COMBAT_WON</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[逃跑]]></responseTitle>
+				<responseTooltip><![CDATA[
+					听听锤子的逃跑计划，希望能在执法者到来之前成功。
+				]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_abandoned_bakery_mission_end</nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_enforcers)]
+					[#hammer.setLocation(pc)]
+					[#ghost.setLocation(pc)]
+					[#angelixx.banishGangMembers(1)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- This scene really should be impossible to encounter... -->
+	<scene id="bedroom_combat_lost">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'BEDROOM_COMBAT_END'))]
+			[#pc.getCell().getInventory().removeItemByType(ITEM_innoxia_quest_angelixx_diary)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BEDROOM_COMBAT_LOST</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_abandoned_bakery_bedroom_combat_won"/>
+	</scene>
+	
+	<scene id="bedroom_combat_no_fight">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'BEDROOM_COMBAT_END'))]
+			[#pc.getCell().getInventory().removeItemByType(ITEM_innoxia_quest_angelixx_diary)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">BEDROOM_COMBAT_NO_FIGHT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_abandoned_bakery_bedroom_combat_won"/>
+	</scene>
+	
+	<scene id="mission_end">
+		<content folderPath="txt/places/fields/elis/abandoned_bakery">MISSION_END</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[分开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					向锤子和幽灵道别，告诉他们你们还会再见……
+				]]></responseTooltip>
+				<nextDialogue stripContent="true">default</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/abandoned_bakery', 'MISSION_END_CONTINUE'))]
+					
+					[#hammer.equipClothing()]
+					[#ghost.equipClothing()]
+					[#flags.setFlag(FLAG_innoxia_hammer_following, false)]
+					[#flags.setFlag(FLAG_innoxia_ghost_following, false)]
+					[#hammer.returnToHome()]
+					[#ghost.returnToHome()]
+					
+					#IF(flags.hasFlag(FLAG_innoxia_sword_mission_fought) && ghost.getAffection(pc)>=20)
+						[#flags.setFlag(FLAG_innoxia_sword_mission_reward, true)]
+					#ENDIF
+					
+					[#flags.setFlag(FLAG_innoxia_sword_mission_react_needed, true)]
+					
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_MAIN, QUEST_MAIN_3_I_ARION_REPORT))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

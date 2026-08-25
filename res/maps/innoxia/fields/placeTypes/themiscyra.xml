@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELDS</worldRegion>
+	<name><![CDATA[特弥斯库拉]]></name>
+	<tooltipDescription><![CDATA[隐藏在弗洛伊森林深处的特弥斯库拉是亚马逊人的家园，其人口完全由女性组成。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[特弥斯库拉附近]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>false</sexBlockedFromCharacterPresent>
+	<colour>BASE_BLUE_LIGHT</colour>
+	<backgroundColour>MAP_BACKGROUND_GREEN_DARK</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_themiscyra_exterior</dialogue>
+	<populationPresent/>
+	<furniturePresent>false</furniturePresent>
+	<globalMapTile>true</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

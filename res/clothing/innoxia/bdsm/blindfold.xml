@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>450</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[眼罩]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[眼罩]]></namePlural>
+		<description><![CDATA[皮质眼罩，带子非常紧，这样佩戴者就无法脱下。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>EYES</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>BDSM</clothingSet>
+		<imageName>blindfold.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="MINOR_BOOST" primaryModifier="CLOTHING_SPECIAL" secondaryModifier="CLOTHING_SEALING" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_DRAIN" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>EYES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>EYES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>BLOCKS_SIGHT</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把眼罩在[npc.her]的头部扣紧，然后拉下盖上[npc.her]的[npc.eye]。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]把眼罩在[npc2.namePos]的头部扣紧，然后拉下盖上[npc2.her]的[npc2.eye]。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地把眼罩在[npc2.namePos]的头部扣紧，然后拉下盖上[npc2.her]的[npc2.eye]。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]摘下[npc.her]的眼罩。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]摘下[npc2.namePos]的眼罩。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的眼罩并粗暴地扯下来。
+		]]></otherRough>
+	</displacementText>
+  
+</clothing>

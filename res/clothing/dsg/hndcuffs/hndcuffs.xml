@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+	
+		<authorTag><![CDATA[左袖口印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+		
+		<value>450</value> 
+		
+		<determiner><![CDATA[一副]]></determiner>
+		
+		<name><![CDATA[手铐]]></name>
+		
+		<namePlural pluralByDefault="true"><![CDATA[手铐]]></namePlural> 
+		
+		<description><![CDATA[一副镀镍钢制的手铐，通过一条短而坚固的链子相连，通常发给执法者使用。尽管尺寸较小，但它们经过附魔，可以适应各种粗细的手腕。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>ANDROGYNOUS</femininity>
+		
+		<equipSlots>
+		  <slot>WRIST</slot>
+		</equipSlots>
+		
+		<rarity>EPIC</rarity> 
+		<clothingSet/>
+			
+		<imageName>hndcuffs_uneq.svg</imageName>
+
+		<imageEquippedName>hndcuffs.svg</imageEquippedName>
+		
+		<effects> 
+			<effect limit="0" mod1="CLOTHING_SPECIAL" mod2="CLOTHING_SEALING" potency="MINOR_DRAIN" timer="0" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_SPECIAL" mod2="CLOTHING_SERVITUDE" potency="MINOR_BOOST" timer="0" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_MAJOR_ATTRIBUTE" mod2="STRENGTH" potency="MAJOR_DRAIN" timer="0" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_MAJOR_ATTRIBUTE" mod2="STRENGTH" potency="MAJOR_DRAIN" timer="0" type="CLOTHING"/>
+		</effects>
+		
+		<blockedPartsList slot="WRIST"> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired>
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked>
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+			
+		<incompatibleSlots slot="WRIST"/>
+
+		<primaryColours values="JUST_STEEL"/> 
+		<primaryColoursDye/>
+		
+		<itemTags>
+			<tag>HINDERS_ARM_MOVEMENT</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>PROVIDES_KEY</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把手铐拷在[npc.her]的手腕上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把手铐拷在[npc2.namePos]的手腕上。
+		]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地强行把手铐拷在[npc2.namePos]的手腕上。
+]]></otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把手铐从[npc.her]的手腕上解开。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把手铐从[npc2.namePos]的手腕上解开。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地用力解下[npc2.namePos]的手腕上的手铐。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

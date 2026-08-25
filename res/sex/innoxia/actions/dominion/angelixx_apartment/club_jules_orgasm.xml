@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+
+	<!-- TODO this is currently unused -->
+
+	<buttonPriority>0</buttonPriority>
+	<actionConditional><![CDATA[true]]></actionConditional>
+	<type>ORGASM</type>
+	<pace/>
+	<endsSex><![CDATA[true]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes>
+		<performer>
+			<fetish>FETISH_VAGINAL_GIVING</fetish>
+		</performer>
+		<target>
+			<fetish>FETISH_VAGINAL_RECEIVING</fetish>
+		</target>
+	</associatedFetishes>
+	<performingArea>PENETRATION_PENIS</performingArea>
+	<targetedArea>ORIFICE_MOUTH</targetedArea>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		[##sex.stopAllOngoingActions(jules, PENETRATION_PENIS)]
+		#IF(flags.hasFlag(FLAG_innoxia_angelixx_club_jules_targeting_player))
+			[##sex.applyOngoingAction(jules, PENETRATION_PENIS, pc, ORIFICE_VAGINA, true)]
+		#ELSE
+			[##sex.applyOngoingAction(jules, PENETRATION_PENIS, angelixx, ORIFICE_VAGINA, true)]
+		#ENDIF
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn>
+		<orifice>ORIFICE_VAGINA</orifice>
+	</areasCummedIn>
+	
+	<areasCummedOn/>
+	
+	<!-- Information displayed to the player: -->
+	
+	<title><![CDATA[
+		#IF(flags.hasFlag(FLAG_innoxia_angelixx_club_jules_targeting_player))
+			在[pc.namePos]的小穴内完事
+		#ELSE
+			在安吉莉克丝的小穴内完事
+		#ENDIF
+	]]></title>
+	<tooltip><![CDATA[把精液深填于这荡妇的小穴。]]></tooltip>
+	
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#flags.hasFlag(FLAG_innoxia_angelixx_club_jules_targeting_player)]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				你向朱尔斯展示自己。安吉莉克丝将他的鸡巴引向你的小穴，然后亲吻你。
+				
+				<br/><br/>斑马男将肉棒捅入你的小穴，闷哼着尽力深入。
+				
+				<br/><br/>他猛地喷射，让你的小穴与子宫塞满了他的种子。
+			]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#!flags.hasFlag(FLAG_innoxia_angelixx_club_jules_targeting_player)]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				你向朱尔斯献上安吉莉克丝，将他的鸡巴引向安吉莉克丝的小穴，然后亲吻魅魔。
+				
+				<br/><br/>斑马男将肉棒捅入安吉莉克丝的小穴，闷哼着尽力深入。“真紧啊，荡妇。”
+				
+				<br/><br/>他猛地喷射，让魅魔的小穴与子宫塞满了他的种子。
+			]]></text>
+		</description>
+	</descriptions>
+	
+</sexAction>

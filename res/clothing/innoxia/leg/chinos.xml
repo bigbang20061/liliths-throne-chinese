@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>400</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[斜纹棉布裤]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[斜纹棉布裤]]></namePlural>
+		<description><![CDATA[一条由纯棉斜纹布制成的长裤。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>MASCULINE</femininity>
+		<slot>LEG</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>chinos.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_ANKLES_FROM_TROUSERS"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>UNZIPS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>PENIS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_UNZIPS_GROIN"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_TAN</colour>
+			<colour>CLOTHING_BROWN</colour>
+			<colour>CLOTHING_BLUE_NAVY</colour>
+			<colour>CLOTHING_BLUE_GREY</colour>
+			<colour>CLOTHING_GREEN_DRAB</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours values="JUST_WHITE"/>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]穿进斜纹布裤，然后拉上它，扣上腰部的扣子。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]让[npc2.name]穿进斜纹布裤，然后拉上它，扣上[npc2.her]腰部的扣子。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]强迫[npc2.name]穿进斜纹布裤中，然后迅速拉起裤子，系紧了[npc2.her]腰间的扣子。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]解开裤子上的扣子，然后脱下它。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]解开[npc2.namePos]裤子上的扣子，然后脱下它。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]解开[npc2.namePos]斜纹布裤的扣子，脱下了它。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+	<authorTag><![CDATA[角落悄悄印有一个标签，上面写着：“GLIDE为高水平运动员构想”。]]></authorTag>
+		<value>500</value>
+		<determiner><![CDATA[一块]]></determiner>
+		<name><![CDATA[护鼻板]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[护鼻板]]></namePlural>
+		<description><![CDATA[一种用于接触性运动的防护硬塑料外壳，呈面具形状。专有的处理技术使其具有特别高的抗冲击性。]]></description>
+		<physicalResistance>1.0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>EYES</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>noseguard.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>EYES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+</clothing>

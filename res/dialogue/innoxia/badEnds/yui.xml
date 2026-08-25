@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+	
+	<scene id="sign_contract">
+		<preParsingEffects><![CDATA[
+			[#game.setBadEnd("唯的玩具")]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/yui">SIGN_CONTRACT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[脱光]]></responseTitle>
+				<responseTooltip><![CDATA[脱光衣服，穿上一套胶衣。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_yui_strip]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="strip">
+		<preParsingEffects><![CDATA[
+			[#yui.equipGearAlleyway(pc, 1)]
+			[#yui.equipDildo(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/yui">STRIP</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[等待]]></responseTitle>
+				<responseTooltip><![CDATA[被捆绑起来展示，你现在能做的只有等待……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_yui_wait]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="wait">
+		<preParsingEffects><![CDATA[
+			[#yui.removeDildo(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/yui">WAIT</content>
+		<secondsPassed minutes="true"><![CDATA[
+			[#~~(game.getMinutesUntilTimeInMinutes(1080))]
+		]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[家]]></responseTitle>
+				<responseTooltip><![CDATA[你被带到了你的新家。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_yui_home]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="home">
+		<preParsingEffects><![CDATA[
+			[#yui.applyBadEndLocationChange()]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/yui">HOME</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被调教]]></responseTitle>
+				<responseTooltip><![CDATA[主人唯的其他玩具会调教你。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_yui_broken_in]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="broken_in">
+		<content folderPath="txt/badEnds/yui">BROKEN_IN</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[清理]]></responseTitle>
+				<responseTooltip><![CDATA[洗个澡，准备好迎接客户的到来。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_yui_after_fucked]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="after_fucked">
+		<content folderPath="txt/badEnds/yui">AFTER_FUCKED</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[新生活]]></responseTitle>
+				<responseTooltip><![CDATA[你开始了作为主人唯玩具的全新生活。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_yui_final]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="final">
+		<content folderPath="txt/badEnds/yui">FINAL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[结局……]]></responseTitle>
+				<responseTooltip><![CDATA[[style.italicsBadEnd(你的旅程就此结束，预言之线也被斩断。是恢复已保存的游戏来重塑命运的编织，还是继续留在你所创造的注定失败的世界中？)]]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	
+</dialogueNodes>

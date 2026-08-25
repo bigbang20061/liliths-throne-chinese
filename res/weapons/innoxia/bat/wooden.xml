@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<value>600</value>
+		<melee>true</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[木质球棒]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[木质球棒]]></namePlural>
+		<description><![CDATA[一根用于击球的光滑木质球棒，这根球棒被附魔了，可当作武器。]]></description> 
+		
+		<attackDescriptor><![CDATA[猛击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用木质球棒猛击[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>COMMON</rarity> 
+		
+		<weaponSet/> 
+		
+		<equipText><![CDATA[[npc.Name]抄起[npc.her]的木质球棒，准备把它当作武器使用。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]放下[npc.her]的木质球棒。]]></unequipText>
+		
+		<imageName>wooden.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<damage>15</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>ICE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<primaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+			<colour>CLOTHING_TAN</colour>
+			<colour>CLOTHING_BROWN_VERY_DARK</colour>
+			<colour>CLOTHING_KHAKI</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours>		
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]挥舞木质球棒打向[npc2.name]，结结实实地砸在了[npc2.her]的身体上，[npc.Name]不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]挥舞木质球棒打向[npc2.name]，结结实实地击中了[npc2.her]的[npc2.arm]，[npc.Name]不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用木质球棒猛击[npc2.name]，[npc2.her]的[npc.arm]受到重击，使得[npc2.herHim]向后踉跄！
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]用木质球棒挥向[npc2.name]，但最终没有击中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.name]举起木质球棒向着[npc2.name]重挥出去，却没能命中目标，恼火地大喊了一声！
+		]]></missText>
+		<missText><![CDATA[
+		[npc.name]快步前踏，挥舞着木质球棒向[npc2.name]猛冲而去，却没能命中！
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[盘底刻着细小的字迹，写着“DSG食品有限公司包装”。]]></authorTag>
+		
+		<value>250</value> 
+		<determiner><![CDATA[一盘]]></determiner>
+		<name><![CDATA[香肠]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[香肠]]></namePlural>
+		<description><![CDATA[一盘高质量香肠，配有调味番茄和黄瓜，都被玻璃罩盖着。盖子上的标签上描绘了一只裸体的雪貂女跨坐在一根类似的，但滑稽地超大的香肠上，媚俏地遮住了她的乳头，以避免观众的视线。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName>ferret_sausages.svg</imageName>
+		
+		<colourPrimary>dsg_ferretCinnamon</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[貂]]></potionDescriptor>
+		<associatedRace>dsg_ferret</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]把玻璃盖取下，深吸着香气，那里弥漫着烟熏香肠的味道，伴随着辛辣的调味品。[npc.she]情不自禁地开始大口吞咽这美味的餐点，不一会儿便将盘子里的食物全部吃光。
+]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]取下了盘子上的玻璃盖，并将其递给[npc2.name]，让[npc2.herHim]闻着香肠的烟熏香味，其中夹杂着一抹辛辣的调味料气息。难以抗拒这美味的餐点，[npc2.she]迫不及待地开始狼吞虎咽，不多时就把盘子里的食物吃个一干二净。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

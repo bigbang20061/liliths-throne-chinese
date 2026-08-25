@@ -1,0 +1,610 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+	
+	<scene id="talk_menu">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_MENU</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Leave: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[0]]></index>
+					<responseTitle><![CDATA[离开]]></responseTitle>
+					<responseTooltip><![CDATA[离开艾瑟克，暂时的。]]></responseTooltip>
+					<nextDialogue><![CDATA[dsg_characters_eisek_stall_leave]]></nextDialogue>
+					<secondsPassed/>
+					<effects/>
+				</response>
+			<!-- Trade: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[购买]]></responseTitle>
+					<responseTooltip><![CDATA[看看艾瑟克在卖什么。]]></responseTooltip>
+					<nextDialogue/>
+					<secondsPassed/>
+					<effects/>
+					<tradingVariables enabled="true">
+						<tradePartner><![CDATA[eisek]]></tradePartner>
+					</tradingVariables>
+				</response>
+			<!-- Talk about himself: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[他自己]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_himself)
+							你已经向艾瑟克问过他自己了！
+						#ELSE
+							让艾瑟克讲讲他自己。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_himself)
+							null
+						#ELSE
+							dsg_characters_eisek_stall_talk_himself
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_dsg_elis_eisek_asked_himself_low, true)]
+						#IF(eisek.getAffection(pc) >= 15 && !flags.hasFlag(FLAG_dsg_elis_eisek_asked_himself))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_asked_himself, true)]
+							[#flags.incrementSavedLong("elis_eisek_talk_score", 1)]
+						#ENDIF
+					]]></effects>
+				</response>
+			<!-- Talk about business: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[生意]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_business)
+							你已经向艾瑟克打听过他的生意了！
+						#ELSE
+							问问艾瑟克在做什么生意。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_business)
+							null
+						#ELSE
+							dsg_characters_eisek_stall_talk_business
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						#IF(eisek.getAffection(pc) >= 15 && !flags.hasFlag(FLAG_dsg_elis_eisek_asked_business))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_asked_business, true)]
+							[#flags.incrementSavedLong("elis_eisek_talk_score", 1)]
+						#ENDIF
+					]]></effects>
+				</response>
+			<!-- Mob quest: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!pc.hasQuest(QUEST_LINE_SIDE_EISEK_MOB) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[暴徒]]></responseTitle>
+					<responseTooltip><![CDATA[问问艾瑟克你们初遇时围着他摊位的暴徒。]]></responseTooltip>
+					<nextDialogue><![CDATA[dsg_characters_eisek_stall_talk_ask_about_mob]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						#IF(!flags.hasFlag(FLAG_dsg_elis_eisek_asked_about_mob))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_asked_about_mob, true)]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.hasQuest(QUEST_LINE_SIDE_EISEK_MOB) && pc.isQuestProgressLessThan(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_TWO) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[暴徒]]></responseTitle>
+					<responseTooltip><![CDATA[最好别再提起这个话题，除非有额外的调查结果要讲。]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+					<secondsPassed/>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.hasQuestInLine(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_TWO_FAILED) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[[style.boldBad(暴徒)]]]></responseTitle>
+					<responseTooltip><![CDATA[通知艾瑟克你没能处理好那群暴徒]]></responseTooltip>
+					<nextDialogue><![CDATA[dsg_characters_eisek_stall_mob_quest_complete]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						[#pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_THREE_FAILED)]
+						[#game.appendToTextEndStringBuilder(pc.setQuestFailed(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_THREE_FAILED))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.hasQuestInLine(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_THREE) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[[style.boldGood(暴徒)]]]></responseTitle>
+					<responseTooltip><![CDATA[告诉艾瑟克你处理了那群暴徒]]></responseTooltip>
+					<nextDialogue><![CDATA[dsg_characters_eisek_stall_mob_quest_complete]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_MOB, QUEST_SIDE_UTIL_COMPLETE))]
+						#IF(flags.hasFlag(FLAG_dsg_elis_eisek_mob_quest_persuade))
+							[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem(ITEM_dsg_race_dragon_dragonfruit_yellow), 3, false, true))]
+							[#game.appendToTextEndStringBuilder(eisek.incrementAffection(pc,15))]
+							[#flags.setSavedLong("elis_eisek_mob_quest_completion_date", game.getDayNumber())]
+						#ELSE
+							[#game.appendToTextEndStringBuilder(pc.incrementMoney(5000))]
+							[#game.appendToTextEndStringBuilder(eisek.incrementAffection(pc,-10))]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB) || pc.isQuestFailed(QUEST_LINE_SIDE_EISEK_MOB)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[暴徒]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.isQuestFailed(QUEST_LINE_SIDE_EISEK_MOB))
+							你可能不太想提起自己的失败。
+						#ELSE
+							你已经处理好暴徒了。一切都过去了，不重要了。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+					<secondsPassed/>
+					<effects/>
+				</response>
+			<!-- Stall quest: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!pc.isQuestFailed(QUEST_LINE_SIDE_EISEK_MOB) && pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_STALL) && !pc.hasQuest(QUEST_LINE_SIDE_EISEK_STALL) && flags.hasFlag(FLAG_dsg_elis_eisek_mob_quest_persuade)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[小摊]]></responseTitle>
+					<responseTooltip><![CDATA[看看还能帮上艾瑟克什么忙。或许能帮他看摊？]]></responseTooltip>
+					<colour><![CDATA[QUEST_SIDE]]></colour>
+					<nextDialogue><![CDATA[dsg_characters_eisek_stall_stall_quest_start]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						[#game.appendToTextEndStringBuilder(pc.startQuest(QUEST_LINE_SIDE_EISEK_STALL))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.hasQuest(QUEST_LINE_SIDE_EISEK_STALL) && pc.isQuestProgressLessThan(QUEST_LINE_SIDE_EISEK_STALL, QUEST_EISEK_STALL_QUEST_STAGE_FOUR) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_STALL)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[小摊]]></responseTitle>
+					<responseTooltip><![CDATA[你在准备万全之前不想再谈起这件事。]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+					<secondsPassed/>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.hasQuest(QUEST_LINE_SIDE_EISEK_STALL) && pc.hasQuestInLine(QUEST_LINE_SIDE_EISEK_STALL, QUEST_EISEK_STALL_QUEST_STAGE_FOUR) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_STALL)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[[style.boldGood(小摊)]]]></responseTitle>
+					<responseTooltip><![CDATA[你集齐了升级艾瑟克的小摊需要的东西。是时候给他看看了。]]></responseTooltip>
+					<nextDialogue><![CDATA[dsg_characters_eisek_stall_stall_quest_complete]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_STALL, QUEST_SIDE_UTIL_COMPLETE))]
+						[#game.appendToTextEndStringBuilder(pc.incrementMoney(1000))]
+						[#game.appendToTextEndStringBuilder(eisek.incrementAffection(pc,20))]
+						[#pc.removeItem(itemGen.generateItem(ITEM_dsg_quest_fabricbolt), 1)]
+						[#pc.removeItem(itemGen.generateItem(ITEM_dsg_quest_embsign), 1)]
+						[#pc.removeItem(itemGen.generateItem(ITEM_dsg_quest_awningpoles), 4)]
+						[#eisek.setSellModifier(1)]
+						[#flags.setSavedLong("elis_eisek_stall_quest_completion_date", game.getDayNumber())]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_STALL)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[小摊]]></responseTitle>
+					<responseTooltip><![CDATA[你建造出了艾瑟克梦想中的摊位。]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+					<secondsPassed/>
+					<effects/>
+				</response>
+			<!-- Talk about other dragons: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[其他的龙]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(eisek.getAffection(pc) < 15)
+							你能看出艾瑟克不相信你，他不想讲遇见其他龙的事情……
+						#ELSEIF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_other_dragons)
+							你已经问过艾瑟克他有没有遇见过其他龙了。
+						#ELSE
+							问问艾瑟克有没有遇见过其他龙。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_other_dragons || eisek.getAffection(pc) < 15)
+							null
+						#ELSE
+							dsg_characters_eisek_stall_talk_other_dragons
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						#IF(!flags.hasFlag(FLAG_dsg_elis_eisek_asked_other_dragons))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_asked_other_dragons, true)]
+							[#flags.incrementSavedLong("elis_eisek_talk_score", 1)]
+						#ENDIF
+					]]></effects>
+				</response>
+			<!-- Talk about Elis: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[7]]></index>
+					<responseTitle><![CDATA[为什么是伊利斯？]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(eisek.getAffection(pc) < 15)
+							你能看出艾瑟克不相信你，他不想讲他为什么选择来伊利斯……
+						#ELSEIF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_why_elis)
+							你已经问过艾瑟克他为什么来伊利斯了。
+						#ELSE
+							问问艾瑟克为什么来伊利斯。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_why_elis || eisek.getAffection(pc) < 15)
+							null
+						#ELSE
+							dsg_characters_eisek_stall_talk_why_elis
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						#IF(!flags.hasFlag(FLAG_dsg_elis_eisek_asked_why_elis))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_asked_why_elis, true)]
+							[#flags.incrementSavedLong("elis_eisek_talk_score", 1)]
+						#ENDIF
+					]]></effects>
+				</response>
+			<!-- Talk about family: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_dsg_elis_eisek_asked_himself)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[8]]></index>
+					<responseTitle><![CDATA[家人]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(eisek.getAffection(pc) < 15)
+							你能看出艾瑟克不相信你，他不想讲他的家人……
+						#ELSEIF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_family)
+							你已经问过艾瑟克他的家人了。
+						#ELSE
+							问问艾瑟克他的家人。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_family || eisek.getAffection(pc) < 15)
+							null
+						#ELSE
+							dsg_characters_eisek_stall_talk_family
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						#IF(!flags.hasFlag(FLAG_dsg_elis_eisek_asked_family))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_asked_family, true)]
+							[#flags.incrementSavedLong("elis_eisek_talk_score", 1)]
+						#ENDIF
+					]]></effects>
+				</response>
+			<!-- Talk about dragonfall: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_dsg_elis_eisek_asked_about_mob) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[9]]></index>
+					<responseTitle><![CDATA[龙的陨落？]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_ask_about_dragonfall_vague)
+							你已经问过艾瑟克“龙的衰颓”和“龙的陨落”的事情了。
+						#ELSE
+							你向艾瑟克打听那帮暴徒的时候，他提到了“龙的衰颓”和“龙的陨落”的事情。这些是什么意思？
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_ask_about_dragonfall_vague)
+							null
+						#ELSE
+							dsg_characters_eisek_stall_talk_ask_about_dragonfall_vague
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_MOB)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[9]]></index>
+					<responseTitle><![CDATA[龙的陨落？]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_ask_about_dragonfall_specific)
+							你已经问过艾瑟克“龙的衰颓”的真相了。
+						#ELSE
+							你迫切地想知道“龙的衰颓”的真相。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getCurrentDialogueNode()==DN_dsg_characters_eisek_stall_talk_ask_about_dragonfall_specific)
+							null
+						#ELSE
+							dsg_characters_eisek_stall_talk_ask_about_dragonfall_specific
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						#IF(!flags.hasFlag(FLAG_dsg_elis_eisek_asked_about_dragonfall_specific))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_asked_about_dragonfall_specific, true)]
+						#ENDIF
+					]]></effects>
+				</response>
+			<!-- Small talk: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[10]]></index>
+					<responseTitle><![CDATA[闲谈]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(eisek.getAffection(pc) < 30)
+							你能看出艾瑟克不想和你闲聊，你或许该和他混熟一点……
+						#ELSEIF(flags.hasFlag(FLAG_dsg_elis_eisek_small_talk))
+							你今天已经聊过了。尽管艾瑟克确实喜欢和你聊天，但他<i>确实</i>需要经营摊位。
+						#ELSE
+							闲聊几句。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(eisek.getAffection(pc) < 30 || flags.hasFlag(FLAG_dsg_elis_eisek_small_talk))
+							null
+						#ELSE
+							dsg_characters_eisek_stall_small_talk
+						#ENDIF
+					]]></nextDialogue>
+					<secondsPassed/>
+					<effects><![CDATA[
+						#IF(!flags.hasFlag(FLAG_dsg_elis_eisek_small_talk))
+							[#flags.setFlag(FLAG_dsg_elis_eisek_small_talk, true)]
+						#ENDIF
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="leave">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">LEAVE</content>
+		<secondsPassed minutes="false"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="dsg_places_fields_elis_market_produce_stall"/>
+	</scene>
+	
+	<scene id="talk_himself">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_HIMSELF</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="talk_business">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_BUSINESS</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="talk_family">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_FAMILY</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="talk_why_elis">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_WHY_ELIS</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="talk_other_dragons">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_OTHER_DRAGONS</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="talk_ask_about_mob">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_ASK_ABOUT_MOB</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[注意暴徒]]></responseTitle>
+				<responseTooltip><![CDATA[提出艾瑟克的问题的解决方案。]]></responseTooltip>
+				<colour><![CDATA[QUEST_SIDE]]></colour>
+				<nextDialogue><![CDATA[dsg_characters_eisek_stall_mob_quest_start]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.startQuest(QUEST_LINE_SIDE_EISEK_MOB))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[龙的陨落？]]></responseTitle>
+				<responseTooltip><![CDATA[问问艾瑟克“龙的陨落之前”是什么意思。]]></responseTooltip>
+				<nextDialogue><![CDATA[dsg_characters_eisek_stall_talk_ask_about_dragonfall_vague_in_mob_scene]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[转移话题]]></responseTitle>
+				<responseTooltip><![CDATA[或许这太沉重了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[dsg_characters_eisek_stall_talk_menu]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/dsg/characters/eisek/stall', 'TALK_ASK_ABOUT_MOB_CHANGE_SUBJECT'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="talk_ask_about_dragonfall_vague_in_mob_scene">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_DRAGONFALL_VAGUE</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_ask_about_mob">
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[龙的陨落？]]></responseTitle>
+				<responseTooltip><![CDATA[你已经向艾瑟克打听过“龙的陨落之前”的含义了！]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="talk_ask_about_dragonfall_vague">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_DRAGONFALL_VAGUE</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="talk_ask_about_dragonfall_specific">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">TALK_DRAGONFALL_SPECIFIC</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="mob_quest_start">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">MOB_QUEST_START</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="mob_quest_complete">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">MOB_QUEST_COMPLETE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+		
+	<scene id="stall_quest_start">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">STALL_QUEST_START</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="stall_quest_complete">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">STALL_QUEST_COMPLETE</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+	<scene id="small_talk">
+		<author><![CDATA[DSG]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/characters/eisek/stall">SMALL_TALK</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+</dialogueNodes>

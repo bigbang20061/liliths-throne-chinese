@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[部落图腾]]></name>
+		
+		<description><![CDATA[一系列流动的线条和复杂的图案。]]></description> 
+		<bodyOverviewDescription><![CDATA[流动的线条和复杂的图案的纹身]]></bodyOverviewDescription> 
+		
+		<imageName>tribal.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_BLACK"/> 
+		<secondaryColours/> 
+		<tertiaryColours/> 
+		
+	</coreAttributes>
+	
+</tattoo>

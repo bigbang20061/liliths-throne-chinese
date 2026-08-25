@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<penis>
+	<race>innoxia_pig</race>
+	
+	<transformationName><![CDATA[猪]]></transformationName>
+	
+	<coveringType>PENIS</coveringType>
+	
+	<testicleType>innoxia_pig_testicle</testicleType>
+	
+	<additionalTransformationEffect/>
+	
+	<namesMasculine>
+		<name><![CDATA[猪]]></name>
+	</namesMasculine>
+	<namesPluralMasculine>
+		<name><![CDATA[猪]]></name>
+	</namesPluralMasculine>
+	
+	<namesFeminine>
+		<name><![CDATA[猪]]></name>
+	</namesFeminine>
+	<namesPluralFeminine>
+		<name><![CDATA[猪]]></name>
+	</namesPluralFeminine>
+	
+	<descriptors/>
+	
+	<defaultPenetrationModifiers>
+		<modifier>SHEATHED</modifier>
+		<modifier>TAPERED</modifier>
+	</defaultPenetrationModifiers>
+	
+	<transformationDescription><![CDATA[
+		[npc.name]情不自禁地呻吟，感觉自己的阴茎转变为了新的形态。[npc.her]的阴茎突然向下缩进根部形成的厚厚的新鞘中，[npc.sheIs]被一股无法忍耐的快感彻底击垮了。
+		<br/>[npc.She]现在拥有一根[style.boldPig(猪的阴茎)]，[npc.materialDescriptor][npc.penisFullDescription(true)]。
+		<br/>[npc.She]有[style.boldPig([npc.ballsCount]颗#IF(npc.isInternalTesticles())体内#ELSE猪#ENDIF睾丸)]，[npc.materialDescriptor][npc.ballsFullDescription(true)]，能够产生[npc.cumColour(true)][style.boldPig(猪精液)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.She]有[npc.a_cockGirth]的猪阴茎，[npc.cockLengthValue]长，[npc.materialCompositionDescriptor][npc.cockFullDescription(true)]。
+]]></bodyDescription>
+</penis>

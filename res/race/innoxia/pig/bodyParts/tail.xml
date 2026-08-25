@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tail>
+	<race>innoxia_pig</race>
+	
+	<transformationName><![CDATA[猪]]></transformationName>
+	
+	<coveringType>innoxia_pig_fur</coveringType>
+	
+	<spinneret>false</spinneret>
+	
+	<defaultGirth>1</defaultGirth>
+	
+	<defaultLengthAsPercentageOfHeight>0.1</defaultLengthAsPercentageOfHeight>
+	
+	<tags>
+		<tag>TAIL_TYPE_GENERIC</tag>
+		<tag>TAIL_TAPERING_NONE</tag>
+		<tag>TAIL_NEVER_SUITABLE_FOR_PENETRATION</tag>
+	</tags>
+	
+	<determiner><![CDATA[]]></determiner>
+	<determinerPlural><![CDATA[]]></determinerPlural> 
+	
+	<name><![CDATA[尾巴]]></name>
+	<namePlural><![CDATA[尾巴]]></namePlural> 
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[猪般]]></descriptor>
+		<descriptor><![CDATA[卷曲]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[猪般]]></descriptor>
+		<descriptor><![CDATA[卷曲]]></descriptor>
+	</descriptorsFeminine>
+	
+	<tipName><![CDATA[尖端]]></tipName>
+	<tipNamePlural><![CDATA[尖端]]></tipNamePlural>
+	<tipDescriptorsMasculine/>
+	<tipDescriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[
+		#IF(npc.getTailCount()==1)
+			一条卷卷的猪般的尾巴，从尾椎处延伸而出，迅速生长至大概有[npc.tailLength]长。[npc.She]很快意识到自己根本不能控制尾巴。
+			<br/>[npc.Name]现在拥有一条[style.boldPig(猪般的尾巴)]，[npc.materialDescriptor][npc.tailFullDescription(true)]。
+		#ELSE
+			一条卷卷的猪般的尾巴，从尾椎处延伸而出，迅速生长至大概有[npc.tailLength]长。[npc.She]很快意识到自己根本不能控制尾巴。
+			<br/>[npc.Name]现在拥有[npc.tailCount]条[style.boldPig(猪般的尾巴)]，[npc.materialDescriptor][npc.tailFullDescription(true)]。
+		#ENDIF
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.sheHasFull]的尾椎处延伸出
+		#IF(npc.getTailCount()==1)
+			一条#IF(npc.isTailFeral())[style.colourFeral(兽态的)]#ENDIF[npc.tailColour(true)]的猪尾。
+		#ELSE
+			[npc.tailCount]条#IF(npc.isTailFeral()) [style.colourFeral(兽态的)]#ENDIF[npc.tailColour(true)]的猪尾。
+		#ENDIF
+	]]></bodyDescription>
+</tail>

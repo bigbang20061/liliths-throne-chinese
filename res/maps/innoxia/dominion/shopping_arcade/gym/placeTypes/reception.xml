@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>DOMINION</worldRegion>
+	<name><![CDATA[接待区]]></name>
+	<tooltipDescription><![CDATA[接待区是健身房会员和客人办理登记手续、使用健身房设施的地方。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在“皮克斯操练场”健身房内]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<colour>BASE_ORANGE</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_dominion_shopping_arcade_gym_reception</dialogue>
+	<populationPresent>
+		<population>
+			<conditional><![CDATA[
+				[#pix.getWorldLocation()!=pc.getWorldLocation()]
+			]]></conditional>
+			<populationType plural="false" density="ONE">RECEPTIONIST</populationType>
+			<subspeciesPresent>
+				<subspecies>RABBIT_MORPH</subspecies>
+			</subspeciesPresent>
+		</population>
+	</populationPresent>
+	<furniturePresent>true</furniturePresent>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>OUTGOING_ONLY</teleportPermissions>
+	<weatherImmunities immuneToAll="true"/>
+	<applyInventoryInit/>
+</placeType>

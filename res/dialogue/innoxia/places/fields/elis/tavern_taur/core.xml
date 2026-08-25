@@ -1,0 +1,1032 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_bar -->
+	<scene id="bar">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!kheiron.isPlayerKnowsName()]
+		]]></travelDisabled>
+		<responseTabs>
+			<tab index="0"><![CDATA[
+				#IF(game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName())
+					交谈
+				#ENDIF
+			]]></tab>
+			<tab index="1"><![CDATA[
+				#IF(game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName())
+					饮品
+				#ENDIF
+			]]></tab>
+			<tab index="2"><![CDATA[
+				#IF(game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName())
+					食物
+				#ENDIF
+			]]></tab>
+		</responseTabs>
+		<responses>
+			<!-- Tab 0: Talk -->
+			<response> <!-- Initial greeting: -->
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(kheiron) && !kheiron.isPlayerKnowsName()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[介绍]]></responseTitle>
+				<responseTooltip><![CDATA[向半人马介绍你自己。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_tavern_taur_core_bar_intro_talk]]></nextDialogue>
+				<effects><![CDATA[
+					[#kheiron.setPlayerKnowsName(true)]
+				]]></effects>
+			</response>
+			
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[闲谈]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_kheiron_smalltalk_complete))
+						你今天已经花时间和喀戎闲聊了。你必须等到明天才能重复这一切。
+					#ELSE
+						花十五分钟和喀戎聊聊天气、当地新闻和其他琐碎的话题。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_kheiron_smalltalk_complete))
+						innoxia_places_fields_elis_tavern_taur_core_bar
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_TALK'))]
+					#IF(kheiron.getAffection(pc)<40)
+						[#game.appendToTextStartStringBuilder(kheiron.incrementAffection(pc, 5))]
+					#ENDIF
+					[#flags.setFlag(FLAG_innoxia_kheiron_smalltalk_complete, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[露内特]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_lunette)
+						你已经在问喀戎对露内特的了解了！
+					#ELSE
+						问问喀戎对露内特了解多少。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_lunette)
+						null
+					#ELSE
+						innoxia_places_fields_elis_tavern_taur_core_bar_talk_lunette
+					#ENDIF
+				]]></nextDialogue>
+				<effects/>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[历史]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_history)
+						你已经问过喀戎他的过去，以及他是如何拥有这家酒馆的了！
+					#ELSE
+						向喀戎询问他的过去，以及他是如何拥有这家酒馆的。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_history)
+						null
+					#ELSE
+						innoxia_places_fields_elis_tavern_taur_core_bar_talk_history
+					#ENDIF
+				]]></nextDialogue>
+				<effects/>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName() && flags.hasFlag(FLAG_innoxia_elis_market_fae_passionate)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[法埃&西尔维娅]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_fae_silvia)
+						你已经问过喀戎是否认识法埃和西尔维娅，以及他能告诉你关于他们的什么事了！
+					#ELSE
+						问问喀戎是否认识法埃和西尔维娅，他能告诉你些什么。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_fae_silvia)
+						null
+					#ELSE
+						innoxia_places_fields_elis_tavern_taur_core_bar_talk_fae_silvia
+					#ENDIF
+				]]></nextDialogue>
+				<effects/>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName() && flags.hasFlag(FLAG_innoxia_sterope_unlocked)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[斯特罗普]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_sterope)
+						你已经问过喀戎是否认识斯特罗普，他能告诉你关于她的什么事了！
+					#ELSE
+						问问喀戎是否认识斯特罗普，他能告诉你关于她的什么情况。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_tavern_taur_core_bar_talk_sterope)
+						null
+					#ELSE
+						innoxia_places_fields_elis_tavern_taur_core_bar_talk_sterope
+					#ENDIF
+				]]></nextDialogue>
+				<effects/>
+			</response>
+			<!-- Oglix quest: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName() && pc.hasQuest(QUEST_LINE_SIDE_OGLIX_BEER_BARRELS) && pc.getQuest(QUEST_LINE_SIDE_OGLIX_BEER_BARRELS)==QUEST_OGLIX_BEER_BARRELS_1]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[桶]]></responseTitle>
+				<responseTooltip><![CDATA[问问喀戎是否有四个备用的大木桶，可以送到奥格利克斯的酒馆。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_tavern_taur_core_bar_barrels</nextDialogue>
+				<effects/>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(kheiron) && kheiron.isPlayerKnowsName() && pc.hasQuest(QUEST_LINE_SIDE_OGLIX_BEER_BARRELS) && pc.isQuestProgressGreaterThan(QUEST_LINE_SIDE_OGLIX_BEER_BARRELS, QUEST_OGLIX_BEER_BARRELS_1)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[戈利克斯]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_kheiron_talk_golix))
+						你今天已经问过喀戎他和戈利克斯的关系了。最好不要再提起这个话题，最早也要等到明天……
+					#ELSE
+						向喀戎询问他与奥格利克斯的元素人戈利克斯的关系。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_kheiron_talk_golix))
+						innoxia_places_fields_elis_tavern_taur_core_bar
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_TALK_GOLIX'))]
+					[#flags.setFlag(FLAG_innoxia_kheiron_talk_golix, true)]
+				]]></effects>
+			</response>
+			
+			<!-- Kheiron not present: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					免费的水
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					点杯水。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_elis_tavern_taur_core_bar</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_WATER'))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_human_vanilla_water').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[橙汁 (#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点杯碳酸橙汁。#ELSE 你喝不起碳酸橙汁……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_ORANGE_JUICE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_ferret_orange_juice').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[莓果苏打水 (#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点杯莓果苏打水。#ELSE 你喝不起莓果苏打水……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_BERRY_SODA'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_otter_berry_soda').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[可乐 (#IF(pc.getMoney()>=25)[style.moneyFormat(25, span)]#ELSE[style.moneyFormatUncoloured(25, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=25) 点杯可乐。#ELSE 你喝不起可乐……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=25)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_COLA'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-25))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_pig_porcine_pop').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[咖啡 (#IF(pc.getMoney()>=30)[style.moneyFormat(30, span)]#ELSE[style.moneyFormatUncoloured(30, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=30) 点杯冷萃黑咖啡。#ELSE 你喝不起冷萃黑咖啡……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=30)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_COFFEE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-30))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('charisma_race_spider_jet_black_coffee').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[小面包 (#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 从“前菜和配菜”菜单中点一小筐新鲜出炉的小面包。#ELSE 你连一小筐 “前菜和配菜”菜单上新鲜出炉的小面包都买不起……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_BREAD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_human_bread_roll').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[混合坚果 (#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 从“前菜和配菜”菜单中点一把混合坚果。#ELSE 你吃不起混合坚果……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_NUTS'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_squirrel_round_nuts').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[肉酱酥脆饼干 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从“前菜和配菜”菜单中点一份肉酱酥脆饼干。#ELSE 你吃不起肉酱酥脆饼干……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_PATE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_gryphon_pate_and_crackers').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[蜂蜜小面包 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从甜点菜单上点一份蜂蜜小面包。#ELSE 你吃不起蜂蜜小面包……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_HONEY_BREAD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_bear_honey_bread').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.getCharactersPresent().contains(kheiron)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[布朗尼蛋糕 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从甜点菜单上点一份巧克力布朗尼。#ELSE 你吃不起巧克力布朗尼……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_BROWNIE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('NoStepOnSnek_race_capybara_brownie').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			
+			<!-- Tab 1: Drinks -->
+			<!-- Non-alcoholic: -->
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					免费的水
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					点杯水。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_elis_tavern_taur_core_bar</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_WATER'))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_human_vanilla_water').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[橙汁 (#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点杯碳酸橙汁。#ELSE 你喝不起碳酸橙汁……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_ORANGE_JUICE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_ferret_orange_juice').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[莓果苏打水 (#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点杯莓果苏打水。#ELSE 你喝不起莓果苏打水……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_BERRY_SODA'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_otter_berry_soda').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[可乐 (#IF(pc.getMoney()>=25)[style.moneyFormat(25, span)]#ELSE[style.moneyFormatUncoloured(25, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=25) 点杯可乐。#ELSE 你喝不起可乐……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=25)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_COLA'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-25))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_pig_porcine_pop').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[咖啡 (#IF(pc.getMoney()>=30)[style.moneyFormat(30, span)]#ELSE[style.moneyFormatUncoloured(30, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=30) 点杯冷萃黑咖啡。#ELSE 你喝不起冷萃黑咖啡……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=30)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_COFFEE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-30))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('charisma_race_spider_jet_black_coffee').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<!-- Alcoholic: -->
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[啤酒 (#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40) 点一品脱啤酒。#ELSE 你喝不起一品脱啤酒……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_BEER'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[苹果西打酒 (#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40) 点一品脱苹果酒。#ELSE 你喝不起一品脱苹果酒……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_CIDER'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_horse_equine_cider').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[梨酒 (#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40) 点一品脱梨酒。#ELSE 你喝不起一品脱梨酒……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_PERRY'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_badger_black_stripes_perry').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[红葡萄酒 (#IF(pc.getMoney()>=60)[style.moneyFormat(60, span)]#ELSE[style.moneyFormatUncoloured(60, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=60) 点一杯红酒。#ELSE 你喝不起红酒……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=60)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_WINE_RED'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-60))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_fox_vulpines_vineyard').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[白葡萄酒 (#IF(pc.getMoney()>=60)[style.moneyFormat(60, span)]#ELSE[style.moneyFormatUncoloured(60, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=60) 点一杯白葡萄酒。#ELSE 你喝不起白葡萄酒……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=60)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_WINE_WHITE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-60))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_fox_vulpines_vineyard').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[11]]></index>
+				<responseTitle><![CDATA[伏特加 (#IF(pc.getMoney()>=100)[style.moneyFormat(100, span)]#ELSE[style.moneyFormatUncoloured(100, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=100) 点一杯伏特加。#ELSE 你喝不起伏特加…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=100)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_VODKA'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-100))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_bear_vodka').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[12]]></index>
+				<responseTitle><![CDATA[朗姆酒 (#IF(pc.getMoney()>=120)[style.moneyFormat(120, span)]#ELSE[style.moneyFormatUncoloured(120, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=120) 点一杯朗姆酒。#ELSE 你喝不起朗姆酒……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=120)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_RUM'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-120))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_rat_black_rats_rum').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[13]]></index>
+				<responseTitle><![CDATA[威士忌 (#IF(pc.getMoney()>=120)[style.moneyFormat(120, span)]#ELSE[style.moneyFormatUncoloured(120, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=120) 点一杯威士忌。#ELSE 你喝不起威士忌……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=120)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_WHISKEY'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-120))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_wolf_wolf_whiskey').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[14]]></index>
+				<responseTitle><![CDATA[香槟 (#IF(pc.getMoney()>=160)[style.moneyFormat(160, span)]#ELSE[style.moneyFormatUncoloured(160, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=100) 点一杯香槟。#ELSE 你喝不起香槟…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=160)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_DRINK_CHAMPAGNE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-160))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_goat_pans_flute').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			
+			<!-- Tab 2: Food -->
+			<!-- Starters: -->
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[小面包 (#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 从“前菜和配菜”菜单中点一小筐新鲜出炉的小面包。#ELSE 你连一小筐 “前菜和配菜”菜单上新鲜出炉的小面包都买不起……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_BREAD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_human_bread_roll').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[混合坚果 (#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 从“前菜和配菜”菜单中点一把混合坚果。#ELSE 你吃不起混合坚果……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_NUTS'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_squirrel_round_nuts').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[扭扭薯条 (#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 从“前菜和配菜”菜单中点一份扭扭薯条。#ELSE 你吃不起混扭扭薯条……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_FRIES'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_pig_oinkers_fries').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[鲜虾鸡尾酒 (#IF(pc.getMoney()>=75)[style.moneyFormat(75, span)]#ELSE[style.moneyFormatUncoloured(75, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=75) 从“前菜和配菜”菜单中点一份鲜虾鸡尾酒。#ELSE 你吃不起鲜虾鸡尾酒……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=75)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_SHRIMP'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-75))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('NoStepOnSnek_race_octopus_shrimp_cocktail').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[肉酱酥脆饼干 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从“前菜和配菜”菜单中点一份肉酱酥脆饼干。#ELSE 你吃不起肉酱酥脆饼干……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_PATE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_gryphon_pate_and_crackers').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<!-- Main courses: -->
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[炸鱼薯条 (#IF(pc.getMoney()>=150)[style.moneyFormat(150, span)]#ELSE[style.moneyFormatUncoloured(150, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=150) 在主菜单上点一份炸鱼薯条。#ELSE 你买不起炸鱼薯条…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=150)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_FISH_CHIPS'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-150))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_otter_fish_and_chips').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[香肠 (#IF(pc.getMoney()>=150)[style.moneyFormat(150, span)]#ELSE[style.moneyFormatUncoloured(150, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=150) 从主菜单上点一份优质香肠。#ELSE 你吃不起优质香肠…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=150)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_SAUSAGES'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-150))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_ferret_sausages').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[汉堡 (#IF(pc.getMoney()>=150)[style.moneyFormat(150, span)]#ELSE[style.moneyFormatUncoloured(150, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=150) 从主菜单上点一份汉堡。#ELSE 你买不起汉堡…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=150)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_BURGER'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-150))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_rat_brown_rats_burger').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[鸡肉派 (#IF(pc.getMoney()>=180)[style.moneyFormat(180, span)]#ELSE[style.moneyFormatUncoloured(180, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=180) 从主菜单上点一份鸡肉派。#ELSE 你买不起鸡肉派……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=180)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_CHICKEN_PIE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-180))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_fox_chicken_pot_pie').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[牛排 (#IF(pc.getMoney()>=250)[style.moneyFormat(250, span)]#ELSE[style.moneyFormatUncoloured(250, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=250) 从主菜单上点一份牛排。#ELSE 你买不起牛排……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=250)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_STEAK'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-250))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_wolf_meat_and_marrow').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<!-- Pudding -->
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[11]]></index>
+				<responseTitle><![CDATA[水果沙拉 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从甜点菜单上点一份水果沙拉。#ELSE 你吃不起水果沙拉……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_FRUIT_SALAD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_bat_fruit_bats_salad').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[12]]></index>
+				<responseTitle><![CDATA[蜂蜜小面包 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从甜点菜单上点一份蜂蜜小面包。#ELSE 你吃不起蜂蜜小面包……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_HONEY_BREAD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_bear_honey_bread').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[13]]></index>
+				<responseTitle><![CDATA[ 浆果松饼(#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从甜点菜单点一份浆果松饼。#ELSE 你买不起浆果松饼…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_BERRY_TRIFLE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_badger_berry_trifle').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[2]]></responseTabIndex>
+				<index><![CDATA[14]]></index>
+				<responseTitle><![CDATA[布朗尼蛋糕 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 从甜点菜单上点一份巧克力布朗尼。#ELSE 你吃不起巧克力布朗尼……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_tavern_taur_core_bar#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'BAR_FOOD_BROWNIE'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('NoStepOnSnek_race_capybara_brownie').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="bar_intro_talk">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_INTRO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_tavern_taur_core_bar"/>
+	</scene>
+	
+	<scene id="bar_talk_lunette">
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_TALK_LUNETTE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_tavern_taur_core_bar"/>
+	</scene>
+	
+	<scene id="bar_talk_history">
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_TALK_HISTORY</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_tavern_taur_core_bar"/>
+	</scene>
+	
+	<scene id="bar_talk_fae_silvia">
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_TALK_FAE_SILVIA</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_tavern_taur_core_bar"/>
+	</scene>
+	
+	<scene id="bar_talk_sterope">
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_TALK_STEROPE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_tavern_taur_core_bar"/>
+	</scene>
+	
+	<scene id="bar_barrels">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_BARRELS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[乖小马]]></responseTitle>
+				<responseTooltip><![CDATA[正如戈利克斯所说，喀戎拒绝合作，但也许她给你用的那句话会有用……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_tavern_taur_core_bar_barrels_end]]></nextDialogue>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="bar_barrels_end">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_BARRELS_END</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[赞同]]></responseTitle>
+				<responseTooltip><![CDATA[由于你不知道喀戎与戈利克斯关系的细节，所以你很容易就答应了半人马的条件。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_tavern_taur_core_bar_barrels_end_bar]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_OGLIX_BEER_BARRELS, QUEST_OGLIX_BEER_BARRELS_2))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="bar_barrels_end_bar">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">BAR_BARRELS_END_CONTINUE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_tavern_taur_core_bar"/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_corridor -->
+	<scene id="corridor">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">CORRIDOR</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_exit -->
+	<scene id="exit">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">EXIT</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[走出旅店，回到伊利斯的街道上。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_street"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_tavern_taur)]
+					[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_street)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'EXIT_LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_kitchen -->
+	<scene id="kitchen">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">KITCHEN</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_seating -->
+	<scene id="seating">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">SEATING</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(fae)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[法埃&西尔维娅]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						走近法埃和西尔维娅坐的那张桌子，打声招呼。
+					#ELSE
+						你需要能够使用你的口腔，才能与法埃和西尔维娅玩得尽兴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						innoxia_places_fields_elis_tavern_taur_fae_silvia_seating_start
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_stairs -->
+	<scene id="stairs">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">STAIRS</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_tables -->
+	<scene id="tables">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">TABLES</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(sterope)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[斯特罗普]]></responseTitle>
+				<responseTooltip><![CDATA[靠近斯特罗普的桌子打个招呼。]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_sterope_met_in_tavern))
+						innoxia_places_fields_elis_tavern_taur_sterope_start
+					#ELSE
+						innoxia_places_fields_elis_tavern_taur_sterope_first_meeting
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(RND.nextInt(100)<50 && flags.hasFlag(FLAG_innoxia_sterope_met_in_tavern))
+						[#game.addNPC('misc.GenericSexualPartner', 'centaur')]
+						[#sterope.initCentaur(centaur)]
+						[#flags.setFlag(FLAG_innoxia_sterope_with_centaur, true)]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_locked_door -->
+	<scene id="locked_door">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">LOCKED_DOOR</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[[pc.Step]回去]]></responseTitle>
+				<responseTooltip><![CDATA[门是锁着的，你不能再往前走了……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_tavern_taur_core_corridor</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'LOCKED_DOOR_STEP_BACK'))]
+					[#pc.setLocation(pc.getLastCell())]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_stable -->
+	<scene id="stable">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">STABLE</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_tavern_taur_toilet -->
+	<scene id="toilets">
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/places/fields/elis/tavern_taur">TOILETS</content>
+		<secondsPassed><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					进入厕所。
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_tavern_taur_core_toilets_interior]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toilets_interior">
+		<content folderPath="txt/places/fields/elis/tavern_taur">TOILETS_INTERIOR</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					走出厕所，回到购物区。
+]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_shops_street"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_elis_tavern_taur, PLACE_TYPE_innoxia_fields_elis_tavern_taur_corridor)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'TOILETS_LEAVE'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[盥洗室]]></responseTitle>
+				<responseTooltip><![CDATA[
+					使用厕所。
+				]]></responseTooltip>
+				<nextDialogue forceContinue="true" stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_taur_core_toilets_interior]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'TOILETS_USE'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[清洗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					用水槽洗脸洗[pc.hands]。
+					<br/>[style.italicsGood(这会清理你的头部、手部，以及在这些栏位穿着的衣物。)]
+]]></responseTooltip>
+				<nextDialogue forceContinue="true" stripContent="true"><![CDATA[innoxia_places_fields_elis_tavern_taur_core_toilets_interior]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.applyLimitedWash(IS_HEAD, IS_EYES, IS_MOUTH, IS_NECK, IS_HAIR, IS_FINGER, IS_HAND, IS_WRIST)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_taur', 'TOILETS_WASH'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

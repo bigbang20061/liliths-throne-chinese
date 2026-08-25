@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<breast>
+	<race>innoxia_raptor</race>
+	
+	<transformationName><![CDATA[猛禽]]></transformationName>
+	
+	<coveringType>innoxia_raptor_feathers</coveringType>
+	
+	<nippleType>innoxia_raptor_nipple</nippleType>
+	
+	<fluidType>innoxia_raptor_milk</fluidType>
+	
+	<names/>
+	<namesPlural/>
+	<descriptors/>
+	
+	<namesFlat/>
+	<namesPluralFlat/>
+	<descriptorsFlat/>
+	
+	<transformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldDragon(禽鸟般)][npc.nipplesFullDescription]，[npc.she]在哺乳期内会分泌[style.boldDragon(猛禽乳汁)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.her]每个[npc.breastSize]的[npc.breasts]上都长着[npc.nipplesPerBreast]颗禽类的[npc.nipplesFullDescription]。
+]]></bodyDescription>
+	
+	<crotchBoobsTransformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldFerret(禽鸟般)][npc.crotchNipplesFullDescription]，[npc.she]在哺乳期内会分泌[style.boldHyena(猛禽乳汁)]。
+]]></crotchBoobsTransformationDescription>
+	
+	<crotchBoobsBodyDescription><![CDATA[
+		[npc.her]每个[npc.crotchBoobSize]的[npc.crotchBoobs]上都长着[npc.crotchNipplesPerBreast]颗禽类的[npc.crotchNipplesFullDescription]。
+]]></crotchBoobsBodyDescription>
+</breast>

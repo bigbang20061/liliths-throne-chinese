@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- This item of clothing had its default name changed from 'filly' to 'mule', along with references throughout the game, in v0.4.10.10 -->
+<clothing>
+	<coreAttributes>
+		<value>1000</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[项圈]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[项圈]]></namePlural>
+		<description><![CDATA[一条结实的皮质颈圈，通过金属扣环固定在佩戴者的颈部。颈圈正面缀有一排醒目的金属字母，清晰地拼出单词]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		  <slot>NECK</slot>
+		</equipSlots>
+		<rarity>QUEST</rarity>
+		<clothingSet/>
+		<imageName>filly_choker.svg</imageName>
+		<imageEquippedName/>
+		
+		<stickers>
+			<category id="txt" priority="1">
+				<categoryName><![CDATA[Text]]></categoryName>
+				<sticker id="mule" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[骡子]]></stickerName>
+					<namePrefix priority="1"><![CDATA[<i>“骡子”</i>]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>“骡子”</i>.]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">filly_choker_stickers/mule.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="filly" priority="2" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[小母马]]></stickerName>
+					<namePrefix priority="1"><![CDATA[<i>“小母马”</i>]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>“小母马”</i>.]]></descriptionModification>
+					<imageName zLayer="1" slot="NECK">filly_choker_stickers/filly.svg</imageName>
+					<itemTagsAdded>
+						<tag>FILLY_NAMING</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+
+		<effects>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MINOR_BOOST" primaryModifier="CLOTHING_SPECIAL" secondaryModifier="CLOTHING_SEALING" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MINOR_BOOST" primaryModifier="CLOTHING_SPECIAL" secondaryModifier="CLOTHING_SERVITUDE" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="TF_MOD_FETISH_BEHAVIOUR" secondaryModifier="TF_MOD_FETISH_SUBMISSIVE" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="TF_MOD_FETISH_BEHAVIOUR" secondaryModifier="TF_MOD_FETISH_ANAL_RECEIVING" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="TF_MOD_FETISH_BEHAVIOUR" secondaryModifier="TF_MOD_FETISH_ANAL_GIVING" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="TF_MOD_FETISH_BEHAVIOUR" secondaryModifier="TF_MOD_FETISH_PENIS_RECEIVING" timer="0"/>
+		</effects>
+		
+		<blockedPartsList slot="NECK">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+			
+		<incompatibleSlots/>
+			
+		<primaryColours recolouringAllowed="false">
+			<colour>CLOTHING_BRONZE</colour>
+		</primaryColours>
+		<primaryColoursDye>
+			<colour>CLOTHING_SILVER</colour>
+			<colour>CLOTHING_GOLD</colour>
+		</primaryColoursDye>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+
+		<itemTags/>
+	</coreAttributes>
+
+  <replacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把项圈系紧在[npc.her]的脖子。
+]]></self>
+    <other><![CDATA[
+			[npc.Name]把项圈牢牢地系在[npc2.namePos]的脖子上。
+]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]牢牢抓住[npc2.name]，然后把项圈系在[npc2.her]脖子上。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]解开[npc.her]的项圈，然后从[npc.her]的脖子上取下。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]解开[npc2.namePos]的项圈，然后从[npc2.her]的脖子上取下。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地解开[npc2.namePos]的项圈，然后从[npc2.her]的脖子上扯下。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

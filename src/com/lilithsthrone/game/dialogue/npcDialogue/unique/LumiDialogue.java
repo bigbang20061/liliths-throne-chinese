@@ -1,0 +1,537 @@
+package com.lilithsthrone.game.dialogue.npcDialogue.unique;
+
+import com.lilithsthrone.game.PropertyValue;
+import com.lilithsthrone.game.character.GameCharacter;
+import com.lilithsthrone.game.character.npc.dominion.Lumi;
+import com.lilithsthrone.game.dialogue.DialogueFlagValue;
+import com.lilithsthrone.game.dialogue.DialogueNode;
+import com.lilithsthrone.game.dialogue.responses.Response;
+import com.lilithsthrone.game.dialogue.responses.ResponseCombat;
+import com.lilithsthrone.game.dialogue.responses.ResponseEffectsOnly;
+import com.lilithsthrone.game.dialogue.responses.ResponseSex;
+import com.lilithsthrone.game.dialogue.utils.UtilText;
+import com.lilithsthrone.game.sex.SexPace;
+import com.lilithsthrone.game.sex.managers.universal.SMLyingDown;
+import com.lilithsthrone.game.sex.positions.slots.SexSlotLyingDown;
+import com.lilithsthrone.main.Main;
+import com.lilithsthrone.utils.Util;
+import com.lilithsthrone.utils.Util.Value;
+import com.lilithsthrone.world.WorldType;
+import com.lilithsthrone.world.places.PlaceType;
+
+/**
+ * @since 0.2.5
+ * @version 0.2.6
+ * @author Nnxx, Innoxia
+ */
+public class LumiDialogue {
+	
+	public static final DialogueNode LUMI_APPEARS = new DialogueNode("小巷", "", true) {
+		
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_APPEARS");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if (index == 1) {
+				if(Main.game.getDialogueFlags().hasFlag(DialogueFlagValue.lumiMet)) {
+					return new Response("停留", "待在这看看谁接近。", LUMI_APPEARS_REPEAT_ENCOUNTER);
+				} else {
+					return new Response("停留", "待在这看看谁接近。", LUMI_APPEARS_FIRST_ENCOUNTER);
+				}
+				
+			} else if (index == 2) {
+				return new ResponseEffectsOnly("躲避", "迅速躲进一条狭窄的通道中。") {
+					@Override
+					public void effects() {
+						Main.game.getTextStartStringBuilder().append(UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_APPEARS_EVADE"));
+						Main.game.setContent(new Response("", "", Main.game.getDefaultDialogue(false)));
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	private static long moneyStolen = 0;
+	
+	public static final DialogueNode LUMI_APPEARS_FIRST_ENCOUNTER = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_APPEARS_FIRST_ENCOUNTER");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if (index == 1) {
+				return new Response("等待", "继续躲在那堆垃圾后面。", LUMI_APPEARS_FIRST_ENCOUNTER_WAITING) {
+					@Override
+					public void effects() {
+						moneyStolen = Main.game.getPlayer().getMoney()>=700?700:Main.game.getPlayer().getMoney();
+						Main.game.getPlayer().incrementMoney(-moneyStolen);
+						
+						if(moneyStolen==700) {
+							Main.game.getTextEndStringBuilder().append(UtilText.parseFromXMLFile("characters/dominion/lumi", "MAX_MONEY_STOLEN"));
+						} else {
+							Main.game.getTextEndStringBuilder().append(UtilText.parseFromXMLFile("characters/dominion/lumi", "ALL_MONEY_STOLEN"));
+						}
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode LUMI_APPEARS_FIRST_ENCOUNTER_WAITING = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_APPEARS_FIRST_ENCOUNTER_WAITING");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if (index == 1) {
+				return new Response("追上对方", "你不能让这个小偷逃跑！", LUMI_CHASE);
+				
+			} else if (index == 2) {
+				return new ResponseEffectsOnly("让对方离开", "你没有闲工夫追什么毛头小贼，让他走吧。") {
+					@Override
+					public void effects() {
+						Main.game.getTextStartStringBuilder().append(UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_LET_THEM_ESCAPE"));
+						Main.game.setContent(new Response("", "", Main.game.getDefaultDialogue(false)));
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode LUMI_CHASE = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_CHASE");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if (index == 1) {
+				return new Response("乘胜追击", "你不能让这个小偷逃跑！", LUMI_CHASE_CONTINUE) {
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setLocation(Main.game.getPlayer().getWorldLocation(), Main.game.getPlayer().getLocation(), true);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode LUMI_CHASE_CONTINUE = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public int getSecondsPassed() {
+			return 10*60;
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_CHASE_CONTINUE");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if (index == 1) {
+				return new Response("对话", "决定试着跟她谈谈。毕竟，暴力永远不是解决之道。", LUMI_CAUGHT_TALK);
+				
+			} else if (index == 2) {
+				return new ResponseCombat("战斗",
+						"你不能让这个小偷逃跑！",
+						Main.game.getNpc(Lumi.class),
+						Util.newHashMapOfValues(
+								new Value<>(Main.game.getPlayer(), UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_COMBAT_PC_OPENING")),
+								new Value<>(Main.game.getNpc(Lumi.class), UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_COMBAT_LUMI_OPENING")))) {
+					@Override
+					public void effects() {
+						Main.game.getDialogueFlags().setFlag(DialogueFlagValue.lumiDisabled, true);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode COMBAT_PLAYER_LOSS = new DialogueNode("小巷", "", true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "COMBAT_PLAYER_LOSS");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("继续", "继续你的旅程……", null){
+					@Override
+					public DialogueNode getNextDialogue() {
+						return Main.game.getDefaultDialogue(false);
+					}
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setLocation(WorldType.EMPTY, PlaceType.GENERIC_HOLDING_CELL);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode COMBAT_PLAYER_WIN = new DialogueNode("小巷", "", true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "COMBAT_PLAYER_WIN");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if (index == 1) {
+				return new Response("取回钱财", "拿走你的钱，一言不发地离开。", COMBAT_PLAYER_WIN_RECOVER_MONEY) {
+					@Override
+					public void effects() {
+						Main.game.getPlayer().incrementMoney(moneyStolen);
+					}
+				};
+				
+			} else if (index == 2 && Main.getProperties().hasValue(PropertyValue.nonConContent)) {
+				return new ResponseSex("趁此机会",
+						"既然她已经被制服，那是时候跟这个无助的狼女玩一玩了！",
+						false, false,
+						new SMLyingDown(
+								Util.newHashMapOfValues(new Value<>(Main.game.getPlayer(), SexSlotLyingDown.MISSIONARY)),
+								Util.newHashMapOfValues(new Value<>(Main.game.getNpc(Lumi.class), SexSlotLyingDown.LYING_DOWN))) {
+							@Override
+							public SexPace getStartingSexPaceModifier(GameCharacter character) {
+								if(character.isPlayer()) {
+									return SexPace.DOM_ROUGH;
+								}
+								return SexPace.SUB_RESISTING;
+							}
+						},
+						null,
+						null, AFTER_SEX, UtilText.parseFromXMLFile("characters/dominion/lumi", "COMBAT_PLAYER_WIN_TAKE_ADVANTAGE")) {
+					@Override
+					public void effects() {
+						Main.game.getPlayer().incrementKarma(-1000);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode AFTER_SEX = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "AFTER_SEX");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("继续", "继续你的旅程……", null){
+					@Override
+					public DialogueNode getNextDialogue() {
+						return Main.game.getDefaultDialogue(false);
+					}
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setLocation(WorldType.EMPTY, PlaceType.GENERIC_HOLDING_CELL);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode COMBAT_PLAYER_WIN_RECOVER_MONEY = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "COMBAT_PLAYER_WIN_RECOVER_MONEY");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("继续", "继续你的旅程……", null){
+					@Override
+					public DialogueNode getNextDialogue() {
+						return Main.game.getDefaultDialogue(false);
+					}
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setLocation(WorldType.EMPTY, PlaceType.GENERIC_HOLDING_CELL);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode COMBAT_PLAYER_WIN_TAKE_ADVANTAGE = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "COMBAT_PLAYER_WIN_TAKE_ADVANTAGE");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("继续", "继续你的旅程……", null){
+					@Override
+					public DialogueNode getNextDialogue() {
+						return Main.game.getDefaultDialogue(false);
+					}
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setLocation(WorldType.EMPTY, PlaceType.GENERIC_HOLDING_CELL);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode LUMI_CAUGHT_TALK = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_CAUGHT_TALK");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("给予", "让卢米拿着从你身上偷走的钱，告诉她一定要好好用。", LUMI_CAUGHT_TALK_GIVE_MONEY) {
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setPlayerKnowsName(true);
+						Main.game.getTextEndStringBuilder().append(Main.game.getNpc(Lumi.class).incrementAffection(Main.game.getPlayer(), 10));
+					}
+				};
+				
+			} else if(index == 2) {
+				return new Response("要求", "要求卢米把从你那偷来的钱还回来。", LUMI_CAUGHT_TALK_ASK_FOR_MONEY_BACK) {
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setPlayerKnowsName(true);
+						Main.game.getPlayer().incrementMoney(moneyStolen);
+						Main.game.getDialogueFlags().setFlag(DialogueFlagValue.lumiPromisedDinner, true);
+						Main.game.getTextEndStringBuilder().append(Main.game.getNpc(Lumi.class).incrementAffection(Main.game.getPlayer(), 5));
+					}
+				};
+				
+			} else if(index == 3) {
+				return new Response("威胁", "教训一下这个小贼！你有预感如果这么做了，就永远不会再跟她见面了。", LUMI_CAUGHT_TALK_THREATEN){
+					@Override
+					public void effects() {
+						Main.game.getDialogueFlags().setFlag(DialogueFlagValue.lumiDisabled, true);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode LUMI_CAUGHT_TALK_GIVE_MONEY = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_CAUGHT_TALK_GIVE_MONEY");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("继续", "继续你的旅程……", null){
+					@Override
+					public DialogueNode getNextDialogue() {
+						return Main.game.getDefaultDialogue(false);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode LUMI_CAUGHT_TALK_ASK_FOR_MONEY_BACK = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_CAUGHT_TALK_ASK_FOR_MONEY_BACK");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("继续", "继续你的旅程……", null){
+					@Override
+					public DialogueNode getNextDialogue() {
+						return Main.game.getDefaultDialogue(false);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	public static final DialogueNode LUMI_CAUGHT_TALK_THREATEN = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_CAUGHT_TALK_THREATEN");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			if(index == 1) {
+				return new Response("继续", "继续你的旅程……", null){
+					@Override
+					public DialogueNode getNextDialogue() {
+						return Main.game.getDefaultDialogue(false);
+					}
+					@Override
+					public void effects() {
+						Main.game.getNpc(Lumi.class).setLocation(WorldType.EMPTY, PlaceType.GENERIC_HOLDING_CELL);
+					}
+				};
+				
+			} else {
+				return null;
+			}
+		}
+	};
+	
+	
+	
+	public static final DialogueNode LUMI_APPEARS_REPEAT_ENCOUNTER = new DialogueNode("小巷", "", true, true) {
+
+		@Override
+		public String getAuthor() {
+			return "Nnxx";
+		}
+		
+		@Override
+		public String getContent() {
+			return UtilText.parseFromXMLFile("characters/dominion/lumi", "LUMI_APPEARS_REPEAT_ENCOUNTER");
+		}
+		
+		@Override
+		public Response getResponse(int responseTab, int index) {
+			return null;
+		}
+	};
+}

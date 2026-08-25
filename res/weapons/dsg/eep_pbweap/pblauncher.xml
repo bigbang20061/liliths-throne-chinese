@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		
+		<authorTag><![CDATA[在瞄准镜导轨下方，雕刻着一行小字：“执法者官方分配，DSG铸造厂生产。”]]></authorTag>
+	
+		<value>9000</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>true</twoHanded>
+		
+		<determiner><![CDATA[一把]]></determiner>
+		
+		<name><![CDATA[胡椒榴弹发射器]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[胡椒榴弹发射器]]></namePlural> 
+		
+		<description><![CDATA[最初的设计是为了通过空爆更有效地散播胡椒油，但很快就发现，爆裂装药产生的余热将气溶胶油变成了一小团爆炸云。尽管这是一个严重的设计缺陷，但执法者要求不要修复它。]]></description> 
+		
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用你的胡椒榴弹发射器射向[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>EPIC</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]拿出榴弹发射器，插入一个新的弹匣，拉动了拉机柄，然后关闭了保险。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]取出了弹匣，将安全装置打开，拉了拉拉机柄，确认了膛室内没有剩余的弹药，然后收起了榴弹发射器。]]></unequipText>
+		
+		<imageName>pblauncher_nomag.svg</imageName> 
+		
+		<imageEquippedName>pblauncher.svg</imageEquippedName>
+		
+		<damage>60</damage>
+
+		<aoe chance="100">54</aoe>
+		<aoe chance="100">42</aoe>
+		<aoe chance="100">42</aoe>
+		<aoe chance="100">24</aoe>
+		<aoe chance="100">24</aoe>
+			
+		<arcaneCost>6</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>FIRE</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/> 
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_GUNMETAL</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_HEAVY</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]用准镜瞄准[npc2.name]，扣动了扳机。榴弹在[npc2.name]身旁留下一团橙色烟雾，随后一团烈火便包围了[npc2.her]。
+		#IF game.isSillyModeEnabled()
+			#THEN [npc.speech(尝尝辣肉丸吧！)][npc.name]喊道。
+			#ENDIF
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]用准镜瞄准[npc2.name]，扣动了扳机。子弹偏向了一边！榴弹在[npc2.name]远处炸开了。
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

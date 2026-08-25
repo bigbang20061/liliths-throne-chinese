@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>200</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[无肩带文胸]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[无肩带文胸]]></namePlural>
+		<description><![CDATA[这款文胸没有肩带来固定，因此依靠一条超宽的带子来支撑胸部。它旨在与连衣裙搭配使用，因为这些连衣裙会露出普通文胸的肩带。]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>CHEST</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>strapless_bra.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_BREASTS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="LINGERIE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将低胸胸罩贴在[npc.her]的胸部上并将背带系在[npc.her]的后背上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将低胸胸罩贴在[npc2.namePos]的胸部上并将背带系在[npc2.her]的后背上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将胸罩贴在[npc2.namePos]的胸部上并将背带系在[npc2.her]的后背上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了[npc.her]的低胸胸罩并将其摘下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开了[npc2.namePos]的低胸胸罩并将其摘下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地解下了[npc2.namePos]的胸罩并将其扯下。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

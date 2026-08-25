@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>50</value> 
+		<determiner><![CDATA[一袋]]></determiner>
+		<name><![CDATA[圆形坚果]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[圆形坚果]]></namePlural>
+		<description><![CDATA[一小袋圆形坚果。一侧的标签上画着一个大松鼠女正在往嘴里塞一把坚果。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/squirrel/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="75">squirrel_round_nuts.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_SQUIRREL_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[松鼠]]></potionDescriptor>
+		<associatedRace>SQUIRREL_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到[npc.her]的奥术力量增强……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_ARCANE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]拽开圆形坚果袋的包装。随着坚果袋内的坚果的出现，一股浓郁的坚果味扑鼻而来，[npc.she]发现[npc.herself]无法抗拒这美味的诱惑。[npc.She]迅速吞下袋子里的内容，发现这些坚果和它们的外表一样美味。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]拽开圆形坚果袋的包装，然后递给[npc2.name]。随着坚果袋内的坚果的出现，一股浓郁的坚果味扑鼻而来，[npc2.name]发现[npc2.herself]无法抗拒这美味的诱惑。[npc2.She]迅速吞下袋子里的内容，发现这些坚果和它们的外表一样美味。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

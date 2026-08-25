@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<leg>
+	<race>NoStepOnSnek_octopus</race>
+	<transformationName><![CDATA[章鱼]]></transformationName>
+	<coveringType>OCTOPUS_SKIN</coveringType>
+	<defaultFootStructure>TENTACLED</defaultFootStructure>
+	<footType>TENTACLE</footType>
+	<spinneret>false</spinneret>
+	<tentacleType>NoStepOnSnek_octopus_tentacle</tentacleType>
+	<tentacleCount>8</tentacleCount>
+	<allowedLegConfigurations>
+		<configuration>CEPHALOPOD</configuration>
+	</allowedLegConfigurations>
+	<name><![CDATA[触手]]></name>
+	<namePlural><![CDATA[触手]]></namePlural>
+	<descriptorsMasculine>
+		<descriptor><![CDATA[男性]]></descriptor>
+		<descriptor><![CDATA[带吸盘的]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[带吸盘的]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+		<descriptor><![CDATA[修长]]></descriptor>
+	</descriptorsFeminine>
+	<footDescriptorsMasculine>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</footDescriptorsMasculine>
+	<footDescriptorsFeminine>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</footDescriptorsFeminine>
+	<toeDescriptorsMasculine>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</toeDescriptorsMasculine>
+	<toeDescriptorsFeminine>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</toeDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		[npc.her]的双腿转化成了新的形式，一层柔滑的章鱼皮肤迅速覆盖了上去，新生的腿惊人地呈现出触手般的外观。强而有力的转化迅速完成，[npc.she]看到新皮肤自然过渡成了覆盖到大腿上部的[npc.skin]。
+	<br/>[npc.Name]现在拥有[npc.materialDescriptor][npc.legFullDescription]的[style.boldOctopus(章鱼一般的腿)]。
+]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.Her]章鱼般的下肢[npc.materialCompositionDescriptor][npc.legFullDescription(true)]。
+	]]></bodyDescription>
+</leg>

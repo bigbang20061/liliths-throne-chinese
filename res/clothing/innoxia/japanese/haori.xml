@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>750</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[男式羽织]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[男式羽织]]></namePlural>
+		<description><![CDATA[一件传统的长及大腿的和风外套，主要由隐居的妖狐穿着。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>MASCULINE</femininity>
+		<slot>TORSO_OVER</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_ronin</clothingSet>
+		<imageName>haori.svg</imageName>
+		<imageEquippedName/>
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_PHYSICAL" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_GREY</colour>
+			<colour>CLOTHING_BLUE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>REINDEER_GIFT</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的[npc.arms]穿过羽织的袖子，然后将它拉了上去。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的胳膊穿过羽织的袖子，然后帮助[npc2.herHim]穿上它。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的胳膊塞进羽织的袖子，然后粗暴地把它穿在[npc2.herHim]的身上。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的羽织脱下。]]></self>
+		<other><![CDATA[
+[npc.Name]帮助[npc2.name]脱掉羽织。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地脱下[npc2.namePos]的羽织。]]></otherRough>
+	</displacementText>
+	
+</clothing>

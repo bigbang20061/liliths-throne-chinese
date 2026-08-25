@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>250</value>
+		<melee>true</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[一个]]></determiner>
+		<name appendDamageName="false"><![CDATA[手电筒]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[手电筒]]></namePlural>
+		<description><![CDATA[一个以奥术供能的手电筒。除了能够照亮最黑暗的地方外，这种结实的手电筒还可以用作即兴指挥棒……]]></description>
+		<attackDescriptor><![CDATA[捶打]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用你的手电筒捶打[npc2.name]。]]></attackTooltipDescription>
+		<rarity>COMMON</rarity>
+		<equipText><![CDATA[[npc.Name]握好[npc.her]的手电筒，准备拿它来照亮[npc.she]遇到的黑暗区域。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]把[npc.her]的手电筒收了起来。]]></unequipText>
+		
+		<imageName>flashlight.svg</imageName> 
+		<imageEquippedName>flashlight.svg</imageEquippedName>
+		
+		<damage>5</damage> 
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_RALPH</tag>
+			<tag>NIGHT_VISION_AREA</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.name]挥舞着手电筒，成功击中了[npc2.name]的[npc2.arm]，让[npc2.herHim]发出一声惊叫！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.name]用手电筒猛击[npc2.name]，结结实实地击中了[npc2.her]的[npc2.arm]！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.name]快步上前，拿着手电筒朝[npc2.name]扑去，用手电筒的重端砸在了[npc2.her]的肩上！
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.name]刺出[npc.her]的手电筒，朝[npc2.name]的[npc2.arm]砸去，却没打中[npc2.herHim]！
+		]]></missText>
+		<missText><![CDATA[
+		[npc.name]用[npc.her]的手电筒向[npc2.name]击去，随后因为没打中[npc.her]的目标而沮丧地叫出了声！
+		]]></missText>
+		<missText><![CDATA[
+		[npc.name]快步上前，拿着手电筒朝[npc2.name]扑去，但[npc.she]没打中[npc.her]的目标！
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[马蹄铁]]></name>
+		
+		<description><![CDATA[风格化的马蹄铁轮廓。]]></description> 
+		<bodyOverviewDescription><![CDATA[一个纹身，画着风格化的马蹄铁轮廓]]></bodyOverviewDescription> 
+		
+		<imageName>hoof.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_GREY_DARK"/> 
+		<secondaryColours values="ALL" defaultColour="CLOTHING_GREY_DARK"/> 
+		<tertiaryColours values="ALL" defaultColour="CLOTHING_GREY"/> 
+		
+	</coreAttributes>
+	
+</tattoo>

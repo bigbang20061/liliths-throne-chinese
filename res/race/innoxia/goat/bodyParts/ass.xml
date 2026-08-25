@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ass>
+	<race>innoxia_goat</race>
+	
+	<transformationName><![CDATA[山羊]]></transformationName>
+	
+	<coveringType>innoxia_goat_fur</coveringType>
+	
+	<anusType>innoxia_goat_anus</anusType>
+	
+	<names/>
+	<namesPlural/>
+	
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[
+		[npc.She]现在拥有了[style.boldGoat(山羊般的)][npc.assholeFullDescription]。
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		拥有山羊般[npc.anusFullDescription(true)]
+]]></bodyDescription>
+</ass>

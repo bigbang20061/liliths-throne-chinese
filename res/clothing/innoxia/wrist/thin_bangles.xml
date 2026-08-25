@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>750</value>
+		<determiner><![CDATA[一堆]]></determiner>
+		<name><![CDATA[薄手镯]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[薄手镯]]></namePlural>
+		<description><![CDATA[十几根细细的金属带，可以平均分开佩戴在佩戴者的手腕上，也可以套到尾巴根。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		  <slot>WRIST</slot>
+		  <slot>TAIL</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>thin_bangles.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList slot="WRIST">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<blockedPartsList slot="TAIL">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="WRIST"/>
+		<incompatibleSlots slot="TAIL"/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将手镯套进[npc.her]的手腕里。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将手镯套进[npc2.namePos]的手腕里。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]强行将手镯套进[npc2.namePos]的手腕里。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将手镯从[npc.her]的[npc.finger]上摘下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将手镯戴到[npc2.namePos]的手腕上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]强行将手镯从[npc2.namePos]的手腕上扯下。
+]]></otherRough>
+  </displacementText>
+  
+  <replacementText slot="TAIL" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将细手镯套上[npc.her]的[npc.tail]。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将细手镯套上[npc2.namePos]的[npc2.tail]。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]强行将细手镯套进[npc2.namePos]的[npc2.tail]里。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="TAIL" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]取下[npc.her][npc.tail]上的细手镯。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]取下[npc2.namePos][npc2.tail]上的细镯子。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]扯下[npc2.namePos][npc2.tail]上的细镯子。
+    ]]></otherRough>
+  </displacementText>
+  
+</clothing>

@@ -1,0 +1,2116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="WAREHOUSE_DISTRICT_DOMINION_EXPRESS"><![CDATA[
+	<p>
+		[style.boldBrown(御城速递)]<br/>
+		#IF(pc.isQuestFailed(QUEST_LINE_ROMANCE_NATALYA))
+			因为娜塔莉亚曾经把你赶走，并禁止你回到御城速递，你在这里无事可做……
+		#ELSE
+			你看了看娜塔莉亚给你的名片，发现雇佣她为“马场主”的那家快递公司离你不远。他们接待外人的时间是：
+			#IF(game.isExtendedWorkTime())
+				#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
+					[style.colourMinorGood([unit.time(6)]-[unit.time(22)])]。因为你是一匹合格的[style.mule]，你可以在任何时候进出此地，你在想是否要进去为半人马奴隶们服务……
+				#ELSE
+					[style.colourMinorGood([unit.time(6)]-[unit.time(22)])]。由于御城速递的仓库现在是[style.colourGood(开放的)]，你可以进去，并且看看能否准备与[natalya.race]再次相见……
+ 				#ENDIF
+			#ELSEIF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
+				[style.colourMinorBad([unit.time(6)]-[unit.time(22)])]。因为你是一匹合格的[style.mule]，你并不需要遵守什么营业时间。即使娜塔莉亚这时候并不在，你也可以进去，服务一下半人马奴隶们……
+ 			#ELSE
+				[style.colourMinorBad([unit.time(6)]-[unit.time(22)])]。御城速递的仓库现在是[style.colourBad(关着门的)]，要想再次见到[natalya.race]，你得在营业时间来……
+			#ENDIF
+ 		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- INITIAL_ENTRANCE -->
+	
+	<htmlContent tag="INITIAL_ENTRANCE"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	<p>
+		你[pc.Walking]到御城速递的巨大仓库前，你推开前门，[pc.step]进门厅。这里与主仓库之间由一堵内墙隔开，既是接待室，也是等候室。这个大房间的一侧，摆着几排沙发和椅子
+		#IF(game.isExtendedWorkTime())
+			，上面坐着几位等待与公司代表会面的商人。
+		#ELSE
+			，但由于仓库目前对公众关闭，这里完全空置着。
+		#ENDIF
+		房间的另一侧是个平行于墙壁的很长的柜台，它是人们参观御城速递的第一站。
+	</p>
+	<p>
+		#IF(game.isExtendedWorkTime())
+			与其巨大的占地面积相反，柜台后面只坐着三个穿着得体的马女。离门近那位见你进来，咕哝了一声，三个人一起看向你。
+		#ELSE
+			由于仓库目前对公众关闭，柜台后面只坐着一个穿着得体的马女。她见你进来，忍不住打了个哈欠，身子转向你。
+		#ENDIF
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
+			她注意到你戴着[style.mule]项圈，便挥手示意你过去，[style.speechFeminine(去吧去吧，[style.mule]。我敢信马厩里有很多奴隶在等你呢。)]
+		#ELSEIF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
+			你不想耽误时间，已经拿出了盖有印章的名片。你把名片给前台接待员看，她向你挥挥手，
+			#IF(game.isExtendedWorkTime())
+				[style.speechFeminine(过去吧，娜塔莉亚正等着见你……)]
+			#ELSE
+				[style.speechFeminine(娜塔莉亚今天回家了哦。不过你想的话，就过去吧。)]
+			#ENDIF
+		#ELSE
+			她向你挥了挥手，以一种干瘪乏味的声音说，[style.speechFeminine([style.afternoon]好，[pc.sir]。有什么事情吗？)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- INITIAL_ENTRANCE_CARD_SHOWN -->
+	
+	<htmlContent tag="INITIAL_ENTRANCE_CARD_SHOWN"><![CDATA[
+	<p>
+		你[pc.walk]到接待员旁边，展示了娜塔莉亚的名片。你还没说自己是[natalya.race]介绍来的，她的眉毛就已经诧异地扬起。接待员指了指通往主仓库的双开门，说，[style.speechFeminine(别让娜塔莉亚主人等太久了。快过去吧。)]
+	</p>
+	<p>
+		你收起名片，从柜台[pc.step]开，打算按马女说的做……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- ENTRANCE -->
+	
+	<htmlContent tag="ENTRANCE"><![CDATA[
+	<p>
+		门厅与主仓库之间由一堵内墙隔开，既是接待室，也是等候室。这个大房间的一侧，摆着几排沙发和椅子
+		#IF(game.isExtendedWorkTime())
+			，上面坐着几位等待与公司代表会面的商人。
+		#ELSE
+			，但由于仓库目前对公众关闭，这里完全空置着。
+		#ENDIF
+		房间的另一侧是个平行于墙壁的很长的柜台，它是人们参观御城速递的第一站。
+	</p>
+	<p>
+		#IF(game.isExtendedWorkTime())
+			与其巨大的占地面积相反，柜台后面只坐着三个穿着得体的马女。你已经取得了进入主仓库的许可，这些接待员不会再理会你，只顾着嘁嘁喳喳地闲聊。
+		#ELSE
+			由于仓库目前对公众关闭，柜台后面只坐着一个穿着得体的马女。你已经取得了进入主仓库的许可，这个接待员不会再理会你，只是继续锉她的指甲，偶尔打个哈欠。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- CORRIDOR -->
+	
+	<htmlContent tag="CORRIDOR"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	<p>
+		宽阔的木地板走廊直通仓库两头。走廊一侧是坚固的墙壁，另一侧则通向巨大的仓库，里面堆满了板条箱、家具和塞满书本的书架。
+	</p>
+	<p>
+		#IF(game.isExtendedWorkTime())
+			你沿着走廊向前，时不时会碰到几个半人马和半人马奴隶，他们要么在运货，要么在卸货。虽然大多数人背着或扛着货物走，但也有几个零零散散的，因为货物太重而不得不用手推车拉着走。
+		#ELSE
+			尽管已是傍晚，你在走廊上偶尔还是会与半人马或半人马奴隶擦肩而过。与白天不同的是，他们并不是在运货或者卸货，而是在理货。
+		#ENDIF
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
+			你路过时，这些半人马注意到你脖子上的[style.mule]项圈，如饥似渴地盯着你，
+			#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				你意识到，[style.colourPink(他们中迟早有一个会抓住你要求服务)]。
+			#ELSE
+				但[style.colourBad(因为你的嘴被限制了，没人能让你服务)]。
+			#ENDIF
+		#ELSE
+			这些半人马与你没有任何关系，也不理睬你，你毫无阻拦地穿过仓库。
+		#ENDIF
+	</p>
+	<p>
+		除了这些体力劳动者，你还能零零散散地见到几个体型更小的半人马在走廊尽头的马厩里欢快地跑来跑去。他们每个都戴着吊坠，上面用青铜字母，还有几个用的是稀有的银色字母写着“[style.mule]”。这些体型娇小、身材丰满的[style.mules]与你擦肩而过，但完全不在意你，它们似乎只对附近的奴隶感兴趣。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- STORAGE -->
+	
+	<htmlContent tag="STORAGE"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	<p>
+		御城速递不仅从事货物运输业务，还经营着相当成功的仓储服务。仓库的绝大部分面积都用于存储货物，里面摆放着数不清的板条箱、家具和书架。
+	</p>
+	<p>
+		#IF(game.isExtendedWorkTime())
+			你在迷宫般的仓储区绕来绕去，时不时会碰到几个半人马和半人马奴隶。
+		#ELSE
+			你现在[pc.walking]过的正是迷宫般的仓储区。尽管已是傍晚，你还是会偶尔与半人马或半人马奴隶擦肩而过。
+		#ENDIF
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA) && collar!=null && collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
+			半人马注意到你脖子上的[style.mule]项圈，趁你路过用下流话调侃你。
+			#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				你意识到，[style.colourPink(他们中迟早有一个会抓住你要求服务)]。
+			#ELSE
+				但[style.colourBad(因为你的嘴被限制了，没人能让你服务)]。
+			#ENDIF
+		#ELSE
+			这些半人马与你没有任何关系，也不理睬你，你毫无阻拦地穿过仓库。
+		#ENDIF
+	</p>
+	<p>
+		除了这些体力劳动者，你还能零零散散地见到几个体型更小的半人马在走廊尽头的马厩里欢快地跑来跑去。他们每个都戴着吊坠，上面用青铜字母，还有几个用的是稀有的银色字母写着“[style.mule]”。这些体型娇小、身材丰满的[style.mules]与你擦肩而过，但完全不在意你，它们似乎只对附近的奴隶感兴趣。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE -->
+	
+	<htmlContent tag="OFFICE"><![CDATA[
+	<p>
+		像御城速递这样规模的企业不可避免地会有大量文书工作，你面前的办公室正是处理这些繁琐官僚工作的地方。虽然门上“仅限行政人员”的牌子明确拦下了你，但你还是可以透过大玻璃窗看到十几个工作人员在表格上写写画画或制订送货计划。
+	</p>
+	<p>
+		你没有进入这间办公室的许可。你无事可做，只能转身回仓库……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- FILLY_STATION -->
+	
+	<htmlContent tag="FILLY_STATION"><![CDATA[
+	<p>
+		横贯仓库的长走廊一侧有个小凹室，其大小刚好容纳一匹半人马。你走进凹室，发现自己正面对着一台看起来像是自动售货机的东西，上面用显眼的字体写着“[style.Mule]奖品站”。透过透明的玻璃正面，发现这里提供着种类繁多的转化药水，但它们并不能用火币交易，而是在每种药水下方对应标明了购买需要的“[style.mule]点数”。
+	</p>
+	<p>
+		你在怪异的自动售货机旁看到了一张“[style.Mule]奖励计划”的宣传海报。你可以阅读一下海报上的信息，或者你也可以试试“[style.mule]奖品站”……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- FILLY_STATION_POSTER -->
+	
+	<htmlContent tag="FILLY_STATION_POSTER"><![CDATA[
+	<p>
+		你看向显眼的海报，读道：
+	</p>
+	<div class='container-full-width' style='text-align:center; width:75%; margin:8px 12.5%;'>
+		<p>
+			[style.boldPinkLight([style.Mule]奖励计划)]
+			</br>
+			</br>
+			欢迎来到[style.Mule]奖品站，[style.mule]！以防你遗忘事务的运作方式，来快速回顾一下吧：
+			<br/>
+			- 半人马奴隶，辛勤劳动，赚[style.colourPinkLight([style.mule]点数)]！
+			<br/>
+			- 他们可以给你[style.colourPinkLight([style.mule]点数)]，来交换你的性服务！
+			<br/>
+			- 来奖品站，[style.colourPinkLight([style.mule]点数)]换多种美味转化药水！
+			<br/>
+			- 将[style.mule]项圈放在奥术扫描仪上即可开始购买！
+			<br/>
+			- 记住，[style.colourPinkLight([style.mule]点数)][style.colourCrimson(月初清零)]，每晚夜半[style.colourBad(失去两点)][style.colourPinkLight([style.mule]点数)]。
+			<br/>
+			<br/>
+			<i><span style='font-size:0.75em'>你签署[style.mule]合同时已阅读并同意：御城速递不对因服用转化药水而产生的任何不良后果负责。这种基于积分的奖励制度在法律上不能被认定为开创了向[style.mules]支付工资的先例。御城速递不对因使用该机器而引起的任何并发症负责。如果你想投诉，请找娜塔莉亚主人。</span></i>
+		</p>
+	</div>
+	<p>
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
+			你已经注册成为了御城速递的[style.mules]。你在考虑是现在使用奖品站，还是先去赚[style.mule]点数……
+		#ELSE
+			你并不是御城速递的[style.mules]。你怀疑自己用不了这个奖品站……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- FILLY_STATION_MACHINE -->
+	
+	<htmlContent tag="FILLY_STATION_MACHINE"><![CDATA[
+	<p>
+		你凑近了打量“[style.mule]奖品站”，发现了输入选择的小键盘。此外，还有个闪着粉红色光芒的缝隙，宛若条形码扫描仪的光。你把目光转向奖品站橱窗内的物品，发现每种转化药水都只有一瓶，而且与自动售货机不同，似乎并不能选择买哪瓶。
+	</p>
+	<p>
+		奖品站似乎安装着某种奥术设备，能够自动检测你的存在。机器突然发出一连串响亮高昂的嗡鸣声，在空中投射出彩色文字：
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_MACHINE_REJECTED"><![CDATA[
+	<p style='text-align:center;'>
+		<b>[style.italicsCrimson(未检测到[style.mule]项圈！)]</b>
+		<br/>
+		[style.italicsCrimson(请退后，为合格[style.mule]留出使用空间！)]
+	</p>
+	<p>
+		你不想触发警报，从机器旁连连退后，谢天谢地，投射出的奥术文字也一同消失了。
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
+			看起来，你如果没佩戴“[style.mule]项圈”，就无法使用“[style.mule]奖品站”……
+		#ELSE
+			看起来，你如果不是“[style.mule]”，就无法使用“[style.mule]奖品站”……
+
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_MACHINE_ACCEPTED"><![CDATA[
+	<p style='text-align:center;'>
+		<b>[style.italicsPink(检测到[style.Mule]！)]</b>
+		<br/>
+		[style.italicsPinkLight([style.Mule]点数: )][style.boldPink([#SPECIAL_PARSE_0])]
+		<br/>
+		[style.italicsPink(当前排名: )]<i>[#SPECIAL_PARSE_1]</i>
+		<br/>
+		[style.italicsGood(请把[style.mule]项圈置于扫描仪上以开始！)]
+	</p>
+	<p>
+		你按机器说的做，向前探身把[style.mule]项圈扔进耀眼的粉红色光束中。紧接着，设备响起高昂的嗡鸣声，滚动菜单浮现在你眼前。你查看菜单，发现可以用[style.mule]点数购买：
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_GENERIC_END"><![CDATA[
+		在机械键盘上完成输入后的一瞬间，扫描仪发出一道明亮的粉红色闪光，就在你面前，[#SPECIAL_PARSE_1][style.mule]点数从你的项圈中被提取出来，并被机器吸收。紧接着，一声高亢的蜂鸣声响起，机器前端的面板盖滑到一边，一个巨大的硅胶马阳具缓缓升上来。
+	</p>
+	<p>
+		你意识到自己的职责，向前倾身把假阳具含进嘴里，骚态万千地吮吸着。一股温热且咸腥的精液味热流直冲你的喉咙。硅胶假阳具很快把味道熟悉的弹药全数打进你胃里，又缩回面板后的小盒子。你意识到身体开始转化，发出狂乱悠长的呜咽声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_GENERIC_MENTAL_END"><![CDATA[
+		在机械键盘上完成输入后的一瞬间，扫描仪发出一道明亮的粉红色闪光，就在你面前，[#SPECIAL_PARSE_1][style.mule]点数从你的项圈中被提取出来，并被机器吸收。紧接着，一声高亢的蜂鸣声响起，机器前端的面板盖滑到一边，一个巨大的硅胶马阳具缓缓升上来。
+	</p>
+	<p>
+		你意识到自己的职责，向前倾身把假阳具含进嘴里，骚态万千地吮吸着。一股温热且咸腥的精液味热流直冲你的喉咙。硅胶假阳具很快把味道熟悉的弹药全数打进你胃里，又缩回面板后的小盒子。你感到头晕目眩，发出狂乱悠长的呜咽声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_BASIC_FILLY"><![CDATA[
+	
+ <p>
+ 你想保证自己拥有合适的身体，于是选择了“[#SPECIAL_PARSE_0]”。
+ ]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_TAUR"><![CDATA[
+	
+ <p>
+ 你考虑到，如果拥有兽态马身的话，就能被半人马骑在身上发情。那太刺激了。于是你选择了“[#SPECIAL_PARSE_0]”。
+ ]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_ASS_PUSSY"><![CDATA[
+	
+ <p>
+    你想拥有让御城速递其他[style.mules]都比不上的诱人臀部，于是选择了“[#SPECIAL_PARSE_0]”。
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_THROAT_PUSSY"><![CDATA[
+	
+ <p>
+ 你想成为最会吸马肉棒的[style.mule]，于是选择了“[#SPECIAL_PARSE_0]”。
+ 
+]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_ASS_LICKER"><![CDATA[
+	
+ <p>
+ 你沉溺在提供最佳舔肛服务的幻想中，打起了特殊转化的主意，于是选择了“[#SPECIAL_PARSE_0]”。
+ ]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_HUNG"><![CDATA[
+	
+ <p>
+ 你想在腿间垂下一根摇摇晃晃的巨大肉棒，于是选择了“[#SPECIAL_PARSE_0]”。
+ ]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_SISSY"><![CDATA[
+	<p>
+		你想让所有人都注意到你是一匹可怜的伪娘[style.mule]，于是选择了“[#SPECIAL_PARSE_0]”。
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_TOP_HEAVY"><![CDATA[
+	
+ <p>
+ 你希望能在半人马奴隶面前大显身手，于是选择了“[#SPECIAL_PARSE_0]”。
+ ]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_SUBBY"><![CDATA[
+	<p>
+		你发现自己需要表现得更像一匹驯服的[style.mule]妓女，于是选择了“[#SPECIAL_PARSE_0]”。你刚按完机器键盘上的组合键，扫描仪就在你眼前射出一道明亮的粉红色闪光，从项圈中吸取了[#SPECIAL_PARSE_1][style.mule]点数。紧接着，机器突然发出一连串响亮高昂的嗡鸣声，底部原本平整光滑的面板滑动打开，送出了一只满溢着浓厚乳白色液体的狗碗。碗滑到你脚边。
+	</p>
+	<p>
+		你意识到自己的职责，伏跪在地，驯服地一点点舔舐着温热且咸腥的精液味液体。你迅速吞咽了整碗味道熟悉的一餐。狗碗缩回面板后的小盒子。你感到头晕目眩，发出狂乱悠长的呜咽声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_BIMBO"><![CDATA[
+	
+ <p>
+ 你想成为满脑子只有马肉棒和马屁眼的无脑骚货，只会顺从地为半人马提供服务，于是选择了“[#SPECIAL_PARSE_0]”。
+ ]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_TRANSFORMATION_BIMBO_END"><![CDATA[
+	<p>
+		最后，机器前面的另一块平板滑到了一边，让机械臂把一个亮粉色的棒棒糖伸向你的脸。你发出咯咯的笑声，身体前倾，用[pc.lips+]裹住美味的食物，然后开始心不在焉地吮吸起来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_SILVER_COLLAR"><![CDATA[
+	<p>
+		你攒够了永久升级项圈的点数，于是选择了“银项圈”升级选项。你刚按完机器键盘上的组合键，扫描仪就在你眼前射出一道明亮的粉红色闪光，从项圈中吸取了[#SPECIAL_PARSE_0][style.mule]点数。机器突然发出一连串短促高昂的欢呼声，前方原本平整光滑的面板滑动打开，发射出一股银色的闪纸，洒在你身上。
+	</p>
+	<p>
+		你掸着身上的闪纸，前方未曾关闭的面板后探出一面小镜子，你发现[style.mule]项圈不知何时被染成了银色！你对自己欣喜地微笑。镜子缩回面板后的小盒子，空中又投射出一串奥术文字：
+	</p>
+	<p style='text-align:center;'>
+		<b>[style.italicsPink(祝贺你，[style.mule]！)]</b>
+		<br/>
+		[style.italicsSilver(你是第十七匹升级银项圈的[style.mule]！)]
+		<br/>
+		[style.italicsGood(你现在可以申请为娜塔莉亚主人提供性服务，每天一次！)]
+	</p>
+	<p>
+		#IF(game.isExtendedWorkTime())
+			这段文字迅速消失了。你在想，要不要径直去找主人呢……
+		#ELSE
+			这段文字迅速消失了。你在想，要不要等主人早上一来就去找她呢……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FILLY_STATION_REWARD_GOLD_COLLAR"><![CDATA[
+	<p>
+		你再次攒够了永久升级项圈的点数，于是选择了“金项圈”升级选项。你刚按完机器键盘上的组合键，扫描仪就在你眼前射出一道明亮的粉红色闪光，从项圈中吸取了[#SPECIAL_PARSE_0][style.mule]点数。机器突然发出一连串精巧高昂的欢呼声，前方原本平整光滑的面板滑动打开，发射出一股金色的闪纸，洒在你身上。
+	</p>
+	<p>
+		如同升级银项圈的时候一样，前方未曾关闭的面板后探出一面小镜子，你发现[style.mule]项圈不知何时被染成了金色！你对自己欣喜地微笑。镜子缩回面板后的小盒子，空中又投射出一串奥术文字：
+	</p>
+	<p style='text-align:center;'>
+		<b>[style.italicsPink(祝贺你，[style.mule]！)]</b>
+		<br/>
+		[style.italicsGold(你是第一匹升级金项圈的[style.mule]！)]
+		<br/>
+		[style.italicsExcellent(你现在可以要求为娜塔莉亚主人提供性服务，每天一次！)]
+	</p>
+	<p>
+		#IF(game.isExtendedWorkTime())
+			这段文字迅速消失了。你在想，要不要径直去找主人试试新权限呢……
+		#ELSE
+			这段文字迅速消失了。你在想，要不要等主人早上一来就去找她试试新权限呢……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- STABLES -->
+	
+	<htmlContent tag="STABLES"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	<p>
+		走廊尽头敞开的拱门连接着仓库与相当大的附楼。透过拱门看去，很容易能看出附楼应该是御城速递半人马奴隶的住所，里面有几条长廊，廊内排列着像普通马厩中那样单独的小隔间。
+		#IF(game.isExtendedWorkTime())
+			由于目前是正常工作时间，大多数小隔间都是空的，因为它们的住客正在御城区四处奔波送货。
+		#ELSE
+			由于目前不在正常工作时间，马厩的大多数灯都关了，即使站在仓库主走廊外，也可以清楚地听到半人马的鼾音。
+		#ENDIF
+	</p>
+	<p>
+		#IF(game.isExtendedWorkTime())
+			一个看起来极其无聊的马男坐在拱门一侧的桌子后面，每当有半人马进出，他就在面前的纸上记下一笔。
+		#ELSE
+			一个看起来极其无聊的马男正坐在拱门一侧的办公桌后面，虽然他的职责显然是记录目前有哪些奴隶在马厩里，但此时他也没什么可做的。
+		#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLES_NO_COLLAR"><![CDATA[
+		#IF(pc.isQuestCompleted(QUEST_LINE_ROMANCE_NATALYA))
+			当他看见你靠近后，他打了个哈欠说，[style.speechMasculine(嘿，你是匹[style.mule]，对吧？抱歉，你要是不带项圈，是不能进马场的……)]
+		#ELSE
+			当他看见你靠近后，他打了个哈欠说，[style.speechMasculine(抱歉，[pc.sir]，外来人员不能进马场……)]
+		#ENDIF
+	</p>
+	<p>
+		这里的人不允许你进马场，在这里你没什么可做的，只得转身离开，回到仓库……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLES_WRONG_BODY"><![CDATA[
+		当他看到你走近时，他打了个哈欠，然后说，[style.speechMasculine(嘿，你是[style.mule]，对吧？抱歉，我不能让你进马厩，除非你符合娜塔莉亚主人的身体要求。你必须是个大屁股的[style.shemale]才能进入……)]
+	</p>
+	<p>
+		这里的人不允许你进马场，在这里你没什么可做的，只得转身离开，回到仓库……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLES_ENTER"><![CDATA[
+		当他看到你走近，并看到你脖子上的[style.mule]项圈时，他向你挥挥手，然后打了个哈欠，[style.speechMasculine(进去吧，[style.mule]。肯定有一两个奴隶需要你的服务。)]
+	</p>
+	<p>
+		你思考着，是应该按照马男所说的进入马场，还是掉头返回到仓库……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- STABLES_ENTERED -->
+	
+	<htmlContent tag="STABLES_ENTERED"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+				你按照马男的话，走上前去，但在穿过拱门之前，他瞥了你的同伴一眼，懒洋洋地说，[style.speechMasculine(抱歉，[style.mule]，你朋友不能跟你进去。)]
+			</p>
+			<p>
+				你转身走向[com.name]，告诉[com.herHim]在这里等你回来，然后[pc.walking]穿过拱门，进入马厩。当你沿着走廊[pc.walk]往马厩里看时，你在想是否应该进入有人的马厩，为里面的半人马奴隶提供服务……
+		#ELSE
+			你按照马男说的，继续向前穿过拱门，进入马厩。当你沿着走廊[pc.walk]往马厩里看时，你在想是否应该进入有人的马厩，为里面的半人马奴隶提供服务……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLES_EXIT"><![CDATA[
+	<p>
+		你决定离开。你穿过马场入口的拱门，发现自己又回到了仓库主走廊……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLE_SEX_FIND_PARTNER"><![CDATA[
+	<p>
+		你想为奴隶提供性服务，赚些[style.mule]点数。你开始搜寻马厩里愿意和你打发点时间的[npc.a_race]。谢天谢地，你才看了几个摊位，就找到一个压抑了很久的[npc.race]。[npc.she]难过地“呼哧呼哧”叫，在摊位里前后踱步。你一眼就看到[npc.she]的名字“[npc.name]”被写在小隔间的半高门上。你喊住[npc.race]，打算帮[npc.herHim]好好舒服一下。
+	</p>
+	<p>
+		[npc.she]见你来了，大喜过望，推开门把你拉进[npc.her]的隔间。[npc.she]把整个身子[npc.her]压在你身上，喘着粗气[npc.she]急切地说，[npc.speech(如果你帮我射出来，我就给你[#SPECIAL_PARSE_0][style.mule]点数！一整天没人服务我了！我好想射！)]
+	</p>
+	<p>
+		[npc.herHim]看到有[style.mule]来服务，又急又喜。[npc.race]蹦跶着后退两步，让[npc.her]的后股对准你，蹄子不安地蹬地。[npc.her]把尾巴甩到一边，朝你亮出了[npc.her][npc.asshole+]。[npc.her]扭头看向你，没耐心地命令道，[npc.speech(过来，[style.mule]，你知道规矩！亲我的屁眼，我们就开始！)]
+	</p>
+	<p>
+		你知道，要展示你的驯服，才能开始做爱。你跪在[npc.name]背后，尽职尽责地在[npc.her][npc.asshole+]上印了个大大的湿吻。[npc.she]兴奋地[npc.moan]，转身露出[npc.her]迅速硬起的马肉棒。[npc.her]眼里闪烁着野性的光，[npc.speech(那么，你想要什么，[style.mule]？你是想舔我的鸡巴还是把脸埋在我屁股里？或者你想让我骑在你身上，让你屁眼发情？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLE_SEX_FIND_PARTNER_REPEAT"><![CDATA[
+	<p>
+		你决定再服务一次[npc.name]，从[npc.herHim]那儿赚些[style.mule]点数。你朝着[npc.her]的摊位走去，高兴地发现[npc.sheIs]在里面。[npc.sheIs]难过地“呼哧呼哧”叫，在摊位里前后踱步，很明显地相当激动。你敲了敲门，打算帮[npc.herHim]好好舒服一下。
+	</p>
+	<p>
+		[npc.race]见你又来了，大喜过望，推开门把你拉进[npc.her]的隔间。[npc.she]把整个身子压在你身上，喘着粗气急切地说，[npc.speech(我刚刚还在想着你，[style.mule]！如果你再帮我射出来，我就给你[#SPECIAL_PARSE_0][style.mule]点数！他妈的，我好想射！)]
+	</p>
+	<p>
+		[npc.name]看到又是你来服务，又急又喜。[npc.she]蹦跶着后退两步，让[npc.her]的后股对准你，蹄子不安地蹬地。[npc.her]把尾巴甩到一边，朝你亮出了[npc.her][npc.asshole+]。[npc.her]扭头看向你，没耐心地命令道，[npc.speech(过来，[style.mule]，你知道规矩！亲我的屁眼，我们就开始！)]
+	</p>
+	<p>
+		你知道，要展示你的驯服，才能开始做爱。你跪在[npc.name]背后，尽职尽责地在[npc.her][npc.asshole+]上印了个大大的湿吻。[npc.name]兴奋地[npc.moan]，转身露出[npc.her]迅速硬起的马肉棒。[npc.her]眼里闪烁着野性的光，[npc.speech(那么，你想要什么，[style.mule]？你是想舔我的鸡巴还是把脸埋在我屁股里？或者你想让我骑在你身上，让你屁眼发情？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLE_SEX_FIND_PARTNER_SADIST"><![CDATA[
+	<p>
+		你决定再服务一次[npc.name]，从[npc.herHim]那儿赚些[style.mule]点数。你朝着[npc.her]的摊位走去，高兴地发现[npc.sheIs]在里面。[npc.sheIs]难过地“呼哧呼哧”叫，在摊位里前后踱步，很明显地相当激动。你敲了敲门，打算帮[npc.herHim]好好舒服一下。
+	</p>
+	<p>
+		[npc.race]一眼就认出你是[npc.she]在娜塔莉亚女主人的办公室里操过的[style.mule]，[npc.she]推开门，粗暴地把你拉进[npc.her]的隔间。[npc.she]用身体压住你，喘着粗气，低声呻吟着，[npc.speech(你想要[#SPECIAL_PARSE_0][style.mule]点数，对吧，你这下贱的小骚货？只要你让我射出来，我就给你！)]
+	</p>
+	<p>
+		还没等你反应过来，[npc.name]就强行把你按跪在地上，然后迅速转身后退，把[npc.her]的后臀强行顶到你的脸上。[npc.she]把尾巴甩到一边，将[npc.asshole+]展示给你，然后回头看过来，不耐烦地命令道，[npc.speech(继续，[style.mule]，你知道规矩的！快来狠狠亲我的屁股！)]
+	</p>
+	<p>
+		你知道在开始之前必须先展示自己的顺服，所以你恭恭敬敬地向前倾，在[npc.namePos]肉感的乌黑马肛上狠狠地来了个深吻。[npc.race]发出赞许的咕哝声后，迅速转过去，展示[npc.her]迅速勃起的黑檀色马鸡巴。[npc.her]的眼中闪烁着野性的光芒，[npc.speech(你还在等什么，[style.mule]？你是要用你的嘴来工作呢，还是要我骑到你身上，再次蹂躏你那性感欠操的小屁眼？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- STABLE_SEX -->
+	
+	<htmlContent tag="STABLE_SEX_ORAL"><![CDATA[
+	<p>
+		你决定用你的嘴来服侍[npc.name]，于是告诉[npc.herHim]你想吮吸[npc.her][npc.cockGirth]马鸡巴。[npc.name]很乐意让你做这个，于是迅速把你按在地上，跨过你的身体，把她兽性十足的宽大龟头顶在你的脸上。当你张开嘴，舔起[npc.she]尿道口渗出的一滴咸咸的精前液时，[npc.she][npc.moansVerb+]了起来，[npc.speech(快来，别逗我了，让我把我的鸡巴插进你的喉咙！)]
+	</p>
+	<p>
+		按照要求，你张大嘴巴，把[npc.namePos]阴茎含进嘴里，引得 npc.herHim]发出急切的[npc.moan]声。随着你的伴侣不断发出淫荡的声音，你开始为[npc.herHim]口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLE_SEX_ANILINGUS"><![CDATA[
+	<p>
+		你想让[npc.name]知道你有多顺从，于是告诉[npc.herHim]你想给[npc.herHim]舔肛到射出来。[npc.her]听到你这么说，于是肆意笑了起来。[npc.name]转过身再次向你展示[npc.her][npc.asshole+]，然后把头转回来，挑逗你，[npc.speech(娜塔莉亚真是把你调教的不错，[style.mule]！来吧，让我看看你这下贱的骚货小婊子有多喜欢马屁股！)]
+	</p>
+	<p>
+		你迫不及待地在[npc.name]身后跪下来，然后立即向前把脸埋进[npc.her]的屁股里。你决心让[npc.race]只靠舔肛就射出来，于是，你先是在[npc.her]的兽态马肛上留下了一连串热情的吻，然后淫荡地用[pc.lips+]摩擦[npc.her]甜甜圈一样的菊穴，并将[pc.tongue+]插了进去。在发出一声接一声的[npc.moansVerb+]后，你的伴侣拼命地叫喊着，[npc.speech(~噢噢噢！~就是这样，[style.mule]！~啊哈！~操，你口活真他妈的棒！)]
+	</p>
+	<p>
+		[npc.namePos]的嘉奖让你很是得意，你继续热情地和[npc.her]肉感的菊穴用力接吻，很有自信能在不碰[npc.her]的鸡巴的条件下让[npc.her]射出来……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="STABLE_SEX_MOUNTED"><![CDATA[
+	<p>
+		你想好好感受一下[npc.namePos]那[npc.cockGirth]马鸡巴的感觉，于是你向[npc.herHim]露出你的屁股，并说你想让[npc.herHim]骑在你身上，狠狠抽插你[pc.asshole+]。[npc.she]非常乐意满足你的要求，把你按下去，四肢着地，随后跨到你的上面，立即把[npc.her]那兽态的扁平龟头顶在你暴露的屁股上。[npc.name]不给你任何反悔的时间，猛地向前一挺，将[npc.her]兽态马鸡巴宽大的龟头顶进你[pc.asshole+]。[npc.she]发出[npc.a_moan+]，喊叫道，[npc.speech(~啊啊！~对，就这样！~噢噢！~感受一下我的鸡巴，你这下流的[style.mule]！)]
+	</p>
+	<p>
+		你发出[pc.a_moan+]，将[pc.hips]向后顶，帮助[npc.namePos][npc.cock+]深深插入你的菊花。[npc.race]对你表现出的热情很满意，开始前后抽插，一边狠狠蹂躏你的屁眼，一边继续发出淫荡的声音……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_STABLE_SEX -->
+	
+	<htmlContent tag="AFTER_STABLE_SEX"><![CDATA[
+	<p>
+		发出最后一声满足的[npc.moan]后，[npc.name]退后一步，倒在[npc.her]作为床铺的稻草堆上。[npc.she]滚到一边，把[npc.her]软下来的马鸡巴暴露给你，并命令道，[npc.speech(如果你还想挣到点数的话，就过来给我舔干净，[style.mule]！)]
+	</p>
+	<p>
+		你听话地趴在[npc.name]旁边，顺从地把[npc.her]炽热的[npc.cockGirth]肉棒舔干净。[npc.she]对你的表现很满意，把[#SPECIAL_PARSE_0]小奥术魔珠扔给你，然后叹了口气，[npc.speech(给你，[style.mule]，干得不错……)]
+	</p>
+	<p>
+		在你拾起它们之前，奥术魔珠就分解成了奥术能量，然后旋转起来，被吸收进你的[style.mule]项圈中。
+		#IF(game.getHourOfDay()<=4 || game.getHourOfDay()>=22)
+			在你起身打算离开时，[npc.name]在[npc.her]的稻草床铺上局促不安地坐着，提议道，[npc.speech(如果你打算在这里和我过夜的话，我会再把挣来的几个点数给你……)]
+		#ELSE
+			在你起身打算离开时，[npc.name]打了个打哈欠，[npc.speech(和你待在一起还挺开心的，[style.mule]，不过我还有快递要送，所以出去侍奉别的奴隶去吧……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_LEAVE"><![CDATA[
+	<p>
+		#IF(game.getHourOfDay()<4 || game.getHourOfDay()>22)
+			在拒绝了[npc.namePos]提出的与[npc.herHim]共度良宵的提议后，你站起身走出[npc.her]的马厩，然后继续向马厩外走去，想着是否应该再找一个奴隶来服侍……
+		#ELSE
+			在听从[npc.name]的建议后，你站起身走出[npc.her]的马厩，然后继续向马厩外走去，想着是否应该再找一个奴隶来服侍……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FAVOURITE_SLAVE_ENDING"><![CDATA[
+	<p>
+		[style.italicsMinorGood(在和[npc.Name]玩的尽兴之后，你记下了[npc.her]的马厩是哪一间，以便下次拜访[npc.herHim]……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FORGET_SLAVE_ENDING"><![CDATA[
+	<p>
+		[style.italicsMinorBad(你可不想再服侍一次[npc.Name]了，于是你决定忘掉[npc.her]以及[npc.her]所居住的马厩……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- AFTER_STABLE_SEX_SLEEP -->
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP"><![CDATA[
+	<p>
+		你想多赚几个[style.mule]点数，于是接受了[npc.namePos]提出的与[npc.herHim]过夜的提议。在[npc.sheHas]挪出空间后，你躺在[npc.herHim]旁边的草铺上。你靠着[npc.her]兽态的身体，依偎着[npc.herHim]，在充斥着性爱气味的房间里睡着了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_NO_SEX"><![CDATA[
+	<p>
+		……
+	</p>
+	<p>
+		第二天早上，[npc.she]站起来伸了个懒腰，你被[npc.name]的动作吵醒了。[npc.she]打了一个大大的哈欠后，又扔给你几颗奥术魔珠，然后对你微笑着说：[npc.speech(很感谢你能和我过夜，[style.mule]。我得去工作了，下次见！)]
+	</p>
+	<p>
+		这些附魔珠就像之前那样，很快就被分解成了纯粹的奥术能量，然后旋转着被你的[style.mule]项圈吸收。你站起来伸了个懒腰，随后对[npc.name]的[style.mule]点数表达了谢意，然后站起来准备继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_BLOWJOB"><![CDATA[
+	<p><i>
+		你发现自己正坐在莉莱雅的实验室里，听她给你讲奥术的原理。但你无法集中精力，因为不知什么原因，你不得不坐在地板上，而[npc.a_race]不停地用[npc.her][npc.cockGirth]的，兽态的鸡巴顶你的脸。你不想给姨妈添麻烦，于是张嘴想让这个麻烦的[npc.race]停下来，但就在你张嘴的时候，[npc.she]向前一推，把[npc.her]兽态鸡巴的喇叭状龟头塞进了你的嘴里！
+	</i></p>
+	<p>
+		这时，你突然惊醒，发现和梦中一样，[npc.name]跨过你的身体，已经把[npc.her]悸动的马鸡巴强行塞进了你的嘴里。听到你发出低沉的叫声，[npc.race]开心地向你[npc.moansVerb]，[npc.speech(好棒的[style.mule]！~嗯啊！~把我的鸡巴吞到你喉咙的更深处吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_ANILINGUS"><![CDATA[
+	<p><i>
+	尽管你不清楚自己怎么来到了这里，但你发现自己身处执法者总部，而就在刚才，坎迪把你[pc.lips+]涂成了俗艳的亮粉色。她高兴地拍了拍手，招呼附近的一个[npc.race]执法者，告诉[npc.her]你已经准备好给[npc.her]当椅子了。在你还没反应过来发生什么的时候，你已经被那个似乎有点面熟，但又记不得是谁的[npc.race]按倒在地。[npc.she]没有给你反应的时间，直接转身坐在了你的脸上，用[npc.her]那[npc.asshole+]闷住你的嘴巴！
+	</i></p>
+	<p>
+		这时，你突然惊醒，发现和梦中一样，[npc.name]刚刚坐下来，把[npc.her]热乎乎的，味道浓郁的马屁股压到了你的脸上。听到你发出一声闷哼，[npc.race]开心地[npc.moansVerb]，[npc.speech(好棒的[style.mule]！~嗯姆！~你光是给我舔肛就要把我舔到射了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_MOUNTED"><![CDATA[
+	<p><i>
+		不知什么原因，你发现自己又回到了斯嘉丽的店里，此时的你正匍匐在这个虐待狂哈比脚下。她用一只鸟爪把你的头按到了地上，发出胜利的笑声，命令她的[npc.race]奴隶上前骑在你身上。虽然[npc.her]不在你的视线范围内，但你听到这个[npc.race]的马蹄声越来越近，然后[npc.her]突然跨到你的身上，将[npc.cockSize]的兽状马鸡巴膨大的龟头顶在你翘起的屁股上。斯嘉丽一声令下，[npc.race]向前一挺，将[npc.her][npc.cockSize]的鸡巴顶进了你的屁眼！
+	</i></p>
+	<p>
+		这时，你突然惊醒，发现[npc.name]已经跨到了你的身上，并像梦中一样，将[npc.her][npc.cock+]插入了你[pc.asshole+]。听到你发出惊讶的叫声，[npc.race]开心地发出[npc.moansVerb]，[npc.speech(好棒的[style.mule]！~嗯啊！~一大早就能操你这种骚货的屁股真是好极了！~噢噢！~我要继续插进去了，你这下贱的[style.mule]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Responses -->
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_LEAVE"><![CDATA[
+	<p>
+		按照[npc.name]的指示，你站起身来，离开[npc.her]的摊位，然后继续向马厩外走去，想着是否应该再找一个奴隶来服侍……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_START_BLOWJOB"><![CDATA[
+	<p>
+		你也没什么办法，只能按别人说的做，便驯服地吮吸起[npc.namePos]的肉棒来，让[npc.herHim]连连发出愉悦的[npc.moans]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_START_ANILINGUS"><![CDATA[
+	<p>
+		你也没什么办法，只能按别人说的做，便驯服地亲舔起[npc.namePos][npc.asshole+]来，让[npc.herHim]连连发出愉悦的[npc.moans]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_START_MOUNTED"><![CDATA[
+	<p>
+		你也没什么办法，只能按别人说的做，便驯服地掰开[pc.hips]，深深吃进[npc.namePos][npc.cock+]，让[npc.herHim]连连发出愉悦的[npc.moans]……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_STABLE_SEX_SLEEP_AFTER_WAKEUP_SEX -->
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_AFTER_WAKEUP_SEX_BLOWJOB"><![CDATA[
+	<p>
+		[npc.name]心满意足，退后一步，从你的喉咙里抽出[npc.her][npc.cock+]，唾液和精液混在一起滴落在地板上。[npc.she]发出放肆的笑声，快速侧过身，用[npc.her]软下来的马鸡巴在你的脸上抽了一下，命令道，[npc.speech(如果你还想要额外的[style.mule]点数，那就当一个好[style.mule]，把我的鸡巴舔干净！)]
+	</p>
+	<p>
+		你按[npc.herHim]说的做，花了几分钟将[npc.herHim]肉棒上的粘液舔干净，随后退后一步，示意[npc.herHim]你已经完成了你的工作。
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_AFTER_WAKEUP_SEX_ANILINGUS"><![CDATA[
+	<p>
+		[npc.name]爽够了，站起来并将[npc.her][npc.asshole+]从你脸上移开，让你在一堆稻草被褥上喘着粗气。[npc.she]发出厚颜无耻的笑声，快速地退后一步，用[npc.her]瘫软的马屌拍打着你的脸，命令道，[npc.speech(你还没完成呢，[style.mule]！如果你想要那额外的几个点数，就做一个好[style.mule]，现在清理我的鸡巴！)]
+	</p>
+	<p>
+		你按要求昂起头，开始舔吻[npc.namePos]覆满浓精的肉棒。不过几分钟，你就成功舔净了[npc.her][npc.cockGirth]柱体上的所有马精，便退后些，示意自己已经做好了。
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_AFTER_WAKEUP_SEX_MOUNTED"><![CDATA[
+	<p>
+		[npc.name]爽够了，从你屁股里抽出肉棒，站起身来。你被扔在草席上抽搐喘息。[npc.she]轻蔑地大笑，跳了两步到你面前，然后轻巧侧身，用逐渐疲软的马肉棒扇起你的脸。你惊而吸气，[npc.she]坚定地命令道，[npc.speech(还没结束哦，[style.mule]！你想要多些额外点数的话，就得乖乖清洁我的肉棒，做个好[style.mule]哦！)]
+	</p>
+	<p>
+		你顺从地照做了，抬起头，舔舐和亲吻[npc.namePos]那满是精液的肉棒，依稀能品尝出来自你自己菊穴的味道。几分钟之后，你把[npc.her]那[npc.cockGirth]阴茎上的马精液舔干净了，于是后退了一步，告诉[npc.herHim]你已经完成了你的工作。
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_AFTER_WAKEUP_SEX_FINISH"><![CDATA[
+		[npc.name]满意地哼了一声，将几颗奥术珠丢给你，然后对你微笑着说：[npc.speech(你真是匹乖[style.mule]。感谢你留下来过夜，还为我提供了一些晨间娱乐服务！不过我现在必须去工作了，我们下次再见！)]
+	</p>
+	<p>
+		这些被附魔珠就像之前那样，很快就被分解成了纯粹的奥术能量，然后旋转着被你的[style.mule]项圈吸收。你花点时间恢复，对[npc.name]的点数表达了谢意，然后站起来准备继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- Responses -->
+	<htmlContent tag="AFTER_STABLE_SEX_SLEEP_AFTER_WAKEUP_SEX_LEAVE"><![CDATA[
+	<p>
+		你离开[npc.name]，为接下来的工作做好准备。你离开[npc.her]的马厩向外走去。你听到其他奴隶睡醒的声音，于是考虑自己是否应该去附近的其他摊位，为那里的主人提供服务……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- STABLE_SHOWER -->
+	
+	<htmlContent tag="STABLE_SHOWER"><![CDATA[
+	<p>
+		在马场的远处，有一个大房间，里面有很多淋浴间，每个淋浴间都经过特别设计，喷射出的水柱可以从各个角度清洗半人马。在决定使用这些淋浴设施后，你走进一个空隔间，让水柱把身体冲洗干净……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE -->
+	
+	<htmlContent tag="OFFICE_STABLE"><![CDATA[
+	#IF(game.getCharactersPresent().contains(natalya))
+		<p>
+			走廊的尽头紧挨着马厩，有一扇坚固的木门，门上挂着一块牌匾，上面写着：“马厩主人娜塔莉亚办公室”。透过门一侧的大玻璃窗，可以看到另一侧有一个小等候室，里面的小木桌后面坐着一位衣着得体的女秘书。
+		</p>
+		<p>
+			#IF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
+				如果你想再次拜访娜塔莉亚主人，看来得进入这间等候室，先同秘书打交道……
+			#ELSE
+				如果你想拜访娜塔莉亚，看来得先进入这间等候室，与秘书打交道……
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			走廊的尽头紧挨着马厩，有一扇坚固的木门，门上挂着一块牌匾，上面写着：“马场主娜塔莉亚的办公室”。透过门一侧的大玻璃窗，可以看到另一侧有一个小等候室，里面没人。娜塔莉亚主人现在不在这里，等待室的灯关上了，门也紧锁着。
+		</p>
+		<p>
+			#IF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
+				如果你想再来拜访娜塔莉亚主人，需要在明天的[style.colourMinorBad([unit.time(6)]-[unit.time(22)])]之间回到这里……
+			#ELSE
+				如果你想再来拜访娜塔莉亚，需要在明天的[style.colourMinorBad([unit.time(6)]-[unit.time(22)])]之间回到这里……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_ENTRY -->
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_DENIED"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	<p>
+		#IF(!game.getDialogueFlags().hasFlag(FLAG_natalyaInterviewOffered))
+			你想拜访娜塔莉亚，于是敲了敲门，随后门那边立刻传来了秘书的回应声，[style.speechFeminine(进来！)]
+		#ELSE
+			你想拜访娜塔莉亚主人，于是敲了敲门，随后门那边立刻传来了秘书的回应声，[style.speechFeminine(进来！)]
+		#ENDIF
+	</p>
+	<p>
+		你转动把手，推开门，[pc.step]向前进入小等待室。靠右边的墙上摆放着几张舒适的皮沙发和一张木制茶几，而在你的左边，衣着得体的女秘书正在办公桌后面看着你。
+	#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaBusy))
+			她早就认出了你，皱着眉头对你直言不讳，[style.speechFeminine(娜塔莉亚主人吩咐过，今天不要再去打扰她，不是吗？有什么事明天再来找她吧。)]
+		</p>
+		<p>
+			你已经被拒绝进入娜塔莉亚主人的办公室了，在这里待着无事可做，只能转身离开……
+		</p>
+		<p style='text-align:center;'>
+			[style.italicsMinorBad(如果你想见主人娜塔莉亚，就得明天再来。)]
+		</p>
+	#ELSEIF(pc.isPregnant())
+			#IF(pc.isVisiblyPregnant())
+				她低头看了看你怀孕的肚子，皱着眉头对你直言不讳，[style.speechFeminine(我不知道你是否知道，娜塔莉亚主人不喜欢看到怀孕的样子。在你分娩之前，她都没有兴趣见你。)]
+			#ELSE
+				你还没来得及说什么，门一侧的一个奇特的奥术小装置就发出了高亢的哔哔声，这让马女皱起眉头，平淡地对你说，[style.speechFeminine(这意味着你怀孕了。我不知道你是否知道，娜塔莉亚主人不喜欢看到怀孕的样子。在你分娩之前，她都没有兴趣见你。)]
+			#ENDIF
+		</p>
+		<p>
+			你已经被拒绝进入娜塔莉亚主人的办公室了，在这里待着无事可做，只能转身离开……
+		</p>
+		<p style='text-align:center;'>
+			[style.italicsMinorBad(如果你想见主人娜塔莉亚，就得生完再回去。)]
+		</p>
+	#ELSEIF(pc.hasIncubationLitter(ORIFICE_VAGINA))
+			你还没来得及说什么，门一侧的一个奇特的奥术小装置就发出了高亢的哔哔声，这让马女皱起眉头，平淡地对你说，[style.speechFeminine(这意味着你的子宫里塞满了蛋。我不知道你是否知道，娜塔莉亚主人鄙视任何与怀孕有关的东西。在你产下之前，她都没有兴趣见你。)]
+		</p>
+		<p>
+			你已经被拒绝进入娜塔莉亚主人的办公室了，在这里待着无事可做，只能转身离开……
+		</p>
+		<p style='text-align:center;'>
+			[style.italicsMinorBad(如果你想见主人娜塔莉亚，就得产完子宫里的蛋再回去。)]
+		</p>
+	#ELSEIF(collar==null || !collar.getClothingType().getId().equals("innoxia_neck_filly_choker"))
+			她认出你是一匹合格的[style.mule]，低头看了看你的脖子，然后皱着眉头对你直截了当地说，[style.speechFeminine(如果娜塔莉亚主人看到你没戴[style.mule]项圈，她会大发雷霆的。只有你戴着它，我才能让你进她的办公室。)]
+		</p>
+		<p>
+			你已经被拒绝进入娜塔莉亚主人的办公室了，在这里待着无事可做，只能转身离开……
+		</p>
+		<p style='text-align:center;'>
+			[style.italicsMinorBad(如果你想见主人娜塔莉亚，就得回去戴上[style.mule]项圈。)]
+		</p>
+	#ELSE
+			她认出你是一匹合格的[style.mule]，低头看了看你的脖子，然后皱着眉头对你直截了当地说，[style.speechFeminine(如果娜塔莉亚主人看到你不再是个丰满的[pc.shemale]，她会大发雷霆的。只有你的身材符合她的要求，我才能让你进入她的办公室。)]
+		</p>
+		<p>
+			你已经被拒绝进入娜塔莉亚主人的办公室了，在这里待着无事可做，只能转身离开……
+		</p>
+		<p style='text-align:center;'>
+			[style.italicsMinorBad(如果你想见主人娜塔莉亚，就得等自己变成至少有D罩杯的[pc.a_shemale]。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY"><![CDATA[
+	<p>
+		#IF(!game.getDialogueFlags().hasFlag(FLAG_natalyaInterviewOffered))
+			你想拜访娜塔莉亚，于是敲了敲门，随后门那边立刻传来了秘书的回应声，[style.speechFeminine(进来！)]
+		#ELSE
+			你想拜访娜塔莉亚主人，于是敲了敲门，随后门那边立刻传来了秘书的回应声，[style.speechFeminine(进来！)]
+		#ENDIF
+	</p>
+	<p>
+		你转动把手，推开门，[pc.step]向前进入小等待室。靠右边的墙上摆放着几张舒适的皮沙发和一张木制茶几，而在你的左边，衣着得体的女秘书正在办公桌后面看着你。
+#IF(!game.getDialogueFlags().hasFlag(FLAG_natalyaInterviewOffered))
+				秘书扬起眉毛问你，[style.speechFeminine(有什么可以帮您的？娜塔莉亚主人今天不见客人……)]
+			</p>
+			<p>
+				你向秘书展示了娜塔莉亚给你的名片，并向她解释了你是如何被邀请来拜访她的。这位秘书点头表示同意，然后按下了她桌子上的奥术对讲机上的一个按钮，向前倾了倾身子说：[style.speechFeminine(娜塔莉亚主人？有个[pc.a_race]要见您，[pc.SheHas]有您的名片……)]
+		#ELSE
+			秘书认出了你，于是按下了她桌子上的奥术对讲机上的一个按钮，向前倾了倾身子说：[style.speechFeminine(娜塔莉亚主人？您的一个[style.mules]想要见您。)]
+		#ENDIF
+	</p>
+	<p>
+		[natalya.speech(立刻让[pc.herHim]进来！)]对讲机发出刺耳的娜塔莉亚的声音。
+		#IF(pc.hasCompanions())
+			秘书告诉你，你的同伴必须留在这里等候，她示意你从房间另一边的门走进去。你吩咐[com.name]留在这里等你，[pc.walk]走到娜塔莉亚办公室的门前，推开门，然后迅速[pc.step]走了进去，并随手关上了门。
+		#ELSE
+			秘书没有多说什么，打了个手势，示意你穿过房间另一边的门。按照指示，你[pc.walk]到娜塔莉亚办公室的门前，推开门，然后迅速[pc.stepping]进去，并随手关上了门。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_INTERVIEW"><![CDATA[
+	<p>
+		走进娜塔莉亚的办公室，首先映入眼帘的是占据一整面墙的大玻璃窗，窗外是仓库区壮观的景色。环顾办公室的内部，你会发现通常摆放的各种柜子和盆栽都是平淡无奇的现代设计。唯一一件看起来经过精心挑选的家具是房间最里面那张令人印象深刻的木制办公桌，而御城速递的“马场主”就坐在办公桌后面。
+	</p>
+	<p>
+		[natalya.speech(到这边来，[style.mule]。)]娜塔莉亚的声音使你从对办公室的打量中回过神来。你走过光洁的木地板，来到从办公桌后站起来的娜塔莉亚面前。你再次注意到，淡紫色皮肤的[natalya.race]的身高在半人马中实在是矮小，从头到蹄子，只有
+		#IF(game.isMetricSizes())
+			一米七出头。
+		#ELSE
+			五英尺半出头。
+		#ENDIF
+		和上次见到她时一样，娜塔莉亚穿着一件黑色女式西装外套和白衬衫，这两件衣服很好地遮住了她[natalya.cupSize]罩杯的大胸部。巨大的黑色短裙遮住了她兽态的马身，而一对罗马紫发卡则将她丝绸般的黑发扎成了一个灵巧的发髻。她可爱妩媚的鼻梁上架着一副黑色厚边眼镜，灰绿色的眼睛在眼镜后面上下打量着你。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_playerSubmittedToNatalya))
+			[natalya.speech(我很高兴又在这里见到你，[style.mule]。我敢打赌，自从我让你在巷子里给我手淫后，你满脑子想的都是我的鸡巴。)]
+		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_playerSubmittedToNatalyaInPark))
+			[natalya.speech(我很高兴又在这里见到你，[style.mule]。我敢打赌，自从我让你在公园里给我手淫后，你满脑子想的都是我的鸡巴。)]
+		#ELSE
+			[natalya.speech(很高兴再见到你，[style.mule]，我早料到你会回来见我。)]
+		#ENDIF
+		她嗤笑道，脸上露出傲慢的神情，随后打了个响指，要求道，[natalya.speech(把我的名片给我，我会在上面盖章，这样前台那些荡妇下次就会直接放你进来。)]
+	</p>
+	<p>
+		按照娜塔莉亚的要求，你把她的名片递还给她，看着她迅速地在名片上盖上一个红色的马蹄形图标。随后她漫不经心地把名片扔还给你，并透露道，[natalya.speech([style.mule]，我想再见到你的原因是，我预感你会成为御城速递的一员。你喜欢整天给半人马吹箫吗？喜欢吻肛吗？喜欢被我手下强壮的男孩和女孩们骑在身上肛交吗？你当然喜欢；从我看到你的第一眼，我就确信你是个下流的菊穴荡妇。)]
+	</p>
+	<p>
+		这个[natalya.race]没有给你任何时间对她贬低你人格的假设做出反应，她把眼镜推到小巧的鼻梁上，宣布道，[natalya.speech(我相信你一定迫不及待地想向我所有的奴隶展示你是一个多么肮脏下流的半人马精液便器，所以我们会马上开始面试你的‘[style.mule]’一职！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_REPEAT"><![CDATA[
+	<p>
+		当你[pc.step]走进娜塔莉亚的办公室时，你的目光又一次被远处墙壁上的大玻璃窗所吸引，这些玻璃窗让你可以欣赏到仓库区壮观的景色。环顾办公室的内部，你发现通常摆放的各种柜子和盆栽都是相当平淡的现代设计。唯一一件看起来经过精心挑选的家具是房间最里面那张令人印象深刻的木制办公桌，而御城速递的“马场主”就坐在办公桌后面。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_WRONG_BODY"><![CDATA[
+	<p>
+		她从面前桌子上堆积如山的文件中抬起头来、
+		#IF(!pc.isFeminine())
+			当娜塔莉亚主人看到你男性化的身体时，她的脸立刻皱成了一团，并尖叫起来，[natalya.speech(坏[style.mule]！你<i>怎么敢</i>转化自己！跪在我面前，<i>现在，马上！</i>)]
+		#ELSEIF(pc.getBreastSize().getMeasurement()<8)
+			当娜塔莉亚主人看到你变小的胸部时，她的脸立刻皱成了一团，并尖叫起来，[natalya.speech(坏[style.mule]！你<i>怎么敢</i>转化自己！跪在我面前，<i>现在，马上！</i>)]
+		#ELSEIF(pc.hasVagina())
+			#IF(pc.isCoverableAreaExposed(CA_VAGINA))
+				当娜塔莉亚主人看到你暴露在外的小穴时，她的脸立刻皱成了一团，并尖叫起来，[natalya.speech(坏[style.mule]！你<i>怎么敢</i>转化自己！跪在我面前，<i>现在，马上！</i>)]
+			#ELSE
+				主人娜塔莉亚的脸立刻皱成了一团，露出狐疑的目光，陷入了沉思，[natalya.speech(我能感觉到你有点不对劲……等等……你身上多出了恶心的小穴，是吗？！你这只坏[style.mule]！你<i>怎么敢</i>转化自己！给我跪下来，<i>现在，马上！</i>)]
+			#ENDIF
+		#ELSE
+			#IF(pc.isCoverableAreaExposed(CA_PENIS))
+				当娜塔莉亚主人看到你的下体没有阴茎时，她的脸立刻皱成了一团，并尖叫起来，[natalya.speech(坏[style.mule]！你<i>怎么敢</i>转化自己！跪在我面前，<i>现在，马上！</i>)]
+			#ELSE
+				主人娜塔莉亚的脸立刻皱成了一团，露出狐疑的目光，陷入了沉思，[natalya.speech(我能感觉到你有点不对劲……等等……你移除了自己的肉棒，是吗？！你这只坏[style.mule]！你<i>怎么敢</i>转化自己！给我跪下来，<i>现在，马上！</i>)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		按照吩咐，你[pc.step]向前走，跪在主人娜塔莉亚的办公桌前。怒气冲冲的[natalya.race]打开她的一个抽屉，拿起马鞭和一小瓶转化药水，迅速小跑绕到你身后，抡起马鞭狠狠地抽打你的屁股，然后把药水瓶扔给你，咒骂道，[natalya.speech(喝掉这个，你这坏[style.mule]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_TRAINING_2"><![CDATA[
+	<p>
+		娜塔莉亚主人从她面前桌子上堆积如山的文件中抬起头来，对你会心一笑，然后命令道，[natalya.speech(过来，跪在我旁边，[style.mule]！今天我会训练你，让你痴迷上舔肛！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_TRAINING_3"><![CDATA[
+	<p>
+		娜塔莉亚主人从她面前桌子上堆积如山的文件中抬起头来，对你露出一个狡猾的微笑，然后命令道，[natalya.speech(过来跪在我身边，[style.mule]，今天我要让你在[npc.name]身上练习舔肛技巧，同时我会在后面猛干你的屁股！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_COLLAR_UPGRADED"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
+		<p>
+			娜塔莉亚主人从她面前桌子上堆积如山的文件中抬起头，开始向你露出她惯有的，带着傲慢的笑容，但当她看到你的金色[style.mule]项圈时，她愣住了，随后瞪大眼睛，震惊地问道，[natalya.speech(啊？什么？！你真的能达到黄金等级？！这根本不可能，不可能的！)]
+		</p>
+		<p>
+			面对主人一反常态的结巴，你微笑着向她走去，骄傲地展示着你项圈上的金色字样。娜塔莉亚主人把你的举动理解为你打算支配她的信号，她向后退了退，说话也变得磕磕绊绊，[natalya.speech(合同里是，是说有黄金等级的[style.mules]可，可以命令我服从性爱，但是我是开玩笑的！我意思是，你，你不会真打算让<i>我</i>来侍奉<i>你</i>吧，不会吧？你不过是区区小[style.mule]，是喜欢服从，喜欢菊穴的[style.mule]荡妇！你本来应当不敢，不敢来做支配的一方才对！)]
+		</p>
+		<p>
+			你脖子上挂着辛辛苦苦挣来的金色[style.mule]项圈，此时，你思索着自己是否应该好好利用它，命令你的主人娜塔莉亚为你的鸡巴或屁股服务。如果你真的愿意，你想你也可以要求她让你骑在她身上，爆操一顿她的菊穴……
+		</p>
+	#ELSE
+		<p>
+			娜塔莉亚主人从她面前桌子上堆积如山的文件中抬起头来，一眼就看到了你崭新的银色[style.mule]项圈。在露出兴致盎然的坏笑后，她向你表示了祝贺，[natalya.speech(干得好，[style.mule]！能赢得银项圈的[style.mules]可不多了！作为对你努力工作的奖励，我允许你每天为我提供一次性服务。你愿意为我口交吗？或者你想舔我的后面？如果你真的想要，我想我还可以骑在你身上，狠狠地操你！)]
+		</p>
+		<p>
+			你很努力得到了银色[style.mule]项圈，考虑着要不要好好利用它，去找主人娜塔莉亚提供性服务……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_WITH_COLLAR"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
+		<p>
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsDom))
+				娜塔莉亚主人从面前桌子上堆积如山的文件中抬起头，低头瞥了一眼你脖子上的金色[style.mule]项圈，紧张地咽了口唾沫，然后赶紧提醒你，
+				#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
+					[natalya.speech(合同上写得清清楚楚，黄金级别[style.mules]每天只能主动上我一次，[style.mule]！我之前已经配合你了，所以你今天不能再让我做一次！既然你今天也服侍过我了，我也没什么可以再给你的了！)]
+				#ELSE
+					[natalya.speech(合同上写得清清楚楚，黄金级别[style.mules]每天只能主动上我一次，[style.mule]！我之前已经配合你了，所以你今天不能再让我做一次！也许你想认识一下我们之间的实际地位，侍奉一下我的鸡巴或屁股，嗯？)]
+				#ENDIF
+			#ELSE
+				娜塔莉亚主人从面前桌子上堆积如山的文件中抬起头，低头瞥了一眼你脖子上的金色[style.mule]项圈，紧张地咽了口唾沫，然后焦急地问道，[natalya.speech(你不会想命令我吧？你明明就是个顺从的、喜欢肛交的骚货[style.mule]！你，你可别忘了这一点！)]
+			#ENDIF
+		</p>
+	#ELSEIF(collar.getColour(0)==COLOUR_CLOTHING_SILVER)
+		<p>
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
+				娜塔莉亚主人从她面前桌子上堆积如山的文件中抬起头来，低头瞥了一眼你脖子上的银色[style.mule]项圈，然后扬起眉毛提醒你，[natalya.speech(你每天只能侍奉我一次，[style.mule]！你今天已经来过了，今天没必要再来了！)]
+			#ELSE
+				娜塔莉亚主人从她面前桌子上堆积如山的文件中抬起头来，低头瞥了一眼你脖子上的银色[style.mule]项圈，露出了狡猾的微笑，问道，[natalya.speech(有事吗，[style.mule]？你是忍不住想来尝尝我大鸡巴的滋味了吗？还是说想舔我的屁股，嗯？说吧，[style.mule]，你想要什么？)]
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			娜塔莉亚主人从她面前桌子上堆积如山的文件中抬起头来，低头瞥了一眼你脖子上的青铜[style.mule]项圈，然后皱着眉头不耐烦地对你说，[natalya.speech(青铜等级的小[style.mules]不会得到我的奖励！你来这里是做什么的？！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- Responses: -->
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_DENIED_ENTRY"><![CDATA[
+	<p>
+		你没能
+		#IF(pc.hasQuest(QUEST_LINE_ROMANCE_NATALYA))
+			再看见主人娜塔莉亚
+		#ELSE
+			见到娜塔莉亚
+		#ENDIF
+		，也没什么好干的，只能转身穿过进来时的那扇门，离开等待室。你[pc.Stepping]回到仓库长廊，考虑接下来做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_INTERVIEW_FAIL_0"><![CDATA[
+	<p>
+		你实在是厌恶娜塔莉亚说的那些话，于是你坚定地告诉娜塔莉亚，你不打算面试什么[style.mule]的岗位。娜塔莉亚显然不习惯被那些在她看来低人一等的人以如此直接的方式说话，她震惊地后退了一步，然后愤怒地喊道，[natalya.speech(你居然敢拒绝我？！滚出我的办公室！我再也不想在这里见到你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_INTERVIEW_FAIL_END"><![CDATA[
+	<p>
+		恼怒的[natalya.race]发了疯似的按对讲机的按钮，呼叫保安立刻到办公室里来，你见状，把娜塔莉亚盖了章的名片丢到桌子上，转过身快步朝门外走去。
+		#IF(pc.hasCompanions())
+			你告诉[com.name]是时候离开了，于是你们沿着仓库的长廊往回走，很快便又回到了御城区的仓库区……
+		#ELSE
+			你不想和娜塔莉亚喊来的保安发生什么冲突，于是迅速沿着仓库的长廊往回走，很快便又回到了御城区的仓库区……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_TRANSFORMED_START"><![CDATA[
+	<p>
+		你按照吩咐，拔出瓶塞，咕噜咕噜地喝下了里面所有甜腻的液体。几乎就在同时，你感觉到一股强烈的热量在全身涌动，当你开始转化时，你的主人娜塔莉亚再次用鞭子狠狠地抽打你暴露在外的屁股，大喊道，[natalya.speech(你这坏，坏[style.mule]！呵，至少能再欣赏一下你转化的过程，也不算差……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_FILLY_LEAVE"><![CDATA[
+	#VAR
+		var collar = pc.getClothingInSlot(IS_NECK);
+	#ENDVAR
+	
+	<p>
+		#IF(collar.getColour(0)==COLOUR_CLOTHING_GOLD)
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsDom))
+				#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
+					今天你已经和主人娜塔莉亚进行了主动的和服从的性爱，明天才能再次与她发生性关系。由于没什么可以和[natalya.race]做的，你告诉她你要回去工作了，然后转身离开了她的办公室。
+				#ELSE
+					你今天已经支配了主人娜塔莉亚，要想再看到她温顺服从你的婊子模样，得等到明天了。你决定不向[natalya.race]请求服从的性爱，于是告诉她你要回去工作了，然后转身离开了她的办公室。
+				#ENDIF
+			#ELSE
+				你现在不想和[natalya.race]做爱，于是告诉她你要回去工作了，然后转身离开了她的办公室。
+			#ENDIF
+		#ELSEIF(collar.getColour(0)==COLOUR_CLOTHING_SILVER)
+			#IF(game.getDialogueFlags().hasFlag(FLAG_natalyaDailySexAsSub))
+				今天你已经和主人娜塔莉亚进行了服从的性爱，明天才能再次服侍她。由于没什么可以和[natalya.race]做的，你告诉她你要回去工作了，然后转身离开了她的办公室。
+			#ELSE
+				你现在不想服侍[natalya.race]，同她做爱，于是告诉她你要回去工作了，然后转身离开了她的办公室。
+			#ENDIF
+		#ELSE
+			你只是个青铜段位的[style.mule]，因此无法与主人娜塔莉亚发生性关系，你只能告诉她你要回去工作了，然后转身离开她的办公室。
+		#ENDIF
+		你从小等候室里仍坐在办公桌后的衣着得体的女秘书面前走过，继续向仓库的走廊走去，思考接下来该去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_ENTRY_TRANSFORMED -->
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_TRANSFORMED_START_TRAINING_2_END"><![CDATA[
+	<p>
+		主人娜塔莉亚兴奋地围着你转来转去，仔细观察你的新身体，最后在你裸露的屁股上狠狠地打了一下，然后宣布，[natalya.speech(好多了，现在你看起来像一匹乖巧的[style.mule]了！你可<i>千万别再</i>转化自己了！)]
+	</p>
+	<p>
+		小个子[natalya.race]小跑着回到办公桌后面坐下，打了个响指，命令道，[natalya.speech(过来跪在我身边，[style.mule]！今天我要把你训练成喜欢给人舔肛的骚货！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_ENTRY_TRANSFORMED_START_TRAINING_3_END"><![CDATA[
+	<p>
+		主人娜塔莉亚兴奋地围着你转来转去，仔细观察你的新身体，最后在你裸露的屁股上狠狠地打了一下，然后宣布，[natalya.speech(好多了，现在你看起来像一匹乖巧的[style.mule]！你可<i>千万别再</i>转化自己了！)]
+	</p>
+	<p>
+		小个子[natalya.race]小跑着回到办公桌后面坐下，打了个响指，命令道，[natalya.speech(过来跪在我身边，[style.mule]！今天你要在[npc.name]身上练习舔肛，同时我会在后面操你的屁股！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_INTERVIEW_1 -->
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_1"><![CDATA[
+	<p>
+		你同意娜塔莉亚所说的话，于是感谢她提供的面试机会，她笑着问道，[natalya.speech(那就对了，你是为半人马鸡巴服务的荡妇，对吧？)]
+	</p>
+	<p>
+		不等你开口回答，这[natalya.race]便厉声打断了你，[natalya.speech(记得从此以后，叫我‘主人’，[style.mule]，明白了吗！)]
+	</p>
+	<p>
+		[pc.speech(是的，主人，)]你尽责地回答，[pc.speech(我是为半人马鸡巴服务的荡妇……)]
+	</p>
+	<p>
+		娜塔莉亚女主人得意地发出冷笑，以设问的方式解释道，[natalya.speech(我想我应该展开说一下你会被怎样雇佣，不是吗？御城速递拥有的奴隶基本上分为两类，一类是从事体力劳动的半人马奴隶，另一类是为他们提供性服务以保持高昂士气的[style.mules]。与一般人的认知截然相反，饲养奴隶的成本相当高昂，对于需要大量卡路里和生活空间的半人马来说更是如此。因此，我们并不保有对[style.mules]的所有权，而是以契约佣工的方式雇佣她们。如果你通过了面试，你将接受这种安排。)]
+	</p>
+	<p>
+		矮个子[natalya.race]打断了她的解释，打开办公桌的一个抽屉，拿出一根黑色马鞭，小跑过来，站在你面前，[natalya.speech(作为[style.mule]，你必须服从我的一切命令。首先，脱光衣服跪在我面前！)]
+	</p>
+	<p>
+		主人娜塔莉亚不耐烦地用一只前蹄在地上拍打着，然后用马鞭指着地面，咒骂道，[natalya.speech(按我说的做！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_FAIL_1"><![CDATA[
+	<p>
+		你实在不想在娜塔莉亚面前脱光衣服下跪，于是你坚定地告诉娜塔莉亚，你不打算继续面试下去了。娜塔莉亚显然不习惯被那些在她看来低人一等的人以如此直接的方式说话，她震惊地后退了一步，然后愤怒地喊道，[natalya.speech(你居然敢拒绝我？！滚出我的办公室！我再也不想在这里见到你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_INTERVIEW_2 -->
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_2_STRIP_SEALED"><![CDATA[
+	<p>
+		你按照吩咐开始脱衣服，但不得不告诉主人娜塔莉亚，有些衣服是封印在你身上的。她不耐烦地小跑到你跟前，呵斥道：[natalya.speech(你当我是谁？只要我想，一点小附魔可拦不住我！)] 
+	</p>
+	<p>
+		随后，[natalya.race]便将她的一些奥术精华注入封印你的衣物，解除了它们的附魔，让你得以脱掉它们。你不想再惹女主人生气，于是按照吩咐尽快脱光衣服，然后顺从地跪在主人娜塔莉亚面前。[natalya.race]对你听话的表现很满意，冷笑着看向你，[natalya.speech(真是我听话的[style.mule]！从今以后你要经常跪下来了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_2_STRIP"><![CDATA[
+	<p>
+		你按照吩咐尽快脱光衣服，然后顺从地跪在主人娜塔莉亚面前。[natalya.race]对你听话的表现很满意，冷笑着看向你，[natalya.speech(真是我听话的[style.mule]！从今以后你要经常跪下来了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_2_END"><![CDATA[
+	<p>
+		你继续跪在地上，听着主人娜塔莉亚一边讲解，一边慢慢地围着你转圈，[natalya.speech(作为御城速递的[style.mules]之一，你要为半人马奴隶口交和舔肛，还要让他们骑在你身上肛交。我会在几天内分三个阶段训练你完成这些任务：首先你要为我口交，然后我要你给我舔肛，最后我会骑在你身上操你的婊子屁眼。每个阶段结束后，你都要与一名半人马奴隶复习你所学到的技巧。)]
+	</p>
+	<p>
+		在她继续说话的过程中，你注意到娜塔莉亚主人的语气越来越兴奋，直到最后她不得不停了下来，急切地喘息着，[natalya.speech(过来，[style.mule]！掀起我的裙子，看看你接下来要吮吸的鸡巴长什么样子！)]
+	</p>
+	<p>
+		你抬头看着小个子[natalya.race]，突然发现她的裙子下面正源源不断地流下先走液，很快就在你面前的木地板上滴成了一滩小水池。主人娜塔莉亚注意到你在看什么，惊叫道，[natalya.speech(都是你的错，[style.mule]！赶紧过来把我的裙子掀起来！)] 
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_FAIL_2"><![CDATA[
+	<p>
+		你实在是受不了被如此对待，于是你站了起来，拿起衣服，然后坚定地告诉娜塔莉亚，你对继续面试没什么兴趣了。娜塔莉亚显然不习惯被那些在她看来低人一等的人以如此直接的方式说话，她震惊地后退了一步，然后愤怒地喊道，[natalya.speech(你居然敢拒绝我？！滚出我的办公室！我再也不想在这里见到你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_INTERVIEW_3 -->
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_3"><![CDATA[
+	<p>
+		你赶紧照做，伸手撩起娜塔莉亚主人的裙子，露出了她黑色毛发的马身。
+		#IF(game.getDialogueFlags().hasFlag(FLAG_playerSubmittedToNatalya) || game.getDialogueFlags().hasFlag(FLAG_playerSubmittedToNatalyaInPark))
+			你虽然你已经不是第一次看见，但还是会惊叹地盯着[natalya.race]那巨大的[natalya.penisLengthValue]阴茎，尤其是这与她相对较小的身材形成了鲜明对比。
+		#ELSE
+			当你重新跪在她身边时，你惊恐地注视着[natalya.race]的[natalya.penisLengthValue]巨大阴茎，尤其是这与她相对较小的身材形成了鲜明对比。
+		#ENDIF
+		虽然肉棒的大部分皮肤是黑色的，但上面还布满了淡紫色的斑纹，从它扁平、外扩的龟头马眼处，一股味道浓郁的先走液汩汩流下，浸湿了它身下的地板。小个子[natalya.race]发出兴奋的呜呜声，就地转过身来，向你展示它的后臀，并炫耀它的菊花。它的后庭膨大成乌黑的甜甜圈状，乍一看和马的后庭无异，但当你仔细观察时，你发现它的表面闪烁着恶魔独有的透明、粘稠的润滑液体，这使它看起来更像具有别致情调的性器官腔穴，而不是马的屁眼。
+	</p>
+	<p>
+		[natalya.speech(喜欢吗，我的[style.mule]？)]娜塔莉亚主人问道，[natalya.speech(在御城速递，所有的半人马奴隶和[style.mules]都和我一样，有着硕大粗壮的马肉棒和肉感的屁眼！)]
+	</p>
+	<p>
+		#IF(pc.hasVagina())
+			[natalya.race]转过身来低头看向你的下体，她的笑脸很快变成了鄙夷，随即伸手用马鞭对着你暴露在外的阴部一阵猛抽。她无视你惊讶的叫声，冷笑道，[natalya.speech(真恶心！等你成为[style.mule]后，我就把你那肮脏的洞去掉！有小穴的奴隶会怀孕，而怀孕的奴隶不能工作！告诉我，你以长着小穴为耻，你这个坏[style.mule]！)]
+		#ELSE
+			[natalya.race]兴奋地来回小跑着宣布，[natalya.speech(当你注册成为[style.mule]之后，我就会把你改造成一个大奶[style.shemale]荡妇！你不能有小穴，因为有小穴的奴隶会怀孕，而怀孕的奴隶不能工作！告诉我，你讨厌长着小穴的感觉，[style.mule]！)]
+		#ENDIF
+	</p>
+	<p>
+		你按她所说，承认自己不喜欢
+		#IF(pc.hasVagina())
+			拥有小穴，
+		#ELSE
+			小穴，
+		#ENDIF
+		这让她漂亮的脸上露出了得意的笑容。小个子[natalya.race]再次转过身来，向你展示她那肉感的屁眼，她回过头来说道，[natalya.speech(在[style.mules]被允许为任何人提供性服务之前，她们必须向伴侣表明自己是个顺从的、喜欢肛交的荡妇。亲亲我的屁眼，[style.mule]，然后我就让你开始给我口交！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_RELUCTANT_KISS"><![CDATA[
+	<p>
+		虽然你有点不确定自己是否喜欢这样，但你不想违抗主人的命令，于是你犹豫着凑过去，在[natalya.race]肉感的屁眼上快速亲了一下。娜塔莉亚主人察觉到了你的不情愿，发出了恼怒的啧啧声，然后突然后退一步，用力把屁股往你脸上蹭。主人用她黏糊糊、味道浓重的屁眼闷住你[pc.lips+]，她尖叫道，[natalya.speech(来吧，你这个肮脏的[style.mule]荡妇！好好亲一亲我的屁眼！)]
+	</p>
+	<p>
+		你没有别的办法，只能按她说的做，强迫自己用力地亲吻娜塔莉亚主人肉感的黑色菊穴。[natalya.race]对你的态度感到满意，她又发出了一声嘘声，然后向前走了一步。你气喘吁吁地抬起头，与转过身来的娜塔莉亚不怀好意的目光交汇。她用马鞭指着她暴露的阴茎，命令道，[natalya.speech(到下面去给我口交，[style.mule]，用嘴帮我射出来是面试考核的一环，如果不合格，我会淘汰你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_EAGER_KISS"><![CDATA[
+	<p>
+		你不想让主人失望，于是身体前倾，迫不及待地把脸埋进她的屁股里，然后开始热情地亲吻她乌黑肿胀的屁眼。娜塔莉亚主人发出愉悦的呻吟声，随后突然后退一步，用力将她的屁股摩擦到你的脸上。主人用她黏糊糊、气味浓郁的屁眼闷住你[pc.lips+]，尖叫道，[natalya.speech(就是这样，你这个肮脏的荡妇[style.mule]！认真亲吻它！)]
+	</p>
+	<p>
+		你非常乐意按她说的做，继续热情地亲吻娜塔莉亚主人诱人的菊穴。[natalya.race]对你的服务非常满意，她又发出了一声欢快的呻吟，然后向前走了一步。你气喘吁吁地抬起头，与转过身来的娜塔莉亚主人不怀好意的目光交汇。她用马鞭指着她暴露的阴茎，命令道，[natalya.speech(到下面去给我口交，[style.mule]，用嘴帮我射出来是面试考核的一环，如果不合格，我会淘汰你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_BLOWJOB_START"><![CDATA[
+	<p>
+		你听话地趴在小个子[natalya.race]黑色毛发的马身下面，然后向前倾身，舔着她那巨大而膨胀的马状扁平龟头。你的主人发出不耐烦的呜呜声，向前走了一步，用她那流淌着先走液的肉棒拍打着你的脸，喘息着，[natalya.speech(我可没说过要从前戏开始，[style.mule]！把我的鸡巴吞进嗓子里面！)]
+	</p>
+	<p>
+		你张大嘴巴，听话地把主人娜塔莉亚的鸡巴含进嘴里。随着一声愉悦的呻吟，[natalya.race]再次向前迈步，将她炽热的[natalya.cockGirth]马鸡巴插入你的喉咙。她伸手玩弄着自己的乳房，呻吟着，[natalya.speech(就这样，[style.mule]！~噢噢噢！~让我看看你的小嘴有没有变成出色口穴的潜力！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_FAIL_3"><![CDATA[
+	<p>
+		你实在接受不了亲吻娜塔莉亚的屁眼这件事，于是你站了起来，拿起衣服，然后坚定地告诉娜塔莉亚，你没有兴趣再继续面试了。娜塔莉亚显然不习惯被那些在她看来低人一等的人以如此直接的方式说话，她震惊地后退了一步，然后愤怒地喊道，[natalya.speech(你居然敢拒绝我？！滚出我的办公室！我再也不想在这里见到你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_INTERVIEW_AFTER_SEX -->
+	
+	<htmlContent tag="OFFICE_STABLE_INTERVIEW_AFTER_SEX"><![CDATA[
+	<p>
+		[natalya.speech(~啊哈！~好[style.mule]！)]娜塔莉亚主人一边感叹着，一边后退一步，把她巨大的马鸡巴从你的喉咙里抽了出来。让你喘不过气来的小[natalya.race]开心地踱到她的办公桌后面，然后打了个响指，命令道：[natalya.speech(过来接着舔，[style.mule]！是你把我的鸡巴搞成这个样子，所以你得负责把它清理干净！)] 
+	</p>
+	<p>
+		你认为没有理由不听话，于是爬到主人身后，再次把头低到她野性的马身下面。当[natalya.race]从她办公桌的抽屉里拿出几张表格时，你准备开始把她粘糊糊的鸡巴舔干净……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_CONTRACT_OFFERED -->
+	
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED"><![CDATA[
+	<p>
+		你张开嘴，伸出[pc.tongue+]，开始迫不及待地舔舐主人娜塔莉亚软下来的马鸡巴上残存的精液和唾液。她不断发出的轻柔呻吟声让你兴致勃勃，接下来的几分钟里，你在身下清理着[natalya.race]那和个头不成比例的巨大阴茎，而她则继续填写从办公桌上拿回来的表格。
+	</p>
+	<p>
+		最后，当你舔尽她松弛的、带鞘的阴茎上的最后一丝爱液后，你的主人娜塔莉亚对你说，[natalya.speech(好[style.mule]！恭喜你，你通过了面试，现在到我办公桌的另一边来，看一遍你的合同吧。)]
+	</p>
+	<p>
+		你听话地从主人马形态的身体之下爬出来，然后站起来，[pc.walking]绕到桌子的另一边。小个子[natalya.race]戴着厚边眼镜看着你，你低头看她为你准备的文件。
+	</p>
+	<p>
+		当你开始阅读这些文件时，你很快发现合同的大多数内容都是一些晦涩的法律术语，让人摸不着头脑。你的主人娜塔莉亚显然已经经历过无数次这样的情况，她不耐烦地叹了一口气，然后提出了建议，[natalya.speech(要让我来给你讲讲这份合同的内容吗？)]
+	</p>
+	<p>
+		你表示同意，当[natalya.race]解释的时候，你认真地听着，[natalya.speech(正如我之前告诉过你的，你将成为御城速递非独占、不可转让、自由流动的契约仆人。基本上，你将成为一名奴隶，但你可以来去自由，想干多少就干多少。我们没有义务为你所做的工作支付报酬，但我们提供积分奖励制度，在完成了[style.mule]的训练之后，你会了解到更多。)]
+	</p>
+	<p>
+		把第一页文件放到一边，娜塔莉亚主人指着第二张合同继续说道，[natalya.speech(这一部分将解释你的职责，即如何为半人马奴隶提供性服务，以及在你完成训练后，你将被要求始终佩戴一个特殊的[style.mule]项圈。为了迎合半人马奴隶们的喜好，你还必须是一个丰满的[style.shemale]。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED_NO_TF"><![CDATA[
+	<p>
+		[pc.speech(我不需要被转化，对吗？)]你自信地问道，你硕大的胸部、女性化的身材和[pc.cockSize]的鸡巴正是娜塔莉亚想要的。
+	</p>
+	<p>
+		[natalya.speech(就我所见，你不需要任何转化，不需要。只要记住，如果你在我面前出现的时候不是一个[style.a_shemale]，或者胸部小于D罩杯，那我就会惩罚你，帮你转化！)]你的主人说完之后，继续警告你，[natalya.speech(总之，合同的最后一部分是说，你同意让我把你训练成一个喜欢肛交的[style.mule]荡妇。训练的每个阶段都将遵循相同的模式：你先对我做一次性行为，然后我让你对我的一个半人马奴隶重复这个行为。既然你已经给我口交过了，我们可以直接让你给其中一个半人马口交。现在赶紧在虚线上签字，我就可以开始训练你了。)]
+	</p>
+	<p>
+		你低头看着面前的表格，不知道是否应该按照主人娜塔莉亚说的在上面签字……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED_TF"><![CDATA[
+	<p>
+		[pc.speech(也就是说你打算转化我？)]你问。
+	</p>
+	<p>
+		#IF(pc.hasVagina())
+			[natalya.speech(没错，我会把你那恶心的烂穴移除，然后把你变成一个爆乳[style.shemale]荡妇！哦，<i>别惦记着自己悄悄再变回来</i>，那样的话你将被禁止为奴隶服务，除非你再变成至少有D罩杯的[style.a_shemale]！)]主人警告道，随后继续说，
+		#ELSE
+			[natalya.speech(没错，我会把你变成一个爆乳[style.shemale]荡妇！哦，<i>别惦记着自己悄悄再变回来</i>，那样的话你将被禁止为奴隶服务，除非你再变成至少有D罩杯的[style.a_shemale]！)]主人警告道，随后继续说，
+		#ENDIF
+		[natalya.speech(总之，合同的最后一部分意思是，你同意让我把你训练成一个喜欢屁眼的[style.mule]荡妇。训练的每个阶段都将遵循相同的模式：你先对我做一次性行为，然后我再让你在一个半人马奴隶身上复习你学到的内容。既然你已经给我口交过了，我可以直接让你从给一个半人马奴隶口交开始。现在赶紧在虚线上签字吧！)]
+	</p>
+	<p>
+		你低头看着面前的表格，不知道是否应该按照主人娜塔莉亚说的在上面签字……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_OFFERED_REFUSED"><![CDATA[
+	<p>
+		你实在接受不了和娜塔莉亚的半人马奴隶一起进一步训练，于是你站了起来，拿起衣服，然后坚定地告诉娜塔莉亚，你决定不成为她的[style.mules]。娜塔莉亚显然不习惯被那些在她看来低人一等的人以如此直接的方式说话，她震惊地后退了一步，然后愤怒地喊道，[natalya.speech(你怎么敢拒绝我？！滚出我的办公室！我再也不想在这里见到你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_CONTRACT_SIGNED -->
+	
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_SIGNED_NO_TF"><![CDATA[
+	<p>		
+		你按照要求在表格上签了字，表明自己愿意接受训练，成为一匹御城速递的[style.mules]。你的主人娜塔莉亚推了推鼻梁上的眼镜，脸上露出了灿烂的笑容，她把你的合同归档，然后转过身来问你，[natalya.speech(所以，[style.mule]，为了完成你第一阶段的训练，你要为我的半人马奴隶口交。你是愿意为一名高大强壮的男孩服务呢，还是愿意尝尝[style.shemale]的大鸡巴呢？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_SIGNED"><![CDATA[
+	<p>		
+		你按照要求在表格上签了字，表明自己愿意接受训练，成为一匹御城速递的[style.mules]。你的主人娜塔莉亚推了推鼻梁上的眼镜，脸上露出了灿烂的笑容，她把你的合同归档，然后转过身来告诉你，[natalya.speech(首先，[style.mule]，我们得让你的身体变成半人马奴隶们喜欢的样子。)]
+	</p>
+	<p>
+		主人娜塔莉亚从办公桌的另一个抽屉里拿出了一小瓶可以转化身体的液体。她俏皮地来回晃动着瓶子，挑逗道，
+		#IF(pc.isAbleToHaveRaceTransformed())
+			[natalya.speech(这瓶药水会让你拥有完美的[style.mule]身材，我相信它会让你变成我所有的奴隶都无法抗拒的样子。过来喝光它，[style.mule]，这样我们就能开始真正的训练了！)]
+		#ELSE
+			[natalya.speech(用不着让我来教你怎么转化自己，这瓶药水会让你拥有完美的[style.mule]身材，我相信它会让你变成我所有的奴隶都无法抗拒的样子。过来喝光它，[style.mule]，这样我们就能开始真正的训练了！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_CONTRACT_SIGNED_TRANSFORMED"><![CDATA[
+	<p>
+		你按照吩咐向前[pc.step]一步，接过瓶子，然后拔出瓶塞，咕噜咕噜地喝下了里面所有甜腻的液体。几乎就在同时，你感觉到一股强烈的热量在全身涌动，当你开始转化时，你的主人娜塔莉亚开始挑逗你，[natalya.speech(这就是我坚持让你脱光的原因，我喜欢看新来的[style.mules]转化的样子……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRANSFORMED"><![CDATA[
+	<p>
+		主人娜塔莉亚兴奋地围着你转来转去，仔细观察你的新身体，大声说，[natalya.speech(多漂亮的[style.mule]啊！现在，为了完成第一阶段的训练，你要为我的半人马奴隶口交。你是想为我高大强壮的男孩们服务呢，还是想尝尝[style.shemale]的大鸡巴？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_1 -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_1"><![CDATA[
+	<p>
+		你更愿意服侍[npc.a_gender]，于是告诉主人娜塔莉亚，你更喜欢为[npc.a_race]口交。[npc.race]玩味地咬了咬嘴唇，踱到房间的另一边，在经过你身边时快速地拍了一把你[pc.ass+]。她打开办公室的门，转身命令道：[natalya.speech(待在那别动，[style.mule]！我这就给你找个合适的搭档过来！)]
+	</p>
+	<p>
+		按照吩咐，你在娜塔莉亚主人的办公室里等候，而她则匆匆忙忙地去马厩找[npc.a_race]。还好，你没有等太久，几分钟后，她就带着[npc.a_gender][npc.race]奴隶回来了。[npc.race]身高[npc.heightValue]，身材高大，肌肉发达，
+		#IF(npc.getRaceStage()==RACE_STAGE_GREATER)
+			有着深棕色的毛发
+		#ELSE
+			有着深棕色的毛发和橄榄色的皮肤
+		#ENDIF
+		，远远高于你和娜塔莉亚主人。
+		#IF(npc.isFeminine())
+			她全身上下只有青铜奴隶项圈和一件[#npc.getClothingInSlot(IS_CHEST).getName()]，
+		#ELSE
+			他赤裸着，只有脖子上还挂着青铜奴隶项圈，
+		#ENDIF
+		这使得你清楚地看到，[npc.she]不只是身材庞大，[npc.sheHasFull]的下半身之间还垂下了一根巨大的黝黑马鸡巴和一对硕大的睾丸。主人娜塔莉亚嬉皮笑脸地拍了拍[npc.race]的屁股，大声地向你介绍[npc.herHim]，[natalya.speech(这就是[npc.name]！[npc.SheIs]是我手下最努力的工人，不过在马厩里犯了点小错，所以一直没有从青铜级向上晋升，对吧，[npc.name]？)]
+	</p>
+	<p>
+		[npc.speech(好的主人！)]这个奴隶嘶鸣着，[npc.speech(对不起，主人。)]
+	</p>
+	<p>
+		娜塔莉亚主人高兴地跑过来站在你身边，回头面对[npc.name]说道，[natalya.speech(言归正传！鉴于你已经整整三天没有挑起任何争斗了，我决定，今天就让你帮我训练这匹刚入职的[style.mule]，作为奖励！)]
+	</p>
+	<p>
+		小个子[natalya.race]在你身上磨蹭着，随后突然抓住你[pc.boobs+] ，将它们挤在一起，再迅速移动[natalya.her]娇嫩的女性化手指，向下捏你[pc.nipples+]。[natalya.name]继续调戏你的胸部，挑逗你的乳头，让你措手不及，发出阵阵高亢的喘息声，同时，她戏谑着说道，[natalya.speech(你喜欢这[style.mule]性感的小身子吧，[npc.name]？看看[pc.her]的奶头，已经因为兴奋变硬了！)]
+	</p>
+	<p>
+		[npc.race]发出赞许的咕哝声，色眯眯地盯着你，娜塔莉亚让你转过身，把你[pc.ass+]呈现在[npc.herHim]面前。她用手指在你[pc.asshole+]边缘划动，挑逗着说，[natalya.speech(我敢打赌，你一定等不及这匹[style.mule]完成[pc.her]的训练了，这样你就可以一展身手，蹂躏[pc.her]这性感的小屁股了……)]
+	</p>
+	<p>
+		小个子[natalya.race]的挑逗达到了她想要的效果，因为[npc.namePos]巨大的马鸡巴已经完全勃起，扁平的龟头上渗出了大量先走液。主人娜塔莉亚俏皮地对她的奴隶撅起了嘴，[natalya.speech(不幸的是，这匹[style.mule]的屁股还没被调教好呢。而今天，你是来帮助[pc.herHim]训练[pc.her]的口交技巧的。现在让[pc.herHim]展示[pc.her]的温顺，这样[pc.her]就可以开始了！)]
+	</p>
+	<p>
+		[npc.name]又发出一声咕哝，转过身，把[npc.her]尾巴甩到一边，将肉感的[npc.assholeColour]屁眼呈现在你面前。主人娜塔莉亚快速拍了下你的屁股，提醒你：[natalya.speech(御城速递的规矩是，[style.mules]在开始之前必须亲吻伴侣的屁眼，这样大家才能知道[style.mule]是喜欢菊穴的温顺骚货！来吧，[style.mule]，和[npc.namePos]的屁眼用力接个吻，然后你就可以开始给[npc.her]口交了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_1_RELUCTANT_KISS"><![CDATA[
+	<p>
+		你虽然有些犹豫，但还是决定照做，于是向前[pc.step]了一步，俯身在[npc.namePos]气味浓郁的菊穴上快速亲了一下。娜塔莉亚主人对你一点也不满意，她小跑着上前抓住你的后脑勺，然后牢牢地把你的脸按进[npc.namePos]的后臀里。她的另一只手拿着马鞭，一边喊一边挥舞着马鞭猛抽你的屁股，[natalya.speech(喜欢肛交的骚货[style.mule]可不会这样亲马屁股！给我认真点！)]
+	</p>
+	<p>
+		你的脸被迫贴在[npc.namePos]兽态的马屁股上，除了乖乖听话，你别无选择，只能强迫自己用力地亲吻[npc.race]炽热、乌黑的屁眼。主人娜塔莉亚松开了抓住你后脑勺的手，让你稍稍往后退了一点，然后要求道：[natalya.speech(亲口告诉我你喜欢马屁股，你这个下贱的[style.mule]骚货！)]
+	</p>
+	<p>
+		你不想惹她生气，于是顺从地大喊，[pc.speech(我喜欢马屁股，主人！)]
+	</p>
+	<p>
+		小个子[natalya.race]又挥鞭狠狠抽了下你的屁股，挑逗着你，[natalya.speech(真的吗，[style.mule]，没有骗我吧？那么，现在就展示给我看！)]
+	</p>
+	<p>
+		你小声发出哀鸣，强迫自己倾身向前，热情地亲吻[npc.namePos][npc.asshole+]。主人娜塔莉亚一边鼓励你继续下去，一边继续用马鞭轻轻拍打你的屁股，并反复向你灌输你不过是个喜欢肛交的肮脏[style.mule]的思想。几分钟后，你发现自己逐渐接受了吻肛的想法，但还没等你渐入佳境，主人娜塔莉亚就呵斥你，[natalya.speech(够了，[style.mule]！你真正的舔肛训练还要再等一会！现在趴下去舔[npc.namePos]的鸡巴！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_1_EAGER_KISS"><![CDATA[
+	<p>
+		你急切地服从她的命令，迅速向前，俯身同[npc.namePos]肉感而味道浓郁的菊穴来了个激烈的深吻。娜塔莉亚主人显然被你的热情表现打动了，她小跑着上前，用马鞭轻轻拍打你的屁股，惊叫道，[natalya.speech(真是我听话的[style.mule]，你个喜欢菊穴的[style.mule]荡妇！继续，来向我展示一下你对马屁股的爱吧！)]
+	</p>
+	<p>
+		你非常乐意向主人展示你是个多么乖巧的[style.mule]，于是把脸埋进[npc.namePos]兽态的马屁股里，然后开始热情地亲吻[npc.her]炽热乌黑的菊穴。娜塔莉亚主人发出非常高兴的哼哼声，再次用她的马鞭抽打你的屁股，然后要求道，[natalya.speech(告诉我你有多喜欢马屁股，你这个下贱的[style.mule]荡妇！)]
+	</p>
+	<p>
+		你稍稍后退，吸了一口气，随后顺从地大声喊道，[pc.speech(我喜欢马屁股，主人！)]
+	</p>
+	<p>
+		小个子[natalya.race]抓着你的后脑勺，兴奋地把你的脸推向[npc.namePos]的屁股，挑逗着你，[natalya.speech(真的吗，[style.mule]，没有骗我吧？那么，现在就展示给我看！)]
+	</p>
+	<p>
+		你发出一声低沉的[pc.moan]，将[pc.lips+]贴在[npc.namePos][npc.asshole+]上，再次开始热烈地亲吻。主人娜塔莉亚一边鼓励你继续下去，一边继续用马鞭轻轻拍打你的屁股，并反复向你灌输你不过是个喜欢肛交的肮脏[style.mule]的思想。几分钟后，你发现自己逐渐喜欢上了吻肛，但还没等你渐入佳境，主人娜塔莉亚就呵斥你，[natalya.speech(够了，[style.mule]！你真正的舔肛训练还要再等一会！现在趴下去舔[npc.namePos]的鸡巴！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_1_SEX -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_1_SEX_SUCK_COCK"><![CDATA[
+	<p>
+		你的唾液在[npc.namePos][npc.asshole+]的屁眼上留下了闪闪发光的水润光泽，你趴在[npc.her]兽态的身下，身体前倾，舌头同[npc.her][npc.cockSize]乌黑的马鸡巴色情地纠缠着。在[npc.namePos]的前蹄兴奋地拍打地面发出声音的同时，娜塔莉亚主人大声喊道，[natalya.speech(就是这样，[style.mule]！舔干净[npc.her]的先走液开开胃吧！)]
+	</p>
+	<p>
+		按照她的指示，你转过身去，面朝[npc.namePos]搏动的阴茎，然后俯身舔舐[npc.her]尿道口流出的咸咸的先走液。小个子[natalya.race]很高兴看到你听从了她的指示，于是命令道，[natalya.speech(告诉我你喜欢马鸡巴，[style.mule]！然后把嘴张大，把[npc.her]的肉棒含进嘴里！)]
+	</p>
+	<p>
+		你按她所说，稍稍退后，大喊道，[pc.speech(我喜欢马鸡巴，主人！)]
+	</p>
+	<p>
+		你牢记着娜塔莉亚主人的第二部分命令，迅速张大嘴巴，用[pc.lips+]包裹住[npc.namePos]阴茎那宽大的龟头，然后向前挪动一点，努力试图将[style.sizes]肉棒的前端含进嘴里。看到你已经开始为她的奴隶口交，娜塔莉亚主人发出了戏谑的笑声，[natalya.speech(知道我为什么选择[npc.name]作为你的训练伙伴了吗，[style.mule]？[npc.she]能让你见识到你应该能对付的极限！来吧，[npc.name]，我允许你对这个小骚货[style.mule]粗暴些！不要拘束！)]
+	</p>
+	<p>
+		还没等你对娜塔莉亚主人的话做出反应，[npc.name]便发出低沉的哼声，然后迅速向前跨出一步，将[npc.her][npc.cock+]完全插入你的喉咙。你发出急切的呛噎声，竭尽全力放松喉咙肌肉，试图在给[npc.race]口交时保持体面，但你的努力几乎白费了，因为[npc.her]开始粗暴地顶胯，操你的喉咙。在[npc.namePos]沾满唾液的睾丸拍打你下巴的声音中，你听到主人娜塔莉亚傲慢地说，[natalya.speech(这对你是很好的训练，[style.mule]！尽量少说话，我要工作了，你继续专心伺候[npc.namePos]的肉棒！)]
+	</p>
+	<p>
+		无论你多么想努力顺从女主人的要求，但当[npc.her]继续无情地将[npc.namePos][npc.cockGirth]的乌黑马鸡巴插入你的喉咙，发出淫靡的噼啪声时，你几乎窒息过去……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_1_AFTER_SEX -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_1_AFTER_SEX"><![CDATA[
+	<p>
+		在玩得尽兴之后，[npc.name]退后一步，将[npc.her]肥大的兽态马鸡巴从你惨遭蹂躏的喉咙中滑出。当咽不下的精液和唾液从你的[pc.lips]流下时，你喘不过气来，狠狠地咳嗽了两下，随后抬起头来，正好看到漠不关心的[npc.race]走到一边，把[npc.her]粗大的鸡巴拍在你的脸上。[npc.she]低吼着咒骂道，[npc.speech(给我舔干净，你这下贱的[style.mule]骚货！)]
+	</p>
+	<p>
+		按照吩咐，你身体前倾，就像之前对娜塔莉亚所做的那样，开始用[pc.tongue+]清理[npc.namePos]变软的鸡巴。就在你刚刚开始的时候，你听到主人娜塔莉亚从办公桌后面小跑过来，然后，你突然感觉到她的马鞭在轻轻拍打你的屁股。小个子[natalya.race]发出赞许的哼声，称赞你的表现，[natalya.speech(干得好，[style.mule]！既然你能搞定[npc.name]，我相信你也能用你的嘴取悦其他的奴隶。现在，做个乖[style.mule]，咽下去，让我看看你有多喜欢马的精液！)]
+	</p>
+	<p>
+		在主人的注视下，你乖乖听话，热切地舔舐并吞下[npc.namePos]肉棒上粘糊糊的、精液和唾液的混合物。当你清理完[npc.race]滚烫的鸡巴之后，娜塔莉亚主人挥动马鞭，抽打[npc.her]的屁股，并下达命令，[natalya.speech(现在，给我走开，[npc.name]！如果你做个乖[npc.girl]，下次的[style.mule]训练，我还会让你来帮我！)]
+	</p>
+	<p>
+		[npc.name]甚至懒得对你说什么，[npc.her]向前挺动胯部，粗暴地用[npc.her]已经出鞘的阴茎在你脸上最后蹭了蹭，然后走到门边，迅速离开了房间。娜塔莉亚主人漫不经心地把一块布扔到你面前的地板上，随后小跑着回到她的办公桌前，说道：[natalya.speech(恭喜你，[style.mule]；你已经完成了第一阶段的训练！下一堂课，我将教你如何真正爱上口交，可惜今天没时间了。告诉我你是个喜欢马屁股和马鸡巴的[style.mule]，然后就可以走了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_1_AFTER_SEX_LEAVE"><![CDATA[
+	<p>
+		你按她所说的，转过身面向娜塔莉亚主人，承认道，[pc.speech(我是乖[style.mule]，主人，我爱马屁股和马鸡巴！)]
+	</p>
+	<p>
+		小个子[natalya.race]向你露出带有傲慢的微笑，朝门外做了个手势，[natalya.speech(好[style.mule]！你可以走了。明天来找我，我好继续训练你。)]
+	</p>
+	<p>
+		你迅速穿上衣服走向门口，从原路离开了娜塔莉亚主人的办公室。你从小等候室里仍坐在办公桌后的衣着得体的女秘书面前走过，继续向仓库的走廊走去，同时思索着接下来该去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_2 -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2"><![CDATA[
+	<p>
+		按照吩咐，你[pc.step]绕到主人娜塔莉亚的办公桌后面，跪在她身边。从这个角度，你可以看到虽然[natalya.race]的大椅子是专门为适应她那兽态马身的尺寸和重量而设计的，但它仍然可以在原地转来转去，当你跪倒在主人身边的木质地板上时，她转过身来，冷笑着命令道，[natalya.speech(在开始你的舔肛训练之前，你得再脱掉衣服，[style.mule]！赶紧脱光！)]
+	</p>
+	<p>
+		#IF(pc.isAnyEquippedClothingSealed())
+				你按照吩咐开始脱衣服，但很快你便不得不告诉娜塔莉亚主人，有些衣服是封印在你身上的。她无奈地叹了口气，然后大声说，[natalya.speech(别动，[style.mule]！我帮你把这些东西解除掉！)] 
+			</p>
+			<p>
+				不等你反应过来，[natalya.race]便将她的一些奥术精华注入你被封印的衣物，解除了其中的附魔，好让你脱掉它们。你不想再惹主人生气，于是尽快脱光衣服，然后抬头看向她，告诉她你已经准备好了。
+		#ELSE
+				你听话地脱光衣服，然后抬头看着主人，告诉她你已经准备好了。
+		#ENDIF
+	#IF(pc.isAbleToWearMakeup())
+			[natalya.race]看着你赤裸的身体，饥渴地咬着嘴唇，调戏道，[natalya.speech(你是一匹漂亮的[style.mule]，但我要让你的容貌足以迷倒我那些健壮的男孩和女孩们，让他们为你疯狂，所以让我来为你最后打扮一番……)]
+		</p>
+		<p>
+			娜塔莉亚主人打开办公桌最上面的抽屉，拿出三支颜色鲜艳的口红，伸到你面前，[natalya.speech(只要涂上口红，我肯定你会看起来像那种靠舔马屁股为生的下流[style.mule]荡妇。挑一个你喜欢的颜色，[style.mule]，一分钟后，我允许你用你的嘴唇把我的肛门涂成你所选的颜色！)]
+		</p>
+		<p>
+			你低头看向三支口红。你可以选择相对普通的哑光深蓝色、引人注意的闪亮金色或绚丽夺目的粉红色……
+		</p>
+	#ELSE
+			[natalya.race]咬着嘴唇，俯视着你赤裸的身体，站起来粗鲁地挑逗道：[natalya.speech(你看起来就像那种以舔马屁股为生的下流[style.mule]荡妇！现在把我的裙子掀起来，准备好让我知道我是对的吧！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_LIPSTICK_DARK_BLUE"><![CDATA[
+	<p>
+		你决定选择三支口红中最不花哨的一支，于是指着哑光深蓝色口红告诉娜塔莉亚主人，这是你最喜欢的一支。主人对你微微一笑，把另外两支口红放在桌子上，然后取下深蓝色口红的盖子，命令道，[natalya.speech(待着别动，[style.mule]！我这就把你打扮成一个下流荡妇！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_LIPSTICK_SPARKLY_GOLD"><![CDATA[
+	<p>
+		你觉得哑光蓝色太过于无趣，于是选择了稍微让人兴奋些的亮金色，指着那支口红告诉娜塔莉亚主人，这是三支口红中你最喜欢的一支。主人对你露出了赞许的笑容，她把另外两支口红放在桌子上，然后取下金色口红的盖子，吩咐道：[natalya.speech(待着别动，[style.mule]！我这就把你打扮成一个下流荡妇！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_LIPSTICK_GLOWING_PINK"><![CDATA[
+	<p>
+		你决定选择三支口红中最抢眼的一支，指着那支粉红色的口红告诉娜塔莉亚主人，这是三支口红中你最喜欢的一支。女主人对你露出了欣慰的笑容，她把另外两支口红放在桌子上，然后取下粉色口红的盖子，吩咐道：[natalya.speech(待着别动，[style.mule]！我这就把你打扮成一个下流荡妇！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_2_MAKEUP -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_MAKEUP"><![CDATA[
+	<p>
+		娜塔莉亚主人俯下身子，在你的[pc.lips+]上狠狠涂上了大量[#SPECIAL_PARSE_0]口红，你乖乖听话，一动不动。涂完后，她露出得意的笑容，从办公桌的抽屉里拿出一面小巧的手持镜子，让你看向镜子里自己[#SPECIAL_PARSE_0]的[pc.lips]，调戏着你，[natalya.speech(你现在就像个淫荡的[style.mule]婊子，我打赌你等不及要好好利用你那淫荡的嘴唇了，所以快点，把我的裙子拉起来！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_MAKEUP_LIFT_SKIRT"><![CDATA[
+	<p>
+		主人娜塔莉亚站起身来，不耐烦地转过身，将她的马身后部顶到你面前。你按照要求拉起主人的黑裙，不仅看到了她的[natalya.cockSize]马鸡巴和沉甸甸的睾丸，还看到了她黑褐色的肿胀屁眼。虽然它甜甜圈状的后庭和一般的马一模一样，但[natalya.race]的屁眼却明显带有恶魔的特质，不断渗出透明、味道浓郁的天然润滑液，使它看起来更像是一个诱人的性器官腔穴，而不是普通的屁眼。
+	</p>
+	<p>
+		娜塔莉亚主人推了推鼻梁上的厚框眼镜，回头看了你一眼，然后命令道，
+		#IF(pc.isAbleToWearMakeup())
+			[natalya.speech(继续，我的[style.mule]，用你的小嘴把我的屁股涂成[#SPECIAL_PARSE_1]！)]
+		#ELSE
+			[natalya.speech(继续，我听话的[style.mule]，亲我的屁股！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_MAKEUP_RELUCTANT_KISSES"><![CDATA[
+	<p>
+		你不太确信，于是你克制地俯下身，快速啄了下主人娜塔莉亚肿胀、乌黑的屁眼。察觉到你的犹豫，[natalya.race]向后退了一步，强行将她兽态的后臀顶在你的脸上，用她黏糊糊的恶魔后庭闷住你的嘴。当你惊讶地发出低沉的喘息声时，你的主人大声喊道，[natalya.speech(再卖力一点，[style.mule]！把它想象成一匹
+		#IF(pc.getSexualOrientation().isAttractedToFeminine())
+			雌性半人马奴隶的嘴唇，亲上去，和它接吻！
+		#ELSE
+			雄性半人马奴隶的嘴唇，亲上去，和它接吻！
+		#ENDIF
+		)]
+	</p>
+	<p>
+		主人的屁股紧紧捂住了你的脸，你别无他法，只能闭上眼睛，假装在和
+		#IF(pc.getSexualOrientation().isAttractedToFeminine())
+			漂亮的半人马女性
+		#ELSE
+			帅气健壮的半人马男性
+		#ENDIF
+		亲热。你强迫自己用力亲吻她灼热而肉感的菊穴。当你下流地将你的
+		#IF(pc.isAbleToWearMakeup())
+			[#SPECIAL_PARSE_0][pc.lips]
+		#ELSE
+			[pc.lips+]
+		#ENDIF
+		按在她乌黑的菊穴上时，这个小个子[natalya.race]发出了兴奋的细微嘶鸣声，喘息着说，
+		#IF(pc.isAbleToWearMakeup())
+			[natalya.speech(就这样，[style.mule]！~嗯啊啊！~用你的嘴唇把我的屁股涂成[#SPECIAL_PARSE_1]吧！~噢噢噢！~告诉我你有多喜欢马屁股，你这个下贱的小骚货！)]
+		#ELSE
+			[natalya.speech(就这样，[style.mule]！~嗯啊啊！~告诉我你有多喜欢马屁股，你这个下贱的小骚货！)]
+		#ENDIF
+	</p>
+	<p>
+		你惊讶地发现自己已经越来越沉迷在这种下流的事情之中，甚至在嘴唇和菊穴分开的时候，还有些不情愿的感觉。你顺从地[pc.moaning]，[pc.speech(我喜欢马屁股，主人！~嗯啊！~我喜欢您的屁股！)]
+	</p>
+	<p>
+		你把脸埋在她的屁股里，迫不及待地开始同[natalya.race]肥美、乌黑的菊穴一次又一次深吻。主人将她的臀部向后顶，她黏糊糊的菊穴用力磨蹭着你[pc.lips+]。她咬着嘴唇，发出兴奋而高亢的尖叫声，然后命令道：[natalya.speech(舌头舔那里，[style.mule]！~噢哦哦！~你真的要把我舔到高潮了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_MAKEUP_EAGER_KISSES"><![CDATA[
+	<p>
+		你非常乐意按她说的做，迫不及待地凑上去，在娜塔莉亚主人肉感、乌黑的菊穴上留下了热情的深吻。随着一声欢快的轻叫，[natalya.race]对你的举动做出了回应，她后退了一步，用力将她兽态的屁股顶在你的脸上，用她粘糊糊的恶魔后庭闷住了你的嘴。当你惊讶地发出低沉的喘息声时，你的主人大声喊道，[natalya.speech(真是我听话的[style.mule]！继续亲我的菊穴，你这喜欢肛门的下贱荡妇！)]
+	</p>
+	<p>
+		主人的屁股闷住了你的脸，你别无选择，只能按照她说的去做，兴高采烈地继续亲吻她炽热而肉感的屁眼。当你下流地将你的
+		#IF(pc.isAbleToWearMakeup())
+			[#SPECIAL_PARSE_0][pc.lips]
+		#ELSE
+			[pc.lips+]
+		#ENDIF
+		按在她乌黑的菊穴上时，这个小个子[natalya.race]发出了兴奋的细微嘶鸣声，喘息着说，
+		#IF(pc.isAbleToWearMakeup())
+			[natalya.speech(就这样，[style.mule]！~嗯啊啊！~用你的[pc.lips]把我的屁股涂成[#SPECIAL_PARSE_1]吧！~噢噢噢！~告诉我你有多喜欢马屁股，你这个下贱的小骚货！)]
+		#ELSE
+			[natalya.speech(就这样，[style.mule]！~嗯啊啊！~告诉我你有多喜欢马屁股，你这个下贱的小骚货！)]
+		#ENDIF
+	</p>
+	<p>
+		你已然沉迷其中，不情愿地抬起头，发出淫荡的呻吟，[pc.speech(我喜欢马屁股，主人！~嗯啊！~我喜欢您的屁股！)]
+	</p>
+	<p>
+		你已然无法自控，立即把脸埋在她的屁股里，迫不及待地开始同[natalya.race]肥美、乌黑的菊穴一次又一次深吻。主人将她的臀部向后顶，她黏糊糊的菊穴用力磨蹭着你[pc.lips+]。她咬着嘴唇，发出兴奋而高亢的尖叫声，然后命令道：[natalya.speech(舌头舔那里，[style.mule]！~噢哦哦！~你真的要把我舔到射出来了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_2_MAKEUP_ANILINGUS -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_MAKEUP_ANILINGUS_START"><![CDATA[
+	<p>
+		你感到异常兴奋，急切地想要继续与娜塔莉亚主人的屁股亲热一番。于是你迫不及待地按照她的吩咐，立即将[pc.tongue+]伸进她膨大、乌黑的屁眼里。
+		#IF(pc.isAbleToWearMakeup())
+			当你[pc.lips+]继续在主人马状的菊穴上印下让人兴奋不已的[#SPECIAL_PARSE_0]唇印时，[natalya.race]发出了极为淫荡的喘息声，大喊道，[natalya.speech(~啊啊！~太棒了，我的[style.mule]！~噢噢！~继续向我展现你下贱的样子，你这喜欢屁穴的骚货[style.mule]！~啊啊哈！~别停！)]
+		#ELSE
+			当你[pc.lips+]抵在主人马形态的菊穴上时，[natalya.race]发出了极为淫荡的喘息声，大喊道，[natalya.speech(~啊啊！~太棒了，我的[style.mule]！~噢噢！~继续向我展现你下贱的样子，你这喜欢屁穴的骚货[style.mule]！~啊啊哈！~别停！)]
+		#ENDIF
+	</p>
+	<p>
+		你按照吩咐，继续热情地服侍娜塔莉亚主人黏糊糊的，甜甜圈一样的肛门，决心让她仅靠你的口交就射出来……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_2_AFTER_SEX -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_AFTER_SEX"><![CDATA[
+	<p>
+		娜塔莉亚主人将她那巨大的乌黑睾丸内的精子射空后，发出了深深的、满足的叹息，然后向前走去，留下你跪在她办公室的地板上，大口喘息着。娜塔莉亚主人回头侧过脸，从她办公桌上的手持镜子里看了看自己肿胀的、沾满唾液的屁眼。她对此颇为满意，微微一笑，
+		#IF(pc.isAbleToWearMakeup())
+			[natalya.speech(我屁股上那些[#SPECIAL_PARSE_1]可真不错，是吧，[style.mule]？)]
+		#ELSE
+			[natalya.speech(你可真是把我的后门搞了个爽，搞得黏糊糊的，是吧，[style.mule]？)]
+		#ENDIF
+	</p>
+	<p>
+		你看向主人那如同甜甜圈一样的后庭，不由的发出一阵喘息，[pc.speech(是的，主人……)]
+	</p>
+	<p>
+		[natalya.speech(你技术这么好，此后一定会在奴隶当中出名，成为最受欢迎的舔屁眼[style.mule]，)]你的主人戏谑地说着，随后向后退了一步，再次将她黏糊糊的菊穴压在你的脸上。她回过头看向你，露出一抹坏笑，随后命令道，[natalya.speech(帮我舔干净，[style.mule]！)]
+	</p>
+	<p>
+		你再次顺从地用几分钟时间舔去娜塔莉亚主人菊穴周围的唾液，然后再用嘴清理她变软的马鸡巴。当你听话地舔尽所有多余的性液后，主人娜塔莉亚命令你把她的裙子拉下来，然后宣布：[natalya.speech(今天就到此为止吧，[style.mule]。你的下一次训练将是在[npc.name]身上复习你今天所学到的技巧，同时我会骑在你身上，狠狠蹂躏一下你的屁股。之后，我会让[npc.name]骑上你，然后你就可以接受项圈，成为一名合格的[style.mule]了。很遗憾，今天剩下的时间我都很忙，所以明天再来找我，进行最后阶段的训练！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_2_AFTER_SEX_LEAVE"><![CDATA[
+	<p>
+		舔肛训练结束后，你迅速穿上衣服，向门口走去，离开了娜塔莉亚主人的办公室。经过小等候室里仍然坐在办公桌后面的衣着得体的女秘书后，你继续向仓库的走廊走去，思考着接下来该去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_3 -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3"><![CDATA[
+	<p>
+		按照吩咐，你[pc.step]绕到主人娜塔莉亚的办公桌后面，跪在她身边。就像上次你在这个位置上一样，小个子[natalya.race]在为她特别设计的椅子上转了一圈，命令道，[natalya.speech(在我们开始最后阶段的训练之前，你必须再次脱光衣服，[style.mule]！所以抓紧时间！)]
+	</p>
+	<p>
+		#IF(pc.isAnyEquippedClothingSealed())
+				你按照吩咐开始脱衣服，但很快你便不得不告诉娜塔莉亚主人，有些衣服是封印在你身上的。她无奈地叹了口气，然后大声说，[natalya.speech(别动，[style.mule]！我帮你把这些东西解除掉！)] 
+			</p>
+			<p>
+				不等你反应过来，[natalya.race]便将她的一些奥术精华注入封印你的衣物，解除了它们的附魔，让你得以脱掉它们。你不想再惹女主人生气，于是尽快脱光衣服，然后抬头看着她，告诉她你已经准备好了。
+		#ELSE
+				你按主人所说，尽快脱光衣服，然后抬头看着主人，告诉她你已经准备好了。
+		#ENDIF
+	</p>
+	<p>
+		[natalya.speech(你可真是优秀的[style.mule]，)]主人说着站起身，踱到门边。她回头看着你，命令道：[natalya.speech(在那等着，我去把[npc.name]找来！记住，你今天要一边服侍[npc.her]的屁股，一边被我操！)]
+	</p>
+	<p>
+		说完，主人娜塔莉亚小跑着离开了办公室，留下你赤身裸体跪在她办公桌旁的地板上……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_SLAVE_ENTRY"><![CDATA[
+	<p>
+		五分钟不到，主人娜塔莉亚便回到了办公室，[npc.name]熟悉的身影紧随其后。[npc.race]用[npc.her]的一只硕大的后蹄踢开了[npc.herHim]身后的门，看到了你赤裸的身影，随后向你露出了一个不怀好意的饥渴狞笑。看到你还跪在她离开你的地方，娜塔莉亚主人大笑着喊道，[natalya.speech(好[style.mule]！现在爬过来，向我和[npc.name]展示一下，让我们知道你已经准备好完成训练了！)]
+	</p>
+	<p>
+		说着，小个子[natalya.race]往后靠了靠，拉起裙子，然后转过身来，向你展示她兽态的后臀。她把尾巴甩到一边，让你一览无余地看到她那肿胀、乌黑的屁眼。屁眼上闪烁着自然分泌出的润滑液的光泽，比起一般马的屁眼，它看起来更加诱人，更像是用来做爱的。
+	</p>
+	<p>
+		[npc.name]也学着主人娜塔莉亚的样子转过身，与[natalya.race]排站在一起，然后将[npc.her]的尾巴甩到一边，向你展示[npc.her]兽态的马肛门。看到这两个半人马并排站在一起，你再次感到你的主人在半人马里实在不算高大，她比旁边的[npc.race]矮了
+		#IF(game.isMetricSizes())
+			六十厘米
+		#ELSE
+			两英尺
+		#ENDIF
+		。你不想花太多时间在他们两人之间做比较，于是开始爬向两个呈现在你面前的乌黑肿胀的菊穴，在你爬过去的时候，主人娜塔莉亚回头看了看，命令道，[natalya.speech(先亲我的，[style.mule]！)]
+	</p>
+	<p>
+		你听话地走到娜塔莉亚主人的身后，俯身对着她黏糊糊的恶魔屁眼狠狠来了一个淫荡的吻。当你[pc.lips+]接触到她肉感的肛门外周时，你之前接受的训练开始发挥作用，不等你意识到自己在做什么，你便开始热情地用舌头舔起她炽热的马肛。小个子[natalya.race]发出欢快的嘶鸣声，向前走了几步，然后小跑着转过身，[natalya.speech(你可真是匹欲求不满的[style.mule]，对吧？！现在让[npc.name]好好看看你渴求马屁股的骚货样子吧！)]
+	</p>
+	<p>
+		你急切地听从命令，跪在[npc.Name]身后，向前靠在[npc.her]兽态的臀部上。当你靠得更近之后，你看到[npc.her]的肛门从外形上和娜塔莉亚主人的非常相似，尽管没有天然分泌的润滑液，但它深黑的颜色和肉感的外形几乎是[natalya.race]菊穴的复刻。你难以自抑，将脸埋进这个[npc.race]的屁股里，饥渴地亲吻[npc.her]炽热而味道浓郁的肛门。
+	</p>
+	<p>
+		[natalya.speech(真是我出色的[style.mule]骚货！)]娜塔莉亚主人在你身后的某个地方喊道，然后你突然感觉到很沉的东西压在了你的背上。令你沮丧的是，你的[pc.lips]被强行从[npc.namePos]的屁股上拉开，因为你已经被推倒在地板上。你回头一看，发现主人骑上了你。还没等你反应过来，你就感觉到[natalya.race]黏糊糊、沾满先走液的巨大马鸡巴顶在了你暴露的屁眼上，她大声喊着，[natalya.speech(我看得出你是个喜欢马屁股的荡妇，但我要让你从现在起渴望被马鸡巴蹂躏的感觉！告诉我，你想让我插进你可爱的小屁股里吗，[style.mule]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_SLAVE_ENTRY_OBEY"><![CDATA[
+	<p>
+		尽管你不太确定自己是否真的想要，但你还是按娜塔莉亚主人说的做，乞求道，[pc.speech(求你了，主人，操我的屁股……)]
+	</p>
+	<p>
+		娜塔莉亚主人看出了你对最后阶段训练的一丝抗拒，于是厉声说，[natalya.speech(别担心，[style.mule]，我很快就会让你知道被操屁股的感觉有多爽！现在不是你该发表意见的时候，所以，[npc.name]，如果你愿意的话，让这只[style.mule]继续伺候你的屁股吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_SLAVE_ENTRY_EAGERLY_OBEY"><![CDATA[
+	<p>
+		你渴望被主人肛交，于是热情地喊道，[pc.speech(求你了，主人，骑在我身上，操烂我的屁股！)]
+	</p>
+	<p>
+		你的主人娜塔莉亚很高兴听到你如此渴望完成最后阶段的训练，于是挑逗道，[natalya.speech(这才是我的好[style.mule]！我相信你会喜欢屁股被蹂躏的感觉！在这个过程中你不需要说话，所以如果你愿意的话，[npc.name]，让这只[style.mule]继续在你的屁股上工作吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_SLAVE_ENTRY_OBEY_END"><![CDATA[
+	<p>
+		还没等你反应过来，[npc.name]就跪了下来，并立即往后一顶，强行把[npc.her]那沾满唾液的肉感屁眼按到了你的脸上。在热情地亲吻了[npc.her]乌黑的菊穴入口后，你把脸埋进[npc.her]的屁股里，开始贪婪地用舌头舔舐[npc.her]肉感菊穴的更深处。
+	</p>
+	<p>
+		当你开始为[npc.name]口交时，你感觉到娜塔莉亚主人巨大的马鸡巴那扁平而外露的龟头再次顶在你的屁股上。小个子[natalya.race]磨蹭了一会儿，你[pc.asshole+]上沾上了大量的精前液，随后，她发出一声高亢的呜呜声，将她那[natalya.cockGirth]马鸡巴撞进了你的后庭。这个有力的动作使你的脸被推向[npc.namePos]味道浓重的屁眼，当娜塔莉亚主人发出胜利的嘶鸣时，你也忍不住呻吟起来，[natalya.speech(~嗯！~你的屁股可真是个名器，[style.mule]！~哦哦！~我就知道你是个肮脏的屁穴荡妇，没错吧？！用力，[style.mule]，向后顶，让我插得更深点！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_3_FUCKED -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_FUCKED_START"><![CDATA[
+	<p>
+		你发现自己爱上了被娜塔莉亚主人肛交的感觉，于是按照她的命令开始向后挺臀，迫使[natalya.her]又热又狂野的马鸡巴深深插入你的后庭。感觉到你的注意力已经从给[npc.herHim]口交转移走了，[npc.name]不耐烦地往后一顶，用力将[npc.her]肉乎乎的黑檀色肛门顶在你[pc.lips+]上，发出哼叫声，[npc.speech(舌头往里顶顶，你这淫荡的[style.mule]！)]
+	</p>
+	<p>
+		你听话地用舌头舔舐[npc.namePos]味道浓郁的马肛门，同时将臀部向后推，帮助娜塔莉亚主人将她不断抽送的阴茎深深插入你的后面……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_3_AFTER_SEX -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_AFTER_SEX"><![CDATA[
+	<p>
+		娜塔莉亚主人将她巨大乌黑的睾丸内的每一滴精液都深深地射入了你的屁眼，随后她抽出鸡巴，一大股恶魔马精从你被干得酣畅淋漓的屁眼里喷涌而出。她高兴地小跑到你前面，看着你在[npc.namePos]沾满唾液的肉感屁眼上留下最后几个湿吻，随后宣布：[natalya.speech(你的训练接近完成了，[style.mule]！现在只差让这里的[npc.name]狠狠操你的屁股了！)]
+	</p>
+	<p>
+		[npc.name]听懂了暗示，站了起来，扭动着[npc.her]的屁股远离了你的[pc.lips]，在[npc.she]刚才的位置留下了一大片精液。娜塔莉亚主人低头看了一眼她奴隶弄出来的杂乱，嘲笑道，[natalya.speech(看起来你已经筋疲力尽了，[npc.name]！我可不想让这头[style.mule]错过屁股里灌满你精液的感觉，所以过来喝掉这个！)]
+	</p>
+	<p>
+		你气喘吁吁地躺在办公室的地板上，精液从你被那被操到红肿的屁眼里流出来。[npc.name]跟着主人娜塔莉亚来到她的办公桌前，[npc.sheIs]在那里拿到了一瓶恢复精力的药水。[npc.name]快速喝下所有药水后，发出一声低沉的哼声，[npc.speech(谢谢您，主人，我准备好操那匹骚货[style.mule]了。)] 
+	</p>
+	<p>
+		[natalya.speech(那太好了，)][natalya.race]小跑到办公桌后面坐下。她向你露出得意的笑容，命令道：[natalya.speech(把你的屁股露出来，[style.mule]！[npc.Name]要狠狠地操你一顿！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_AFTER_SEX_ROUND_TWO"><![CDATA[
+	<p>
+		你听话地抬起屁股，向[npc.Name]展示自己。[npc.she]发出一声低沉的哼声，迅速小跑到你跪的地方，然后很快骑到你身上，垂下[npc.her][npc.cockGirth]的，黑檀色的马鸡巴，并将其戳进你已经被精液填满的菊穴。
+	</p>
+	<p>
+		你很清楚自己想要的是什么，于是臀部向后用力，引导[npc.namePos]兽态马鸡巴那扁平、外扩的龟头插进你[pc.asshole+]里。急切的[npc.race]立即向前挺进，粗暴地将[npc.her]炽热而悸动的阴茎尽可能深地插入你惨遭蹂躏的后庭，同时，主人娜塔莉亚在房间的另一边看着你。你顺从于[npc.namePos]的鸡巴，享受着被如此高大强壮的[npc.race]肛交的体验……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_3_AFTER_SEX_SECOND -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_AFTER_SEX_SECOND"><![CDATA[
+	<p>
+		[npc.name]学着娜塔莉亚主人的样子，把[npc.her]巨大的兽态睾丸里的精液全部灌进你的屁眼里，随后退后一步，你失去支撑，倒在地上喘不过气来。娜塔莉亚主人走过来，看着从你惨遭蹂躏的屁眼里流出的浓稠、味道浓郁的马精液，笑眯眯地宣布：[natalya.speech(祝贺你！你已经完成了所有训练，从此以后你就是合格的[style.mule]了！)]
+	</p>
+	<p>
+		小个子[natalya.race]转身给[npc.Name]打了个手势，示意[npc.her]出去，[natalya.speech(这里用不着你了，[npc.name]。回去工作！)]
+	</p>
+	<p>
+		[npc.name]转过身，连再见都没说就迅速离开了办公室，留下你和主人娜塔莉亚单独在一起。你抬头看向[natalya.race]，发现她手里拿着一个黑色项圈，她骄傲地举起项圈，向你展示上面几个醒目的青铜色文字“[style.mule]”。主人朝你走来，命令道：[natalya.speech(脖子伸长，[style.mule]，骄傲地戴上这个吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_TRAINING_3_CHOKER_EQUIPPED -->
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_CHOKER_EQUIPPED"><![CDATA[
+	<p>
+		你抬起头，顺从地向娜塔莉亚主人露出自己的脖子，然后一动不动，任由她将[style.mule]项圈系在你的脖子上。就在绑好的一瞬间，你感觉到它的附魔生效了，现在它不仅被封印在了你的脖子上，而且还让你感觉更顺从了。你不由自主地发出一声呜咽，抬起头，看到主人脸上露出了愉悦的笑容。
+	</p>
+	[#SPECIAL_PARSE_0]
+	<p>
+		[natalya.speech(从现在起，你的职责就是为御城速递的奴隶们提供性服务，就像我教你的那样，)]她交代道，随后继续补充，[natalya.speech(毫无疑问，你已经注意到了，你的[style.mule]项圈上目前印着青铜字样。正如我在面试你时告诉你的那样，你们[style.mules]有一套积分奖励制度，可以从青铜级升到白银级，然后再升到黄金级。半人马奴隶可以通过努力工作获得积分，然后把积分交给你，换取你为他们提供性服务。你明白了吗，[style.mule]？)]
+	</p>
+	<p>
+		[pc.speech(明白了，主人。)]你答道，[pc.speech(我会不断侍奉您的奴隶，赚够足够的点数来升级我的[style.mule]项圈……)]
+	</p>
+	<p>
+		[natalya.speech(好[style.mule]，)]小个子[natalya.race]回答之后，小跑到她的办公桌前，拿起一把闪着粉红色光芒的小珠子。她举起珠子让你看，然后解释道，[natalya.speech(这些给你，它们是特别附魔过的珠子，会被你的项圈吸收，作为积分。看在你这[style.mule]这么乖巧的份上，我先给你10积分。)]
+	</p>
+	<p>
+		说罢，娜塔莉亚主人将珠子扔在你面前的地板上，还没等你去捡，珠子就突然分解成纯粹的奥术能量，然后飞射而起，被你的[style.mule]项圈吸收了。娜塔莉亚主人露出兴致盎然的笑容，继续说，[natalya.speech(你可能已经看到了，就在我办公室的走廊尽头，有一个[style.mule]奖品站。在那里，你会发现一台奥术机器，它可以告诉你目前拥有多少点数，还可以从专门的点数商店领取奖励。我还得提一下，现在你的训练已经完成了，你不能继续为我提供性服务，除非你获得足够的积分，将等级提升到白银或黄金。)]
+	</p>
+	<p>
+		小个子[natalya.race]示意你站起来，最后警告说，[natalya.speech(每天午夜时分，你都会损失两个点数，这意味着你要坚持努力为半人马奴隶服务，以保持积分点数的增长。每个月月初，所有[style.mule]点数也会全部归零。如果你还想知道这个系统是如何运作的，你可以在[style.mule]奖品站看到一张海报。现在，如果没有任何问题，就赶快去赚取点数吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_CHOKER_EQUIPPED_AMBER_SPECIAL"><![CDATA[
+	<p>
+		你的新主人看向你那堆被丢在一边的衣服，特别是盯着之前系在你脖子上的“安柏的婊子”项圈，冷笑一声，[natalya.speech(我不知道‘安柏’是谁，但是你现在是<i>我的</i>婊子了，[style.mule]！你明白了吗？！)]
+	</p>
+	<p>
+		你发出顺从的呻吟声，告诉你的娜塔莉亚主人，你很高兴能成为她的婊子。她露出了傲慢的笑容，咯咯笑了起来，宣告着她的胜利。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_TRAINING_3_CHOKER_EQUIPPED_LEAVE"><![CDATA[
+	<p>
+		你明白娜塔莉亚主人所说的一切，因此不需要再多问她什么，于是迅速穿上衣服，向门口走去。你迅速走出主人的办公室，经过小等待室里仍坐在办公桌后面、衣着得体的女秘书，然后继续向仓库的走廊走去。
+	</p>
+	<p>
+		在脖子上牢牢戴上[style.mule]项圈后，你在想是应该直接前往马厩开始为半人马奴隶们服务，还是花点时间去看看娜塔莉亚主人告诉你的[style.mule]奖品站？
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_GIVE_BLOWJOB -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_GIVE_BLOWJOB"><![CDATA[
+	<p>
+		你想再尝尝主人的鸡巴，于是问她是否愿意让你为她口交。听到你这么说，小个子[natalya.race]对你露出傲慢的笑容，从办公桌后面走出来，命令道，[natalya.speech(如果你这小骚货[style.mule]想要，那就来这边，掀起我的裙子！)]
+	</p>
+	<p>
+		你唯命是从，迅速向前[pc.step]，在主人娜塔莉亚旁边俯下身，然后撩起她的裙子，看到了她迅速勃起的马鸡巴和自然润滑的肉感屁眼。掌握主动权的[natalya.race]转过身来，把她的屁股对着你的脸，回过头来坏笑地问道：[natalya.speech(在允许你为我口交之前，先来亲我的屁股，你这下流的[style.mule]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_GIVE_BLOWJOB_START"><![CDATA[
+	<p>
+		你再次按主人吩咐的去做，倾身向前，在主人黏糊糊的乌黑菊穴上留下一个大大的深吻，当你[pc.lips+]压在她的菊穴上时，你的主人发出兴奋的嘶鸣，随后不耐烦地将一只前蹄在地上蹭来蹭去，呻吟道，[natalya.speech(噢噢！~我的乖[style.mule]！现在到我身下去，向我的鸡巴示爱吧！)]
+	</p>
+	<p>
+		你非常乐意听从主人的命令，于是趴在她兽态的马身下面，然后向前倾身，用湿热的舌头舔她勃起的马鸡巴。当听到小个子[natalya.race]又一次发出愉悦的呻吟时，你微笑着张大嘴巴，把她的鸡巴含进嘴里，然后开始热情地为她口交……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_GIVE_RIMJOB -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_GIVE_RIMJOB"><![CDATA[
+	<p>
+		你想再尝尝主人屁股的滋味，于是问她是否愿意让你给她舔肛。听到你这么说，小个子[natalya.race]对你傲慢地笑了笑，然后从她的办公桌后面走了出来，[natalya.speech(如果这就是你想要的，你这肮脏的[style.mule]，那就过来掀开我的裙子！)]
+	</p>
+	<p>
+		你听话地快速[pc.step]向前，在娜塔莉亚主人身边坐下，然后撩起她的裙子，露出她迅速勃起的马鸡巴和自然润滑的肿胀屁眼。她转过身来，把她的屁股对着你的脸，占主导地位的[natalya.race]回过头来，笑着说，[natalya.speech(来吧，下流的[style.mule]，亲我的屁眼！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_GIVE_RIMJOB_START"><![CDATA[
+	<p>
+		你再次按主人吩咐的去做，倾身向前，在主人黏糊糊的乌黑菊穴上留下一个大大的深吻，当你[pc.lips+]压在她的菊穴上时，你的主人发出兴奋的嘶鸣，随后不耐烦地将一只前蹄在地上蹭来蹭去，呻吟道，[natalya.speech(噢噢！~我的乖[style.mule]！舌头舔那里，你这下流的小婊子！)]
+	</p>
+	<p>
+		你非常乐意听从主人的命令，先把[pc.lips+]抵在她炽热肉感的肛门上，然后将[pc.tongue+]伸入她的后庭。小巧的[natalya.race]在你口交她时又发出了一声愉悦的呻吟，这鼓励你继续给她来一次骚浪而热情的舔肛……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_GET_MOUNTED -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_GET_MOUNTED"><![CDATA[
+	<p>
+		你想再次感受主人的鸡巴，于是问她是否愿意骑在你身上，给你来一次猛烈的肛交。听到你这么说，小个子[natalya.race]对你傲慢地笑了笑，然后从办公桌后面走过来，要求道：[natalya.speech(如果你想要，就过来撩起我的裙子，你这骚货[style.mule]！)]
+	</p>
+	<p>
+		你服从主人的命令，迅速[pc.step]向前，在她身边坐下，然后撩起她的裙子，露出她迅速勃起的马鸡巴和自然分泌润滑粘液的肿胀屁眼。占主导地位的[natalya.race]转过身来。把她的屁股对着你的脸，同时回过头坏笑着命令你，[natalya.speech(要想让我满足你，你得先亲我的屁股，你这下流的[style.mule]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_GET_MOUNTED_START"><![CDATA[
+	<p>
+		你再一次听话地俯身在主人乌黑粘滑的屁眼后面，对着它狠狠地湿吻了一下。当你的主人感觉到你[pc.lips+]紧紧贴在她的屁股上时，她发出了一声愉悦的呻吟，焦躁地用一只前蹄拍打着地面，喘息着，[natalya.speech(~哦，真是一匹出色的[style.mule]！现在摆好姿势，我要上了你！)]
+	</p>
+	<p>
+		你非常乐意听从主人的命令，转过身来，四肢着地，将自己[pc.asshole+]对准她巨大、勃起的马鸡巴。[natalya.race]丝毫不浪费时间，立即上前骑在你身上，急迫地用她那扁平、外扩的狂野龟头顶住你[pc.asshole+] 。娜塔莉亚主人发出一声愉悦的低吟，迅速向前挺进，将她的[natalya.cockGirth]马鸡巴插入你的屁眼，开始拼命地蹂躏你……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_RECEIVE_BLOWJOB -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_RECEIVE_BLOWJOB"><![CDATA[
+	<p>
+		你想充分利用你作为御城速递唯一一名黄金等级[style.mule]的特权，于是，你向娜塔莉亚主人露出你[pc.cock+]，并命令她给你口交。[natalya.race]知道自己不能违背合同，于是很不情愿地从办公桌后面走出来，然后在你身后俯下身子，露出恼怒的神情，厉声说，[natalya.speech(我真不敢相信你居然让我这么做，你这只坏[style.mule]！可别得意忘形了，我还是你的主人！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_RECEIVE_BLOWJOB_START"><![CDATA[
+	<p>
+		你不想继续听娜塔莉亚主人的抱怨，于是你将胯部向前顶，将你[pc.cock+][pc.cockHead+]顶到她[natalya.lips+]，随后插进她的口腔里。让你又惊又喜的是，作为回应，[natalya.race]靠了上来，努力将你的鸡巴吞进喉咙的深处。你的主人显然已经接受了她必须听命于你并服侍你鸡巴的现实，她开始熟练地上下摆头，一边发出阵阵含混不清的呻吟，一边为你提供你所要求的口交服务……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_RECEIVE_RIMJOB -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_RECEIVE_RIMJOB"><![CDATA[
+	<p>
+		你想充分利用你作为御城速递唯一一名黄金等级[style.mule]的特权，于是，你向娜塔莉亚主人露出你[pc.ass+]，并命令她给你舔肛。[natalya.race]知道自己不能违背合同，于是很不情愿地从办公桌后面走出来，然后在你身后俯下身子，露出恼怒的神情，厉声说，[natalya.speech(我真不敢相信你居然让我这么做，你这只坏[style.mule]！可别得意忘形了，我还是你的主人！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_RECEIVE_RIMJOB_START"><![CDATA[
+	<p>
+		你不想继续听娜塔莉亚主人的抱怨，于是你将臀部向后用力，将你[pc.ass+]顶到她的脸上，用你[pc.asshole+]闷住她[natalya.lips+]。让你又惊又喜的是，作为回应，[natalya.race]在你[pc.asshole+]上狠狠来了个湿漉漉的吻，然后贪婪地把舌头伸进你的屁眼里。你的主人显然已经接受了她必须听命于你并服侍你菊穴的现实，她开始熟练地亲吻和舔舐你[pc.asshole+]，一边发出接连不断的淫荡、低沉的呻吟声，一边为你提供你所要求的舔肛服务……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_MOUNT_HER -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_MOUNT_HER"><![CDATA[
+	<p>
+		你想充分利用你作为御城速递唯一一名黄金等级[style.mule]的特权，于是，你向娜塔莉亚主人炫耀你[pc.cock+]，并命令她把屁眼露出来，好让你狠狠操她一顿。[natalya.race]知道自己不能违背合同，于是很不情愿地从办公桌后面走出来，然后背对着你，趴在地板上。她撩起裙子，露出自然润滑的屁眼，回过头，露出恼怒的神情，厉声说，[natalya.speech(我真不敢相信你让我这么做，你这只坏[style.mule]！可别得意忘形了，我还是你的主人！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_MOUNT_HER_START"><![CDATA[
+	<p>
+		你不想给主人娜塔莉亚更多的时间来向你抱怨她的处境，于是你迅速骑上她，然后将你[pc.cock+][pc.cockHead+]顶在她肉感粘滑的屁眼上，迅速插了进去。让你又惊又喜的是，[natalya.race]的反应是向后顶你，发出淫荡的呻吟，帮助你[pc.cock+]深深插入她的后庭。主人乌黑的兽态屁眼挤压着你的鸡巴，这种感觉让你欲火焚身，情不自禁地开始拼命蹂躏她的屁股。你的每一次插入都会发出湿漉漉的拍打声，你和主人一起发出一浪高过一浪的激情呻吟，在办公室的地板上尽情释放着欲望……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_AFTER_SEX_AS_SUB -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_AFTER_SEX_AS_SUB_BLOWJOB"><![CDATA[
+	<p>
+		主人娜塔莉亚最后高叫了一声，退后几步，把肉棒从你嗓子眼里抽出去，浓精混着唾液滴溅到地上。她推了推鼻梁上的厚框眼镜，笑眯眯地吩咐你，[natalya.speech(舔干净我的肉棒，[style.mule]！)]
+	</p>
+	<p>
+		你听话地爬过去，凑到[natalya.race]正在软下来的马鸡巴上，顺从地舔去滚烫的肉棒上附着的每一寸精液。完成任务后，主人命令你把她的裙子放下来，然后神清气爽地走到她的办公桌后面坐下，赞叹道：[natalya.speech(你可真是个出色的荡妇[style.mule]！现在，你还想做什么？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_AFTER_SEX_AS_SUB_RIMJOB"><![CDATA[
+	<p>
+		在发出最后一声高亢的呻吟后，娜塔莉亚主人向前迈出一步，把她那肉感粘滑的屁眼从你的嘴边拿开。她推了推鼻梁上的厚框眼镜，回过头，嗤笑着下达了命令，[natalya.speech(把我的屁股清理干净，[style.mule]！)]
+	</p>
+	<p>
+		你听话地向[natalya.race]兽态的后臀靠过去，然后开始舔她乌黑的兽态菊穴上残余的唾液。完成任务后，主人命令你把她的裙子拉下来，然后蹦蹦跳跳地走到她的办公桌后面坐下，兴奋地喊道，[natalya.speech(你可真是个听话的骚货[style.mule]！现在，你还想做什么？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_AFTER_SEX_AS_SUB_MOUNTED"><![CDATA[
+	<p>
+		娜塔莉亚主人发出最后的高亢呻吟声后，从你身上下来，退后一步，将她的肉棒从你被操得酣畅淋漓的屁眼里抽出，一大团浓稠的精液溅落在地板上。她推了推鼻梁上的厚框眼镜，对着你冷笑着命令道：[natalya.speech(到这边来，把我的鸡巴舔干净，[style.mule]！)]
+	</p>
+	<p>
+		你听话地爬过去，凑到[natalya.race]正在软下来的马鸡巴上，然后顺从地舔去滚烫的肉棒上附着的每一寸精液。完成任务后，主人命令你把她的裙子放下来，然后神清气爽地走到她的办公桌后面坐下，赞叹道：[natalya.speech(你可真是个出色的屁穴荡妇[style.mule]！现在，你还想做什么？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- OFFICE_STABLE_FILLY_AFTER_SEX_AS_DOM -->
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_AFTER_SEX_AS_DOM_BLOWJOB"><![CDATA[
+	<p>
+		你玩够了，于是把肉棒从娜塔莉亚主人的嘴边挪开，告诉她你很享受她顺从而出色的口交服务。
+		#IF(natalya.isSatisfiedFromLastSex())
+			你的主人发出一声非常满足的长叹，看向你，露出了灿烂的笑容，承认道，[natalya.speech(确实还不错，[style.mule]……但是，但是你，你可别把这种事情习以为常！我可还是你的主人！)]
+		#ELSE
+			你的主人抬头看向你，发出失望的抱怨，[natalya.speech(你一点都没让我爽起来，你这个坏[style.mule]……简直，简直难以置信，你居然让你的主人做这种事！)]
+		#ENDIF
+	</p>
+	<p>
+		小个子的[natalya.race]羞耻地站起来，小跑着坐到办公桌后面，然后推了推鼻梁上的厚框眼镜，结结巴巴地说：[natalya.speech(所，所以，你还有什么别的事情吗，[style.mule]？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_AFTER_SEX_AS_DOM_RIMJOB"><![CDATA[
+	<p>
+		你玩够了，于是把屁股从娜塔莉亚主人的嘴边挪开，告诉她你很享受她顺从而出色的舔肛服务。
+		#IF(natalya.isSatisfiedFromLastSex())
+			你的主人发出一声非常满足的长叹，看向你，露出了灿烂的笑容，承认道，[natalya.speech(确实还不错，[style.mule]……但是，但是你，你可别把这种事情习以为常！我可还是你的主人！)]
+		#ELSE
+			你的主人抬头看向你，发出失望的抱怨，[natalya.speech(你一点都没让我爽起来，你这个坏[style.mule]……简直，简直难以置信，你居然让你的主人做这种事！)]
+		#ENDIF
+	</p>
+	<p>
+		小个子的[natalya.race]羞耻地站起来，小跑着坐到办公桌后面，然后推了推鼻梁上的厚框眼镜，结结巴巴地说：[natalya.speech(所，所以，你还有什么别的事情吗，[style.mule]？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="OFFICE_STABLE_FILLY_AFTER_SEX_AS_DOM_MOUNTED"><![CDATA[
+	<p>
+		你玩够了，于是把肉棒从娜塔莉亚主人那被操的酣畅淋漓的菊穴里抽出来，告诉她你很享受她顺从而出色的服务。
+		#IF(natalya.isSatisfiedFromLastSex())
+			你的主人发出一声非常满足的长叹，看向你，露出了灿烂的笑容，承认道，[natalya.speech(确实还不错，[style.mule]……但是，但是你，你可别把这种事情习以为常！我可还是你的主人！)]
+		#ELSE
+			你的主人抬头看向你，发出失望的抱怨，[natalya.speech(你一点都没让我爽起来，你这个坏[style.mule]……简直，简直难以置信，你居然让你的主人做这种事！)]
+		#ENDIF
+	</p>
+	<p>
+		小个子的[natalya.race]羞耻地站起来，小跑着坐到办公桌后面，然后推了推鼻梁上的厚框眼镜，结结巴巴地说：[natalya.speech(所，所以，你还有什么别的事情吗，[style.mule]？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

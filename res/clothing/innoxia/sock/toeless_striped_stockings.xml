@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>150</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[条纹踩脚袜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[条纹踩脚袜]]></namePlural>
+		<description><![CDATA[一双尼龙条纹过膝踩脚袜。脚趾和脚跟周围的材料已被剪掉，穿着者的足部大部分裸露在外。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>SOCK</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>toeless_striped_stockings.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="NOT_WHITE"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>FITS_TALONS</tag>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚塞进踩脚袜中，然后将它们拉到大腿根部。
+]]></self>
+    <other><![CDATA[
+[npc.Name]给[npc2.namePos]的[npc2.feet]套上踩脚袜，然后将它们拉到[npc2.her]的大腿根部。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进过膝丝袜中，然后用力将它们拉到[npc2.her]的大腿根部。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下了[npc.her]的踩脚袜。]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的踩脚袜脱下。]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的踩脚袜并粗暴地扯下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

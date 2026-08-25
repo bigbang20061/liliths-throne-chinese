@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		#IF(sex.getNumberOfOrgasms(pc)==0)
+			[#pc.getClothingInSlot(IS_VAGINA)==null && pc.getClothingInSlot(IS_MOUTH)!=null]
+		#ELSE
+			[#pc.getClothingInSlot(IS_VAGINA).getColour(0)==COLOUR_CLOTHING_PINK_LIGHT && pc.getClothingInSlot(IS_MOUTH).getColour(0)==COLOUR_CLOTHING_BLUE_VERY_DARK]
+		#ENDIF
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>ZERO_NONE</arousalPerformer>
+	<arousalTarget>FIVE_EXTREME</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		#IF(pc.getClothingInSlot(IS_VAGINA)==null)
+			[##var dollDildo = itemGen.generateClothing(CLOTHING_innoxia_vagina_insertable_dildo, COLOUR_CLOTHING_PINK_LIGHT, false)]
+			[##dollDildo.addEffect(ITEM_EFFECT_TYPE_CLOTHING, ENCHANTMENT_MODIFIER_CLOTHING_SEXUAL, ENCHANTMENT_MODIFIER_CLOTHING_VIBRATION, ENCHANTMENT_POTENCY_MAJOR_BOOST, 0)]
+			[##pc.equipClothingFromNowhere(dollDildo, IS_VAGINA, true, doll)]
+		#ELSE
+			[##pc.unequipClothingIntoVoid(IS_VAGINA, true, doll)]
+			[##pc.equipClothingFromNowhere(itemGen.generateClothing(CLOTHING_innoxia_vagina_equine_dildo, COLOUR_CLOTHING_BLACK, COLOUR_CLOTHING_DESATURATED_PINK_DARK, COLOUR_CLOTHING_DESATURATED_PINK_DARK, false), IS_VAGINA, true, doll)]
+			[##pc.getClothingInSlot(IS_VAGINA).setSticker('colour', 'two_soft')]
+		#ENDIF
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[小穴检测]]></title>
+	<tooltip><![CDATA[
+		在玩偶上检测下一个假阳具。
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)==0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				玩偶从桌子上抓一个淡粉色的可插入假阳具，跪在你的腿之间，用力把它推进你的小穴。待完全进入你体内，玩具开始振动，令你发出愉悦而低沉的呻吟。
+				<br/>
+				玩偶又推了假阳具一把，确保它完全插入你滴着水的小穴，命令道，[doll.speech(专注体验快感和振动的力道。)]
+			]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)>0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				玩偶蹲下来把淡粉色的可插入假阳具从你的小穴里拉出来，看着湿漉漉的你发出赞叹。她抓起
+				#IF(game.isAnalContentEnabled())
+					一个巨大的马假阳具，它类似于你喉咙里和屁股上的假阳具，但颜色是逼真的黑粉色。
+				#ELSE
+					一个巨大的马假阳具，它类似于你喉咙里的假阳具，但颜色是逼真的黑粉色。
+				#ENDIF
+				她不愿浪费一秒时间，深插进你颤抖的塑料小穴，直顶到蛋蛋的深度。你一只胳膊撑在身后的地板上，感觉到玩具平平的头向你体内扩张，你颤抖着，狂喜地呻吟着。
+				<br/>
+				[doll.speech(现在用这个自己操自己吧，)]玩偶面无表情地命令道，[doll.speech(用力点；这些玩具的耐用性需要检查。)]
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

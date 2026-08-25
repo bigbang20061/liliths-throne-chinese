@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[在斗篷的内里隐秘地缝着一个标签，告诉你它是由“C4MG1RL”制造的。]]></clothingAuthorTag>
+		<value>10000</value>
+		<determiner><![CDATA[​]]></determiner>
+		<name><![CDATA[诡术师斗篷]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[奥法师斗篷]]></namePlural>
+		<description><![CDATA[无论是想要引人注目，吸引人群，还是在执行一个秘密计划后隐藏自己的身份，这件防雨的斗篷都能满足你的需求。它可以很容易地携带剑，并携带强大的附魔，佩戴者可以一直保持最佳状态！]]></description>
+		<physicalResistance>3</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		  <slot>TORSO_OVER</slot>
+		  <slot>NECK</slot>
+		</equipSlots>
+		<rarity>LEGENDARY</rarity>
+		<clothingSet>c4mg1rl_trickster</clothingSet>
+		<imageName>cloak.svg</imageName>
+		<imageEquippedName slot="TORSO_OVER">cloak.svg</imageEquippedName>
+		<imageEquippedName/>
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="INTELLIGENCE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+		</effects>
+		
+		<blockedPartsList slot="TORSO_OVER">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+
+		<blockedPartsList slot="NECK">
+		  <blockedParts>
+			<displacementType>REMOVE_OR_EQUIP</displacementType>
+			<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+			<clothingAccessBlocked/>
+			<concealedSlots/>
+		  </blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="TORSO_OVER"/>
+		<incompatibleSlots slot="NECK"/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK_JET</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_RED_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_GOLD</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		
+		<itemTags>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	
+  <replacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]把斗篷披在[npc.her]肩上，随后系上了脖子上的胸针。
+]]></self>
+    <other><![CDATA[
+[npc.Name]把斗篷挂在[npc2.namePos]的肩上，随后系上了[npc2.her]脖子上的胸针。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]把斗篷粗暴地挂在[npc2.namePos]肩上，随后紧紧地系上了[npc2.her]脖子上的胸针。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开[npc.her]脖子上的胸针，随后脱下了[npc.her]的斗篷。
+]]></self>
+    <other><![CDATA[
+[npc.Name]取下[npc2.namePos]脖子上的胸针，随后脱下了[npc2.her]的斗篷。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地取下[npc2.namePos]脖子上的胸针，然后脱下[npc2.her]的斗篷。
+]]></otherRough>
+  </displacementText>
+
+  <replacementText slot="TORSO_OVER" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]把斗篷披在[npc.her]肩上，随后系上了脖子上的胸针。
+]]></self>
+    <other><![CDATA[
+[npc.Name]把斗篷挂在[npc2.namePos]的肩上，随后系上了[npc2.her]脖子上的胸针。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]把斗篷粗暴地挂在[npc2.namePos]肩上，随后紧紧地系上了[npc2.her]脖子上的胸针。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="TORSO_OVER" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开[npc.her]脖子上的胸针，随后脱下了[npc.her]的斗篷。
+]]></self>
+    <other><![CDATA[
+[npc.Name]取下[npc2.namePos]脖子上的胸针，随后脱下了[npc2.her]的斗篷。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地取下[npc2.namePos]脖子上的胸针，然后脱下[npc2.her]的斗篷。
+]]></otherRough>
+  </displacementText>
+
+</clothing>

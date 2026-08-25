@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <value>750</value>
+    <determiner><![CDATA[一条]]></determiner>
+    <name><![CDATA[穿戴式假阳具]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[穿戴式假阳具]]></namePlural>
+    <description><![CDATA[一个由自清洁硅胶制成长度[unit.size(25)]的假阳具。它通过舒适的皮带牢牢固定在穿戴者的腹股沟。皮带的位置设计很巧妙，使穿戴者的阴道和肛门露在外面。]]></description>
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <slot>PENIS</slot>
+    <rarity>EPIC</rarity>
+    <imageName>penis_strapon.svg</imageName>
+	<clothingSet>BDSM</clothingSet>
+    <imageEquippedName/>
+	<effects/>
+
+    <blockedPartsList>
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired>
+          <clothingAccess>GROIN</clothingAccess>
+        </clothingAccessRequired>
+		<blockedBodyParts/>
+		<clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+
+    <incompatibleSlots/>
+
+    <primaryColours values="ALL"/>
+    <primaryColoursDye/>
+    <secondaryColours>
+		<colour>CLOTHING_BLACK</colour>
+    </secondaryColours>
+    <secondaryColoursDye values="ALL"/>
+    <tertiaryColours>
+		<colour>CLOTHING_STEEL</colour>
+    </tertiaryColours>
+    <tertiaryColoursDye values="ALL_WITH_METALS"/>
+
+    <itemTags>
+      <tag>SOLD_BY_FINCH</tag>
+      <tag>ENABLE_SEX_EQUIP</tag>
+      <tag>REQUIRES_NO_PENIS</tag>
+    </itemTags>
+	
+	<sexAttributesOther>
+		<penetration>
+			<length>25</length>
+			<girth>3</girth>
+			<modifiers/>
+		</penetration>
+		<orifice/>
+	</sexAttributesOther>
+	
+  </coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将穿戴式假阳具套在[npc.her]的腰上。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将穿戴式假阳具套在[npc2.namePos]的腰上。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地将穿戴式假阳具套在[npc2.namePos]的腰上。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]脱下[npc.her]的穿戴式假阳具。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]脱下[npc2.namePos]的穿戴式假阳具。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]不耐烦地脱下[npc2.namePos]的穿戴式假阳具。
+    ]]></otherRough>
+  </displacementText>
+
+
+</clothing>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>20</value> 
+		<determiner><![CDATA[一罐]]></determiner>
+		<name><![CDATA[泡泡奶油]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[泡泡奶油]]></namePlural>
+		<description><![CDATA[一个小罐酸奶，盖子上有黑白色的奶牛花纹。侧面的标签宣称它是“泡泡奶油”，这似乎有点误导，因为罐中的奶油混合物并没有任何气泡。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/cow/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">cow_bubble_cream.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_COW_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[牛类]]></potionDescriptor>
+		<associatedRace>COW_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(3)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感觉强壮了很多……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 3)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]揭开铝箔盖，揭示出泡泡奶油的内容。尽管这个产品被称为 “奶油”，但实际上里面装的是浓郁的酸奶。将黏在一侧的小木勺拆下后，[npc.name]情不自禁地挖进这浓郁的混合物中，发出满意的小声哼唧声，因为[npc.she]意识到它很可能是[npc.sheHas]曾经尝过的最美味的酸奶。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]揭开铝箔盖，揭示出泡泡奶油的内容，然后递给[npc2.name]让[npc2.herHim]吃。尽管这个产品被称为 “奶油”，但实际上里面装的是浓郁的酸奶。将黏在一侧的小木勺拆下后，[npc2.name]情不自禁地挖进这浓郁的混合物中，发出满意的小声哼唧声，因为[npc2.she]意识到它很可能是[npc2.sheHas]曾经尝过的最美味的酸奶。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

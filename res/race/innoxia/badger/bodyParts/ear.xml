@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ear>
+	<race>innoxia_badger</race>
+	
+	<transformationName><![CDATA[獾]]></transformationName>
+	
+	<coveringType>innoxia_badger_fur</coveringType>
+	
+	<tags/>
+	
+	<name><![CDATA[耳]]></name>
+	<namePlural><![CDATA[耳朵]]></namePlural>
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[獾一般]]></descriptor>
+	</descriptorsMasculine>
+	
+	<descriptorsFeminine>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[獾一般]]></descriptor>
+	</descriptorsFeminine>
+	
+	<transformationDescription><![CDATA[
+		它们立刻长成粗壮的椭圆形，呈现出明显的獾状。
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		一层[npc.earFullDescriptionColour]迅速长出并覆盖住了它们，
+		#ELSE
+		正如[npc.her]身体的其他部分一样，它们[npc.earFullDescription]，
+		#ENDIF
+		当转化结束时，[npc.she]试探性地前后摇摆[npc.her]新长出的獾耳朵。
+		<br/>[npc.Name]现在拥有了[style.boldBadger(獾般的耳朵)]，它们[npc.materialCompositionDescriptor][npc.earFullDescription]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.She]有着一对獾般的耳朵#IF(npc.isPiercedEar())，且已经打过孔#ENDIF，正长在[npc.her]头顶上，[npc.materialCompositionDescriptor][npc.earFullDescription(true)]。
+]]></bodyDescription>
+	
+</ear>

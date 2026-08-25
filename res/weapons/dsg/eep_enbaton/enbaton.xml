@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<authorTag><![CDATA[在把手底部，刻画着几个小字：“执法者官方分配，由DSG锻造厂生产”。]]></authorTag>
+		
+		<value>3000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[一根]]></determiner>
+		
+		<name><![CDATA[执法者伸缩警棍]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[执法者伸缩警棍]]></namePlural> 
+		
+		<description><![CDATA[一根执法者标配的伸缩警棍。因其便携性而备受青睐，但不适合用来防御。]]></description> 
+		
+		<attackDescriptor><![CDATA[捶打]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[你用警棍敲[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]用力一甩伸缩警棍，让打击头的重量将棍身拉长。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]将警棍打击头推入手柄然后收好。]]></unequipText>
+		
+		<imageName>enbaton_inv.svg</imageName> 
+		
+		<imageEquippedName>enbaton.svg</imageEquippedName>
+		
+		<damage>15</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<extraEffects>
+			<effect><![CDATA[暴击附带[style.boldPhysical(“击晕”)]效果。]]></effect>
+		</extraEffects>
+		
+		<onHitEffect/>
+		
+		<onCriticalHitEffect><![CDATA[
+		#IF !npc2.hasStatusEffect(SE_DAZED)
+		#THEN [##npc2.addStatusEffect(SE_DAZED, 6)][npc2.Name]被击中后顿时[style.boldPhysical(眼冒金星)]！
+		#ENDIF
+		]]></onCriticalHitEffect>
+		
+		<primaryColours values="JUST_STEEL"/> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]挥出警棍，正中了[npc2.name]胸部，警棍与[npc2.her]躯干的灵气链接并发出巨大的破碎声，汲取其能量！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]挥出警棍，砸中了[npc2.name]肩头处的灵气，使其失去了一些能量！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]挥出警棍，正中了[npc2.name]的头部，警棍与[npc2.her]头上的灵气链接并发出巨大的破碎声，汲取其能量！
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.name]挥出警棍，捅向[npc2.name]的胸口，但最后没有成功命中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]前踏一步，用甩棍猛地挥向[npc2.name]，却没能击中目标！
+]]></missText>
+		<missText><![CDATA[
+		[npc.name]用警棍捅向[npc2.name]的头部，但最后没有成功命中[npc2.herHim]！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

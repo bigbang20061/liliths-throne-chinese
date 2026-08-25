@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+	
+	<!-- Betrayed Lunexis: -->
+	
+	<scene id="failed">
+		<content folderPath="txt/badEnds/lunexis_escape">FAILED</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟着梅拉克西丝，她会带你去亚马逊人营地。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_failed_ursa]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_amazon_camp, PLACE_TYPE_innoxia_fields_elis_amazon_camp_queen)]
+					[#meraxis.setLocation(WORLD_TYPE_innoxia_fields_elis_tavern_f0, PLACE_TYPE_innoxia_fields_elis_tavern_f0_meraxis)]
+					[#meraxis.hourlyUpdate()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="failed_ursa">
+		<content folderPath="txt/badEnds/lunexis_escape">FAILED_URSA</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[按乌萨说的做，离开她的帐篷。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_failed_ursa_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_amazon_camp_ursa_daily_interaction, true)]
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_amazon_camp_pathway)]
+					[#game.appendToTextEndStringBuilder(pc.setQuestFailed(QUEST_LINE_SIDE_LUNEXIS_ESCAPE, QUEST_LUNEXIS_ESCAPE_FAILED))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="failed_ursa_end">
+		<content folderPath="txt/badEnds/lunexis_escape">FAILED_URSA_LEAVE</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[继续穿过亚马逊人的营地……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_amazon_camp_pathway"/>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Betrayed Meraxis: -->
+	
+	<scene id="start">
+		<preParsingEffects><![CDATA[
+			[#game.setBadEnd("露内克西丝忠实的鸡巴套")]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/lunexis_escape">START</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[露内克西丝]]></responseTitle>
+				<responseTooltip><![CDATA[陪同梅拉克西丝前往亚马逊人营地见露内克西丝。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_amazon_camp]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_amazon_camp, PLACE_TYPE_innoxia_fields_elis_amazon_camp_lunexis)]
+					[#meraxis.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="amazon_camp">
+		<content folderPath="txt/badEnds/lunexis_escape">AMAZON_CAMP</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[“提醒她”]]></responseTitle>
+				<responseTooltip><![CDATA[露内克西丝的回答有可能会破坏你的计划，你得赶紧“提醒”她，她告诉过你什么秘密武器。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_amazon_camp_remind_her]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="amazon_camp_remind_her">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_LUNEXIS_ESCAPE, QUEST_SIDE_UTIL_COMPLETE))]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/lunexis_escape">AMAZON_CAMP_REMIND_HER</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[传送]]></responseTitle>
+				<responseTooltip><![CDATA[只要你保证，传送到特弥斯库拉是安全的，梅拉克西丝就会施法……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_teleported]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_plaza)]
+					[#meraxis.setLocation(pc)]
+					[#lunexis.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="teleported">
+		<preParsingEffects><![CDATA[
+			[#pc.resetInventory(true)]
+			[#lunexis.applyCollar(pc)]
+			
+			[#lunexis.equipClothing()]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/lunexis_escape">TELEPORTED</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[服从]]></responseTitle>
+				<responseTooltip><![CDATA[服从主人，趴下给她口交……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_teleported_blowjob]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="teleported_blowjob">
+		<preParsingEffects><![CDATA[
+			[#meraxis.unequipAllClothingIntoVoid(true, true)]
+			[#lunexis.applyCollar(meraxis)]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/lunexis_escape">TELEPORTED_BLOWJOB</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[露内克西丝在她的大军面前操你，声称你是她的鸡巴套……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_themiscyra_lunexis_sex]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>lunexis</id>
+							<slot><![CDATA[
+								#IF(pc.hasVagina() || game.isAnalContentEnabled())
+									ALL_FOURS_BEHIND
+								#ELSE
+									ALL_FOURS_IN_FRONT
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_badEnds_lunexis_escape_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/badEnds/lunexis_escape">TELEPORTED_SEX</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></condition>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></condition>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></condition>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="after_sex">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[半人马已经玩腻了，她残忍地一笑，一脚把你踢开……]]></tooltip>
+		<content folderPath="txt/badEnds/lunexis_escape">AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[宫殿]]></responseTitle>
+				<responseTooltip><![CDATA[你们两个被拖进了特弥斯库拉的宫殿……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_palace]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_palace)]
+					[#meraxis.setLocation(pc, true)]
+					[#lunexis.setLocation(pc, true)]
+					
+					[#meraxis.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+					[#lunexis.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="palace">
+		<content folderPath="txt/badEnds/lunexis_escape">PALACE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[调教]]></responseTitle>
+				<responseTooltip><![CDATA[在接下来的几个月里，露内克西丝会把你训练成她听话的鸡巴套……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_palace_trained]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="palace_trained">
+		<preParsingEffects><![CDATA[
+			[#pc.endPregnancy(true)]
+			[#meraxis.endPregnancy(true)]
+			[#lunexis.applyTraining(pc)]
+			[#lunexis.applyTraining(meraxis)]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/lunexis_escape">TRAINED</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Oral: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[口交娼妓]]></responseTitle>
+				<responseTooltip><![CDATA[告诉马女，你最喜欢给她口交了！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_choice]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/lunexis_escape', 'TRAINED_ORAL'))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_bad_end_oral, true)]
+				]]></effects>
+			</response>
+			<!-- Vaginal: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasVagina()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[鸡巴套]]></responseTitle>
+				<responseTooltip><![CDATA[你没有小穴，所以无法被训练成真正的鸡巴套……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasVagina()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[鸡巴套]]></responseTitle>
+				<responseTooltip><![CDATA[告诉马女，你喜欢做一个真正的鸡巴套，让她肥大的马鸡巴深深插入你的小穴！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_choice]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/lunexis_escape', 'TRAINED_VAGINAL'))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_bad_end_vaginal, true)]
+				]]></effects>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[骚屁屁]]></responseTitle>
+				<responseTooltip><![CDATA[告诉马女，你喜欢她的大鸡巴深深插入你淫荡屁穴的感觉！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_choice]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/lunexis_escape', 'TRAINED_ANAL'))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_bad_end_anal, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="choice">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[最终调教]]></responseTitle>
+				<responseTooltip><![CDATA[你被马女训练为露内克西丝完美的鸡巴套……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_graduation]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_oral))
+						[#pc.addFetish(FETISH_ORAL_GIVING)]
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_vaginal))
+						[#pc.addFetish(FETISH_VAGINAL_RECEIVING)]
+					#ELSE
+						[#pc.addFetish(FETISH_ANAL_RECEIVING)]
+					#ENDIF
+					[#meraxis.addFetish(FETISH_VAGINAL_RECEIVING)]
+					#IF(game.isAnalContentEnabled())
+						[#ursa.addFetish(FETISH_ANAL_RECEIVING)]
+					#ELSE
+						[#ursa.addFetish(FETISH_VAGINAL_RECEIVING)]
+					#ENDIF
+					[#aurokaris.addFetish(FETISH_ORAL_GIVING)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="graduation">
+		<content folderPath="txt/badEnds/lunexis_escape">GRADUATION</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[淫趴]]></responseTitle>
+				<responseTooltip><![CDATA[你被带到淫趴，在那里，你终于要被露内克西丝的鸡巴撑满了！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_escape_final]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="final">
+		<preParsingEffects><![CDATA[
+			[#lunexis.applyMeraxisBadEnd()]
+			[#lunexis.applyPlayerBadEnd()]
+			
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_plaza)]
+			[#meraxis.setLocation(pc)]
+			[#lunexis.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/lunexis_escape">FINAL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[梅拉克西丝]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_meraxis))
+						你已经看到了曾经被叫做“梅拉克西丝”的鸡巴套的下场。
+					#ELSE
+						看向对面，看看那个曾经被叫做“梅拉克西丝”的鸡巴套被干成了什么样。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_meraxis))
+						null
+					#ELSE
+						innoxia_badEnds_lunexis_escape_final_spectate
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/lunexis_escape', 'FINAL_MERAXIS'))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_bad_end_spectate_meraxis, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[取悦露内克西丝]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_self))
+						你已经取悦了露内克西丝，她一时满足，命令你保持不动，充当她的鸡巴套。
+					#ELSE
+						集中精力取悦你的女王，不要分心去看另外三个鸡巴套的境遇。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_self))
+						null
+					#ELSE
+						innoxia_badEnds_lunexis_escape_final_spectate
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/lunexis_escape', 'FINAL_SELF'))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_bad_end_spectate_self, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[尾声]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_meraxis) || !flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_self))
+						淫趴才刚刚开始！
+					#ELSE
+						淫趴结束后，你作为露内克西丝最爱的鸡巴套开启了新的套生……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_meraxis) || !flags.hasFlag(FLAG_innoxia_themiscyra_bad_end_spectate_self))
+						null
+					#ELSE
+						innoxia_badEnds_lunexis_escape_final_epilogue
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="final_spectate">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_badEnds_lunexis_escape_final"/>
+	</scene>
+	
+	<scene id="final_epilogue">
+		<preParsingEffects><![CDATA[
+			[#lunexis.applyMeraxisBadEndFinal()]
+			
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_palace)]
+			[#meraxis.setLocation(pc)]
+			[#lunexis.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/badEnds/lunexis_escape">EPILOGUE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[结局……]]></responseTitle>
+				<responseTooltip><![CDATA[[style.italicsBadEnd(你的旅程就此结束，预言之线也被斩断。是恢复已保存的游戏来重塑命运的编织，还是继续留在你所创造的注定失败的世界中？)]]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	
+</dialogueNodes>

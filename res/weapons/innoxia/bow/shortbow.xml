@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>1000</value>
+		<melee>false</melee>
+		<twoHanded>true</twoHanded>
+		<determiner><![CDATA[一把]]></determiner>
+		<name><![CDATA[奥术短弓]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[奥术短弓]]></namePlural>
+		<description><![CDATA[这把短弓有着强大的奥术附魔，一旦拉开弓弦，它就会从使用者的灵气中提取奥术精华，然后将其转化为能量箭矢射向目标。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用短弓射向[npc.Name]。]]></attackTooltipDescription>
+		<rarity>COMMON</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]给[npc.her]的奥术短弓注入奥术精华。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]放下了[npc.her]的奥术短弓。]]></unequipText>
+		<imageName>shortbow.svg</imageName> 
+		<imageEquippedName/>
+		<damage>25</damage>
+		<arcaneCost>1</arcaneCost>
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_DAMAGE" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours> 
+			<colour>CLOTHING_GREY</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/> 
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]拉开奥术短弓并射出一道虚幻的箭矢，正中[npc2.name]胸部并让[npc2.herHim]喘息着向后踉跄。
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用[npc.her]奥术短弓对着[npc2.name]射出一发虚幻的箭矢，射在[npc2.herHim]的胸部上！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]拉开奥术短弓瞄准[npc2.name]并松开弓弦，一支虚幻的箭矢呼啸着击中了[npc2.herHim]的胸部！
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]瞄准并用奥术短弓射击，[npc.Name]未命中[npc2.name]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]奥术短弓对着[npc2.name]射出一发虚幻的箭矢，但没有命中！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]的奥术短弓瞄准[npc2.name]并松开弓弦，但是[npc.she]最终还是没有击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

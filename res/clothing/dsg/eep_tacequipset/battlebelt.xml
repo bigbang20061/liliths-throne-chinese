@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[皮带扣上的小雕塑印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>750</value> 
+
+		<determiner><![CDATA[一条]]></determiner>
+
+		<name><![CDATA[执法者战斗腰带]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者战斗腰带]]></namePlural> 
+
+		<description><![CDATA[双层腰带由防弹尼龙和厚衬垫编织而成。腰带可以挂载各种装备，但这条腰带只连接了腿部装备。]]></description> 
+
+		<physicalResistance>5</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>HIPS</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet>dsg_enforcer_tactical_light</clothingSet> 
+
+		<imageName>battlebelt.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+				</clothingAccessRequired>
+
+				<blockedBodyParts> 
+				</blockedBodyParts>
+
+				<clothingAccessBlocked> 
+				</clothingAccessBlocked>
+
+				<concealedSlots/> 
+			</blockedParts>
+
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/> 
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将战斗腰带系在[npc.her]腰间。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]在[npc2.namePos]腰间系上战斗腰带。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]强硬地扣上[npc2.namePos]腰间的战斗腰带。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]解开[npc.her]战斗腰带。
+	]]></self>
+		<other><![CDATA[
+		[npc.Name]解开[npc2.namePos]战斗腰带。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]从[npc2.namePos]腰间扯下战斗腰带。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

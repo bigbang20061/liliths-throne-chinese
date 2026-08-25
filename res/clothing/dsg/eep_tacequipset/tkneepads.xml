@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[每块垫板上都有微微凸起的字母，写着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>350</value> 
+
+		<determiner><![CDATA[一副]]></determiner>
+
+		<name><![CDATA[执法者战术护膝]]></name>
+
+		<namePlural pluralByDefault="true"><![CDATA[执法者战术护膝]]></namePlural> 
+
+		<description><![CDATA[一组金属板，用于保护穿戴者的膝盖。]]></description> 
+
+		<physicalResistance>3</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>ANKLE</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/> 
+
+		<imageName>tkneepads.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts/> 
+
+				<clothingAccessBlocked> 
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots/> 
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL"/>
+
+		<itemTags> 	
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把战术护膝套在[npc.her]的膝盖上，拉紧了绑带。]]></self>
+		<other><![CDATA[[npc.Name]将战术护膝滑到[npc2.namePos]的膝盖上，拉紧了绑带。]]></other>
+		<otherRough><![CDATA[[npc.Name]将[npc2.namePos]的腿穿过战术护膝，匆忙地拉紧了绑带。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]松开了[npc.her]战术护膝的绑带，把它们滑下来。]]></self>
+		<other><![CDATA[[npc.Name]松开了[npc2.namePos]战术护膝的绑带，然后将它们滑下来。]]></other>
+		<otherRough><![CDATA[[npc.Name]撕扯着[npc2.namePos]战术护膝的绑带，直到它们松脱，然后将护膝一把扯下并扔到一边。]]></otherRough>
+	</displacementText>
+	
+</clothing>

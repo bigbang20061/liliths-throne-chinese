@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>200</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[环形耳环]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[环形耳环]]></namePlural>
+		<description><![CDATA[一对由薄金属条制成的基本环形耳环。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>PIERCING_EAR</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>ear_hoops.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将环形耳环戴在[npc.her]的[npc.ears]上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将环形耳环戴在[npc2.namePos]的[npc2.ears]上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将环形耳环穿在[npc2.namePos]的[npc2.ears]上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的环形耳环摘了下来。
+]]></self>
+    <other><![CDATA[
+[npc.Name]解下[npc2.namePos]耳垂上环形耳环的别针，摘下它们。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的环形耳环扯了下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

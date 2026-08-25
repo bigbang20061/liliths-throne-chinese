@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+    <clothingAuthorTag><![CDATA[小小的刻字告诉你这些穿孔是由'Norin'制作的。]]></clothingAuthorTag>
+		<value>600</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[玫瑰花耳坠]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[玫瑰花耳坠]]></namePlural>
+		<description><![CDATA[一对垂挂着玫瑰花的耳坠。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>PIERCING_EAR</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>piercing_ear_rose.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+
+    <primaryColours>
+		<colour>CLOTHING_RED_DARK</colour>
+    </primaryColours>
+    <primaryColoursDye values="ALL"/>
+    <secondaryColours values="ALL_METAL"/>
+    <secondaryColoursDye/>
+    <tertiaryColours/>
+    <tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+ [npc.Name]把一对玫瑰花耳环戴在[npc.her]的[npc.ears]。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把一对玫瑰花耳环戴在[npc2.namePos][npc2.ears]上。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地扯下[npc2.namePos][npc2.ears]上的玫瑰花耳环。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]解开玫瑰花耳环的别针，摘下它们。
+    ]]></self>
+    <other><![CDATA[
+[npc.Name]解下[npc2.namePos]耳垂上玫瑰花耳环的别针，摘下它们。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]解下[npc2.namePos]耳垂上玫瑰花耳环的别针，粗暴地摘下它们。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

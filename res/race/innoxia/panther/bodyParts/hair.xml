@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<hair>
+	<race>innoxia_panther</race>
+	
+	<transformationName><![CDATA[黑豹]]></transformationName>
+	
+	<coveringType>innoxia_panther_hair</coveringType>
+	
+	<tags>
+		<tag>HAIR_HANDLES_IN_SEX</tag>
+	</tags>
+	
+	<determiner><![CDATA[一头]]></determiner>
+	
+	<name><![CDATA[头发]]></name>
+	<namePlural pluralByDefault="false"><![CDATA[头发]]></namePlural> 
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[皮毛般]]></descriptor>
+	</descriptorsMasculine>
+	
+	<descriptorsFeminine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[皮毛般]]></descriptor>
+	</descriptorsFeminine>
+	
+	<transformationDescription><![CDATA[
+		转化仅持续了很短的时间，便得到了皮毛般的头发。
+		<br/>[npc.Name]现在拥有[npc.hairColour][style.boldPanther(豹毛发)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull]拥有[npc.hairDeterminer]豹一般[npc.hairColour(true)]的[npc.hairLength]发
+]]></bodyDescription>
+</hair>

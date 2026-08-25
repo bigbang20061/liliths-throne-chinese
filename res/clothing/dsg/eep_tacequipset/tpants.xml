@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+		
+		<authorTag><![CDATA[腰部有一个小标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>300</value> 
+
+		<determiner><![CDATA[一条]]></determiner>
+
+		<name><![CDATA[执法者战术长裤]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者战术长裤]]></namePlural> 
+
+		<description><![CDATA[一条宽腿工装裤，采用透气棉和尼龙面料制成。膝盖部位经过加固处理。脚踝处的抽绳设计可以方便地将裤腿套进靴子里。]]></description> 
+
+		<physicalResistance>1</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>LEG</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/>
+
+		<imageName>tpants.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MINOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_ICE" potency="MINOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MINOR_BOOST" timer="397" type="CLOTHING"/>	
+		</effects> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts/> 
+
+				<clothingAccessBlocked> 
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots> 
+					<slot>SOCK</slot>
+				</concealedSlots>
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>UNZIPS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>PENIS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots values="CONCEALED_UNZIPS_GROIN"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots>
+					<slot>GROIN</slot>
+					<slot>VAGINA</slot>
+					<slot>ANUS</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_VAGINA</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/>
+
+		<defaultPatterns patternChance="1.0f" colourNameDerivedFromPattern="false"> 
+			<pattern>urban_splinter_camo</pattern>
+		</defaultPatterns>
+
+		<primaryColours values="JUST_GREY"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿上战术长裤，把裤子提到[npc.her]的腰部，然后扣上前面的扣子。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.her]的裤子拉到[npc2.namePos]的腰部，并扣好了前面的扣子。]]></other>
+		<otherRough><![CDATA[
+		[npc.Name] 
+					#IF game.isSillyModeEnabled()
+					#THEN 熟练地把内裤拽到[npc2.her]的屁股缝里。
+					#ENDIF
+					粗暴地把战术长裤从[npc2.namePos]的腿部提到[npc2.her]的腰部，系上扣子。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开[npc.her]的战术长裤的扣子，把裤子拉下来，然后把它从[npc.her]的[npc.feet]上踢开。]]></self>
+		<other><![CDATA[
+[npc.Name]解开了[npc2.name]的战术长裤并把它拉了下来，然后把它从[npc2.her]的[npc2.feet]上踢开。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行解开[npc2.name]的战术长裤的扣子，然后把它们扯了下来。]]></otherRough>
+	</displacementText>	
+
+	<replacementText type="UNZIPS">
+		<self><![CDATA[
+[npc.Name]拉上了战术长裤的拉链。]]></self>
+		<other><![CDATA[
+[npc.Name]拉上了[npc2.namePos]战术长裤前面的拉链。]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地拉上了[npc2.namePos]的战术长裤前拉链。
+					#IF game.isSillyModeEnabled() && npc2.hasPenis()
+					#THEN 没考虑肉棒的阻碍，差点夹到！
+					#ELSE .
+					#ENDIF
+					
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="UNZIPS">
+		<self><![CDATA[
+[npc.Name]拉开了战术长裤的拉链。]]></self>
+		<other><![CDATA[
+[npc.Name]拉开了[npc2.namePos]战术长裤的拉链。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行拉开了[npc2.namePos]战术长裤上的拉链。]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的战术裤子拉到[npc.her]的腰部，并扣好了前面的扣子。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的战术长裤拉到腰上并扣好前面的扣子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行将[npc2.namePos]的战术长裤拉至[npc2.her]的腰部，并粗糙地扣起来。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[[npc.Name]解开了[npc.her]的战术裤并把它拉了下来。]]></self>
+		<other><![CDATA[
+[npc.Name]解开了[npc2.name]的战术长裤并把它脱了下来。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行解开[npc2.name]的战术长裤的扣子，然后把它们扯到了腿上。]]></otherRough>
+	</displacementText>	
+	
+</clothing>

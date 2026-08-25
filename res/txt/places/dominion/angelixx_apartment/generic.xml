@@ -1,0 +1,1887 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- HALLWAY -->
+	
+	<htmlContent tag="HALLWAY"><![CDATA[
+	<p>
+		TODO 通向公寓的走廊。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- ENTRANCE_HALL -->
+	
+	<htmlContent tag="EXIT"><![CDATA[
+	<p>
+		TODO 朴素但足够宽敞的入口大厅，一侧是衣帽间。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- KITCHEN -->
+	
+	<htmlContent tag="KITCHEN"><![CDATA[
+	<p>
+		TODO 与餐厅相连的开放式厨房。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DINING_ROOM -->
+	
+	<htmlContent tag="DINING_ROOM"><![CDATA[
+	<p>
+		TODO 宽敞的餐厅，摆放着几个橱柜以及桌椅。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- TOILET -->
+	
+	<htmlContent tag="TOILET"><![CDATA[
+	<p>
+		TODO 狭小的卫生间，只有马桶和洗手池。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BATHROOM -->
+	
+	<htmlContent tag="BATHROOM"><![CDATA[
+	<p>
+		TODO 安吉莉克丝卧室的洗浴套间。超大号的浴缸几乎占据了半个房间。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- LOUNGE -->
+	
+	<htmlContent tag="LOUNGE"><![CDATA[
+	<p>
+		TODO 休息室里摆放着几张长毛绒沙发，每张沙发上都铺着五颜六色的坐垫。从这里的窗户可以俯瞰公寓楼后面的庭院。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BEDROOM -->
+	
+	<htmlContent tag="BEDROOM"><![CDATA[
+	<p>
+		TODO 斯雷普和尼尔的卧室，有两张床和家具。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BEDROOM_ANGELIXX -->
+	
+	<htmlContent tag="BEDROOM_ANGELIXX"><![CDATA[
+	<p>
+		TODO 安吉莉克丝的卧室，非常混乱。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- Visiting content: -->
+	
+	<htmlContent tag="VISIT"><![CDATA[
+	<p>
+		你知道安吉莉克丝和她的儿子们住在洛维耶纳奢侈品店楼上的公寓里，并且你被邀请可以随时拜访他们，于是你决定看看现在是否有人在家。你打开位于赛拉特里克斯商店侧面的门，走上一段狭窄的楼梯，来到另一扇门前。虽然没有门牌表明谁住在这儿，但你知道这正是安吉莉克丝的公寓，于是你按响了旁边的门铃，然后退后等待回应。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- Angelixx's content: -->
+	
+	<htmlContent tag="VISIT_ANGELIXX"><![CDATA[
+	<p>
+		过了一会儿，你听到插销被拉动的声音，然后门被向内打开，露出了安吉莉克丝的熟悉身影。和往常一样，这个可爱的小魅魔穿着一件浅粉色连帽衫和一条蓝色超短裙，随着她的每一个动作，裙子都会向上翻起，露出她白粉相间的圆点内裤。当她看到门外是你时，她的蓝眼睛亮了起来，小翅膀兴奋地扑扇着。
+	</p>
+	<p>
+		#IF(sleip.getWorldLocation()==WORLD_TYPE_EMPTY)
+			[angelixx.speech([pc.Name]！来的真是时候！)]她高兴地大叫道，[angelixx.speech(我的孩子们刚刚出门消磨时间了，所以我一个人在家。进来吧！)]
+		#ELSE
+			[angelixx.speech([pc.Name]！)]她高兴地大叫，然后发出一声沮丧的叹息，抱怨道，[angelixx.speech(我的孩子们今晚呆在家里……我很想邀请你进来，但他们只会碍事……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_START"><![CDATA[
+	<p>
+		听说斯雷普和尼尔在家，你很高兴，于是告诉安吉莉克丝，你其实是来拜访她的儿子们的。她俏皮地朝你噘了噘嘴，嘟囔道，[angelixx.speech(我真不敢相信，你宁愿和我的儿子们在一起，也不愿和我在一起……好吧，我会给你们三个人一些空间；我要去夜店，告诉我的儿子们明天一早我才会回来。)]
+	</p>
+	<p>
+		说罢，魅魔转头大喊道，[angelixx.speech(斯雷普！尼尔！有人来看你们！)]
+	</p>
+	<p>
+		几秒后，斯雷普跟在他的母亲身后出现。他穿着[#sleip.getClothingInSlot(IS_TORSO_UNDER).getColourName()]的[#sleip.getClothingInSlot(IS_TORSO_UNDER).getName()]和[#sleip.getClothingInSlot(IS_LEG).getColourName()]的[#sleip.getClothingInSlot(IS_LEG).getName()]，
+		#IF(flags.hasFlag(FLAG_innoxia_sleip_nir_apartment_seen))
+			你可以再次看到他衣服下面隆起的巨大肌肉，[#sleip.getClothingInSlot(IS_TORSO_UNDER).getName()]的布料在他的胸肌和二头肌周围拉伸。
+		#ELSE
+			这是你第一次看到他没有穿兄弟二人出门时穿的防刺背心。你可以看到他衣服下面隆起的巨大肌肉，[#sleip.getClothingInSlot(IS_TORSO_UNDER).getName()]的布料在他的胸肌和二头肌周围拉伸。
+		#ENDIF
+	</p>
+	<p>
+		[angelixx.speech(我会给你们三个人一些空间；我要去夜店，明天一早我才会回来，)]安吉莉克丝说，然后从你身边跳过，迅速下楼，向御城区方向走去。
+	</p>
+	<p>
+		与斯雷普独处时，你发现自己正被这个恶魔马盯着。他红色的眼睛和黑色的皮毛，再加上高大健壮的身材，给人一种令人生畏的感觉，而他低沉的嗓音和粗鲁的说话方式更突出了这一点。他的大蹄子踩在木地板上发出响亮的咔嗒声，一边后退一边咕哝道，[sleip.speech(你是打算就这么站着还是进来？)]
+	</p>
+	#IF(flags.hasFlag(FLAG_innoxia_sleip_nir_apartment_lounge_seen))
+		<p>
+			你接受梦魇的邀请，[pc.step]进公寓。当你经过这个高大的恶魔马时，你闻到了一股廉价的须后水的味道，但它无法完全掩盖他的男性气息。门在你身后迅速关上并闩好，尽管你知道他不会攻击你，但你很难不被梦魇那霸道的、掠夺的目光吓到。
+		</p>
+		<p>
+			你走进公寓，梦魇咕哝道，[sleip.speech(来吧，这边走。)]
+		</p>
+	#ELSE
+		<p>
+			你接受梦魇的邀请，[pc.step]进公寓。当你经过这个高大的恶魔马时，你闻到了一股廉价的须后水的味道，但它无法完全掩盖他的男性气息。门在你身后迅速关上并闩好，有那么一瞬间，你感觉肾上腺素飙升，梦魇那霸道的、掠夺的目光让你觉得自己即将受到攻击。
+		</p>
+		<p>
+			也许是察觉到了你的感受，也许只是为了搭讪，梦魇咕哝道，[sleip.speech(别担心，妈妈叫我们把你当朋友对待。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VISIT_LEAVE"><![CDATA[
+	#IF(game.getCharactersPresent().contains(angelixx))
+		<p>
+			你重新考虑了一下，不想再和安吉莉克丝在一起了，于是你告诉魅魔你只是顺路过来打个招呼，现在你得走了。她失望地叹了口气，对你噘着嘴，抱怨道，[angelixx.speech(哎呀！[pc.Name]，你真没意思！)]
+		</p>
+		<p>
+			突然，魅魔迅速上前搂住你的[pc.arm]，开始磨蹭你，发出咯咯的笑声。她用小小的[angelixx.cupSize]罩杯乳房挤压着你，咬着嘴唇，挑逗道，[angelixx.speech(下次你来的时候，我们再一起找点乐子……)]
+		</p>
+		<p>
+			就像搂住你时一样快，这个俏皮的魅魔又迅速地放开了你，蹦跳着回到了她的公寓。她扇动着白色羽毛的翅膀，轻轻地挥了挥手，向你送出飞吻，然后便关上门，为你的拜访画上句号。
+		</p>
+	#ELSE
+		<p>
+			你其实并不想见到斯雷普或尼尔，于是告诉梦魇你原本是想和安吉莉克丝谈谈，但她不在，所以你得走了。斯雷普轻蔑地哼了一声，关上了门，然后你听到插销被滑回了原位。
+		</p>
+	#ENDIF
+	<p>
+		你转身离开安吉莉克丝公寓的门，走下楼梯，又回到了洛维耶纳奢侈品店外面的街道上，你思考着接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_BEDROOM"><![CDATA[
+	<p>
+		接受了安吉莉克丝的邀请，你向她的公寓走去，等待她在你身后关上并上锁大门。她兴奋地抓住你的手，拉着你，沿着公寓短暂的走廊前行，直到在尽头的三扇门前突然停下。她俏皮地对你微笑，用甜美而无辜的声音说道，[angelixx.speech(在这里等着，我去换身舒适的衣服。别偷看哦！)] 
+	</p>
+	<p>
+		说完，她迅速穿过其中一扇门，关上了身后的门，让你没来得及看到另一边的景象。按照她的要求，你在走廊里等待她换衣服。等候期间，你好奇地瞥了一眼另外两扇门，发现里面是一个散发潮湿气味的浴室和一个极为凌乱的卧室，显然属于斯雷普和尼尔。
+	</p>
+	<p>
+		[angelixx.speech(进来！)]安吉莉克丝叫到，结束了你窃听的行动。推开她消失的那扇门，你发现自己走进了魅魔的卧室。和她儿子的房间一样，安吉莉克丝的卧室也是极其杂乱。地板上和家具的表面上满是衣物、靴子、包袋、箱子，以及空的香水、红酒和水瓶。穿过这些杂物，有一条狭窄的通道通往房间一侧的套内浴室，另一侧则是一个没有整理的特大号床，安吉莉克丝正跪在床上。
+	</p>
+	<p>
+		[angelixx.speech(有点乱，你不介意吧？)]她的声音十分甜美。一开始你的注意力被房间的状态吸引走，但随后你发现这个外表年轻的可爱魅魔竟然脱得一丝不挂，只着一件透明的浅粉色吊带连衣裙和一双粉白条纹过膝袜，你顿时红了脸。那件一眼就看得透的短连衣裙将
+		#IF(angelixx.hasBreasts())
+			她[angelixx.breastSize]的[angelixx.cupSize]罩杯乳房和
+		#ELSE
+			她胸口[angelixx.nipples+]和
+		#ENDIF
+		下体暴露无疑，直接就能看见
+		#IF(angelixx.hasVagina())
+			#IF(angelixx.hasPenis())
+				那紧致的小穴和并不雄伟的小巧鸡儿。
+			#ELSE
+				那紧致的小穴。
+			#ENDIF
+		#ELSE
+			那并不雄伟的小巧鸡儿。
+		#ENDIF
+	</p>
+	<p>
+		[angelixx.speech(我很高兴你来见我，)]她调皮地说，看到你的目光在她性感的身躯上游移。她露出迷人的微笑，发出可爱的轻笑，咬了咬嘴唇，调皮地问道，[angelixx.speech(那么，你来这里到底是为了什么呢？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BEDROOM_ANGELIXX_TALK"><![CDATA[
+	<p>
+		虽然安吉莉克丝显然想诱惑你对她更进一步，但你真的很想了解更多关于她的信息，所以你借此机会请她聊聊她自己的事情。
+	</p>
+	<p>
+		[angelixx.speech(你来这里不是为了聊天，对吗？)]魅魔不耐烦地抱怨道，[angelixx.speech(从来没有人会真的问那些事情啦……)]
+	</p>
+	<p>
+		魅魔意识到这是一个可以让她一吐为快的机会，不需要别人再提醒她，就已经开始滔滔不绝地抱怨起来，[angelixx.speech(你知道我是怎么为赛拉特里克斯工作的吧？ 她总是对我说三道四，把我和我的孩子们当垃圾一样对待，但我们都忍了。因为她是被认可的女儿，而我不是，我需要她保护我们不受其他姐妹的伤害——那些整个御城区最狡猾、心肠最坏的贱人。我们为了得到母亲的认可穷尽手段，得到的却几乎总是被奴役、被贬低到一文不值，我<i>真的</i>受够了！也许很多年后，母亲才会考虑认可我，但我知道，总有一天我会让她刮目相看！)]
+	</p>
+	<p>
+		当你问安吉莉克丝，她所想要的是否只是母亲的认可，她的回答让你想起了这个魅魔如此热衷于接近你的原因，[angelixx.speech(认可就是一切，到时候你会帮我的，对吧？ 你可以跟莉莱雅谈谈，让她为我担保，虽然她是莉西丝的女儿，但母亲仍然会重视她的支持。当我向母亲请求承认我的时候，你和莉莱雅<i>会</i>支持我的，一定会的，对吗？)]
+	</p>
+	<p>
+		此情此景是在让你难以回绝，于是你便安慰这位可爱的魅魔，告诉她等她准备好的时候，你会帮她的。她以灿烂的微笑作为回应，随后诱惑地咬了咬嘴唇，[angelixx.speech(这个话题就到此为止吧……我们来一起做些有意思的事情……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BEDROOM_ANGELIXX_FLIRT"><![CDATA[
+	<p>
+		为了延长这一刻的美好时光，你决定不对安吉莉克丝做更进一步的事情，而是简单地逗逗她，和她调调情。你赞美她选择的衣服，告诉微笑的魅魔她看起来多么可爱和性感。
+	</p>
+	<p>
+		她发出一阵俏皮的咯咯笑声，从床上滑下来，冲上前抓住你的[pc.arm]。紧接着，你就被拉到了床上，而她则跪在你的身上。可爱的魅魔故意
+		#IF(angelixx.getBreastRawSizeValue()==0)
+			用她平坦的胸部在你身上磨蹭，
+		#ELSEIF(angelixx.getBreastRawSizeValue()==5)
+			把她小小的A罩杯胸部抵在你身上，
+		#ELSE
+			把她的[angelixx.cupSize]罩杯胸部按在你身上挤压，
+		#ENDIF
+		同时发出魅惑的喘息，[angelixx.speech(你还要忍耐多久？你不打算把我推倒，用力操我吗？)]
+	</p>
+	<p>
+		她握住你的[pc.hand]，引导你摸向她两腿之间。透过她吊带连衣裙的薄纱，
+		#IF(angelixx.hasPenis())
+			你的[pc.fingers]能够感受到她小巧可爱的鸡巴，你轻柔地抚摸着它，安吉莉克丝咯咯地笑着，[angelixx.speech(喜欢你让我长出来的小鸡巴吗？来吧，[pc.name]，操我……)]
+		#ELSE
+			你的[pc.fingers]能够感受到她紧致、火辣的阴部，你轻柔地抚摸着它，安吉莉克丝咯咯地笑着，[angelixx.speech(喜欢我的小穴吗？来吧，[pc.name]，操我……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BEDROOM_ANGELIXX_DEMANDS"><![CDATA[
+	<p>
+		很明显安吉莉克丝非常渴望赢得你的青睐，希望将你变成亲密的朋友，你意识到你可以利用这一点向她提出一些要求。
+		#IF(flags.hasFlag(FLAG_innoxia_angelixx_bedroom_flirted))
+			她在床上向前扭动，饥渴地将身体压向你，你则
+		#ELSE
+			你朝着床[pc.step]去，
+		#ENDIF
+		玩味地询问这个可爱的魅魔，她愿意做什么来向你表达她对过去行为的忏悔。
+	</p>
+	<p>
+		[angelixx.speech(你的意思是你还没有原谅我？)]她噘了噘嘴，调皮地抱怨了一声，她用手抚摸着自己，从小巧的乳房一直向下到胯部，然后若有所思地哼了一声，说道，[angelixx.speech(为了让你开心我可以稍微自我转化一下？太过分的不行，但如果你想让我的胸部变大或变小，那我还是没问题的。)]
+	</p>
+	<p>
+		你告诉安吉莉克丝，这是一个好的开始，但如果她真想得到你的好印象，那就必须做得更好。她对你噘着嘴说，[angelixx.speech(好吧……如果你想的话，我可以给自己长一根鸡巴？没有别的了！)]
+	</p>
+	<p>
+		安吉莉克丝愿意转化她的乳房和生殖器，你思考着是立即要求她做出一些改变，还是留到下次再做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_BEDROOM_SEX_START"><![CDATA[
+	<p>
+		#IF(flags.hasFlag(FLAG_innoxia_angelixx_bedroom_flirted))
+			当跪在你旁边的安吉莉克丝靠近你时，你无法抗拒她那年轻性感的身体带来的诱惑，于是将她一把揽入你[pc.arms]里，
+		#ELSE
+			你无法抗拒安吉莉克丝那年轻性感的身体带来的视觉诱惑，于是上床来到她身边，
+		#ENDIF
+		告诉她调情的时间结束了。
+		#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			可爱的魅魔向前倾身亲吻你，喘息声变得急切。她柔软的嘴唇抵在你嘴边，而你则热切地用绵长的深吻回应她。
+		#ELSE
+			可爱的魅魔向前倾身亲吻你，喘息声变得急切。她柔软的嘴唇贴在你[pc.face+]的[pc.faceSkin]上，你的[pc.hands]在她身上游走，握住了她[angelixx.breasts+]。
+		#ENDIF
+	</p>
+	<p>
+		[angelixx.speech(来吧，操我……)]深吻结束后，她急切地喘息着，仰面躺下，掀起吊带连衣裙，分开[angelixx.legs+]，向你露出她
+		#IF(angelixx.hasVagina())
+			#IF(angelixx.hasPenis())
+				[angelixx.pussy+]和小小的雌化阴茎。
+			#ELSE
+				[angelixx.pussy+]。
+			#ENDIF
+			#IF(game.isAnalContentEnabled())
+				在性器之下，她[angelixx.asshole+]也准备好供你探索。当她看到你的目光落在她两腿之间时，她咯咯笑了起来。
+			#ELSE
+				当她看到你的目光落在她两腿之间时，她咯咯笑了起来。
+			#ENDIF
+		#ELSE
+			#IF(game.isAnalContentEnabled())
+				小小的雌化阴茎和[angelixx.asshole+]。
+			#ELSE
+				小小的雌化阴茎。
+			#ENDIF
+			当她看到你的目光落在她两腿之间时，她咯咯笑了起来。
+		#ENDIF
+		#IF(angelixx.hasVagina())
+			[angelixx.speech(我是你听话的小骚货……尽情中出我吧；有斯雷普和尼尔两个孩子已经足够了，所以我用奥术的力量做好了充分的避孕……)]
+		#ELSE
+			[angelixx.speech(我是你听话的小骚货……)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.isTaur())
+			你直起身体骑上安吉莉克丝，她发出一阵兴奋的呻吟，准备被你操……
+		#ELSE
+			你下到安吉莉克丝的腿间，色情的小魅魔发出一阵渴望的呻吟，准备被你操……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_DEMAND_FLAT_CHEST"><![CDATA[
+	#IF(angelixx.getBreastRawSizeValue()>0)
+		<p>
+			你想要安吉莉克丝拥有完全平坦的胸部，所以你告诉她，你希望她的胸部尽可能地缩小。
+		</p>
+		<p>
+			[angelixx.speech(我喜欢小奶子，因为它们让我看起来很可爱，但你是想让我完全除去它们吗？)]安吉莉克丝一边用手抚摸着她[angelixx.cupSize]罩杯的乳房一边问道。你再次重复了你的要求，她对你撅着嘴，抱怨道，[angelixx.speech(好吧……但我的乳头还是保持原样！)]
+		</p>
+		<p>
+			说着，安吉莉克丝的乳房迅速缩小，直到完全平坦，形成了柔软的女性化胸脯。透过她吊带连衣裙的轻薄面料，你可以看到她[angelixx.nippleSize]的肉感乳头和[angelixx.areolaeSize]乳晕保持了原样，这让她现在平坦的胸部呈现出一种别具一格的色情气质。
+		</p>
+	#ELSE
+		<p>
+			虽然你之前喜欢看到安吉莉克丝拥有完全平坦的胸部，但你告诉她，你现在更喜欢她变回她最适应的A罩杯乳房。
+		</p>
+		<p>
+			[angelixx.speech(当然可以，)]可爱的魅魔开心地回答。她用双手抚摸着平坦的胸部，咯咯地笑着，[angelixx.speech(这感觉也没有那么坏……)]
+		</p>
+		<p>
+			说着，安吉莉克丝的胸脯迅速膨胀，直到形成一对小小的A罩杯乳房。透过她吊带连衣裙的轻薄面料，你可以看到她[angelixx.nippleSize]的肉感乳头和[angelixx.areolaeSize]乳晕保持了原样，现在它们位于一对乳房上，看起来更加自然。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_DEMAND_FLAT_CHEST_END"><![CDATA[
+	#IF(angelixx.getBreastRawSizeValue()==0)
+		<p>
+			#IF(angelixx.hasPenis())
+				[angelixx.speech(你把我变成了[angelixx.a_gender]……)]她抱怨道，然后咬着嘴唇，羞涩地向你眨着眼睛。
+			#ELSE
+				[angelixx.speech(现在开心了吗？)]她玩味地挑逗道，然后咬着嘴唇，羞涩地向你眨着眼睛。
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			[angelixx.speech(现在开心了吗？)]她玩味地挑逗道，然后咬着嘴唇，羞涩地向你眨着眼睛。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_DEMAND_BIG_TITS"><![CDATA[
+	#IF(angelixx.getBreastRawSizeValue()!=10)
+		<p>
+			你的目光游移在安吉莉克丝
+			#IF(angelixx.getBreastRawSizeValue()==0)
+				平坦的胸部上，你希望她拥有更丰满的身材。你告诉她你已经厌倦了她的平胸，
+			#ELSE
+				小巧的乳房上，你希望她拥有更丰满的身材。你告诉她她的胸部太小了，
+			#ENDIF
+			你要求魅魔把乳房长到和她姐姐的一样大。
+		</p>
+		<p>
+			[angelixx.speech(我不可能把它们变得<i>那么</i>大！)]她惊呼，然后抱怨道，[angelixx.speech(我不知道她为什么没因为那坨东西而背痛……我会把我的胸部变大，但不会变得非常大……)]
+		</p>
+		<p>
+			说着，安吉莉克丝
+			#IF(angelixx.getBreastRawSizeValue()==0)
+				的胸脯
+			#ELSE
+				的小奶子
+			#ENDIF
+			迅速膨胀，直到形成了一对大小适中的C罩杯乳房。你示意她继续，眼看着魅魔的乳房继续变大，直到停在E罩杯，她呻吟着，[angelixx.speech(我只能到这一步了……操，它们又大又重！你真的喜欢这样吗？)]
+		</p>
+	#ELSE
+		<p>
+			虽然你喜欢安吉莉克丝的大奶子，但你告诉她，你更喜欢她拥有较小乳房时的样子，要求她变回到对她而言最舒服的A罩杯。
+		</p>
+		<p>
+			[angelixx.speech(你这样想真的太好了，)]可爱的魅魔开心地回答道。她用手抚摸着自己的大乳房，咯咯地笑着，[angelixx.speech(有对大奶子真的很有意思，但我还是想走可爱风格……)]
+		</p>
+		<p>
+			说完，安吉莉克丝那宏伟的胸部迅速缩小，直到回到了原本的A罩杯大小。透过吊带连衣裙那轻薄的面料，你能看见安吉莉克丝那对[angelixx.nippleSize]，肉感的乳头和[angelixx.areolaeSize]乳晕则没有变小，使得她的小胸看起来更色情了。
+		</p>
+	#ENDIF
+	<p>
+		当你告诉她，她现在看起来很完美时，这个可爱的魅魔不禁咧嘴笑了起来，在向你露出一个诱人的微笑后，她挑逗道，[angelixx.speech(那么，现在你打算上了我吗？还是说你要怎样？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_DEMAND_COCK_ONLY"><![CDATA[
+	#IF(angelixx.hasPenis())
+		#IF(!angelixx.hasVagina())
+			<p>
+				你不想安吉莉克丝长着鸡巴，于是叫她去掉，再给自己变出一个小穴。
+			</p>
+			<p>
+				[angelixx.speech(我有点喜欢这个可爱的小东西了，)]魅魔咯咯笑着，用她纤细的手指来回拨动着她的小鸡巴。她又咯咯笑了一声，然后高兴地喊道，[angelixx.speech(但没有什么比我的小穴被操更舒服的了！)]
+			</p>
+			<p>
+				吊带连衣裙的短下摆将安吉莉克丝的下体完全暴露在外，你看着她的阴茎迅速缩小并消失。阴茎不复存在后，一条光滑的缝隙开始在安吉莉克丝的两腿间形成，几秒钟之后，她就恢复了她紧致、漂亮的小穴。
+			</p>
+			<p>
+				[angelixx.speech(快过来操我，)]她用手指滑过她新转化的阴部，呻吟着……
+			</p>
+		#ELSE
+			<p>
+				你不想安吉莉克丝长着小穴，于是叫她去掉，只留下腿间可爱的小鸡巴。
+			</p>
+			<p>
+				[angelixx.speech(啊哦，但是我被操小穴才是最爽的……)]魅魔发出哀叹。你再次重复了你的要求，她叹了口气，啧了啧嘴，[angelixx.speech(好吧……那我以后就只用鸡巴了……)]
+			</p>
+			<p>
+				吊带连衣裙的短下摆将安吉莉克丝的下体完全暴露在外，你看着她的阴唇紧紧地贴向一起，随着一声尖锐的呻吟，她的小穴紧闭并消失了，只留下她那可爱、阴柔的阴茎，魅魔可悲地啧了啧嘴，漫不经心地用纤细的手指来回拨动她那小小的阴茎。
+			</p>
+			<p>
+				[angelixx.speech(我都为你做到这份上了，你最好现在就来操我，)]她呜咽着，然后诱人地咬着嘴唇，向你眨着眼睛……
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你不想安吉莉克丝长着小穴，于是叫她去掉，再给自己变出一个鸡巴。
+		</p>
+		<p>
+			[angelixx.speech(虽然我喜欢两腿之间有根跳动的大鸡巴，但这并不意味着我自己也想长出一根！)]魅魔抱怨道。你不想接受否定的回答，便告诉魅魔，如果她按照你的要求做，你会认为她更有吸引力。她发出一声沮丧的叹息，啧了啧嘴说道，[angelixx.speech(好吧……就当是为了你，[pc.name]……但别指望我会有一根大鸡巴！它必须很可爱，这样才不会破坏我的形象……)]
+		</p>
+		<p>
+			吊带连衣裙的短下摆将安吉莉克丝的下体完全暴露在外，你看着她的阴唇紧紧地贴向一起，随着一声尖锐的呻吟，她的小穴紧闭并消失了。片刻之后，一个小肿块开始从她的腹股沟中凸出，逐渐变长成一根不超过[units.size(4)]的柔软小阴茎。她那退化的睾丸暗示着她在高潮时不会产生太多精液，你怀疑被那根阳痿小阴茎操的人根本不会得到多少快感。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_DEMAND_COCK_ONLY_END"><![CDATA[
+	#IF(angelixx.hasPenis())
+		#IF(angelixx.getBreastRawSizeValue()==0)
+			<p>
+				[angelixx.speech(你把我变成了[angelixx.a_gender]……)]她玩味地抱怨道，然后咬着嘴唇，羞涩地向你眨着眼睛。
+			</p>
+		#ELSE
+			<p>
+				[angelixx.speech(现在开心了吗？)]她玩味地挑逗道，然后咬着嘴唇，羞涩地向你眨着眼睛。
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_DEMAND_FUTA"><![CDATA[
+	#IF(angelixx.hasPenis() && !angelixx.hasVagina())
+		<p>
+			你很想念安吉莉克丝那紧致可爱的小穴，让她再给自己变一个出来。
+		</p>
+		<p>
+			[angelixx.speech(你还想让我留着这个可爱的小东西吗？)]魅魔一边咯咯笑着，一边用她纤细的手指来回拨动着她的小鸡巴。你告诉她你想让她保留她的鸡巴，她高兴地呻吟道，[angelixx.speech(好的，稍等……)]
+		</p>
+		<p>
+			吊带连衣裙的短下摆将安吉莉克丝的下体完全暴露在外，你看到一条光滑的缝隙开始在她的双腿之间形成，几秒钟之后，她就恢复了她紧致、漂亮的小穴。
+		</p>
+		<p>
+			[angelixx.speech(好吧，现在我已经拥有了你想要的一切，那你是时候该操我了，)]她用手指滑过她那小小的阴茎和新转化的阴部，兴奋地呻吟着……
+		</p>
+	#ELSEIF(!angelixx.hasPenis() && angelixx.hasVagina())
+		<p>
+			尽管你喜欢安吉莉克丝的小穴，但你还是希望她的两腿之间再多点什么，于是你告诉她，你想让她自己长出一根鸡巴。
+		</p>
+		<p>
+			[angelixx.speech(虽然我喜欢两腿之间有根跳动的大鸡巴，但这并不意味着我自己也想长出一根！)]魅魔抱怨道。你不想接受否定的回答，便告诉魅魔，如果她按照你的要求做，你会认为她更有吸引力。她发出一声沮丧的叹息，啧了啧嘴说道，[angelixx.speech(好吧……就当是为了你，[pc.name]……但别指望我会有一根大鸡巴！它必须很可爱，这样才不会破坏我的形象……)]
+		</p>
+		<p>
+			吊带连衣裙的短下摆将安吉莉克丝的下体完全暴露在外，你看到一个小肿块开始从她的小穴前方凸出，逐渐变长成一根不超过[units.size(4)]的柔软小阴茎。
+			#IF(game.isFutanariTesticlesEnabled())
+				她那退化的睾丸暗示着她在高潮时不会产生太多精液，你怀疑被那根阳痿小阴茎操的人根本不会得到多少快感。
+			#ELSE
+				魅魔试探性地用手指拨动她新长成的鸡巴，你感觉没有人会被那根阳痿小阴茎操出快感。
+			#ENDIF
+		</p>
+		<p>
+			[angelixx.speech(好吧，现在我已经拥有了你想要的一切，那你是时候该操我了，)]安吉莉克丝兴奋地呻吟着，掀起了她的吊带连衣裙，调皮地向你展示她紧致的小穴和新转化的小鸡巴……
+		</p>
+	#ELSE
+		<p>
+			你不想安吉莉克丝长着鸡巴，于是叫她去掉，只留下一个小穴。
+		</p>
+		<p>
+			[angelixx.speech(我有点喜欢这个可爱的小东西了，)]魅魔咯咯笑着，用她纤细的手指来回拨动着她的小鸡巴。她又咯咯笑了一声，然后高兴地喊道，[angelixx.speech(但没有什么比我的小穴被操更舒服的了！)]
+		</p>
+		<p>
+			吊带连衣裙的短下摆将安吉莉克丝的下体完全暴露在外，你看着她的阴茎迅速缩小并消失，只留下她两腿之间紧致、漂亮的小穴。
+		</p>
+		<p>
+			[angelixx.speech(现在快来操我，)]她用手指滑过她的阴部，呻吟着……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_LEAVE"><![CDATA[
+	<p>
+		你尽力不被安吉莉克丝所诱惑，
+		#IF(flags.hasFlag(FLAG_innoxia_angelixx_bedroom_flirted))
+			当她靠在你身上时，你站了起来，
+		#ELSE
+			当她招呼你上床时，你后退了一步，
+		#ENDIF
+		告诉可爱的魅魔你得走了。
+	</p>
+	<p>
+		[angelixx.speech(别想跑！)]她的失望溢于言表，不满地撅起嘴抱怨道， [angelixx.speech(你并不是真的有事，对吧？你明明刚来……)]
+	</p>
+	<p>
+		你又说了一遍自己要走了，然后走到门口告别。
+	</p>
+	<p>
+		[angelixx.speech(等一下！我带你去门口，)]安吉莉克丝说，然后跳下床，迅速上前搂住了你的[pc.arm]。她温暖的身体紧贴着你，你们两个一起走过那短短的走廊，片刻之后便来到了公寓的前门。魅魔放开了你，叹了口气，
+		#IF(game.isIncestEnabled())
+			[angelixx.speech(我猜今晚我得等孩子们回家之后才能找点乐子了……下次你会呆久一点的，对吧？)]
+		#ELSE
+			[angelixx.speech(我猜今晚我要自己度过了……下次你会呆久一点的，对吧？)]
+		#ENDIF
+	</p>
+	<p>
+		你不置可否地回应了她，然后向安吉莉克丝道别，她微笑着向你挥手，随后关上了门。你走下楼梯，回到了洛维耶纳奢侈品店门口的街道上，思考现在该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_AFTER_SEX"><![CDATA[
+	<p>
+		玩得尽兴后，你从安吉莉克丝身边抽身而出，瘫倒在她的床上。
+	</p>
+	<p>
+		#IF(angelixx.isSatisfiedFromLastSex())
+			[angelixx.speech(那……太棒了……)]可爱的魅魔喘息道。你朝她看去，注视着她的[angelixx.breastSize]，[angelixx.cupSize]杯的胸部随着她的深呼吸而起伏。她转过头看向你，轻声笑着， [angelixx.speech(你得更常来看我！)]
+		#ELSE
+			[angelixx.speech(那……有点意思……)]可爱的魅魔喘息道。你朝她看去，注视着她的[angelixx.breastSize]，[angelixx.cupSize]杯的胸部随着她的深呼吸而起伏。她转过头看向你，顽皮地撅起嘴，调侃道，[angelixx.speech(下次，试着在结束前让我满意……)]
+		#ENDIF
+	</p>
+	<p>
+		在给你一些时间以便恢复之后，安吉莉克丝透露道，[angelixx.speech(我的孩子们大约一个小时后就会回来，如果他们发现我和你在床上，会很烦人……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_AFTER_SEX_LEAVE"><![CDATA[
+	<p>
+		你安慰那位可爱的魅魔，让她不要担心，随后迅速下床收拾好自己的东西，走向卧室门口，与她道别。
+	</p>
+	<p>
+		[angelixx.speech(等一下！我带你出去，)]安吉莉克丝说着，跳下床，迅速朝前走去，抓住了你的胳膊。她温暖的身体紧贴着你，你们一起走过那短短的走廊，片刻之后便来到了公寓的前门。她松开你的手，微笑着说道， [angelixx.speech(真好。下次再来找我，我们可以再来一次！)]
+	</p>
+	<p>
+		你告诉她你也玩得很开心，然后向安吉莉克丝说再见，她在你身后甜美地微笑着关上了门。走下楼梯后，你很快再次走到洛维耶纳奢侈品店，接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- Angelixx clubbing content: -->
+	
+	<htmlContent tag="ANGELIXX_GO_OUT"><![CDATA[
+	<p>
+		你不想让斯雷普和尼尔妨碍你与安吉莉克丝共度良宵，于是你告诉魅魔你想带她出去逛逛。听到你这么说，她的表情立刻生动了起来，她可爱地跳了跳，兴奋地拍着手。
+	</p>
+	<p>
+		[angelixx.speech(我们去夜店吧！)]她大叫道，
+		#IF(!game.isHourBetween(19, 12))
+			然后又说道，[angelixx.speech(不过，夜店要到晚上七点才开门，所以在那之前我们就先在恶魔之家随便逛逛，如何？我先去换衣服，在这里等一会！)]
+		#ELSE
+			然后又说道，[angelixx.speech(我先去换衣服，在这里等一会！)]
+		#ENDIF
+	</p>
+	<p>
+		说完，安吉莉克丝关上了门，你按她说的，在楼梯顶等着她回来。谢天谢地，她没花太长时间，几分钟后，兴奋的魅魔又回来了。她换掉了平时的服装，现在穿着一件浅粉色的童贞杀手毛衣、白色过膝袜和一双与毛衣颜色相配的运动鞋。她用白色发带将金色的头发束成了双马尾，她在你面前俏皮地旋转展示自己，你注意到她裸露的背部没有露出胸罩的带子。她没有穿裙子或任何腿部衣物，而是依靠毛衣的长度来遮盖她的下体。然而，她的内衣并没有保持太久神秘感，因为她随后便咯咯笑着向你展示了她的白色蕾丝内裤，然后调皮地挑逗道，[angelixx.speech(这些不会穿一整晚的……)]
+	</p>
+	<p>
+		这个可爱的魅魔拉住你的[pc.hand]，急切地拉着你跟在她后面，匆匆走下台阶，走进了恶魔之家。
+		#IF(!game.isHourBetween(19, 12))
+			你们俩在这里散步打发时间，安吉莉克丝向你指出她姐妹或其他认识的恶魔的家。时间过得很快，已经要到晚上七点了，安吉莉克丝转过身来看着你，[angelixx.eyeColour]的大眼睛里带着热切的目光，她大声喊道，
+		#ELSE
+			安吉莉克丝转过身来看着你，[angelixx.eyeColour]的大眼睛里带着热切的目光，她大声喊道，
+		#ENDIF
+		[angelixx.speech(出发啦，[pc.name]！派对时间到了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB"><![CDATA[
+	<p>
+		安吉莉克丝继续握着你的手，高兴地在你身边蹦蹦跳跳，你们两人一起穿过御城区前往夜生活区。看着眼前这个天真无邪的魅魔，很难相信她竟然会绑架无辜的人，并将他们违背意愿地永久变成性爱玩偶。她那邪恶的本性完全被可爱的外表所掩盖，每当她对你露出微笑或兴奋地谈论即将到来的夜晚时，你都会忘记她真正的身份。
+	</p>
+	<p>
+		[angelixx.speech(我们快到了！)]她高兴地大声说道，你们两个进入了这条聚集了城市内绝大多数夜店和酒吧的街道。
+		#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
+			由于持续不断的奥术风暴，这个地方看起来荒无人迹，只有几个恶魔自信地在一些夜店里进进出出。也许是因为风暴降临导致人们急于寻找避难之处，夜店内部都挤满了人，不过大多数都挂上了暂时关闭的标志。谢天谢地，安吉莉克丝想去的那家夜店仍然开着。她领着你走向它，
+		#ELSE
+			上百名狂欢者沐浴在遍布夜店外的霓虹灯光之下，或清醒或迷醉，喧闹地挤满了整个区域，也阻碍着你的行动，你和安吉莉克丝则径直地冲向目的地。幸运的是，它离着街道口不远，用了几分钟时间推搡着穿过人群后，你就到达了安吉莉克丝的心仪之地。她领着你走向它，
+		#ENDIF
+		#IF(flags.hasFlag(FLAG_julesIntroduced))
+			你发现这就是你来过的“饮水洼夜店”。
+		#ELSE
+			你看到这家店挂的牌子上写着“饮水洼夜店”。
+		#ENDIF
+		安吉莉克丝走到夜店的入口，她推开前门，把你拉了进去，咯咯笑着说道，[angelixx.speech(现在是时候找点乐子了！)]
+	</p>
+	<p>
+		大门在你身后缓缓合拢，你发现自己站在一个宽敞明亮的入口大厅，面前是一条蜿蜒曲折的队伍，一直通向一扇纯白之门。墙壁周围装饰着热带草原主题的壁画，再配合上夜店的名字，以及站在队列前方的一对威风凛凛的斑马男保镖，整个夜店充满了非洲风情。
+	</p>
+	<p>
+		#IF(flags.hasFlag(FLAG_julesIntroduced))
+			你们刚走进来，个头较大的那个斑马男保镖就看到了你和安吉莉克丝，他提高了音量，以盖过夜店低沉的背景音乐，喊道，[jules.speech(嘿，宝贝！又回来尝我的鸡巴了？！)]
+		#ELSE
+			个头较大的那个斑马男保镖是朱勒斯，你对他已经很熟悉了。你们刚走进来，他就看见了你和安吉莉克丝，于是他提高了音量，盖过了夜店低沉的背景音乐，大声喊道，[jules.speech(嘿，宝贝！又回来尝我的鸡巴了？！)]
+		#ENDIF
+	</p>
+	<p>
+		安吉莉克丝充满占有欲地搂住你的[pc.arm]，拉着你经过队伍，站在了保镖的面前，她挑逗道，[angelixx.speech(嘿，朱勒斯！今晚我邀请了[pc.name]，所以你得找其他荡妇来吃你那根大鸡巴了。)]
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_suckedJulesCock))
+			[jules.speech(谁跟你说话了？你这位朋友和你一样喜欢我鸡巴的味道，)]朱勒斯回答道，脸上露出得意的坏笑。安吉莉克丝对他撅起了嘴，他则笑着走到了一边，示意你们两个可以跳过排队直接进去。
+		#ELSE
+			[jules.speech(好吧，如果你不愿意，那么我打赌你的朋友会像你一样喜欢我鸡巴的味道，)]朱勒斯回答道，脸上露出得意的坏笑。你正打算回答这个问题，斑马男却笑着走到了一边，示意你们两个可以跳过排队直接进去。
+		#ENDIF
+		他用一只肌肉发达的手臂为你们打开大门，然后看向安吉莉克丝，咕哝道，[jules.speech(你知道的，当我在门口时你永远不必排队等候，所以进去吧。哦，如果你晚些时候想要了，我想我可以让你们两个分享我的鸡巴。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_START"><![CDATA[
+	<p>
+		你和安吉莉克丝经过开门的朱勒斯，便走进了一个昏暗而喧闹的世界，里面挤满了不同种族的家伙。夜店中央的舞池被闪烁的霓虹灯照亮，而周围的座位则沐浴在低悬着的灯泡所发出的柔和温暖的光芒中。人群的谈话声、笑声和喊叫声与低沉但轰鸣的背景音乐交织在一起，即使你就站在别人旁边，也很难听清对方在说什么。
+	</p>
+	<p>
+		和入口大厅一样，夜店的室内装饰也充满了非洲风情，虽然灯光很暗，但墙上的斑马纹、豹纹和草原风格的树木图案清晰可见。脚下铺着浅色木地板，与高耸在上的天花板的浅蓝色相呼应，给人一种意外的宽敞感。
+	</p>
+	<p>
+		虽然你无法透过前面的人群直接看到吧台，但夜店巨大内部空间另一侧天花板上悬挂的木制标志就指示了位置。安吉莉克丝几乎压不过这嘈杂的声音，于是就单纯指了指那个标志，然后抓住你的[pc.arm]，带你从夜店边缘绕过，来到了吧台。这里似乎离夜店的扬声器稍远了一点，安吉莉克丝便可以喊着说，[angelixx.speech(我来点饮料！)]
+	</p>
+	<p>
+	<p>
+		#IF(flags.hasFlag(FLAG_kalahariIntroduced))
+			虽然你看到卡拉哈利熟悉的身影正在吧台后工作，但她现在跟你和安吉莉克斯处在吧台的两端，于是回应的是一个斑马女。
+		#ELSE
+			虽然吧台后面有一个看上去精力充沛的狮女在工作，但她现在跟你和安吉莉克斯处在吧台的两端，于是回应的是一个斑马女。
+		#ENDIF
+		你听不太清楚安吉莉克丝点了什么，但点个饮料就花了一分钟，那斑马女又用了几分钟把两种色彩缤纷的鸡尾酒混了起来，放在了吧台上。你听到她喊道，[style.speechFeminine(亲爱的，这个四百火币！)]
+	</p>
+	<p>
+		安吉莉克丝看向你，露出个甜到爆炸，可爱到心化的微笑，问道，[angelixx.speech(你要买单的，对吧，[pc.name]？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_START_PAY"><![CDATA[
+	<p>
+		为你没有点的饮料买单让你有些不情愿，但是当你看到安吉莉克丝可爱纯真的脸时，那种不情愿就烟消云散了。你掏出四百火币，递给酒吧女侍，拿起一杯，准备跟伴侣共同饮下今晚的第一杯。你端起酒杯，凑到唇边，安吉莉克丝乐得叫道，[angelixx.speech(谢谢你买单啦，[pc.name]！我最喜欢这个了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_START_ANGELIXX_PAYS"><![CDATA[
+	<p>
+		#IF(pc.getMoney()<400)
+			虽然你可能不介意付钱，但你没有四百火币来支付账单。你摇了摇头，告诉安吉莉克丝你付不起钱，
+		#ELSE
+			如果你是点单的人，你就不会点这么贵的鸡尾酒，也就不会因为两杯酒要花四百火币而犹豫不决。你摇了摇头，告诉安吉莉克丝你不会付钱，
+		#ENDIF
+		她撅起嘴抱怨道，[angelixx.speech(但我讨厌自己付钱买喝的……好吧，这次我破费一下，但今晚我不会再付钱买喝的了！)]
+	</p>
+	<p>
+		安吉莉克丝从手提包里拿出四百火币，把它们递给酒吧女侍，然后拿起两杯饮品，把其中一杯递给你。当你把杯子举到嘴边时，安吉莉克丝向你倾身，大声说道，[angelixx.speech(这是我最喜欢的饮品！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_START_BOTH_DRINK"><![CDATA[
+	<p>
+		你喝下了一口色彩鲜艳的鸡尾酒，你发现它的味道就像是和各种柑橘类水果混合在一起的香槟。它冰凉、泡沫丰富、而且非常美味，你不知不觉就喝光了杯子里的酒。安吉莉克丝看到你喝得这么快，咯咯地笑着，高兴地喊道，[angelixx.speech(我就知道你会喜欢它！)]
+	</p>
+	<p>
+		当这个可爱的魅魔喝完她自己的酒时，你感觉到酒精进入了你的身体，虽然不是很烈，但你确实开始有点醉了。安吉莉克丝把她已经空了的酒杯放回你旁边的吧台上，转身看向你。你思考着接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_START_PAY_ABSTAIN"><![CDATA[
+	<p>
+		为你没有点的饮料买单让你有些不情愿，但是当你看到安吉莉克丝可爱纯真的脸时，那种不情愿就烟消云散了。你掏出四百火币，递给酒吧女侍，但你不打算喝，于是你告诉你的同伴可以把两杯都喝掉。当魅魔听到你这样说时，她撅起了嘴，[angelixx.speech(啊……不过我喜欢这个！总之谢谢你买单了，[pc.name]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_START_ANGELIXX_PAYS_ABSTAIN"><![CDATA[
+	<p>
+		你不喜欢安吉莉克丝点的鸡尾酒，所以摇了摇头，告诉她你不会为你不喝的东西付钱。听到这句话，魅魔撅起嘴，抱怨道，[angelixx.speech(但我讨厌自己付钱买喝的……好吧，这次我破费一下，但今晚我不会再付钱买喝的了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_START_SOLO_DRINK"><![CDATA[
+	<p>
+		安吉莉克丝拿起了第一杯，迅速饮下这色彩鲜艳的鸡尾酒，随后又拿起第二杯，开始慢慢品尝。她小口品着酒，依靠在你的身上，而空闲的那只手则开始摸索你的身体。她咯咯地笑道，[angelixx.speech(你过会儿也要来一杯吧？)]
+	</p>
+	<p>
+		你跟这可爱的魅魔说可以考虑一下，就这样看着她喝完了手中那杯酒，她把空酒杯放下在吧台上，贴着第一杯的旁边，接着扭头看向你，满怀期待地等待你的下一步动作……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_CORE_ANGELIXX_HORNY"><![CDATA[
+	<p>
+		[angelixx.speech(嘿，[pc.name]！)]安吉莉克丝突然惊呼起来，然后俏皮地咬着嘴唇，向你投来诱惑的目光。她用满是情欲的腔调急切地向你抱怨，[angelixx.speech(这很有趣，但我想要更多……来吧，我们做爱！)]
+	</p>
+	<p>
+		你的同伴的一举一动都透露着毫无疑问的信息，她想要做爱，除此之外别无所求。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_DANCE"><![CDATA[
+	<p>
+		你搂着安吉莉克丝的腰，带她来到舞池，轰鸣的音乐声让你们几乎听不到彼此的声音。可爱的魅魔无需言语就能表现出她的热情，她转过身来面对着你，兴奋地随着音乐的节奏在空中挥舞着双臂。
+	</p>
+	<p>
+		不一会儿，你就发现自己置身于舞动的夜店人群中，安吉莉克丝在你面前跳来跳去，并将拳头挥向空中。你的视觉被周边闪烁的霓虹灯占据，而你的嗅觉则被汗水、啤酒和香水的混合气味所侵袭。你的恶魔同伴完全沉浸在自己的世界里，她很快就从活力四射的跳跃转为优雅性感的舞蹈。魅魔用她的身体挑逗夜店的其他人，但每当他们试图对她动手动脚时，她就会跳回来，磨蹭你的身体，并快速亲吻你[pc.lips+]，让那些认为自己有机会和她在一起的人的希望落空。
+	</p>
+	<p>
+		在你对她的突然举动做出反应之前，可爱的魅魔咯咯地笑了起来，并在震耳欲聋的音乐声中大喊，[angelixx.speech(今晚真的好棒啊！)]
+	</p>
+	<p>
+		稀里糊涂地过了半小时，你的感官受到了全方位的冲击。最后，你和安吉莉克丝都需要休息一下，她气喘吁吁地靠在你身上，等着听你接下来想做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_DRINK"><![CDATA[
+	<p>
+		你想喝一杯，于是带着安吉莉克丝穿过夜店，回到吧台，你的同伴迅速向前跳去，引起了一位斑马女招待的注意。她点了和之前一样的饮品，当两杯色彩鲜艳的鸡尾酒被放在吧台上时，她转过身来对你微笑着说，[angelixx.speech(你会买单的，对吧？)]
+	</p>
+	<p>
+		你答应付钱，将四百火币递给了吧台服务员，然后拿起你的酒，也递给了安吉莉克丝一杯酒。与刚进夜店时不同，你们俩慢慢地喝着酒，在夜店的这个地方，音乐声并不那么大，你们有机会花一些时间聊天。
+	</p>
+	<p>
+		喝完香槟和柑橘类水果混合的鸡尾酒后，你思索着接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_TALK"><![CDATA[
+	<p>
+		你想找个相对安静的地方，逃离这令人压抑的噪音和拥挤的人群，于是带着安吉莉克丝来到夜店外围的一处座位区。
+		#IF(!pc.isTaur())
+			很快就占了一处空的座位，
+		#ELSE
+			朝附近打量一眼，便注意到一个空闲的超大座位，这似乎是专门为像你这样的半兽身人设计的。你便占了这里，
+		#ENDIF
+		坐在弧形的皮质沙发上，身旁那可爱的魅魔笑着问道，[angelixx.speech(开心吗？)]
+	</p>
+	<p>
+		你说确实，随后问安吉莉克丝是不是经常来这里。很快就知道她以前几乎每天晚上都要来，但现在她愿意和你一起来。随后她抱怨起来赛拉特里克斯，工作的要求有多高，这个可爱的魅魔又讲到今天早些时候还把一个家伙变成了玩偶，让你再次记起她的邪恶行径。对无辜人民所做的一切，安吉莉克丝显得毫无悔意，她笑嘻嘻地讲完了故事，然后又开始抱怨赛拉特里克斯和她其他一些你从未见过的姐妹。
+	</p>
+	<p>
+		你在忍受了安吉莉克丝近半个小时的义愤填膺之后，她终于站起身，说道，[angelixx.speech(我们不是来这坐着聊天的！快来点乐子！)]
+	</p>
+	<p>
+		在魅魔的引导下，你站起来，思考现在要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_FLIRT"><![CDATA[
+	<p>
+		为了避开舞池中央传来的震耳欲聋的音乐，你在夜店的边缘散步，告诉安吉莉克丝她今晚看起来多么可爱和性感。可爱的魅魔开心地咯咯笑着回应了你的赞美，然后诱惑地咬着嘴唇，眨眼看着你，你则继续和她调情。
+	</p>
+	<p>
+		在互相挑逗了几分钟后，安吉莉克丝开始有点放开了，随着一声淫荡的呻吟，她突然掀起了她那件童贞杀手毛衣的前襟。她并不满足于只是向你展示她的蕾丝白色内裤，而是用拇指勾住内裤的带子向前拉，拉开布料，露出她
+		#IF(angelixx.hasPenis())
+			小小的、软软的肉棒。
+		#ELSE
+			紧致的小穴。
+		#ENDIF
+	</p>
+	<p>
+		[angelixx.speech(这就是你想要的，嗯？)]她一边咯咯笑着，一边左右摇摆着臀部。突然，她松开手，内衣和毛衣回到原位，随后她呻吟着诱惑你， [angelixx.speech(你马上就能尝到了……)]
+	</p>
+	<p>
+		这只淫荡的魅魔抓住你的胳膊，再次咯咯笑了起来。随后，她静静等待你，想要知道你接下来要做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_BATHROOM_SEX_START"><![CDATA[
+	<p>
+		你和安吉莉克丝一样感到饥渴和急切，你握住她的[angelixx.hand]带她穿过夜店，走向厕所。看到你要带她去的地方，可爱的魅魔咯咯笑了起来，[angelixx.speech(我已经在那里被操好多次了……)]
+	</p>
+	<p>
+		你把你的同伴推进空隔间，转身面对她。不等你反应过来，她就向前倾身，在你[pc.lips+]上狠狠来了一个湿吻。你把安吉莉克丝拉到你的怀里，两人热切地交换着唾液，同时抚摸着对方的身体。亲吻结束后，这个可爱又饥渴的魅魔发出了呻吟，[angelixx.speechNoEffects(~嗯！~来吧！用力干我！)]
+	</p>
+	<p>
+		你喘出淫荡的[pc.moan]，准备就这么做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_LEAVE"><![CDATA[
+	<p>
+		夜店里压抑、嘈杂的气氛让人很不舒服，于是你大声喊着，让自己的声音盖过震耳欲聋的音乐，告诉安吉莉克丝，你得离开这里。
+	</p>
+	<p>
+		[angelixx.speech(啊……但是我想要再玩玩！)]安吉莉克丝抱怨道，随后她不情愿地说，[angelixx.speech(如果你要走的话，我就在这里再找个人做爱。过后见啦！)]
+	</p>
+	<p>
+		与可爱的魅魔匆匆道别后，你把她留在夜店里，穿过人群向出口走去。几分钟后，你又回到了御城区，在那里深深地吸了一口相对新鲜的空气，并开始想今晚剩下的时间该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_BATHROOM_AFTER_SEX"><![CDATA[
+	<p>
+		在尽兴之后，你从安吉莉克丝身后退开，结束了这场性爱。
+	</p>
+	<p>
+		#IF(angelixx.isSatisfiedFromLastSex())
+			[angelixx.speech(~姆嗯！~妈的……我想要的就是这个……)]那可爱的魅魔喘息道。
+		#ELSE
+			[angelixx.speech(还是……挺有意思的……)]那可爱的魅魔喘息道，但你能从她的语调中听出，她并不太满意。
+		#ENDIF
+		她迅速穿好了内衣毛衣，嘻嘻笑道，[angelixx.speech(在夜店的厕所里都要操我？你真是忍不住想要尝尝
+			#IF(angelixx.hasPenis())
+				这根你让我长出来的可爱鸡鸡了，对吧？
+			#ELSE
+				我淫荡的小穴了，对吧？
+			#ENDIF
+		)]
+	</p>
+	<p>
+		你反过来说安吉莉克丝也是一样饥渴，却又得到一阵银铃般的笑声，你也穿戴整齐，打开了隔间的门。你们离开厕所的时候，经过了几个夜店客，他们看着你和安吉莉克丝，抛来个心照不宣的坏笑。两人回到夜店后，安吉莉克丝转向你表示，[angelixx.speech(一个晚上这样对我来说已经够了，走吧！)]
+	</p>
+	<p>
+		今晚的夜店活动到此结束，你护送着安吉莉克丝穿过人群，很快就到了出口。片刻之后，你们俩又[pc.stepping]回到了御城区，你深深地吸了一口比屋子里新鲜的多的空气。你身边可爱的魅魔抓住你的胳膊，向你投来恳求的目光，并用甜美的语气问道：[angelixx.speech(你会陪我回家的，对吗，[pc.name]？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_POSE"><![CDATA[
+	<p>
+		你认为吸引几个陌生人与你和安吉莉克丝一起找乐子会很有趣，于是你问魅魔是否愿意这样做。
+	</p>
+	#IF(pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_BAR)
+		<p>
+			[angelixx.speech(当然可以！)]她兴奋地回答道，[angelixx.speech(来吧，我们就在吧台摆出姿势，很快就会被搭讪的！)]
+		</p>
+		<p>
+			你和安吉莉克丝靠在吧台上，摆出最诱人的姿势，试图吸引过路人的目光。
+	#ELSE
+		<p>
+			[angelixx.speech(当然可以！)]她兴奋地回答道，[angelixx.speech(来吧，我们去吧台摆出姿势，很快就会被搭讪的！)]
+		</p>
+		<p>
+			你和安吉莉克丝走到吧台，摆出最诱人的姿势，试图吸引过路人的目光。
+	#ENDIF
+		你们很快就被搭讪了，没过几分钟，[stranger1.a_raceFull(true)]和[stranger2.a_raceFull(true)]便注意到了你们诱人的姿势，自信地向你们走来。虽然他们试图尽最大的努力与你和安吉莉克丝搭讪，但夜店的背景噪音太大，你听不清他们在说什么。
+	</p>
+	<p>
+		[stranger1.speech(我是[stranger1.Name]！)]你指着[stranger1.race]示意对方说话，[stranger1.herHim]说道。
+	</p>
+	<p>
+		[stranger2.speech(我是[stranger2.Name]！)][stranger2.race]喊道，又问了一句，[stranger2.speech(今晚我要带你们哪一个回家呢？)]
+	</p>
+	<p>
+		安吉莉克丝咯咯地笑着回应[stranger2.namePos]的问题，让你有了时间决定要将注意力集中在哪一个陌生人身上……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_POSE_LEAVE"><![CDATA[
+	<p>
+		你真心不喜欢这两个陌生人的长相，于是你大声喊着，让自己的声音盖过震耳欲聋的音乐，告诉安吉莉克丝你该离开这里了。
+	</p>
+	<p>
+		[angelixx.speech(噢……好吧……)]安吉莉克丝先是抱怨了两声，然后咯咯笑了起来，[angelixx.speech(那我要被他们双人包夹了！我们下次再见！)]
+	</p>
+	<p>
+		与可爱的魅魔匆匆道别后，你留下她和陌生人们一起找乐子，自己则穿过人群向出口走去。几分钟后，你又回到了御城区，在那里深深地吸了一口相对新鲜的空气，并开始想今晚剩下的时间该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_POSE_FLIRT"><![CDATA[
+	<p>
+		你觉得[chosenStranger.name]更对你的眼缘，于是你招手让[chosenStranger.herHim]靠近一点，开始调皮地与[chosenStranger.herHim]调情。
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, false))
+			不知不觉中，[chosenStranger.her]的[chosenStranger.hands]就已经抚过了你的全身，你与[chosenStranger.her]分享着你们第一个充满激情的湿吻。你磨蹭着[chosenStranger.race]，将[chosenStranger.her]其中一只[chosenStranger.hands]引向你的胯部，被湿吻堵住的口中不禁漏出一声[pc.moan]，而[chosenStranger.she]则开始抚摸你
+		#ELSE
+			不知不觉中，[chosenStranger.her]的[chosenStranger.hands]就已经抚过了你的全身，[chosenStranger.sheIs]讲述着[chosenStranger.she]想对你做的所有淫秽之事。你磨蹭着[chosenStranger.race]，将[chosenStranger.her]其中一只[chosenStranger.hands]引向你的胯部，发出一阵[pc.a_moan+]，而[chosenStranger.she]则开始抚摸你
+		#ENDIF
+		#IF(pc.hasPenis())
+			[pc.cock+]。
+		#ELSEIF(pc.hasVagina())
+			[pc.pussy+]。
+		#ELSE
+			的下体。
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, false))
+			你们结束了亲吻，
+		#ELSE
+			[chosenStranger.name]继续对你说着污言秽语，
+		#ENDIF
+		你转向安吉莉克丝，想看看她和[angelixxStranger.name]在做什么。令你惊讶的是，他们两个已经不见了，还没等你问他们去了哪里，[chosenStranger.name]便笑着说，[chosenStranger.speech(我猜[angelixxStranger.name]和你的朋友不等我们就已经开始了！走吧，我们去找他们，这样我就可以在他们旁边操你了！)]
+	</p>
+	<p>
+		[chosenStranger.name]霸道地搂住你的腰，带你离开吧台，将你带出了夜店……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_POSE_FLIRT_LEAVE"><![CDATA[
+	<p>
+		突然你觉得一点也不想被这个[chosenStranger.race]操了，于是停下脚步，对[chosenStranger.name]大喊，你受不了了，要自己一个人走了。
+	</p>
+	<p>
+		[chosenStranger.speech(随你的便，)][chosenStranger.she]哼了一声，随后就松开你的腰，说道，[chosenStranger.speech(我可要找你的朋友泄泄火了。)]
+	</p>
+	<p>
+		说完之后，[chosenStranger.name]就穿过人群，向出口赶去。你等了几秒钟，等两人有一定的距离后，就跟在了[chosenStranger.her]身后。过了几分钟后，你便再次回到御城区，对着新鲜的空气深吸了一口，思考着晚上剩下的时间该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_POSE_ALLEYWAY"><![CDATA[
+	<p>
+		你让[chosenStranger.name]带着你走出夜店，重新回到了御城区，于是对着新鲜的空气深吸一口。那[chosenStranger.race]仍用[chosenStranger.arm]搂着你的腰，带着你沿着街道走了一小段路，而在一个急转弯后，你发现自己进入了一条黑暗的小巷。正当你想问来这里干什么的时候，[chosenStranger.she]说，[chosenStranger.speech(你的朋友肯定在前面……)]
+	</p>
+	<p>
+		果然，在沿着小巷继续前行时，你突然听到前方某处传来呻吟声和湿漉漉的拍打声。继续向前走，拐过一个弯，进入了一个小院子，一对昏暗的提灯挂在夜店消防出口上方的墙上。
+	#IF(chosenStranger.isTaur() || angelixxStranger.isTaur())
+			而呻吟声的来源则就是安吉莉克斯，你看到她弓着身子，脸朝下趴在一个板条箱上，[angelixxStranger.name]正用[angelixxStranger.her][angelixxStranger.cock+]在那可爱魅魔的
+			#IF(angelixx.hasVagina())
+				小穴
+			#ELSE
+				屁穴
+			#ENDIF
+			中进进出出。
+		</p>
+		<p>
+			[chosenStranger.speech(你不等我一起就自己先开始了！)]你旁边的[chosenStranger.race]向[chosenStranger.her]的朋友喊道。[chosenStranger.she]带你走到板条箱旁，霸道地抓住你，将你推倒在安吉莉克丝旁边，戏谑地对你说，[chosenStranger.speech(我们不能让你的朋友独享所有乐趣，对吧？)]
+		</p>
+	#ELSE
+			而呻吟声的来源则就是安吉莉克斯，你看到她被按在墙上，脸朝下，[angelixxStranger.name]正从背后用[angelixxStranger.her][angelixxStranger.cock+]在那可爱魅魔的
+			#IF(angelixx.hasVagina())
+				小穴
+			#ELSE
+				屁穴
+			#ENDIF
+			中进进出出。
+		</p>
+		<p>
+			[chosenStranger.speech(你不等我一起就自己先开始了！)]你旁边的[chosenStranger.race]向[chosenStranger.her]的朋友喊道。[chosenStranger.she]带你走到墙边，霸道地抓住你，将你按在安吉莉克丝旁边，戏谑地对你说，[chosenStranger.speech(我们不能让你的朋友独享所有乐趣，对吧？)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_POSE_ALLEYWAY_SEX_START"><![CDATA[
+	<p>
+		[chosenStranger.name]让你靠着墙站在安吉莉克丝旁边，你发出激动的[pc.moan]。[angelixxStranger.name]继续从后面操着安吉莉克丝，而她看着你，开心地笑着。
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && ((!chosenStranger.isTaur() && !angelixxStranger.isTaur()) || pc.isTaur()==angelixx.isTaur()))
+			你想尝尝她的嘴唇，倾身向魅魔献上一个吻，她急切地张开嘴唇，回报你的爱意。
+		#ELSE
+			[angelixxStranger.name]突然猛扇了一下魅魔的屁股，把[angelixxStranger.her]的鸡巴深捅进安吉莉克丝的
+			#IF(angelixx.hasVagina())
+				小穴，
+			#ELSE
+				菊穴，
+			#ENDIF
+			让她的笑容变成了张大嘴巴的狂喜表情。
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && ((!chosenStranger.isTaur() && !angelixxStranger.isTaur()) || pc.isTaur()==angelixx.isTaur()))
+			你和安吉莉克丝继续在[chosenStranger.name]面前缠绵，[chosenStranger.herHim]则急不可耐地掏出[chosenStranger.cock+]，火急火燎地
+		#ELSE
+			你急于体验安吉莉克丝的感觉，对着[chosenStranger.name]摇动自己[pc.ass+]，[chosenStranger.her]则急不可耐地掏出[chosenStranger.cock+]，火急火燎地
+		#ENDIF
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			顶向你[pc.pussy+]。[chosenStranger.her]扶着颤动的柱身，把[chosenStranger.cockHead+]对准你[pc.labia+]，立即把[chosenStranger.her][chosenStranger.cock+]捅进你饥渴的小穴。
+		#ELSE
+			顶向你[pc.asshole+]。[chosenStranger.her]扶着颤动的柱身，把[chosenStranger.cockHead+]对准你的[pc.asshole]，立即把[chosenStranger.her][chosenStranger.cock+]捅进你饥渴的菊穴。
+		#ENDIF
+	</p>
+	<p>
+		当你被这个完全陌生的人穿透时，你发出[pc.a_moan+]，同时快乐地凝视着在一旁挨操的安吉莉克丝的眼睛……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_POSE_ALLEYWAY_AFTER_SEX"><![CDATA[
+	<p>
+		餍足后，[chosenStranger.name]和[angelixxStranger.name]结束了性交，后退一步。你屏住呼吸，看着对面的安吉莉克丝，看到她美丽的脸上露出快乐的笑容。
+	</p>
+	<p>
+		[angelixxStranger.speech(我都说了他们很随便的，)][angelixxStranger.name]朝着伙伴大笑几声，拍了一把安吉莉克斯的屁股。那魅魔听到这番话，也咯咯笑了起来，抬起屁股对着巴掌迎了上去。
+	</p>
+	<p>
+		[chosenStranger.speech(嗬，这骚货干着可真爽，)][chosenStranger.name]也应和道，说着又对着你[pc.ass+]最后揉了一把。
+	</p>
+	<p>
+		[chosenStranger.name]和[angelixxStranger.name]一面相互嬉笑着调侃你们两个操起来多容易，一面离开了，只留你们在小巷中休息。
+	</p>
+	<p>
+		[angelixx.speech(真是太棒了！)]安吉莉克斯一边穿衣服一遍笑道。你也站起身，对着这只可爱的小魅魔笑了笑，她则又用恳求的眼神看着你，夹着嗓子道，[angelixx.speech(你是要送我回家了，对吧，[pc.name]？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_JULES"><![CDATA[
+	<p>
+		安吉莉克丝一说她想做爱，你的思绪立刻转到欢迎你来夜店的斑马男身上。因此，你向魅魔提议干脆同意给朱勒斯口交。
+	</p>
+	<p>
+		[angelixx.speech(那敢情好！)]她快乐地应和道，[angelixx.speech(他的鸡巴很大，真不错！)]
+	</p>
+	<p>
+		你和安吉莉克丝决定好如何结束今晚，回到夜店门口，在那里你发现朱勒斯正在和他的斑马同事聊天。当他看到你们俩的时候，打断了谈话，满脸笑容地问道：[jules.speech(是要来尝我的鸡巴吗？)]
+	</p>
+	<p>
+		你说的确如此，[pc.fingers+]一路挑逗着向下抚摸，直至他的胯部，好好地给他摸了一会。安吉莉克丝咯咯笑着，一边模仿你的动作抓向朱勒斯的下体，一边朝排队等着进夜店的人点点头，问道：[angelixx.speech(想让我们在大家面前给你口交吗？)]
+	</p>
+	<p>
+		朱勒斯的同事不赞成地摇摇头，他便指着附近的一扇门咕哝道：[jules.speech(去那个办公室里吧……)]
+	</p>
+	<p>
+		斑马男搂着你们的腰，把你们领到门口，走进一间又小又脏的办公室。你和安吉莉克丝不顾周围的环境，扑向那个帅气的斑马男，叫他把鸡巴掏出来。
+	</p>
+	<p>
+		[jules.speech(来喽，)]他哼了一声，脱下裤子，抽出他那硕大的乌木色肉棒。你和安吉莉克丝饥渴地抚摸着它，朱勒斯发出咕哝着命令道：[jules.speech(跪下来吸吧，荡妇们。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_JULES_SEX_START"><![CDATA[
+	<p>
+		你和安吉莉克丝乖乖照做，跪在朱勒斯面前。你们纷纷前倾到他的腹股沟，把嘴唇压在他的颤动的粗大阴茎上，热切地亲吻和舔舐。
+	</p>
+	<p>
+		[angelixx.speech(我要来了！)]安吉莉克丝咯咯笑着，然后张开嘴，把斑马男的宽阔扁平的龟头塞进嘴里。她咸湿地吮吸着它，舌头在朱尔斯肉感的尿道上旋转，而你则向前倾，亲吻他又大又重的蛋蛋。
+	</p>
+	<p>
+		[jules.speech(该轮到另一个荡妇了，)]朱勒斯咕哝着，把他的鸡巴从安吉莉克丝的嘴里拔出来，对准你的嘴巴。你乖乖地分开你的[pc.lips]，把他的颤动的肥屌含进入你的嘴里，而安吉莉克丝则吻他的柱身，你们两个一起努力，给他一次难忘的口交经历……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_JULES_AFTER_SEX"><![CDATA[
+	<p>
+		朱勒斯说自己完事了，安吉莉克丝咯咯笑着挑逗道：[angelixx.speech(不打算再来一轮吗？)]
+	</p>
+	<p>
+		[jules.speech(我没时间，)]他咕哝一声，[jules.speech(要是老板发现我又和顾客乱搞，他会杀了我的。来吧，我们走。)]
+	</p>
+	<p>
+		安吉莉克丝俏皮地朝朱勒斯地撅着嘴，和你一起站起来，不情愿地走回办公室门口。斑马男打了一下你们俩的屁股，哼了一声，[jules.speech(快一点，荡妇们！)]
+	</p>
+	<p>
+		你和安吉莉克丝在让朱勒斯陷入麻烦之前离开了办公室，迅速向斑马男道别，纷纷同意你们今晚很满足。你们离开夜店，回到街上，可爱的魅魔用恳求的眼神看着你，用甜腻腻的语气问道：[angelixx.speech(你会送我回家的对吧，[pc.name]？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_WALKED_HOME"><![CDATA[
+	<p>
+		你告诉安吉莉克丝你会和她回家，当她高兴地握住你的[pc.hand]，靠在你身上时，你难掩笑意。你们就这样依偎着朝恶魔之家的方向走去。
+	</p>
+	<p>
+		[angelixx.speech(那很有意思，)]可爱的魅魔叹了口气，[angelixx.speech(你也乐在其中吗，[pc.name]？)]
+	</p>
+	<p>
+		你告诉她今晚很愉快，你们两个就这样闲聊着，很快就到了洛维耶纳奢侈品店门外，你向她道别，在你的同伴跑到她的公寓门前之前，她很快吻了一下你，随后高兴地向你挥挥手，进屋去了，留下你在原地思考接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ANGELIXX_CLUB_REFUSE_TO_WALK_HOME"><![CDATA[
+	<p>
+		你不想前往恶魔之家，于是告诉安吉莉克丝你要去相反的方向，不能陪她回家了。
+	</p>
+	<p>
+		[angelixx.speech(噢……我想我得一个人走回家了，)]可爱的魅魔抱怨道。她调皮地朝你噘了噘嘴，咯咯笑着说，[angelixx.speech(今晚我玩得很开心，[pc.name]。我们下次再一起吧！)]
+	</p>
+	<p>
+		说完，安吉莉克丝就离开了，留下你一个人，思考现在要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	<!-- Sleip & Nir's content: -->
+	
+	<htmlContent tag="VISIT_SLEIP_NIR"><![CDATA[
+	<p>
+		过了三十秒左右，你听到门闩向后滑动的声音，然后门就向内打开了。然而，你发现来的不是安吉莉克丝，而是她的儿子斯雷普。他穿着[#sleip.getClothingInSlot(IS_TORSO_UNDER).getColourName()]的[#sleip.getClothingInSlot(IS_TORSO_UNDER).getName()]和[#sleip.getClothingInSlot(IS_LEG).getColourName()]的[#sleip.getClothingInSlot(IS_LEG).getName()]，
+		#IF(flags.hasFlag(FLAG_innoxia_sleip_nir_apartment_seen))
+			你可以再次看到他衣服下面隆起的巨大肌肉，[#sleip.getClothingInSlot(IS_TORSO_UNDER).getName()]的布料在他的胸肌和二头肌周围拉伸。
+		#ELSE
+			这是你第一次看到他没有穿兄弟二人出门时穿的防刺背心。你可以看到他衣服下面隆起的巨大肌肉，[#sleip.getClothingInSlot(IS_TORSO_UNDER).getName()]的布料在他的胸肌和二头肌周围拉伸。
+		#ENDIF
+	</p>
+	<p>
+		[sleip.speech(妈妈不在，)]他咕哝道，表示你今晚见不到安吉莉克丝了。他红色的眼睛和黑色的皮毛，再加上高大健壮的身材，给人一种令人生畏的感觉，而他低沉的嗓音和粗鲁的说话方式更突出了这一点。他的大蹄子踩在木地板上发出响亮的咔嗒声，一边后退一边咕哝道，[sleip.speech(你是打算就这么站着还是进来？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_ENTER"><![CDATA[
+	#IF(flags.hasFlag(FLAG_innoxia_sleip_nir_apartment_lounge_seen))
+		<p>
+			你接受梦魇的邀请，[pc.step]进公寓。当你经过这个高大的恶魔马时，你闻到了一股廉价的须后水的味道，但它无法完全掩盖他的男性气息。门在你身后迅速关上并闩好，尽管你知道他不会攻击你，但你很难不被梦魇那霸道的、掠夺的目光吓到。
+		</p>
+		<p>
+			你走进公寓，梦魇咕哝道，[sleip.speech(来吧，这边走。)]
+		</p>
+	#ELSE
+		<p>
+			你接受梦魇的邀请，[pc.step]进公寓。当你经过这个高大的恶魔马时，你闻到了一股廉价的须后水的味道，但它无法完全掩盖他的男性气息。门在你身后迅速关上并闩好，有那么一瞬间，你感觉肾上腺素飙升，梦魇那霸道的、掠夺的目光让你觉得自己即将受到攻击。
+		</p>
+		<p>
+			也许是察觉到了你的感受，也许只是为了搭讪，梦魇咕哝道，[sleip.speech(别担心，妈妈叫我们把你当朋友对待。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_INTRO"><![CDATA[
+	<p>
+		说完，他示意你跟着他，带你走出门厅，穿过附近的一扇门进入休息室。你马上就能看出这里没有人负责保持房间的整洁，三张沙发中的两张上堆满了各种各样的衣服、包和其他东西，只留下一个沙发用来坐。虽然房间的另一边有一扇窗户，但百叶窗关着，没法向外看，也没办法让别人看到里面。空啤酒瓶从房间最近角落的一个大垃圾桶里溢出来，而地毯久经踩踏，布满各种各样的污渍。
+	</p>
+	<p>
+		[nir.speech(嘿，[pc.name]，)]尼尔熟悉的身影从沙发的另一端喊道。就像他的哥哥一样，棕毛梦魇的肌肉在他的[#sleip.getClothingInSlot(IS_TORSO_UNDER).getColourName()][#sleip.getClothingInSlot(IS_TORSO_UNDER).getName()]下面清晰可见，他橙色的眼睛在你身上徘徊，
+		#IF(!flags.hasFlag(FLAG_innoxia_sleip_nir_apartment_lounge_seen))
+			#IF(flags.hasFlag(FLAG_innoxia_doll_factory_player_dollified))
+				说道，[nir.speech(别因为我们把你变成玩偶就生气，对吧？你能从那里面逃出来，真是干得漂亮。不管怎样，拿瓶啤酒坐下吧。)]
+			#ELSE
+				说道，[nir.speech(没什么过不去的，对吧？妈妈说我们现在都从良了。不管怎样，拿瓶啤酒坐下吧。)]
+			#ENDIF
+		#ELSE
+			#IF(pc.isVisiblyPregnant() && !pc.isCharacterReactedToPregnancy(nir))
+				他看着你的孕肚咕哝道，
+				#IF(pc.isCharacterPossiblyFather(nir.getId()))
+					[nir.speech(我把你肚子搞大了？我不想和那个混蛋扯上任何关系，所以别问我要什么。)]
+				#ELSEIF(pc.isCharacterPossiblyFather(sleip.getId()))
+					[nir.speech(斯雷普把你肚子搞大了？无所谓了。)]
+				#ELSE
+					[nir.speech(有人把你肚子搞大了？无所谓了。)]
+				#ENDIF
+			#ELSE
+				咕哝道，[nir.speech(拿瓶啤酒坐下吧。)]
+			#ENDIF
+		#ENDIF
+	</p>
+	#IF(pc.isVisiblyPregnant() && !pc.isCharacterReactedToPregnancy(sleip))
+		<p>
+			斯雷普第一次得知你怀孕了，他咆哮道，
+			#IF(pc.isCharacterPossiblyFather(sleip.getId()))
+				[sleip.speech(如果这个私生子是我的，那我不想和他扯上任何关系。别问我要火币或是别的什么，贱人。现在拿瓶啤酒过来坐下。)]
+			#ELSEIF(pc.isCharacterPossiblyFather(nir.getId()))
+				[sleip.speech(下次占据你子宫的会是我的种子，贱人。现在拿瓶啤酒过来坐下。)]
+			#ELSE
+				[sleip.speech(别以为这样就能阻止我操你的小穴。现在拿瓶啤酒过来坐下。)]
+			#ENDIF
+		</p>
+	#ENDIF
+	<p>
+		你看到咖啡桌上摆放了十几瓶犬根宝，斯雷普从你身边挤过去，坐到了沙发的另一端。由于沙发很长，所以沙发上的两个梦魇之间有足够的空间
+		#IF(pc.isTaur())
+			留给你和你兽态的下半身。
+		#ELSE
+			留给你。
+		#ENDIF
+		你回头快速扫了一眼另外两张沙发，发现已经没有其他地方可以坐了，尼尔简短地解释了一下原因，他咕哝道，[nir.speech(那些都是我们从新玩偶身上取下来的好看物件。我们一直想卖掉它们，但从来没有找到机会。)]
+	</p>
+	<p>
+		[sleip.speech(你是要坐下还是怎么样？)]斯雷普不耐烦地咕哝道。你刚刚想起这两个梦魇会绑架无辜的人并将其转化成性爱玩偶，你一时间思考着自己在这里做什么，但当黑色毛发的梦魇盯着你时，你觉得必须按照他说的做，于是迅速[pc.step]上前去，坐在他和他棕色毛发的兄弟之间。
+	</p>
+	<p>
+		现在你离着斯雷普和尼尔都很近，你发觉自己被廉价须后水、男性体味和洒出啤酒的气味所笼罩了。尼尔喝完手中的饮料，将空瓶子从你头顶上方扔过，砰的一声掉进房间角落的垃圾桶里。做完这些，兄弟俩又开始谈论起被你的到来所打断的话题，让你不知道该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_DRINK"><![CDATA[
+	<p>
+		你接受了梦魇们的饮酒邀请，身体前倾，从咖啡桌上拿起一瓶犬根宝啤酒，迅速用旁边的开瓶器打开了瓶盖。然后你放松地靠回沙发上，喝着小酒，此时两个梦魇继续在你旁边交谈，你一边听着他们的对话，一边喝干[pc.hand]中的酒。
+	</p>
+	<p>
+		你很快发现梦魇们最喜欢谈论的话题是他们在御城区的“工作”。他们讨论了当天早些时候从城市的小巷中绑架的无辜人们，并将他们变成了玩偶。他们还详细描述了侵犯这些不幸的受害者的感觉，一边描述着，一边发出笑声和兴奋的咕哝声。很明显，他们对自己的行为没有任何内疚或悔意，而且他们说得越多，你就越意识到这兄弟俩到底有多邪恶。
+	</p>
+	<p>
+		你根本接不上话，只是坐在那里喝你的啤酒，听着两个梦魇继续讨论他们最近的绑架行动以及今天将多少人变成了新的性爱玩偶。最终，你喝完了瓶中的啤酒，伸手向前准备放下空瓶，而斯雷普接过瓶子并扔进了附近的垃圾桶。这个动作打断了他们的谈话，让你开始思考如何填补突然到来的沉默。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_TALK"><![CDATA[
+	<p>
+		你多了解这两个梦魇，于是试图引导他们谈论自己的过去。你首先问他们是不是一直为安吉莉克丝工作，斯雷普回答说道，[sleip.speech(是啊，我一出生妈妈就想把我赶走，但我告诉她我想要一份工作和一个栖身之所。你真该看看她当时的表情！以前从没有孩子跟她顶过嘴。)]
+	</p>
+	<p>
+		[nir.speech(她想对我也来这一套，但斯雷普需要一个搭档，我就告诉妈妈我也要和他一起工作。)]尼尔补充道，继续简单解释道，[nir.speech(我比斯雷普晚出生一个月，但父亲不同。不过我们的父亲都一样，都是蠢笨的马化形奴隶。)]
+	</p>
+	<p>
+		[sleip.speech(是啊，妈妈总是对马屌情有独钟。)]斯雷普继续说道，向你透露了更多的信息，[sleip.speech(她会买一个新的马男奴隶，让他操一周，等她厌倦了，就会卖掉他，再买一个新的。)]
+	</p>
+	<p>
+		[nir.speech(我出生后不久，她就觉得玩够了奴隶，)]尼尔继续说道，
+		#IF(game.isIncestEnabled())
+			[nir.speech(那可能是因为那时她从我和斯雷普那里得到了她最钟爱的马屌。她还说她已经生够了孩子，在我之后，她就再也没要过孩子。)]
+		#ELSE
+			[nir.speech(她还说她已经生够了孩子，在我之后，她就再也没要过孩子。)]
+		#ENDIF
+	</p>
+	<p>
+		虽然你想了解梦魇的过去，但他们更多透露的是他们母亲的信息。还没等你把话题引回到他们身上，斯雷普就咕哝起来，[sleip.speech(这种谈话让我好无聊。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_FLIRT"><![CDATA[
+	<p>
+		两个健康又英俊的梦魇在你两侧，你不可能按捺与他们调情的冲动。为了吸引他们的注意力，你开玩笑地说自己很幸运，居然能和这样两位热辣的男人在一起度过[style.afternoon]。你很快就会发现落在自己身上那饥渴的、掠夺性的目光，以及暗示性的话语。
+		#IF(sleip.getTotalTimesHadSex(pc)>0)
+			因为之前已经和他们二人发生过关系，你挑逗他们是否经常想起你们在一起的乐趣。
+		#ELSE
+			你提醒他们在伊利斯中对峙的时光，你挑逗他们是否经常想要是当初能打败你，他们会有多开心。
+		#ENDIF
+	</p>
+	<p>
+		你好像挑逗得太过火了，
+		#IF(pc.hasBreasts())
+			斯雷普突然霸道地伸手抓住你[pc.breasts+]，用力揉捏你的乳房，一边咕哝道，
+			#IF(pc.getBreastRawSizeValue()<CUP_SIZE_C)
+				[sleip.speech(奶子不错，但还能更大……)]
+			#ELSEIF(pc.getBreastRawSizeValue()>=CUP_SIZE_DD)
+				[sleip.speech(真他妈是个大奶子……)]
+			#ELSE
+				[sleip.speech(不错，你的奶子长得挺好……)]
+			#ENDIF
+		#ELSE
+			斯雷普突然将一只手放在你的大腿上，粗暴地捏了一下，咕哝道，[sleip.speech(你的挑逗是认真的吧，骚货？)]
+		#ENDIF
+	</p>
+	<p>
+		在你做出反应之前，尼尔自信地将他的大手放在你的腹股沟上，霸道地摸索着，笑道，
+		#IF(pc.hasPenis())
+			[nir.speech(下面有鸡巴吗？)]
+		#ELSEIF(pc.hasVagina())
+			[nir.speech(这个小骚逼准备好被操了吗？)]
+		#ELSE
+			[nir.speech(准备好被操了吗？)]
+		#ENDIF
+	</p>
+	<p>
+		斯雷普也大笑起来，他放开了你，又拿了一瓶啤酒，然后靠在沙发上咕哝道，[sleip.speech(就快了，别担心，荡妇。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_DEMAND_TF"><![CDATA[
+	#IF(pc.isAbleToSelfTransform())
+		<p>
+			[nir.speech(你能来打招呼真是太好了，[pc.name]，但你并不是我们喜欢的那种人，)]尼尔突然咕哝了一声。
+		</p>
+		<p>
+			[sleip.speech(是啊，我们喜欢客人看起来更女性化一些。)]斯雷普解释道，又继续说，
+			#IF(!pc.hasBreasts())
+				[sleip.speech(你可以给自己转化出一个女性化的身体和一对漂亮的奶子。哦，还要变出个骚逼给我操。)]
+			#ELSE
+				[sleip.speech(你已经有奶子了，那你可以给自己转化出一个女性化的身体。哦，还要变出个骚逼给我操。)]
+			#ENDIF
+		</p>
+		<p>
+			你回头看了看尼尔，想看看他对斯雷普的要求作何反应，只见他一边点头一边附和道，[nir.speech(是啊，如果你想留下来，你就得有一个漂亮又好操的身体。那就开始转化吧。)]
+		</p>
+		<p>
+			[sleip.speech(或者你也可以选择离开，)]斯雷普咕哝道，[sleip.speech(但你想留下来找点乐子，不是吗？)]
+		</p>
+		<p>
+			两个贪婪的梦魇期待地盯着你，你思索要不要为了他们把自己变成女性化的样子……
+		</p>
+	#ELSE
+		<p>
+			[nir.speech(你能来打招呼真是太好了，[pc.name]，但你并不是我们喜欢的那种人，)]尼尔突然咕哝了一声。
+		</p>
+		<p>
+			[sleip.speech(是啊，我们喜欢客人看起来更女性化一些。)]斯雷普解释道，又朝自己的弟弟说道，[sleip.speech(尼尔，把我们从工厂拿的药水拿来。就在你旁边的沙发边上。)]
+		</p>
+		<p>
+			你回头看尼尔，只见他伸手从沙发扶手上抓起一个东西，然后举起来递给你，这显然是一个用过的塑料水瓶，里面装满了冒着气泡的粉红色液体。斯雷普咕哝着解释了一下情况，
+			#IF(flags.hasFlag(FLAG_innoxia_doll_factory_player_dollified))
+				[sleip.speech(你应该认得这种药水，荡妇；这是我们把你变成玩偶之前给你的药水。)]
+			#ELSE
+				[sleip.speech(这就是我们给新玩偶注射的药水，让她们在变成硅胶之前拥有合适的身体。)]
+			#ENDIF
+		</p>
+		#IF(pc.isAbleToHaveRaceTransformed())
+			<p>
+				[nir.speech(是啊，会给你一个漂亮又好操的身体，)]尼尔补充道，[nir.speech(别担心，不会把你变成硅胶的。只要喝了它，我们就让你留下来。)]
+			</p>
+		#ELSE
+			<p>
+				[nir.speech(是啊，会给你一个漂亮又好操的身体，)]尼尔补充道，[nir.speech(别担心，你是[pc.a_race]，对你起不了什么作用的。只要喝了它，我们就让你留下来。)]
+			</p>
+		#ENDIF
+		<p>
+			[sleip.speech(或者你也可以选择离开，)]斯雷普咕哝道，[sleip.speech(但你想留下来找点乐子，不是吗？)]
+		</p>
+		<p>
+			尼尔拧开瓶盖，把瓶子推到你面前，示意你拿起来喝……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SELF_TF"><![CDATA[
+	<p>
+		你不打算离开，于是决定满足梦魇们的愿望。你专注于自我转化，将身体变成了更女性化的形态，但就在你对自己的新形象感到满意时，斯雷普咕哝道，[sleip.speech(继续，荡妇。我希望你能看起来非常漂亮，不像被我们操成玩偶的那些普通婊子一样。)]
+	</p>
+	<p>
+		你按照吩咐，专注于自我转化，尽最大的努力让自己看起来更加美丽且有女人味。你的努力得到了尼尔赞许的咕哝声，他忍不住摸了摸你的新身体，
+		#IF(!pc.hasBreasts())
+			命令道，[nir.speech(让自己长出漂亮又丰满的奶子来。)]
+		#ELSEIF(!pc.hasVagina())
+			命令道，[nir.speech(现在让自己长出个小穴来，给我们找点乐子。)]
+		#ELSE
+			宣布道，[nir.speech(这样好多了。现在你可以留下来了。)]
+		#ENDIF
+	</p>
+	#IF(!pc.hasBreasts())
+		<p>
+			你再次按照吩咐，把注意力集中在胸部，使用转化能力让自己长出一对乳房，你不禁发出了一声女性化的呻吟。你让它们从两个小丘开始不断长大，直到它们膨胀成[pc.breastRows]DD罩杯的大乳房。
+			#IF(pc.getNippleSize().getValue()<2)
+				你不想让你的小乳头在新的乳房上显得格格不入，所以你让它们肿胀成大而挺立的奶头，这种感觉再次让你发出少女般的呻吟。
+			#ENDIF
+			斯雷普抓着你的新乳房，咕哝道，
+			#IF(!pc.hasVagina())
+				[sleip.speech(现在让自己长出个小穴来，给我找点乐子。)]
+			#ELSE
+				[sleip.speech(这样好多了。现在你可以留下来了。)]
+			#ENDIF
+		</p>
+	#ENDIF
+	#IF(!pc.hasVagina())
+		<p>
+			为了满足梦魇们的愿望，你将注意力转移到下体，专注于重塑你的生殖器。你的新阴户从一个细长的凹陷开始迅速成形，在你的新阴蒂和阴唇形成后，你感到你的转化不受控制地移向下腹部，让你拥有了一个功能完备的子宫。斯莱普用他粗壮的手指滑过你的新阴户，满意地咕哝道，[sleip.speech(这才是好婊子……)]
+		</p>
+	#ENDIF
+	<p>
+		现在，你的身体得到了梦魇们的认可，他们坐回沙发上，用掠夺性的目光扫视着你新的女性身体。他们似乎愿意在和你亲密接触之前再等一会儿……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_TF_POTION"><![CDATA[
+	<p>
+		你不想离开，便下定决心让他们得偿所愿。你从尼尔手里拿过瓶子，放到你的[pc.lips]去
+		#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			，你的嘴被堵住了，虽然有点困难，但总归
+		#ELSE
+			，
+		#ENDIF
+		吞下了里面的甜得恶心的液体。
+	</p>
+	#IF(pc.isAbleToHaveRaceTransformed())
+		<p>
+			你把空瓶子递给尼尔，尼尔刚把它扔进旁边的垃圾箱，你就感觉到药水强大的转化效果在你体内涌动。你震惊地深吸了一口气，
+			#IF(pc.getRace()==RACE_HUMAN)
+				低头看向你的身体，它迅速转化为逼真的人类形态。
+			#ELSE
+				抓紧了沙发，为你的转化做好准备。
+			#ENDIF
+			一连串冲击性的震动穿过你的身体，接着是一阵阵令人麻木的压力，随着每一次产生感觉，你的变化越来越大。不到一分钟，你就发现自己拥有了一个全新的身体，你再次震惊地吸了口气，你意识到除了你并非由硅胶制成，其他部分看起来和赛拉特里克斯的性爱玩偶一模一样。你现在完全秃顶，身高[units.size(160)]，拥有一对形状完美的DD罩杯乳房，如果不是因为你覆盖着[#pc.getCovering(BODY_COVERING_TYPE_HUMAN).getPrimaryColour().getName()]皮肤，你与斯雷普和尼尔擅长制作的玩偶们没有任何区别。
+		</p>
+		<p>
+			[sleip.speech(很好，)]斯雷普饥渴地咕哝着。他抓住你的新乳房，好好地抚摸着你的新身体，夸耀道，[sleip.speech(我已经操过这个身体几百次了，但永远不会厌倦。)]
+		</p>
+		<p>
+			[nir.speech(现在你有了一对漂亮的洞，)]尼尔轻笑一声，然后咕哝道，[nir.speech(操你任何一个洞的感觉都很棒。)]
+		</p>
+	#ELSE
+		<p>
+			你把空瓶子递给尼尔，尼尔刚把它扔进旁边的垃圾箱，你就感觉到药水强大的转化效果在你体内涌动。你震惊地深吸了一口气，抓紧了沙发，为你的转化做好准备。一连串冲击性的震动穿过你的身体，接着是一阵阵令人麻木的压力，随着每一次产生感觉，你变得越来越女性化。由于你是[pc.a_race]，药水无法将你转化成人类，
+			#IF(pc.getBreastSize().getMeasurement()<9)
+				但它确实给了你一对新乳房。你的胸部迅速增大，直到膨胀成[pc.breastRows]DD罩杯的大奶子。
+			#ELSE
+				而且由于你的乳房已经比它所能带来的大了，所以你的胸部也没有什么变化。
+			#ENDIF
+		</p>
+		<p>
+			#IF(!pc.hasVagina())
+				#IF(pc.getBreastSize().getMeasurement()<9)
+				你喘息着，尝试托起你的新乳房，
+				#ELSE
+				你喘息着靠在沙发上，
+				#ENDIF
+				你感觉到药水的力量移向你的腹股沟，它开始在那里迅速重塑你的生殖器。你的新阴户从一个细长的凹陷开始迅速成形，在你的新阴蒂和阴唇形成后，你感到转化移向了你的下腹部，让你拥有了一个功能完备的子宫。斯雷普用他粗壮的手指滑过你的新阴户，满意地咕哝道，[sleip.speech(这才是好婊子……)]
+			#ELSE
+				由于你已经拥有[pc.a_pussy+]，药水不会再为你带来任何改变，激烈的转化结束后，你深深地松了一口气。斯雷普用他粗壮的手指滑过你的阴户，满意地咕哝道，[sleip.speech(这才是好婊子……现在你可以留下来了。)]
+			#ENDIF
+		</p>
+	#ENDIF
+	<p>
+		说完，两个梦魇笑了起来，坐回沙发上。他们掠夺性的目光扫过你崭新的女性身体，他们似乎愿意在和你亲密接触之前再等一会儿……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_HYPNO_WATCH"><![CDATA[
+	<p>
+		你对自己的身体十分满意，无法心甘情愿地只是为了斯雷普和尼尔的快乐而转化它，于是你告诉梦魇们你有更好的主意。你站起身，拿出催眠手表，快速地确认了一下它已设置为双性恋取向，然后转过身面对两兄弟。
+	</p>
+	<p>
+		[sleip.speech(如果这是某种恶作剧的话，你会后悔的，)]斯雷普威胁道，[sleip.speech(妈妈说不许伤害你，可不代表我们会让你为所欲为。)]
+	</p>
+	<p>
+		你告诉兄弟俩不用担心，这不会对他们造成什么别的影响，只会帮助他们开拓眼界。尽管他们脸上都带着浓重的怀疑，但兄弟俩还是坐在沙发上，让你继续。你在他们面前来回摆动奥术装置，看着斯雷普和尼尔锐利的目光被空虚茫然的表情所取代。片刻之后，催眠怀表完成了重写梦魇们思维的任务，他们一齐从恍惚中醒来，摇了摇头。
+	</p>
+	<p>
+		[nir.speech(我不知道那是怎么回事，)]尼尔咕哝了一声，然后把目光投向了你的身体，证明催眠怀表已经起作用了，[nir.speech(但你突然间看起来真的很性感。)]
+	</p>
+	<p>
+		[sleip.speech(是的，我以前从未对[pc.a_gender]产生过性欲，)]斯雷普补充道，然后沉思着说，[sleip.speech(所以那个小饰品让我们变得像喜欢女人一样喜欢男人，对吗？如果你提前告诉我你要做什么，我应该会很生气，但现在我觉得……我不在乎了。你可以留下来，所以过来坐下吧。)]
+	</p>
+	<p>
+		你按照吩咐，收起了催眠怀表，坐到梦魇们中间。虽然你能立刻感觉到兄弟俩用掠夺性的目光盯着你的身体，但他们似乎愿意在和你亲密接触之前再等一会儿……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_DEMAND_COCK_STROKING"><![CDATA[
+	<p>
+		[sleip.speech(我无聊了，来点乐子，)]斯雷普突然宣布了一句，站起身就摸向下身，拉开他[#sleip.getClothingInSlot(IS_LEG).getName()]。他飞速脱掉了腰部以下的衣服，然后把衣服扔到一边，坐在你身边。当他张开双腿时，你忍不住往下看，看到一对又大又重的蛋蛋上有一个巨大而厚实的鞘时，你不禁吸了口气。他的生殖器，正如他的黑色皮毛所暗示的那样，是乌木色的，当他弯腰抓向他的蛋蛋时，你闻到一股味道浓重的雄汗味从他的腹股沟升起。
+	</p>
+	<p>
+		你看向对面的尼尔会作何反应，结果看到他也做了同样的动作，你完完整整、毫无遮掩地看完了所有画面。等他退后一步回到沙发上之前的位置时，你向下看到尼尔深色皮肤的生殖器几乎和他哥哥的一样大，你被一对马一样的鸡巴和蛋蛋包围着，感觉到
+		#IF(pc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+			自己的心在胸腔里兴奋地跳动着
+		#ELSE
+			一股兴奋的情绪涌上你的全身
+		#ENDIF
+		。
+	</p>
+	<p>
+		[nir.speech(把你的[pc.hands]放上来动，)]尼尔朝你咕哝着，[nir.speech(让我们硬起来。)]
+	</p>
+	<p>
+		你的目光在两个梦魇的腹股沟之间掠过，看到它们宽阔扁平的马龟头开始从厚厚的鞘中伸出来。尽管他们大部分仍然是松弛的，但他们张开的鞘的绝对周长表明，待他们完全勃起时，这些鸡巴将会有多大。只是想一想，你就又感到一阵兴奋。
+	</p>
+	<p>
+		[sleip.speech(过来，荡妇，)]斯雷普不耐烦地咕哝道，[sleip.speech(你就是为这而来的对吧？
+		#IF(pc.getArmRows()>1)
+			现在把其他[pc.hands]也放上来给我们打飞机。
+		#ELSE
+			现在给我们打飞机。
+		#ENDIF
+		)]
+	</p>
+	<p>
+		#IF(game.isNonConEnabled())
+			从他们霸道的语气和姿态上看，你预感[style.italicsTerrible(如果你按照梦魇的要求去做，直到他们满意前都不会放你离开)]……
+		#ELSE
+			你看着梦魇的兽屌，思索是应该按照他们的要求去做，还是选择此刻离开……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_HANDJOBS"><![CDATA[
+	<p>
+		你服从梦魇的要求，[pc.hands]摸向他们腿间，[pc.fingers+]在他们软趴趴的鸡巴上滑动。你绕着他们厚厚的鞘打转，感受着他们的马屌是如此的滚烫粗大，不禁发出兴奋的娇喘。
+		#IF(game.isPubicHairEnabled())
+			在你摸索他们的兽屌时，梦魇浓密的阴毛刮蹭着你的[pc.armSkin]。你的手摩擦着他们扁平龟头中间肉感的小尿道，此时斯雷普咕噜着，
+		#ELSE
+			你摸索他们的兽屌时，梦魇纷纷发出赞许的咕哝声。你的手摩擦着他们扁平龟头中间肉感的小尿道，此时斯雷普咕噜着，
+		#ENDIF
+		[sleip.speech(就是这样，荡妇……把我摸硬。)]
+	</p>
+	<p>
+		[nir.speech(你干得真不错，)]尼尔哼哼着，[nir.speech(按这个速度，用不了多久我就会像石头一样硬了……)]
+	</p>
+	<p>
+		你的[pc.fingers]向下滑动，探索他们的沉重滚烫的卵蛋，你完成熟悉兄弟俩的生殖器，并准备专注于让他们硬起来……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_LEAVE"><![CDATA[
+	#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=5)
+		<p>
+			你觉得梦魇的马屌对你来说太过头了，便站起来告诉兄弟俩你要走了。
+		</p>
+	#ELSE
+		<p>
+			你不愿再花时间和梦魇打交道，便站起来告诉兄弟俩你要走了。
+		</p>
+	#ENDIF
+	<p>
+		[sleip.speech(你随意。)]斯雷普咕哝道。
+	</p>
+	<p>
+		[nir.speech(出去的时候把前门关上，)]尼尔说道，又转向他的兄弟，问道，[nir.speech(想不想去红灯区找个妓女？)]
+	</p>
+	<p>
+		[sleip.speech(让我先喝完啤酒，)]斯雷普回答道。
+	</p>
+	<p>
+		你不想再听他们的对话了，于是迅速离开休息室，然后走向前门，离开公寓。你按照尼尔的要求关上了身后的门，走下楼梯后，又回到了洛维耶纳奢侈品店外面的街道上，你思考着接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_GET_HARD"><![CDATA[
+	<p>
+		受到梦魇话语的鼓舞，你
+		#IF(pc.getArmRows()>1)
+			用上总共[pc.handCount]只[pc.hands]，
+		#ENDIF
+		待兄弟俩的阴茎从鞘中挤出，你握住他们的阴茎，开始给他们撸管。他们粗大的阴茎在你的握持下膨胀变大，抽搐着迅速勃起。你显然干得不错，努力终于得到了回报，一股股黏糊糊、雄味浓重的先走液突然从梦魇的尿道口渗出，沾满了你[pc.finger+]。
+	</p>
+	<p>
+		[nir.speech(就是这样，荡妇，继续，)]尼尔高兴地哼了一声。你给尼尔打飞机时，他伸出手狎弄着你的身体，梦魇用他那低沉又粗糙的声音挑逗道，
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			[nir.speech(我马上就把我的鸡巴塞进你的喉咙……)]
+		#ELSE
+			[nir.speech(我这就在你脸上涂满精液……)]
+		#ENDIF
+	</p>
+	<p>
+		斯雷普似乎不想被弟弟比下去，他和尼尔一起摸索着你的身体，有力的双手捏住你[pc.breasts+]，发出了咆哮，
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(pc.isVisiblyPregnant())
+				[sleip.speech(即使你肚子里有个杂种，也不能阻止中出你的骚逼，婊子。)]
+			#ELSE
+				[sleip.speech(我希望你的骚逼已经准备好被内射了，婊子。也许我最后会把一个小混蛋塞进你的肚子里。)]
+			#ENDIF
+		#ELSEIF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+			[sleip.speech(我希望你的屁股已经准备好被猛干了，婊子。)]
+		#ELSE
+			[sleip.speech(我这就用我的精液浇满你，婊子。)]
+		#ENDIF
+	</p>
+	<p>
+		你继续抚摸着梦魇的肉棒，他们的手也在探索你的每一寸肌肤，你不知道他们还要多久才会有所行动，开始操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_FOCUS"><![CDATA[
+	<p>
+		斯雷普和尼尔继续抚摸你的身体，你决定专注于抚摸他们颤动的肥屌。
+		#IF(pc.getArmRows()>1)
+			[pc.handCount]只
+		#ENDIF
+		[pc.hands]上下围绕着他们坚硬的柱身，一边用他们的滑溜溜的先走液润滑，一边热情地给他们打飞机。
+	</p>
+	<p>
+		两个梦魇发出沉重饥渴的咕噜声，你决定给斯雷普一些额外的关注。[pc.fingers+]顺着他马屌下面的一条粗大的静脉往上摸，逗弄他宽阔扁平的龟头边缘，你的触摸使他高兴地呻吟，你不禁咧嘴笑了。你的[pc.fingers]绕着他的柱身，感到它在跳动，好似在迫不及待，需要塞进你的手心深处。
+	</p>
+	<p>
+		可不能厚此薄彼，你决定把注意力转向尼尔，挑逗地摸着他肥屌周围的厚鞘，抓着他的坚硬的柱身上下抽动。他颤动的滚烫鸡巴急切地抽搐着，当你在他的黑马屌周围上下涂抹他滑溜溜的先走液时，他发出低沉的咕噜声。
+	</p>
+	<p>
+		你收回分散给两个梦魇的注意力，继续给他们打飞机，而他们亵玩和摸索你的身体……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_BALLS"><![CDATA[
+	<p>
+		你想要给梦魇的蛋蛋一些关注，于是你落下[pc.hands]，往坚硬如岩石的鸡巴下方摸去。
+	</p>
+	<p>
+		首先，你要把全部注意力放在尼尔又大又沉的蛋蛋上，爱抚它们，把它们放在手心里把玩。他发出一声低沉的咕哝，挑逗道，
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			[nir.speech(我很快就会把里面的东西灌进你的喉咙……)]
+		#ELSE
+			[nir.speech(我很快就会把里面的东西喷满你的脸蛋……)]
+		#ENDIF
+	</p>
+	<p>
+		随着你得知尼尔的精液的命运，你转向他的哥哥，并把注意力集中在他身上。斯利普的黑檀木色的球和他弟弟的一样大，你正想象着它们能产生多少精液，不禁发出了一声淫荡的娇喘。你满怀爱意地捧起蛋蛋抚弄，此时黑毛的梦魇呻吟道，
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			#IF(pc.isVisiblyPregnant())
+				[sleip.speech(我的蛋蛋这么重，喜欢吧贱人？等会所有精液都会灌进你的小穴里。)]
+			#ELSE
+				[sleip.speech(我的蛋蛋这么重，喜欢吧贱人？等会所有精液都会灌进你的子宫里。)]
+			#ENDIF
+		#ELSEIF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+			[sleip.speech(我的蛋蛋这么重，喜欢吧贱人？等会所有精液都会灌进你的屁股里。)]
+		#ELSE
+			[sleip.speech(我的蛋蛋这么重，喜欢吧贱人？等会所有精液都会喷到#IF(pc.hasBreasts())你的奶子上#ELSE你的胸上#ENDIF。)]
+		#ENDIF
+	</p>
+	<p>
+		你把玩完梦魇的蛋蛋，手又移了回去，抓起他们巨大的马屌，继续打飞机……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_KISS_SLEIP"><![CDATA[
+	<p>
+		你想向斯雷普示爱，于是转头向他贴去，试图亲吻他。然而，你还没来得及亲吻他，黑毛梦魇就看出了你的意图，他伸出有力的大手抓住了你的头。
+	</p>
+	<p>
+		[sleip.speech(迷上我了，荡妇？)]他大笑起来，你张嘴准备回应，他突然把你往前一拉，把嘴唇贴在你的嘴唇上。紧接着，这个梦魇就霸道地把他粗壮的舌头伸进你的嘴里，把你的舌头压得软绵绵的。你突然发现自己被斯雷普牢牢地锁住，只能紧紧地贴在他身上，对着他的嘴呻吟，他开始用舌头捅你的喉咙。
+	</p>
+	<p>
+		你的嘴被这个肌肉发达的梦魇占据了一分钟左右，斯雷普突然中断了这个吻。你终于有了喘息的时间，大声吸了一口气。这个霸道的恶魔咕哝道，[sleip.speech(你味道不错，婊子。)]
+	</p>
+	<p>
+		你靠在沙发上，稍作休息，然后重新专注于抚摸兄弟俩跳动的肉棒……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_KISS_NIR"><![CDATA[
+	<p>
+		你决定让尼尔看看你有多喜欢他，于是你转过身，朝棕色毛发的梦魇靠过去，给了他一个吻。他看到了你的举动，便伸手抓住了你的后颈，牢牢地控制着你的脑袋，不给你任何改变主意的机会，强迫你把脸贴向他。
+	</p>
+	<p>
+		片刻之后，你发现自己[pc.lips+]紧紧贴在尼尔的嘴唇上。虽然由你主动，但现在却是这梦魇掌控全局，他的手仍然紧紧抓住你的后颈，张开嘴，迫不及待地用粗壮的舌头抵住你[pc.lips+]。
+	</p>
+	<p>
+		除了顺从，你什么也做不了，只能温顺地张开嘴唇，让舌头进入你的口腔。尼尔抓住机会伸出舌头，开始探索你的口腔内部。在你们交换唾液的过程中，你的舌头都乖乖顺从。梦魇用他强壮的肌肉强行填满你的口腔，你的舌头被粗暴地压到了你的口腔底部。
+	</p>
+	<p>
+		在继续以这种粗暴的方式亲吻了几分钟后，尼尔的闷哼声终于结束了，他突然后撤，松开了你的脖子。你气喘吁吁地喘息着，嘴角流出一串粘稠的唾液，你又把注意力集中到抚摸兄弟俩跳动的马屌上……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_FUCK"><![CDATA[
+	<p>
+		[sleip.speech(前戏已经足够了！)]斯雷普突然宣告道。他站起来，转过身来面对你，你发现自己正盯着他那宽大扁平的黑檀色大屌，他霸道地宣称道，
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			[sleip.speech(是时候让你的逼和我的鸡巴亲密接触了，婊子。)]
+		#ELSEIF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+			[sleip.speech(是时候让你的屁股和我的鸡巴亲密接触了，婊子。)]
+		#ELSE
+			[sleip.speech(是时候让你榨干我的鸡巴了，婊子。)]
+		#ENDIF
+	</p>
+	<p>
+		尼尔也赞许地发出咕哝声，从沙发上站起来，你突然发现自己面对着梦魇又粗又黑的鸡巴，他要求道，
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			[nir.speech(准备好吞我的鸡巴吧，骚货！)]
+		#ELSE
+			[nir.speech(我这就在你脸上涂满精液，骚货！)]
+		#ENDIF
+	</p>
+	<p>
+		前戏圆满结束，两个梦魇向你逼近，准备操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEX_START"><![CDATA[
+	<p>
+		你屈服于斯雷普和尼尔，允许他们把你摆好位置，黏糊糊的先走液迫不及待地从他们又粗又硬的鸡巴上滴下来。你被夹在他们中间，他们很快就粗暴地把你的衣服拉到一边，很明显他们以前已经这样做过几百次了。片刻之后，你就
+		#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+			被摁倒在地，斯雷普站在你后面，尼尔站在前面。
+		#ELSE
+			被兄弟俩摁倒在身前。
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			斯雷普抓着你[pc.hips+]，抬起你的屁股，过了一会儿，你感觉到他那宽大扁平的兽屌撞到你[pc.labia+]。一层又厚又黏、雄味浓重的先走液涂抹在你裸露的小穴，梦魇的鸡巴也准备插入，他随之咕哝道，[sleip.speech(你的逼属于我，婊子！)]
+		#ELSEIF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+			斯雷普抓着你[pc.hips+]，抬起你的屁股，过了一会儿，你感觉到他那宽大扁平的兽屌撞到你[pc.asshole+]。一层又厚又黏、雄味浓重的先走液涂抹在你裸露的菊穴，梦魇的鸡巴也准备插入，他随之咕哝道，
+			#IF(pc.hasVagina())
+				[sleip.speech(只可惜你把小穴给锁起来了……至少你的屁股是属于我的，婊子！)]
+			#ELSE
+				[sleip.speech(你的屁股属于我，婊子！)]
+			#ENDIF
+		#ELSE
+			#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				尼尔前进一步，向你展示了他宽大扁平的兽屌，然后抓着它，把它压在你的嘴唇上。一层又厚又黏、雄味浓重的先走液涂抹在你的下半张脸，梦魇的鸡巴也准备插入，他随之咕哝道，[nir.speech(张大点，婊子！)]
+			#ELSE
+				尼尔前进一步，向你展示了他宽大扁平的兽屌，抓着你的手腕去摸它。一层又厚又黏、雄味浓重的先走液涂抹在你[pc.fingers+]，他随之咕哝道，[nir.speech(你被锁住了是吧，婊子？也罢，打飞机也行……)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+			#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				在斯雷普准备操你时，尼尔走上前去，向你展示了他宽大扁平的兽屌，然后抓着它，将它抵在你[pc.lips+]上。你知道他在等着你做什么，于是张大了嘴，尼尔抓住你头的两侧，向前一挺，将他那又粗又黑的阴茎深深地插入了你的喉咙。他向后扭动臀部，再次向前撞击，操干着你的脸，他急切地发出哼哼声，[nir.speech(就是这样，吞下我的肉棒，荡妇！)]
+			#ELSE
+				在斯雷普准备操你时，尼尔走上前去，向你展示了他宽大扁平的兽屌，然后抓着你的手腕去摸它。一层又厚又黏、雄味浓重的先走液涂抹在你[pc.fingers+]，他愤怒地咕哝道，[nir.speech(真可惜你被锁住了……也罢，打飞机也行……)]
+			#ENDIF
+		#ELSE
+			#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+				在尼尔准备用你的嘴时，斯雷普上前抓住了你的手腕，然后引导你的手伸向他颤动的粗大阴茎。你[pc.fingers+]本能地握住他坚硬的阴茎，开始帮他打飞机，他发出了哼哼声，
+			#ELSE
+				在你开始抚摸尼尔的阴茎时，斯雷普向前一步，抓住你的另一只手，然后把它放在自己颤动的阴茎上。你[pc.finger+]本能地握住他坚硬的阴茎，你开始给他打飞机，他发出了哼哼声，
+			#ENDIF
+			[sleip.speech(我本想好好地操你一顿，但现在只能这样了……)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			就在这时，你感觉到斯雷普那乌黑的宽大兽屌向前压来，你[pc.labia+]在梦魇那推力面前顺从地分开。斯雷普巨大的龟头刚挤进你的阴道，他突然抓住你[pc.hips+]向前猛冲。他将巨大的肉棒深深插入你的小穴，开始前后扭动臀部，一边快速地用力操你，一边发出霸道的哼声，[sleip.speech(没错，婊子！你的逼完全属于我！)]
+		#ELSEIF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+			就在这时，你感觉到斯雷普那乌黑的宽大兽屌向前压来，你[pc.asshole+]在梦魇那推力面前顺从地分开。斯雷普巨大的龟头刚挤进你的菊穴，他突然抓住你[pc.hips+]向前猛冲。他将巨大的肉棒深深插入你的菊穴，开始前后扭动臀部，一边快速地用力操你，一边发出霸道的哼声，[sleip.speech(没错，婊子！你的屁股完全属于我！)]
+		#ELSE
+			你跪在两个梦魇前，专注于取悦他们颤动的巨大马屌……
+		#ENDIF
+	</p>
+	#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+		<p>
+			你被夹在两个梦魇之间，专注于取悦他们颤动的巨大马屌……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_LEAVE"><![CDATA[
+	#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=10)
+		<p>
+			想到自己可能被眼前的两个梦魇操弄，你突然发现自己想赶紧去别的地方。你站起来，推开斯雷普，告诉他们兄弟俩你要离开。
+		</p>
+	#ELSE
+		<p>
+			你突然对眼前发生的一切感到不舒服，发现自己不愿意再继续下去了。你把[pc.hands]从斯雷普和尼尔的鸡巴上撤开，站起身来，告诉他们你要走了。
+		</p>
+	#ENDIF
+	<p>
+		[sleip.speech(真的吗？)]斯雷普生气地嘟囔着，[sleip.speech(那行，滚吧。)]
+	</p>
+	<p>
+		[nir.speech(出去的时候把前门关上，)]尼尔对你咆哮，又转向他的兄弟，问道，[nir.speech(想不想去红灯区找些妓女来接着干这个荡妇没干完的事？)]
+	</p>
+	<p>
+		[sleip.speech(好啊，我现在真的很想操批，)]斯雷普回应道，[sleip.speech(等我先喝完这一杯。)]
+	</p>
+	<p>
+		你不想再听他们的对话了，于是迅速离开休息室，然后走向前门，离开公寓。你按照尼尔的要求关上了身后的门，走下楼梯后，又回到了洛维耶纳奢侈品店外面的街道上，你思考着接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_SEXUAL_LEAVE_DENIED"><![CDATA[
+	#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=10)
+		<p>
+			想到自己可能被眼前的两个梦魇操弄，你突然发现自己想赶紧去别的地方。你站起来，试图推开斯雷普，告诉他们兄弟俩你要离开。
+		</p>
+		<p>
+			[sleip.speech(你哪里也去不了，)]斯雷普哼了一声，然后一把抓住你，把你拉到他宽阔健壮的胸膛里。你正欲发表看法，突然发现你的头被他有力的大手抓住了。这个黑毛梦魇把你拉到他面前，粗暴有力地亲吻你，你任何的反对意见都很快被压制住了。他粗壮的舌头强行侵入你的口腔，热情地与你亲热，你不禁发出低沉的呻吟声。
+		</p>
+		<p>
+			与此同时，尼尔抓住你[pc.hips+]，将他勃起的巨大阴茎顶在你[pc.ass+]上。你被困在这两个高大强壮的梦魇之间，深知自己逃脱的希望渺茫，于是顺从地按兵不动，任由他们把你夹在中间。
+		</p>
+	#ELSE
+		<p>
+			你突然对眼前发生的一切感到不舒服，发现自己不愿意再继续下去了。你把[pc.hands]从斯雷普和尼尔的鸡巴上撤开，告诉他们你要走了，站起身来。
+		</p>
+		<p>
+			[sleip.speech(你哪里也去不了，)]斯雷普哼了一声，然后一把抓住你，把你扔到沙发去。你正欲发表看法，突然发现你的头被他有力的大手抓住了。这个黑毛梦魇把你拉到他面前，粗暴有力地亲吻你，你任何的反对意见都很快被压制住了。他粗壮的舌头强行侵入你的口腔，热情地与你亲热，你不禁发出低沉的呻吟声。
+		</p>
+		<p>
+			与此同时，尼尔抓着你的手摸向他的腹股沟。你被困在这两个高大强壮的梦魇之间，深知自己逃脱的希望渺茫，于是顺从地再次摸起他们的肉棒。
+		</p>
+	#ENDIF
+	<p>
+		在用舌头舔了你的嘴和喉咙一分钟后，斯雷普终于松开了你的头，中断了这个吻。你气喘吁吁地喘息，而他咆哮道，
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			[sleip.speech(等你让我在你的逼里清空蛋蛋，你就能走了，婊子。)]
+		#ELSEIF(game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+			[sleip.speech(等你让我在你的屁股里清空蛋蛋，你就能走了，婊子。)]
+		#ELSE
+			[sleip.speech(等我们玩够了，你就能走了，婊子。)]
+		#ENDIF
+	</p>
+	<p>
+		[nir.speech(没错，)]尼尔咕哝道，[nir.speech(你可不能这样撩完就一走了之。)]
+	</p>
+	<p>
+		到目前为止，你一直在和梦魇一起玩，似乎你将被迫和他们一起发展下去……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_AFTER_SEX"><![CDATA[
+	<p>
+		餍足后，斯雷普和尼尔退后一步，让你瘫倒在地板上。你气喘吁吁地呼出一声，
+		#IF(pc.isCharactersCumInOrifice(ORIFICE_VAGINA, sleip))
+			#IF(pc.isVisiblyPregnant() || !pc.isImpregnationPhysicallyPossible() || !pc.isFertile())
+				因感觉到斯雷普滚烫浓烈的精液从小穴里渗出而呻吟。
+			#ELSE
+				因感觉到斯雷普滚烫雄厚的精液从小穴里渗出而呻吟，忍不住想着梦魇会不会让你怀孕了。
+			#ENDIF
+		#ELSEIF(pc.isCharactersCumInOrifice(ORIFICE_ANUS, sleip))
+			因感觉到斯雷普滚烫浓烈的精液从菊穴里渗出而呻吟。
+		#ELSE
+			因感觉到斯雷普滚烫浓烈的精液流满全身而呻吟。
+		#ENDIF
+		#IF(pc.isCharactersCumInOrifice(ORIFICE_MOUTH, nir))
+			舌尖上还留着他弟弟的精液的味道，你慢慢地从地板上爬起来，开始收拾东西。
+		#ELSE
+			你脸上布满了他弟弟的精液，你慢慢地从地板上爬起来，开始收拾东西。
+		#ENDIF
+	</p>
+	<p>
+		[nir.speech(好爽，)]尼尔又抓起一瓶啤酒，瘫在沙发上。
+	</p>
+	<p>
+		[sleip.speech(那包的，[pc.sheIs]比我们以往操过的玩偶都要好，)]斯雷普补充道，又朝你咕哝几声，[sleip.speech(我们今晚要去别的地方，拿上你的东西离开这里。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SLEIP_NIR_AFTER_SEX_LEAVE"><![CDATA[
+	#IF(RND.nextInt(100)<50)
+		<p>
+			斯雷普和尼尔对你失去了兴趣，你被赶出了他们的公寓，这让你感觉自己像是被利用了。你快速收拾好东西，简短地道了别，迅速地离开公寓，直奔前门。然而，还没等你到达前门，你突然被人从后面抓住，你转过身，看到斯雷普正用他的红眼睛盯着你。
+		</p>
+		<p>
+			#IF(pc.isCharactersCumInOrifice(ORIFICE_VAGINA, sleip))
+				[sleip.speech(你的逼很特别，)]他粗鲁地嘟囔着，又要求道，[sleip.speech(什么时候再来看看我们，我想在你那性感的小穴里再来一发。)]
+			#ELSEIF(pc.isCharactersCumInOrifice(ORIFICE_ANUS, sleip))
+				[sleip.speech(你的屁眼很特别，)]他粗鲁地嘟囔着，又要求道，[sleip.speech(什么时候再来看看我们，我想在你那性感的屁股里再来一发。)]
+			#ELSE
+				[sleip.speech(你干起来好爽，)]他粗鲁地嘟囔着，又要求道，[sleip.speech(什么时候再来看看我们，我想再给你来一发。)]
+			#ENDIF
+		</p>
+		<p>
+			说完，黑色毛发的梦魇放开了你，陪你走到前门。他咕哝着向你简短道别，领你走出公寓，在你身后关上了门。你走下楼梯，又回到了洛维耶纳奢侈品店外面的街道上，你思考着接下来该做些什么……
+		</p>
+	#ELSE
+		<p>
+			斯雷普和尼尔对你失去了兴趣，你被赶出了他们的公寓，这让你感觉自己像是被利用了。你快速收拾好东西，简短地道了别，迅速地离开公寓，直奔前门。然而，还没等你到达前门，你突然被人从后面抓住，你转过身，看到尼尔脸上正露出侵略性的笑容。
+		</p>
+		<p>
+			#IF(pc.isCharactersCumInOrifice(ORIFICE_MOUTH, nir))
+				[nir.speech(你绝对很懂怎么嗦鸡巴，)]他粗鲁地嘟囔着，又要求道，[nir.speech(什么时候再来看看我们，我还想操你的脸。)]
+			#ELSE
+				[nir.speech(你干起来好爽，)]他粗鲁地嘟囔着，又要求道，[nir.speech(什么时候再来看看我们，我想还想再给你面交。)]
+			#ENDIF
+		</p>
+		<p>
+			说完，棕色毛发的梦魇放开了你，陪你走到前门。他咕哝着向你简短道别，领你走出公寓，在你身后关上了门。你走下楼梯，又回到了洛维耶纳奢侈品店外面的街道上，你思考着接下来该做些什么……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

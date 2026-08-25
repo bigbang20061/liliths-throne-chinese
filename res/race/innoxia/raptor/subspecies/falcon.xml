@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<subspecies>
+	<race>innoxia_raptor</race>
+	<colour>innoxia_raptor</colour>
+	<secondaryColour>innoxia_raptor</secondaryColour>
+	<tertiaryColour>innoxia_raptor</tertiaryColour>
+	<mainSubspecies>true</mainSubspecies>
+	<baseSlaveValue>14000</baseSlaveValue>
+	<attributeItemId>innoxia_race_raptor_energy_drink</attributeItemId>
+	<transformativeItemId>innoxia_race_raptor_energy_bar</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<nocturnality>DIURNAL</nocturnality>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>true</bipedalSubspecies>
+	<winged>true</winged>
+	<applySubspeciesChanges/>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_innoxia_raptor)
+			100
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="80">icon</iconName>
+	<backgroundName>background</backgroundName>
+	<bookIconName>icon</bookIconName>
+	<bookName><![CDATA[极锐之爪]]></bookName>
+	<basicDescriptionId>RAPTOR_BASIC</basicDescriptionId>
+	<advancedDescriptionId>RAPTOR_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<name><![CDATA[隼化形]]></name>
+	<namePlural><![CDATA[隼化形]]></namePlural>
+	<singularMaleName><![CDATA[隼男]]></singularMaleName>
+	<singularFemaleName><![CDATA[隼女]]></singularFemaleName>
+	<pluralMaleName><![CDATA[隼男]]></pluralMaleName>
+	<pluralFemaleName><![CDATA[隼女]]></pluralFemaleName>
+	<description><![CDATA[一种人形的隼，当下肢拟人时被称为隼化形，而当下肢呈现出鸮兽态时则称为半隼人。]]></description>
+	<nameHalfDemon>
+		<namesDefault>
+			<name><![CDATA[天狗]]></name>
+			<namePlural><![CDATA[天狗]]></namePlural>
+			<singularMaleName><![CDATA[天狗]]></singularMaleName>
+			<singularFemaleName><![CDATA[天狗]]></singularFemaleName>
+			<pluralMaleName><![CDATA[天狗]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[天狗]]></pluralFemaleName>
+		</namesDefault>
+	</nameHalfDemon>
+	<feralAttributes>
+		<feralName><![CDATA[隼]]></feralName>
+		<feralNamePlural><![CDATA[隼]]></feralNamePlural>
+		<feralSingularMaleName><![CDATA[隼]]></feralSingularMaleName>
+		<feralSingularFemaleName><![CDATA[隼]]></feralSingularFemaleName>
+		<feralPluralMaleName><![CDATA[隼]]></feralPluralMaleName>
+		<feralPluralFemaleName><![CDATA[隼]]></feralPluralFemaleName>
+		<legConfiguration>AVIAN</legConfiguration>
+		<sizeHeight>true</sizeHeight>
+		<size>56</size>
+		<breastRowCount>0</breastRowCount>
+		<nipplesPerBreastCount>1</nipplesPerBreastCount>
+		<crotchBreastRowCount>0</crotchBreastRowCount>
+		<nipplesPerCrotchBreastCount>2</nipplesPerCrotchBreastCount>
+		<armsOrWingsPresent>true</armsOrWingsPresent>
+		<fingerActionsAvailable>false</fingerActionsAvailable>
+		<hairPresent>false</hairPresent>
+	</feralAttributes>
+	<statusEffectDescription><![CDATA[
+		[npc.NamePos]的速度和敏捷性有助于[npc.herHim]在战斗中造成超级强力的打击。
+]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="5">MAJOR_PHYSIQUE</attribute>
+		<attribute value="0">MAJOR_ARCANE</attribute> 
+		<attribute value="0">MAJOR_CORRUPTION</attribute>
+		<attribute value="25">CRITICAL_DAMAGE</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="5" feminineWeighting="5">PHYSICAL</category>
+		<category masculineWeighting="1" feminineWeighting="2">LUST</category>
+		<category masculineWeighting="0" feminineWeighting="0">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="TWO_RARE">DOMINION</region>
+		<region rarity="FOUR_COMMON">FIELDS</region>
+		<region rarity="FOUR_COMMON">FIELD_CITY</region>
+	</regionLocations>
+	<worldLocations>
+		<world rarity="TWO_RARE">NIGHTLIFE_CLUB</world>
+	</worldLocations>
+	<flags/>
+</subspecies>

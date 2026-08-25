@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>100</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[球形鼻钉]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[球形鼻钉]]></namePlural>
+		<description><![CDATA[一种简单的球头鼻钉，由一个顶部有金属球体的薄圆柱体组成。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_NOSE</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>nose_ball_stud.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把球形鼻钉戴在[npc.her]的[npc.nose]穿孔。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把球形鼻钉戴在[npc2.namePos]的[npc2.nose]穿孔。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把球形鼻钉戴在[npc2.namePos]的[npc2.nose]穿孔。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把[npc.her]的球形鼻钉从[npc.her]的[npc.nose]穿孔中取下。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把[npc2.namePos]的球形鼻钉从[npc2.her]的[npc2.nose]穿孔中取下。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把[npc2.namePos]的球形鼻钉从[npc2.her]的[npc2.nose]穿孔中取下。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

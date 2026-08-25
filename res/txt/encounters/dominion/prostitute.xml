@@ -1,0 +1,1073 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- ALLEY_PROSTITUTE -->
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_STORM"><![CDATA[
+	#VAR
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+	#ENDVAR
+	
+	#IF(npc.hasEncounteredBefore())
+		<p>
+			#IF(canal)
+				你正在御城区的小路上徘徊，时刻警惕着危险的预兆。你突然在前面发现了[npc.name]，[npc.a_fullRace(true)]熟悉的身影，正背靠着一面砖墙。
+			#ELSE
+				你正在御城区危险孤寂的小巷中徘徊，时刻警惕着危险的预兆。你走到转弯处，[pc.step]过弯道，罕见地见到个活物：[npc.name]，[npc.a_fullRace(true)]熟悉的身影。
+			#ENDIF
+			[npc.sheIs]显然受到了肆虐中的奥术风暴影响，啪嗒啪嗒地转着圈，四处扫视找人来操。
+		</p>
+		#IF(npc.isVisiblyPregnant())
+			#IF(!npc.isCharacterReactedToPregnancy(pc))
+				#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+					<p>
+						你的目光立刻落到[npc.namePos]显眼的[style.colourSex(孕肚)]上，[npc.she]环视一周，注意到你的目光，立刻边狂野地[npc.moansVerb]边朝你冲过来，
+						[style.random(
+								[npc.speech(是哦，看到了吧，小东西！我用了奥术验孕棒，就是你把我操怀的！你他妈的对怀着孕的[npc.girls]情有独钟是吧？行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(又见到你啦，小宝贝！看看你都干了什么！我用了奥术验孕棒，我怀的就是你的崽！行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(喂喂！看看！我用了奥术验孕棒，你把我操怀孕了！你他妈的对怀着孕的[npc.girls]情有独钟是吧？行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)])]
+					</p>
+				#ELSEIF(pc.hasCompanions() && npc.getPregnantLitter().isFatherId(com.getId()))
+					<p>
+						你的目光立刻落到[npc.namePos]显眼的[style.colourSex(孕肚)]上，[npc.she]环视一周，注意到你和[com.companion]的目光，立刻边狂野地[npc.moansVerb]边朝你们冲过来，
+						[style.random(
+								[npc.speech(是哦，看到了吧，小东西！我用了奥术验孕棒，就是你把我操怀的！你他妈的对怀着孕的[npc.girls]情有独钟是吧？行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(又见到你啦，小宝贝！看看你都干了什么！我用了奥术验孕棒，我怀的就是你的崽！行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(喂喂！看看！我用了奥术验孕棒，你把我操怀孕了！你他妈的对怀着孕的[npc.girls]情有独钟是吧？行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)])]
+					</p>
+				#ELSE
+					<p>
+						你的目光立刻落到[npc.namePos]显眼的[style.colourSex(孕肚)]上，[npc.she]环视一周，注意到你的目光，立刻边狂野地[npc.moansVerb]边朝你冲过来，
+						[style.random(
+								[npc.speech(是哦，看到了吧，小东西！我用了奥术验孕棒，我肯定是怀了[#npc.getPregnantLitter().getFatherName()]的孩子！你他妈的对怀着孕的[npc.girls]情有独钟是吧？行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(又见到你啦，小宝贝！我用了奥术验孕棒，就是[#npc.getPregnantLitter().getFatherName()]把我操怀孕的！你他妈的对怀着孕的[npc.girls]情有独钟是吧？行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(喂喂！看看！我用了奥术验孕棒，就是[#npc.getPregnantLitter().getFatherName()]把我操怀孕的！你他妈的对怀着孕的[npc.girls]情有独钟是吧？行吧，我现在确实<i>需要</i>大干一场！我不会收你钱的！)])]
+					</p>
+				#ENDIF
+			#ELSE
+				#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+					<p>
+						你目光向下一扫，又发现[npc.namePos]还挺着个显眼的[style.colourSex(孕肚)]。[npc.she]环视一周，注意到你的目光，立刻边狂野地[npc.moansVerb]边朝你冲过来，
+						[style.random(
+								[npc.speech(对咯，小东西。我还等着我们的孩子出生呢！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(是呀，看到了吧，小宝贝。我还等着我们的孩子出生呢！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(哈喽，小美人？我们的孩子还在一点点长大哦！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)])]
+					</p>
+				#ELSEIF(pc.hasCompanions() && npc.getPregnantLitter().isFatherId(com.getId()))
+					<p>
+						你目光向下一扫，又发现[npc.namePos]还挺着个显眼的[style.colourSex(孕肚)]。[npc.she]环视一周，注意到你和[com.companion]的目光，立刻边狂野地[npc.moansVerb]边朝你们冲过来，
+						[style.random(
+								[npc.speech(对咯，小东西。我还等着我们的孩子出生呢！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(是呀，看到了吧，小宝贝。我还等着我们的孩子出生呢！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(哈喽，小美人？我们的孩子还在一点点长大哦！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)])]
+					</p>
+				#ELSE
+					<p>
+						你目光向下一扫，又发现[npc.namePos]还挺着个显眼的[style.colourSex(孕肚)]。[npc.she]环视一周，注意到你的目光，立刻边狂野地[npc.moansVerb]边朝你冲过来，
+						[style.random(
+								[npc.speech(对咯，小东西。我还怀着[#npc.getPregnantLitter().getFatherName()]的孩子呢！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(是呀，看到了吧，小宝贝。我还怀着[#npc.getPregnantLitter().getFatherName()]的孩子呢！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)] |
+								[npc.speech(哈喽，小美人？我还怀着[#npc.getPregnantLitter().getFatherName()]的孩子呢！管他的，你对怀孕的[npc.girls]情有独钟不是么。我现在确实<i>需要</i>大干一场！我不会收你钱的！)])]
+					</p>
+				#ENDIF
+			#ENDIF
+		#ELSE
+			<p>
+				[npc.race]注意到你的目光，边狂野地[npc.moansVerb]边开心地朝你冲过来，
+				[style.random(
+						[npc.speech(又见面了，小东西，你也懂吧？我<i>实在</i>需要大干一场！我不会收你钱的。和我做吧！)] |
+						[npc.speech(又见面了，小宝贝，你也懂吧？我<i>实在</i>需要大干一场！我不会收你钱的。和我做吧！)] |
+						[npc.speech(又见面了，小美人，你也懂吧？我<i>实在</i>需要大干一场！我不会收你钱的。和我做吧！)])]
+			</p>
+		#ENDIF
+		<p>
+			[npc.name]继续发出一连串狂乱野性的[npc.moans]，[npc.steps]过来，身体强行压住你。[npc.she]对上你的眼睛，口中念念有词，连连哀求，[npc.speech(求求你了，和我做吧，我什么都会做的！我受不了啦啊啊啊！)]
+		</p>
+		<p>
+			[npc.race]向前探身，意欲与你接吻，你考虑要不要满足[npc.herHim]，以快速脱身……
+		</p>
+	#ELSE
+		<p>
+			#IF(canal)
+				你正在御城区的小路上徘徊，时刻警惕着危险的预兆。你突然碰见了一个活物：[npc.a_fullRace(true)]。
+			#ELSE
+				你正在御城区黑暗孤寂的小巷中徘徊，时刻警惕着危险的预兆。你走到转弯处，[pc.step]过弯道，罕见地见到个活物：[npc.a_fullRace(true)]熟悉的身影。
+			#ENDIF
+			[npc.sheIs]显然受到了肆虐中的奥术风暴影响，啪嗒啪嗒地转着圈，四处扫视找人来操。
+		</p>
+		<p>
+			[npc.race]注意到你的目光，边狂野地[npc.moansVerb]边开心地朝你冲过来，
+			[style.random(
+					[npc.speech(嘿，小东西，我就是[npc.name]！你也懂吧？我<i>实在</i>需要大干一场！我不会收你钱的。和我做吧！)] |
+					[npc.speech(嘿，宝贝，我就是[npc.name]！你也懂吧？我<i>实在</i>需要大干一场！我不会收你钱的。和我做吧！)] |
+					[npc.speech(嘿，小美人，我就是[npc.name]！你也懂吧？我<i>实在</i>需要大干一场！我不会收你钱的。和我做吧！)])]
+		</p>
+		<p>
+			即使[npc.her]的反应没有出卖自己，但你还是注意到了[npc.her]放荡的衣着和脸上浓重的妆容，你一眼就看出[npc.name]是个娼妓。你在御城区大街上见过很多娼妓，但这位却躲在安全区外。你暗自揣测，[npc.she]肯定是个犯罪分子，不然没必要在这种危险又来客稀少的小巷子里工作。
+		</p>
+		<p>
+			[npc.name]继续发出一连串狂乱野性的[npc.moans]，[npc.steps]过来，身体强行压住你。[npc.she]对上你的眼睛，口中念念有词，连连哀求，[npc.speech(求求你了，和我做吧，我什么都会做的！我受不了啦啊啊啊！)]
+		</p>
+		<p>
+			[npc.race]向前探身，意欲与你接吻，你考虑要不要满足[npc.herHim]，以快速脱身……
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE"><![CDATA[
+#VAR
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+	#ENDVAR
+	
+	#IF(npc.hasEncounteredBefore())
+		<p>
+			你正在御城区#IF(canal)运河旁的小路上#ELSE危险且荒凉的小巷里#ENDIF徘徊，时刻警惕着任何麻烦的迹象。在前方，你突然发现了[npc.name]，[npc.a_fullRace(true)]熟悉的身影，他正背靠着一面砖墙。
+		</p>
+		#IF(npc.isVisiblyPregnant())
+			#IF(!npc.isCharacterReactedToPregnancy(pc))
+				<p>
+					瞬间，你的视线被吸引到[npc.her]显眼的[style.colourSex(孕肚)]上，[npc.name]看到你#IF(pc.hasCompanions())和你的同伴#ENDIF，发出轻笑并感叹道：
+					[style.random(
+						[npc.speech(是的，没错，靓仔！我用奥术验孕棒验过了，是
+							#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+								#IF(pc.hasCompanions())
+									[com.name]
+								#ELSE
+									你
+								#ENDIF
+							#ELSE
+								[#npc.getPregnantLitter().getFatherName()]
+							#ENDIF
+						把我肚子搞大的！)] |
+						[npc.speech(又见面了，宝贝！看看你都干了些什么？我用奥术验孕棒检查过了，我肯定怀了
+							#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+								#IF(pc.hasCompanions())
+									[com.name]
+								#ELSE
+									你
+								#ENDIF
+							#ELSE
+								[#npc.getPregnantLitter().getFatherName()]
+							#ENDIF
+						的孩子！)] |
+						[npc.speech(又见面了，小美人！你看看，我用奥术验孕棒检查过了，
+							#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+								#IF(pc.hasCompanions())
+									[com.name]
+								#ELSE
+									你
+								#ENDIF
+							#ELSE
+								[#npc.getPregnantLitter().getFatherName()]
+							#ENDIF
+						把我操怀孕了！)])]
+				</p>
+				<p>
+				#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+					#IF(pc.hasCompanions())
+						你决定给[com.name]一点时间来对真相做出反应，于是站在一旁，看着[com.she]走到[npc.name]面前，伸手抚摸[npc.her]的孕肚。
+					#ELSE
+						你走到[npc.name]面前，让[npc.herHim]握住你的[pc.hand]，引导它们向下抚摸[npc.her]肿胀的凸起。
+					#ENDIF
+				#ELSE
+					还没等你反应过来你之前的同伴让这个[npc.race]妓女怀孕了，
+				#ENDIF
+					[npc.she]又发出一阵轻笑，俏皮地咬了咬[npc.lip]，挑逗道，[npc.speech(你#IF(pc.hasCompanions())们谁#ENDIF对怀孕的[npc.girls]有兴趣吗？考虑到这种情况，我甚至可以给你打五折……)]
+				</p>
+			#ELSE
+				<p>
+					瞬间，你的视线被吸引到[npc.her]清晰可见的[style.colourSex(孕肚)]上，[npc.name]看到你#IF(pc.hasCompanions())和你的同伴#ENDIF，[npc.she]发出轻笑并感叹：
+					[style.random(
+						[npc.speech(没错，靓仔；我还在等我
+							#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+								和[#npc.getPregnantLitter().getFatherName()]
+							#ELSE
+								们
+							#ENDIF
+						的孩子出生呢！总之，如果你对操怀孕的[npc.girls]有兴趣，我给你打五折……)] |
+						[npc.speech(是的，没错，宝贝，我还怀着
+							#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+								[#npc.getPregnantLitter().getFatherName()]
+							#ELSE
+								你
+							#ENDIF的孩子呢！总之，如果你对操怀孕的[npc.girls]有兴趣，我给你打五折……)] |
+						[npc.speech(嗨，又见面了，小美人！我
+							#IF(npc.getPregnantLitter().isFatherId(pc.getId()))
+								和[#npc.getPregnantLitter().getFatherName()]
+							#ELSE
+								们
+							#ENDIF
+						的孩子还需要一段时间长大。总之，如果你对操怀孕的[npc.girls]有兴趣，我给你打五折……)])]
+				</p>
+			#ENDIF
+		#ELSE
+			<p>
+				[npc.she]看到你，笑了笑，走上前挡住你的路，说道：
+				[style.random(
+						[npc.speech(嗨，又见面了，靓仔！在找乐子吗？)] |
+						[npc.speech(嗨，又见面了，宝贝！想来点乐子吗？)] |
+						[npc.speech(嗨，又见面了，小美人！我可以给你找点乐子~！)])]
+			</p>
+			<p>
+				即使[npc.she]没有明说，[npc.she]放荡的穿着和脸上浓重的妆容也让人很明显地看出[npc.name]还在做妓女。就在你不知道该如何反应时，[npc.race]抱怨起来：
+				[npc.speech(来嘛！只要[#SPECIAL_PARSE_0]火币，怎么玩都行！#IF(pc.hasCompanions())或者如果你的朋友也想来，[#SPECIAL_PARSE_1]就能来双插我！#ENDIF)]
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你正在御城区#IF(canal)运河旁的小路上#ELSE危险且荒凉的小巷里#ENDIF徘徊，时刻警惕着任何麻烦的迹象。在前方，你突然发现了一个少见的生命形态，形态如[npc.a_fullRace(true)]，他正背靠着一面砖墙。
+		</p>
+		<p>
+			看到你，[npc.she]笑了笑，走上前挡住你的路，说道：
+			[style.random(
+					[npc.speech(嘿，靓仔，我是[npc.name]！在找乐子吗？)] |
+					[npc.speech(嘿，宝贝，我是[npc.name]！想来点乐子吗？)] |
+					[npc.speech(嘿，#IF(pc.isFeminine())美女#ELSE帅哥#ENDIF，我是[npc.name]！我可以给你找点乐子~！)])]
+		</p>
+		<p>
+			即使[npc.she]没有暴露身份，[npc.she]放荡的穿着和脸上浓重的妆容也很容易看出[npc.name]是个妓女。你在御城区的主干道上见过很多提供服务的妓女，为什么这个妓女会躲在远离安全区的地方？你猜[npc.she]一定是触犯了法律，她没有其他理由在小巷子这样危险又没人的地方工作。
+		</p>
+		<p>
+			就在你不知道该如何反应时，[npc.race]抱怨起来：
+			[npc.speech(来嘛！只要[#SPECIAL_PARSE_0]火币，怎么玩都行！#IF(pc.hasCompanions())或者如果你的朋友也想来，[#SPECIAL_PARSE_1]就能来双插我！#ENDIF)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_LEAVE"><![CDATA[
+	<p>
+		你毫不含糊地告诉[npc.name]，对做爱不感兴趣，然后迅速经过[npc.herHim]继续前行。
+	</p>
+	<p>
+		当你离开时，[npc.she]在你身后喊道：[npc.speech(如果你想享受人生中最棒的性爱，就回来吧！哦，也告诉你的朋友们！)]
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_DOM_SEX"><![CDATA[
+	#VAR
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+	#ENDVAR
+	
+	#IF(storm)
+		<p>
+			你决定利用[npc.namePos]欲火焚身的状态，靠近[npc.herHim] ，霸道地将你的嘴贴在[npc.her]的[npc.lips+]上。发出一声饥渴的[npc.moan]后，[npc.Name]立即开始肆无忌惮地亲吻你，然后稍稍后退，气喘吁吁， [npc.speech(来吧，干我吧！来吧，就在这里，就在现在！)]
+		</p>
+	#ELSE
+		<p>
+		没有跟[npc.name]还价，你掏出[#SPECIAL_PARSE_0]火币递给[npc.herHim]，然后告诉[npc.herHim]说你喜欢做主动的那方。
+	</p>
+		<p>
+			[npc.speech(我可太想听到这个了！)][npc.name]调笑道，然后抓住你的[pc.hand]叫嚷着：[npc.speech(来吧，我的公寓转弯就到了！)]
+		</p>
+		<p>
+			让这个[npc.race]妓女给你们带路，你跟着[npc.herHim]
+			#IF(canal)
+				沿着运河走了一段路后，[npc.she]突然转向小路，带你穿过一个杂草丛生的小院子，来到一个看起来很破旧的门口。
+			#ELSE
+				沿着小巷走了一段路后，[npc.she]突然转向一边，[npc.steps]到一个看起来很破旧的门口。
+			#ENDIF
+			[npc.name]从[npc.her]的包里拿出一把钥匙，伸向门锁，快速扭动并推了一下，门就打开了。当[npc.she][npc.steps]过敞开的门口时，你跟着[npc.herHim]走进[npc.namePos]的公寓。当[npc.she]在你身后关上门并上锁时，你快速环顾了一下四周，发现虽然家具和整体装饰都很破旧，但这个公寓却出奇地干净整洁、光线充足。
+		</p>
+		#IF(pc.hasCompanions())
+			<p>
+				知道[com.she]没有被邀请，[com.name]便在附近的沙发上坐下，告诉你[com.she]会在那里等你吃完。
+			</p>
+		#ENDIF
+		<p>
+			[npc.speech(我的房间在这边！)][npc.name]一边兴奋地叫着一边就捉住了你的[pc.hand]，然后带着你穿过内门，进入[npc.her]的卧室。[npc.she]转过身，展露出诱人的笑容，挑逗道，[npc.speech(来吧，让我看看你想如何支配我……)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_SUB_SEX"><![CDATA[
+	#VAR
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+	#ENDVAR
+	
+	#IF(storm)
+		<p>
+			你决定利用[npc.namePos]欲火焚身的状态，靠近[npc.herHim] ，霸道地将你的嘴贴在[npc.her]的[npc.lips+]上。发出一声饥渴的[npc.moan]后，[npc.Name]立即开始肆无忌惮地亲吻你，然后稍稍后退，气喘吁吁， [npc.speech(太棒了！我要把你干到失去知觉！就在这里，此时此刻！)]
+		</p>
+	#ELSE
+		<p>
+		虽然你对[npc.Name]的服务很感兴趣，但你想确保由[npc.herHim]来做主动的一方。当你递过[#SPECIAL_PARSE_0]火币时，你问[npc.herHim]是否可以主导你们的性爱。
+	</p>
+		<p>
+			[npc.speech(别担心，你这可爱的小东西，我会处理好的)][npc.name]自信地说，然后抓住你的[pc.hand]叫嚷着，[npc.speech(来吧，我的公寓就在拐角处！)]
+		</p>
+		<p>
+			让这个[npc.race]妓女给你们带路，你跟着[npc.herHim]
+			#IF(canal)
+				沿着运河走了一段路后，[npc.she]突然转向小路，带你穿过一个杂草丛生的小院子，来到一个看起来很破旧的门口。
+			#ELSE
+				沿着小巷走了一段路后，[npc.she]突然转向一边，[npc.steps]到一个看起来很破旧的门口。
+			#ENDIF
+			[npc.name]从[npc.her]的包里拿出一把钥匙，伸向门锁，快速扭动并推了一下，门就打开了。当[npc.she][npc.steps]过敞开的门口时，你跟着[npc.herHim]走进[npc.namePos]的公寓。当[npc.she]在你身后关上门并上锁时，你快速环顾了一下四周，发现虽然家具和整体装饰都很破旧，但这个公寓却出奇地干净整洁、光线充足。
+		</p>
+		#IF(pc.hasCompanions())
+			<p>
+				知道[com.she]没有被邀请，[com.name]便在附近的沙发上坐下，告诉你[com.she]会在那里等你吃完。
+			</p>
+		#ENDIF
+		<p>
+			[npc.speech(我的房间在这边！)][npc.name]一边兴奋地叫着一边就捉住了你的[pc.hand]，然后带着你穿过内门，进入[npc.her]的卧室。她转过身，展露出诱人的笑容，挑逗道， [npc.speech(所以我是支配你的那一方，嗯？让我告诉你我喜欢什么样的东西……)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_THREESOME"><![CDATA[
+	#VAR
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+	#ENDVAR
+	
+	#IF(storm)
+		<p>
+			你决定利用[npc.namePos]欲火焚身的状态，从[npc.herHim]身边[pc.step]开，让你的[com.companion]参加进来，你靠近[npc.herHim] ，霸道地将你的嘴贴在[npc.her][npc.lips+]上。发出一声饥渴的[npc.moan]后，[npc.name]立即开始肆无忌惮地亲吻你，然后稍稍后退，气喘吁吁， [npc.speech(来吧，干我吧！来吧，就在这里，就在现在！)]
+		</p>
+		<p>
+			你[pc.Stepping]到[npc.Name]身后，抓住[npc.her][npc.ass+]，[com.name]发出[com.moan+] ，准备和你一起操[npc.Name]……
+		</p>
+	#ELSE
+		<p>
+		没有跟[npc.name]还价，你掏出[#SPECIAL_PARSE_0]火币递给[npc.herHim]，然后告诉[npc.herHim]说[com.name]喜欢做主动的那方。
+	</p>
+		<p>
+			[npc.speech(~哦！~一次两个，是吗？)][npc.name]调笑道，迅速把钱装进口袋，[npc.race]转过身来，对着你和你的[com.companion]摇晃[npc.her][npc.ass+]，然后回头看了看，叫嚷着， [npc.speech(来吧，我的公寓转弯就到了！)]
+		</p>
+		<p>
+			让这个[npc.race]妓女给你们带路，你和[com.name]跟着[npc.herHim]。
+			#IF(canal)
+				沿着运河走了一段路后，[npc.she]突然转向小路，带你穿过一个杂草丛生的小院子，来到一个看起来很破旧的门口。
+			#ELSE
+				沿着小巷走了一段路后，[npc.she]突然转向一边，[npc.steps]到一个看起来很破旧的门口。
+			#ENDIF
+			[npc.name]从[npc.her]的包里拿出一把钥匙，伸向门锁，快速扭动并推了一下，门就打开了。当[npc.she][npc.steps]过敞开的门口时，你和你的[com.companion]跟着[npc.herHim]走进[npc.namePos]的公寓。当[npc.she]在你身后关上门并上锁时，你快速环顾了一下四周，发现虽然家具和整体装饰都很破旧，但这个公寓却出奇地干净整洁、光线充足。
+		</p>
+		<p>
+			[npc.speech(我的房间在这边！)][npc.name]一边兴奋地叫着一边就捉住了你的[pc.hand]，然后带着你和[com.name]穿过内门，进入[npc.her]的卧室。[npc.she]转过身，对着你们俩展露出诱人的笑容，挑逗道，[npc.speech(来吧，让我看看你们想怎么操我……)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_COMPANION_DOM_SEX"><![CDATA[
+	#VAR
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+	#ENDVAR
+	
+	#IF(storm)
+		<p>
+			你决定利用[npc.namePos]欲火焚身的状态，从[npc.herHim]身边[pc.step]开，让你的[com.companion]代替你。能有机会与这个饥渴的[npc.race]发生性关系，[com.name]高兴得不得了，靠近[npc.herHim] ，霸道地将[com.her]的嘴贴在[npc.her]的[npc.lips+]上。发出一声饥渴的[npc.moan]后，[npc.Name]立即开始肆无忌惮地亲吻你的[com.companion]，然后稍稍后退，气喘吁吁， [npc.speech(来吧，干我吧！来吧，就在这里，就在现在！)]
+		</p>
+		<p>
+			你[pc.Stepping]到一旁，观看[com.name]与[npc.name]就在
+			#IF(canal)
+				运河旁做爱……
+			#ELSE
+				小巷里做爱……
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			你想取悦你的[com.companion] ，你递过[#SPECIAL_PARSE_0]火币给[npc.name]，然后告诉[npc.herHim]说[com.name]喜欢做主动的那方。
+		</p>
+		<p>
+			[npc.speech(我可太想听到这个了！)][npc.name]调笑道，然后抓住你[com.companion]的[com.hand]叫嚷着：[npc.speech(来吧，我的公寓转弯就到了！)]
+		</p>
+		<p>
+			让这个[npc.race]妓女给你们带路，你和[com.name]跟着[npc.herHim]。
+			#IF(canal)
+				沿着运河走了一段路后，[npc.she]突然转向小路，带你穿过一个杂草丛生的小院子，来到一个看起来很破旧的门口。
+			#ELSE
+				沿着小巷走了一段路后，[npc.she]突然转向一边，[npc.steps]到一个看起来很破旧的门口。
+			#ENDIF
+			[npc.name]从[npc.her]的包里拿出一把钥匙，伸向门锁，快速扭动并推了一下，门就打开了。当[npc.she][npc.steps]过敞开的门口时，你和你的[com.companion]跟着[npc.herHim]走进[npc.namePos]的公寓。当[npc.she]在你身后关上门并上锁时，你快速环顾了一下四周，发现虽然家具和整体装饰都很破旧，但这个公寓却出奇地干净整洁、光线充足。
+		</p>
+		<p>
+			[npc.speech(我的房间在这边！)][npc.name]兴奋地叫道，再次抓住[com.namePos]的[com.hand]，然后带着[com.herHim]穿过内门，进入[npc.her]的卧室。[npc.she]转过身，展露出诱人的笑容，挑逗道，[npc.speech(来吧，让我看看你想如何支配我……)]
+		</p>
+		<p>
+			卧室的门开着，你可以看到[com.name]和[npc.name]在公寓的卧室里做爱……
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_COMPANION_SUB_SEX"><![CDATA[
+	#VAR
+		var canal = npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_ALLEYS_CANAL_CROSSING)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL)
+				|| npc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_DOMINION_CANAL_END);
+				
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+	#ENDVAR
+	
+	#IF(storm)
+		<p>
+			你决定利用[npc.namePos]欲火焚身的状态，丛[npc.herHim]身边[pc.step]开，让你的[com.companion]代替你。能有机会与这个饥渴的[npc.race]发生性关系，[com.name]高兴得不得了，靠近[npc.herHim] ，霸道地将[com.her]的嘴贴在[npc.her]的[npc.lips+]上。发出一声饥渴的[npc.moan]后，[npc.Name]立即开始肆无忌惮地亲吻你的[com.companion]，然后稍稍后退，气喘吁吁， [npc.speech(来吧，干我吧！来吧，就在这里，就在现在！)]
+		</p>
+		<p>
+			你[pc.Stepping]到一旁，观看[com.name]与[npc.name]就在
+			#IF(canal)
+				运河旁做爱……
+			#ELSE
+				小巷里做爱……
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			你想取悦你的[com.companion] ，你递过[#SPECIAL_PARSE_0]火币给[npc.name]，并问[npc.herHim]是否可以主动点。
+		</p>
+		<p>
+			[npc.speech(别担心，你这可爱的小东西，我会处理好的)][npc.name]自信地说道，然后抓住你的[com.companion]的[com.hand]叫嚷着，[npc.speech(来吧，我的公寓就在拐角处！)]
+		</p>
+		<p>
+			让这个[npc.race]妓女给你们带路，你和[com.name]跟着[npc.herHim]。
+			#IF(canal)
+				沿着运河走了一段路后，[npc.she]突然转向小路，带你穿过一个杂草丛生的小院子，来到一个看起来很破旧的门口。
+			#ELSE
+				沿着小巷走了一段路后，[npc.she]突然转向一边，[npc.steps]到一个看起来很破旧的门口。
+			#ENDIF
+			[npc.name]从[npc.her]的包里拿出一把钥匙，伸向门锁，快速扭动并推了一下，门就打开了。当[npc.she][npc.steps]过敞开的门口时，你和你的[com.companion]跟着[npc.herHim]走进[npc.namePos]的公寓。当[npc.she]在你身后关上门并上锁时，你快速环顾了一下四周，发现虽然家具和整体装饰都很破旧，但这个公寓却出奇地干净整洁、光线充足。
+		</p>
+		<p>
+			[npc.speech(我的房间在这边！)][npc.name]兴奋地叫道，再次抓住[com.namePos]的[com.hand]，然后带着[com.herHim]穿过内门，进入[npc.her]的卧室。[npc.she]转过身，展露出诱人的笑容，挑逗道，[npc.speech(所以我是支配你的那一方，嗯？让我告诉你我喜欢什么样的东西……)]
+		</p>
+		<p>
+			卧室的门开着，你可以看到[com.name]和[npc.name]在公寓的卧室里做爱……
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	
+	<!-- ALLEY_PROSTITUTE_QUESTION -->
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_QUESTION_APARTMENT"><![CDATA[
+	<p>
+		你躺在[npc.namePos]的床上，想知道为什么[npc.she]要选择在这种危险的小巷里工作。你看了看[npc.her]，问[npc.her]为什么不尝试在御城区安全的主干道上吸引顾客，或者更好的选择，在市区的红灯区里。
+	</p>
+	<p>
+		[npc.speech(嘿，我在哪里工作关你的什么事？)][npc.name]防备地问道，然后惊慌失措地感叹： [npc.speech(等等，你不是执法者吧？我可付不起他妈的[#SPECIAL_PARSE_0]火币的罚款！)]
+	</p>
+	<p>
+		你向[npc.name]解释你不是执法者，[npc.she]松了一口气，注意力转回到整理[npc.her]的衣服上，承认道：[npc.speech(这么说吧，我喜欢在不容易被发现的地方工作。总之，你的时间快到了，请准备离开……)]
+	</p>
+	<p>
+		从[npc.she]的反应来看，[npc.name]显然因为某种罪行被执法者通缉，需要支付[#SPECIAL_PARSE_0]火币的罚款才能脱身。如果你真的想这样做，你可以利用这些消息把[npc.herHim]清除出
+		#IF(game.getDialogueFlags().hasFlag(FLAG_prostitutionLicenseObtained))
+			这片区域，或者你想帮[npc.herHim]，给[npc.herHim]在天使之吻提供一份工作……
+		#ELSE
+			这片区域……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_QUESTION"><![CDATA[
+	#VAR
+		var storm = npc.isVulnerableToArcaneStorm() && game.getCurrentWeather()==WEATHER_MAGIC_STORM;
+	#ENDVAR
+	
+	<p>
+			你想知道[npc.Name]为什么会在这种危险巷子里揽客，便询问[npc.herHim]为什么不去红灯区，或者至少去御城区安全的主干道上吸引顾客。
+		</p>
+	<p>
+		[npc.speech(嘿，我在哪里工作关你的什么事？)][npc.name]防备地问道，然后惊慌失措地感叹： [npc.speech(等等，你不是执法者吧？我可付不起他妈的[#SPECIAL_PARSE_0]火币的罚款！)]
+	</p>
+	<p>
+		你向[npc.name]再三保证你不是执法者，发现[npc.she]明显松了口气。[npc.her]双手叉腰，承认道：
+		#IF(storm)
+			[npc.speech(这么说吧，我喜欢在不容易被发现的地方工作。那你现在是要付钱做爱还是怎么着？)]
+		#ELSE
+			[npc.speech(这么说吧，我喜欢在不容易被发现的地方工作。那你现在要操我还是怎么着？！)]
+		#ENDIF
+	</p>
+	<p>
+		从[npc.she]的反应来看，[npc.name]显然因为某种罪行被执法者通缉，需要支付[#SPECIAL_PARSE_0]火币的罚款才能脱身。如果你真的想这样做，你可以利用这些消息把[npc.herHim]清除出
+		#IF(game.getDialogueFlags().hasFlag(FLAG_prostitutionLicenseObtained))
+			这片区域，或者你想帮[npc.herHim]，给[npc.herHim]在天使之吻提供一份工作……
+		#ELSE
+			这片区域……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- ALLEY_PROSTITUTE_ANGELS_KISS -->
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_ANGELS_KISS"><![CDATA[
+	<p>
+		你想要给[npc.name]一个逃离泥潭的机会，于是问[npc.herHim]愿不愿意在一个安全正规的妓院里工作。
+	</p>
+	<p>
+		[npc.namePos]面露惊喜，[npc.she]小心翼翼地问道：[npc.speech(你的意思是？)]
+	</p>
+	<p>
+		你告诉[npc.name]你是妓院“天使之吻”之主的朋友，如果[npc.she]答应在那里工作，作为交换，[npc.her]的罚款会被交上。你承认[npc.her]需要把一部分收入付给妓院，但相比于时刻活在执法者的阴影之下，这代价很小了，更不用说[npc.she]能有一个安全的地方工作了。
+	</p>
+	<p>
+		不需要继续说服[npc.herHim]了，当[npc.she]听到你给[npc.herHim]提供的离开巷子的机会时，[npc.namePos]的[npc.eyes]里就闪烁起了光。[npc.she]倒吸一口气，[npc.speech(认真的吗？！你最好别玩儿我！我终于……终于可以离开小巷了？！)]
+	</p>
+	<p>
+		[npc.race]仍感到难以置信，你告诉[npc.herHim]可以信任你，指明[npc.herHim]去“天使之吻”，告诉安吉尔是“[pc.name]”让[npc.herHim]来的。
+	</p>
+	<p>
+		[npc.name]热泪盈眶，感激地接受了这份工作，[npc.speech(谢谢你，太谢谢你了！我真的……我的意思是，太感谢你了……我不知道该说什么好了……)]
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_ANGELS_KISS_END"><![CDATA[
+	<p>
+		你说不用谢，帮[npc.name]迅速收拾好东西。[npc.herHim]在离别前又道谢了一次，随后往红灯区的方向跑去。你自顾自笑着，为自己帮助[npc.name]逃离危险的小巷而感到高兴，接着继续上路……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="ALLEY_PROSTITUTE_ANGELS_KISS_END_APARTMENT"><![CDATA[
+	<p>
+		你说不用谢，帮[npc.name]迅速收拾好东西，和[npc.herHim]离开公寓，目送[npc.herHim]往红灯区的方向跑去。你自顾自笑着，为自己帮助[npc.name]逃离危险的小巷而感到高兴，接着继续上路……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- PROSTITUTE_REMOVAL_THREATENED -->
+	
+	<htmlContent tag="PROSTITUTE_REMOVAL_THREATENED_APARTMENT"><![CDATA[
+	<p>
+		你从床上站起身来，转身看着[npc.herHim]，刻意地询问[npc.she]做了什么，才在执法者那有了[#SPECIAL_PARSE_0]火币的罚款记录。[npc.race]发出一声恼怒的叹息，厉声道：[npc.speech(关你屁事！我就不该提……)]
+	</p>
+	<p>
+		你已经从[npc.herHim]那里得到你想要的了，于是继续试着摆脱[npc.herHim]。你漫不经心地大声透露着，要是执法者知道[npc.she]住在哪儿，不知道会做什么。当[npc.race]扭头一脸震惊地看着你时，你告诉[npc.herHim]你准备去一探究竟，然后走向门口，说你要将[npc.herHim]报告给最近的警员。
+	</p>
+	<p>
+		[npc.name]发狂似的抓起[npc.her]的包，往里面塞着私人物品，
+		#IF(npc.isFeminine())
+			尖叫道：
+		#ELSE
+			吼叫道：
+		#ENDIF
+		[npc.speech(你这个该死的[pc.bitch]！不敢相信你会这样对我！)]
+	</p>
+	<p>
+		你无视了[npc.namePos]的辱骂，快步离开公寓。几分钟后，你看见[npc.herHim]跌跌撞撞地跑出门，一边抽泣一边将[npc.her]的包紧紧贴在胸口上。[npc.race]急着尽可能远离[npc.her]的公寓，甚至没有注意到你，很快跑远了，消失在你的视野中……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="PROSTITUTE_REMOVAL_THREATENED"><![CDATA[
+	<p>
+		你不想让这个下流胚再在这附近待了，于是刻意地询问[npc.she]做了什么，才在执法者那有了[#SPECIAL_PARSE_0]火币的罚款记录。[npc.race]发出一声恼怒的叹息，厉声道：[npc.speech(关你屁事！我就不该提……)]
+	</p>
+	<p>
+		你继续试着摆脱[npc.herHim]，漫不经心地大声透露着，要是执法者知道[npc.she]住在哪儿，不知道会做什么。当[npc.race]一脸震惊地看着你时，你告诉[npc.herHim]你准备去一探究竟，接着转身走开，说你要将[npc.herHim]报告给最近的警员。
+	</p>
+	<p>
+		[npc.NamePos]在听到你说的话后，脸上的震惊很快被恐惧和愤怒代替，你转身走开后，[npc.she]在你背后
+		#IF(npc.isFeminine())
+			尖叫道：
+		#ELSE
+			吼叫道：
+		#ENDIF
+		[npc.speech(你这个该死的[pc.bitch]！不敢相信你会这样对我！)]
+	</p>
+	<p>
+		你无视了[npc.herHim]的辱骂，回头看见[npc.herHim]边哭边往巷子里跑，转入一个拐角后就消失在你的视野里了。你相信在威胁[npc.herHim]执法者会在这里找[npc.herHim]之后，你不会再在巷子里见到[npc.herHim]了……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- PROSTITUTE_REMOVAL_PAID -->
+	
+	<htmlContent tag="PROSTITUTE_REMOVAL_PAID_APARTMENT"><![CDATA[
+	<p>
+			你不想把[npc.Name]留在这种危险的地方，于是询问[npc.herHim]是不是交上[npc.she]之前提过的[#SPECIAL_PARSE_0]火币罚款，[npc.she]就可以离开这里。她恼怒地叹了口气，说，[npc.speech(是，但这不关你事！我就不该提……)]
+		</p>
+	<p>
+		你觉得帮[npc.herHim]交上这一大笔罚款更紧要，并没有被[npc.namePos]的态度所影响。你从[npc.her]的床上起身，把用来交罚款的[#SPECIAL_PARSE_1]火币给[npc.herHim]了。
+	</p>
+	<p>
+		[npc.speech(你认真的吗？！)][npc.Name]喊道，看到你给的那些火币，惊讶地捂住嘴。片刻后，[npc.Name]犹豫不定地伸手拿走火币，好像是觉得你会在最后一刻收回一样。你压根没这么想，任由[npc.she]拿走了火币。
+	</p>
+	<p>
+			[npc.speech(我不知道说什么好了……谢谢你！太感谢你了！我终于可以离开这里了！)][npc.name]啜泣着，抬头与你对视，给了你一个大大的笑容。在你作出回应前，[npc.name]好像突然想起了什么，冲到房间的另一端，俯身撬起了一块松动的地板。[npc.she]把藏在里面的东西掏出来，走到你面前递给你，说，[npc.speech(别问我是怎么搞到这东西的，我本来是想如果被执法者逮到了，这就是我最后的手段。我希望你能收下它！)]
+		</p>
+	<p>
+		[npc.race]没给你其他选择，直接把东西塞到你[pc.hands]里。你低头，看见手里的是<b>[#SPECIAL_PARSE_0]</b>！
+	</p>
+	<p>
+		你谢过[npc.name]，告诉[npc.her]别再让自己处于这样糟糕的境地了。[npc.race]对你笑了笑，说：[npc.speech([style.random(交上罚款以后，我要来一次穿越无尽之海的旅行，我受够这个地方了！|交上罚款后我就搬走，我受够御城区了！|交上罚款后我就往东走，去莱昂内斯的港口。我要离开王国，再也不回来了！|交上罚款后我就离开御城区，我受够这个地方了！)])]
+	</p>
+	<p>
+			[npc.her]说完，转身离开公寓，跑去交罚款了。你因做了好事而感到满足，昂起头，跟随[npc.namePos]的步伐继续你的旅程……
+		</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="PROSTITUTE_REMOVAL_PAID"><![CDATA[
+	<p>
+			你不想把[npc.Name]留在这种危险的地方，于是询问[npc.herHim]是不是交上[npc.she]之前提过的[#SPECIAL_PARSE_0]火币罚款，[npc.she]就可以离开这里。她恼怒地叹了口气，说，[npc.speech(是，但这不关你事！我就不该提……)]
+		</p>
+	<p>
+		你觉得帮[npc.herHim]交上这一大笔罚款更紧要，并没有被[npc.namePos]的态度所影响。你走过去把用来交罚款的[#SPECIAL_PARSE_1]火币给[npc.herHim]了。
+		</p>
+	<p>
+		[npc.speech(你认真的吗？！)][npc.Name]喊道，看到你给的那些火币，惊讶地捂住嘴。片刻后，[npc.Name]犹豫不定地伸手拿走火币，好像是觉得你会在最后一刻收回一样。你压根没这么想，任由[npc.she]拿走了火币。
+	</p>
+	<p>
+		[npc.speech(我不知道说什么好了……谢谢你！太感谢你了！我终于可以离开这里了！)][npc.name]啜泣着，抬头给了你一个大大的笑容，眼里满是喜悦。在你作出回应前，[npc.name]好像突然想起了什么，往巷子里跑了一段，弯腰将一块松动的壁篦滑到一边。[npc.she]把藏在后面的东西掏出来，走到你面前递给你说：[npc.speech(别问我是怎么搞到这东西的，我本来是想如果被执法者逮到了，这就是我最后的手段。我希望你能收下它！)]
+	</p>
+	<p>
+		[npc.race]没给你其他选择，直接把东西塞到你[pc.hands]里。你低头，看见手里的是<b>[#SPECIAL_PARSE_0]</b>！
+	</p>
+	<p>
+		你谢过[npc.name]，告诉[npc.her]别再让自己处于这样糟糕的境地了。[npc.race]对你笑了笑，说：[npc.speech([style.random(交上罚款以后，我要来一次穿越无尽之海的旅行，我受够这个地方了！|交上罚款后我就搬走，我受够御城区了！|交上罚款后我就往东走，去莱昂内斯的港口。我要离开王国，再也不回来了！|交上罚款后我就离开御城区，我受够这个地方了！)])]
+	</p>
+	<p>
+		[npc.her]说完，转身跑去交罚款。你因做了好事而感到满足，昂起头，跟随[npc.namePos]的步伐继续你的旅程……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- PROSTITUTE_FIGHT -->
+	
+	<htmlContent tag="PROSTITUTE_FIGHT_APARTMENT"><![CDATA[
+	<p>
+		你已经玩腻[npc.herHim]了，是时候让这个婊子认清自己的角色了。你知道[npc.sheIs]被执法者通缉，就算被揍了也不可能去上报。你从床上站起身来，直接告诉[npc.herHim]你要好好教训[npc.herHim]一下。
+	</p>
+	<p>
+		[npc.speech(搞什么？！)][npc.race]大叫着跳起来，摆出防御姿态。[npc.speech(离我远点！)]
+	</p>
+	<p>
+		你打算从一而终，没管[npc.race]说了什么，直接发起攻击……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="PROSTITUTE_FIGHT"><![CDATA[
+	<p>
+		你已经听腻[npc.herHim]的话了，是时候让这个婊子认清自己是什么角色。你知道[npc.sheIs]被执法者通缉，就算被揍了也不可能去上报。你往前一步，直接告诉[npc.herHim]你要好好教训[npc.herHim]一下。
+	</p>
+	<p>
+		[npc.speech(搞什么？！)][npc.race]大叫着往后跳，摆出防御姿态。[npc.speech(离我远点！)]
+	</p>
+	<p>
+		你打算从一而终，没管[npc.race]说了什么，直接发起攻击……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_COMBAT_VICTORY -->
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY"><![CDATA[
+	<p>
+		[npc.Name]踉跄着后退，倒在地上，完全被击败了。[npc.she]抬起头看着你，你看到[npc.she]的[npc.eyes]里流露出绝望而狂野的神情。[npc.she]发出可怜的呜呜声，哀求道：[npc.speech(你想对我做什么都行！只是，求求你，我不想做奴隶！不要把我交给执法者！)]
+	</p>
+	<p>
+		尽管[npc.name]已陷入了可怕的境地，但你的强大奥术灵气似乎对[npc.she]产生了强烈的影响。就在[npc.she]乞求你手下留情的时候，你看到[npc.herHim]饥渴地瞥了一眼你的身体。
+		
+			[npc.she]似乎不知道自己在做什么，
+			#IF(npc.isTaur())
+				开始用[npc.she]的后臀摩擦附近的下水管，
+			#ELSE
+				[npc.hand]突然垂到[npc.she]的腹股沟，开始抚摸自己，
+			#ENDIF
+			发出一阵[npc.a_moan+]……
+	</p>
+	<p>
+		<i>你已经揭露了[npc.namePos]的逃犯身份，你意识到[style.italicsMinorBad(这将是你最后一次见到[npc.herHim])]，一旦你离开，[npc.sheIs]肯定会逃走。</i>
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY_SEX"><![CDATA[
+	<p>
+		你决定满足这个饥渴的[npc.race]，于是你拉起[npc.her]，与[npc.hers]肌肤相贴。[npc.name]发出[npc.a_moan+]，乞求道：[npc.speech(嗯对！来操我吧！)] 
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY_SEX_GENTLE"><![CDATA[
+	<p>
+		你决定满足这个饥渴的[npc.race]，于是你轻柔地拉起[npc.her]，与[npc.hers]肌肤相贴。[npc.name]发出[npc.a_moan+]，乞求道：[npc.speech(嗯对！来操我吧！)] 
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY_SEX_ROUGH"><![CDATA[
+	<p>
+		你决定满足这个饥渴的[npc.race]，于是你粗暴地拉起[npc.her]，激烈地与[npc.hers]肌肤相贴。[npc.name]发出[npc.a_moan+]，乞求道：[npc.speech(嗯对！来操我吧！)] 
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY_SUBMIT"><![CDATA[
+	<p>
+		你手足无措地站在原地，回想起刚刚攻击的可怜[npc.race]，不禁有些愧疚。你俯下身，第一时间开始向对方道歉，问[npc.name]可以怎样补偿[npc.herHim]。
+	</p>
+	<p>
+		有那么一瞬间，[npc.name]一脸困惑。但是，[npc.she]看到你真的为自己刚才的行为感到困扰，脸上浮现出了邪恶的笑容。[npc.she]被你磅礴的奥术灵气带来的欲望所吞噬，站起来抓住你的[pc.arm]，激烈地与你肌肤相亲，怒吼道：[npc.speech(不如你先好好道个歉怎么样？！)]
+	</p>
+	<p>
+		[npc.namePos]用力抓住你的[pc.arm]。你顺从的本性占据主导，不禁发出淫靡的呻吟，大叫道：[pc.speech(我真的很抱歉！求你原谅我吧！我什么都会做的，只要你开口！)]
+	</p>
+	<p>
+		[npc.Name]恶狠狠地低声咆哮着，俯身压向你，把[npc.her]的舌头伸进你的嘴里激吻。见对方如此，你诧异地发出闷声的尖叫，但当[npc.her]用[npc.hands]开始粗鲁地揉捏你的屁股时，你意识到你很享受事情的走向……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY_THREESOME"><![CDATA[
+	<p>
+		你看见[npc.name]倒地，忍不住得意地笑了，转身对[com.name]提议你们俩可以一起用这个战败的妓女爽爽。
+	</p>
+	<p>
+		[com.name]积极地回应着你的建议，在那个战败的[npc.race]面前跪下说道：[com.speech(你最好口活不错……)]
+	</p>
+	<p>
+		[npc.Name]自己四肢着地趴在地上，你跪到[npc.herHim]后面，挪着往前，下体抵在[npc.her][npc.ass+]上。[npc.name]在被你们击败后筋疲力尽，除了挨操其他什么都做不了了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY_GIVE_TO_COMPANION"><![CDATA[
+	<p>
+		你在[npc.Name]倒地的时候不禁得意地笑了，转身让[com.name]好好和这手下败将玩玩！)]
+	</p>
+	<p>
+		[com.name]积极响应，俯身抓着[npc.her]的[npc.arm]将[npc.her]一把拉起。[npc.Name]一站起来就靠在了[npc2.name]身上，[npc.moaning]着：[npc.speech(嗯~！啊~！要我！快要我！)]
+	</p>
+	<p>
+		没有任何预兆，[npc.race]突然将[npc.her][npc.lips]贴在你的[com.companion]的嘴唇上，热情地亲吻[com.herHim]。[com.name]急于答复对方充满激情的吻，把这个妓女拉进[com.her]怀抱，将[com.her][com.tongue+]推进[npc.her]嘴里。
+	</p>
+	<p>
+		[com.name]看到[npc.her]充满欲望的目光在[com.she]的身体上游走，片刻后，将[npc.name]推开一点，咧嘴笑了出来。而后[com.name]紧紧抓住[npc.her][npc.hips+]，发出饥渴的[com.moan]，准备着下一步的动作……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_VICTORY_OFFER_COMPANION"><![CDATA[
+	<p>
+		你看见[npc.her]倒在地上，为此感到有些抱歉，于是转向[com.name]，希望[com.her]献上身体，以此让[npc.race]好受点。
+	</p>
+	<p>
+		#IF(com.isAttractedTo(npc) || !game.isNonConEnabled())
+			[com.speech(好吧，[pc.name]，)][com.name]回答，[com.speech(如果你真的希望我这么做的话……)]
+		#ELSE
+			[com.speech([pc.Name]！搞什么？！)][com.name]惊恐地回答，[com.speech(我一点儿也不想这么干！)]
+		#ENDIF
+	</p>
+	<p>
+		[npc.speech(什么情况？)][npc.Name]问道。[npc.she]撑着地站了起来，意识到你并不打算继续强暴[npc.herHim]。
+	</p>
+	<p>
+		#IF(com.isAttractedTo(npc) || !game.isNonConEnabled())
+			[com.speech(我们在决定谁是那个能被你操的幸运儿！)][com.name]答道，转身走向[npc.name]，[com.speech(最后决定是我！)]
+		#ELSE
+			[pc.speech(我们在决定谁是那个能被你操的幸运儿！)]你答道，拉着[com.name]转个圈后把[com.herHim]推向了[npc.name]，[pc.speech(最后决定是[com.name]！)]
+		#ENDIF
+	</p>
+	<p>
+		你俩都还来不及有所行动，[npc.name]逸出一声饥渴的[npc.moan]，随后突然接近并抓住了[com.namePos]的[com.arm]。[npc.she]用力一扯，强迫着将[com.name]拉进怀里，然后狂热地吻上[com.her]的[com.lips]。片刻之后，[npc.she]松开[com.name]，咆哮道，[npc.speech(你会做个好[com.girl]，对吗婊子？你的小朋友会看着我把你干到不省人事！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- AFTER_COMBAT_DEFEAT -->
+	
+	<htmlContent tag="AFTER_COMBAT_DEFEAT"><![CDATA[
+	<p>
+		你不能继续战斗了，双[pc.legs]逐渐无力，最终，你
+		#IF(pc.hasCompanions())
+			与[com.name]
+		#ENDIF
+		瘫倒在地，再起不能。一阵嘲弄声响起，你抬头一看，只见[npc.name]得意地冲你坏笑。
+	</p>
+	#IF(npc.isAttractedTo(pc) && npc.isWillingToRape())
+		<p>
+			[npc.speech(哈！你可真弱！)][npc.she]说着，俯下身抓起你的一只胳膊，把你拉了起来，随后将你按在墙上，咒骂道，[npc.speech(看样子我该走了，免得你的执法者朋友逮到我！不过，在这之前，让我先给你个教训，好让你学会别招惹陌生人！)]
+		</p>
+		#IF(pc.hasCompanions())
+			<p>
+				你那战败的[com.companion]还在昏迷之中，完全没办法来帮你一把。现在，没有人能阻止[npc.name]对你肆意妄为…… 
+			</p>
+		#ENDIF
+		<p>
+			<i>你已经揭露了[npc.namePos]的逃犯身份，你意识到[style.italicsMinorBad(这将是你最后一次见到[npc.herHim])]，一旦[npc.sheIs]玩够了，[npc.her]肯定会逃走。</i>
+		</p>
+	#ELSE
+		<p>
+			[npc.speech(哈，易如反掌！)][npc.she]说，俯身抓住你的一条[pc.arms]。
+		</p>
+		<p>
+			[npc.name]把你拉起来，粗暴地将你推到附近的墙上，命令你掏钱。你不情愿地照做了。[npc.she]一把拿走你的钱，又粗暴地将你推倒在地。
+		</p>
+		<p>
+			[npc.speech(看来我又得走了。我可不想在这里等着你的小执法者朋友们来抓我！)][npc.she]冲你咆哮，然后转身跑开了。
+		</p>
+		<p>
+			<i>你已经揭露了[npc.namePos]的逃犯身份，你意识到[style.italicsMinorBad(这是你最后一次见[npc.herHim])]。</i>
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_DEFEAT_SEX"><![CDATA[
+	<p>
+		[npc.NamePos]的[npc.arms]环住你的腰抚摸你的背，热情地与你亲热了好一会儿才松开。[npc.she]饥渴地舔着[npc.lips]，对你邪魅地笑。你明白，[npc.sheIs]可能不仅仅满足于一个吻……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_DEFEAT_SEX_EAGER"><![CDATA[
+	<p>
+		[npc.NamePos]用[npc.arms]环绕你的背，你热切地靠在[npc.herHim]身上。[npc.she]热情地回吻片刻，又推开你，露出邪魅的笑容，舔了舔[npc.lips]。你感到一阵兴奋，意识到[npc.she]想要的可不仅仅只是一个吻……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_DEFEAT_SEX_RESIST"><![CDATA[
+	<p>
+		[npc.NamePos]用[npc.arms]环住你的背，你被拉过去强制接吻，发出凌厉的哭号。你耗干了最后一丝气力，努力推开[npc.herHim]。你不断地乞求[npc.herHim]停下。[npc.she]邪恶地笑笑，完全无视了你的抵抗。你眼睁睁地看着[npc.herHim]饥渴地舔了舔[npc.lips]，明白过来[npc.sheIs]才不会放你走……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_SEX_PAID -->
+	
+	<htmlContent tag="AFTER_SEX_PAID_THREESOME"><![CDATA[
+	<p>
+		#IF(npc.isSatisfiedFromLastSex())
+			在享受完鱼水之欢后，你和[com.name]后退一步，离开了精疲力尽的[npc.name]
+			#IF(sex.getNumberOfOrgasms(npc)>1)
+				orgasms
+			#ELSE
+				orgasm
+			#ENDIF
+			，[npc.her]瘫在床上喘着气，然后看向你，一个满意的微笑出现在[npc.her]的脸上，[npc.she]说：[npc.speech(操，你两他妈的棒极了！看样子我的最喜爱客户名单又多了两个！)]
+		#ELSE
+			在享受完鱼水之欢后，你和[com.name]后退一步，离开了[npc.name]，[npc.her]瘫在床上喘着气，然后看向你，一个疲惫的微笑出现在[npc.her]的脸上，[npc.she]说：[npc.speech(希望你们得到了一段难忘的时光！)]
+		#ENDIF
+	</p>
+	<p>
+		躺在[npc.namePos]的床上，你趁着[npc.she]整理衣物的功夫小憩了一会儿。仰望着濒临褪色的天花板，你深深地叹了一口气，思考着自己与[com.name]稍后的安排……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_PAID_COMPANION"><![CDATA[
+	<p>
+		#IF(npc.isSatisfiedFromLastSex())
+			[com.name]从[npc.name]身上退开，[npc.she]早已被
+			#IF(sex.getNumberOfOrgasms(npc)>1)
+				连绵不绝的高潮
+			#ELSE
+				高潮
+			#ENDIF
+			弄得筋疲力竭，一下子瘫软到了床上。[npc.she]抬起头看向你的[com.companion]，脸上浮现出满意的笑容，感叹道：[npc.speech(妈的，你的活太他妈好了！看来我又找到了一个好客户。)]
+		#ELSE
+			[com.name]从[npc.name]身上退开，[npc.she]意识到你的[com.companion]已经结束，便深深地叹了一口气，无力地瘫软到了床上。[npc.she]抬起头看向[com.name]，脸上浮现出疲惫的笑容，叹息道：[npc.speech(希望你玩得尽兴！)]
+		#ENDIF
+	</p>
+	<p>
+		[com.name]躺在[npc.namePos]的床上调整着呼吸，随后这位[npc.race]妓女起身，将周围收拾干净并穿上了衣服。你走进了卧室，准备告诉[com.name]你得走了……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_PAID"><![CDATA[
+	<p>
+		#IF(npc.isSatisfiedFromLastSex())
+			你从[npc.name]身上退开，[npc.she]早已被
+			#IF(sex.getNumberOfOrgasms(npc)>1)
+				连绵不绝的高潮
+			#ELSE
+				高潮
+			#ENDIF
+			弄得筋疲力竭，一下子瘫软到了床上。[npc.her]抬起头看着你，脸上露出了满意的笑容，感叹道：[npc.speech(你可太特么厉害了，看来我找到了一个新的优质客源，你将来一定会广受欢迎的！)]
+		#ELSE
+			你从[npc.name]身上退开，[npc.she]意识到你已经结束，便深深地叹了一口气，无力地瘫软到了床上。[npc.she]抬起头看着你，脸上浮现出疲惫的笑容，叹息道：[npc.speech(希望你玩得尽兴！)]
+		#ENDIF
+	</p>
+	<p>
+		躺在[npc.namePos]的床上，你趁着[npc.she]整理衣物的功夫小憩了一会儿。仰望着濒临褪色的天花板，你深深地叹了一口气，思考着自己稍后的安排……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_PAID_LEAVE_COMPANION"><![CDATA[
+	<p>
+		等[com.name]恢复了体力后，你告诉[com.her]你得走了，你告别了留在公寓里的[com.name]，穿过那扇你进来的门，你十分满意可以把钱花在[npc.name]身上，这物有所值，你离开了[npc.herHim]并继续自己的旅途……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_PAID_LEAVE"><![CDATA[
+	<p>
+		你花了几分钟恢复体力，你告诉[npc.name]你很享受和[npc.herHim]一起的时光，你起身，离开[npc.her]的公寓。你十分满意可以把钱花在[npc.name]身上，这物有所值，你把离开了[npc.name]并继续自己的旅途……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_STORM_THREESOME"><![CDATA[
+	<p>
+		你与[com.name]爽完后便抽身了，留[npc.name]瘫倒在地上呻吟。[npc.she]仍深受奥术风暴影响，饥渴地[npc.moansVerb]道：[npc.speech(~啊哈！~我还想要！)]
+	</p>
+	<p>
+		你不想再和这个好色的[npc.race]待在一起，你和[com.name]迅速把各自的东西整理好，思索起接下来要做什么……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_STORM_COMPANION"><![CDATA[
+	<p>
+		[com.name]爽完后便抽身了，留[npc.name]瘫倒在地上呻吟。[npc.she]仍深受奥术风暴影响，饥渴地[npc.moansVerb]道：[npc.speech(~啊哈！~我还想要！)]
+	</p>
+	<p>
+		你不想再和这个好色的[npc.race]待在一起，你等[com.name]迅速把[com.her]的东西整理好，思索起接下来要做什么……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_STORM"><![CDATA[
+	<p>
+		你爽完后便抽身了，留[npc.name]瘫倒在地上呻吟。[npc.she]仍深受奥术风暴影响，饥渴地[npc.moansVerb]道：[npc.speech(~啊哈！~我还想要！)]
+	</p>
+	<p>
+		你不想再和这个好色的[npc.race]待在一起，便迅速把东西整理好，思索起接下来要做什么……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_STORM_LEAVE_COMPANION"><![CDATA[
+	<p>
+		等[com.name]恢复了体力后，你告诉[npc.Name]你们得走了，继续踏上旅途……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_STORM_LEAVE"><![CDATA[
+	<p>
+		你花了几分钟恢复体力，告诉[npc.Name]你得走了，随后继续踏上旅途……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_SEX_VICTORY -->
+	
+	<htmlContent tag="AFTER_SEX_VICTORY_THREESOME"><![CDATA[
+	<p>
+		#IF(npc.isSatisfiedFromLastSex())
+			你和[com.name]已经玩够了，从[npc.name]身边退开，[npc.she]早已被
+			#IF(sex.getNumberOfOrgasms(npc)>1)
+				连绵不绝的高潮
+			#ELSE
+				高潮
+			#ENDIF
+			弄得筋疲力竭，一下子瘫软到了地上。[npc.her]抬头看着你，脸上露出了满意的笑容。你明白[npc.her]一定是对此次“服务”十分满意。
+		#ELSE
+			你和[com.name]从[npc.name]身上退开。意识到你这么快就已结束，[npc.she]发出一声幽怨的抱怨。
+			#IF(npc.isTaur())
+				[npc.she]无法碰到下体，便开始疯狂地用的后臀摩擦附近的管道，拼命试图自慰，试图完成你未做完的事情。
+			#ELSEIF(npc.hasLegs())
+				[npc.Her]将[npc.hands]伸到[npc.legs]之间，开始疯狂地自慰，试图完成你未做完的事情。
+			#ELSE
+				[npc.Her]将[npc.hands]伸向自己下体，开始疯狂地自慰，试图完成你未做完的事情。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		<i>你已经揭露了[npc.namePos]的逃犯身份，你意识到[style.italicsMinorBad(这将是你最后一次见到[npc.herHim])]，一旦你离开，[npc.sheIs]肯定会逃走。</i>
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_VICTORY_COMPANION"><![CDATA[
+	<p>
+		#IF(npc.isSatisfiedFromLastSex())
+			你的[com.companion]从[npc.name]身上退开，[npc.she]早已被
+			#IF(sex.getNumberOfOrgasms(npc)>1)
+				连绵不绝的高潮
+			#ELSE
+				高潮
+			#ENDIF
+			弄得筋疲力竭，一下子瘫软到了地上。[npc.she]抬头看着你的[com.companion]，脸上露出了满意的笑容。你明白[npc.her]一定是对此次“服务”十分满意。
+		#ELSE
+			[com.name]从[npc.name]身上退开。意识到你的[com.companion]这么快就已结束，[npc.she]发出一声幽怨的抱怨。
+			#IF(npc.isTaur())
+				[npc.she]无法碰到下体，便开始疯狂地用的后臀摩擦附近的管道，拼命尝试自慰，试图完成你未做完的事情。
+			#ELSEIF(npc.hasLegs())
+				[npc.Her]将[npc.hands]伸到[npc.legs]之间，开始疯狂地自慰，试图完成你未做完的事情。
+			#ELSE
+				[npc.Her]将[npc.hands]伸向自己下体，开始疯狂地自慰，试图完成你未做完的事情。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		<i>你已经揭露了[npc.namePos]的逃犯身份，你意识到[style.italicsMinorBad(这将是你最后一次见到[npc.herHim])]，一旦你离开，[npc.sheIs]肯定会逃走。</i>
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_VICTORY"><![CDATA[
+	<p>
+		#IF(npc.isSatisfiedFromLastSex())
+			你从[npc.name]身上退开，[npc.she]早已被
+			#IF(sex.getNumberOfOrgasms(npc)>1)
+				连绵不绝的高潮
+			#ELSE
+				高潮
+			#ENDIF
+			弄得筋疲力竭，一下子瘫软到了地上。[npc.her]抬头看着你，脸上露出了满意的笑容。你明白[npc.her]一定是对此次“服务”十分满意。
+		#ELSE
+			你从[npc.name]身上退开。意识到你这么快就已结束，[npc.she]发出一声幽怨的抱怨。
+			#IF(npc.isTaur())
+				[npc.she]无法碰到下体，便开始疯狂地用的后臀摩擦附近的管道，拼命试图自慰，试图完成你未做完的事情。
+			#ELSEIF(npc.hasLegs())
+				[npc.Her]将[npc.hands]伸到[npc.legs]之间，开始疯狂地自慰，试图完成你未做完的事情。
+			#ELSE
+				[npc.Her]将[npc.hands]伸向自己下体，开始疯狂地自慰，试图完成你未做完的事情。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		<i>你已经揭露了[npc.namePos]的逃犯身份，你意识到[style.italicsMinorBad(这将是你最后一次见到[npc.herHim])]，一旦你离开，[npc.sheIs]肯定会逃走。</i>
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_VICTORY_LEAVE"><![CDATA[
+	<p>
+		花了一小会时间调整好自己，你打开大门，迅速离开了[npc.namePos]的公寓。回想着自己“驯服”[npc.herHim]的过程，你不由得会心一笑。把[npc.race]抛到脑后，你继续起自己的旅程……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_SEX_DEFEAT -->
+	
+	<htmlContent tag="AFTER_SEX_DEFEAT_APARTMENT"><![CDATA[
+	<p>
+		[npc.Name]后退整理衣服。你被[npc.her]的支配性事折腾得精疲力尽，瘫倒在地。你抬头看了[npc.race]一眼，发现[npc.her]的脸上掠过一丝餍足的笑意。[npc.she]俯下身来拍了拍你的头说：[npc.speech(永别了！你和你的执法者朋友想抓我还得再努力点！)]
+	</p>
+	<p>
+		说完，[npc.she]迅速收拾好个人物品，接着离开公寓，留下你气喘吁吁地躺在地上。你需要一段时间才能从折磨中缓过来，但你最终还是恢复了力气，得以整理好你的东西，继续你的旅途……
+	</p>
+	<p>
+		<i>你现在已经清楚[npc.namePos]逃犯的身份了，你意识到[style.italicsMinorBad(这是你最后一次见[npc.herHim])]，因为[npc.sheIs]之后肯定要逃往别处了。</i>
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_DEFEAT"><![CDATA[
+	<p>
+		[npc.Name]后退整理衣服。你被[npc.her]的支配性事折腾得精疲力尽，瘫倒在地。你抬头看了[npc.race]一眼，发现[npc.her]的脸上掠过一丝餍足的笑意。[npc.she]俯下身来拍了拍你的头说：[npc.speech(永别了！你和你的执法者朋友想抓我还得再努力点！)]
+	</p>
+	<p>
+		说完，[npc.she]走开了，留下你在卧室地上气喘吁吁……
+	</p>
+	<p>
+		<i>你现在已经清楚[npc.namePos]逃犯的身份了，你意识到[style.italicsMinorBad(这是你最后一次见[npc.herHim])]，因为[npc.sheIs]之后肯定要逃往别处了。</i>
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_SEX_DEFEAT_LEAVE"><![CDATA[
+	<p>
+		你缓了一阵才喘过气来，快步走向门，离开了[npc.namePos]的公寓。你回想起自己是如何被[npc.herHim]揍的，发出一声痛苦的呻吟，很快离开这里继续你的旅程……
+	</p>
+	]]></htmlContent>
+	
+	
+</dialogue>

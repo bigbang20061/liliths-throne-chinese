@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <value>540</value>
+    <determiner><![CDATA[一对]]></determiner>
+    <name><![CDATA[蝴蝶夹]]></name>
+    <namePlural pluralByDefault="true"><![CDATA[蝴蝶夹]]></namePlural>
+    <description><![CDATA[一对金属蝴蝶夹，可以紧紧夹住穿戴者的皮肤。附带的重物会给穿戴者持续而痛苦的压力。]]></description>
+    
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <equipSlots>
+      <slot>NIPPLE</slot>
+      <slot>VAGINA</slot>
+    </equipSlots>
+
+    <rarity>EPIC</rarity> 
+    
+    <imageName>clover_clamps.svg</imageName>
+
+    <clothingSet>BDSM</clothingSet> 
+    <imageEquippedName/>
+    
+    <effects>
+      <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_DRAIN" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="STRENGTH" timer="6"/>     
+      <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_DRAIN" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="STRENGTH" timer="6"/>     
+    </effects>
+
+    <blockedPartsList slot="NIPPLE">
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType> 
+        <clothingAccessRequired>
+          <clothingAccess>CHEST</clothingAccess>
+        </clothingAccessRequired>
+        <blockedBodyParts/>
+        <clothingAccessBlocked/>        
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+    <blockedPartsList slot="VAGINA">
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired>
+          <clothingAccess>GROIN</clothingAccess>
+        </clothingAccessRequired>
+        <blockedBodyParts/>
+        <clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+    <blockedPartsList slot="VAGINA">
+      <blockedParts>
+        <displacementType>SHIFTS_ASIDE</displacementType>
+        <clothingAccessRequired>
+          <clothingAccess>GROIN</clothingAccess>
+        </clothingAccessRequired>
+        <blockedBodyParts>
+          <bodyPart>VAGINA</bodyPart>
+        </blockedBodyParts>
+        <clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+
+    <incompatibleSlots slot="NIPPLE">
+      <slot>CHEST</slot>
+    </incompatibleSlots>
+    <incompatibleSlots slot="VAGINA"/>
+      
+    <primaryColours values="ALL_METAL"/>
+	<primaryColoursDye values="ALL"/>
+    <secondaryColours/>
+    <secondaryColoursDye/>
+    <tertiaryColours/>
+    <tertiaryColoursDye/>
+    
+    <itemTags>
+		<tag>SOLD_BY_FINCH</tag>
+		<tag>ENABLE_SEX_EQUIP</tag>
+		<tag>TRANSPARENT</tag>
+    </itemTags>
+    <itemTags slot="VAGINA">
+		<tag>REQUIRES_VAGINA</tag>
+    </itemTags>
+    <itemTags slot="NIPPLE">
+		<tag>SEALS_NIPPLES</tag>
+		<tag>ENABLE_SEX_EQUIP</tag>
+		<tag>TRANSPARENT</tag>
+    </itemTags>
+    
+  </coreAttributes>
+
+  <displacementText slot="NIPPLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]小心地从[npc.her][npc.nipples+]取下蝴蝶夹。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]小心地从[npc2.namePos][npc2.nipples+]上取下蝴蝶夹。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]抓住[npc2.namePos]的蝴蝶夹粗暴地扯了一下以后才从[npc2.her][npc2.nipples+]上取下。
+    ]]></otherRough>
+  </displacementText>
+  <replacementText slot="NIPPLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]因把蝴蝶夹夹在[npc.her][npc.nipples+]上而痛苦地皱了一下眉。
+    ]]></self>
+    <other><![CDATA[
+      [npc2.name]因[npc.Name]把蝴蝶夹夹在[npc2.her][npc2.nipples+]上而痛苦地皱了一下眉。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]把蝴蝶夹夹在[npc2.namePos][npc2.nipples+]上后用力扯了一下。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]小心地从[npc.her][npc.vaginaColourSecondary]的阴唇上取下蝴蝶夹。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]小心地从[npc2.her][npc2.vaginaColourSecondary]的阴唇上取下蝴蝶夹。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]抓住[npc2.namePos]的蝴蝶夹粗暴地扯了一下以后才从[npc2.her][npc2.vaginaColourSecondary]的阴唇上取下。
+]]></otherRough>
+  </displacementText>
+  <replacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]因把蝴蝶夹夹在[npc.her][npc.vaginaColourSecondary]的阴唇上而痛苦地皱了一下眉。
+]]></self>
+    <other><![CDATA[
+      [npc2.Name]因[npc.Name]把蝴蝶夹夹在[npc2.her][npc2.vaginaColourSecondary]的阴唇上而痛苦地皱了一下眉。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]把蝴蝶夹夹在[npc2.namePos][npc2.vaginaColourSecondary]的阴唇上后用力扯了一下。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="VAGINA" type="SHIFTS_ASIDE">
+    <self><![CDATA[
+      [npc.Name]从[npc.her][npc.vaginaColourSecondary]的[npc.vagina]上取下蝴蝶夹。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]从[npc2.her][npc2.vaginaColourSecondary]的[npc2.vagina]上取下蝴蝶夹。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]抓住[npc2.namePos]的蝴蝶夹粗暴地扯了一下以后才从[npc2.her][npc2.vaginaColourSecondary]的[npc2.vagina]上取下。
+]]></otherRough>
+  </displacementText>
+  <replacementText slot="VAGINA" type="SHIFTS_ASIDE">
+    <self><![CDATA[
+      [npc.Name]因把蝴蝶夹咬在[npc.her][npc.vaginaColourSecondary]的[npc.vagina]上而痛苦地皱了一下眉。
+]]></self>
+    <other><![CDATA[
+      [npc2.Name]因[npc.name]把蝴蝶夹咬在[npc2.her][npc2.vaginaColourSecondary]的[npc2.vagina]上而痛苦地皱了一下眉。
+]]></other>
+    <otherRough><![CDATA[
+      [npc2.Name]因[npc.Name]把蝴蝶夹夹在[npc2.her][npc2.vaginaColourSecondary]的[npc2.vagina]上而痛苦地皱了一下眉。
+]]></otherRough>
+  </replacementText>
+</clothing>

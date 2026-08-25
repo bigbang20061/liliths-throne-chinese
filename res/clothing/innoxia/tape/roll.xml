@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>40</value>
+		<determiner><![CDATA[一卷]]></determiner>
+		<name><![CDATA[电工胶带]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[电工胶带]]></namePlural>
+		<description><![CDATA[
+			这种有光泽的胶带是电工常用的那种。虽然它的粘性足以粘附在大多数表面上，但并不特别牢固，可以舒适地贴在皮肤、毛发或头发上，不用担心撕下时会很痛。
+			#IF(thisItem.getSlotEquippedTo()!=null)
+				<i>这段特定长度的胶带已经被
+				#IF(thisItem.getSlotEquippedTo()==IS_NIPPLE)
+					贴在[npc.name]的[npc.nipples]上！
+				#ELSEIF(thisItem.getSlotEquippedTo()==IS_VAGINA)
+					贴在[npc.name]的[npc.pussy]上！
+				#ELSEIF(thisItem.getSlotEquippedTo()==IS_ANUS)
+					贴在[npc.name]的[npc.asshole]上！
+				#ELSEIF(thisItem.getSlotEquippedTo()==IS_MOUTH)
+					贴在[npc.name]的嘴上，让[npc.herHim]无法说话！
+				#ENDIF
+				</i>
+			#ENDIF]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+			<slot>NIPPLE</slot>
+			<slot>MOUTH</slot>
+			<slot>VAGINA</slot>
+			<slot>ANUS</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>roll.svg</imageName>
+		<imageEquippedName slot="NIPPLE">nipple_crosses.svg</imageEquippedName>
+		<imageEquippedName slot="MOUTH">cross.svg</imageEquippedName>
+		<imageEquippedName slot="VAGINA">single.svg</imageEquippedName>
+		<imageEquippedName slot="ANUS">single.svg</imageEquippedName>
+		<effects/>
+		
+		<blockedPartsList slot="NIPPLE">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots>
+					<slot>NIPPLE</slot>
+					<slot>PIERCING_NIPPLE</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<blockedPartsList slot="MOUTH">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>MOUTH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<blockedPartsList slot="VAGINA">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<blockedPartsList slot="ANUS">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="MOUTH"/>
+		<incompatibleSlots slot="NIPPLE"/>
+		<incompatibleSlots slot="VAGINA"/>
+		<incompatibleSlots slot="ANUS"/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED_BRIGHT</colour>
+			<colour>CLOTHING_ORANGE_BRIGHT</colour>
+			<colour>CLOTHING_GREEN_LIME</colour>
+			<colour>CLOTHING_BLUE_LIGHT</colour>
+			<colour>CLOTHING_PINK_HOT</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags>
+			<tag>DUPLICATE_WHEN_EQUIP</tag>
+			<tag>DISCARDED_WHEN_UNEQUIPPED</tag>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_RALPH</tag>
+			<tag>NO_RANDOM_SPAWN</tag>
+		</itemTags>
+		<itemTags slot="MOUTH">
+			<tag>MUFFLES_SPEECH</tag>
+		</itemTags>
+		<itemTags slot="NIPPLE">
+			<tag>SEALS_NIPPLES</tag>
+		</itemTags>
+		<itemTags slot="VAGINA">
+			<tag>REQUIRES_VAGINA</tag>
+			<tag>SEALS_VAGINA</tag>
+		</itemTags>
+		<itemTags slot="ANUS">
+			<tag>SEALS_ANUS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText slot="MOUTH" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]撕下两长条胶带，将它们贴在了自己的嘴巴上。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]撕下两长条胶带，将它们贴在了[npc2.namePos]的嘴巴上。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]撕下两长条胶带，粗暴地将它们贴在了[npc2.namePos]的嘴巴上。
+		]]></otherRough>
+	</replacementText>
+	<displacementText slot="MOUTH" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]揭下了自己嘴上的胶带，痛得龇牙咧嘴。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]揭下了[npc2.name]嘴上的胶带，[npc2.Name]痛得龇牙咧嘴。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.name]粗暴地撕掉了[npc2.name]嘴上的胶带，[npc2.Name]痛得龇牙咧嘴，发出了一声尖叫。
+		]]></otherRough>
+	</displacementText>
+
+	<replacementText slot="NIPPLE" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]撕下几条胶带，将它们交叉着拼成十字形，然后把它们贴在了自己的[npc.nipples]上。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]撕下几条胶带，将它们交叉着拼成十字形，然后把它们贴在了[npc2.namePos]的[npc2.nipples]上。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]撕下几条胶带，将它们交叉着拼成十字形，然后粗暴地把它们贴在了[npc2.namePos]的[npc2.nipples]上。
+		]]></otherRough>
+	</replacementText>
+	<displacementText slot="NIPPLE" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]揭下了自己[npc.nipples]上的十字胶带，痛得龇牙咧嘴。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]揭下了[npc2.name][npc2.nipples]上的十字胶带，[npc2.Name]痛得龇牙咧嘴。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.her][npc2.nipples]上的十字胶带撕下，[npc2.name]痛得痛得龇牙咧嘴，发出了一声尖叫。
+		]]></otherRough>
+	</displacementText>
+	
+	<replacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]撕下一条胶带，将它贴在了自己[npc.pussy+]上。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]撕下一条胶带，将它贴在了[npc2.namePos][npc2.pussy+]上。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]撕下一条胶带，粗暴地将它贴在了[npc2.namePos][npc2.pussy+]上。
+		]]></otherRough>
+	</replacementText>
+	<displacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]揭下了自己[npc.pussy+]上的胶带，痛得龇牙咧嘴。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]揭下了[npc2.namePos][npc2.pussy+]上的胶带，[npc2.Name]痛得龇牙咧嘴。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos][npc2.pussy+]上的胶带撕下，[npc2.name]痛得龇牙咧嘴，发出了一声尖叫。
+		]]></otherRough>
+	</displacementText>
+	
+	<replacementText slot="ANUS" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]撕下一条胶带，将它贴在了自己[npc.asshole+]上。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]撕下一条胶带，将它贴在了[npc2.namePos][npc2.asshole+]上。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]撕下一条胶带，粗暴地将它贴在了[npc2.namePos][npc2.asshole+]上。
+		]]></otherRough>
+	</replacementText>
+	<displacementText slot="ANUS" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]揭下了自己[npc.asshole+]上的胶带，痛得龇牙咧嘴。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]揭下了[npc2.namePos][npc2.asshole+]上的胶带，[npc2.Name]痛得龇牙咧嘴。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos][npc2.asshole+]上的胶带撕下，[npc2.name]痛得龇牙咧嘴，发出了一声尖叫。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

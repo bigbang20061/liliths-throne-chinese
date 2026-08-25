@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[插入刻度尺]]></name>
+		
+		<description><![CDATA[一个简单的刻度尺图形，上面有标记，显示所有者从被插入到该深度时所获得的快感程度。]]></description> 
+		
+		<bodyOverviewDescription><![CDATA[一个简单的刻度尺图形，上面有标记，显示所有者从被插入到该深度时所获得的快感程度。]]></bodyOverviewDescription> 
+		
+		<availabilityRequirements unique="false"/>
+		
+		<imageName>penetration_ruler.svg</imageName> 
+		
+		<slotAvailability> 
+			<slot>GROIN</slot>
+		</slotAvailability> 
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_BLACK"/>
+		<secondaryColours values="ALL" defaultColour="CLOTHING_PINK_HOT"/>
+		<tertiaryColours values="ALL" defaultColour="CLOTHING_PINK_DARK"/>
+	</coreAttributes>
+</tattoo>

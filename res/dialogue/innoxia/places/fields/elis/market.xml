@@ -1,0 +1,3931 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Place type id: innoxia_fields_elis_market_centre -->
+	<scene id="centre">
+		<content folderPath="txt/places/fields/elis/market">CENTRE</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<!-- Livestock market:
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getDayOfWeek()==DOW_SATURDAY || game.getDayOfWeek()==DOW_WEDNESDAY]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[Spectate]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(8, 18))
+						Spend some time watching the comings and goings of the livestock market...
+					#ELSE
+						As the livestock market is currently closed, you'll have to come back another day...
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_centre_livestock_spectate]]></nextDialogue>
+			</response>
+			 -->
+			<!-- No livestock market: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getDayOfWeek()!=DOW_SATURDAY && game.getDayOfWeek()!=DOW_WEDNESDAY]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[飞镖]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(8, 18))
+						前往飞镖摊位，看看飞镖游戏是怎么回事。
+					#ELSE
+						所有摊位都已关闭，你只能下次再来了……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isHourBetween(8, 18))
+						innoxia_places_fields_elis_market_centre_game_darts
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_DARTS'))]
+					[#nizhoni.setPlayerKnowsName(true)]
+					[#nizhoni.setCharacterReactedToPregnancy(pc, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getDayOfWeek()!=DOW_SATURDAY && game.getDayOfWeek()!=DOW_WEDNESDAY]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[强度测试]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(8, 18))
+						前往力量测试仪，看看到底是怎么回事。
+					#ELSE
+						由于目前所有摊位都已关闭，你只能下次再来了……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isHourBetween(8, 18))
+						innoxia_places_fields_elis_market_centre_game_strength
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_STRENGTH'))]
+					[#moreno.setPlayerKnowsName(true)]
+					[#pc.setCharacterReactedToPregnancy(moreno, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="centre_livestock_spectate">
+		<content folderPath="txt/places/fields/elis/market">CENTRE_SPECTATE</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[旁观]]></responseTitle>
+				<responseTooltip><![CDATA[你已经花了一些时间观摩牲畜市场……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!--Darts:-->
+	<scene id="centre_game_darts">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[玩(#IF(pc.getMoney()>=25)[style.moneyFormat(25, span)]#ELSE[style.moneyFormatUncoloured(25, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<25)
+						你玩不起飞镖……
+					#ELSE
+						交出25火币，试试能否击中靶心。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()>=25)
+						innoxia_places_fields_elis_market_centre_game_darts_play
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-25))]
+					[#flags.setSavedLong('market_game_flames_spent', 25)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[向尼佐尼道别，然后离开。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_centre]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_DARTS_LEAVE'))]
+				]]></effects>
+			</response>
+			<!-- Prizes: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[巧克力(1张票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						用一张集市票换一盒巧克力。
+						<br/><i>你物品栏中的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					#ELSE
+						你需要至少一张集市票来从尼佐尼那兑换奖品……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						innoxia_places_fields_elis_market_centre_game_darts
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_DARTS_PRIZE_CHOCOLATES'))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_GIFT_CHOCOLATES)))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[香水(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						用一张集市票换一瓶香水。
+						<br/><i>你物品栏里的集市票： [style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					#ELSE
+						你需要至少一张集市票来从尼佐尼那兑换奖品……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						innoxia_places_fields_elis_market_centre_game_darts
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_DARTS_PRIZE_PERFUME'))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_GIFT_PERFUME)))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[泰迪熊(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						用一张集市票换一个泰迪熊。
+						<br/><i>你物品栏中的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					#ELSE
+						你需要至少一张集市票来从尼佐尼那兑换奖品……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						innoxia_places_fields_elis_market_centre_game_darts
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_DARTS_PRIZE_TEDDY'))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_GIFT_TEDDY_BEAR)))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="centre_game_darts_play">
+		<preParsingEffects><![CDATA[
+			#IF(RND.nextInt(100) < Math.max(1, 20 + pc.getAttributeValue(ATTRIBUTE_DAMAGE_RANGED_WEAPON)))
+				[#flags.setFlag(FLAG_innoxia_elis_market_darts_won, true)]
+			#ELSE
+				[#flags.setFlag(FLAG_innoxia_elis_market_darts_won, false)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">GAME_DARTS_PLAY</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Won: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_darts_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[再试一次([style.moneyFormatUncoloured(25, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[你已经赢了！]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_darts_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[取票]]></responseTitle>
+				<responseTooltip><![CDATA[拿尼佐尼给你的集市票。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_centre_game_darts]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_DARTS_WON'))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_quest_faire_ticket), false, true))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_darts_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[和尼佐尼散步]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_nizhoni_sex))
+						尼佐尼今天没时间再陪你散步了……
+					#ELSE
+						问问尼佐尼是否愿意和你走走以此作为奖励，不要集市票。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_nizhoni_sex))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_nizhoni_walk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_elis_market_nizhoni_sex, true)]
+				]]></effects>
+			</response>
+			<!-- Lost: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!flags.hasFlag(FLAG_innoxia_elis_market_darts_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[再试一次(#IF(pc.getMoney()>=25)[style.moneyFormat(25, span)]#ELSE[style.moneyFormatUncoloured(25, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<25)
+						你玩不起飞镖……
+					#ELSE
+						交出25火币，再试试能否击中靶心。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()>=25)
+						innoxia_places_fields_elis_market_centre_game_darts_play
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-25))]
+					[#flags.incrementSavedLong('market_game_flames_spent', 25)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!flags.hasFlag(FLAG_innoxia_elis_market_darts_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[回绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉尼佐尼你不玩了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_centre_game_darts]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_DARTS_LOST'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="nizhoni_walk">
+		<preParsingEffects><![CDATA[
+			[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_elis_market_path_bins, true, 1)]
+			[#nizhoni.setLocation(pc)]
+			[#game.appendToTextEndStringBuilder(nizhoni.incrementAffection(pc, 5))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">NIZHONI_WALK</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[加入她]]></responseTitle>
+				<responseTooltip><![CDATA[和尼佐尼一起翻箱倒柜，看看有什么值钱的东西。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_nizhoni_bins]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_elis_market_nizhoni_walked, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉尼佐尼你不想和她翻找，和她告别。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_market_path"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'NIZHONI_WALK_LEAVE'))]
+					[#nizhoni.setLocation(WORLD_TYPE_innoxia_fields_elis_market, PLACE_TYPE_innoxia_fields_elis_market_centre)]
+					[#game.appendToTextEndStringBuilder(nizhoni.incrementAffection(pc, -5))]
+					[#flags.setFlag(FLAG_innoxia_elis_market_nizhoni_walked, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="nizhoni_bins">
+		<preParsingEffects><![CDATA[
+			[#nizhoni.displaceClothingForAccess(CA_VAGINA, null)]
+			[#game.appendToTextEndStringBuilder(nizhoni.incrementAffection(pc, 5))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">NIZHONI_BINS</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[忽视]]></responseTitle>
+				<responseTooltip><![CDATA[忽视尼佐尼的#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))味道浓重的#ELSE干净的#ENDIF小穴，继续翻找。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_market_path"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'NIZHONI_BINS_IGNORE'))]
+					[#nizhoni.setLocation(WORLD_TYPE_innoxia_fields_elis_market, PLACE_TYPE_innoxia_fields_elis_market_centre)]
+					[#game.appendToTextEndStringBuilder(nizhoni.incrementAffection(pc, -5))]
+					[#nizhoni.addGirlcumModifier(FLUID_MODIFIER_MUSKY)]
+				]]></effects>
+			</response>
+			<!-- Oral: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[给她口]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，无法口尼佐尼#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))味道浓重的#ELSE干净的#ENDIF小穴。]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[给她口]]></responseTitle>
+				<responseTooltip><![CDATA[趴在尼佐尼下面，开始口她#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))味道浓重的#ELSE干净的#ENDIF小穴。]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))
+						[#pc.addMuskMarkerCharacter(nizhoni)]
+					#ENDIF
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_nizhoni_oral]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_PERFORMING_ORAL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>nizhoni</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_nizhoni_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">NIZHONI_BINS_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[nizhoni]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Vaginal: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[操她]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis())
+						你没有鸡巴，没法操尼佐尼#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))味道浓重的#ELSE干净的#ENDIF的小穴。
+					#ELSE
+						你的鸡巴被限制，没法操尼佐尼#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))味道浓重的#ELSE干净的#ENDIF的小穴。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[操她]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]到尼佐尼身后操她#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))味道浓重的#ELSE干净的#ENDIF的小穴。]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					#IF(nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))
+						[#pc.addMuskMarkerCharacter(nizhoni)]
+					#ENDIF
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_nizhoni_vaginal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>nizhoni</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_nizhoni_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">NIZHONI_BINS_FUCK_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[nizhoni]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && !pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[操她的屁股]]></responseTitle>
+				<responseTooltip><![CDATA[
+						#IF(!pc.hasPenis())
+							你没有鸡巴，没法操尼佐尼的菊花……
+						#ELSE
+							你的鸡巴被限制，没法操尼佐尼的菊花……
+						#ENDIF
+					]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[操她的屁股]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]到尼佐尼身后操她的屁穴。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_nizhoni_anal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>nizhoni</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_nizhoni_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">NIZHONI_BINS_FUCK_ASS_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[nizhoni]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Clean her: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[清理她]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY))
+						你已经给尼佐尼清洗过了，她的小穴现在没有淫味了！
+					#ELSEIF(!pc.hasSpell(SPELL_SOOTHING_WATERS, true))
+						你需要知道法术“[#SPELL_SOOTHING_WATERS.getName()]”才能帮尼佐尼清洗！
+					#ELSE
+						施法“[#SPELL_SOOTHING_WATERS.getName()]”帮尼佐尼暂时摆脱淫味！
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(!nizhoni.hasGirlcumModifier(FLUID_MODIFIER_MUSKY) || !pc.hasSpell(SPELL_SOOTHING_WATERS, true))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_nizhoni_bins
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#nizhoni.removeGirlcumModifier(FLUID_MODIFIER_MUSKY)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'NIZHONI_BINS_CLEAN'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="nizhoni_after_sex">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'NIZHONI_AFTER_SEX'))]
+			[#nizhoni.setLocation(WORLD_TYPE_innoxia_fields_elis_market, PLACE_TYPE_innoxia_fields_elis_market_centre)]
+			[#nizhoni.addGirlcumModifier(FLUID_MODIFIER_MUSKY)]
+		]]></preParsingEffects>
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你已经和尼佐尼爽够了，是时候结束性爱了……]]></tooltip>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[和尼佐尼道别，看她跑开。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_market_path"/>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!--Strength:-->
+	<scene id="centre_game_strength">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[玩(#IF(pc.getMoney()>=25)[style.moneyFormat(25, span)]#ELSE[style.moneyFormatUncoloured(25, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<25)
+						你付不起给力量测试仪来一拳……
+					#ELSE
+						花25火币给力量测试仪来一拳。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()>=25)
+						innoxia_places_fields_elis_market_centre_game_strength_play
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-25))]
+					[#flags.setSavedLong('market_game_flames_spent', 25)] 
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉莫雷诺你对他的游戏不感兴趣并离开。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_market_centre"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_STRENGTH_LEAVE'))]
+				]]></effects>
+			</response>
+			<!-- Prizes: -->
+			<!-- Meat Hamper: -->
+				<response>
+					<availabilityConditional><![CDATA[
+						[#!pc.hasItemType('innoxia_quest_faire_ticket')]
+					]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[肉篮(1票)]]></responseTitle>
+					<responseTooltip><![CDATA[你需要至少一张集市票来从莫雷诺那兑换奖品……]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[
+						[#pc.hasItemType('innoxia_quest_faire_ticket')]
+					]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[肉篮(1票)]]></responseTitle>
+					<responseTooltip><![CDATA[
+						用一张集市票换一个肉篮。
+						<br/><i>物品栏里的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					]]></responseTooltip>
+					<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_market_centre"/>
+					<effects><![CDATA[
+						[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_STRENGTH_PRIZE_MEAT'))]
+						[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_race_panther_panthers_delight)))]
+						[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_race_wolf_meat_and_marrow)))]
+						[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_race_horse_equine_cider)))]
+					]]></effects>
+				</response>
+			<!-- Wooden bat: -->
+				<response>
+					<availabilityConditional><![CDATA[
+						[#!pc.hasItemType('innoxia_quest_faire_ticket')]
+					]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[7]]></index>
+					<responseTitle><![CDATA[木质球棒(1票)]]></responseTitle>
+					<responseTooltip><![CDATA[你需要至少一张集市票来从莫雷诺那兑换奖品……]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[
+						[#pc.hasItemType('innoxia_quest_faire_ticket')]
+					]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[7]]></index>
+					<responseTitle><![CDATA[木质球棒(1票)]]></responseTitle>
+					<responseTooltip><![CDATA[
+						用一张集市票换一个木球棒。
+						<br/><i>物品栏里的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					]]></responseTooltip>
+					<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_market_centre"/>
+					<effects><![CDATA[
+						[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_STRENGTH_PRIZE_BAT_WOODEN'))]
+						[#game.appendToTextStartStringBuilder(pc.addWeapon(itemGen.generateWeapon(WEAPON_innoxia_bat_wooden, DAMAGE_TYPE_PHYSICAL), 1, false, true))]
+					]]></effects>
+				</response>
+			<!-- Metal bat: -->
+				<response>
+					<availabilityConditional><![CDATA[
+						[#!pc.hasItemType('innoxia_quest_faire_ticket')]
+					]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[8]]></index>
+					<responseTitle><![CDATA[金属球棒(1票)]]></responseTitle>
+					<responseTooltip><![CDATA[你需要至少一张集市票来从莫雷诺那兑换奖品……]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[
+						[#pc.hasItemType('innoxia_quest_faire_ticket')]
+					]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[8]]></index>
+					<responseTitle><![CDATA[金属球棒(1票)]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+							用一张集市票换一个金属球帮。
+							<br/><i>物品栏里的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+						#ELSE
+							你需要至少一张集市票来从莫雷诺那兑换奖品……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_market_centre"/>
+					<effects><![CDATA[
+						[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_STRENGTH_PRIZE_BAT_METAL'))]
+						[#game.appendToTextStartStringBuilder(pc.addWeapon(itemGen.generateWeapon(WEAPON_innoxia_bat_metal, DAMAGE_TYPE_PHYSICAL), 1, false, true))]
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="centre_game_strength_play">
+		<preParsingEffects><![CDATA[
+			#IF(RND.nextInt(100) < Math.max(1, 1 + pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)))
+				[#flags.setFlag(FLAG_innoxia_elis_market_strength_won, true)]
+				[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_quest_faire_ticket), false, true))]
+			#ELSE
+				[#flags.setFlag(FLAG_innoxia_elis_market_strength_won, false)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">GAME_STRENGTH_PLAY</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Won: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_strength_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[再试一次([style.moneyFormatUncoloured(25, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[你已经赢了！]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_strength_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[感谢莫雷诺的集市票，决定下一步该怎么做……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_centre_game_strength]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_STRENGTH_WON'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_strength_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[调情]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_moreno_sex))
+						莫雷诺今天没时间和你再调情了……
+					#ELSEIF(pc.isFeminine())
+						回应莫雷诺，与他调情。
+					#ELSE
+						莫雷诺对你不感兴趣，和他调情似乎不是一个好主意……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.isFeminine() || flags.hasFlag(FLAG_innoxia_elis_market_moreno_sex))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_moreno_flirt
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_elis_market_moreno_sex, true)]
+				]]></effects>
+			</response>
+			<!-- Lost: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!flags.hasFlag(FLAG_innoxia_elis_market_strength_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[再试一次(#IF(pc.getMoney()>=25)[style.moneyFormat(25, span)]#ELSE[style.moneyFormatUncoloured(25, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<25)
+						你付不起给力量测试仪来一拳……
+					#ELSE
+						花25火币再给力量测试仪来一拳。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()>=25)
+						innoxia_places_fields_elis_market_centre_game_strength_play
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-25))]
+					[#flags.incrementSavedLong('market_game_flames_spent', 25)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!flags.hasFlag(FLAG_innoxia_elis_market_strength_won)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉莫雷诺你不玩了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_centre_game_strength]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'GAME_STRENGTH_LOST'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="moreno_flirt">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(moreno.incrementAffection(pc, 10))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">MORENO_FLIRT</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[保守秘密]]></responseTitle>
+				<responseTooltip><![CDATA[告诉莫雷诺你会保守秘密，结束调情。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_centre_game_strength]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'MORENO_FLIRT_STOP'))]
+					[#game.appendToTextEndStringBuilder(moreno.incrementAffection(pc, -5))]
+				]]></effects>
+			</response>
+			<!-- Oral: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[额外蛋白质]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，没法给莫雷诺口交……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[额外蛋白质]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉莫雷诺，你的秘诀是定期摄入“额外蛋白质”，通常是直接从源头中摄入……
+					<br/>[style.italicsSex(这会导致给莫雷诺口交。)]
+				]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_moreno_oral]]></id>
+					<startingPosition><![CDATA[AGAINST_WALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[AGAINST_WALL_PERFORMING_ORAL_WALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>moreno</id>
+							<slot><![CDATA[AGAINST_WALL_BACK_TO_WALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_moreno_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">MORENO_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[moreno]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Vaginal: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[辅助锻炼]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasVagina())
+						你没有小穴，没法让莫雷诺操你……
+					#ELSE
+						你的小穴被限制，没法让莫雷诺操你……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[辅助锻炼]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉莫雷诺，你的秘诀是与一两个对象一起做“辅助锻炼”……
+					<br/>[style.italicsSex(这会导致被莫雷诺操。)]
+				]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_moreno_vaginal]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_COWGIRL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>moreno</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_moreno_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">MORENO_VAGINAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_USING_PENIS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[moreno]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && !pc.isAbleToAccessCoverableArea(CA_ANUS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[辅助锻炼(肛门)]]></responseTitle>
+				<responseTooltip><![CDATA[你的屁股被限制，没法让莫雷诺操你的屁穴……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[辅助锻炼(肛门)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉莫雷诺，你的秘诀是与一两个对象一起做菊部“辅助锻炼”……
+					<br/>[style.italicsSex(这会导致被莫雷诺肛交。)]
+				]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_moreno_anal]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_COWGIRL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>moreno</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_moreno_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">MORENO_ANAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_USING_PENIS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[moreno]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="moreno_after_sex">
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你已经和莫雷诺爽够了，是时候结束性爱了……]]></tooltip>
+		<content folderPath="txt/places/fields/elis/market">MORENO_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[告别莫雷诺，回到农贸市场。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_market_centre"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'MORENO_AFTER_SEX_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_fields_elis_market_clothing -->
+	<scene id="clothing">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'CLOTHING'))]
+			[#fae.setCharacterReactedToPregnancy(pc, true)]
+			[#silvia.setCharacterReactedToPregnancy(pc, true)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!fae.isPlayerKnowsName() && game.isHourBetween(8, 18)]
+		]]></travelDisabled>
+		<responses>
+			<!-- Closed: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[摊位已关闭，你只能下次再来……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<!-- Open and introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && fae.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[看看母半狐人在卖什么……]]></responseTooltip>
+				<nextDialogue/>
+				<tradingVariables enabled="true">
+					<tradePartner><![CDATA[fae]]></tradePartner>
+				</tradingVariables>
+			</response>
+			<!-- Open and not introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && !fae.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[介绍]]></responseTitle>
+				<responseTooltip><![CDATA[告诉母半狐人你是谁。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_clothing_intro]]></nextDialogue>
+				<effects><![CDATA[
+					[#fae.setPlayerKnowsName(true)]
+					[#silvia.setPlayerKnowsName(true)]
+				]]></effects>
+			</response>
+			<!-- Roll dice: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && fae.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[掷骰子(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						给法埃一张集市票，掷一次骰子并获得随机奖励。
+						<br/><i>你物品栏中的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					#ELSE
+						你需要至少一张集市票来让法埃掷一次骰子……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						innoxia_places_fields_elis_market_clothing_dice
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<!--
+					Prizes:
+						<= 50 Nothing
+						<= 70 50 flames
+						<= 90 250 flames
+						>90 500 flames or kiss
+				-->
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#flags.setSavedLong('fae_dice_roll', RND.nextInt(6)+1)]
+					#IF(flags.getSavedLong('fae_dice_roll')==4)
+						[#game.appendToTextEndStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_sock_socks', COLOUR_CLOTHING_GREEN_LIME, false), 1, false, true))]
+					#ELSEIF(flags.getSavedLong('fae_dice_roll')==5)
+						[#game.appendToTextEndStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_head_cap', COLOUR_CLOTHING_GREEN_LIME, false), 1, false, true))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#fae.isPlayerKnowsName() && pc.hasQuest(QUEST_LINE_SIDE_EISEK_STALL) && pc.isQuestProgressLessThan(QUEST_LINE_SIDE_EISEK_STALL, QUEST_EISEK_STALL_QUEST_STAGE_TWO) && !pc.isQuestCompleted(QUEST_LINE_SIDE_EISEK_STALL)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[织物？]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_market_clothing_ask_fabric)
+						你已经问过法埃和西尔维娅是否有织物卖你了！
+					#ELSE
+						问问法埃和西尔维娅有没有织物卖你。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCurrentDialogueNode()==DN_innoxia_places_fields_elis_market_clothing_ask_fabric)
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_clothing_ask_fabric
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="clothing_intro">
+		<content folderPath="txt/places/fields/elis/market">CLOTHING_INTRO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_clothing"/>
+	</scene>
+	
+	<scene id="clothing_dice">
+		<content folderPath="txt/places/fields/elis/market">CLOTHING_DICE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- No special win: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('fae_dice_roll')!=6]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[掷完骰子了，下一步要做什么……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_clothing_dice_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'CLOTHING_DICE_END'))]
+				]]></effects>
+			</response>
+			<!-- Special win: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('fae_dice_roll')==6]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[戒指奖励]]></responseTitle>
+				<responseTooltip><![CDATA[告诉法埃和西尔维娅你想要戒指作为奖励。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_clothing_dice_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'CLOTHING_DICE_END_RING'))]
+					[#game.appendToTextStartStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_finger_ring', COLOUR_CLOTHING_SILVER, false), 1, false, true))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('fae_dice_roll')==6]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[亲吻奖励]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						告诉法埃和西尔维娅你想要他俩的亲亲作为奖品。
+					#ELSE
+						你的嘴被限制，没法亲法埃和西尔维娅！
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						innoxia_places_fields_elis_market_clothing_dice_kiss
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="clothing_dice_end">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_clothing"/>
+	</scene>
+	
+	<scene id="clothing_dice_kiss">
+		<content folderPath="txt/places/fields/elis/market">CLOTHING_KISS</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[你和母半狐人们玩够了，退开思索下一步要做什么……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_clothing_dice_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'CLOTHING_KISS_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[热情亲吻]]></responseTitle>
+				<responseTooltip><![CDATA[你还没玩够，你把法埃和西尔维娅拉到你身边，给她们每人深情的吻……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_clothing_dice_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'CLOTHING_KISS_END_PASSION'))]
+					[#flags.setFlag(FLAG_innoxia_elis_market_fae_passionate, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Red herring for Eisek stall quest -->
+	<scene id="clothing_ask_fabric">
+		<author><![CDATA[DSG]]></author>
+		<content folderPath="txt/places/fields/elis/market">CLOTHING_ASK_FABRIC</content>
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_clothing"/>
+	</scene>
+	
+	<!-- Place type id: innoxia_places_fields_elis_market_drinks_alcohol -->
+	<scene id="drinks_alcohol">
+		<content folderPath="txt/places/fields/elis/market">DRINKS_ALCOHOL</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[啤酒 (#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40) 点一瓶啤酒。#ELSE 你喝不起一瓶啤酒……#ENDIF]]></responseTooltip>
+				<nextDialogue><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_elis_market_drinks_alcohol_order#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(40)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_ALCOHOL_BEER'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextEndStringBuilder(itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[苹果西打酒 (#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40) 点一瓶苹果酒。#ELSE 你喝不起一瓶苹果酒…… #ENDIF]]></responseTooltip>
+				<nextDialogue><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_elis_market_drinks_alcohol_order#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(40)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_ALCOHOL_CIDER'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextEndStringBuilder(itemGen.generateItem('innoxia_race_horse_equine_cider').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[梨酒 (#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40) 点一瓶梨酒。#ELSE 你喝不起一瓶梨酒……#ENDIF]]></responseTooltip>
+				<nextDialogue><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_elis_market_drinks_alcohol_order#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(40)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_ALCOHOL_PERRY'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextEndStringBuilder(itemGen.generateItem('innoxia_race_badger_black_stripes_perry').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="drinks_alcohol_order">
+		<content folderPath="txt/places/fields/elis/market">DRINKS_ALCOHOL_END</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_drinks_alcohol"/>
+	</scene>
+	
+	<!-- Place type id: innoxia_places_fields_elis_market_drinks_soft -->
+	<scene id="drinks_soft">
+		<content folderPath="txt/places/fields/elis/market">DRINKS_SOFT</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[水 (#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点一瓶水。#ELSE你买不起水……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_market_drinks_soft#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(20)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_WATER'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_human_vanilla_water').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[橙汁 (#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点一罐碳酸橙汁。#ELSE 你喝不起碳酸橙汁……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_market_drinks_soft#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(20)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_ORANGE_JUICE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_ferret_orange_juice').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[莓果苏打水 (#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点一瓶莓果苏打水。#ELSE 你喝不起莓果苏打水……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_market_drinks_soft#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(20)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_BERRY_SODA'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_otter_berry_soda').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[可乐 (#IF(pc.getMoney()>=25)[style.moneyFormat(25, span)]#ELSE[style.moneyFormatUncoloured(25, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=25) 点一瓶可乐。#ELSE 你喝不起可乐……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=25)innoxia_places_fields_elis_market_drinks_soft#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(25)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_COLA'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-25))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_pig_porcine_pop').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[胡萝卜汁(#IF(pc.getMoney()>=35)[style.moneyFormat(35, span)]#ELSE[style.moneyFormatUncoloured(35, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=35) 点一瓶胡萝卜汁。#ELSE 你喝不起胡萝卜汁…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=35)innoxia_places_fields_elis_market_drinks_soft#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(35)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_CARROT_JUICE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'DRINKS_SOFT_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-35))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_rabbit_bunny_juice').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_market_exit -->
+	<scene id="exit">
+		<content folderPath="txt/places/fields/elis/market">EXIT</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[true]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[走出农贸市场，回到伊利斯。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_market"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_market)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'EXIT_LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_places_fields_elis_market_food_meals -->
+	<scene id="food_meals">
+		<content folderPath="txt/places/fields/elis/market">FOOD_MEALS</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[炸鱼薯条 (#IF(pc.getMoney()>=150)[style.moneyFormat(150, span)]#ELSE[style.moneyFormatUncoloured(150, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=150) 点一份炸鱼薯条。#ELSE 你买不起炸鱼薯条…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=150)innoxia_places_fields_elis_market_food_meals#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(150)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_FISH_CHIPS'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-150))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_otter_fish_and_chips').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[香肠 (#IF(pc.getMoney()>=150)[style.moneyFormat(150, span)]#ELSE[style.moneyFormatUncoloured(150, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=150) 点一份优质香肠。#ELSE 你买不起优质香肠…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=150)innoxia_places_fields_elis_market_food_meals#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(150)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_SAUSAGES'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-150))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_ferret_sausages').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[鸡肉派 (#IF(pc.getMoney()>=180)[style.moneyFormat(180, span)]#ELSE[style.moneyFormatUncoloured(180, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=180) 点一份鸡肉派。#ELSE 你买不起鸡肉派……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=180)innoxia_places_fields_elis_market_food_meals#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(180)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_CHICKEN_PIE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-180))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_fox_chicken_pot_pie').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[汉堡和薯条 (#IF(pc.getMoney()>=200)[style.moneyFormat(200, span)]#ELSE[style.moneyFormatUncoloured(200, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=200) 点一份汉堡和扭扭薯条。#ELSE 你买不起汉堡和扭扭薯条…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=200)innoxia_places_fields_elis_market_food_meals#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(200)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_BURGER'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-200))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_rat_brown_rats_burger').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[牛排三明治 (#IF(pc.getMoney()>=250)[style.moneyFormat(250, span)]#ELSE[style.moneyFormatUncoloured(250, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=250) 点一份牛排三明治。#ELSE 你买不起牛排三明治……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=250)innoxia_places_fields_elis_market_food_meals#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(250)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_STEAK'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_MEALS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-250))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_wolf_meat_and_marrow').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_places_fields_elis_market_food_snacks -->
+	<scene id="food_snacks">
+		<content folderPath="txt/places/fields/elis/market">FOOD_SNACKS</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[棉花糖(#IF(pc.getMoney()>=15)[style.moneyFormat(15, span)]#ELSE[style.moneyFormatUncoloured(15, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=15) 点一份棉花糖。#ELSE 你买不起棉花糖…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=15)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(15)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_CANDY_FLOSS'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-15))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_sheep_woolly_goodness').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[爆米花(#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20) 点一包爆米花。#ELSE你买不起爆米花……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(20)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_POPCORN'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_raccoon_popcorn').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[糖霜狗饼干(#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40) 点一份糖霜狗饼干，一种骨头形状的糖霜饼干。#ELSE 你买不起糖霜狗饼干……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(40)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_CANINE_CRUNCH'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_dog_canine_crunch').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[小面包 (#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 点一小筐新鲜出炉的小面包。#ELSE 你买不起小面包……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(50)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_BREAD'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_human_bread_roll').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[混合坚果 (#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 点一份混合坚果。#ELSE 你买不起混合坚果……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(50)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_NUTS'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_squirrel_round_nuts').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[胡萝卜蛋糕(#IF(pc.getMoney()>=50)[style.moneyFormat(50, span)]#ELSE[style.moneyFormatUncoloured(50, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50) 点一角胡萝卜蛋糕。#ELSE 你买不起胡萝卜蛋糕…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=50)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(50)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_CARROT_CAKE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-50))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_rabbit_bunny_carrot_cake').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[鸡蛋(#IF(pc.getMoney()>=75)[style.moneyFormat(75, span)]#ELSE[style.moneyFormatUncoloured(75, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=75) 点一盒煮鸡蛋。#ELSE 你买不起煮鸡蛋……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=75)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(75)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_EGGS'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-75))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('NoStepOnSnek_race_snake_eggs').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[蜂蜜小面包 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 点一份蜂蜜小面包。#ELSE 你吃不起蜂蜜小面包……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(80)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_HONEY_BREAD'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('dsg_race_bear_honey_bread').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[ 浆果松饼(#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 点一份浆果松饼。#ELSE 你买不起浆果松饼…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(80)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_BERRY_TRIFLE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_badger_berry_trifle').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[布朗尼蛋糕 (#IF(pc.getMoney()>=80)[style.moneyFormat(80, span)]#ELSE[style.moneyFormatUncoloured(80, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=80) 点一份巧克力布朗尼。#ELSE 你吃不起巧克力布朗尼……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=80)innoxia_places_fields_elis_market_food_snacks#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(80)]', true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_BROWNIE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FOOD_SNACKS_END'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-80))]
+					[#game.appendToTextStartStringBuilder(itemGen.generateItem('NoStepOnSnek_race_capybara_brownie').applyEffect(pc, pc))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_fields_elis_market_fortunes -->
+	<scene id="fortunes">
+		<content folderPath="txt/places/fields/elis/market">FORTUNES</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<travelDisabled><![CDATA[
+			[#!heather.isPlayerKnowsName() && game.isHourBetween(8, 18)]
+		]]></travelDisabled>
+		<responses>
+			<!-- Closed: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[摊位已关闭，你只能下次再来……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<!-- Open and not introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && !heather.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[介绍]]></responseTitle>
+				<responseTooltip><![CDATA[告诉[heather.race]你是谁。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_fortunes_intro]]></nextDialogue>
+				<effects><![CDATA[
+					[#heather.setPlayerKnowsName(true)]
+				]]></effects>
+			</response>
+			<!-- Open and introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && heather.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[看看希瑟有什么出售的……]]></responseTooltip>
+				<nextDialogue/>
+				<tradingVariables enabled="true">
+					<tradePartner><![CDATA[heather]]></tradePartner>
+				</tradingVariables>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && heather.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[算命(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket'))
+						你至少需要一张集市票才能让希瑟算命……
+					#ELSE
+						给希瑟一张集市票算算你的运势。.
+						<br/><i>你物品栏中的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket'))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_fortunes_crystal_ball
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && heather.isPlayerKnowsName() && heather.isAttractedTo(pc) && heather.getSexCount(pc).getTotalTimesHadSex()>0]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[操她]]></responseTitle>
+				<responseTooltip><![CDATA[知道希瑟是个顺从的荡妇后，你现在可以简单地命令[heather.herHim]向你顺从……]]></responseTooltip>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_DOMINANT]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[ONE_VANILLA]]></corruptionLevel>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_heather_standard]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>heather</id>
+							<slot><![CDATA[STANDING_STANDING_SUBMISSIVE]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_fortunes_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">FORTUNES_DEMAND_SEX</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="fortunes_intro">
+		<content folderPath="txt/places/fields/elis/market">FORTUNES_INTRO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_fortunes"/>
+	</scene>
+	
+	<scene id="fortunes_crystal_ball">
+		<content folderPath="txt/places/fields/elis/market">FORTUNES_CRYSTAL_BALL</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[力量]]></responseTitle>
+				<responseTooltip><![CDATA[想想获得终极力量，取代莉莉丝统治世界。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_fortunes_crystal_ball_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FORTUNES_CRYSTAL_BALL_POWER'))]
+					[#flags.setFlag(FLAG_innoxia_elis_market_heather_fortune_read, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[名气]]></responseTitle>
+				<responseTooltip><![CDATA[想成为全世界最有名、最受人敬仰的人。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_fortunes_crystal_ball_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FORTUNES_CRYSTAL_BALL_FAME'))]
+					[#flags.setFlag(FLAG_innoxia_elis_market_heather_fortune_read, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[时运]]></responseTitle>
+				<responseTooltip><![CDATA[想想有了这么多钱，你想买什么就买什么，想买谁就买谁。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_fortunes_crystal_ball_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FORTUNES_CRYSTAL_BALL_FORTUNE'))]
+					[#flags.setFlag(FLAG_innoxia_elis_market_heather_fortune_read, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[做爱]]></responseTitle>
+				<responseTooltip><![CDATA[想想在你的余生中，每天都能享受最棒的性爱。]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(heather.isAttractedTo(pc))
+						innoxia_places_fields_elis_market_fortunes_crystal_ball_sex
+					#ELSE
+						innoxia_places_fields_elis_market_fortunes_crystal_ball_end
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(!heather.isAttractedTo(pc))
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FORTUNES_CRYSTAL_BALL_SEX_NO_ATTRACTION'))]
+					#ENDIF
+					[#flags.setFlag(FLAG_innoxia_elis_market_heather_fortune_read, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="fortunes_crystal_ball_end">
+		<content folderPath="txt/places/fields/elis/market">FORTUNES_CRYSTAL_BALL_END</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[回复]]></responseTitle>
+				<responseTooltip><![CDATA[感谢希瑟为你算命并思考下一步该怎么做……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_fortunes]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FORTUNES_CRYSTAL_BALL_END_CONTINUE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="fortunes_crystal_ball_sex">
+		<content folderPath="txt/places/fields/elis/market">FORTUNES_CRYSTAL_BALL_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_fortunes_crystal_ball">
+			<!-- Oral: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!pc.hasPenisIgnoreDildo() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[接受口交]]></responseTitle>
+				<responseTooltip><![CDATA[你需要有阴道或阴茎，并且能够进行接触，以便让希瑟为你口交……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[接受口交]]></responseTitle>
+				<responseTooltip><![CDATA[尽可能集中注意力，想象希瑟跪在你面前为你口交。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_heather_oral]]></id>
+					<startingPosition><![CDATA[
+						#IF(pc.isTaur())
+							STANDING
+						#ELSE
+							SITTING
+						#ENDIF
+					]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[
+								#IF(pc.isTaur())
+									STANDING_STANDING_DOMINANT
+								#ELSE
+									SITTING_SITTING
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>heather</id>
+							<slot><![CDATA[
+								#IF(pc.isTaur())
+									#IF(pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+										STANDING_PERFORMING_ORAL
+									#ELSE
+										STANDING_PERFORMING_ORAL_BEHIND
+									#ENDIF
+								#ELSE
+									SITTING_PERFORMING_ORAL
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_fortunes_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">FORTUNES_CRYSTAL_BALL_SEX_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[[#pc.hasPenisIgnoreDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></condition>
+							<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START]]></id>
+							<performer><![CDATA[heather]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#!pc.hasPenisIgnoreDildo() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></condition>
+							<id><![CDATA[TongueVagina_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[heather]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && (!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[操她的屁股]]></responseTitle>
+				<responseTooltip><![CDATA[你需要有一个阴茎，并且能够接触到它才能操希瑟的屁股……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[操她的屁股]]></responseTitle>
+				<responseTooltip><![CDATA[尽量集中注意力，想象希瑟弯下腰，撩起[heather.her]的裙子，这样你就可以操[heather.her]的屁股了。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_heather_anal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>heather</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_fortunes_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">FORTUNES_CRYSTAL_BALL_SEX_ANAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[heather]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="fortunes_after_sex">
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[希瑟很满足，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/elis/market">FORTUNES_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]回一步，让希瑟重新坐下。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_fortunes]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'FORTUNES_AFTER_SEX_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_fields_elis_market_kissing -->
+	<scene id="kissing">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING'))]
+			[#ziva.setCharacterReactedToPregnancy(pc, true)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_elis_market_ziva_met) && game.isHourBetween(8, 18)]
+		]]></travelDisabled>
+		<responses>
+			<!-- Closed: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[亲吻(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[摊位已关闭，你只能下次再来……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<!-- Open and not introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && !flags.hasFlag(FLAG_innoxia_elis_market_ziva_met)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[介绍]]></responseTitle>
+				<responseTooltip><![CDATA[告诉[ziva.race]你是谁。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_intro]]></nextDialogue>
+				<effects><![CDATA[
+					[#ziva.setGenericName('莱文女士')]
+					[#flags.setFlag(FLAG_innoxia_elis_market_ziva_met, true)]
+				]]></effects>
+			</response>
+			<!-- Open and introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && flags.hasFlag(FLAG_innoxia_elis_market_ziva_met)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[亲吻(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket'))
+						你至少需要一张集市票，才能得到[ziva.namePos]的其中一个奴隶的亲吻……
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						你需要能够接触到自己的嘴，才能得到[ziva.namePos]的其中一个奴隶的亲吻……
+					#ELSE
+						给莱文女士一张你的集市票，以换取她的一个奴隶的一个吻。
+						<br/><i>集市票在你的物品栏：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket') || !pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_kissing_kiss_choice
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="kissing_intro">
+		<content folderPath="txt/places/fields/elis/market">KISSING_INTRO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_kissing"/>
+	</scene>
+	
+	<scene id="kissing_kiss_choice">
+		<content folderPath="txt/places/fields/elis/market">KISSING_KISS_CHOICE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>
+		<responses>
+			<!-- Cow-girls kisses: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[红色牛女]]></responseTitle>
+				<responseTooltip><![CDATA[选择亲吻涂着厚厚一层红色口红、面带微笑的牛女。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_CHOICE_RED'))]
+					[#game.appendToTextEndStringBuilder(pc.addLipstickMarking(null, IS_MOUTH, COLOUR_COVERING_RED))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[粉色牛女]]></responseTitle>
+				<responseTooltip><![CDATA[选择亲吻涂着厚厚一层淡粉色口红的热情牛女。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_CHOICE_PINK'))]
+					[#game.appendToTextEndStringBuilder(pc.addLipstickMarking(null, IS_MOUTH, COLOUR_COVERING_PINK_LIGHT))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[紫色牛女]]></responseTitle>
+				<responseTooltip><![CDATA[选择亲吻涂着厚厚一层紫色口红、不情愿的牛女。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_CHOICE_PURPLE'))]
+					[#game.appendToTextEndStringBuilder(pc.addLipstickMarking(null, IS_MOUTH, COLOUR_COVERING_PURPLE))]
+				]]></effects>
+			</response>
+			<!-- Ziva kiss: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!flags.hasFlag(FLAG_innoxia_elis_market_ziva_kiss_offered)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[[ziva.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[告诉[ziva.name]你想吻她。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_choice]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_CHOICE_ZIVA_OFFER'))]
+					[#flags.setFlag(FLAG_innoxia_elis_market_ziva_kiss_offered, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_ziva_kiss_offered)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[[ziva.Name] (#IF(pc.getMoney()>=1000)[style.moneyFormat(1000, span)]#ELSE[style.moneyFormatUncoloured(1000, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<1000)
+						你没有足够的钱支付[ziva.name]的一个吻……
+					#ELSE
+						给[ziva.name]一千个火币，换她的一个吻。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()<1000)
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_kissing_kiss_ziva
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-1000))]
+					[#ziva.incrementMoney(1000)]
+					[#flags.setFlag(FLAG_innoxia_elis_market_ziva_kissed, true)]
+				]]></effects>
+			</response>
+			<!-- None: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[无]]></responseTitle>
+				<responseTooltip><![CDATA[改变主意，决定不亲吻任何牛女……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_CHOICE_NONE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="kissing_kiss_end">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<travelDisabled><![CDATA[false]]></travelDisabled>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_kissing"/>
+	</scene>
+	
+	<scene id="kissing_kiss_ziva">
+		<content folderPath="txt/places/fields/elis/market">KISSING_KISS_ZIVA</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[玩得尽兴之后，你退了开来，思索着下一步该怎么做……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_ZIVA_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!flags.hasFlag(FLAG_innoxia_elis_market_ziva_strip_offered)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[亲吻胸部]]></responseTitle>
+				<responseTooltip><![CDATA[告诉[ziva.name]你想亲吻她的胸部。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_ziva]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_ZIVA_MORE'))]
+					[#flags.setFlag(FLAG_innoxia_elis_market_ziva_strip_offered, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_elis_market_ziva_strip_offered)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[亲吻胸部(#IF(pc.getMoney()>=5000)[style.moneyFormat(5000, span)]#ELSE[style.moneyFormatUncoloured(5000, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<5000)
+						你没有足够的钱去亲吻[ziva.namePos]的胸部……
+					#ELSE
+						给[ziva.name]五千火币，作为允许亲吻她胸部的价钱。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()<5000)
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_kissing_kiss_ziva_breasts
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-5000))]
+					[#ziva.incrementMoney(5000)]
+					[#ziva.displaceClothingForAccess(CA_NIPPLES, null)]
+					[#ziva.unequipClothingIntoVoid(ziva.getClothingInSlot(IS_GROIN), true, ziva)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="kissing_kiss_ziva_breasts">
+		<content folderPath="txt/places/fields/elis/market">KISSING_KISS_ZIVA_BREASTS</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[你已经得到了你想要的了，所以拒绝了[ziva.namePos]的性爱提议……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_kissing_kiss_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'KISSING_KISS_ZIVA_BREASTS_END'))]
+					[#ziva.equipClothing()]
+				]]></effects>
+			</response>
+			<!-- Cunnilingus: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getMoney()<10000]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[舔阴([style.moneyFormatUncoloured(10000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[你没有足够的钱对[ziva.name]进行舔阴……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getMoney()>=10000]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[舔阴([style.moneyFormat(10000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[给[ziva.name]一万火币，作为允许为她舔阴的价格。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_ziva_cunnilingus]]></id>
+					<startingPosition><![CDATA[AGAINST_WALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>ziva</id>
+							<slot><![CDATA[AGAINST_WALL_BACK_TO_WALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[AGAINST_WALL_PERFORMING_ORAL_WALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">ZIVA_CUNNILINGUS_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[ziva]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-10000))]
+					[#ziva.incrementMoney(10000)]
+				]]></effects>
+			</response>
+			<!-- Anilingus: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && pc.getMoney()<10000]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[吻肛([style.moneyFormatUncoloured(10000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[你没有足够的钱对[ziva.name]进行肛交……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && pc.getMoney()>=10000]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[吻肛([style.moneyFormat(10000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[给[ziva.name]一万火币，以换取她的吻肛。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_ziva_anilingus]]></id>
+					<startingPosition><![CDATA[AGAINST_WALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>ziva</id>
+							<slot><![CDATA[AGAINST_WALL_FACE_TO_WALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[AGAINST_WALL_PERFORMING_ORAL_WALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">ZIVA_ANILINGUS_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueAnus_ANILINGUS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[ziva]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-10000))]
+					[#ziva.incrementMoney(10000)]
+				]]></effects>
+			</response>
+			<!-- Vaginal: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getMoney()<50000 || !pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[
+					#IF(game.isAnalContentEnabled())
+						4
+					#ELSE
+						3
+					#ENDIF
+				]]></index>
+				<responseTitle><![CDATA[操她([style.moneyFormatUncoloured(50000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+						你需要有一个阴茎，并能够使用，才能操[ziva.name]……
+					#ELSE
+						你没有足够的钱去操[ziva.name]……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getMoney()>=10000 && pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[
+					#IF(game.isAnalContentEnabled())
+						4
+					#ELSE
+						3
+					#ENDIF
+				]]></index>
+				<responseTitle><![CDATA[操她([style.moneyFormat(50000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[
+					给[ziva.name]五万火币，作为被允许操
+					#IF(game.isAnalContentEnabled())
+						她的小穴和屁股的报酬。
+					#ELSE
+						她的小穴的报酬。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_ziva_vaginal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>ziva</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_BACK]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">ZIVA_VAGINAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[ziva]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-50000))]
+					[#ziva.incrementMoney(50000)]
+				]]></effects>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && (pc.getMoney()<50000 || !pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[操她的屁股([style.moneyFormatUncoloured(50000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+						你需要有一个阴茎，并能使用它，才能操[ziva.namePos]的屁股……
+					#ELSE
+						你没有足够的钱去操[ziva.namePos]的屁股……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isAnalContentEnabled() && (pc.getMoney()>=10000 && pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[操她的屁股([style.moneyFormat(50000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[
+					给[ziva.name]五万火币作为回报，来操她的屁股和下体。
+				]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_ziva_anal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>ziva</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">ZIVA_ANAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[ziva]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-50000))]
+					[#ziva.incrementMoney(50000)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="kissing_after_sex">
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[[ziva.Name]很满足，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/elis/market">KISSING_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[离开存储区，回到[ziva.namePos]摊位的另一边。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_kissing_after_sex_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="kissing_after_sex_end">
+		<content folderPath="txt/places/fields/elis/market">KISSING_AFTER_SEX_END</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_kissing"/>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_fields_elis_market_path -->
+	<scene id="path">
+		<content folderPath="txt/places/fields/elis/market">PATH</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!game.isHourBetween(8, 18)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[农贸市场关门了，除了回到伊利斯没别的事了。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_street"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_market)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'EXIT_LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_fields_elis_market_toys -->
+	<scene id="toys">
+		<content folderPath="txt/places/fields/elis/market">TOYS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<travelDisabled><![CDATA[
+			[#game.isHourBetween(8, 18) && (!yui.isPlayerKnowsName() || (flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) && !flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked)))]
+		]]></travelDisabled>
+		<responses>
+			<!-- Closed: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[摊位已关闭，你只能下次再来……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<!-- Open and introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && yui.isPlayerKnowsName() && (!flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) || flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[看看唯有什么出售的……]]></responseTooltip>
+				<nextDialogue/>
+				<tradingVariables enabled="true">
+					<tradePartner><![CDATA[yui]]></tradePartner>
+				</tradingVariables>
+			</response>
+			<!-- Open and not introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && !yui.isPlayerKnowsName() && (!flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) || flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[介绍]]></responseTitle>
+				<responseTooltip><![CDATA[告诉[yui.race]你是谁。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_toys_intro]]></nextDialogue>
+				<effects><![CDATA[
+					[#yui.setPlayerKnowsName(true)]
+				]]></effects>
+			</response>
+			<!-- Open and offer of becoming her toy: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && yui.isPlayerKnowsName() && (flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) && !flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[更多信息]]></responseTitle>
+				<responseTooltip><![CDATA[问问唯这份新工作具体要做什么。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_public_toy_offer]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_yui_public_toy_unlocked, true)]
+				]]></effects>
+			</response>
+			<!-- Submit: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && yui.isPlayerKnowsName() && (!flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) || flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTitle><![CDATA[被支配]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_domination_complete))
+						唯今天已经支配过你了，她不愿意再来一遍。如果你还想再来一次，得明天来。
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						你的嘴被限制，没法被唯支配……
+					#ELSE
+						告诉唯你愿意被她支配来换取集市票。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_domination_complete) || !pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_toys_domination
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_elis_market_yui_domination_complete, true)]
+				]]></effects>
+			</response>
+			<!-- Living toy bad end: (REMOVED)
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_yui_public_toy_completed)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[Living toy]]></responseTitle>
+				<responseTooltip><![CDATA[
+					Tell Mistress Yui that you want to become her living toy.
+					
+					#IF(!pc.hasFetish(FETISH_MASOCHIST))
+						<br/>As you're [style.italicsBad(not a masochist)], you've got a bad feeling about this and [style.italicsBad(decide not to meet with Yui)]...
+					#ELSEIF(pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects() || pc.getDirtySlots().size()>0 || (!game.isAnalContentEnabled() && !pc.hasVagina()) || pc.getLegConfiguration()!=LEG_CONFIGURATION_BIPEDAL)
+						<br/>As you have
+						#IF(pc.isAnyEquippedClothingSealed())
+							 [style.italicsSealed(sealed)] clothing equipped,
+						#ENDIF
+						#IF(pc.isHasAnyPregnancyEffects())
+							#IF(pc.isAnyEquippedClothingSealed() && pc.getDirtySlots().size()==0)
+								 and
+							#ENDIF
+							 a [style.italicsSex(pregnancy-related status effect)] active,
+						#ENDIF
+						#IF(pc.getDirtySlots().size()>0)
+							#IF(pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects())
+								 and
+							#ENDIF
+							 [style.italicsDirty(dirty inventory slots)], 
+						#ENDIF
+						#IF(pc.getLegConfiguration()!=LEG_CONFIGURATION_BIPEDAL)
+							#IF(pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects() || pc.getDirtySlots().size()>0 || (!game.isAnalContentEnabled() && !pc.hasVagina()))
+								 and
+							#ENDIF
+							 [style.italicsTfGeneric(a non-bipedal lower body)], 
+						#ENDIF
+						 [style.italicsBad(Yui won't make you her toy)]!
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects() || pc.getDirtySlots().size()>0 || pc.getLegConfiguration()!=LEG_CONFIGURATION_BIPEDAL)
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_toys_living_toy_contract
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			 -->
+			<!-- Demonstrations: -->
+			<!-- Ball gag: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && yui.isPlayerKnowsName() && (!flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) || flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+					<fetish><![CDATA[FETISH_MASOCHIST]]></fetish>
+					<fetish><![CDATA[FETISH_BONDAGE_VICTIM]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTitle><![CDATA[口球演示(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket'))
+						你需要至少一张集市票来被唯演示……
+					#ELSEIF(!pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_innoxia_bdsm_ballgag), true, yui))
+						你不能装备口球，没法得到唯的演示……
+					#ELSE
+						给唯一张集市票来得到口球演示，将包含[style.colourSex(被塞口和被抽打)]。
+						<br/><i>你物品栏里的集市票： [style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+						#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete))
+							<br/>[style.italicsMinorBad(唯今天不会再演示一次……)]
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete) || !pc.hasItemType('innoxia_quest_faire_ticket') || !pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_innoxia_bdsm_ballgag), true, yui))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_toys_demonstration_ballgag
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#flags.setFlag(FLAG_innoxia_elis_market_yui_demonstration_complete, true)]
+				]]></effects>
+			</response>
+			<!-- Caged: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && yui.isPlayerKnowsName() && (!flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) || flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+					<fetish><![CDATA[FETISH_MASOCHIST]]></fetish>
+					<fetish><![CDATA[FETISH_BONDAGE_VICTIM]]></fetish>
+					<fetish><![CDATA[FETISH_DENIAL_SELF]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTitle><![CDATA[贞操笼演示(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket'))
+						你需要至少一张集市票来被唯演示……
+					#ELSEIF(!pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_innoxia_bdsm_chastity_cage), true, yui))
+						你不能装备贞操笼，没法得到唯的演示……
+					#ELSE
+						给唯一张集市票来得到贞操笼演示，将包含[style.colourSex(你的鸡巴被锁住和挑逗)]。
+						<br/><i>你物品栏里的集市票： [style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+						#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete))
+							<br/>[style.italicsMinorBad(唯今天不会再演示一次……)]
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete) || !pc.hasItemType('innoxia_quest_faire_ticket') || !pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_innoxia_bdsm_chastity_cage), true, yui))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_toys_demonstration_chastity_cage
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#flags.setFlag(FLAG_innoxia_elis_market_yui_demonstration_complete, true)]
+				]]></effects>
+			</response>
+			<!-- Vaginal fucked: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && yui.isPlayerKnowsName() && (!flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) || flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+					<fetish><![CDATA[FETISH_MASOCHIST]]></fetish>
+					<fetish><![CDATA[FETISH_BONDAGE_VICTIM]]></fetish>
+					<fetish><![CDATA[FETISH_VAGINAL_RECEIVING]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTitle><![CDATA[假阳具演示(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket'))
+						你需要至少一张集市票来被唯演示……
+					#ELSEIF(!pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_norin_dildos_realistic_dildo), IS_VAGINA, true, yui))
+						你不能装备假阳具，没法得到唯的演示……
+					#ELSE
+						给唯一张集市票来得到假阳具演示，将包含[style.colourSex(振动的假阳具插进你的小穴)]。
+						<br/><i>你物品栏里的集市票： [style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+						#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete))
+							<br/>[style.italicsMinorBad(唯今天不会再演示一次……)]
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete) || !pc.hasItemType('innoxia_quest_faire_ticket') || !pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_norin_dildos_realistic_dildo), IS_VAGINA, true, yui))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_toys_demonstration_dildo
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#flags.setFlag(FLAG_innoxia_elis_market_yui_demonstration_complete, true)]
+				]]></effects>
+			</response>
+			<!-- Anal beads: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && yui.isPlayerKnowsName() && (!flags.hasFlag(FLAG_innoxia_yui_dungeon_completed_stage_1) || flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+					<fetish><![CDATA[FETISH_MASOCHIST]]></fetish>
+					<fetish><![CDATA[FETISH_BONDAGE_VICTIM]]></fetish>
+					<fetish><![CDATA[FETISH_ANAL_RECEIVING]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTitle><![CDATA[肛门拉珠演示(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType('innoxia_quest_faire_ticket'))
+						你需要至少一张集市票来被唯演示……
+					#ELSEIF(!pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_norin_anal_beads_anal_beads), true, yui))
+						你不能装备肛门拉珠，没法得到唯的演示……
+					#ELSE
+						给唯一张集市票来得到肛门拉珠演示，将包含[style.colourSex(拉门拉珠插进你的菊穴)]。
+						<br/><i>你物品栏里的集市票： [style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+						#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete))
+							<br/>[style.italicsMinorBad(唯今天不会再演示一次……)]
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_yui_demonstration_complete) || !pc.hasItemType('innoxia_quest_faire_ticket') || !pc.isAbleToEquip(itemGen.generateClothing(CLOTHING_norin_anal_beads_anal_beads), true, yui))
+						null
+					#ELSE
+						innoxia_places_fields_elis_market_toys_demonstration_anal_beads
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+					[#flags.setFlag(FLAG_innoxia_elis_market_yui_demonstration_complete, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_intro">
+		<content folderPath="txt/places/fields/elis/market">TOYS_INTRO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_toys"/>
+	</scene>
+	
+	<scene id="public_toy_offer">
+		<content folderPath="txt/places/fields/elis/market">TOYS_PUBLIC_TOY_OFFER</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<travelDisabled><![CDATA[false]]></travelDisabled>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_toys"/>
+	</scene>
+	
+	<scene id="toys_living_toy_contract">
+		<content folderPath="txt/places/fields/elis/market">TOYS_LIVING_TOY_CONTRACT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<continuesDialogue>false</continuesDialogue>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_BAD_END]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+					<fetish><![CDATA[FETISH_MASOCHIST]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[FIVE_CORRUPT]]></corruptionLevel>
+				<responseTitle><![CDATA[签字]]></responseTitle>
+				<responseTooltip><![CDATA[
+					签名将自己变作奴隶，成为唯主人的活体玩具。
+					<br/>[style.italicsBadEnd(你的冒险将在此终结！)]
+]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_yui_sign_contract]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉主人唯你还得考虑一下。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_LIVING_TOY_CONTRACT_REFUSE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_domination">
+		<content folderPath="txt/places/fields/elis/market">TOYS_DOMINATION</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<!-- Face-sitting: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+					<fetish><![CDATA[FETISH_ORAL_GIVING]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTitle><![CDATA[被颜面骑乘]]></responseTitle>
+				<responseTooltip><![CDATA[让唯颜面骑乘一小时。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_toys_domination_face_sitting]]></nextDialogue>
+			</response>
+			<!-- Foot worship -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+					<fetish><![CDATA[FETISH_FOOT_RECEIVING]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<responseTitle><![CDATA[足部崇拜]]></responseTitle>
+				<responseTooltip><![CDATA[在下个小时里，为唯按摩双脚，这无疑会导致口她脚……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_toys_domination_foot_worship]]></nextDialogue>
+			</response>
+			<!-- Armpits -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isArmpitContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[
+					#IF(!game.isFootContentEnabled())
+						2
+					#ELSE
+						3
+					#ENDIF
+				]]></index>
+				<responseTitle><![CDATA[腋下崇拜]]></responseTitle>
+				<responseTooltip><![CDATA[接下来一个小时里，崇拜着唯的腋窝，当然也会用上嘴巴……]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_yui_armpits]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>yui</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_STANDING_SUBMISSIVE]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_toys_after_domination]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">TOYS_DOMINATION_ARMPIT_WORSHIP</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueArmpits_RECEIVING_ARMPIT_LICKING_START]]></id>
+							<performer><![CDATA[yui]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<id><![CDATA[SelfFingerVagina_SELF_FINGER_VAGINA_PENETRATION]]></id>
+							<performer><![CDATA[yui]]></performer>
+							<target><![CDATA[yui]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_domination_face_sitting">
+		<content folderPath="txt/places/fields/elis/market">TOYS_DOMINATION_FACE_SITTING</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<!-- Cunnilingus -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[舔阴]]></responseTitle>
+				<responseTooltip><![CDATA[告诉唯想给她来点“口技”。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_yui_face_sitting]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>yui</id>
+							<slot><![CDATA[LYING_DOWN_FACE_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_toys_after_domination]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">TOYS_DOMINATION_FACE_SITTING_PUSSY</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[yui]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Anilingus -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[吻肛]]></responseTitle>
+				<responseTooltip><![CDATA[告诉唯你想吃她的菊穴。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_yui_face_sitting_anal]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>yui</id>
+							<slot><![CDATA[LYING_DOWN_FACE_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_toys_after_domination]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">TOYS_DOMINATION_FACE_SITTING_ASSHOLE</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueAnus_RECEIVING_ANILINGUS_START]]></id>
+							<performer><![CDATA[yui]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_domination_foot_worship">
+		<content folderPath="txt/places/fields/elis/market">TOYS_DOMINATION_FOOT_WORSHIP</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[舔足]]></responseTitle>
+				<responseTooltip><![CDATA[告诉唯你渴望舔她的汗津津的玉足……]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_yui_foot_worship]]></id>
+					<startingPosition><![CDATA[SITTING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>yui</id>
+							<slot><![CDATA[SITTING_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_toys_after_domination]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">TOYS_DOMINATION_FOOT_WORSHIP_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[FootMouth_FOOT_ORAL_RECEIVING_START]]></id>
+							<performer><![CDATA[yui]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<id><![CDATA[SelfFingerVagina_SELF_FINGER_VAGINA_PENETRATION]]></id>
+							<performer><![CDATA[yui]]></performer>
+							<target><![CDATA[yui]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_after_domination">
+		<author><![CDATA[Innoxia]]></author>
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_quest_faire_ticket), false, true))]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[唯支配了你一天，已经享受够了，于是结束了行动……]]></tooltip>
+		<content folderPath="txt/places/fields/elis/market">TOYS_AFTER_DOMINATION</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[等待唯释放你，然后绕到隔间的另一边。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_AFTER_DOMINATION_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_yui_dungeon_unlocked)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[乞求继续]]></responseTitle>
+				<responseTooltip><![CDATA[你想被绑起来，任人支配！求唯把你绑起来，继续惩罚你。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_toys_after_domination_beg_for_more]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_after_domination_beg_for_more">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_yui_dungeon_unlocked, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">TOYS_AFTER_DOMINATION_BEG_FOR_MORE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[一想到西南塔楼还有更多惩罚等着你，你顺从地等待唯释放你，然后绕到摊位的另一边。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_AFTER_DOMINATION_BEG_FOR_MORE_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_demonstration_ballgag">
+		<preParsingEffects><![CDATA[
+			[#pc.equipClothingFromNowhere(itemGen.generateClothing(CLOTHING_innoxia_bdsm_ballgag, COLOUR_CLOTHING_PINK_HOT, false), true, yui)]
+			[#pc.addToUnlockKeyMap(pc.getId(), IS_MOUTH)]
+			[#pc.getClothingInSlot(IS_MOUTH).setName("唯的口球样品")]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">TOYS_DEMONSTRATION_BALLGAG</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[撅起屁股]]></responseTitle>
+				<responseTooltip><![CDATA[做主人唯的好[pc.girl]，抬起你的屁股让她用马鞭抽你。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_BALLGAG_OBEY'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_BALLGAG_END'))]
+					#IF(yui.getAffection(pc)<40)
+						[#game.appendToTextStartStringBuilder(yui.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝服从主人唯，尝试挣脱她的束缚。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_BALLGAG_RESIST'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_BALLGAG_END'))]
+					#IF(yui.getAffection(pc)>-40)
+						[#game.appendToTextStartStringBuilder(yui.incrementAffection(pc, -5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_demonstration_chastity_cage">
+		<preParsingEffects><![CDATA[
+			[#pc.equipClothingFromNowhere(itemGen.generateClothing(CLOTHING_innoxia_bdsm_chastity_cage, COLOUR_CLOTHING_PINK_HOT, false), true, yui)]
+			[#pc.addToUnlockKeyMap(pc.getId(), IS_PENIS)]
+			[#yui.unequipClothingIntoVoid(yui.getClothingInSlot(IS_GROIN), true, yui)]
+			[#pc.getClothingInSlot(IS_PENIS).setName("唯的贞操笼样品")]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">TOYS_DEMONSTRATION_CHASTITY</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[保持不动]]></responseTitle>
+				<responseTooltip><![CDATA[做主人唯的好[pc.girl]，站着不动，让她把你的鸡巴锁进贞操笼。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_chastity_cage_locked_up]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_CHASTITY_SUBMIT'))]
+					#IF(yui.getAffection(pc)<40)
+						[#game.appendToTextEndStringBuilder(yui.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[抵抗]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝服从主人唯，抗拒把你的鸡巴锁进贞操笼。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_chastity_cage_locked_up]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_CHASTITY_RESIST'))]
+					#IF(yui.getAffection(pc)>-40)
+						[#game.appendToTextEndStringBuilder(yui.incrementAffection(pc, -5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_demonstration_chastity_cage_locked_up">
+		<content folderPath="txt/places/fields/elis/market">TOYS_DEMONSTRATION_CHASTITY_LOCKED_UP</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[保持冷静]]></responseTitle>
+				<responseTooltip><![CDATA[保持镇定，忍受主人唯的挑逗。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_CHASTITY_LOCKED_UP_ENDURE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_CHASTITY_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拱]]></responseTitle>
+				<responseTooltip><![CDATA[屈服于你的性欲，尝试舔弄主人唯湿润的淫穴。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_CHASTITY_LOCKED_UP_HUMP'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_CHASTITY_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_demonstration_dildo">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_DILDO'))]
+			[#pc.equipClothingFromNowhere(itemGen.generateClothing(CLOTHING_norin_dildos_realistic_dildo, COLOUR_CLOTHING_PINK_HOT, false), true, yui)]
+			[#pc.addToUnlockKeyMap(pc.getId(), IS_VAGINA)]
+			[#pc.getClothingInSlot(IS_VAGINA).setSealed(true)]
+			[#pc.getClothingInSlot(IS_VAGINA).setName("唯的演示假阳具")]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[向后推]]></responseTitle>
+				<responseTooltip><![CDATA[做主人唯的好[pc.girl]，抵向假阳具，让它完全插入你的小穴。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_DILDO_PUSH_BACK'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_DILDO_END'))]
+					#IF(yui.getAffection(pc)<40)
+						[#game.appendToTextStartStringBuilder(yui.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拉开距离]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝服从主人唯，尝试把假阳具从你的小穴拉开。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_DILDO_PULL_AWAY'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_DILDO_END'))]
+					#IF(yui.getAffection(pc)>-40)
+						[#game.appendToTextStartStringBuilder(yui.incrementAffection(pc, -5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_demonstration_anal_beads">
+		<preParsingEffects><![CDATA[
+			[#pc.equipClothingFromNowhere(itemGen.generateClothing(CLOTHING_norin_anal_beads_anal_beads, COLOUR_CLOTHING_PINK_HOT, false), true, yui)]
+			[#pc.addToUnlockKeyMap(pc.getId(), IS_ANUS)]
+			[#pc.getClothingInSlot(IS_ANUS).setSealed(true)]
+			[#pc.getClothingInSlot(IS_ANUS).setName("唯的肛门拉珠样品")]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">TOYS_DEMONSTRATION_ANAL_BEADS</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[放松]]></responseTitle>
+				<responseTooltip><![CDATA[做主人唯的好[pc.girl]，放松你的菊花，让她把肛门拉珠全塞进你的菊穴。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_ANAL_BEADS_RELAX'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_ANAL_BEADS_END'))]
+					#IF(yui.getAffection(pc)<40)
+						[#game.appendToTextStartStringBuilder(yui.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[收紧]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝服从主人唯，夹紧菊花，阻止她把拉珠全部塞进你的菊穴里。]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys_demonstration_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_ANAL_BEADS_CLENCH'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_DEMONSTRATION_ANAL_BEADS_END'))]
+					#IF(yui.getAffection(pc)>-40)
+						[#game.appendToTextStartStringBuilder(yui.incrementAffection(pc, -5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="toys_demonstration_end">
+		<author><![CDATA[Innoxia]]></author>
+		<preParsingEffects><![CDATA[
+			[#pc.addStatusEffect(SE_FRUSTRATED_NO_ORGASM, 14400)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]到摊位的另一边。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_toys]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TOYS_AFTER_DEMONSTRATION'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Place type id: innoxia_fields_elis_market_trinkets -->
+	<scene id="trinkets">
+		<preParsingEffects><![CDATA[
+			[#itemGen.generateItem('CIGARETTE').applyEffect(kazik, kazik)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/market">TRINKETS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<travelDisabled><![CDATA[
+			[#!kazik.isPlayerKnowsName() && game.isHourBetween(8, 18)]
+		]]></travelDisabled>
+		<responses>
+			<!-- Closed: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isHourBetween(8, 18)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[摊位已关闭，你只能下次再来……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<!-- Open and introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && kazik.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交易]]></responseTitle>
+				<responseTooltip><![CDATA[看看卡济克有什么出售的……]]></responseTooltip>
+				<nextDialogue/>
+				<tradingVariables enabled="true">
+					<tradePartner><![CDATA[kazik]]></tradePartner>
+				</tradingVariables>
+			</response>
+			<!-- Open and not introduced: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && !kazik.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[介绍]]></responseTitle>
+				<responseTooltip><![CDATA[告诉貂男你是谁。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_intro]]></nextDialogue>
+				<effects><![CDATA[
+					[#kazik.setPlayerKnowsName(true)]
+				]]></effects>
+			</response>
+			<!-- Spells: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(8, 18) && kazik.isPlayerKnowsName()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[法术表演(1票)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						给卡济克一张集市票看看奥术法术展示。
+						<br/><i>你物品栏中的集市票：[style.boldGood([#pc.getItemCount(ITEM_innoxia_quest_faire_ticket)])]</i>
+						#IF(flags.hasFlag(FLAG_innoxia_elis_market_kazik_arcane_cast))
+							<br/>[style.italicsMinorBad(卡济克今天不会再给你演示“奥术狂欲”了……)]
+						#ENDIF
+					#ELSE
+						你至少需要一张集市票来看法术展示……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasItemType('innoxia_quest_faire_ticket'))
+						innoxia_places_fields_elis_market_trinkets_spells
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.removeItemByType(ITEM_innoxia_quest_faire_ticket, 1, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="trinkets_intro">
+		<content folderPath="txt/places/fields/elis/market">TRINKETS_INTRO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_trinkets"/>
+	</scene>
+	
+	<scene id="trinkets_spells">
+		<content folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[火球术]]></responseTitle>
+				<responseTooltip><![CDATA[让卡济克给你展示“火球术”。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_spells_finished]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_FIREBALL'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[闪光术]]></responseTitle>
+				<responseTooltip><![CDATA[让卡济克给你展示“闪光术”。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_spells_finished]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_FLASH'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[冰刃术]]></responseTitle>
+				<responseTooltip><![CDATA[让卡济克给你展示“冰刃术”。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_spells_finished]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_ICE_SHARD'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[雨云术]]></responseTitle>
+				<responseTooltip><![CDATA[让卡济克给你展示“雨云术”。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_spells_finished]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_RAIN_CLOUD'))]
+				]]></effects>
+			</response>
+			<!-- Arcane: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_elis_market_kazik_arcane)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[奥术法术]]></responseTitle>
+				<responseTooltip><![CDATA[问问卡济克为什么不展示奥术学派的法术。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_spells_arcane_reveal]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_elis_market_kazik_arcane, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_elis_market_kazik_arcane)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<colour><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_elis_market_kazik_arcane_cast))
+						GENERIC_ARCANE
+					#ENDIF
+				]]></colour>
+				<responseTitle><![CDATA[奥术狂欲]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_kazik_arcane_cast))
+						卡济克今天向你展示过“奥术狂欲”法术了，明天之前都不想再来一次。
+					#ELSE
+						让卡济克给你展示“奥术狂欲”法术。
+						<br/>[style.colourArcane(他必须对你施法以控制法术……)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_elis_market_kazik_arcane_cast))
+						innoxia_places_fields_elis_market_trinkets_spells_arcane
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_elis_market_kazik_arcane_cast, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_ARCANE_CAST'))]
+					[#game.appendToTextStartStringBuilder('<p>'+SPELL_ARCANE_AROUSAL.applyEffect(kazik, pc, null, null, true, true)+'</p>')]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_ARCANE_CAST_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="trinkets_spells_arcane_reveal">
+		<content folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS_ARCANE_REVEAL</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_market_trinkets_spells"/>
+	</scene>
+	
+	<scene id="trinkets_spells_finished">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[3]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[印象深刻]]></responseTitle>
+				<responseTooltip><![CDATA[告诉卡济克他的演示令人印象深刻。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_trinkets]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_FINISHED_IMPRESSED'))]
+					#IF(kazik.getAffection(pc)<40)
+						[#game.appendToTextStartStringBuilder(kazik.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[无聊]]></responseTitle>
+				<responseTooltip><![CDATA[告诉卡济克他的演示有点无聊。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_trinkets]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_FINISHED_BORING'))]
+					#IF(kazik.getAffection(pc)>-40)
+						[#game.appendToTextStartStringBuilder(kazik.incrementAffection(pc, -5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="trinkets_spells_arcane">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.isFeminine()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[卡济克似乎没兴趣帮你处理你的性欲……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_trinkets]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_ARCANE_CONTINUE'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.isFeminine()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[平静下来]]></responseTitle>
+				<responseTooltip><![CDATA[不理会卡济克的建议，花些时间克服你的性欲。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_trinkets]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_SPELLS_ARCANE_REFUSE'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && pc.isFeminine()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[口穴挑逗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						张开你的嘴挑逗卡济克，告诉他你想给他口。
+					#ELSE
+						你的嘴被限制，没法给卡济克口……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						innoxia_places_fields_elis_market_trinkets_sex_oral
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.isFeminine()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[展示小穴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasVagina())
+						你没有小穴，没法向卡济克展示……
+					#ELSEIF(pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+						展示你的小穴挑逗卡济克，告诉他你想挨操。
+					#ELSE
+						你的小穴被限制，没法向卡济克展示……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+						innoxia_places_fields_elis_market_trinkets_sex_vaginal
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && pc.isFeminine()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[展示菊穴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+						朝卡济克亮出屁眼挑逗他，坦白你希望他来操你的屁眼。
+					#ELSE
+						你的屁眼受到了限制，所以不能朝卡济克亮出它……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.isAbleToAccessCoverableArea(CA_ANUS, true))
+						innoxia_places_fields_elis_market_trinkets_sex_anal
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="trinkets_sex_oral">
+		<content folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS_ARCANE_ORAL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[给人口交]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.Step]到卡济克摊位的另一边，吸他的肉棒。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_kazik_oral]]></id>
+					<startingPosition><![CDATA[AGAINST_WALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>kazik</id>
+							<slot><![CDATA[AGAINST_WALL_BACK_TO_WALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[AGAINST_WALL_PERFORMING_ORAL_WALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS_ARCANE_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[kazik]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="trinkets_sex_vaginal">
+		<content folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS_ARCANE_VAGINAL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[开始被操]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.Step]到卡济克摊位的另一边，让他操你的小穴。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_kazik_vaginal]]></id>
+					<startingPosition><![CDATA[
+						#IF(pc.isTaur())
+							ALL_FOURS
+						#ELSE
+							AGAINST_WALL
+						#ENDIF
+					]]></startingPosition>
+					<dominants>
+						<character>
+							<id>kazik</id>
+							<slot><![CDATA[
+								#IF(pc.isTaur())
+									ALL_FOURS_BEHIND
+								#ELSE
+									AGAINST_WALL_STANDING_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[
+								#IF(pc.isTaur())
+									ALL_FOURS_ALL_FOURS
+								#ELSE
+									AGAINST_WALL_FACE_TO_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS_ARCANE_VAGINAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[kazik]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="trinkets_sex_anal">
+		<content folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS_ARCANE_ANAL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[开始被操]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.Step]到卡济克摊位的另一边，让他操你的肛门。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_market_kazik_anal]]></id>
+					<startingPosition><![CDATA[
+						#IF(pc.isTaur())
+							ALL_FOURS
+						#ELSE
+							AGAINST_WALL
+						#ENDIF
+					]]></startingPosition>
+					<dominants>
+						<character>
+							<id>kazik</id>
+							<slot><![CDATA[
+								#IF(pc.isTaur())
+									ALL_FOURS_BEHIND
+								#ELSE
+									AGAINST_WALL_STANDING_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[
+								#IF(pc.isTaur())
+									ALL_FOURS_ALL_FOURS
+								#ELSE
+									AGAINST_WALL_FACE_TO_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_market_trinkets_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/market">TRINKETS_SPELLS_ARCANE_ANAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[kazik]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="trinkets_after_sex">
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[卡济克很满足，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/elis/market">TRINKETS_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]到摊位的另一边。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_elis_market_trinkets]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/market', 'TRINKETS_AFTER_SEX_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

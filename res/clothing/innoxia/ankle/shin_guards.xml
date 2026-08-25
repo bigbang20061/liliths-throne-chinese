@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[护胫]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[护胫]]></namePlural>
+		<description><![CDATA[一对护胫，旨在保护穿着者的下半条腿免受伤害。]]></description>
+		<physicalResistance>1</physicalResistance> 
+		<femininity>ANDROGYNOUS</femininity> 
+		<slot>ANKLE</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>shin_guards.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked> 
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/> 
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_WHITE</colour>
+			<colour>CLOTHING_RED_DARK</colour>
+			<colour>CLOTHING_GREEN</colour>
+			<colour>CLOTHING_YELLOW</colour>
+			<colour>CLOTHING_BLUE</colour>
+			<colour>CLOTHING_ORANGE</colour>
+			<colour>CLOTHING_PINK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]在[npc.her]的脚踝上系紧了护胫。
+]]></self>
+    <other><![CDATA[
+[npc.Name]在[npc2.namePos]的脚踝上系紧了护胫。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]草草的在[npc2.namePos]的脚踝上系上了护胫。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开了[npc.her]的护胫并摘了下来。
+]]></self>
+    <other><![CDATA[
+[npc.Name]解开了[npc2.namePos]的护胫并摘了下来。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]迅速的解开[npc2.namePos]的护胫，并粗暴地将其抢走。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

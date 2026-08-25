@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- ROXY_FACE_SITTING_ORGASM  -->
+	
+	<htmlContent tag="ROXY_FACE_SITTING_ORGASM_ALREADY_ADDICTED"><![CDATA[
+		罗克西的呻吟逐渐高昂，她突然抓住你的头直到把她舔舒服了才罢休。她的大腿死死压住你的脸，让你不由闷吼了一声，鼠女尖叫着，[roxy.speechNoEffects(~啊哈！~对！你这舌头特娘的再深点！~唔！~对！)]
+	<br/><br/>
+		听着她的指挥，你将舌头探入鼠女[roxy.pussy+]，为了尝到爱液，誓要把她吃干抹净。你热情的反应令罗克西夹紧你的头，你能感受到她[roxy.pussy]高潮时的颤抖和对你舌头的挤压。[roxy.speechNoEffects(操我！~啊哈！对！操！~噢哈！)]
+	<br/><br/>
+		罗克西尖叫着，一股充满雌性气息的暖流从她[roxy.pussy+]直直喷进你的嘴中。[roxy.speechNoEffects(~啊哈！~)]鼠女尖叫着，[roxy.speechNoEffects(他娘的快喝下！~唔！~对！)]
+	<br/><br/>
+		无需提醒，你饥渴地吞下爱液，再用舌头积极地刺入[roxy.pussy+]以求更多。你吞下黏糊糊的液体后，大脑极度的渴求操控着你伸手抓住罗克西的大腿，把她拉到你的脸上。你如饥似渴地舔食着鼠女的爱液，她逐渐从高潮中恢复过来，继续坐在你的脸上，开始大笑，[roxy.speechNoEffects(嘿！这就对了，舔干净！味道很不错，不是吗？)]
+	<br/><br/>
+		[pc.speechNoEffects(~唔唔！~~唔唔唔！~)]你回应的声音被鼠女[roxy.pussy+]所扭曲。
+	<br/><br/>
+		[roxy.speechNoEffects(操他娘的有人舔真是太好了。你会永远渴望俺美味的小穴，不是吗？)]
+	<br/><br/>
+		你绝望地呻吟着，又止不住地舔舐她[roxy.pussy]以求更多更多的爱液。
+	<br/><br/>
+		[roxy.speechNoEffects(俺觉得现在可以了。)]罗克西大笑，[roxy.speechNoEffects(还想要更多，就得付俺1000火币。)]
+	
+]]></htmlContent>
+	
+	<htmlContent tag="ROXY_FACE_SITTING_ORGASM_NEW_ADDICTION"><![CDATA[
+		罗克西的呻吟逐渐高昂，她突然抓住你的头直到把她舔舒服了才罢休。她的腿死死压住你的脸，让你不由闷吼了一声，鼠女尖叫着，[roxy.speechNoEffects(~啊哈！~对！你这舌头特娘的再深点！~唔！~对！)]
+	<br/><br/>
+		听着她的指挥，你将舌头探入鼠女[roxy.pussy+]，誓要把她吃干抹净。你热情的反应令罗克西夹紧你的头，你能感受到她[roxy.pussy]高潮时的颤抖和对你舌头的挤压。[roxy.speechNoEffects(操我！~啊哈！对！操！~噢哈！)]
+	<br/><br/>
+		罗克西尖叫着，一股充满雌性气息的暖流从她[roxy.pussy+]直直喷进你口中。[roxy.speechNoEffects(~啊哈！~)]鼠女尖叫着，[roxy.speechNoEffects(他娘的快喝下！~唔！~对！)]
+	<br/><br/>
+		你遵从命令，大口喝下罗克西的爱液，然后继续把舌头探入她[roxy.pussy+]。你吞下黏糊糊的液体，突然发现自己渴望更多，你伸手抓住罗克西的大腿，把她拉到你的脸上。你如饥似渴地舔食着鼠女的爱液，她逐渐从高潮中恢复过来，继续坐在你的脸上，开始大笑，[roxy.speechNoEffects(嘿！这就对了，舔干净！味道很不错，不是吗？)]
+	<br/><br/>
+		[pc.speechNoEffects(~唔！~~唔唔！~)]你回应的声音被鼠女[roxy.pussy+]扭曲。
+	<br/><br/>
+		[roxy.speechNoEffects(嘿！现在说可能有点晚了，俺还是该让你知道，俺从御城区的婊子那里买了瓶药水。她说：‘你的爱液能让人上瘾。’‘让人尝一口，他们就会求着去舔你的小穴。’从你的行为上看，这好像是大实话！)]
+	<br/><br/>
+		你听她揭示真相，绝望地呻吟着，又止不住地舔舐她[roxy.pussy]。她已让你上瘾，即使她告诉你真相，你还是忍不住饥渴，继续舔着她的小穴。
+	<br/><br/>
+		[roxy.speechNoEffects(你真他娘的对俺的小穴上瘾了？)]罗克西大笑，[roxy.speechNoEffects(足够了。)]
+	
+]]></htmlContent>
+	
+	
+	<!-- BLOW_SMOKE -->
+	
+	<htmlContent tag="BLOW_SMOKE"><![CDATA[
+	#IF(!npc.hasStatusEffect(SE_SMOKING))
+		罗克西侧身，整个身体的重量压在你脸上。鼠女从柜台下抓根烟，叼进嘴里，深深地吸了一口。她笑着俯视你，随性地朝你脸上吐了个烟圈，[roxy.speechNoEffects(嘿嘿嘿！你做得很像样，努努力，舌头舔深点！)]
+	#ELSE
+		罗克西深深地吸了一口烟，笑着俯视你，随性地朝你脸上吐了个烟圈，[roxy.speechNoEffects(嘿嘿嘿！你做得很像样，努努力，舌头舔深点！)]
+	#ENDIF
+]]></htmlContent>
+	<htmlContent tag="BLOW_SMOKE"><![CDATA[
+	#IF(!npc.hasStatusEffect(SE_SMOKING))
+		罗克西啧啧着转头，伸手在柜台下拿出根烟，饥渴地放到嘴里。鼠女深深地吸了一口烟，俯视着你，尖锐地嘲笑着，无意间把烟吹向了你，[roxy.speechNoEffects(嘿嘿嘿！就是这样！继续！你的舌头还能在俺美味的小穴内进得更深！)]
+	#ELSE
+		罗克西吸了一口烟，俯视着你，尖锐地嘲笑着，无意间把烟吹向了你，[roxy.speechNoEffects(嘿嘿嘿！就是这样！继续！你的舌头还能在俺美味的小穴内进得更深！)]
+	#ENDIF
+	]]></htmlContent>
+	<htmlContent tag="BLOW_SMOKE"><![CDATA[
+	#IF(!npc.hasStatusEffect(SE_SMOKING))
+		罗克西有段时间没抽着香烟，她从柜台下抓了一根，深深地吸了一口。她低下头，朝着你的脸吐烟，并发出刺耳的嘎嘎笑，[roxy.speechNoEffects(嘿嘿嘿！我敢说你从没尝过和俺一样美味的小穴，嗯？！)]
+	#ELSE
+		罗克西深深地吸了一口嘴上的香烟，低下头，朝你的脸吐出烟雾，发出又一声刺耳的嘎嘎笑，[roxy.speechNoEffects(嘿嘿嘿！我敢说你从没尝过和俺一样美味的小穴，嗯？！)]
+	#ENDIF
+]]></htmlContent>
+	
+	
+	<!-- FACE_SITTING_TEASE -->
+	
+	<htmlContent tag="FACE_SITTING_TEASE_START"><![CDATA[
+	罗克西发出短促又令人厌烦的嘎嘎笑声，用[roxy.pussy+]摩擦你的嘴巴，挑逗着，
+]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_TEASE_START"><![CDATA[
+	她[roxy.pussy+]兴奋地在你的嘴上摩擦，这只独眼鼠女发出又一声粗野的大笑，继续撩拨你，
+]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_TEASE_START"><![CDATA[
+	罗克西移动胯部，用[roxy.pussy+]摩擦你[pc.face]，再强硬地压回你的嘴上。她满意地大叫一声，又粗野地大笑，挑逗着你，
+]]></htmlContent>
+	
+	<htmlContent tag="FACE_SITTING_TEASE_END"><![CDATA[
+	[roxy.speechNoEffects(继续！你的舌头还能进得更深！)]
+]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_TEASE_END"><![CDATA[
+	[roxy.speechNoEffects(你喜欢俺火热小穴的味道，是吗？)]
+]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_TEASE_END"><![CDATA[
+	[roxy.speechNoEffects(继续喝俺美味的汁液！)]
+]]></htmlContent>
+	
+	
+	<htmlContent tag="FACE_SITTING_ADDICTION_TEASE_START"><![CDATA[
+	罗克西用[roxy.pussy+]摩擦你的嘴。你突然抬起胯部，剥夺了你享用美味爱液的资格。你已沉迷于她小穴的味道，不由得拼命伸长脖子来舔舐她[roxy.pussy+]。显然这正是鼠女想要的，她大笑着将湿漉漉的小穴拍回你的脸上， 
+]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_ADDICTION_TEASE_START"><![CDATA[
+	罗克西正用她湿漉漉的小穴来回地摩擦你[pc.lips]，突然抬起胯部，迫使你伸长脖子以便继续舔食她的爱液。看见你对她爱液的疯狂迷恋，她发出粗野地大笑，挑逗着， 
+	]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_ADDICTION_TEASE_START"><![CDATA[
+	她的腿向两边张开，罗克西毫无保留地坐在你的脸上，用她的小穴压住你的嘴。你拼命地舔食着每一滴爱液，由着她粗野地逗弄你，
+]]></htmlContent>
+	
+	<htmlContent tag="FACE_SITTING_ADDICTION_TEASE_END"><![CDATA[
+	[roxy.speechNoEffects(嘿嘿！就是这样！你还想尝尝老子小穴的味道，是吗？那继续像野狗一样舔着吧！)]
+]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_ADDICTION_TEASE_END"><![CDATA[
+	[roxy.speechNoEffects(嘿嘿！就是这样！继续舔！不对俺美味的小穴上瘾，俺们是不会让你离开的！)]
+	]]></htmlContent>
+	<htmlContent tag="FACE_SITTING_ADDICTION_TEASE_END"><![CDATA[
+	[roxy.speechNoEffects(嘿嘿！就是这样！继续像这样舔着俺美味的小穴！让俺看看你有多爱俺的小穴！)]
+	]]></htmlContent>
+	
+	
+	<!-- CUSTOMER_INTERRUPTION -->
+	
+	<htmlContent tag="CUSTOMER_INTERRUPTION"><![CDATA[
+	罗克西正要把[roxy.pussy+]贴在你的脸上，忽然转向柜台对面，对着刚闯入的顾客发出怒吼，[roxy.speechNoEffects(小瘪三干哈？不买就他妈别碰！嗷，咋跑了？！好咧！别特娘的再回来！)]
+]]></htmlContent>
+	<htmlContent tag="CUSTOMER_INTERRUPTION"><![CDATA[
+	眼角余光瞟见有些人进入了商店，罗克西把[roxy.pussy+]压在你脸上，大喊，[roxy.speechNoEffects(这里不是给蠢蛋们约会的地方！如果不买东西，你们仨就给俺死出去！啊~你舔得很到位！)]
+	]]></htmlContent>
+	<htmlContent tag="CUSTOMER_INTERRUPTION"><![CDATA[
+	看见有人进入商店，罗克西把[roxy.pussy+]压在你的嘴上，大喊，[roxy.speechNoEffects(你这瘪三进来是想傻站这，还是想买东西？给我滚出去！不要再来打扰我们了，蠢货！)]
+]]></htmlContent>
+	
+</dialogue>

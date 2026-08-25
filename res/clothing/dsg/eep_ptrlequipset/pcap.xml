@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+		
+		<authorTag><![CDATA[在帽冠内侧，淡淡的橡胶油墨写着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>850</value> 
+
+		<determiner><![CDATA[一顶]]></determiner>
+
+		<name><![CDATA[警帽]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者警帽]]></namePlural> 
+
+		<description><![CDATA[有着圆形平顶和短圆遮阳帽檐的帽子。执法者们进行日常巡逻的标准头部装备。]]></description> 
+
+		<physicalResistance>0</physicalResistance> 
+
+		<femininity>MASCULINE</femininity> 
+
+		<slot>HEAD</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/>
+
+		<imageName>pcap.svg</imageName> 
+
+		<imageEquippedName/>
+		
+		<stickers>
+			
+			<category id="badge" priority="1"> 
+				<categoryName><![CDATA[Cap Badge]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1" colourSelected="TEXT_GREY"> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="badge_dominion" priority="1" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="DAMAGE_TYPE_LUST"> 
+					<stickerName><![CDATA[御城区]]></stickerName>
+					<namePrefix priority="1"><![CDATA[御城区巡逻执法者]]></namePrefix> 
+					<namePostfix/> 
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这上面有御城区前线巡逻队的徽章。</i>]]></descriptionModification> 
+					<imageName>pcap_st_badge_dominion.svg</imageName> 
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded> 
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved> 
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+							Only Patrol Enforcers can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText> 
+					<availabilityText>
+						As a Patrol Enforcer, you can freely use this cap badge.
+					</availabilityText> 
+				</sticker>
+				<sticker id="badge_elis" priority="2" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="DAMAGE_TYPE_PHYSICAL"> 
+					<stickerName><![CDATA[伊利斯]]></stickerName>
+					<namePrefix priority="1"><![CDATA[伊利斯执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这上面有伊利斯前线巡逻队的徽章。</i>]]></descriptionModification>
+					<imageName>pcap_st_badge_elis.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+							Only Patrol Enforcers can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As a Patrol Enforcer, you can freely use this cap badge.
+					</availabilityText>
+				</sticker>
+				<sticker id="badge_thinis" priority="3" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="DAMAGE_TYPE_FIRE">
+					<stickerName><![CDATA[提尼斯]]></stickerName>
+					<namePrefix priority="1"><![CDATA[提尼斯]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这上面有提尼斯前线巡逻队的徽章。</i>]]></descriptionModification>
+					<imageName>pcap_st_badge_thinis.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+							Only Patrol Enforcers can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As a Patrol Enforcer, you can freely use this cap badge.
+					</availabilityText>
+				</sticker>
+				<sticker id="badge_itzaaak" priority="4" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="DAMAGE_TYPE_POISON">
+					<stickerName><![CDATA[伊察阿克]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这上面有伊察阿克前线巡逻队的徽章。</i>]]></descriptionModification>
+					<imageName>pcap_st_badge_itzaaak.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+							Only Patrol Enforcers can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As a Patrol Enforcer, you can freely use this cap badge.
+					</availabilityText>
+				</sticker>
+				<sticker id="badge_lyonesse" priority="5" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="DAMAGE_TYPE_COLD">
+					<stickerName><![CDATA[莱昂内斯]]></stickerName>
+					<namePrefix priority="1"><![CDATA[莱昂内斯]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这上面有莱昂内斯前线巡逻队的徽章。</i>]]></descriptionModification>
+					<imageName>pcap_st_badge_lyonesse.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+							Only Patrol Enforcers can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As a Patrol Enforcer, you can freely use this cap badge.
+					</availabilityText>
+				</sticker>
+				<sticker id="badge_cm" priority="6" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_PURPLE">
+					<stickerName><![CDATA[专员]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这上面有专员办公室的徽章。</i>]]></descriptionModification>
+					<imageName>pcap_st_badge_cm.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only Enforcers who hold a rank of Commissioner can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Commissioner, you can freely use this cap badge.
+					</availabilityText>
+				</sticker>
+			</category>
+			<category id="oakleaves" priority="2">
+				<categoryName><![CDATA[Oak Leaves]]></categoryName>
+				<sticker id="None" priority="0" defaultSticker="true" zLayer="2" colourSelected="TEXT_GREY">
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="oakleaves_dm" priority="1" defaultSticker="false" zLayer="2" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_PURPLE">
+					<stickerName><![CDATA[副专员]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这上面有一排副专员的橡树叶</i>]]></descriptionModification>
+					<imageName>pcap_st_oakleaves_dm.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only Enforcers who hold a rank of Deputy Commissioner can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Deputy Commissioner, you can freely use this cap badge.
+					</availabilityText>
+				</sticker>
+				<sticker id="oakleaves_cm" priority="2" defaultSticker="false" zLayer="2" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_PURPLE">
+					<stickerName><![CDATA[专员]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>pcap_st_oakleaves_cm.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only Enforcers who hold a rank of Commissioner can use this cap badge!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Commissioner, you can freely use this cap badge.
+					</availabilityText>
+				</sticker>
+			</category>
+		</stickers>
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired> 
+
+				<blockedBodyParts>
+					<bodyPart>HAIR</bodyPart>
+				</blockedBodyParts>
+
+				<clothingAccessBlocked/> 
+
+				<concealedSlots/> 
+			</blockedParts>
+			
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLUE</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_GOLD"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]将大檐帽扣在头上。]]></self>
+		<other><![CDATA[
+		[npc.Name]将大檐帽扣在[npc2.namePos]头上。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]强行将大檐帽扣在[npc2.namePos]头上。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]将大檐帽摘下。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]将大檐帽从[npc2.namePos]头上摘下。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]将大檐帽从[npc2.namePos]头上拍掉。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<penis>
+	<race>innoxia_badger</race>
+	
+	<transformationName><![CDATA[獾]]></transformationName>
+	
+	<coveringType>PENIS</coveringType>
+	
+	<testicleType>innoxia_badger_testicle</testicleType>
+	
+	<additionalTransformationEffect/>
+	
+	<namesMasculine>
+		<name><![CDATA[獾]]></name>
+	</namesMasculine>
+	<namesPluralMasculine>
+		<name><![CDATA[獾]]></name>
+	</namesPluralMasculine>
+	
+	<namesFeminine>
+		<name><![CDATA[獾]]></name>
+	</namesFeminine>
+	<namesPluralFeminine>
+		<name><![CDATA[獾]]></name>
+	</namesPluralFeminine>
+	
+	<descriptors/>
+	
+	<defaultPenetrationModifiers>
+		<modifier>SHEATHED</modifier>
+	</defaultPenetrationModifiers>
+	
+	<transformationDescription><![CDATA[
+		[npc.name]情不自禁地呻吟，感觉自己的阴茎转变为了新的形态。[npc.her]的阴茎根部突然长出了厚厚的阴茎鞘，[npc.sheIs]被一股无法忍耐的快感彻底击垮了。
+		<br/>[npc.She]现在拥有一根[style.boldBadger(獾的阴茎)]，[npc.materialDescriptor][npc.penisFullDescription(true)]。
+		<br/>[npc.She]有[style.boldBadger([npc.ballsCount]颗#IF(npc.isInternalTesticles())体内#ELSE獾#ENDIF睾丸)]，[npc.materialDescriptor][npc.ballsFullDescription(true)]，能够产生[npc.cumColour(true)][style.boldBadger(獾精液)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.She]有[npc.a_cockGirth]的獾阴茎，[npc.cockLengthValue]长，[npc.materialCompositionDescriptor][npc.cockFullDescription(true)]。
+]]></bodyDescription>
+</penis>

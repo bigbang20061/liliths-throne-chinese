@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[背后印着“DSG文具公司生产，99%可回收材料”。]]></authorTag>
+
+		<value>150</value> 
+
+		<determiner><![CDATA[一件]]></determiner>
+
+		<name><![CDATA[硬纸板胸甲]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[硬纸板胸甲]]></namePlural> 
+
+		<description><![CDATA[一种由复合硬纸板制成的加长胸甲，添加了护肩以提供额外的保护。由于其部分铰接，重量轻且相对灵活，但其实际保护性能有待改进。]]></description>
+
+		<physicalResistance>0</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>TORSO_OVER</slot> 
+
+		<rarity>UNCOMMON</rarity> 
+
+		<clothingSet/>
+
+		<imageName>cbarmor.svg</imageName> 
+
+		<imageEquippedName/>
+
+		<effects/>
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+
+				<clothingAccessBlocked> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/> 
+
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+
+				<concealedSlots>
+					<slot>GROIN</slot>
+					<slot>VAGINA</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_VAGINA</slot>
+				</concealedSlots>
+			</blockedParts>
+
+		</blockedPartsList>
+
+		<incompatibleSlots/>
+
+		<primaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_GREY</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>RIGID_MATERIAL</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>REMOVE_FROM_DRESSING_ROOM_OUTFITS</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的头套在纸板之间，并让纸板胸甲搭在[npc.her]的肩膀上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将纸板在[npc2.namePos]身上调整，让盔甲搭在[npc2.her]的肩膀上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.namePos]推进硬纸板中间，并将纸板胸甲固定在[npc2.her]的肩上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]从[npc.her]的肩上取下纸板胸甲。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将纸板胸甲从[npc2.namePos]的肩膀上移走。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.namePos]的胸甲从肩膀上扔到了一边。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+[npc.Name]将[npc.her]硬纸板胸甲的护裆拉低。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc.her]硬纸板胸甲的护裆拉低。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc.her]的硬纸板胸甲的翻了起来。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]硬纸板胸甲的下半部分提起。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]纸板胸甲的下部向下拉。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.namePos]的硬纸板胸甲的翻了起来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

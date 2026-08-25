@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>600</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[女仆头饰]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[女仆头饰]]></namePlural>
+		<description><![CDATA[一条很有风格的女仆头饰，彩色的头带上带有白色的蕾丝边。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>HEAD</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_maid</clothingSet>
+		<imageName>headpiece.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="MAID"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将头饰戴在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将头饰戴在[npc2.namePos]的头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将头饰戴到[npc2.namePos]的头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的头饰脱下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的头饰脱下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地夺走[npc2.namePos]的头饰。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

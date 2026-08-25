@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<clothingAuthorTag><![CDATA[剑柄上刻着一个小小的标记，告诉你它是由“C4MG1RL”制造的。]]></clothingAuthorTag>
+		
+		<value>40000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[]]></determiner>
+		
+		<name><![CDATA[村正]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[村正]]></namePlural> 
+		
+		<description><![CDATA[村正是妖狐的传奇妖刀之一，它的制作工艺精湛，能够容纳并引导持用者的奥术力量。它会发出拥有奥术力量的噼啪声和嗡嗡声，即使收刀入鞘也是如此，就好像等不及要去消灭下一个敌人……]]></description> 
+		
+		<attackDescriptor><![CDATA[斩]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用刀劈[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>QUEST</rarity> 
+		
+		<weaponSet>c4mg1rl_trickster</weaponSet>
+		
+		<equipText><![CDATA[[npc.Name]将村正放在[npc.her]的腰间，以便[npc.she]随时可以抽出来使用。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]将村正插入刀鞘，然后收好。]]></unequipText>
+		
+		<imageName>muramasa_sheathed.svg</imageName> 
+		
+		<imageEquippedName>muramasa.svg</imageEquippedName> 
+		
+		<damage>75</damage> 
+		<aoe chance="50">50</aoe>
+		<aoe chance="25">25</aoe>
+		
+		<arcaneCost>5</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>LUST</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK_JET</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours> 
+			<colour>CLOTHING_RED_DARK</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<customColours>
+			
+		</customColours>
+		
+		<itemTags> 
+			<tag>WEAPON_BLADE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]朝[npc2.name]挥动村正，虚幻的奥术刀刃穿过了[npc2.her]的身体，[npc.Name]不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]挥舞村正斩向[npc2.name]，[npc.she]看到虚幻的刀刃直接穿过了[npc2.namePos]的身体，不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用村正斩向[npc2.name]，虚幻的刀刃穿过了[npc2.her]的胸膛，使得[npc2.herHim]向后踉跄！
+]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]用村正砍向[npc2.name]，但最终没有击中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+[npc.Name]用村正砍向[npc2.name]，但最终没有击中[npc2.herHim]，[npc.her]发出一声沮丧的呼喊！
+]]></missText>
+		<missText><![CDATA[
+随着一个快速的步伐，[npc.name]用村正砍向[npc2.name]，但是[npc.her]未能击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

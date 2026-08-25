@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一堆]]></determiner>
+		<name><![CDATA[细角环]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[细角环]]></namePlural>
+		<description><![CDATA[一打薄环，每一个都足够大，可以套在某人的角上。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+			<slot>HORNS</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>thin_rings.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList slot="HORNS">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="HORNS"/>
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+	<self><![CDATA[
+[npc.Name]将这一打细角环穿在[npc.her]的[npc.horns]上。
+]]></self>
+	<other><![CDATA[
+[npc.Name]将一打细角环挂到[npc2.namePos]的[npc2.horns]上。
+]]></other>
+	<otherRough><![CDATA[
+[npc.Name]粗暴地将一打细角环挂到[npc2.namePos]的[npc2.horns]上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+	<self><![CDATA[
+[npc.Name]将[npc.her]的环从[npc.her]的[npc.horns]上摘下来。
+]]></self>
+	<other><![CDATA[
+[npc.Name]将[npc2.namePos]的环从[npc2.her]的[npc2.horns]上摘下来。
+]]></other>
+	<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的环从[npc2.her]的[npc2.horns]上拽下来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

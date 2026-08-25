@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#(flags.hasFlag(FLAG_innoxia_callie_natalya_icing_white) || flags.hasFlag(FLAG_innoxia_callie_natalya_icing_pink)) && !flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_chocolate) && !flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_multi) && !flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_stars)]
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>ZERO_PURE</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[糖霜！]]></title>
+	<tooltip><![CDATA[
+		那只[style.mule]荡妇在你的屁穴上洒满了糖霜！
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<text><![CDATA[
+				#IF(npc==natalya)
+					[natalya.speechNoEffects(目前为止做得不错，[style.mule]，)]主人娜塔莉亚轻哼着，[natalya.speechNoEffects(现在把糖霜撒上去！)]
+					
+				#ELSE
+					[callie.speechNoEffects(到了最棒的部分，)]卡丽兴奋地说道，随后又咯咯笑着纠正，[callie.speechNoEffects(其实最棒的是吃的时候，对吧？)]
+				#ENDIF
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

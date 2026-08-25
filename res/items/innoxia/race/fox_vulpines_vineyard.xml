@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>250</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[狐狸葡萄园酒]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[狐狸葡萄园酒]]></namePlural>
+		<description><![CDATA[一瓶装满红酒的坚固玻璃瓶。标签正面画着一串葡萄，而在瓶底上，有一只咯咯笑的狐族的变种的形象被刻在玻璃上。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">fox_vulpines_vineyard.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_ARCANE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_ARCANE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_CRITICAL_DAMAGE.getFormattedValue(10)]到“药剂效果” ]]></line>
+			<line><![CDATA[[style.boldMinorBad(增加)]10%[style.boldAlcohol(醉酒度)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.NamePos]的感官变得更敏锐……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_CRITICAL_DAMAGE, 10)]
+			[#npc.incrementAlcoholLevel(0.1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ALCOHOLIC</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		打开狐狸葡萄园酒的瓶子，[npc.name]仰起[npc.her]的头仰起，然后将它送到[npc.her]的等待[npc.lips]边。新开瓶子的瓶颈散发出丰富红酒的浓烈芳香，很快又伴随着一股浓郁的甜味，即使在[npc.namePos]喝完后仍然挥之不去，留在[npc.namePos]的[npc.tongue]上。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		"打开狐狸葡萄园酒的瓶子，[npc.name]将它送到[npc2.namePos]等待[npc2.lips]边。新开瓶子的瓶颈散发出丰富红酒的浓烈芳香，很快又伴随着一股浓郁的甜味，即使在[npc2.namePos]喝完后仍然挥之不去，留在[npc2.namePos]的[npc2.tongue]上。"
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

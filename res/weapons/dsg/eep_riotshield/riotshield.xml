@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<authorTag><![CDATA[在盾牌的背面，有几个微微凸起的字：“执法者官方分配，由DSG锻造厂生产。”]]></authorTag>
+		
+		<value>2000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[一面]]></determiner>
+		
+		<name><![CDATA[执法者防暴盾]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[执法者防暴盾]]></namePlural> 
+		
+		<description><![CDATA[一面由透明聚碳酸酯制成的中等大小盾牌，可覆盖一般体型持盾者从头顶到膝盖的部分。它的附魔让持有者可以抵挡暴乱者通常使用的武器，并提供有限的攻击能力。]]></description> 
+		
+		<attackDescriptor><![CDATA[撞击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[你用盾牌撞向[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]拿出盾牌，绑在[npc.arm]上。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]从[npc.arm]上把盾牌解下来，放了起来。]]></unequipText>
+		
+		<imageName>riotshield.svg</imageName> 
+		
+		<imageEquippedName>riotshield.svg</imageEquippedName>
+		
+		<damage>10</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>HIGH</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_FIRE" timer="0"/>
+			  <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_FIRE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_PHYSICAL" timer="0"/>
+			  <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="RESISTANCE_PHYSICAL" timer="0"/>
+		</effects>
+		
+		<extraEffects>
+			<effect><![CDATA[暴击附带[style.boldPhysical(“击晕”)]效果。]]></effect>
+		</extraEffects>
+		
+		<onHitEffect/>
+		
+		<onCriticalHitEffect><![CDATA[
+		#IF !npc2.hasStatusEffect(SE_DAZED)
+		#THEN [##npc2.addStatusEffect(SE_DAZED, 4)][npc.Name]成功把[npc2.name]撞倒在地！[npc2.She]起身之后依然[style.boldPhysical(摇摇晃晃)]。
+		#ENDIF
+		]]></onCriticalHitEffect>
+		
+		<primaryColours values="JUST_SILVER"/> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_HEAVY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]带着防暴盾冲上前去，精准地命中了[npc2.name]。附魔的聚碳酸酯挡开了[npc2.her]的灵气，将其撞开，令其流失了一些能量！
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]带着防暴盾冲上前去，企图正中[npc2.name]，但最后一个踉跄，完全打歪了！
+		]]></missText>
+		<missText><![CDATA[
+		[npc.Name]快步上前，用防暴盾砸向[npc2.name]却没能命中！
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

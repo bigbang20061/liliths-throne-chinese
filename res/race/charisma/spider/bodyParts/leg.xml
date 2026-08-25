@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<leg>
+	<race>charisma_spider</race>
+	<transformationName><![CDATA[蜘蛛]]></transformationName>
+	<coveringType>charisma_spider_chitinSmooth</coveringType>
+	<defaultFootStructure>PLANTIGRADE</defaultFootStructure>
+	<additionalFootStructure legConfiguration="ARACHNID">ARACHNOID</additionalFootStructure>
+	<footType>ARACHNID</footType>
+	<spinneret>true</spinneret>
+	<tentacleType>NONE</tentacleType>
+	<tentacleCount>0</tentacleCount>
+	<allowedLegConfigurations>
+		<configuration>BIPEDAL</configuration>
+		<configuration>ARACHNID</configuration>
+	</allowedLegConfigurations>
+	<name><![CDATA[步足]]></name>
+	<namePlural><![CDATA[步足]]></namePlural> 
+	<descriptorsMasculine>
+		<descriptor><![CDATA[男性化]]></descriptor>
+		<descriptor><![CDATA[坚硬]]></descriptor>
+		<descriptor><![CDATA[蜘蛛般拟人]]></descriptor>
+		<descriptor><![CDATA[几丁质]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[坚硬]]></descriptor>
+		<descriptor><![CDATA[蜘蛛般拟人]]></descriptor>
+		<descriptor><![CDATA[几丁质]]></descriptor>
+	</descriptorsFeminine>
+	<footDescriptorsMasculine>
+		<descriptor><![CDATA[几丁质]]></descriptor>
+	</footDescriptorsMasculine>
+	<footDescriptorsFeminine>
+		<descriptor><![CDATA[几丁质]]></descriptor>
+	</footDescriptorsFeminine>
+	<toeDescriptorsMasculine>
+		<descriptor><![CDATA[蜘蛛般]]></descriptor>
+	</toeDescriptorsMasculine>
+	<toeDescriptorsFeminine>
+		<descriptor><![CDATA[蜘蛛般]]></descriptor>
+	</toeDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		[npc.her]的双腿转化成了新的形态，一层类似蜘蛛的几丁质迅速覆盖了上去。新生的几丁质一直蔓延到[npc.her]脚趾的末端，在关节附近分裂开，表现出类似玩偶或铠甲手套的外观，让[npc.him]拥有蜘蛛般的跖行动物脚。在转化的尾声，[npc.she]看到新生的几丁质迅速过渡到覆盖身体和大腿其余部分的[npc.skin]上。
+		<br/>[npc.Name]现在拥有跖行的[style.boldSpider(蜘蛛般的腿和脚)]，[npc.materialDescriptor][npc.legFullDescription]。
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		#IF(npc.getLegConfiguration()==LEG_CONFIGURATION_ARACHNID)
+			[npc.Her]的腿[npc.materialCompositionDescriptor][npc.legFullDescription(true)]，看起来与野生蜘蛛完全相同，以七个分节和小爪子作为腿部。
+		#ELSE
+			[npc.Her]的腿[npc.materialCompositionDescriptor][npc.legFullDescription(true)]，足部被几丁质板覆盖，几丁质在关节处裂开。
+		#ENDIF
+	]]></bodyDescription>
+</leg>

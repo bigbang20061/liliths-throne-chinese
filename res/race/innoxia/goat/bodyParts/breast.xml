@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<breast>
+	<race>innoxia_goat</race>
+	
+	<transformationName><![CDATA[山羊]]></transformationName>
+	
+	<coveringType>innoxia_goat_fur</coveringType>
+	
+	<nippleType>innoxia_goat_nipple</nippleType>
+	
+	<fluidType>innoxia_goat_milk</fluidType>
+	
+	<names/>
+	<namesPlural/>
+	<descriptors/>
+	
+	<namesFlat/>
+	<namesPluralFlat/>
+	<descriptorsFlat/>
+	
+	<transformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldGoat(山羊般)][npc.nipplesFullDescription]，[npc.she]在哺乳期会分泌[style.boldGoat(山羊乳汁)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.her]的每个[npc.breastSize][npc.breasts]上都长着[npc.nipplesPerBreast]山羊般[npc.nipplesFullDescription]。
+]]></bodyDescription>
+	
+	<crotchBoobsTransformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldGoat(山羊般)][npc.crotchNipplesFullDescription]，[npc.she]在哺乳期内会分泌[style.boldGoat(山羊乳汁)]。
+]]></crotchBoobsTransformationDescription>
+	
+	<crotchBoobsBodyDescription><![CDATA[
+		[npc.her]的每个[npc.crotchBoobSize][npc.crotchBoobs]上都长着[npc.crotchNipplesPerBreast]颗山羊般[npc.crotchNipplesFullDescription]。
+]]></crotchBoobsBodyDescription>
+</breast>

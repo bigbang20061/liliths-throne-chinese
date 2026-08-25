@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>15</value> 
+		<determiner><![CDATA[一盒]]></determiner>
+		<name><![CDATA[哼哼炸薯条]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[哼哼炸薯条]]></namePlural>
+		<description><![CDATA[一个塞满了油腻的扭扭薯条的纸盒。包装正面的商标宣称它来自快餐经销商“哼哼！”，而背面印的文字则令人担忧地宣称脂肪含量“低于50%”。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/pig/subspecies/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="75">pig_oinkers_fries.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>innoxia_pig</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[猪]]></potionDescriptor>
+		<associatedRace>innoxia_pig</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId> <!-- 'RACE' is a special value, and when defined, this item will use the defined 'associatedRace' to give the player enchantment options for making a TF elixir for that race. -->
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+			<line><![CDATA[若体型不足[style.colourBodySizeThree(“大型”)]，将体型增加一级]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到体重更加沉重……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+			#IF(npc.getBodySizeValue()<60)
+				[#npc.incrementBodySize(1)]
+			#ENDIF
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD_POOR</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]迅速开始吃掉卷曲薯条，片刻之间，只剩下一个空盒子和一股不健康的、油腻的味道弥漫在[npc.her]的口中。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]拿着卷曲薯条的盒子，把它递给[npc2.name]，并让[npc2.herHim]吃掉。将它们塞进[npc2.her]的嘴巴，只过了几分钟，[npc2.nameIs]只剩下一个空盒子，口中弥漫着不健康、油腻的味道。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

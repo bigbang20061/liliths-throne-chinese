@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[披衫里缝着的标签告诉你这是由"Serpentia Silk&Satin Ltd."制作的。]]></clothingAuthorTag>
+
+		<value>750</value> 
+		
+		<determiner><![CDATA[一张]]></determiner>
+		
+		<name><![CDATA[披衫]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[披衫]]></namePlural> 
+		
+		<description><![CDATA[一张温暖又透气的流苏毯，适合在各种天气下穿着。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>ANDROGYNOUS</femininity> 
+		
+		<slot>TORSO_OVER</slot> 
+		
+		<rarity>COMMON</rarity> 
+		
+		<clothingSet/>
+		
+		<imageName>poncho.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked/>
+				
+				<concealedSlots/>
+			</blockedParts>
+				
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+
+		<primaryColoursDye/>
+
+		<secondaryColours values="ALL"/>
+
+		<secondaryColoursDye/>
+
+		<tertiaryColours/>
+
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]披上披衫。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将披衫披在[npc2.name]身上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将披衫批在[npc2.name]的身上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]脱下[npc.her]的披衫。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将披衫从[npc2.namePos]身上脱下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将披衫从[npc2.namePos]的身上扯下。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

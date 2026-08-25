@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>750</value>
+		<determiner><![CDATA[一副]]></determiner>
+		<name><![CDATA[厚框眼镜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[厚框眼镜]]></namePlural>
+		<description><![CDATA[一副男女通用的厚边眼镜。很难判断它们的主要功能是改善佩戴者的视力，还是仅仅是为了彰显时尚。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>EYES</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>thick_rim_glasses.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>EYES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_OLIVE</colour>
+			<colour>CLOTHING_BROWN_VERY_DARK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_GREY</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>PRESCRIPTION_GLASSES</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]戴上眼镜。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将眼镜戴在[npc2.namePos]的[npc2.face]上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将眼镜戴在[npc2.namePos]的脸上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]摘下[npc.her]的眼镜。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把[npc2.namePos]眼镜从[npc2.her][npc2.face]上摘下。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的眼镜并粗暴地扯下来。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

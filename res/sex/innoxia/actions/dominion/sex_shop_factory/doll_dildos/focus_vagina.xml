@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		#IF(sex.getNumberOfOrgasms(pc)==0)
+			[#pc.getClothingInSlot(IS_VAGINA)!=null && pc.getClothingInSlot(IS_ANUS)==null]
+		#ELSE
+			[#pc.getClothingInSlot(IS_VAGINA).getColour(0)==COLOUR_CLOTHING_BLACK && (pc.getClothingInSlot(IS_ANUS)==null || pc.getClothingInSlot(IS_ANUS).getColour(0)==COLOUR_CLOTHING_BLACK)]
+		#ENDIF
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>FIVE_EXTREME</arousalPerformer>
+	<arousalTarget>ZERO_NONE</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		#IF(!game.isAnalContentEnabled())
+			[##pc.setArousal(100)]
+		#ELSE
+			[##pc.setArousal(70)]
+		#ENDIF
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[
+		#IF(sex.getNumberOfOrgasms(pc)==0)
+			专注
+		#ELSE
+			猛操
+		#ENDIF
+	]]></title>
+	<tooltip><![CDATA[
+		按照玩偶的命令，专注于小穴内振动假阳具的快感。
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)==0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				你乖乖地照做，忘却作为一个测试性玩具的对象所处的困境，享受着玩偶深深塞进你[pc.pussy+]的振动玩具带来的强烈、顺从的快感。有那么一刻，你会觉得自己只不过是一个没有头脑的性玩偶，愿意服从一切要求。当你从这个短暂的幻想中清醒过来时，你再次被强烈的性冲动所击中，你意识到，用不了多久，你就能达到高潮的边缘。
+			]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)>0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				你再次乖乖地按照玩偶的命令做，靠在膝盖上，双手紧紧抓住马用假阳具的肥球，将其从你撑开的小穴中拔出一半。你想将玩具和你的新身体都推向极限，于是你用尽全力将巨大的玩具塞回你的小穴。当你将玩具深深地插入你湿润的小穴时，你发出淫荡的快乐呻吟，然后迅速将其拔出并重复这个过程，用尽全力、尽可能快地操弄你那被虐待的小穴。当你滑溜溜的爱液覆盖在粗壮的阴茎上并滴落到你两腿之间的地板上时，你发现自己再次迅速接近高潮。
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

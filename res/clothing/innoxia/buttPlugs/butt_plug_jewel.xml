@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>200</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[肛塞(圆型宝石)]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[肛塞(圆型宝石)]]></namePlural>
+		<description><![CDATA[一个金属塞子，用于塞入某人的肛门。底部镶嵌着一颗漂亮的宝石。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>ANUS</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>butt_plug_jewel.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+				  <bodyPart>ANUS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye/>
+		<secondaryColours values="ALL"/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> <!-- tag values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/ItemTag.java -->
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>PLUGS_ANUS</tag>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>TRANSPARENT</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<sexAttributesSelf>
+		<penetration>
+			<length>10</length>
+			<girth>6</girth>
+			<modifiers/>
+		</penetration>
+		<orifice/>
+	</sexAttributesSelf>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把肛塞塞进[npc.her][npc.asshole+]。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把肛塞塞进[npc2.namePos][npc2.asshole+]。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]牢牢抓住[npc2.name]并且粗暴地把肛塞插进[npc2.her][npc2.asshole+]。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把肛塞从[npc.her][npc.asshole+]里拔出。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把肛塞从[npc2.namePos][npc2.asshole+]里拔出。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]紧紧抓住[npc2.namePos]的肛塞并从[npc2.her][npc2.asshole+]里扯出来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

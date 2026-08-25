@@ -1,0 +1,1623 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- CONVINCING_LILAYA -->
+	
+	<htmlContent tag="CONVINCING_LILAYA"><![CDATA[
+	<p>
+		晚上正是去见[daddy.herHim]的合适时候，你觉得这正是告诉莉莱雅关于[daddy.name]和在晚餐上讨论事情的好时间。当你提到[daddy.her]的名字时，莉莱雅发出一声懊恼的叹息，翻了个白眼。但当你说着[daddy.name]是如何爱着莉西丝并且要结婚时，莉莱雅表情逐渐由恼火变为好奇。
+	</p>
+	<p>
+		你的事情还没说完一半，莉莱雅就打断了你[lilaya.speech(等等， 所以<i>那就是</i>[daddy.she]一直想要的吗？我以为[daddy.she]只是想骗我…… 我想这也说明了为什么[daddy.she]一直这么坚持……)]
+	</p>
+	<p>
+		你让莉莱雅确信你能肯定[daddy.name]真的爱上了莉西斯，接下来你讲完了剩下的故事。最后你说[daddy.herHim]希望莉莱雅接受[daddy.herHim]当她的新 “[daddy.daddy]”。当她听到你这么说的时候，[lilaya.relation(pc)]的脸红了，尾巴紧张地缠绕在左腿上，结结巴巴地说，[lilaya.speech(什、什么？[daddy.She]希望我、我叫[daddy.herHim]……‘[daddy.daddy]’？)]
+	</p>
+	<p>
+		在你再次确认[daddy.namePos]的请求时，你不禁注意到莉莱雅[lilaya.eyeColour]的眼中闪动着泪光。她清了清喉咙，摆脱了之前的口吃，然后说，[lilaya.speech(好吧，有人来做父亲角色也不错……我是说，我从未见过我的生父，也记不清妈妈是谁……)]
+	</p>
+	<p>
+		莉莱雅讲到最后一句话时似乎有些不开心，但她很快把思绪从过去拉到未来，继续说道， [lilaya.speech(我相信[pc.name]的判断，并且偶尔去拜访那样的人可能也很有趣……)]
+	</p>
+	<p>
+		这时，莉莱雅稍微转过头来向萝丝一瞥，当你随着她的目光看向那个猫女时，正好看到她对莉莱雅点头赞同。莉莱雅得到了看起来是她女仆的许可，再次对你说，[lilaya.speech(我现在没有什么重要实验，所以我们现在就去[daddy.her]那里吧。但我想换上更合适的衣服，在我准备的时候你能在前门等我吗？)]
+	</p>
+	<p>
+		在莉莱雅与萝丝急匆匆的上楼去卧室时，你走向门口，等待你的[lilaya.relation(pc)]准备好……
+	</p>
+	
+	]]></htmlContent>
+	
+
+	<!-- FIRST_ENCOUNTER -->
+	
+	<htmlContent tag="FIRST_ENCOUNTER"><![CDATA[
+	<p>
+		当你走近莉莱雅地豪宅时，你看见萝丝站在前门边。一个穿着蓝色牛仔裤和白色T恤的陌生人站在通往门口的楼梯头上，在和萝丝说话。他可能是建筑工人，因为你看见他一只手拿着紫色的安全帽，另一只手拿着准备给这个猫女仆送的一束花。当你走近你面前的这两个人时，你听到那个人恳求说，[daddy.speech(求求你了，她都没有听我说完！)]
+	</p>
+	<p>
+		[rose.speech(主人已经和我说了，她现在很忙，没有见你的想法，所以最后再说一次，不要再打扰她了！)]萝丝尖声地说着，并且显然没看见你正过来，她后退一步，砰地关上门。
+	</p>
+	<p>
+		那个人发出一声失落地叹息，转身回到街上，这时他发现了你正过来。他向你敷衍地微笑着，[daddy.speech(如果你想和莉莱雅见面，最好明天再来。显然她今天很忙，你肯定不想惹那个女仆生气。相信我吧。)]
+	</p>
+	<p>
+		#IF(pc.getSexualOrientation()!=ORIENTATION_GYNEPHILIC)
+			你抬头看了下这个男人，突然发现他高大、肌肉健壮，你感觉自己心跳加速了一点。尽管他应该只有四十出头，但他的头发已经是一种华丽的银白色，当你看见他浅色皮肤的脸时，你发现自己正凝视着一双闪烁着[daddy.eyeColour]光芒的眼睛。就在这时，你突然意识到这个人有些不太“人类”，尽管他乍一看是人，但这些不寻常的特征，加上引人注目的外貌和你感觉到围绕着他的奥术力量，说明了他是一个恶魔。
+		#ELSE
+			当你向前走，你看见了一个高大、肌肉健壮的男人。尽管他应该只有四十出头，但他的头发已经是一种华丽的银白色，当你看见他浅色皮肤的脸时，你发现自己正凝视着一双闪烁着[daddy.eyeColour]光芒的眼睛。就在这时，你突然意识到这个人有些不太“人类”，尽管他乍一看是人，但这些不寻常的特征，加上引人注目的外貌和你感觉到围绕着他的奥术力量，说明了他是一个恶魔。
+		#ENDIF
+	</p>
+	<p>
+		当这个男恶魔从开始走下楼梯离开，你想着是否要告诉他你住在哪，还是直接进到屋子里去。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FIRST_ENCOUNTER_ANSWER"><![CDATA[
+	<p>
+		你决定让这个恶魔知道你是谁，迅速地告诉他你不仅住在这里，而且还和莉莱雅十分有关系。当你告诉他这些信息时，这个恶魔突然变得兴奋，他高声说道，[daddy.speech(你正是我要找的人！不过你看，我现在没时间了，如果你能在空闲时候地晚上来恶魔之家找我，我会请你去御城区最好的餐厅吃饭！我工作的时间不寻常，所以只有每天晚上六点到十点有空。你可以到这里找我……)]
+	</p>
+	<p>
+		他从左口袋里拿出一张名片，把它塞进你的手里，然后看了看手表，猛地吸了口气，[daddy.speech(完了，我赶时间！我得走了！拜托你有空的时候一定来找我！)]
+	</p>
+	<p>
+		等你还没反应过来，他就向你微微一笑，戴上他的安全帽转身离开，然后冲下街去。你看着他离开后，低头看着还在你[pc.hand]里的名片，上面告诉你这个奇怪的恶魔的住址，以及他的名字“[daddy.name]”。你正想着要如何应对他的见面请求，转向莉莱雅的豪宅，走到前门，敲门。
+	</p>
+	<p>
+		像平时一样，你需要在门打开前等一会儿，然后就会面对面地看到萝丝。很显然，她原本以为敲门的是[daddy.name]，看到你站在她面前，她显得有些惊讶，但很快又恢复过来，恭敬地站在一边让你进来。你进去的时候，她问道，[rose.speech(我不知道你刚刚有没有看到一个男恶魔离开这里？)]
+	</p>
+	<p>
+		在得到你肯定地答复后，萝丝轻轻叹了口气，[rose.speech(你能帮我们彻底摆脱他吗？他一直在纠缠主人，希望和她一起出去吃饭，尽管已经告诉他主人对这些安排毫无兴趣。如果你能去他那，让他不要再打扰我们，那就太好了。如果你愿意等我一会，我可以给你他的地址。)]
+	</p>
+	<p>
+		你告诉萝丝他已经给你名片了。萝丝知道你会去见他就向你鞠躬，然后告辞，匆匆走向莉莱雅的实验室。你低头看着手中的卡片，思考是否应该去恶魔之家，按照萝丝的要求做；或者一到那里，给[daddy.name]一个解释自己的机会……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FIRST_ENCOUNTER_PUSH_PAST"><![CDATA[
+	<p>
+		你觉得和这个男恶魔扯上关系绝不会有什么好事，于是决定无视他并大步走上直接敲门。正当他重复着告诫你不要惹怒莉莱雅时，门打开了。萝丝向你鞠躬并退到一边，让你进去。他看着这一切，大出所料。
+	</p>
+	<p>
+		[daddy.speech(你住在这？！嘿，等等，听我说！求你了，让我请你吃晚——)]他突然开始大喊，但是萝丝领会你不理睬的暗示，只是简单的向前一步，砰地关上了门。
+	</p>
+	<p>
+		[rose.speech(欢迎回家，)]猫女仆转身向你说，[rose.speech(你能帮我们摆脱那个烦人鬼吗？他一直纠缠主人，想和主人共进晚餐。已经提醒他很多次，主人对此毫无兴趣了。如果你能去他那，让他不要再打扰我们，那就太好了。如果你愿意等我一会，我可以给你他的地址。)]
+	</p>
+	<p>
+		看着萝丝快步走向一个柜子，你觉得帮他们解决这个问题这正是偿还欠下莉莱雅人情的好机会。萝丝打开一个抽屉，拿出了一张小的名片。她走回来站在你面前，把这张卡片递给你，[rose.speech(这张卡上写着他在恶魔之家的地址。如果你能拜访他，永远解决这个问题，我们将不胜感激。)]
+	</p>
+	<p>
+		再次感谢你的帮助，萝丝向你鞠躬后告辞，匆匆向莉莱雅的实验室走去。看着手里面的卡片，你看见了男恶魔的名字“[daddy.name]”。你把它收起来，思考是否应该去恶魔之家，按照萝丝的要求做；或者一到那里，给[daddy.name]一个解释自己的机会……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- MEETING -->
+	
+	<htmlContent tag="MEETING_RETURN_AFTER_REFUSED"><![CDATA[
+	<p>
+		你决定再次拜访[daddy.name]，你走向他的公寓大楼，进去并且上到二楼，很快就找到并敲了他的门。几乎是同时，你听到门后有动静，然后门自就己打开了，你再次面对面地看到了那个银发男恶魔。
+	</p>
+	<p>
+		[daddy.speech(你回来了？！)]他惊讶地叫道，然后迅速恢复了镇定，露出迷人的笑容。他从走廊桌子上拿起钥匙，然后像是要离开公寓一样向前走去，说道，[daddy.speech(来吧，让我请你吃饭。你不能一直拒绝我！)]
+	</p>
+	<p>
+		虽然你敲他的门是想给他再一次机会，但你现在开始想是否真的应该这么做，或者改变主意再次拒绝他……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_RETURN_AFTER_REFUSED_AT_DINNER"><![CDATA[
+	<p>
+		决定再去拜访[daddy.name]，你走向[daddy.her]的公寓大楼，走进去，沿着楼梯走到二楼，很快就找到并敲了[daddy.her]的门。几乎是同时，你听到门后有动静，然后门自就己打开了，你再次面对面地看到了那个银发的[daddy.race]。
+	</p>
+	<p>
+		#IF(daddy.isFeminine())
+			[daddy.speech(你回来了？！)]她惊讶地叫了出来，然后迅速恢复了镇定，露出迷人的微笑。她靠在门框上，然后问道，[daddy.speech(那么，你改变主意了吗？我做你的妈妈也不是那么糟糕，对不对？只要你说，你的新妈妈马上就带你出去吃饭！)]
+		#ELSE
+			[daddy.speech(你回来了？！)]他惊讶地叫了出来，然后迅速恢复了镇定，露出迷人的微笑。他靠在门框上，然后问道， [daddy.speech(那么，你改变主意了吗？我做你的爸爸也不是那么糟糕，对不对？只要你说，你的新爸爸马上就带你出去吃饭！)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.isAttractedTo(daddy) && pc.hasFetish(FETISH_INCEST))
+			当你听[daddy.name]说这些时，你能感觉你的心砰砰直跳，并且，脑海里翻滚着乱伦的激情，你思考是否因该接受[daddy.herHim]当作你的“[daddy.daddy]”，还是再做考虑，拒绝[daddy.herHim]…… 		#ELSE
+			尽管你敲了[daddy.her]的门，打算接受[daddy.name]作为你的“[daddy.daddy]”，但你现在在想，你是否应该坚持下去，或者改变主意，再次拒绝[daddy.herHim]……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INITIAL_MEETING_RUDE"><![CDATA[
+	<p>
+		你决定去拜访[daddy.name]，很快就站在了商务名片上对应的公寓楼前。你发现大门没有锁，走了进去。你再一次跟随着名片的指引，走向二楼。在那里你很快就找到并敲了[daddy.her]的门。
+	</p>
+	<p>
+		几乎是同时，你听到门后有动静，然后门就自己打开了，你再次与银发男恶魔面对面。
+	</p>
+	<p>
+		[daddy.speech(你来了！)]他高兴地叫道，然后立刻从走廊桌子上拿起钥匙。他向前走，好像要出公寓的门，并说道：[daddy.speech(来吧，我请你吃饭。我要弥补我给你不好的第一印象！)]
+	</p>
+	<p>
+		你只有很短的时间来做决定。你开始想是否应该让[daddy.name]带你出去吃饭，并听他说话，或者现在就在这里拒绝他……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="INITIAL_MEETING"><![CDATA[
+	<p>
+		你决定去拜访[daddy.name]，很快就站在了商务名片上对应的公寓楼前。你发现大门没有锁，走了进去。你再一次跟随着名片的指引，走向二楼。在那里你很快就找到并敲了[daddy.her]的门。
+	</p>
+	<p>
+		几乎是同时，你听到门后有动静，然后门就自己打开了，你再次与银发男恶魔面对面。
+	</p>
+	<p>
+		[daddy.speech(你来了！)]他高兴地叫道，然后立刻从走廊桌子上拿起钥匙。他向前走，好像要出公寓的门，并说道：[daddy.speech(来吧，我请你吃饭。我有很多事情要和你谈！)]
+	</p>
+	<p>
+		在做决定的短短一点时间内，你开始想是否应该让[daddy.name]带你出去吃饭，并听他说话，或者现在就在这里直接拒绝他……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_INITIAL_MEETING"><![CDATA[
+	<p>
+		大约等了十分钟以后，莉莱雅终于从楼梯上走下来了。你不禁瞪大眼睛，因为你见到了你的[lilaya.relation(pc)]以前从未见过的样子：她没有穿平时的实验室大衣与外套、裙子，而是穿着一件修身的黑色深V连衣裙，慷概地展示着丰满胸部间的沟壑，同时也紧紧地勾勒出身体曲线。她的珍珠耳钉与高跟鞋同样是黑色，完全不似之前的穿搭，通常松散的头发也被发圈束成了马尾。
+	</p>
+	<p>
+		[lilaya.speech(那么，你觉得怎么样？)]她犹豫地问道，走到你面前，[lilaya.speech(这样可以吗？萝丝说不错，但是我穿这种东西感觉有点不舒服……)]
+	</p>
+	<p>
+		你告诉她十分漂亮，她脸红得厉害并且要马上出发，你情不自禁地对[lilaya.relation(pc)]深情微笑。如她所愿，你和她一起走出御城区的街道，然后朝着恶魔之家的方向前进。你们俩一路上都在聊天，虽然大部分话题都围绕着莉莱雅最近正在进行的奥术实验，但她也问了你很多关于[daddy.name]怎么样的问题。
+	</p>
+	<p>
+		步行半小时之后，你们最终俩到达了[daddy.namePos]的公寓大楼。你们走进去上到二楼，迅速的找到并且叩响了[daddy.her]的门。几乎是同时，你听到门后有动静，然后门就自己打开了，你再次与你的新[daddy.daddy]面对面。
+	</p>
+	<p>
+		[daddy.name]看到你和莉莱雅都站在[daddy.herHim]面前，愉快地向你笑着，转向你的伙伴说， [daddy.speech(我简直不敢相信！我终于见到你了，莉莱雅！我必须说你和你母亲一样美丽！)]
+	</p>
+	<p>
+		#IF(lilaya.getSubspecies()==SUBSPECIES_DEMON)
+			虽然莉莱雅的恶魔皮肤本来就是猩红色的，但你看到她的脸色变得更深了一些，她结结巴巴地说，[lilaya.speech(请不要说这么尴尬的话！)]
+		#ELSE
+			你看到莉莱雅的脸霎时变得绯红，她结结巴巴地说，[lilaya.speech(请不要说这么尴尬的话！)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.isVisiblyPregnant())
+			#IF(!pc.isCharacterReactedToPregnancy(daddy))
+				#IF(pc.getPregnantLitter().isFatherId(daddy.getId()))
+						[daddy.speech(嘿，[pc.name]！)][daddy.name]注意到了你隆起的腹部，[daddy.speech(我让你怀上了？！那可太棒啦！来，让我帮你一下！)]
+					</p>
+					<p>
+						你的[daddy.daddy]说完这些，快速回到[daddy.her]的公寓，然后很快拿出了一个装火币的小袋子。你还没来得及拒绝，[daddy.her]已经把钱塞到了你[pc.hands]里，[daddy.speech(我知道你会成为我们孩子的优秀母亲，[pc.name]！)]
+				#ELSE
+						[daddy.speech(嘿，[pc.name]！)][daddy.name]注意到了你隆起的腹部，[daddy.speech(你怀上了？来，让我帮你一下……)]
+					</p>
+					<p>
+						你的[daddy.daddy]说完这些，快速回到[daddy.her]的公寓，然后很快拿出了一个装火币的小袋子。你还没来得及拒绝，[daddy.her]已经把钱塞到了你的[pc.hands]里，[daddy.speech(我知道你会成为一个优秀的母亲，[pc.name]！)]
+				#ENDIF
+			#ELSE
+				#IF(pc.getPregnantLitter().isFatherId(daddy.getId()))
+						[daddy.speech(嘿， [pc.name]！)][daddy.name]注意到了你隆起的腹部，[daddy.speech(你还在怀着我们的孩子吗？我希望你一切都好！)]
+					</p>
+					<p>
+				#ELSE
+						[daddy.speech(嘿， [pc.name]！)][daddy.name]注意到了你隆起的腹部，[daddy.speech(你还怀着？我希望你一切都好！)]
+					</p>
+					<p>
+				#ENDIF
+			#ENDIF
+			</p>
+			<p>
+				[daddy.speech(额，我刚才的话并不是想让你脸红，)][daddy.name]对莉莱雅说，他才刚刚注意到她的脸色。但他对她说这句话，再加上他接下来的一句话，只会让莉莱雅的脸颊变得更红，[daddy.speech(所以，我假设[pc.name]已经向你解释了我的想法了，你现在能接受我成为你新的[daddy.dad]，是吗？)]
+		#ELSE
+			[daddy.speech(额，我刚才的话并不是想让你脸红，)][daddy.name]但他对她说这句话，再加上他接下来的一句话，只会让莉莱雅的脸颊变得更红，[daddy.speech(所以，我假设[pc.name]已经向你解释了我的想法了，你现在能接受我成为你新的[daddy.dad]，是吗？)]
+		#ENDIF
+	</p>
+	<p>
+		[lilaya.speech(额——额，我、我……这个是……)]莉莱雅结结巴巴地说着，显然在努力寻找合适的词汇。但你确定她想，因为在来这里的时候，她说过很多次：如果她不喜欢[daddy.name]的样子，她就立刻转身回家。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING"><![CDATA[
+	<p>
+		你决定再次拜访[daddy.name]，你走向[daddy.her]的公寓大楼，进去并且上到二楼，很快就找到并敲了[daddy.her]的门。几乎是同时，你听到门后有动静，然后门自就己打开了，你再次面对面地看到了那个银发的[daddy.race]。
+	</p>
+	#IF(pc.isVisiblyPregnant())
+		<p>
+			#IF(!pc.isCharacterReactedToPregnancy(daddy))
+				#IF(pc.getPregnantLitter().isFatherId(daddy.getId()))
+						[daddy.speech(嘿，[pc.name]！)][daddy.she]注意到了你在喘气与隆起的腹部，[daddy.speech(我让你怀上了？！那可太棒啦！来，让我帮你一下！)]
+					</p>
+					<p>
+						你的[daddy.daddy]说完这些，快速回到[daddy.her]的公寓，然后很快拿出了一个装火币的小袋子。你还没来得及拒绝，[daddy.her]已经把钱塞到了你[pc.hands]里，[daddy.speech(我知道你会成为我们孩子的优秀的母亲，[pc.name]！现在要和我一起出去吃晚餐吗？或者还是进来呆一会？)]
+				#ELSE
+						[daddy.speech(嘿，[pc.name]！)][daddy.she]注意到了你隆起的腹部， [daddy.speech(你怀上了？！让我帮你一下……)]
+					</p>
+					<p>
+						你的[daddy.daddy]说完这些，快速回到[daddy.her]的公寓，然后很快拿出了一个装火币的小袋子。你还没来得及拒绝，[daddy.her]已经把钱塞到了你[pc.hands]里，[daddy.speech(我知道你会成为一个优秀的母亲，[pc.name]！现在要和我一起出去吃晚餐吗？或者还是进来呆一会？)]
+				#ENDIF
+			#ELSE
+				#IF(pc.getPregnantLitter().isFatherId(daddy.getId()))
+						[daddy.speech(嘿，[pc.name]！)][daddy.name]注意到了你隆起的腹部，[daddy.speech(你还在怀着我们的孩子吗？我希望你一切都好！)]
+					</p>
+					<p>
+						当你肯定以后，[daddy.name]继续说，[daddy.speech(那太好了！现在要和我一起出去吃晚餐吗？或者还是进来呆一会？)]
+				#ELSE
+						[daddy.speech(嘿，[pc.name]！)][daddy.name]注意到了你隆起的腹部，[daddy.speech(你怀上了？我希望你一切都好！)]
+					</p>
+					<p>
+						当你肯定以后，[daddy.name]继续说，[daddy.speech(那太好了！现在要和我一起出去吃晚餐吗？或者还是进来呆一会？)]
+				#ENDIF
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			#IF(daddy.isFeminine())
+				[daddy.speech(嘿，[pc.name]！)][daddy.she]向你露出诱人的微笑，[daddy.speech(现在要和我一起出去吃晚餐吗？或者还是进来呆一会？)]
+			#ELSE
+				[daddy.speech(嘿，[pc.name]！)][daddy.she]向你露出迷人的微笑，[daddy.speech(现在要和我一起出去吃晚餐吗？或者还是进来呆一会？)]
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_MEETING"><![CDATA[
+	<p>
+		莉莱雅陪你身边，一起去往恶魔之家[daddy.name]居住的街道。到达[daddy.her]的公寓大楼，你们一起进去并且上到二楼，很快就找到并敲了[daddy.her]的门。几乎是同时，你听到门后有动静，然后门自就己打开了，你再次面对面地看到了那个银发的[daddy.race]。
+	</p>
+	<p>
+		#IF(pc.isVisiblyPregnant() || lilaya.isVisiblyPregnant())
+			#IF(!pc.isVisiblyPregnant() || (lilaya.isVisiblyPregnant() && !lilaya.isCharacterReactedToPregnancy(daddy) && pc.isCharacterReactedToPregnancy(daddy)))
+				#IF(!lilaya.isCharacterReactedToPregnancy(daddy))
+					#IF(lilaya.getPregnantLitter().isFatherId(daddy.getId()))
+						[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到莉莱雅肚子的隆起，[daddy.speech(嘿，宝贝，我让你怀孕了？太棒了！等一下，让我给你找点东西帮忙！)]
+					#ELSE
+						[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到莉莱雅肚子的隆起，[daddy.speech(嘿，宝贝，你怀孕了？等一下，让我给你找点东西帮忙！)]
+					#ENDIF
+					</p>
+					<p>
+						尽管根据观察就能知道莉莱雅有着莉琳长老级别的财富任她支配，但[daddy.name]坚持给了她一小袋火币。[daddy.she]在你和你的[lilaya.relation(pc)]间笑着，问道，[daddy.speech(那么，你们想再让我请吃饭吗？还是进来坐一会儿？)]
+				#ELSE
+						[daddy.she]高兴地说，[daddy.speech(哎呀，这果不是我最爱的两个未来的继子！)]然后注意到莉莱雅肚子的隆起，[daddy.speech(嘿，宝贝，我希望你怀孕进展顺利！)]
+					</p>
+					<p>
+						在莉莱雅告诉[daddy.herHim]她一切都很好后，[daddy.name]问，[daddy.speech(那么，你们想再让我请吃饭吗？还是想进来坐一会儿？)]
+				#ENDIF
+			#ELSE
+				#IF(!lilaya.isVisiblyPregnant() || (pc.isVisiblyPregnant() && !pc.isCharacterReactedToPregnancy(daddy) && lilaya.isCharacterReactedToPregnancy(daddy)))
+					#IF(!pc.isCharacterReactedToPregnancy(daddy))
+						#IF(pc.getPregnantLitter().isFatherId(daddy.getId()))
+							[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到你肚子的隆起，[daddy.speech(嘿，宝贝，我让你怀孕了？太棒了！等一下，让我给你找点东西帮忙！)]
+						#ELSE
+							[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到你肚子的隆起，[daddy.speech(嘿，宝贝，你怀孕了？等一下，让我给你找点东西帮忙！)]
+						#ENDIF
+						</p>
+						<p>
+							你的[daddy.daddy]说完这些，快速回到[daddy.her]的公寓，然后很快拿出了一个装火币的小袋子。你还没来得及拒绝，[daddy.her]已经把钱塞到了你[pc.hands]里，问道：[daddy.speech(那么，你们想再让我吃饭吗？还是想进来坐一会儿？)]
+					#ELSE
+							[daddy.she]高兴地说，[daddy.speech(哎呀，这果不是我最爱的两个未来继子！)]然后注意到你肚子的隆起，[daddy.speech(嘿，宝贝，我希望你怀孕进展顺利！)]
+						</p>
+						<p>
+							在你告诉[daddy.herHim]一切都很好后，[daddy.name]问，[daddy.speech(那么，你们想再让我吃饭吗？还是想进来坐一会儿？)]
+					#ENDIF
+				#ELSE
+					#IF(!pc.isCharacterReactedToPregnancy(daddy) && !lilaya.isCharacterReactedToPregnancy(daddy))
+						#IF(pc.getPregnantLitter().isFatherId(daddy.getId()))
+							#IF(lilaya.getPregnantLitter().isFatherId(daddy.getId()))
+								[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到你们两个肚子的隆起，[daddy.speech(嘿，宝贝，我让你们怀孕了？太棒了！等一下，让我给你们找点东西帮忙！)]
+							#ELSE
+								[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到你们两个肚子的隆起，[daddy.speech(嘿，[pc.name]，我让你怀孕了？太棒了！莉莱雅也怀孕了吗？等一下，让我给你们找点东西帮忙！)]
+							#ENDIF
+						#ELSE
+							#IF(lilaya.getPregnantLitter().isFatherId(daddy.getId()))
+								[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到你们两个肚子的隆起，[daddy.speech(嘿，莉莱雅，我让你怀孕了？！太棒了！你也怀孕了，[pc.name]？！等一下，让我给你们找点东西帮忙！)]
+							#ELSE
+								[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来的继子！)]突然，注意到你们两个肚子的隆起，[daddy.speech(嘿，宝贝，你们怀孕了？等一下，让我给你们找点东西帮忙！)]
+							#ENDIF
+						#ENDIF
+						</p>
+						<p>
+							尽管根据观察就能知道莉莱雅有着莉琳长老级别的财富任她支配，但[daddy.name]坚持给了她一小袋火币。[daddy.she]在你和你的[lilaya.relation(pc)]间笑着，问道，[daddy.speech(那么，你们想再让我请吃饭吗？还是进来坐一会儿？)]
+					#ELSE
+							[daddy.she]高兴地说，[daddy.speech(哎呀，这果不是我最爱的两个未来继子！)]然后注意到你们两个肚子的隆起，[daddy.speech(嘿，宝贝，我希望你们怀孕进展顺利！)]
+						</p>
+						<p>
+							在你们两个都告诉[daddy.herHim]一切都很好后，[daddy.name]问，[daddy.speech(那么，你们想再让我请吃饭吗？还是想进来坐一会儿？)]
+					#ENDIF
+				#ENDIF
+			#ENDIF
+		#ELSE
+			#IF(daddy.isFeminine())
+				[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来继子！)]然后向你们露出诱人的微笑，[daddy.speech(你们想让我再请你们两个吃饭吗？还是想进来坐一会儿？)]
+			#ELSE
+				[daddy.she]高兴地说，[daddy.speech(哎呀，这不是我最爱的两个未来继子！)]然后向你们露出迷人的微笑，[daddy.speech(你们想让我再请你们两个吃饭吗？还是想进来坐一会儿？)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_AGREE"><![CDATA[
+	<p>
+		你决定接受[daddy.namePos]的晚餐邀请，退后一步，让[daddy.herHim]走出[daddy.her]公寓，然后告诉他你的名字以及你愿意听他解释，但你最终只是为了让他不再打扰莉莱雅。他毫不受这些信息的影响，高高兴兴地带着你走出公寓大楼，穿过街道，来到一家名为“餮馆”的餐厅。
+	</p>
+	<p>
+		当你走近时，很明显这家餐厅名声不错，因为你透过窗户看到所有的桌子都占满了，门口还有一小队人排队等待。当你问[daddy.name]是否要和他一起排队时，他冷笑着看你，然后带着你穿过食客的队伍，直接走向入口。
+	</p>
+	<p>
+		[daddy.speech(嘿，赫利，怎么样？)]他对站在门口的服务员喊道。
+	</p>
+	<p>
+		[genericMale.speech(晚上好，[daddy.name]，今晚需要我帮忙吗？)]服务员友好地回答着，明显与这个恶魔关系不错。
+	</p>
+	<p>
+		[daddy.speech(当然，你能给我们两个人准备一桌吗？)]，他问道。
+	</p>
+	<p>
+		[genericMale.speech(我要是拒绝老板肯定让我好看，现在让我看下能帮你做什么吧，)]然后服务员退回到餐厅里。
+	</p>
+	<p>
+		[daddy.speech(别担心，[pc.name]，我准能订到桌子，)][daddy.name]向你露出迷人的微笑。.
+	</p>
+	<p>
+		不到一分钟，服务员就回来了。他招手让你们俩向前走，然后把你们带到了餐厅后面右手边的一个干净的桌子上。在你们坐下后，他给你们每人递上了菜单，并告诉你们今晚餐厅特色菜。他继续和你们说，马上就会回来为你们拿上饮料，然后离开了，留下了你和[daddy.name]。
+	</p>
+	<p>
+		[daddy.speech(要陪我喝杯酒吗？)]他问道，放松地靠在椅子上，再次对你微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_AGREE_FLIRT"><![CDATA[
+	<p>
+		你决定接受[daddy.namePos]的晚餐邀请，告诉他你很想和他约会，然后用你最轻佻的语气告诉他你的名字，虽然你很高兴听他说完，但你最终是来让他知道莉莱雅不想再被他打扰。以如此诱人的方式告诉他这些信息马上就有了结果，因为在甩掉你是坏消息的传递者这一事实，然后带你离开他的公寓楼后，这位英俊的淫梦魔伸手搂住了你的腰。他告诉你，如果你愿意，他很乐意把这次约会当做一次约会，然后他紧紧搂着你，带你穿过街道，走向一家名为“餮馆”的餐厅。
+	</p>
+	<p>
+		当你走近时，很明显这家餐厅的名声一定很好，因为你不仅可以透过它的大窗户看到所有的桌子都被占满了，而且大门外还排着一条小长龙。当你开始调侃[daddy.name]让他的约会对象排这么长的队是不礼貌的时候，他看了看[daddy.heightDown(pc)]并向你眨了眨眼睛，然后带着你穿过潜在食客的队伍，直接走向入口。
+	</p>
+	<p>
+		[daddy.speech(嘿，赫利，最近怎么样？)]他向站在门口的服务员喊道。
+	</p>
+	<p>
+		[genericMale.speech(晚上好，[daddy.name]，我今晚能为您和您的伙伴提供什么帮助吗？)]服务员用友好的语气回答，显然与你的同伴关系不错。
+	</p>
+	<p>
+		[daddy.speech(你能给我们俩安排一张桌子吗？)]
+	</p>
+	<p>
+		[genericMale.speech(如果我拒绝了你，我想老板是不会原谅我的。让我想想我能做些什么，)]服务员说，然后就走回了餐厅。
+	</p>
+	<p>
+		[daddy.speech(别担心，[pc.name]，我总能在这里找到位子，)][daddy.name]说道，再次向你展示他那迷人的微笑。
+	</p>
+	<p>
+		过了不到一分钟，服务员回来了，他向你们招招手，带你们来到餐厅右后角的一张空桌前。当你看到服务员在餐桌上摆放了一支点燃的蜡烛和一个小花瓶，花瓶里插着一朵美丽的玫瑰，营造出一种非常浪漫的氛围时，你不禁会心一笑。你们两人落座后，他递给你们每人一份菜单，然后告诉你们餐厅今晚的特色菜。他接着告诉你们，他马上就会回来接受你们点的饮料，然后就离开了，留下你们和[daddy.name]独处。
+	</p>
+	<p>
+		[daddy.speech(想和我分享一瓶葡萄酒吗？)]他问道，一边放松地靠在椅子上，一边再次向你微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_REFUSE"><![CDATA[
+	<p>
+		你挡住[daddy.namePos]的去路，告诉他没有和他一起出去吃饭的打算，你到这来只是为了确保他再也不打扰莉莱雅。因为他满不在乎你说的话，你拿出你最严肃、最有威胁性的语气，瞪着他的眼睛，告诉他如果再看到他在莉莱雅家附近，绝对会让他后悔。
+	</p>
+	<p>
+		对于你毫无疑问而认真的警告，这个恶魔发出了极度沮丧的叹息。他耷拉着肩膀，眼睛看着地面，从你身边走过，关上门，泄气地说，[daddy.speech(好吧……我再不会去说服莉莱雅了……)]
+	</p>
+	<p>
+		他都没有回头看你一眼，就闷闷不乐地下了楼，手插在口袋里，在恶魔之家的某个地方漫步。看着他走下去，你准备继续前行……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_REFUSE_AFTER_RETURN"><![CDATA[
+	<p>
+		再次遇到[daddy.name]时，你改变了自己的想法，挡住了他的去路，听他说话。但你告诉他不想和他一起出去吃饭，在这里只是确保他远离莉莱雅。
+	</p>
+	<p>
+		再次被你拒绝以后，[daddy.race]发出了[daddy.her]沮丧的叹息。他耷拉着肩膀，眼睛看着地面，从你身边走过，关上门，泄气地说，[daddy.speech(不用担心……我会远离莉莱雅……)]
+	</p>
+	<p>
+		他都没有回头看你一眼，就闷闷不乐地下了楼，手插在口袋里，在恶魔之家的某个地方漫步。看着他走下去，你准备继续前行……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ACCEPT_AFTER_RETURN"><![CDATA[
+	<p>
+		决定接受[daddy.name]作为你的“[daddy.daddy]”后，你[pc.heightUp(daddy)]抬头看着[daddy.her]的[daddy.eyeColour]眼睛说：[pc.speech(好的……[daddy.Daddy]……我接受你，也去说服莉莱雅……)]
+	</p>
+	<p>
+		立刻陷入[daddy.her]新角色的[daddy.name]高兴地走上前来，把你拉进怀中：[daddy.speech(这就是我的[pc.girl]！我说过今晚睡觉前就把那些卷轴和我的旧法术书寄给你！来吧，让[daddy.dad]带你出去吃饭！)]
+	</p>
+	<p>
+		接受[daddy.her]的邀请，你跟随[daddy.she]走出[daddy.her]公寓楼，穿过街道，朝着熟悉的餐厅“餮馆”走去。再一次，你透过窗户看到所有的桌子都满了，门口还在排队。幸运的是，所有的服务员似乎都熟悉你的新[daddy.daddy]，你立刻就被带到了餐厅后右手边角落的桌子。
+	</p>
+	<p>
+		你们入座以后，服务员递给你们每人一份菜单，告诉你们今晚餐厅提供的特色菜。他表示他会马上回来为你们下单饮品，接着便离开了，留下你和[daddy.name]。
+	</p>
+	<p>
+		[daddy.speech(要喝一杯来庆祝我们的新关系吗？)][daddy.name]放松地靠在[daddy.her]的椅子上，再次对你微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ACCEPT_AFTER_RETURN_FLIRT"><![CDATA[
+	<p>
+		你决定接受[daddy.name]作为你的“[daddy.daddy]”，你看着[pc.heightUp(daddy)][daddy.her][daddy.eyeColour]的眼睛，然后摆出最诱人的表情说，[pc.speech(没错，我想让你做我的新[daddy.daddy]……哦，我会说服莉莱雅也这么做的！)]
+	</p>
+	<p>
+		[daddy.name]立刻进入了[daddy.her]的新角色，高兴地走上前去，把你拉进一个大大的拥抱中，感叹道，[daddy.speech(这是我的[pc.girl]！今晚睡觉前，我会把我的那些卷轴和旧咒语书寄给你，我答应过你的！来吧，让[daddy.dad]带你出去吃晚饭！)]
+	</p>
+	<p>
+		当[daddy.her]把[daddy.her]的手搂在你的腰上时，你开心地[pc.heightUp(daddy)]对[daddy.herHim]笑着回应[daddy.she]一句调情的话，接受了新[daddy.daddy]的提议。[daddy.she]告诉你，[daddy.she]很高兴能和你有这样的关系，[daddy.she]紧紧抱着你，[daddy.she]带着你走出[daddy.she]的公寓楼，穿过街道，走向熟悉的餐厅“餮馆”。你又一次透过窗户看到，所有的桌子都已被占满，前门外又排起了长队。幸好，似乎所有的服务员都和你的新[daddy.daddy]很熟悉，你还没反应过来，就被领进了餐厅，坐到了餐厅右后角的老位子上。
+	</p>
+	<p>
+		当你们看到服务员在餐桌上摆放了一支点燃的蜡烛和一个小花瓶，花瓶里插着一朵美丽的玫瑰，营造出一种非常浪漫的氛围时，不禁会心一笑。两人落座后，服务员递给你们每人一份菜单，然后告诉你们餐厅今晚的特色菜。服务员告诉你们，他马上就会回来接受你们点的饮料，然后就离开了，留下你和[daddy.name]独处。
+	</p>
+	<p>
+		[daddy.speech(想和我分享一瓶葡萄酒来庆祝我们的新关系吗？)][daddy.name]问道，放松地靠在[daddy.her]的椅子上，[daddy.she]向你露出一个诱人的微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REFUSE_AFTER_RETURN"><![CDATA[
+	<p>
+		再次遇到[daddy.name]，你决定不再把[daddy.herHim]作为你的“[daddy.daddy]”。你皱着眉头看着[daddy.herHim]，告诉[daddy.herHim]你不会按[daddy.she]的想法去做什么，来这里只是保证[daddy.sheIs]远离莉莱雅。
+	</p>
+	<p>
+		再次被你拒绝以后，[daddy.race]发出了[daddy.her]沮丧的叹息。他耷拉着肩膀，眼睛看着地面，从你身边走过，关上门，泄气地说，[daddy.speech(不用担心……我会远离莉莱雅……)]
+	</p>
+	<p>
+		他都没有回头看你一眼，就闷闷不乐地下了楼，手插在口袋里，在恶魔之家的某个地方漫步。看着他走下去，你准备继续前行……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_INITIAL_MEETING_TO_DINNER"><![CDATA[
+	<p>
+		你决定帮口吃的[lilaya.relationship(pc)]解围，你向她靠近了一点，提醒她在实验室里说过的话，说有个父亲的形象会有多好。虽然这对她的脸红没有帮助，但你的话似乎起到了积极作用，看着银发[daddy.race]的眼睛，她回答道，[lilaya.speech(好吧，[daddy.name]，我让你试演一下我的……我的……[daddy.daddy]但你最好对你说的每句话都认真点！别让我后悔给你这个机会！)]
+	</p>
+	<p>
+		[daddy.speech(你不会后悔的，我保证，)][daddy.name]回复道。
+	</p>
+	<p>
+		莉莱雅无法再被[daddy.her]注视着，而且很明显她对整个情况仍然感到非常尴尬，于是她背对着[daddy.name]，然后问道，[lilaya.speech(所……所以我们要在走廊里站一晚上吗？)] 
+	</p>
+	<p>
+		[daddy.speech(说得好，我们出发吧，)][daddy.name]回答道，拿起[daddy.her]的钥匙，走出了[daddy.her]的公寓。[daddy.she]微笑着看着你，然后低头看了一眼莉莱雅的裙子后面，那里的布料被剪了一个大洞，以便让她的尾巴可以舒适地在身后摆动。[daddy.speech(你知道吗，你和你妈妈真的很像，我有幸看到她完全变成恶魔的样子，而你的尾巴也和她一样粗壮诱人……)]
+	</p>
+	<p>
+		虽然这句话明显是在夸奖莉莱雅，但似乎还是让她不好意思地小声哭了起来，她把尾巴缠在身上，双手拼命地攥着尾巴，一边转过身去，一边惊呼道，[lilaya.speech(粗……粗壮？你……你在说什么啊？你……你还有一次机……机会，好……好吗？别……别再让我难堪了！)]
+	</p>
+	<p>
+		说完，莉莱雅仍然紧紧抓住尾巴，转身下楼去了，你和[daddy.name]在后面紧追不舍。当你跟着[lilaya.relation(pc)]下楼，来到恶魔之家时，你发现自己低头瞥了一眼莉莱雅的尾巴根部，心想这尾巴确实很粗，很容易就有她一只手臂那么粗。当她在你们俩面前停下来时，你看到她正轻轻地拽着尾巴，在松开尾巴转身面对你之前，她用几乎不易察觉的温柔方式捅了捅尾巴。
+	</p>
+	<p>
+		[lilaya.speech(所以，我们要去哪？)]她问。
+	</p>
+	<p>
+		[daddy.speech(我想我们可以去‘餮馆’吃饭，)][daddy.name]回答道。
+	</p>
+	<p>
+		[lilaya.speech(~噗！~说真的？)]莉莱雅笑道，[lilaya.speech(虽然我不常出门，但并不意味着你可以这样戏弄我。连我自己都知道，在那里是不可能被预订的，而且我也不太愿意用‘我是公认的莉西丝之女’这张牌来博取别人的好感什么的。)]
+	</p>
+	<p>
+		[daddy.speech(我没有开玩笑，)][daddy.name]微笑着对莉莱雅， [daddy.speech(也你不需要做这样的事。让你的新[daddy.dad]去说吧。)]
+	</p>
+	<p>
+		带着你们俩走向那家熟悉的餐厅，透过窗户，你们又一次看到所有的桌子都被占满了，前门外又排起了长队。就像你们上次来这里一样，令莉莱雅感到惊讶的是，[daddy.name]能让前门的女服务员给你们三人安排一张桌子。
+	</p>
+	<p>
+		三人落座后，女服务员递给你们每人一份菜单，然后告诉你们餐厅今晚的特色菜。她接着告诉你们，她很快就会回来拿你们点的饮料，然后就离开了，给你们三人留出了一些私人空间。
+	</p>
+	<p>
+		[lilaya.speech(啊？)]莉莱雅说，[daddy.name]这么容易就把你们三个弄进来了，这显然给她留下了深刻印象，[lilaya.speech(你是怎么做到的？上次我听说这里至少提前六个月就被订满了。)]
+	</p>
+	<p>
+		[daddy.speech(啊，好吧，你知道是怎么回事，)][daddy.name]尽可能淡定地回应道，[daddy.speech(我只是在这里刚开张的时候帮店主修了一些小地方，现在他似乎觉得他永远欠我的什么的。总之，你们俩想先来一瓶酒吗？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_INITIAL_MEETING_TO_DINNER_FLIRT"><![CDATA[
+	<p>
+		你决定帮你的结巴[lilaya.relationship(pc)]解围，你向她靠近了一点，并确保使用一些性暗示，提醒她在实验室里说过的话，说有一个父亲的形象会有多好。虽然这并不能让她脸红，但你的话似乎起到了积极作用，她看着银发[daddy.race]的眼睛回答道，[lilaya.speech(好吧，[daddy.name]，我让你试演一下我的……我的……[daddy.daddy]但……但你最好对你说的每句话都认真点！别让我后悔给你这个机会！)]
+	</p>
+	<p>
+		[daddy.speech(你不会后悔的，我保证，)][daddy.name]回答道。
+	</p>
+	<p>
+		莉莱雅无法再注视着[daddy.her]，而且很明显她对整个情况仍然感到非常尴尬，于是她背对着[daddy.name]，然后问道，[lilaya.speech(所……所以我们要在走廊里站一晚上吗？)] 
+	</p>
+	<p>
+		[daddy.speech(说得好，我们出发吧，)][daddy.name]回答道，拿起[daddy.her]的钥匙，走出了[daddy.her]的公寓。[daddy.she]微笑着看着你，然后低头看了一眼莉莱雅的裙子后面，那里的布料被剪了一个大洞，以便让她的尾巴可以舒适地在身后摆动。[daddy.speech(你知道吗，你和你妈妈真的很像，我有幸看到她完全变成恶魔的样子，而你的尾巴也和她一样粗壮诱人……)]
+	</p>
+	<p>
+		虽然这句话明显是在夸奖莉莱雅，但似乎还是让她不好意思地小声哭了起来，她把尾巴缠在身上，双手拼命地攥着尾巴，一边转过身去，一边惊呼道，[lilaya.speech(粗……粗壮？你……你在说什么啊？你……你还有一次机……机会，好……好吗？别……别再让我难堪了！)]
+	</p>
+	<p>
+		说完，莉莱雅仍然紧紧抓住尾巴，转身下楼去了，你和[daddy.name]在后面紧追不舍。当你跟着[lilaya.relation(pc)]下楼，来到恶魔之家时，你发现自己低头瞥了一眼莉莱雅的尾巴根部，心想这尾巴确实很粗，很容易就有她一只手臂那么粗。当她在你们俩面前停下来时，你看到她正轻轻地拽着尾巴，在松开尾巴转身面对你之前，她用几乎不易察觉的温柔方式捅了捅尾巴。
+	</p>
+	<p>
+		[lilaya.speech(所以，我们要去哪？)]她问。
+	</p>
+	<p>
+		[daddy.speech(我想我们可以去‘餮馆’吃饭，)][daddy.name]回答道。
+	</p>
+	<p>
+		[lilaya.speech(~噗！~说真的？)]莉莱雅笑道，[lilaya.speech(虽然我不常出门，但并不意味着你可以这样戏弄我。连我自己都知道，在那里是不可能被预订的，而且我也不太愿意用‘我是公认的莉西丝之女’这张牌来博取别人的好感什么的。)]
+	</p>
+	<p>
+		[daddy.speech(我没有开玩笑，)][daddy.name]微笑着对莉莱雅， [daddy.speech(也你不需要做这样的事。让你的新[daddy.dad]去说吧。)]
+	</p>
+	<p>
+		带着你们俩走向那家熟悉的餐厅，透过窗户，你们又一次看到所有的桌子都被占满了，前门外又排起了长队。就像你们上次来这里一样，让莉莱雅感到惊讶的是，[daddy.name]竟然能让前门的女服务员给你们三人安排一张桌子。你看到女服务员发现你对[daddy.name]和莉莱雅都表现出非常性感的举动，不禁会心一笑，于是在餐桌上摆上了点燃的蜡烛和一个小花瓶，里面插着一朵美丽的玫瑰，营造出一种非常浪漫的气氛。
+	</p>
+	<p>
+		三人落座后，女服务员递给你们每人一份菜单，然后告诉你们餐厅今晚的特色菜。她接着告诉你们，她很快就会回来接受你们点的饮料，然后就离开了，给你们三人留出了一些私人空间。
+	</p>
+	<p>
+		[lilaya.speech(啊？)]莉莱雅说，[daddy.name]这么容易就把你们三个弄进来了，这显然给她留下了深刻印象，[lilaya.speech(你是怎么做到的？上次我听说这里至少提前六个月就被订满了。)]
+	</p>
+	<p>
+		[daddy.speech(啊，好吧，你知道是怎么回事，)][daddy.name]尽可能淡定地回应道，[daddy.speech(我只是在这里刚开张的时候帮店主修了一些小地方，现在他似乎觉得他永远欠我的什么的。总之，你们俩想先来一瓶酒吗？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_OUT_FOR_DINNER"><![CDATA[
+	<p>
+		告诉[daddy.name]你想再和[daddy.herHim]出去吃晚饭，你很快就发现自己和[daddy.herHim]并肩而行，[daddy.she]带着你走出[daddy.she]的公寓楼，穿过街道，走向熟悉的餐厅“餮馆”。透过窗户，你又一次看到所有的桌子都被占满了，前门外又排起了长队。值得庆幸的是，似乎所有的服务员都和你的[daddy.daddy]很熟悉，你还没反应过来，就已经被领进了餐厅，来到了餐厅右后角的老位子。
+	</p>
+	<p>
+		你们俩落座后，服务员递给你们每人一份菜单，然后告诉你们餐厅今晚的特色菜。服务员接着告诉你们，他很快就会回来接受你们点的饮料，然后就离开了，留下你们和[daddy.name]独处。
+	</p>
+	<p>
+		[daddy.speech(想和我分享一瓶葡萄酒吗？)][daddy.name]问道，放松地坐回[daddy.her]的椅子上，[daddy.she]再次向你微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_MEETING_OUT_FOR_DINNER"><![CDATA[
+	<p>
+		告诉[daddy.name]你和莉莱雅想再和[daddy.herHim]出去吃晚饭，你们很快就发现自己和[daddy.herHim]并肩而行，[daddy.she]带着你们俩走出[daddy.her]的公寓楼，穿过街道，走向熟悉的餐厅“餮馆”。你又一次透过窗户看到，所有的桌子都被占满了，前门外又排起了长队。值得庆幸的是，似乎所有的服务员都和你的[daddy.daddy]很熟悉，你还没反应过来，就已经被领进了餐厅，来到了餐厅右后角的老位子。
+	</p>
+	<p>
+		三人落座后，服务员递给你们每人一份菜单，然后告诉你们餐厅今晚的特色菜。服务员接着告诉你们，他马上就会回来接受你们点的饮料，然后就离开了，给了你们、莉莱雅和[daddy.name]一些私人空间。
+	</p>
+	<p>
+		[daddy.speech(你们俩想和我分享一瓶酒吗？)][daddy.name]问道，[daddy.she]坐在[daddy.her]的椅子上放松下来，[daddy.she]向你们俩露出一个微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_OUT_FOR_DINNER_FLIRTING"><![CDATA[
+	<p>
+		[daddy.her]上前搂住你的腰，开心地[pc.heightUp(daddy)]对[daddy.herHim]笑着。[daddy.she]告诉你，[daddy.she]很高兴和你有这样的关系，[daddy.she]紧紧抱着你，带着你走出[daddy.she]的公寓楼，穿过街道，走向熟悉的餐厅“餮馆”。透过窗户，你又一次看到所有的桌子都被占满了，前门外又排起了长队。值得庆幸的是，似乎所有的服务员都和你的[daddy.daddy]很熟悉，你还没反应过来，就已经被领进了餐厅，来到了餐厅右后角的老位子。
+	</p>
+	<p>
+		你看到女服务员发现你对[daddy.name]和莉莱雅都表现出了非常性感的举动，不禁会心一笑，于是在餐桌上摆上了点燃的蜡烛和一个小花瓶，花瓶里插着一朵美丽的玫瑰，营造出一种非常浪漫的氛围。两人落座后，服务员递给你们每人一份菜单，并告诉你们餐厅今晚的特色菜。服务员告诉你们，他很快就会回来接受你们的酒水订单，然后就离开了，给了你们一些私人空间。
+	</p>
+	<p>
+		[daddy.speech(你们俩想和我分享一瓶酒吗？)][daddy.name]问道，放松地靠在[daddy.her]的椅子上，[daddy.her]向你露出一个诱人的微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_MEETING_OUT_FOR_DINNER_FLIRTING"><![CDATA[
+	<p>
+		[daddy.her]走到你和莉莱雅中间，你回以淫声浪语，接受了晚餐邀请。你[pc.heightUp(daddy)]对[daddy.her]欣喜地笑。[daddy.herHim]用一只手搂住你们的腰，诉说着[daddy.she]很高兴能和你们有这般关系。[daddy.she]紧紧地抱着你们，走出公寓，穿过街道，走向熟悉的“餮馆”。你们透过窗户观察，目之所及的所有桌子都满了，前门外还排着长队。值得庆幸的是，似乎所有服务员都和[daddy.daddy]很熟悉，你还没反应过来，就已经被领进餐厅，来到右后角的老位子。
+	</p>
+	<p>
+		服务员发现你对[daddy.name]和莉莱雅表现得亲昵又淫靡，不禁会心一笑，在桌上摆了支点燃的蜡烛和插着一朵美丽玫瑰的小花瓶，气氛浪漫又旖旎。三人落座后，服务员递给你们每人一份菜单，推荐着今晚的特色菜。他表示马上就回来给你们点饮料，随后离开，给你、莉莱雅和[daddy.name]保留了私人空间。
+	</p>
+	<p>
+		[daddy.speech(你们想和我喝酒吗？)][daddy.name]放松地靠在椅子上问道。[daddy.she]向你们俩露出诱人的微笑。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_STAY_IN_APARTMENT"><![CDATA[
+	<p>
+		你跟[daddy.name]说你想去[daddy.her]的公寓闲待一会，玩一玩，而[daddy.she]高兴地回道：[daddy.speech(当然可以，快进来吧！)]
+	</p>
+	<p>
+		你进到屋内，[daddy.name]在你身后关上了门，随后引着你穿过门廊，来到[daddy.her]的开放式餐厨厅内。你坐进舒服的沙发里，[daddy.name]找来了零食与饮料递给你，你对[daddy.she]露出了微笑。
+	</p>
+	<p>
+		[daddy.speech(嗯，你最近过得怎样？)][daddy.name]坐到你身旁，开口问道。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_MEETING_STAY_IN_APARTMENT"><![CDATA[
+	<p>
+		你告诉[daddy.name]你和莉莱雅想去[daddy.her]的公寓里待一会儿，[daddy.she]高兴地回答，[daddy.speech(当然，你们两个进来吧！)]
+	</p>
+	<p>
+		你们走进去后，[daddy.name]从你们身后关上门，然后带着穿过了入口大厅，走进[daddy.her]的开放式休息室兼厨房。你和莉莱雅坐在这里的舒适沙发上，对着[daddy.name]微笑，[daddy.she]去拿一些饮料和零食。
+	</p>
+	<p>
+		[daddy.speech(那么，我最爱的两个准继子过得怎么样？)][daddy.name]坐在你们沙发旁的椅子上问。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_STAY_IN_APARTMENT_FLIRTING"><![CDATA[
+	<p>
+		你以荡漾又调情的方式告诉[daddy.name]，你想进到[daddy.her]的公寓里找点乐子。[daddy.she]笑着回答，[daddy.speech(听起来不错，进来吧！)]
+	</p>
+	<p>
+		[daddy.name]踏进门口，跟在你身后关上前门，然后带你穿过玄关，进入[daddy.her]的开放式休息室兼厨房。你坐在舒服的沙发上，看[daddy.name]给你俩拿饮料和点心。你向[daddy.she]投去一个诱人的微笑。
+	</p>
+	<p>
+		[daddy.speech(那么，你有什么有趣的想法呢？)][daddy.name]边问边坐上沙发，靠在你身边。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_MEETING_STAY_IN_APARTMENT_FLIRTING"><![CDATA[
+	<p>
+		你暧昧地跟[daddy.name]说，你和莉莱雅想去[daddy.her]的公寓闲玩一会，[daddy.she]笑着回复说，[daddy.speech(听起来不错，你们俩快进来吧！)]
+	</p>
+	<p>
+		你们进到屋内，[daddy.name]从你们身后关上了门，随后引着你们穿过门廊，来到[daddy.her]的开放式餐厨厅内。你和莉莱雅坐在这里的舒适沙发上，诱惑地向着[daddy.name]笑，[daddy.she]去拿一些饮料和零食。
+	</p>
+	<p>
+		[daddy.speech(好了，我最爱的两个准继子有什么好玩的事情想做呢？)]  [daddy.name]坐在你和莉莱雅之间，问道。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DINNER -->
+	
+	<htmlContent tag="FIRST_DINNER_WATER"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你委婉地拒绝了[daddy.name]的酒邀，告诉[daddy.her]你今晚更想喝水，然后对[daddy.herHim]眨了眨眼睛，问[daddy.she]怎么能这么容易就排到前面去了。
+		#ELSE
+			你拒绝了[daddy.name]的酒邀，告诉[daddy.her]今晚你还是喝水吧，然后问[daddy.herHim]是怎么这么容易就排到前面去的。
+		#ENDIF
+	</p>
+	<p>
+		[daddy.speech(嗯……你知道是怎么回事，)][daddy.she]微笑着回应，尽量表现得不慌不忙，[daddy.speech(店主刚开张的时候，我帮他修了一些东西，他觉得欠了我什么的。)]
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			#IF(!pc.isTaur())
+				你的[pc.foot]在[daddy.namePos]的腿上游走，你咬着嘴唇问[daddy.she]是否以此为生。银发的[daddy.race]显然被你的挑逗弄得兴奋起来，[daddy.she]回答时饥渴地凝视着你的[pc.eyes]，
+			#ELSE
+				你低头瞥了一眼[daddy.namePos]肌肉发达的胸部，咬着嘴唇问[daddy.she]是否以此为生。银发的[daddy.race]显然被你挑逗起了兴趣，[daddy.she]回答时饥渴地凝视着你的[pc.eyes]，
+			#ENDIF
+		#ELSE
+			问[daddy.she]是否以此为生，满头银发的[daddy.race]点头回答，
+		#ENDIF
+		[daddy.speech(没错，我是建筑业的承包商。恶魔对这种工作的需求量一直都很大，因为我们能驾驭奥术，用心灵感应操纵物质什么的。)]
+	</p>
+	<p>
+		这时，服务员回来帮你们点饮料，你们点完，他很快就拿着瓶装水和[daddy.namePos]的酒杯回来了。然后你们点餐。你点完餐，终于可以继续问[daddy.namePos]这到底是怎么回事了。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FIRST_DINNER_WINE"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你腼腆地接受了[daddy.her]的酒邀，告诉[daddy.name]说，今晚让自己放纵一下会很有趣，然后对[daddy.herHim]眨了眨眼睛，问[daddy.she]怎么能这么轻松地通过前面的排队。
+		#ELSE
+			接受了[daddy.her]的红酒邀请，你告诉[daddy.name]，你会让[daddy.herHim]挑选年份酒，然后问[daddy.herHim]，[daddy.she]怎么能这么容易地通过前面的排队。
+		#ENDIF
+	</p>
+	<p>
+		[daddy.speech(你知道是怎么回事，)][daddy.she]微笑着回应，尽量表现得不慌不忙，[daddy.speech(店主刚开张的时候，我帮他修了一些东西，他觉得欠了我的债什么的。)]
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			#IF(!pc.isTaur())
+				你的[pc.foot]在[daddy.namePos]的腿上游走，你咬着嘴唇问[daddy.she]是否以此为生。银发的[daddy.race]显然被你的挑逗弄得兴奋起来，[daddy.she]回答时饥渴地凝视着你的[pc.eyes]，
+			#ELSE
+				你低头瞥了一眼[daddy.namePos]肌肉发达的胸部，咬着嘴唇问[daddy.she]是否以此为生。银发的[daddy.race]显然被你挑逗起了兴趣，[daddy.she]回答时饥渴地凝视着你的[pc.eyes]，
+			#ENDIF
+		#ELSE
+			问[daddy.she]是否以此为生，满头银发的[daddy.race]点头回答，
+		#ENDIF
+		[daddy.speech(没错，我是建筑业的承包商。恶魔对这种工作的需求量一直都很大，因为我们能驾驭奥术，用心灵感应操纵物质什么的。)]
+	</p>
+	<p>
+		这时，服务员回来给你们点饮料，点完后，他很快就拿着你们要的一瓶酒回来了。然后你们点餐，点完餐后，你们终于可以继续问[daddy.name]这到底是怎么回事了。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<htmlContent tag="FIRST_DINNER_CORE"><![CDATA[
+	<p>
+		[daddy.speech(嗯……说来话长，所以我想有时间边吃晚饭边给你们讲讲，)][daddy.name]说，然后开始讲[daddy.her]的故事，[daddy.speech(事情要从几年前说起，那时我在屈城区做一件大事，我不知道你是否见过她，但我当时在为莉西丝另一个公认的女儿梅拉克西丝干活。她在下面的某个洞穴里建造了一个巨大的要塞，我被派去搬运石块。总之，有一天，在工作的时候，我第一次见到了她……)]
+	</p>
+	<p>
+		当[daddy.her]回想那天[daddy.her]看到的是谁时，[daddy.her]靠在椅子上，发出了一声深沉而满足的叹息。你很想知道[daddy.sheIs]指的是谁，就告诉他你确实见过梅拉克西丝，并问[daddy.Name]看到的是不是她，[daddy.she]回答说，[daddy.speech(哦，不，我说的不是她，而是她的母亲……莉西丝……我仿佛看到了完美的幻象……她是如此优雅，美丽得超乎想象。就在那一刻，我知道我注定要娶她为妻。)]
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			[pc.speech(你的<i>妻子</i>？)]你问，你听说[daddy.she]已经有了恋爱对象，不禁撅起了嘴。
+		#ELSE
+			[pc.speech(你的<i>妻子</i>？)]你问道，不确定是不是自己听错了。
+		#ENDIF
+	</p>
+	<p>
+		[daddy.speech(是啊，是啊，我知道结婚并不是一件流行的事，但我内心深处有一种东西，就是希望我们两个能永远在一起，)][daddy.name]回答道，[daddy.her]的声音带着不寻常的真诚，[daddy.speech(因此，自从我第一次见到她，我就一直在努力实现我的梦想。我很快就发现，她只喜欢人类，所以我选择了这个外表，而且非常不幸的是，她把自己封闭在屈城区的那座坚固宫殿里。我曾无数次想要见她，但前门的守卫明确表示‘绝对不可能’。那时我才意识到，我只是想承担未来一半的责任；一旦我们结婚，我不仅要照顾莉西丝，还要照顾她所有被承认的孩子。意识到这一点后，我决定着手说服她的女儿们，让她们相信我会是一个合适的父亲。如果我能做到这一点，莉西丝一定会想见我的！)]
+	</p>
+	<p>
+		[pc.speech(那么，你为什么只关注莉莱雅，而不同时试图说服梅拉克西丝呢？)]你问到。
+	</p>
+	<p>
+		[daddy.speech(哈，额，你一定知道，她比她姐姐更……<i>古怪</i>，)][daddy.name]回答道，[daddy.speech(其实我很容易就见到了她，但她坚持要和我单挑决斗，以向她‘证明我的价值’。为了站在莉西丝的身边，我愿意做任何事，所以我很快就答应了……尽管她夸夸其谈，说要‘毁灭宇宙’，但她看起来并不那么强大，但我还是严重低估了她……接下来，我就被赶出了她的要塞，并被告知只有当我有资格再次与她战斗时才能回来。)]
+	</p>
+	<p>
+		这时，你们的食物送来了，[daddy.namePos]的故事暂时搁置，因为你们俩开始吃东西了。
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你很快就发现这里的食物绝无仅有，为了充分享受美食，你放慢了谈话的速度，同时还不忘时不时地抛出一句调情的话。
+		#ELSE
+			很快，你就发现这里的食物无与伦比，于是你高兴地让谈话放缓，以便充分享受美食。
+		#ENDIF
+		随着[daddy.her]故事的中断，[daddy.name]开始讲述[daddy.her]的一些过往，你很快意识到，[daddy.her]是莉琳长老洛维耶纳的后裔，但未得到承认，[daddy.her]一生中的大部分时间都在御城区的建筑行业工作。
+	</p>
+	<p>
+		很快，你们俩就吃完了，[daddy.name]再次把话题转回到[daddy.she]带你们来这里的原因上，[daddy.speech(我需要你帮忙的第一件事，就是关于我的长相。我一直无法从真正了解她的人那里得到像样的答案，既然你和她是亲戚，你一定知道……我的外表是莉西丝喜欢的类型吗？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_NO_TF"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你一边加入了若干对于他帅气外表的评论，一边向[daddy.name]保证说他的外貌已经是能取悦莉西丝的最好状态了，但因为他不是人类，她可能对他没兴趣。
+		#ELSE
+			你向[daddy.name]保证说他的外貌已经是能取悦莉西丝的最好状态了，但因为他不是人类，她可能对他没兴趣。
+		#ENDIF
+		他不以为意地摆了摆手，说：[daddy.speech(我知道这些就够了，我相信我能诱惑莉西丝，只要我能见到她！这就是我真正需要你帮忙的地方……)]
+	</p>
+	<p>
+		你询问[daddy.name]有何打算，他往椅子上一靠，认真地说道：[daddy.speech(我需要你说服莉莱雅认可我当她的父亲，并且出来见我。无论我怎么尝试，她那个猫女女仆总是当场拒绝我，所以没有你的帮助我办不到……哦，还有一件非常重要的事。我需要向莉西丝证明她的几个孩子已经接受我当他们的父亲，既然你和她有血缘关系，那你也包括在内，不是吗？)]
+	</p>
+	<p>
+		[pc.speech(嗯，这事要更复杂一点，)]你回答。
+	</p>
+	<p>
+		[daddy.speech(不管怎样，你和她有直接的亲缘关系，)][daddy.name]说， [daddy.speech(所以我需要你接受我当你的父亲。这包括你叫我‘[daddy.daddy]’。)]
+	</p>
+	<p>
+		你被他突然提出的要求打得措手不及，还没来得及想出回应，[daddy.name]继续说：[daddy.speech(接受我当你新爸爸没那么糟，对吗？如果你同意，我会把我所有的旧奥术书和卷轴都给你。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_SUCCUBUS_TF"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你考虑到如果[daddy.name]变成魅魔形态会更加性感，告诉他莉西丝似乎更享受被女性簇拥，接着你一边给出性暗示，一边说服他如果转化成魅魔，可能更有机会诱惑莉西丝。
+		#ELSE
+			你考虑到如果[daddy.name]变成他的魅魔形态会更加性感，告诉他莉西丝似乎更享受被女性簇拥着，如果转化成魅魔，可能更有机会诱惑莉西丝。
+		#ENDIF
+		他叹了口气，说：[daddy.speech(哎，我已经有心理准备会听到这些了……给我点时间……)]
+	</p>
+	<p>
+		[daddy.name]说完，从桌子旁起身，走向餐厅洗手间。短短几分钟后，“她”以魅魔的形态返回了。然而，和大多数女性恶魔不同，[daddy.name]似乎并不乐意完全展现女性魅力，她拥有着B罩杯的小胸部，少女般的髋部，和勉强算丰满的屁股。她的脸虽然像女性一样足够可爱，但也略微接近中性。她的身高和头发也发生了变化，现在比之前矮了很多；白色波浪发丝已经垂至肩膀，用一条黑发带束住，以露出她的脸。当她靠近时，你不禁注意到她牛仔裤里某个部位鼓鼓囊囊，在重要的地方她依然是个男人……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_SUCCUBUS_TF_END"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			[daddy.name]在你面前坐下，疲惫地叹了一口气。你忍不住向下瞥了一眼她起伏的胸部，你透过被撑大的T恤衫清楚地看到了她正在逐渐变大的乳头。看到这些你兴奋了起来，你开始忍不住下流地夸赞她的新身体。
+		#ELSE
+			[daddy.name]在你面前坐下，疲惫地叹了一口气。你忍不住向下瞥了一眼她起伏的胸部，你透过被撑大的T恤衫清楚地看到了她正在逐渐变大的乳头。
+		#ENDIF
+		她丰满的嘴唇带上了一抹微笑，用比平时更高的也更女性化的音调开口，[daddy.speech(你是知道的，时间隔得太长我都快忘了上次这样做时的感觉了……那个，你觉得呢？莉西丝会更喜欢我现在的样子吗？)]
+	</p>
+	<p>
+		你禁不住地对[daddy.namePos]的新外貌感到越来越兴奋。你急忙夸了她两句，开始询问你能帮到些什么。她向前倾了倾身，用严肃的语气说，[daddy.speech(嗯，现在我有了合适的长相，我需要你去说服莉莱雅我来当她的父亲……不对，等等，还是说她的第二个母亲更合适……并且也要让她来到这里见我。不管我怎么尝试，她的猫女女仆总是当场拒绝我，所以没有你的帮助我不可能做到。哦，还有一件很重要的事。我要向莉西丝证明她的几个孩子里有不少已经接受我当他们的父亲，既然你和她有血缘关系，那你也包括在内，不是吗？)]
+	</p>
+	<p>
+		[pc.speech(呃，事情比这要更复杂一点，)]你回答。
+	</p>
+	<p>
+		[daddy.speech(不管怎么说，你和她是直系的亲人，)][daddy.name]说，[daddy.speech(所以我需要你接受我当你的母亲。这也包括你要叫我‘[daddy.daddy]’。)]
+	</p>
+	<p>
+		你被这突如其来的要求吓了一跳。你还没来得及想好怎么回复之前，[daddy.name]继续说，[daddy.speech(我当你的新妈妈不会太糟，对吧？如果你能像我说的一样帮我，我会把我所有的奥术法术书和卷轴都给你。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_WATER"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你害羞地拒绝了[daddy.her]饮酒的建议，告诉[daddy.name]你今晚更想喝水，然后对[daddy.herHim]眨了眨眼睛，问[daddy.herHim]最近过得怎么样。
+		#ELSE
+			你拒绝了[daddy.her]饮酒的建议，并告诉[daddy.name]你喝白开水就够了，之后你问起了[daddy.herHim]的近况。
+		#ENDIF
+		[daddy.name]说[daddy.sheHas]最近过得还不错，就是作为[daddy.sheIs]的忙碌让他实在没什么时间去休息。
+	</p>
+	<p>
+		你们点完了饮料，不久后，服务员为你们端上来了一杯水和一瓶红酒。并告诉你们可以点餐了。过了一会，
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你终于可以正式开始和[daddy.daddy]调情了。
+		#ELSE
+			你终于可以正式和[daddy.daddy]对话了。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_WINE"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你害羞地接受了[daddy.her]饮酒的建议，告诉[daddy.name]今晚放松一下会很有趣，然后对[daddy.herHim]眨了眨眼睛，问[daddy.sheHas]最近过的怎么样。
+		#ELSE
+			你接受了[daddy.her]饮酒的建议，让[daddy.herHim]挑选红酒的年份，之后你问起了[daddy.herHim]的近况。
+		#ENDIF
+		[daddy.name]说[daddy.sheHas]最近过得还不错，就是忙于城市的几个项目，实在没什么时间去休息。
+	</p>
+	<p>
+		你们点完了饮料，不久后，服务员为你们端上了你们挑选的红酒。并告诉你们可以点餐了。过了一会，
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你终于可以正式开始和[daddy.daddy]调情了。
+		#ELSE
+			你终于可以正式和[daddy.daddy]对话了。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_CORE"><![CDATA[
+	<p>
+		很快，餐上齐了。你们暂停了对话，开始吃饭。
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			#IF(!pc.isTaur())
+				你不浪费片刻继续调情，[pc.foot]沿着[daddy.namePos]的腿向上移动，不时停下来，害羞地咬着嘴唇问[daddy.sheIs]是否享受你的陪伴。银发[daddy.race]很显然被你勾起了性欲，身体做出了反应，并告诉你[daddy.she]希望你饭后去[daddy.her]的公寓。
+			#ELSE
+				你展示出对[daddy.namePos]身体的饥渴，害羞地咬着嘴唇问[daddy.sheIs]是否享受你的陪伴。银发[daddy.race]很显然被你勾起了性欲，身体做出了反应，并告诉你[daddy.she]希望你饭后去[daddy.her]的公寓。
+			#ENDIF
+		<p>
+			你们继续以这种方式调情，很快吃完了饭。[daddy.name]放下餐具，询问你想来点甜点吗。
+		</p>
+		#ELSE
+			没过多久，你们俩都吃完了饭，把[daddy.her]的餐具放下后，[daddy.name]问你要不要点甜点。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_WATER"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你害羞地拒绝了[daddy.her]饮酒的建议，告诉[daddy.name]你今晚更想喝水，然后对[daddy.herHim]和莉莱雅说了些挑逗的话。两位同伴都很乐意回应你的调情，这令你感到很愉快。
+		#ELSE
+			你拒绝了[daddy.her]饮酒的提议，并告诉[daddy.name]你喝白开水就够了，之后你问起了[daddy.herHim]的近况。[daddy.name]说[daddy.sheHas]最近过得还不错，就是忙于城市的几个项目让他实在没什么时间去休息。
+		#ENDIF
+	</p>
+	<p>
+		你们点完了饮料，不久后，服务员端上了[daddy.name]和莉莱雅的红酒和你的瓶装水。并告诉你们可以点餐了。过了一会，
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你终于可以正式开始和[lilaya.relation(pc)]和[daddy.daddy]调情了。
+		#ELSE
+			你终于可以正式和[lilaya.relation(pc)]和[daddy.daddy]对话了。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_WINE"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你害羞地接受了[daddy.her]饮酒的建议，告诉[daddy.name]今晚放松一下会很有趣，然后对[daddy.herHim]和莉莱雅说了些挑逗的话。两位同伴都很乐意回应你的调情，这令你感到很愉快。
+		#ELSE
+			你接受了[daddy.her]饮酒的建议，让[daddy.herHim]挑选红酒的年份，之后你问起了[daddy.herHim]的近况。[daddy.name]说[daddy.sheHas]最近过得还不错，就是忙于城市的几个项目，实在没什么时间去休息。
+		#ENDIF
+	</p>
+	<p>
+		你们点完了饮料，不久后，服务员端上了你们挑选的红酒。并告诉你们可以点餐了。过了一会，
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你终于可以正式开始和[lilaya.relation(pc)]和[daddy.daddy]调情了。
+		#ELSE
+			你终于可以正式和[lilaya.relation(pc)]和[daddy.daddy]对话了。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_CORE"><![CDATA[
+	<p>
+		很快，餐上齐了。你们暂停了对话，开始吃饭。
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			#IF(!pc.isTaur())
+				你不浪费片刻继续调情，[pc.foot]沿着莉莱雅和[daddy.namePos]的腿向上移动，不时停下来，害羞地咬着嘴唇询问他们是否享受你的陪伴。两人很显然都被你勾起了性欲，身体做出了反应。而后[daddy.name]告诉你们，[daddy.she]希望你们饭后去[daddy.her]的公寓。
+			#ELSE
+				你展示出对莉莱雅和[daddy.namePos]身体的饥渴，害羞地咬着嘴唇询问他们是否享受你的陪伴。两人很显然都被你勾起了性欲，身体做出了反应。而后[daddy.name]告诉你们，[daddy.she]希望你们饭后去[daddy.her]的公寓。
+			#ENDIF
+		<p>
+			你继续以这种方式和两位同伴调情。你们很快吃完了饭。[daddy.name]放下餐具，询问你想来点甜点吗。
+		</p>
+		#ELSE
+			没过多久，你们就都吃完了，把[daddy.her]的餐具放下后，[daddy.name]问你要不要点甜点。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_WATER_INITIAL"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你腼腆地拒绝了[daddy.her]的红酒，告诉[daddy.name]你今晚只愿意喝水，随后对[daddy.herHim]和莉莱雅说了些轻浮的话。让你开心的是，你的两名伙伴都看起来很乐意回应你的调情。
+		#ELSE
+			你拒绝了[daddy.her]的红酒，告诉[daddy.name]你今晚只喝水，随后问候[daddy.herHim][daddy.sheHas]今晚过的怎么样。[daddy.name]开心地回答道[daddy.sheHas]过得很好，尽管因为[daddy.shels]最近因为城市里的几个工程忙的团团转而没什么时间放松。
+		#ENDIF
+	</p>
+	<p>
+		这时，侍者去拿你要求的饮品，随后不久端上了你的一瓶水以及莉莱雅和[daddy.name]的红酒。之后你点了正餐，在那之后，话题转到了[daddy.name]与莉西丝的关键会面上。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_WINE_INITIAL"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你腼腆地接受了[daddy.her]的红酒，告诉[daddy.name]今晚放的开一点会很让人开心，随后对[daddy.herHim]和莉莱雅发表了一些轻浮的言论。很让你开心的是，你的两名伙伴都很乐意接受你对他们的调情。
+		#ELSE
+			你接受了[daddy.her]的红酒，告诉[daddy.name]你想要让[daddy.herHim]挑选酒的年份，随后问[daddy.herHim]最近过得如何。[daddy.name]开心地回答道[daddy.sheHas]过得很好，尽管[daddy.shels]最近因为城市里的几个工程忙的团团转而没什么时间放松。
+		#ENDIF
+	</p>
+	<p>
+		就在此时，侍者来问你要点什么饮品，之后不久就带着你点的红酒返回。之后你点了正餐，在那之后，话题转到了[daddy.name]与莉西丝的关键会面上。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_CORE_INITIAL"><![CDATA[
+	<p>
+		[daddy.speech(既然你们俩都接受我是你们新的[daddy.dad]，那么莉西丝一定想要见我吧？)][daddy.name]笑着询问你和莉莱雅。
+	</p>
+	<p>
+		莉莱雅叹了口气，尽可能温柔地说出这个坏消息，[lilaya.speech(是这样的，我看得出来你真的很想承担妈妈新伴侣的角色，但我真的不认为她会很想见你……我是说，我很感激你已经变得尽可能像个人类了，但妈妈只对真正的人类感兴趣，即使你是，她最近也不太能见任何人……)]
+	</p>
+	<p>
+		[daddy.speech(但你一定可以为我美言几句吧？)][daddy.name]询问道。
+	</p>
+	<p>
+		[lilaya.speech(等我见到她的时候，我会的，)]莉莱雅回答， [lilaya.speech(只是，除非你做到了前人从未做到的事情，并且成为了真正的人类，否则你见她的可能性基本为零。只要你做到了，一旦她情况好转，重新开放宫殿，我会确保你有见到她的机会，但谁知道那会是什么时候……)]
+	</p>
+	<p>
+		[daddy.speech(唉……)][daddy.name]叹了口气，垂下[daddy.her]的肩膀，垂眸看着桌面，不过他这种失望的表现只持续了一会儿。[daddy.she]很快转过头来笑着看向你俩，说， [daddy.speech(好吧，我会尽可能地努力成为她愿意当做她的[daddy.husband]的那种人！即使需要一千年，总有一天我也会站在她身边。在此之前，我会照顾好你们俩的！)]
+	</p>
+	<p>
+		莉莱雅听到这时脸红了，说， [lilaya.speech(别担心，照顾我不需要做什么特别的事，我只是很希望有……有个我可以时不时去拜访的[daddy.dad]……)]
+	</p>
+	<p>
+		[daddy.speech(你当然可以这么做，只要你愿意，可以随时来恶魔之家拜访我！)][daddy.name]高兴地说。
+	</p>
+	<p>
+		[daddy.namePos]和莉西丝的见面问题解决后，话题转向了日常琐事，你、莉莱雅和[daddy.name]聊着最近生活里发生的事情。
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你迫切希望他们俩一会儿能有找点乐子的心情，于是一直挑逗地进行着交谈。莉莱雅和[daddy.name]都很乐意，也都说了些调情的话。你很快就看出他们俩都兴奋了起来……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- FIRST_DINNER -->
+	
+	<htmlContent tag="FIRST_DINNER_ACCEPT"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你决定照着[daddy.name]说的做，诱惑地回复道：[pc.speech(你知道吗，我其实很希望你愿意当我的[daddy.daddy]……而且我确信可以让莉莱雅也这么想……)]
+		#ELSE
+			你决定照着[daddy.name]说的做，回复道：[pc.speech(好吧……你可以做我的[daddy.daddy]……而且我会劝说莉莱雅前来见你。)]
+		#ENDIF
+	</p>
+	<p>
+		[daddy.speech(这才是我的好[pc.girl]！)][daddy.name]开心地回答，快速代入了你新[daddy.dad]的角色，[daddy.speech(我一回家就会尽快把我的那些卷轴和旧法术书送给你，就像我承诺的那样！现在来吃些甜点庆祝我们新缔结的关系吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FIRST_DINNER_REFUSE"><![CDATA[
+	<p>
+		尽管感觉这个安排一定会让你不适， 你告诉[daddy.name]你还不准备按照[daddy.she]说的做，而[daddy.she]最好不要再用这件事打搅莉莱雅.几乎立刻[daddy.she]发出了一声挫败的叹息，他沉下了[daddy.her]的肩膀，说道：[daddy.speech(好吧…… 那么，如果你回心转意了，你知道该去哪里找我……)]
+	</p>
+	<p>
+		就这样，[daddy.she]告诉你[daddy.she]希望你有一天能回心转意，随后站起身，走向餐馆的吧台区域去结账。随着你们今晚的事情告一段落，你紧跟着[daddy.name]离开了餐馆，目睹着[daddy.she]走进了恶魔之家，沉浸在[daddy.her]的思绪中……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DINNER_MID -->
+	
+	<htmlContent tag="DINNER_DESSERT"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你告诉[daddy.name]，你很乐意接受[daddy.herHim]共用甜点的邀请，这给了你更多时间来和[daddy.herHim]调情。
+		#ELSE
+			你告诉[daddy.name]，你很乐意接受[daddy.herHim]共用甜点的邀请，这给了你更多时间来继续对话。
+		#ENDIF
+		因此，当侍者来为你们清理餐桌时，[daddy.name]要来了甜食菜单并阅览，你们俩都点了自己的甜食。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			很快，你和你的[daddy.daddy]享用着你们选择的甜食， 同时不断地调戏和挑逗着彼此。
+		#ELSE
+			很快，你和你的[daddy.daddy]享用着你们选择的甜食，同时不断地讨论着御城区里发生的各种事情。
+		#ENDIF
+		在你们吃完甜食的过程中，充满餐馆的闲聊声开始慢慢静了下来。[daddy.name]注意到时间，说你们应该动身了，随后前往餐馆的吧台区域去付账。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			随着你们今晚的约会接近尾声，你被[daddy.namePos]搂着腰离开了餐馆，并且很快踏上了恶魔之家所在的街道。[daddy.she][daddy.heightDown(pc)]看着你，一边将你拉近一边问道，[daddy.speech(所以，想回我那里再找点乐子吗？)]
+		#ELSE
+			#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
+				随着你们今晚的约会接近尾声，你跟在[daddy.namePos]身边离开了餐馆，并且很快踏上了恶魔之家所在的街道。[daddy.she][daddy.heightDown(pc)]看着你，微笑着说， [daddy.speech(你知道吗，我今晚和你过的很愉快，[pc.name]。如果你想，可以在其他晚上随时光临，我很期待你能带着莉莱雅来，好让我见见她。)]
+			#ELSE
+				随着你们今晚的约会接近尾声，你跟在[daddy.namePos]身边离开了餐馆，并且很快踏上了恶魔之家所在的街道。[daddy.she][daddy.heightDown(pc)]看着你，微笑着说，[daddy.speech(你知道吗，我今晚和你过得很愉快，[pc.name]。如果你想，可以在其他晚上随时光临，我们可以再来一次。)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_DESSERT"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你和莉莱雅告诉[daddy.name]你们愿意接受[daddy.her]共进甜食的邀请，这给了你们更多时间来彼此调情。
+		#ELSE
+			你和莉莱雅告诉[daddy.name]你们愿意接受[daddy.her]共进甜食的邀请，这给了你们更多时间来继续谈话。
+		#ENDIF
+		因此，当侍者来为你们清理餐桌时，[daddy.name]要来了甜食菜单并阅览，你们三个分别点好了甜食。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			很快，你，你的[lilaya.relation(pc)]，和你的[daddy.daddy]享用着选好的甜食，同时不断地挑逗和调戏着彼此。
+		#ELSE
+			很快，你，你的[lilaya.relation(pc)]，和你的[daddy.daddy]享用着选好的甜食，同时不断地讨论着御城区里发生的各种事情。
+		#ENDIF
+		在你们吃完甜食的过程中，充满餐馆的闲聊声开始慢慢静了下来。[daddy.name]注意到时间，说你们三个应该动身了，随后前往餐馆的吧台区域去付账。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			今晚的约会接近尾声，你和莉莱雅被[daddy.namePos]搂着腰，一同离开了餐馆，并且很快踏上了恶魔之家所在的街道。[daddy.heightDown(pc)]看着莉莱雅，随后又看向你。[daddy.she]一边将你们两个拉近，一边问，[daddy.speech(所以，你们两个想回我那里再找点乐子吗？)] 
+		#ELSE
+			随着你们今晚的约会接近尾声，你和莉莱雅跟在[daddy.namePos]身边离开了餐馆，并且很快踏上了恶魔之家所在的街道。[daddy.she][daddy.heightDown(pc)]着莉莱雅，随后看着你，[daddy.she]微笑着说，[daddy.speech(你知道吗，我今晚和你们两个过得很愉快。如果你想，可以在其他晚上随时光临，我们可以再约一次。)] 
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_NO_DESSERT"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你告诉[daddy.name]你考虑尝尝另一种不同的甜食，或许过一会你可以去[daddy.her]的公寓来享用它。
+		#ELSE
+			你告诉[daddy.name]你吃的太饱已经吃不下甜食，已经在考虑是否应该马上离开。
+		#ENDIF
+		终于，在侍者来为你们清理餐桌时，[daddy.name]要侍者来买单，在那之后，你们两个开始准备动身。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			在你们今晚的约会到达尾声时，你离开了餐馆，[daddy.namePos]的胳膊搂在你的腰上，很快就走回到了恶魔之家所在的街道上。[daddy.heightDown(pc)]着你，[daddy.she]将你拉近并问道：[daddy.speech(所以，想回去我那里尝点特别的‘甜食’吗？)]
+		#ELSE
+			#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
+				在你们今晚的约会到达尾声时，你跟在[daddy.namePos]身边离开了餐馆， 很快就走回到了恶魔之家所在的街道上。[daddy.heightDown(pc)]着你，[daddy.she]微笑着说：[daddy.speech(你知道吗，今晚和你在一起度过得很愉快，[pc.name]。如果你在别的晚上还想来，请千万别客气，我期待着你能带莉莱雅来好让我和她聊聊。)]
+			#ELSE
+				在你们今晚的约会到达尾声时，你跟在[daddy.namePos]身边离开了餐馆， 很快就走回到了恶魔之家所在的街道上。[daddy.heightDown(pc)]着你，[daddy.she]微笑着说：[daddy.speech(你知道吗，今晚和你在一起度过得很愉快，[pc.name]。如果你在别的晚上还想来，请千万别客气，我们可以再这样约会。)]
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_NO_DESSERT"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			你告诉[daddy.name]你和莉莱雅考虑尝尝另一种不同的甜食， 或许过一会你们可以去[daddy.her]的公寓来享用它。
+		#ELSE
+			你告诉[daddy.name]你吃的太饱已经吃不下甜食，莉莱雅也是一样。
+		#ENDIF
+		终于，在侍者来为你们清理餐桌时，[daddy.name]要侍者来买单，在那之后，你们三个开始准备动身。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			在你们今晚的约会到达尾声时，你和莉莱雅离开了餐馆，[daddy.namePos]的胳膊搂在你们两个的腰上，很快就走回到了恶魔之家所在的街道上。[daddy.heightDown(pc)]着莉莱雅，随后是你，[daddy.she]将你拉近并问道：[daddy.speech(所以，你们两个想回去我那里尝点特别的‘甜食’吗？)]
+		#ELSE
+			在你们今晚的约会到达尾声时，你和莉莱雅跟在[daddy.namePos]身边离开了餐馆， 很快就走回到了恶魔之家所在的街道上。[daddy.heightDown(pc)]着莉莱雅，然后是你，[daddy.she]微笑着说：[daddy.speech(你知道吗，今晚和你们两个在一起度过得很愉快，[pc.name]。如果你们别的晚上还想来，请千万别客气，我们可以再这样约会。)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_DADDYS_DESSERT"><![CDATA[
+	<p>
+		得益于你的调情，你让[daddy.name]和你自己的情绪都高涨起来，当听见[daddy.herHim]提到甜食时，你突然想到了一个好主意。咬着你的[pc.lip]，你诱惑地挑逗道：[pc.speech(你去给自己点些东西吧，我已经想好甜食该吃什么了……)]
+	</p>
+	<p>
+		你滑下你的椅子，随后用膝盖跪在餐桌下面。多亏餐桌上覆盖的白色桌布，餐馆里的其他人根本看不见你在做什么。想象着[daddy.namePos]脸上的表情，你坏笑着挪向[daddy.her]的双腿之间。
+	</p>
+	<p>
+		[daddy.speech(哦，是的，我只需要一份甜食菜单。)]你听见[daddy.name]突然在你的上面开口，让你得知侍者来到了你们的桌边。调皮地微笑着，你伸出手抚摸着[daddy.namePos]腿，随后向上摸去，解开了[daddy.her]牛仔裤的扣子和拉链。把它们往下拽了一些，你忍不住微笑，当你看见[daddy.her]硬起来的[daddy.cockSize]肉棒从下面顶着[daddy.her]内裤布料的轮廓时，你饥渴地[pc.moan]。
+	</p>
+	<p>
+		[daddy.speech(好的，我就要这个，)][daddy.name]在上面说着，点好了[daddy.her]的甜食。想要给[daddy.herHim]一点挑逗，你隔着[daddy.her]内裤抚摸并轻轻挤压着[daddy.her]肉棒，微笑着听着[daddy.name]因为你的触摸开始[daddy.moan]，[daddy.speech(~嗯！~ 不，[pc.sheHas]刚刚去了洗手间……~啊！~ 而且[pc.she]说[pc.she]不想要甜食，所以只需要一份。)]
+	</p>
+	<p>
+		侍者刚刚离开，你就解开了[daddy.namePos]的内裤，让[daddy.her][daddy.cockGirth]、挺立着的肉棒得以获得自由。你向前倾身，给了[daddy.her][daddy.cockHead+]一个湿润的吻，随后用你[pc.tongue+]一路扫荡向下。你在根部暂停，接着往下，对着[daddy.her][daddy.ballSize]而沉重的睾丸亲吻舔舐，一边想象着它们把存储的东西注入你的喉咙，一边轻声[pc.moaning]。
+	</p>
+	<p>
+		想要做个[daddy.daddy]的好[pc.girl]，你将规矩牢记于心，直到你听见[daddy.her]的甜食上桌，才向上移动并享受你的那一份。给了[daddy.her]的肉棒又一个湿吻，你慢慢把头低了下去，分开你的[pc.lips+] ，将[daddy.her]搏动着的肉棒送进你的喉咙……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_DADDYS_DESSERT"><![CDATA[
+	<p>
+		得益于你的调情，你让你自己和你的两位同伴的情绪都高涨起来，当你听见[daddy.daddy]提到甜食时，你突然想到一个好主意。用你的[pc.hand]摸过她的大腿，你倾斜向莉莱雅，对她的耳朵诱惑地说：[pc.speech(我想直接从[daddy.name]身上弄一点甜食吃，要和我一起吗？)]
+	</p>
+	<p>
+		匆匆地答应一声，莉莱雅对着[daddy.name]咬着嘴唇，同时你告诉[daddy.herHim]，[pc.speech(去给你自己点些东西吧，[daddy.daddy]，莉莱雅和我知道甜食该吃什么……)]
+	</p>
+	<p>
+		随后，你们两个滑下你们的椅子，随后用你们的膝盖跪在餐桌下面。多亏了你们头上餐桌表面上盖着的白布，餐馆里的其他人看不到你们在做什么。想象着[daddy.namePos]脸上的表情， 你坏笑着和你的[lilaya.relation(pc)]挪动着，直到你们并排待在[daddy.her]双腿之间。
+	</p>
+	<p>
+		[daddy.speech(哦，是的，我只需要一份甜食菜单。)]你听见[daddy.name]突然在你的头顶开口，让你得知侍者来到了你们的桌边。调皮地微笑着，你伸出手抚摸着[daddy.namePos]腿，同时莉莱雅向上伸出手，解开了[daddy.namePos]牛仔裤的扣子和拉链。随着这个淫荡的魅魔将它们拉下了一些，你们在看见[daddy.her]硬起来的[daddy.cockSize]肉棒从下面顶着[daddy.her]内裤布料的轮廓时，不可抑制地发出饥渴的小声[pc.moans]。
+	</p>
+	<p>
+		[daddy.speech(是的，我要这个，)][daddy.name]的声音从头顶上传来，[daddy.she]点好了[daddy.her]的甜食。想要挑逗一下[daddy.herHim]，你和莉莱雅开始隔着[daddy.her]内裤抚摸并轻轻按压着[daddy.her]的肉棒，听到你们的组合动作让[daddy.herHim][daddy.moan]时，你们相视一笑， [daddy.speech(~嗯！~ 不，她们刚刚去了洗手间…… ~啊！~ 而且她们说了不需要甜食，所以只要一份。)]
+	</p>
+	<p>
+		侍者刚一离开，你就解开了[daddy.namePos]的内裤，让[daddy.her][daddy.cockGirth]、挺立着的肉棒得以获得自由。莉莱雅向前倾身，给了它[daddy.cockHead+]一个湿吻，同时你靠在她的下面，对着[daddy.her][daddy.ballSize]而沉重的睾丸亲吻舔舐，一边想象着它们把存储的东西注入你的喉咙，一边轻声[pc.moaning]。
+	</p>
+	<p>
+		[lilaya.speech(注意你的礼仪，)]莉莱雅一边轻声笑着，一边对你耳语。她的声音浸满了色欲， [lilaya.speech(菜还没上齐就先开吃可是很粗鲁的。)]
+	</p>
+	<p>
+		想要为你的
+		#IF(lilaya.isFeminine()==pc.isFeminine())
+			[pc.girls]
+		#ENDIF
+		[daddy.daddy]做个好女孩，你和莉莱雅都等待着，直到你们听见[daddy.her]的甜食上桌，才开始抬起头，享用你们的那一份。这一次，你的[lilaya.relation(pc)]允许你第一个给予[daddy.namePos]肉棒的尖端一个湿吻，而她低下头，舔舐着[daddy.her]沉重的睾丸。伴随着一声轻柔的[pc.moan]，你慢慢把头低了下去，分开你的[pc.lips+] ，将[daddy.her]搏动着的肉棒送进你的喉咙……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_UNDER_TABLE_SEX"><![CDATA[
+	<p>
+		[genericFemale.speech(一切都还好吗，[daddy.name]？)]女侍者问道，皱着眉头打量着你。
+	</p>
+	<p>
+		[daddy.speech(是的，谢谢，[pc.name]刚刚掉了什么东西，但现在没问题了，)][daddy.name]回答道，[daddy.speech(我想我们该走了，能把账单给我吗？)]
+	</p>
+	<p>
+		[genericFemale.speech(当然了，)]她回答道，在去拿账单之前最后狐疑地看了你一眼。
+	</p>
+	<p>
+		你在[daddy.she]结账时不断地和[daddy.she]调着情，微笑着让[daddy.name]用一只胳膊环绕着你的腰，将你带回了恶魔之家所在的街道。[daddy.heightDown(pc)]看着你，[daddy.she]将你拉近，说道，[daddy.speech(我想你大概对甜食不甚满意吧？要不要回我那里待一会？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_AFTER_UNDER_TABLE_SEX"><![CDATA[
+	<p>
+		[genericFemale.speech(有什么事情吗，[daddy.name]？)]服务员问道，皱着眉头看着你和莉莱雅。
+	</p>
+	<p>
+		[daddy.speech(没事，谢谢。我的孩子们刚刚丢了点东西，现在都好了。)][daddy.name]回答，[daddy.speech(我们要走了，能给我账单吗？)]
+	</p>
+	<p>
+		[genericFemale.speech(当然，)]服务员一边说，一边最后再次疑惑地看着你和你的[lilaya.relation(pc)]。
+	</p>
+	<p>
+		你和莉莱雅笑着看着对方，趁着[daddy.herHim]结账的时候继续和[daddy.herHim]调情，[daddy.name]把[daddy.her]的手臂放在你们的腰上，然后领着你们两个回到恶魔之家的街上。看着[daddy.heightDown(pc)]莉莱雅，然后看着你，[daddy.she]把你们两个拉到一起，[daddy.speech(我肯定你们两个对‘甜点’还不满足，对吧？到我家再来一份怎么样？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DINNER_END -->
+	
+	<htmlContent tag="DINNER_END_REFUSE"><![CDATA[
+	<p>
+		#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
+			你的心情糟糕，不想回到[daddy.her]的地方，找了个借口拒绝了[daddy.namePos]的邀请。[daddy.name]失望地回答，[daddy.speech(好吧，我只是很高兴你能接受我作为你的新[daddy.dad]。我今晚真的玩得很开心，期待你带莉莱雅来见我。)]
+		#ELSE
+			你的心情糟糕，不想回到[daddy.her]的地方，找了个借口拒绝了[daddy.namePos]的邀请。[daddy.name]失望地回答，[daddy.speech(好吧，你想来找我就来吧。我今晚真的玩得很开心。)]
+		#ENDIF
+	</p>
+	<p>
+		你们最后各自道别离开。当[daddy.name]回到[daddy.her]的公寓时，你转身走向你面前的街道，想着接下来要去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_END_REFUSE"><![CDATA[
+	<p>
+		你的心情不好，不想回到[daddy.her]的地方，找了个借口拒绝了[daddy.namePos]的邀请。莉莱雅走到你身边，说她会和你在一起，陪你回到她的家。[daddy.name]失望地回答，[daddy.speech(好吧，你想来找我就来吧。我今晚真的玩得很开心。)]
+	</p>
+	<p>
+		你和莉莱雅向你们的[daddy.daddy]道了最后的再见，你说你一定会很快再去找[daddy.herHim]，然后才和[daddy.herHim]分开。当[daddy.name]回[daddy.her]的公寓时，你和莉莱雅也向着她的家里走，一路上你们都在谈论今天晚上地事情。
+	</p>
+	<p>
+		大约半小时后，你们回到了家。萝丝让你们进来后，莉莱雅感谢你今天的陪伴，然后带着猫女上楼去换衣服。你一个人留在走廊里，想着接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_END_ACCEPT"><![CDATA[
+	<p>
+		你轻轻磨蹭着[daddy.daddy]，告诉[daddy.herHim]你很乐意去[daddy.her]那里，并且你等不及想看看[daddy.sheIs]为你准备了什么。从你的腰肢向下摸去，[daddy.name]用力捏了捏你[pc.ass+]，随后说，[daddy.speech(我会让你见识见识[daddy.daddy]会怎么对待[daddy.her]的好[pc.girl]……)]
+	</p>
+	<p>
+		[daddy.name]匆匆穿过街道，带着你走进了[daddy.her]的公寓楼，随后爬上楼梯，接着打开门，并把你拉进[daddy.her]的公寓。几乎立刻，你们开始抚摸彼此，随着[daddy.her][daddy.lips+]贴在你的嘴唇上，你感受到[daddy.her]的触摸一路往下，向着你的[pc.legs]间摸索着。
+	</p>
+	<p>
+		你们急切地冲向公寓的休息室，走廊的桌子被撞到，倒在地上，但你们欲火攻心，没有一个人注意到。你脱下了[daddy.daddy]的T恤衫，将你的嘴唇贴在[daddy.her][daddy.breasts+]上， 一边亲吻着[daddy.her][daddy.nipples+]，一边脱下你自己的衣服。
+	</p>
+	<p>
+		[daddy.name]帮助你用创纪录的速度脱下内衣，你们的衣服很快扔得满地都是。[daddy.she]捏着你[pc.hips+]，[daddy.eyes+]紧盯着你并命令道：[daddy.speech(这才是[daddy.daddy]的好[pc.girl]……现在去我的床上，准备好好表现……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_END_ACCEPT"><![CDATA[
+	<p>
+		你轻轻磨蹭着[daddy.daddy]。你和莉莱雅告诉[daddy.herHim]你们都很乐意去[daddy.her]那里，并且你们等不及想看看[daddy.sheIs]为你们两个准备了什么。[daddy.name]从你们的腰肢向下摸去，用力捏了你们两个的屁股，随后说，[daddy.speech(我会让你见识见识你们的[daddy.daddy]会怎么对待[daddy.her]的好
+		#IF(lilaya.isFeminine()==pc.isFeminine())
+			[pc.girls]
+		#ELSE
+			[pc.girl]和[lilaya.girl]
+		#ENDIF
+		……)]
+	</p>
+	<p>
+		[daddy.name]匆匆穿过街道，带着你们走进了[daddy.her]的公寓楼，随后爬上楼梯，接着打开门，并把你们拉进[daddy.her]的公寓。几乎立刻，你们开始抚摸彼此，[daddy.name]交替亲吻着你和莉莱雅，你感受到[daddy.her]的触摸一路往下，向着你们的[pc.legs]之间摸索着。
+	</p>
+	<p>
+		你们急切地冲向公寓的休息室，走廊的桌子被撞到，倒在地上，但你们欲火攻心，都没注意到。你脱下了[daddy.daddy]的T恤衫，将嘴唇贴在[daddy.her][daddy.breasts+]上， 亲吻着[daddy.nipples+]，同时你的[lilaya.relation(pc)]将舌头送进[daddy.her]嘴里。你腾出手来，帮着莉莱雅脱掉她的紧身连衣裙，露出成套的黑色蕾丝内裤和胸罩。作为回敬，莉莱雅的双手摸过你的身躯，帮你脱掉外衣，同时[daddy.daddy]给了你机会，让你得以把[daddy.her]舌头含进嘴里。
+	</p>
+	<p>
+		你和莉莱雅用创纪录的时间脱下你们的内衣，[daddy.name]后退了一些，随后[daddy.eyes+]扫视着你们暴露的躯体并命令道，[daddy.speech(这才是[daddy.daddy]的好
+		#IF(lilaya.isFeminine()==pc.isFeminine())
+			[pc.girls]
+		#ELSE
+			[pc.girl]和[lilaya.girl]
+		#ENDIF
+		……现在到我的床上去，准备好展现你们自己……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DINNER_END_HOME"><![CDATA[
+	<p>
+		你告诉[daddy.herHim]今晚很愉快，感谢他的款待。[daddy.she]高兴地回答道，[daddy.speech(我很乐意见到你！为了我的好[pc.girl]什么都可以！我今晚也玩得很开心，只要你愿意，任何一个晚上你都可以来找我。)]
+	</p>
+	<p>
+		你们在道别后分道扬镳。[daddy.name]朝着[daddy.her]的公寓走，你转身沿着面前的街道走，思索着你之后要去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_DINNER_END_HOME"><![CDATA[
+	<p>
+		你和莉莱雅告诉[daddy.herHim]今晚很愉快，感谢他的款待。[daddy.she]高兴地回答道，[daddy.speech(我很乐意见到你们！为了我的
+		#IF(lilaya.isFeminine()==pc.isFeminine())
+			[pc.girls]
+		#ELSE
+			[pc.girl]和[lilaya.girl]
+		#ENDIF
+		，什么都可以！我今晚也玩得很开心，只要你们愿意，任何一个晚上都可以来找我。)]
+	</p>
+	<p>
+		你们告诉他很快会再次拜访他的。在最后的道别后，你与他分道扬镳。[daddy.name]朝着[daddy.her]的公寓走，你和莉莱雅启程返回她的家，路上你们聊着夜晚的琐事。
+	</p>
+	<p>
+		大约半小时后，你们两个回到家。萝丝为你们开门，莉莱雅在感谢了你的陪伴后，和她的猫女女仆上楼换衣服去了。你站在走廊里，思考着之后要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_DINNER -->
+	
+	<htmlContent tag="AFTER_DINNER_SEX"><![CDATA[
+	<p>
+		你十分乐意照着[daddy.she]告诉你的去做，走进[daddy.namePos]的卧室，而[daddy.herHim]紧跟在你的后面。迈步走向[daddy.her]的超大号床，你爬到了上面，
+		#IF(!pc.isTaur())
+			随后向前倒下，用你的[pc.hands]和膝盖撑起自己，将你的屁股展示给你的[daddy.daddy]。
+		#ELSE
+			随后仰躺下来，将你兽性十足的下半身和屁股展示给你的[daddy.daddy]。
+		#ENDIF
+	</p>
+	<p>
+		你回头看去，发现[daddy.name]脱下了[daddy.her]的最后一件衣服，露出[daddy.her][daddy.cockSize]，[daddy.cockGirth]，完全勃起的肉棒。[daddy.name]看见你正在饥渴地盯着它，笑着挑逗道，[daddy.speech(已经等不及想感受一下[daddy.daddy]的肉棒了吗？)]
+	</p>
+	<p>
+		[pc.speech(拜托了，)]你[pc.moan]道，[pc.speech(快来上我吧！)]
+	</p>
+	<p>
+		不用过多提醒，[daddy.name]从你的后面爬到了床上，同时将[daddy.her]的搏动着的肉棒[daddy.cockHead+]顶在你[pc.ass+]上。发出了又一声[pc.moan+]，你做好了被你的[daddy.daddy]猛干的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_AFTER_DINNER_SEX"><![CDATA[
+	<p>
+		你十分乐意照着[daddy.she]告诉你们的去做，你和莉莱雅走进[daddy.namePos]的卧室，[daddy.herHim]紧随其后。你们走向超大床，充满激情地湿吻，随后一起爬到了床上。
+		#IF(!pc.isTaur())
+			你们两个以一模一样的动作倒在床上，用双[pc.hands]和膝盖撑起自己，将屁股展示给[daddy.daddy]。
+		#ELSE
+			莉莱雅用手和膝盖撑起自己，你躺在她身边，将兽性十足的下半身和屁股展示给[daddy.daddy]。
+		#ENDIF
+	</p>
+	<p>
+		你们回头看，发现[daddy.name]脱下了最后一件衣服，露出完全勃起的[daddy.cockGirth][daddy.cockSize]肉棒。[daddy.name]看见你们两个正在饥渴地盯着它，笑着挑逗道，[daddy.speech(已经等不及想感受一下[daddy.daddy]的肉棒了吗？)]
+	</p>
+	<p>
+		[pc.speech(拜托了，)]你[pc.moan]道。
+	</p>
+	<p>
+		#IF(!pc.isTaur())
+			#IF(lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+				[lilaya.speech(来干我们吧！只是，只是不要射在我里面，行吗？我<i>不想</i>因此怀孕！)]莉莱雅说完，转向你并忘情地亲吻着。
+			#ELSE
+				[lilaya.speech(来干我们吧！)]莉莱雅说完，转向你并忘情地亲吻着。
+			#ENDIF
+		#ELSE
+			#IF(lilaya.getFetishDesire(FETISH_PREGNANCY).isNegative())
+				[lilaya.speech(来干我们吧！只是，只是不要射在我里面，行吗？我<i>不想</i>因此怀孕！)]莉莱雅说完，和你一起卖弄地撅起并扭着屁股。
+			#ELSE
+				[lilaya.speech(来干我们吧！)]莉莱雅说完，和你一起卖弄地撅起并扭着屁股。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		不用过多提醒，[daddy.name]从你们的后面爬到了床上，同时向前移动并用双手揉捏和拍打着你们的屁股。发出了又一声[pc.moan+]，你和莉莱雅做好了被[daddy.daddy]猛干的准备……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_DINNER_DOMINATE"><![CDATA[
+	<p>
+		你对着[daddy.name]莞尔一笑，上前紧贴住[daddy.her]炽热的身体，随后对[daddy.herHim]说， [pc.speech(这样可是行不通的。我才是发号施令的那个人。)]
+	</p>
+	<p>
+		你不给[daddy.herHim]一点拒绝的时间，动手把你的[daddy.daddy]脱光，给[daddy.herHim]一个色迷迷的笑，让[daddy.cockGirth]的[daddy.cockSize]肉棒暴露在外。你用胳膊抓住[daddy.herHim]，把[daddy.herHim]拉进卧室，随后将[daddy.herHim]按倒在床。
+	</p>
+	<p>
+		[daddy.speech(放松点，别那么着急……)][daddy.name]开口，但随着你向前方跳去，并在[daddy.herHim]的身体上压低身体，坚定地把你[pc.lips+]贴在[daddy.hers]的上面，[daddy.her]的声音戛然而止。就这样压倒性地亲吻了[daddy.herHim]一段时间，你向后退去，
+		#IF(!pc.hasLegs())
+			随后向下溜去，你的胯贴住[daddy.her]的胯。
+		#ELSEIF(pc.isTaur())
+			随后重新找好姿势，放低野性十足的屁股，紧贴住[daddy.her]的胯。
+		#ELSE
+			随后伸开你的[pc.legs]，越过[daddy.her]的身体，横跨在[daddy.her]胯上。
+		#ENDIF
+	</p>
+	<p>
+		[pc.speech(准备开始……感觉不错吧？)]你问道，准备以主导者的身份陪[daddy.daddy]好好快活一番，同时[daddy.she]给了你积极的反馈……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_AFTER_DINNER_DOMINATE"><![CDATA[
+	<p>
+		你们俩和莉莱雅一起调皮地笑着，走到[daddy.name]的两侧，然后告诉[daddy.herHim]，[pc.speech(这样可不行。你说呢，莉莱雅？舌头归你，鸡巴归我？)]
+	</p>
+	<p>
+		[lilaya.speech(听起来不错，)]莉莱雅抬起手指在[daddy.namePos]的嘴唇上划过，回答道。[lilaya.speech(你会爱上我小穴的味道……)]
+	</p>
+	<p>
+		你和你的[lilaya.relationship(pc)]没有给[daddy.herHim]任何反对的时间，动手扒光了[daddy.daddy]的衣服，当[daddy.her]的[daddy.cockSize]、[daddy.cockGirth]鸡巴露出来时，你们互相露出淫笑。抓住[daddy.her]的胳膊，然后你们俩把[daddy.herHim]拉进[daddy.her]的卧室，再把[daddy.herHim]推倒在[daddy.her]的床上。
+	</p>
+	<p>
+		[daddy.speech(放松，不用着急——)][daddy.name]开始说，但[daddy.her]的声音被打断了，因为莉莱雅向前一跳，朝向[daddy.her]的下半身，把她覆盖着内裤的阴部对准了[daddy.her]的嘴。
+	</p>
+	<p>
+		#IF(!pc.isTaur())
+			你迅速跨坐在[daddy.namePos]的胯下，和莉莱雅面对面，
+		#ELSE
+			你快速移动你的兽性后臀，压在[daddy.namePos]的胯下，回过头看向莉莱雅，
+		#ENDIF
+		当你们身下的[daddy.race]伸手抓住她的大腿时，你们彼此开心地笑着。当你开始在[daddy.namePos]勃起的鸡巴上下摩擦时，莉莱雅挑逗道，[lilaya.speech(那么，你准备好在下面尝尝鲜了吗？)]
+	</p>
+	<p>
+		你的[lilaya.relation(pc)]把[daddy.namePos]的闷叫声当作“是”，伸手把她的蕾丝内裤拉到一边，然后把她湿漉漉的[lilaya.pussy+]紧紧地贴在[daddy.her]的嘴上。当你的[daddy.daddy]开始舔莉莱雅的下体时候，你也准备开始好好用一用[daddy.her]的[daddy.cock+]……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_APARTMENT_SEX -->
+	
+	<htmlContent tag="AFTER_APARTMENT_SEX"><![CDATA[
+	<p>
+		你和[daddy.name]松开彼此后，倒在[daddy.her]的床上，喘着粗气。你从力竭状态中恢复过来后，翻身侧躺着，[pc.a_finger]调戏着[daddy.her]的[daddy.breasts]，告诉[daddy.herHim]刚才有多棒。
+	</p>
+	#IF(daddy.isSatisfiedFromLastSex())
+		<p>
+			[daddy.speech(你很清楚怎么取悦[daddy.daddy]，)][daddy.she]回答道，露出一个灿烂的微笑。
+		</p>
+	#ELSE
+		<p>
+			[daddy.speech(是的，那确实令人印象深刻，但如果我们再做一次，你可以试着更多取悦你的[daddy.daddy] ，)][daddy.she]回应道，清楚地表明你没能满足[daddy.herHim]。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_AFTER_APARTMENT_SEX"><![CDATA[
+	<p>
+		你和[daddy.name]松开彼此后，倒在[daddy.her]的床上，喘着粗气。你从力竭状态中恢复过来后，翻身侧躺着，[pc.a_finger]调戏着[daddy.her]的[daddy.breasts]，告诉[daddy.herHim]刚才有多棒。
+	</p>
+	<p>
+		#IF(daddy.isSatisfiedFromLastSex())
+			[daddy.speech(你很清楚怎么取悦[daddy.daddy]，)][daddy.she]回答道，向你们俩露出一个灿烂的微笑。
+		#ELSE
+			[daddy.speech(是的，那确实令人印象深刻，但如果我们再做一次，你可以试着更多取悦你的[daddy.daddy] ，)][daddy.she]回应道，清楚地表明你没能满足[daddy.herHim]。
+		#ENDIF
+	</p>
+	<p>
+		#IF(lilaya.isSatisfiedFromLastSex())
+			[lilaya.speech(~嗯~我刚才确实很享受，)]莉莱雅叹了口气，[lilaya.speech(希望我们能有机会再次这样做……)]
+		#ELSE
+			[lilaya.speech(~嗯~我可能需要更多的关注，)]莉莱雅叹了口气，[lilaya.speech(如果我们再做一次，你也许能确保我能被满足……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_APARTMENT_SEX_HOME"><![CDATA[
+	<p>
+		在相互依偎了一会儿之后，你决定是时候离开了。穿上衣服后，[daddy.name]将你引领到前门。[daddy.she]倾身最后吻了吻你[pc.lips+]说，
+		#IF(pc.getQuest(QUEST_LINE_SIDE_DADDY) == QUEST_DADDY_ACCEPTED)
+			[daddy.speech(今晚真的很愉快，[pc.name]。有时间请一定来找我，我也很期待你和莉莱雅一起来的时候能见到她！)]
+		#ELSE
+			[daddy.speech(今晚真的很愉快，[pc.name]。有时间请一定来找我！)]
+		#ENDIF
+	</p>
+	<p>
+		你向[daddy.herHim]表示你会再来后，下楼离开了，返回了恶魔之家……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_AFTER_APARTMENT_SEX_HOME"><![CDATA[
+	<p>
+		在相互依偎了一会儿之后，你决定是时候离开了。穿上衣服后，[daddy.name]将你和莉莱雅引领到前门。[daddy.she]倾身最后吻了吻你们，[daddy.she]说，[daddy.speech(今晚真的很愉快，[pc.name]。有时间请一定来找我！)]
+	</p>
+	<p>
+		你向[daddy.herHim]表示你会再来后，走下楼梯离开了，返回了恶魔之家……你答应陪莉莱雅回她的府邸，你们俩出发了，一路上不断聊着充满乐趣的夜晚经历。
+	</p>
+	<p>
+		大约半个小时后，你们两人回到了家，萝丝开了门，莉莱雅在感谢了你的陪伴后，与她的猫女仆一起上楼换衣服去了。你独自站在走廊里，想着接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- APARTMENT -->
+	
+	<htmlContent tag="APARTMENT_TALK"><![CDATA[
+	#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+		<p>
+			你想要听[daddy.namePos]的近况，继续以挑逗的口吻询问[daddy.herHim]最近都在忙些什么。[daddy.name]非常乐意与你分享[daddy.her]正在进行的一个建筑项目，花费了不少时间向你讲述了作为奥术建筑工人的生活中的故事。
+		</p>
+		<p>
+			氛围因你不断的挑逗仍然保持暧昧。过了一会儿，话题转向了你在御城区中的经历，然后又谈到了城区中其他琐碎的事务。最终，谈话开始变得平淡，你觉得现在会是与[daddy.herHim]更进一步的好时机……
+		</p>
+	#ELSE
+		<p>
+			你想要听[daddy.namePos]的近况，询问[daddy.herHim]最近都在忙些什么。[daddy.name]非常乐意与你分享[daddy.her]正在进行的一个建筑项目，花费了不少时间向你讲述了作为奥术建筑工人的生活中的故事。
+		</p>
+		<p>
+			过了一会儿，话题转向了你在御城区中的经历，然后又谈到了城区中其他琐碎的事情。最终，谈话开始变得平淡，你觉得是时候告别了……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_APARTMENT_TALK"><![CDATA[
+	#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+		<p>
+			你想要听[daddy.namePos]的近况，继续以挑逗的口吻询问[daddy.herHim]最近都在忙些什么。[daddy.name]非常乐意与你和莉莱雅分享[daddy.her]正在进行的建筑项目，花费了不少时间向你讲述了作为奥术建筑工人的生活中的几个故事。
+		</p>
+		<p>
+			气氛因你不断的挑逗仍然保持暧昧。过了一会儿，话题转向了你在御城区中的经历，然后又谈到了莉莱雅奥术研究项目的最新消息。最终，谈话开始变得平淡，你的两位同伴很明显被挑起了性致，你觉得这会是一个更进一步的好时机……
+		</p>
+	#ELSE
+		<p>
+			你想要听[daddy.namePos]的近况，询问[daddy.herHim]最近都在忙些什么。[daddy.name]非常乐意与你和莉莱雅分享[daddy.her]正在进行的建筑项目，花费了不少时间向你讲述了作为奥术建筑工人的生活中的几个故事。
+		</p>
+		<p>
+			过了一会儿，话题转向了你在御城区中的经历，然后又谈到了莉莱雅奥术研究项目的最新消息。最终，谈话开始变得平淡，你觉得现在是你和[lilaya.relation(pc)]告别[daddy.name]的时候了……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="APARTMENT_SEDUCE"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			今晚你想做的不仅仅是和[daddy.name]调情，你开始说一些非常露骨的话，使气氛变得燥热起来，同时调皮地用手抚摸着[daddy.name]的腿。
+		#ELSE
+			你决定今晚想找点乐子，开始和[daddy.name]调情，然后让[daddy.herHim]过来坐在沙发上你身旁的地方。在[daddy.she]照做了后，你开始说一些非常露骨的话，使气氛变得燥热起来，同时调皮地用手抚摸着[daddy.name]的腿。
+		#ENDIF
+		[daddy.daddy]非常渴望继续下去，倾身靠近你。你渴望地注视着[daddy.her][daddy.eyeColour][daddy.eyes+]，[daddy.she]忽然身体前倾将[daddy.her]的嘴唇压向你的。
+	</p>
+	<p>
+		不知不觉中，你们俩就把舌头伸进了对方的嘴里，而你的[pc.hands]则饥渴地在对方身上游走。你迅速脱掉[daddy.daddy]的T恤，把嘴唇贴向[daddy.her][daddy.breasts+]，一边亲吻[daddy.her][daddy.nipples+]，一边开始伸手脱自己的衣服。
+	</p>
+	<p>
+		你在[daddy.name]的帮助下快速脱光，你的衣服被七零八落扔在地上。现在面对面站着，[daddy.name]目光锁定在你身上，命令道，[daddy.speech(真是[daddy.daddy]的好[pc.girl]……现在上床向我展示自己……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_APARTMENT_SEDUCE"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_flirtingWithDaddy))
+			今晚，除了与两个同伴调情外，你还想做得更出格些，于是你使氛围变得燥热起来，并开始说些露骨的话，同时调皮地将手放在[daddy.namePos]腿上抚弄。
+		#ELSE
+			你决定今晚找些乐子，开始和两个同伴调情，然后要[daddy.name]坐在你和莉莱雅间的沙发上。在[daddy.she按照你的要求做后，你开始说一些非常露骨的话来让氛围变得燥热，同时调皮地用手在[daddy.her]腿上抚弄着。
+		#ENDIF
+		[daddy.daddy]非常想同你们一起，用[daddy.her]胳膊搂着你和莉莱雅，在你的[lilaya.relation(pc)]饥渴地注视着[daddy.namePos][daddy.eyeColour][daddy.eyes+]时，[daddy.she]突然向前倾身，将[daddy.her]嘴唇贴向她的。
+	</p>
+	<p>
+		不知不觉中，你和莉莱雅轮流将舌头伸进[daddy.namePos]的嘴里，而你的[pc.hands]则饥渴地在[daddy.her]的身上游走。你脱掉[daddy.daddy]的T恤，把嘴唇贴在[daddy.her][daddy.breasts+]上，开始亲吻[daddy.her][daddy.nipples+]，莉莱雅再次饥渴地把[lilaya.lips+]贴在[daddy.her]的嘴上。
+	</p>
+	<p>
+		片刻，你发现自己站在莉莱雅身边，帮她脱掉深V连衣裙露出配套的黑色蕾丝内裤和胸罩。最为回报，莉莱雅抚摸着你的身体，帮你褪去外衣，你的[daddy.daddy]走上前，轮到你让[daddy.her]舌头在你口中探索。
+	</p>
+	<p>
+		你和莉莱雅用最短时间脱光内衣，[daddy.name]退了退，然后用[daddy.her][daddy.eyes+]扫视你们裸露的身体并命令道，[daddy.speech(这才是[daddy.daddy]的乖
+		#IF(lilaya.isFeminine()==pc.isFeminine())
+			[pc.girls]
+		#ELSE
+			[pc.girl]和[lilaya.girl]
+		#ENDIF
+		……现在到我床上来让我看看你们……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="APARTMENT_LEAVE"><![CDATA[
+	<p>
+		你说很享受你们在一起的时光，你一定会很快再来探望[daddy.herHim]的，随后向[daddy.daddy]告别。让[daddy.herHim]把你送到前门，你离开了，走下楼梯，然后回到恶魔之家。
+	</p>
+	<p>
+		看着街道的角角落落，你想着该去哪呢……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LILAYA_APARTMENT_LEAVE"><![CDATA[
+	<p>
+		你说很享受你们在一起的时光，并确保很快将会再次拜访[daddy.herHim]，你和莉莱雅向[daddy.daddy]告别。让[daddy.name]将你们送到前门，你们俩离开，下了楼然后回到恶魔之家。你同意陪着你的[lilaya.relation(pc)]回到她的豪宅，你再她身边走着，一路上谈论着今晚发生的事。
+	</p>
+	<p>
+		大约半小时，你们回到家中，随后萝丝让你们进屋，莉莱雅感谢你的陪伴，然后和她的猫女仆上楼更衣。你独自在走廊待着，想下一步该做什么……
+	</p>
+	
+	]]></htmlContent>
+
+</dialogue>

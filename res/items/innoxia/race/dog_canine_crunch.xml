@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>25</value> 
+		<determiner><![CDATA[一块]]></determiner>
+		<name><![CDATA[糖霜狗饼干]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[糖霜狗饼干]]></namePlural>
+		<description><![CDATA[一个包装独立的骨头形状饼干，覆盖着糖衣和糖珠。尽管包装宣称这个食谱是专门为狗族及其变种设计的，但对所有种族来说都可以食用。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/dog/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">dog_canine_crunch.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_DOG_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[犬类]]></potionDescriptor>
+		<associatedRace>DOG_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更有活力……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]撕开包装，然后将糖霜狗饼干送入[npc.her]的嘴里。迅速咀嚼并吞下覆有糖衣的饼干，[npc.sheIs]高兴地发现饼干非常美味。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]撕开纸包装，然后将糖霜狗饼干送入[npc2.name]的嘴里。迅速咀嚼并吞下覆有糖衣的饼干，高兴地发现饼干非常美味。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

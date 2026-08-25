@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Place type id: innoxia_fields_elis_shops_blacksmith -->
+	<scene id="exterior">
+		<content folderPath="txt/places/fields/elis/shops/blacksmith">EXTERIOR</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接近]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getHourOfDay()>=7 && game.getHourOfDay()<20)
+						#IF(game.getDialogueFlags().hasFlag(FLAG_innoxia_elis_blacksmith_visited))
+							接近因苏和黑尔，引起他们的注意。
+						#ELSE
+							走近巴风特，引起它们的注意。
+						#ENDIF
+					#ELSE
+						由于铁匠铺目前关闭，你只能下次再来……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getHourOfDay()>=7 && game.getHourOfDay()<20)
+						innoxia_places_fields_elis_shops_blacksmith_enter
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="enter">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/blacksmith', 'ENTER'))]
+			[#imsu.setPlayerKnowsName(true)]
+			[#hale.setPlayerKnowsName(true)]
+			[#flags.setFlag(FLAG_innoxia_elis_blacksmith_visited, true)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Repeat meeting: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[交易(因苏)]]></responseTitle>
+					<responseTooltip><![CDATA[看看因苏有哪些产品要出售……]]></responseTooltip>
+					<nextDialogue/>
+					<tradingVariables enabled="true">
+						<tradePartner><![CDATA[imsu]]></tradePartner>
+					</tradingVariables>
+				</response>
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[交易(黑尔)]]></responseTitle>
+					<responseTooltip><![CDATA[看看黑尔有哪些产品要出售……]]></responseTooltip>
+					<nextDialogue/>
+					<tradingVariables enabled="true">
+						<tradePartner><![CDATA[hale]]></tradePartner>
+					</tradingVariables>
+				</response>
+				<!-- Talk: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[历史]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_blacksmith_talk_history))
+							你今天已经问了因苏和黑尔的背景了……
+						#ELSE
+							问问因苏和黑尔他们俩是如何一起建立铁匠铺的。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_blacksmith_talk_history))
+							null
+						#ELSE
+							innoxia_places_fields_elis_shops_blacksmith_talk
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/blacksmith', 'TALK_HISTORY'))]
+						[#flags.setFlag(FLAG_innoxia_blacksmith_talk_history, true)]
+						#IF(imsu.getAffection(pc)<40)
+							[#game.appendToTextStartStringBuilder(imsu.incrementAffection(pc, 5))]
+						#ENDIF
+						#IF(hale.getAffection(pc)<40)
+							[#game.appendToTextStartStringBuilder(hale.incrementAffection(pc, 5))]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[九炼]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_blacksmith_talk_name))
+							你今天已经问过因苏和黑尔他们工房背后的故事了……
+						#ELSE
+							询问因苏和黑尔他们的铁匠铺名字“九炼”背后的故事。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_blacksmith_talk_name))
+							null
+						#ELSE
+							innoxia_places_fields_elis_shops_blacksmith_talk
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/blacksmith', 'TALK_NAME'))]
+						[#flags.setFlag(FLAG_innoxia_blacksmith_talk_name, true)]
+						[#flags.setFlag(FLAG_innoxia_blacksmith_side_quest_available, true)]
+						#IF(imsu.getAffection(pc)<40)
+							[#game.appendToTextStartStringBuilder(imsu.incrementAffection(pc, 5))]
+						#ENDIF
+						#IF(hale.getAffection(pc)<40)
+							[#game.appendToTextStartStringBuilder(hale.incrementAffection(pc, 5))]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_blacksmith_side_quest_available)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[接触妖狐]]></responseTitle>
+					<responseTooltip><![CDATA[
+						告诉巴风特你会在心林高地记住他们的目标。如果有机会，你会努力说服一只九尾妖狐来帮他们。
+						<br/>[style.italicsMinorBad(这部分会很快添加！)]
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+					<effects/>
+				</response>
+				<!-- Eisek stall quest: -->
+				<response>
+					<availabilityConditional><![CDATA[[#pc.hasQuest(QUEST_LINE_SIDE_EISEK_STALL) && pc.getQuest(QUEST_LINE_SIDE_EISEK_STALL) == QUEST_EISEK_STALL_QUEST_STAGE_TWO]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[10]]></index>
+					<responseTitle><![CDATA[遮阳篷杆]]></responseTitle>
+					<responseTooltip><![CDATA[
+						询问巴风特他们能不能帮你做些遮阳篷杆。
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_fields_elis_shops_blacksmith_ask_awning_pole]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_STALL, QUEST_EISEK_STALL_QUEST_STAGE_THREE))]
+						[#flags.setSavedLong("elis_eisek_hale_order_date", game.getDayNumber())]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.getSavedLong("elis_eisek_hale_order_date") + 1 > game.getDayNumber() && pc.getQuest(QUEST_LINE_SIDE_EISEK_STALL) == QUEST_EISEK_STALL_QUEST_STAGE_THREE]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[10]]></index>
+					<responseTitle><![CDATA[遮阳篷杆]]></responseTitle>
+					<responseTooltip><![CDATA[你找黑尔下单才过了不到一天……]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+					<effects/>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.getSavedLong("elis_eisek_hale_order_date") + 1 <= game.getDayNumber() && !pc.hasItemType(ITEM_dsg_quest_awningpoles) && pc.getQuest(QUEST_LINE_SIDE_EISEK_STALL) == QUEST_EISEK_STALL_QUEST_STAGE_THREE]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[10]]></index>
+					<responseTitle><![CDATA[
+						#IF(pc.getMoney() < 550)
+							自取([style.moneyFormatUncoloured(550, span)])
+						#ELSE
+							自取([style.moneyFormat(550, span)])
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.getMoney() < 550)
+							你需要550火币才能付账，你没有那么多钱！
+						#ELSE
+							从黑尔那儿领取订单。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(pc.getMoney() < 550)
+							null
+						#ELSE
+							innoxia_places_fields_elis_shops_blacksmith_pickup_order
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextEndStringBuilder(pc.incrementMoney(-550))]
+						[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem(ITEM_dsg_quest_awningpoles), 4, false, true))]
+						#IF(pc.hasItem(itemGen.generateItem(ITEM_dsg_quest_fabricbolt)) && pc.hasItem(itemGen.generateItem(ITEM_dsg_quest_embsign)))
+							[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_STALL, QUEST_EISEK_STALL_QUEST_STAGE_FOUR))]
+						#ENDIF					
+					]]></effects>
+				</response>
+				<!-- Leave: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[0]]></index>
+					<responseTitle><![CDATA[离开]]></responseTitle>
+					<responseTooltip><![CDATA[和巴风特道别，离开他们的铁匠铺。]]></responseTooltip>
+					<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_shops_street"/>
+					<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/blacksmith', 'LEAVE'))]
+						[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_elis_shops, PLACE_TYPE_innoxia_fields_elis_shops_street)]
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="talk">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_shops_blacksmith_enter"/>
+	</scene>
+	
+	<scene id="ask_awning_pole">
+		<author><![CDATA[DSG]]></author>
+		<content folderPath="txt/places/fields/elis/shops/blacksmith">TALK_ASK_AWNING_POLE</content>
+		<secondsPassed minutes="true"><![CDATA[3]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_shops_blacksmith_enter"/>
+	</scene>
+	
+	<scene id="pickup_order">
+		<author><![CDATA[DSG]]></author>
+		<content folderPath="txt/places/fields/elis/shops/blacksmith">TALK_PICKUP_ORDER</content>
+		<secondsPassed minutes="true"><![CDATA[3]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_shops_blacksmith_enter"/>
+	</scene>
+	
+</dialogueNodes>

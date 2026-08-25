@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ear>
+	<race>NoStepOnSnek_octopus</race>
+	<transformationName><![CDATA[章鱼]]></transformationName>
+	<coveringType>OCTOPUS_SKIN</coveringType>
+	<tags/>
+	<name><![CDATA[耳]]></name>
+	<namePlural><![CDATA[耳朵]]></namePlural>
+	<descriptorsMasculine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</descriptorsFeminine>
+	<transformationDescription><![CDATA[
+		它们迅速生长成了纤巧、几乎半透明的褶皱，几乎就在[npc.herHim]的耳朵的位置。
+		<br/>[npc.Name]现在拥有[style.boldOctopus(大的、章鱼般的耳朵)][npc.materialCompositionDescriptor][npc.earFullDescription]。
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.She]有着一对章鱼般的耳朵#IF(npc.isPiercedEar())，且已经打过孔#ENDIF，[npc.materialCompositionDescriptor][npc.earFullDescription(true)]。
+]]></bodyDescription>
+</ear>

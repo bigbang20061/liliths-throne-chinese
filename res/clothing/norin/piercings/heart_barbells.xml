@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>300</value> <!--10 flames = £1 ~ $1.5-->
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[心型乳钉]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[心型乳钉]]></namePlural>
+		<description><![CDATA[一对乳钉，让穿戴者的乳头周围有一个可爱的心型。]]></description>
+		
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity> <!-- FEMININE, MASCULINE ANDROGYNOUS -->
+		<slot>PIERCING_NIPPLE</slot> <!-- slot values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/InventorySlot.java -->
+		<rarity>COMMON</rarity> <!-- rarity values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/Rarity.java -->
+		
+		<imageName>heart_barbells.svg</imageName>
+		
+		<clothingSet/> <!-- No way to define custom sets yet -->
+		<imageEquippedName/> <!-- The file path for this clothing's image while equipped -->
+		<effects/> <!-- Default enchantments -->
+
+		<blockedPartsList>
+		  <blockedParts>
+			
+			<displacementType>REMOVE_OR_EQUIP</displacementType> <!-- displacementType values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/DisplacementType.java -->
+			
+			<clothingAccessRequired> <!-- clothingAccess values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/ClothingAccess.java -->
+			  <clothingAccess>CHEST</clothingAccess>
+			</clothingAccessRequired>
+			
+			<blockedBodyParts/> <!--bodyPart values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/character/body/CoverableArea.java -->
+			<clothingAccessBlocked/> <!-- clothingAccess -->
+			<concealedSlots/> <!-- slot -->
+			
+		  </blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> <!-- slot(s) not compatible -->
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="ALL_METAL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+		  <tag>SOLD_BY_KATE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+      [npc.Name]把心型乳钉戴在[npc.her]的乳头穿孔。
+]]></self>
+		<other><![CDATA[
+      [npc.Name]把心型乳钉戴在[npc2.namePos]的乳头穿孔。
+]]></other>
+		<otherRough><![CDATA[
+      [npc.Name]粗暴地把心型乳钉戴在[npc2.namePos]的乳头穿孔。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+      [npc.Name]把[npc.her]的心型乳钉从[npc.her]的乳头穿孔中取下。
+]]></self>
+		<other><![CDATA[
+      [npc.Name]把[npc2.namePos]的心型乳钉从[npc2.her]的乳头穿孔中取下。
+]]></other>
+		<otherRough><![CDATA[
+      [npc.Name]粗暴地把[npc2.namePos]的心型乳钉从[npc2.her]的乳头穿孔中取下。
+]]></otherRough>
+	</displacementText>
+  
+</clothing>

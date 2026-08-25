@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>	
+	<name><![CDATA[陷阱房(已触发)]]></name>
+	<tooltipDescription><![CDATA[这条通道在这里稍微打开了一点点。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在一个奇怪的陷阱房里]]></virginityLossDescription>	
+	<sexBlockedFromCharacterPresent/>
+	<svgName>trap</svgName>
+	<colour>BASE_WHITE</colour>
+	<backgroundColour>BASE_RED_LIGHT</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>dsg_places_fields_elis_eisek_sillymode_dungeon_trap_triggered</dialogue>
+	<loiteringEnabled>false</loiteringEnabled>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[true]]></dangerous>	
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<weatherImmunities immuneToAll="true"/>	
+	<applyInventoryInit/>
+</placeType>

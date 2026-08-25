@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[蝴蝶]]></name>
+		
+		<description><![CDATA[艺术地描绘着三只在空中翩翩起舞的蝴蝶……]]></description> 
+		<bodyOverviewDescription><![CDATA[三只在空中飞舞的蝴蝶的纹身]]></bodyOverviewDescription> 
+		
+		<imageName>butterflies.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_ORANGE"/> 
+		<secondaryColours values="ALL" defaultColour="CLOTHING_PINK"/>
+		<tertiaryColours values="ALL" defaultColour="CLOTHING_RED"/>
+		
+	</coreAttributes>
+	
+</tattoo>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[侧缝上有个小标签印着“DSG织厂生产。”]]></authorTag>
+
+		<value>300</value> 
+
+		<determiner><![CDATA[一件]]></determiner>
+
+		<name><![CDATA[突击队毛衣背心]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[突击队毛衣背心]]></namePlural> 
+
+		<description><![CDATA[一件厚重的罗纹圆领毛衣背心，肩部采用耐磨面料拼接。对你来说幸运的是，有人贴心地给毛线做了防瘙痒处理。]]></description> 
+
+		<physicalResistance>1</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>TORSO_OVER</slot> 
+
+		<rarity>UNCOMMON</rarity> 
+
+		<clothingSet/> 
+
+		<imageName>milsweatervest_crew.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList>
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts/> 
+
+				<clothingAccessBlocked>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked> 
+
+				<concealedSlots/> 
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots values="CONCEALED_FULL_TORSO"/>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLUE</colour>
+			<colour>CLOTHING_PINK</colour>
+			<colour>CLOTHING_GREY</colour>
+			<colour>CLOTHING_PURPLE_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_GOLD"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿上突击队毛衣背心。]]></self>
+		<other><![CDATA[
+[npc.Name]帮[npc2.name]将[npc2.her]的胳膊伸进背心的洞并拉下来盖住[npc2.her]的躯干。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.name]塞进毛衣背心里并将[npc2.her]的胳膊伸进毛衣背心的洞里，并把毛衣拽下来盖住[npc2.her]的躯干。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]脱下[npc.her]的突击队毛衣背心。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的突击队毛衣背心脱下。]]></other>
+		<otherRough><![CDATA[[npc.Name]抓住[npc2.namePos]的突击队毛衣背心并粗暴的将它从[npc2.her]的头上拽下来。]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的突击队毛衣背心拉下到[npc.her]的躯干。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的突击队毛衣背心拉下到[npc2.her]的躯干。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的突击队毛衣背心拉下到[npc2.her]的躯干。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的突击队毛衣背心拉到[npc.her]的下巴上。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的突击队毛衣背心拉到[npc2.her]的下巴上。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的突击队毛衣背心拉到[npc2.her]的下巴上。]]></otherRough>
+	</displacementText>
+	
+</clothing>

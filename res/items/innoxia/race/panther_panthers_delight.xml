@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>500</value> 
+		<determiner><![CDATA[一块]]></determiner>
+		<name><![CDATA[豹之乐]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[豹之乐]]></namePlural>
+		<description><![CDATA[一大块生战斧牛排，骨头上绑着一个棕色小标签，上面写着 "豹之乐"。翻开标签，上面有一些信息，宣称这块肉含有成长中的大型猫科动物所需的所有矿物质和营养成分。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/panther/subspecies/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="65">panther_panthers_delight.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>innoxia_panther</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[豹族]]></potionDescriptor>
+		<associatedRace>innoxia_panther</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(5)]到“药剂效果”]]></line>
+			<line><![CDATA[如果肌肉等级比[style.colourMuscleThree(“肌肉紧致”)]低，则增加1级肌肉等级]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 5)]
+			#IF(npc.getMuscleValue()<60)
+				[#npc.incrementMuscle(1)]
+			#ENDIF
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		握住“豹之乐”，其中只包含一个大块的生战斧牛排，[npc.name]把它送到[npc.her]的嘴边。浓烈的、带血的气味充斥着[npc.her]的鼻孔，[npc.she]发现[npc.herself]一想到吃生肉就流口水。[npc.she]毫不犹豫地贪婪地撕咬着滴水的肉，迅速完成了临时的餐食后，把[npc.her]的手指舔得干干净净。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		握住“豹之乐”，其中只包含一个大块的生战斧牛排，将它送到[npc2.namePos]的嘴边。浓烈的、带血的气味充斥着[npc2.her]的鼻孔，[npc2.she]发现[npc2.herself]一想到吃生肉就流口水。[npc2.she]毫不犹豫地贪婪地撕咬着滴水的肉，迅速完成了临时的餐食后，把[npc2.her]的手指舔得干干净净。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

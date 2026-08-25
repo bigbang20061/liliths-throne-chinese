@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <value>150</value>
+    <determiner><![CDATA[一条]]></determiner>
+    <name><![CDATA[缎带]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[缎带]]></namePlural>
+    <description><![CDATA[一条小巧可爱的棉质缎带。可以系在尾巴上，也可以系在头发上。还可以系在某人的阴茎上……]]></description>
+    
+    <physicalResistance>0</physicalResistance>
+    <femininity>FEMININE</femininity>
+	<equipSlots>
+		<slot>TAIL</slot>
+		<slot>HAIR</slot>
+		<slot>PENIS</slot>
+	</equipSlots>
+    <rarity>COMMON</rarity>
+    
+    <imageName>tail_ribbon.svg</imageName>
+    
+    <clothingSet/>
+    <imageEquippedName slot="TAIL">tail_ribbon.svg</imageEquippedName>
+    <imageEquippedName slot="HAIR">tail_ribbon_hair.svg</imageEquippedName>
+    <imageEquippedName slot="PENIS">tail_ribbon.svg</imageEquippedName>
+    <effects/>
+
+    <blockedPartsList slot="TAIL">
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired/>
+        <blockedBodyParts/>
+        <clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+    <blockedPartsList slot="HAIR">
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired/>
+        <blockedBodyParts/>
+        <clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+    <blockedPartsList slot="PENIS">
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired>
+			<clothingAccess>PENIS</clothingAccess>
+        </clothingAccessRequired>
+        <blockedBodyParts/>
+        <clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+    
+    <incompatibleSlots slot="TAIL"/>
+    <incompatibleSlots slot="HAIR"/>
+    <incompatibleSlots slot="PENIS"/>
+    
+    <primaryColours values="ALL"/>
+    <primaryColoursDye values="ALL"/>
+    <secondaryColours/>
+    <secondaryColoursDye/>
+    <tertiaryColours/>
+    <tertiaryColoursDye/>
+    
+    <itemTags>
+      <tag>SOLD_BY_NYAN</tag>
+    </itemTags>
+    
+    <itemTags slot="PENIS">
+      <tag>ENABLE_SEX_EQUIP</tag>
+      <tag>REQUIRES_PENIS</tag>
+    </itemTags>
+  </coreAttributes>
+
+  <replacementText slot="TAIL" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把缎带系在[npc.her][npc.tail+]上。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把缎带系在[npc2.namePos][npc2.tail+]上。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把缎带绑在[npc2.namePos][npc2.tail+]上。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="TAIL" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+			[npc.Name]解开[npc.her][npc.tail+]上的缎带。
+]]></self>
+    <other><![CDATA[
+			[npc.Name]解开[npc2.namePos][npc2.tail+]上的缎带。
+]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]粗暴地解开[npc2.namePos][npc2.tail+]上的缎带。
+]]></otherRough>
+  </displacementText>
+
+  <replacementText slot="HAIR" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把缎带系在[npc.her][npc.hair+]上。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把缎带系在[npc2.namePos][npc2.hair+]上。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把缎带绑在[npc2.namePos][npc2.hair+]上。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="HAIR" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      
+	#IF(npc.hasHair())
+			[npc.Name]解开[npc.her][npc.hair+]上的缎带。
+	#ELSE
+		由于[npc.name]不再有任何[npc.hair]，[npc.her]的缎带从[npc.her]头部落下。
+	#ENDIF
+	
+    ]]></self>
+    <other><![CDATA[
+			[npc.Name]解开[npc2.namePos][npc2.hail+]上的缎带。
+]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]粗暴地解开[npc2.namePos][npc2.hail+]上的缎带。
+]]></otherRough>
+  </displacementText>
+  
+  <replacementText slot="PENIS" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把缎带系在[npc.her][npc.penis+]上。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把缎带系在[npc2.namePos][npc2.penis+]上。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把缎带绑在[npc2.namePos][npc2.penis+]上。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="PENIS" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+			[npc.Name]解开[npc.her][npc.penis+]上的缎带。
+]]></self>
+    <other><![CDATA[
+			[npc.Name]解开[npc2.namePos][npc2.penis+]上的缎带。
+]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]粗暴地解开[npc2.namePos][npc2.penis+]上的缎带。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

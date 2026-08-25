@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>50</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[头带]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[头带]]></namePlural>
+		<description><![CDATA[一条简单的头带，设计用于将佩戴者的头发推到后面，避免遮挡视线。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>headband.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_GREY"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将头带戴在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将头带戴在[npc2.namePos]的头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将头带戴到[npc2.namePos]的头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+			[npc.Name]摘下[npc.her]的头带。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的头带摘下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地夺走[npc2.namePos]的头带。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

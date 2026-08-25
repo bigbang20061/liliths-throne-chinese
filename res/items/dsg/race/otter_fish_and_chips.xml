@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[盒子底部刻着细小的字迹，写着“DSG食品有限公司包装”。]]></authorTag>
+		
+		<value>250</value> 
+		<determiner><![CDATA[一盒]]></determiner>
+		<name><![CDATA[炸鱼薯条]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[炸鱼薯条]]></namePlural>
+		<description><![CDATA[一份外卖盒子装着深炸土豆和裹着面糊的鳕鱼，搭配一碟豌豆泥蘸酱。盒子上有一幅画着一位穿着酒吧女招待装的水獭女，她对着观众眨眨眼。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName>otter_fish_and_chips.svg</imageName>
+		
+		<colourPrimary>dsg_otterBrown</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[水獭]]></potionDescriptor>
+		<associatedRace>dsg_otter</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.15)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]打开了盒子，闻到了热腾腾的油脂和炸淀粉的香味。在无法抵挡里面美味的诱惑下，[npc.she]开始将食物塞入口中，直到整盒都被吃光。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]移开了盘子上的玻璃盖，然后将它递给[npc2.name]，让[npc2.herHim]闻到热腾腾的油脂和炸淀粉的香味。在无法抵挡里面美味的诱惑下，[npc2.she]开始将食物塞入口中，直到整盒都被吃光。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

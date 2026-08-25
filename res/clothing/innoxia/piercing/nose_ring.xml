@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>100</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[鼻环]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[鼻环]]></namePlural>
+		<description><![CDATA[一个简单的鼻环。一端的小圆盘位于鼻孔内，固定在那里，而环的其余部分则可见。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_NOSE</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>nose_ring.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把鼻环戴在[npc.her]的[npc.nose]穿孔。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把鼻环戴在[npc2.namePos]的[npc2.nose]穿孔。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把鼻环戴在[npc2.namePos]的[npc2.nose]穿孔。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把[npc.her]的鼻环从[npc.her]的[npc.nose]穿孔中取下。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把[npc2.namePos]的鼻环从[npc2.her]的[npc2.nose]穿孔中取下。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把[npc2.namePos]的鼻环从[npc2.her]的[npc2.nose]穿孔中取下。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

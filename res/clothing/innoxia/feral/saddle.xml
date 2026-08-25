@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <value>2500</value>
+    <determiner><![CDATA[一个]]></determiner>
+    <name><![CDATA[鞍]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[鞍]]></namePlural>
+    <description><![CDATA[一个支撑骑手的结构，固定在动物的背部，使用马镫带。它配备了马镫，马镫的高度可以自由调整。]]></description>
+
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <slot>LEG</slot>
+    <rarity>EPIC</rarity>
+	<clothingSet>innoxia_sturdy_steed</clothingSet>
+    <imageName>saddle.svg</imageName>
+    <imageEquippedName>saddle_equipped.svg</imageEquippedName>
+
+	
+	<effects>
+		<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+	</effects>
+
+    <blockedPartsList>
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired/>
+		<blockedBodyParts/>
+		<clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+
+    <incompatibleSlots/>
+
+	<primaryColours>
+		<colour>CLOTHING_TAN</colour>
+		<colour>CLOTHING_DESATURATED_BROWN</colour>
+		<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+		<colour>CLOTHING_BLACK</colour>
+	</primaryColours>
+	<primaryColoursDye values="ALL"/>
+	<secondaryColours values="JUST_STEEL"/>
+	<secondaryColoursDye values="ALL_METAL"/>
+	<tertiaryColours>
+		<colour>CLOTHING_GREY_DARK</colour>
+	</tertiaryColours> 
+	<tertiaryColoursDye values="ALL"/>
+	<customColours>
+		<customColour c0="#ABC837" c1="#BCD35F" c2="#CDDE87" c3="#DDE9AF" c4="#EEF4D7">
+			<defaultColours>
+				<colour>CLOTHING_WHITE</colour>
+			</defaultColours>
+			<extraColours values="ALL"/>
+		</customColour>
+	</customColours>
+			
+    <itemTags>
+		<tag>FITS_TAUR_BODY</tag>
+		<tag>SOLD_BY_FINCH</tag>
+    </itemTags>
+
+  </coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将鞍放在[npc.her]的背上，然后伸手到周围系上扣子，将其固定在原处，然后调低了马镫。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将鞍放在[npc2.namePos]的背上，然后系上扣子将其固定在原处，然后调低了马镫。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将鞍强行放在[npc2.namePos]的背上，然后系上扣子将其固定在原处，然后调低了马镫。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开鞍的带子并将其取下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开鞍的带子并将其取下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]不耐烦地解开鞍的带子，然后用力将其拽下。
+]]></otherRough>
+	</displacementText>
+
+</clothing>

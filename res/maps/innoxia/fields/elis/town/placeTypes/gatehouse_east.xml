@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[城楼]]></name>
+	<tooltipDescription><![CDATA[东面城楼两侧有一对高塔，守卫着进入伊利斯的道路。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在伊利斯东边的城楼里]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<svgName>gatehouse</svgName> 
+	<colour>BASE_BLACK</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_elis_generic_gatehouse_east</dialogue>
+	<populationPresent>
+		<population day="true">
+			<populationType plural="true" density="COUPLE">PERSON</populationType>
+			<subspeciesPresent worldType="innoxia_fields_elis_town"/>
+		</population>
+		<population day="true">
+			<populationType plural="false" density="OCCASIONAL">CENTAUR_CARTS</populationType>
+			<subspeciesPresent>
+				<subspecies>CENTAUR</subspecies>
+			</subspeciesPresent>
+		</population>
+		<population day="true">
+			<populationType plural="true" density="COUPLE">ENFORCER</populationType>
+			<subspeciesPresent>
+				<subspecies>DOG_MORPH</subspecies>
+				<subspecies>HORSE_MORPH</subspecies>
+			</subspeciesPresent>
+		</population>
+		<population night="true">
+			<populationType plural="true" density="COUPLE">ENFORCER</populationType>
+			<subspeciesPresent>
+				<subspecies>WOLF_MORPH</subspecies>
+				<subspecies>FOX_MORPH</subspecies>
+			</subspeciesPresent>
+		</population>
+	</populationPresent>
+	<furniturePresent>false</furniturePresent>
+	<loiteringEnabled>true</loiteringEnabled>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

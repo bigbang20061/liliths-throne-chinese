@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>120</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[连裤丝袜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[连裤丝袜]]></namePlural>
+		<description><![CDATA[一双长度到穿戴者小腹的尼龙连裤袜。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>SOCK</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>pantyhose.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>CALVES</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚塞进连裤丝袜中，然后将它拉到腰部。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的脚塞进连裤丝袜中，然后将它拉到[npc2.her]的腰部。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的双脚强行塞进连裤丝袜中，然后用力将它们拉到[npc2.her]的腰部。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下了[npc.her]的连裤丝袜。]]></self>
+    <other><![CDATA[
+[npc.Name]脱下了[npc2.namePos]的连裤丝袜。]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地脱下[npc2.namePos]的连裤丝袜。]]></otherRough>
+  </displacementText>
+  
+  
+   <replacementText type="PULLS_DOWN">
+    <self><![CDATA[
+      [npc.Name]抓住[npc.her]的连裤丝袜顶端并拉至[npc.her]的腰部。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]抓住[npc2.namePos]的连裤丝袜顶端并拉至[npc2.her]的腰部。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]抓住[npc2.namePos]的连裤丝袜顶端并粗暴地拉至[npc2.her]的腰部。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="PULLS_DOWN">
+    <self><![CDATA[
+      [npc.Name]把[npc.her]的连裤丝袜拉下来。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把[npc2.namePos]的连裤丝袜拉下来。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把[npc2.namePos]的连裤丝袜拉下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

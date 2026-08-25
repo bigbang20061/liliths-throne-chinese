@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[运动鞋]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[运动鞋]]></namePlural>
+		<description><![CDATA[这是一双制作精良的鞋子，采用了柔软的橡胶和透气的布料。尽管原本设计用于体育锻炼，但如今它们已经成为日常穿搭的时尚选择。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>FOOT</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>trainers.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="ALL"/>
+		<secondaryColoursDye/>
+		<tertiaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的[npc.feet]穿入运动鞋中，然后系上鞋带。
+]]></self>
+    <other><![CDATA[
+[npc.Name]让[npc2.namePos]将[npc2.feet]穿入运动鞋中，然后系上鞋带。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进运动鞋中，然后系上鞋带。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开[npc.her]的运动鞋鞋带，然后脱下它们。
+]]></self>
+    <other><![CDATA[
+[npc.Name]解开[npc2.namePos]的运动鞋鞋带，然后脱下它们。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地解开[npc2.namePos]的运动鞋鞋带，然后用力将它们拖脱。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

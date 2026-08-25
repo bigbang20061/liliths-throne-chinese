@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#(flags.hasFlag(FLAG_innoxia_callie_natalya_icing_white) || flags.hasFlag(FLAG_innoxia_callie_natalya_icing_pink)) && !flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_chocolate) && !flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_multi) && !flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_stars)]
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>ZERO_PURE</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		[##flags.setFlag(FLAG_innoxia_callie_natalya_sprinkles_chocolate, true)]
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[巧克力]]></title>
+	<tooltip><![CDATA[
+		决定加上巧克力碎屑，品尝完这两个洒满糖霜的屁穴。
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<text><![CDATA[
+				你在三个罐子之间打量一番，很快决定巧克力糖针会是最好的选择。你抓起一大把甜甜的小糖针，毫不顾忌地撒在面前的两个糖霜甜甜圈上。深色的装饰与明亮的白色和粉色糖霜形成鲜明对比，转眼间你就看到了两个令人垂涎欲滴的撒满糖针的糖霜甜甜圈。
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

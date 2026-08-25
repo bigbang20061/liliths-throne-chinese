@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[侧缝上有个小标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>1500</value> 
+
+		<determiner><![CDATA[一件]]></determiner>
+
+		<name><![CDATA[马甲]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[马甲]]></namePlural> 
+
+		<description><![CDATA[一件有两个口袋的背心，可作为手臂无法套进常规制服外套的执法者的规定替代品。]]></description> 
+
+		<physicalResistance>0</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>TORSO_OVER</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet>dsg_enforcer_service</clothingSet> 
+
+		<imageName>enfdwaistcoat_base.svg</imageName> 
+
+		<imageEquippedName/>
+		
+		<stickers>
+			
+			<category id="tab" priority="1"> 
+				<categoryName><![CDATA[Collar Tabs]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1" colourSelected="TEXT_GREY"> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="tab_pc" priority="1" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE"> 
+					<stickerName><![CDATA[警局警员]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者警员]]></namePrefix> 
+					<namePostfix/> 
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>上面有警局警员的徽章。</i>]]></descriptionModification> 
+					<imageName>enfdwaistcoat_st_tab_pc.svg</imageName> 
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded> 
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved> 
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(pc.getOccupation() != OCCUPATION_NPC_ENFORCER_PATROL_CONSTABLE ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_SWORD_CONSTABLE ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_ORICL_CONSTABLE)
+							Only Enforcers who hold a rank of Police Constables can use these collar tabs!
+						#ENDIF
+					]]></unavailabilityText> 
+					<availabilityText>
+						As an Enforcer who holds the rank of Police Constable, you can freely use these collar tabs.
+					</availabilityText> 
+				</sticker>
+				<sticker id="tab_sg" priority="2" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE"> 
+					<stickerName><![CDATA[警长]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者警长]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>上面有警长的徽章。</i>]]></descriptionModification>
+					<imageName>enfdwaistcoat_st_tab_sg.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(pc.getOccupation() != OCCUPATION_NPC_ENFORCER_PATROL_SERGEANT ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_SWORD_SERGEANT ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_ORICL_SERGEANT)
+							Only Enforcers who hold a rank of Sergeant can use this insignia!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Sergeant, you can freely use these collar tabs.
+					</availabilityText>
+				</sticker>
+				<sticker id="tab_ip" priority="3" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[督察]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者督察]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>上面有督察的徽章。</i>]]></descriptionModification>
+					<imageName>enfdwaistcoat_st_tab_ip.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(pc.getOccupation() != OCCUPATION_NPC_ENFORCER_PATROL_INSPECTOR ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_SWORD_INSPECTOR ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_ORICL_INSPECTOR)
+							Only Enforcers who hold a rank of Inspector can use these collar tabs!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Inspector, you can freely use these collar tabs.
+					</availabilityText>
+				</sticker>
+				<sticker id="tab_su" priority="4" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[警司]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者警司]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>上面有警司的徽章。</i>]]></descriptionModification>
+					<imageName>enfdwaistcoat_st_tab_su.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only Enforcers who hold a rank of Superintendent can use these collar tabs!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Superintendent, you can freely use these collar tabs.
+					</availabilityText>
+				</sticker>
+				<sticker id="tab_cs" priority="5" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[总警司]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者总警司]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>上面有总警司的徽章。</i>]]></descriptionModification>
+					<imageName>enfdwaistcoat_st_tab_cs.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only Enforcers who hold a rank of Chief Superintendent can use these collar tabs!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Chief Superintendent, you can freely use these collar tabs.
+					</availabilityText>
+				</sticker>
+			</category>
+			<category id="name" priority="2"> 
+				<categoryName><![CDATA[Name Plate]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="2" colourSelected="TEXT_GREY"> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="name_pc" priority="2" defaultSticker="false" zLayer="2" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[警局警员]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>enfdwaistcoat_st_name_pc.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(pc.getOccupation() != OCCUPATION_NPC_ENFORCER_PATROL_CONSTABLE ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_SWORD_CONSTABLE ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_ORICL_CONSTABLE)
+							Only Enforcers who hold a rank of Police Constable can use this name plate!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Police Constable, you can freely use this name plate.
+					</availabilityText>
+				</sticker>
+				<sticker id="name_sg" priority="2" defaultSticker="false" zLayer="2" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[警长]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>enfdwaistcoat_st_name_sg.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(pc.getOccupation() != OCCUPATION_NPC_ENFORCER_PATROL_SERGEANT ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_SWORD_SERGEANT ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_ORICL_SERGEANT)
+							Only Enforcers who hold a rank of Sergeant can use this name plate!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Sergeant, you can freely use this name plate.
+					</availabilityText>
+				</sticker>
+				<sticker id="name_ip" priority="3" defaultSticker="false" zLayer="2" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[督察]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>enfdwaistcoat_st_name_ip.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(pc.getOccupation() != OCCUPATION_NPC_ENFORCER_PATROL_INSPECTOR ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_SWORD_INSPECTOR ||
+							pc.getOccupation() != OCCUPATION_NPC_ENFORCER_ORICL_INSPECTOR)
+							Only Enforcers who hold a rank of Inspector can use this name plate!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Inspector, you can freely use this name plate.
+					</availabilityText>
+				</sticker>
+				<sticker id="name_su" priority="4" defaultSticker="false" zLayer="2" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[警司]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>enfdwaistcoat_st_name_su.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only Enforcers who hold a rank of Superintendent can use this name plate!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Superintendent, you can freely use this name plate.
+					</availabilityText>
+				</sticker>
+				<sticker id="name_cs" priority="5" defaultSticker="false" zLayer="2" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE">
+					<stickerName><![CDATA[总警司]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>enfdwaistcoat_st_name_cs.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only Enforcers who hold a rank of Chief Superintendent can use this name plate!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an Enforcer who holds the rank of Chief Superintendent, you can freely use this name plate.
+					</availabilityText>
+				</sticker>
+			</category>
+			<category id="ribbon" priority="3">
+				<categoryName><![CDATA[Ribbon Rack]]></categoryName>
+				<sticker id="None" priority="0" defaultSticker="true" zLayer="3" colourSelected="TEXT_GREY">
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>				
+			</category>
+			<category id="qual" priority="4">
+				<categoryName><![CDATA[Qualification Badge]]></categoryName>
+				<sticker id="None" priority="0" defaultSticker="true" zLayer="4" colourSelected="TEXT_GREY">
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+
+		<effects/>
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart> 
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked> 
+
+				<concealedSlots/> 
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots>
+					<slot>CHEST</slot>
+					<slot>NIPPLE</slot>
+					<slot>STOMACH</slot>
+					<slot>PIERCING_STOMACH</slot>
+					<slot>PIERCING_NIPPLE</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLUE</colour>
+			<colour>CLOTHING_PINK</colour>
+			<colour>CLOTHING_GREY</colour>
+			<colour>CLOTHING_PURPLE_DARK</colour>
+			<colour>CLOTHING_WHITE</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_GOLD"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的手臂伸进马甲的开口并扣上前面的扣子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]帮[npc2.name]将[npc2.her]的胳膊伸进马甲的开口并扣好扣子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]迫使[npc2.namePos]的手臂穿过马甲的开口并匆忙的扣好扣子。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了[npc.her]马甲的扣子并将[npc.her]的胳膊从开口里抽了出来。]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.namePos]马甲前部的扣子，帮[npc2.her]将[npc2.her]的手臂从开口中抽出。]]></other>
+		<otherRough><![CDATA[
+[npc2.Name]拽开[npc2.namePos]马甲正面的纽扣，粗暴地将[npc2.her]的手臂从开口中拽出。]]></otherRough>
+	</displacementText>
+
+	<replacementText type="UNBUTTONS">
+		<self><![CDATA[
+[npc.Name]扣上[npc.namePos]马甲正面的扣子。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]前面的扣子扣了起来。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]匆忙扣上[npc2.namePos]马甲的正面的扣子。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="UNBUTTONS">
+		<self><![CDATA[
+[npc.Name]解开[npc.her]的马甲。]]></self>
+		<other><![CDATA[
+[npc.Name]解开了[npc2.namePos]的马甲。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]崩开了[npc2.namePos]马甲上的扣子。]]></otherRough>
+	</displacementText>
+	
+</clothing>

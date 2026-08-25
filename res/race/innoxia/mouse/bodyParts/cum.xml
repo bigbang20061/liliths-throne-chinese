@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<fluid>
+	<race>innoxia_mouse</race>
+	
+	<transformationName><![CDATA[鼷鼠]]></transformationName>
+	
+	<baseFluidType>CUM</baseFluidType>
+	
+	<flavour>CUM</flavour>
+	
+	<namesMasculine>
+		<name><![CDATA[鼷鼠]]></name>
+		<name><![CDATA[啮齿类]]></name>
+	</namesMasculine>
+	
+	<namesFeminine>
+		<name><![CDATA[鼷鼠]]></name>
+		<name><![CDATA[啮齿类]]></name>
+	</namesFeminine>
+	
+	<descriptorsMasculine/>
+	
+	<descriptorsFeminine/>
+	
+	<defaultFluidModifiers>
+		<modifier>STICKY</modifier>
+		<modifier>SLIMY</modifier>
+	</defaultFluidModifiers>
+</fluid>

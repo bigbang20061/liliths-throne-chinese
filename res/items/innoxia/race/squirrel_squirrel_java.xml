@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>25</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[松鼠咖啡]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[松鼠咖啡]]></namePlural>
+		<description><![CDATA[一个装着某种咖啡的塑料瓶。瓶子正面的标签显示，一只松鼠女正在瓶口上自慰，她的汁液滴入咖啡中，为咖啡增添了一些额外的奶油。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">squirrel_squirrel_java.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股丝滑的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+			<tag>CAFFEINATED_015</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		打开松鼠咖啡瓶子的瓶盖，[npc.name]将它送到[npc.her][npc.lips]前，然后仰起头，将其中的液体一饮而尽。这杯咖啡的奶香比典型的咖啡更浓郁，最后一滴咖啡咽下后，[npc.nameIsFull]口中留下了甜美的余味。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		打开松鼠咖啡瓶子的瓶盖，[npc.name]将它送到[npc2.namePos][npc2.lips]前，并帮助[npc2.her]一口气喝下其中的液体。这杯咖啡的奶香比典型的咖啡更浓郁，最后一滴咖啡咽下后，[npc2.nameIsFull]口中留下了甜美的余味。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>0</value> 
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[集市票]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[集市票]]></namePlural>
+		<description><![CDATA[这是在伊利斯农贸市场发放的一种展销会券，可以在一些摊位上兑换特殊奖励。]]></description> 
+		
+		<useDescriptor><![CDATA[检查]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>QUEST</rarity> 
+		
+		<imageName>faire_ticket.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_GREEN_LIME</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[在农贸市场的摊位上兑换奖励]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p>
+			这是一张小纸质票，上面印有一个公牛头像和字样“Faire”。可以在伊利斯农贸市场的一些摊位上兑换特殊奖励。
+		</p>
+		]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]仔细观察这张票……
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]向[npc2.name]展示[npc.her]的票……
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

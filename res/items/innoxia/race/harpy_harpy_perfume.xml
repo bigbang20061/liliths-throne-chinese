@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>250</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[哈比香水]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[哈比香水]]></namePlural>
+		<description><![CDATA[一个亮粉色的玻璃瓶，看起来像是某种女性香水。瓶底有一个精致的哈比之羽的图案，但除此之外没有任何标志。]]></description> 
+		
+		<useDescriptor><![CDATA[喷]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">harpy_harpy_perfume.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>GENERIC_SEX</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_SEXUAL</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldSex(+1)][style.boldFeminine(女性化程度)]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_DAMAGE_LUST.getFormattedValue(5)]到“药剂效果” ]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股丝滑的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.incrementFemininity(1)]
+			[#npc.addPotionEffect(ATTRIBUTE_DAMAGE_LUST, 5)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		喷了一点哈比香水在[npc.her]的脖子上，[npc.name]深深吸了一口它令人陶醉的女性香气。耐人寻味的是，仅仅一喷，香水瓶就完全空了，而当[npc.name]扔掉它时，[npc.she]感到一股兴奋的浪潮从[npc.herHim]身体里涌出，而[npc.she]不假思索地发出了一个非常像女孩子的咯咯笑声。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]喷了一点哈比香水在[npc2.namePos]脖子上，然后看着[npc2.she]深深吸了一口它令人陶醉的女性香气。耐人寻味的是，仅仅一喷，香水瓶就完全空了，而当[npc.name]扔掉它时，[npc2.name]感到一股兴奋的浪潮从[npc2.herHim]身体里涌出，[npc2.she]不假思索地发出了一个非常像女孩子的咯咯笑声。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

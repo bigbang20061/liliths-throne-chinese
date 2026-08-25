@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>200</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[束腰布]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[束腰布]]></namePlural> 
+		<description><![CDATA[一条由厚棉布制成的长布条，包裹在腹部作为额外的保护层，或单纯让腰显得更细。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>ANDROGYNOUS</femininity> 
+		<slot>STOMACH</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>sarashi.svg</imageName>
+		<imageEquippedName/>
+		<stickers/>
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_STOMACH"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="LINGERIE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将束腰布紧紧的缠在[npc.her]的腹部上。]]></self>
+		<other><![CDATA[
+[npc.Name]将束腰布紧紧的缠在[npc2.namePos]的腹部上。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将束腰布紧紧的绑在[npc2.namePos]的腹部上。]]></otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]松开[npc.her]腹部的束腰布并将其解下。]]></self>
+		<other><![CDATA[
+[npc.Name]松开[npc2.namePos]腹部的束腰布并将其解下。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]撕开[npc2.namePos]腹部的束腰布并将其扯下。]]></otherRough>
+	</displacementText>
+	
+</clothing>

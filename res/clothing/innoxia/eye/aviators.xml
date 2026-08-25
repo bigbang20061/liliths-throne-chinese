@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1200</value>
+		<determiner><![CDATA[一副]]></determiner>
+		<name><![CDATA[飞行员墨镜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[飞行员墨镜]]></namePlural>
+		<description><![CDATA[一副飞行员墨镜。大片的反射透镜稍微凸起，可以过滤掉大部分入射光。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>EYES</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>aviators.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>EYES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_ORANGE</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]戴上飞行员墨镜。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将飞行员墨镜戴在[npc2.namePos][npc2.face]。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将飞行员墨镜戴在[npc2.namePos]的脸上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的飞行员墨镜摘下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的飞行员墨镜摘下。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的飞行员墨镜并粗暴地扯下来。
+		]]></otherRough>
+	</displacementText>
+  
+</clothing>

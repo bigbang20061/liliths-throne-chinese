@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[昏暗的座位区]]></name>
+	<tooltipDescription><![CDATA[在十字利刃的边缘，有一些喧闹的座位区，好斗的顾客喜欢坐在那里。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在十字利刃的一个喧闹座位上]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<colour>BASE_BROWN</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_elis_tavern_alley_seating</dialogue>
+	<populationPresent copyPlaceType="innoxia_fields_elis_tavern_alley_tables"/>
+	<furniturePresent>true</furniturePresent>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[
+		[#!flags.hasFlag(FLAG_innoxia_oglix_tavern_pacified)]
+	]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities immuneToAll="true"/>
+	<applyInventoryInit/>
+</placeType>

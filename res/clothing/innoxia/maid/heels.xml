@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>800</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[女仆高跟鞋]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[女仆高跟鞋]]></namePlural>
+		<description><![CDATA[一双造型独特的女仆风格高跟鞋，它们由彩色皮革和蕾丝装饰组成。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>FOOT</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_maid</clothingSet>
+		<imageName>heels.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="MAID"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的[npc.feet]穿入高跟鞋中，并系好带子。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将高跟鞋穿到[npc2.namePos]的[npc2.feet]上，然后扣上了带子。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]将[npc2.namePos]脚粗暴地推进了高跟鞋，然后不耐烦地扣上了鞋带。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开了[npc.her]的高跟鞋并将它们脱了下来。
+]]></self>
+    <other><![CDATA[
+[npc.Name]解开了[npc2.namePos]的高跟鞋并将它们脱了下来。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的高跟鞋解开并脱下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

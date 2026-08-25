@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>100000000</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[Innoxia的赠礼]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[Innoxia的赠礼]]></namePlural>
+		<description><![CDATA[这个瓶子起初被认为永远失踪了，但现在以意外的方式回来了，能够将任何喝下它的人变成恶魔！<br/>[style.italicsMinorGood(虽然这只是一个调试用的物品，但它应该可以在任何地方安全使用。)]]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/demon/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="-15" imageSize="80">demon_innoxias_gift.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_CORRUPTION</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[恶魔]]></potionDescriptor>
+		<associatedRace>DEMON</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldBad(无法影响特殊角色或玩偶)]]]></line>
+			<line><![CDATA[将非恶魔[style.boldTfGeneric(转化)]为[style.boldDemon(半恶魔)]]]></line>
+			<line><![CDATA[将半恶魔[style.boldTfGeneric(转化)]为[style.boldDemon(恶魔)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p style='text-align:center'>
+			#IF(npc.isDoll())
+				[style.italicsDisabled(此物品对玩偶来说不起作用……)]
+			#ELSEIF(!npc.isPlayer() && npc.isUnique() && (!npc.isSlave() || npc.getOwner().isPlayer()))
+				[style.italicsDisabled(此物品不适用于非奴隶的特定角色……)]
+			#ELSEIF(npc.getSubspeciesOverride()==SUBSPECIES_HALF_DEMON)
+				[##npc.setBody(npc.getGender(), SUBSPECIES_DEMON, RACE_STAGE_GREATER, false)]
+				[##npc.setSubspeciesOverride(SUBSPECIES_DEMON)]
+				[style.italicsDemon([npc.NameIsFull]现在是[npc.a_race]！)]
+			#ELSE
+				[##npc.setBody(game.getCharacterUtils().generateHalfDemonBody(npc, npc.getGender(), npc.getBody().getFleshSubspecies(), true), false)]
+				[style.italicsDemon([npc.NameIsFull]现在是[npc.a_race]！)]
+			#ENDIF
+		</p>
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		当[npc.name]拔掉Innoxia的赠礼瓶子的塞子时，[npc.sheIs]充满了迫切需要喝掉其中的冒泡粉红色液体的欲望。瞬间，[npc.she]将瓶子送到[npc.her][npc.lips]前，将其全部灌下并压制住了呕吐反射，因为[npc.her]的感官被那刺激的甜味所淹没。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		拔出Innoxia的礼物瓶子的塞子后，[npc.name]将它送到[npc2.namePos]等待[npc2.lips]前。瞬间，[npc2.she]将其全部灌下并压制住了呕吐反射，因为[npc2.her]的感官被那刺激的甜味所淹没。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

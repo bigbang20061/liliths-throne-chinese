@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	
+	<coreAttributes>
+		<value>2500</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[女仆裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[女仆裙]]></namePlural>
+		<description><![CDATA[一件很有风格的女仆裙装，彩色的裙身上带有白色的蕾丝边。前面有一个带着蕾丝边的白色小围裙。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_UNDER</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_maid</clothingSet>
+		<imageName>dress.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="MAID"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>DRESS</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]伸手到后面，拉下了[npc.her]的女仆装，然后把[npc.her]的[npc.arms]伸出来，把它从[npc.her]身上滑下来，最后[npc.stepping]了出来。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开了[npc2.namePos]女仆装的后背，然后将[npc2.her]的[npc2.arms]拉出来，让裙子滑落到地上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]着急地解开了[npc2.namePos]女仆裙的后面拉链，然后粗暴地拽出[npc2.her]的[npc2.arms]，将女仆裙一把扯到地上。
+]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]踏进裙子里，把它拉到胸前，然后在背后拉上拉链，确保装饰和围裙整齐摆放。
+]]></self>
+		<other><![CDATA[
+[npc.Name]让[npc2.name][npc2.step]进入裙子，然后将裙子拉到[npc2.her]的躯干上。在背后拉上拉链后，[npc.she]确保装饰和围裙整齐摆放。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强迫[npc2.name][npc2.step]进了连衣裙，然后猛地将它拉过[npc2.her]躯干。粗暴地在后面拉上[npc2.herHim]的拉链，然后[npc.she]确保修边和围裙整齐地摆放。
+]]></otherRough>
+	</replacementText>
+
+	
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]提起[npc.her]女仆装的裙子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉起[npc2.namePos]女仆装的裙子的下摆。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拉起[npc2.namePos]女仆装的裙子的下摆。
+]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]拉下[npc.her]女仆装的裙子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]放下[npc2.namePos]的女仆装裙子的下摆。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地放下[npc2.namePos]的女仆装裙子的下摆。
+]]></otherRough>
+	</replacementText>
+</clothing>

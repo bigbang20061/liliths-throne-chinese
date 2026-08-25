@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name appendColourName="false"><![CDATA[彩虹大腿袜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[彩虹大腿袜]]></namePlural>
+		<description><![CDATA[一双明亮的彩虹色长筒袜，长度延伸至佩戴者的大腿中部。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>SOCK</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>RAINBOW</clothingSet>
+		<imageName>stockings.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects> 
+            <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<customColours>
+			<customColour c0="#ee3b2f" c1="#ee3b3a" c2="#ee3b3b" c3="#ee3b3c" c4="#ee3b3d">
+				<defaultColours>
+					<colour>CLOTHING_RED</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#f38235" c1="#f38236" c2="#f38237" c3="#f38238" c4="#f38239">
+				<defaultColours>
+					<colour>CLOTHING_ORANGE_BRIGHT</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#efca38" c1="#efca39" c2="#efca3a" c3="#efca3b" c4="#efca3c">
+				<defaultColours>
+					<colour>CLOTHING_YELLOW</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#5fd35d" c1="#5fd35e" c2="#5fd35f" c3="#5fd360" c4="#5fd361">
+				<defaultColours>
+					<colour>CLOTHING_GREEN</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#5fd6f3" c1="#5fd6f4" c2="#5fd6f5" c3="#5fd6f6" c4="#5fd6f7">
+				<defaultColours>
+					<colour>CLOTHING_BLUE_LIGHT</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#6e29d4" c1="#6e29d5" c2="#6e29d6" c3="#6e29d7" c4="#6e29d8">
+				<defaultColours>
+					<colour>CLOTHING_PURPLE_DARK</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#afafe7" c1="#afafe8" c2="#afafe9" c3="#afafea" c4="#afafeb">
+				<defaultColours>
+					<colour>CLOTHING_PURPLE_LIGHT</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚塞进彩虹大腿袜中，然后将它们拉到大腿中间。
+]]></self>
+    <other><![CDATA[
+[npc.Name]给[npc2.namePos]的[npc2.feet]套上彩虹大腿袜，然后将它们拉到[npc2.her]的大腿中部。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进彩虹大腿袜中，然后用力将它们拉到[npc2.her]的大腿中部。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下了[npc.her]的彩虹大腿袜。]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的彩虹大腿袜脱下。]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的彩虹大腿袜并粗暴地扯下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

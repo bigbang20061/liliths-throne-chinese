@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <value>0</value>
+    <determiner><![CDATA[一枚]]></determiner>
+    <name><![CDATA[蛛网避孕套]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[蛛网避孕套]]></namePlural>
+    <description><![CDATA[这种由蜘蛛网构成的东西就像避孕套一样，能够防止任何精液进入性对象体内。]]></description>
+
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <slot>PENIS</slot>
+    <rarity>COMMON</rarity>
+
+    <imageName>condom_webbing.svg</imageName>
+	
+	<clothingSet/>
+    <imageEquippedName/>
+	
+	<effects>
+        <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_CONDOM" secondaryModifier="ARCANE_BOOST" timer="0"/>
+	</effects>
+
+    <blockedPartsList>
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired>
+			<clothingAccess>PENIS</clothingAccess>
+        </clothingAccessRequired>
+		<blockedBodyParts/>
+		<clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+
+    <incompatibleSlots/>
+
+    <primaryColours>
+		<colour>CLOTHING_WHITE</colour>
+    </primaryColours>
+    <primaryColoursDye/>
+    <secondaryColours/>
+    <secondaryColoursDye/>
+    <tertiaryColours/>
+    <tertiaryColoursDye/>
+
+    <itemTags>
+      <tag>CONDOM</tag>
+      <tag>DISCARDED_WHEN_UNEQUIPPED</tag>
+      <tag>ENABLE_SEX_EQUIP</tag>
+      <tag>REQUIRES_PENIS</tag>
+      <tag>TRANSPARENT</tag>
+    </itemTags>
+
+  </coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]用[npc.her]的丝囊快速的在[npc.her]的[npc.penis]上吐丝并织成一层厚厚的蜘蛛网。
+]]></self>
+    <other><![CDATA[
+[npc.Name]用[npc.her]的丝囊快速的在[npc2.namePos]的[npc2.penis]上吐丝并织成一层厚厚的蜘蛛网。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]匆忙的用[npc.her]的丝囊粗糙地在[npc2.namePos]的[npc2.penis]上缠上厚厚的一层蜘蛛网。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]摘下[npc.her]的蛛网避孕套并扔到了一边。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将缠在[npc2.namePos]的[npc2.penis]的蜘蛛网扯下来并扔在一边。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]急躁的将缠在[npc2.namePos]的[npc2.penis]的蜘蛛网扯下来并扔在一边。
+]]></otherRough>
+  </displacementText>
+
+
+</clothing>

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>2000</value> 
+		
+		<determiner><![CDATA[一条]]></determiner>
+		
+		<name><![CDATA[马衣]]></name>
+		
+		<namePlural pluralByDefault="true"><![CDATA[马衣]]></namePlural> 
+		
+		<description><![CDATA[一套专为半兽身人设计的特殊长裤，完美贴合各类半兽身人的下半身。微弱的念力附魔让穿戴者无需协助就能轻松穿脱。后部下方设有拉链，方便穿戴者处理私密需求。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>ANDROGYNOUS</femininity> 
+		
+		<slot>LEG</slot> 
+		
+		<rarity>COMMON</rarity> 
+		
+		<clothingSet/>
+		
+		<imageName>taur_trousers.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				
+				<clothingAccessRequired>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessRequired>
+				
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>UNZIPS</displacementType> 
+				
+				<clothingAccessRequired/>
+				
+				<blockedBodyParts>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BREASTS_CROTCH</bodyPart>
+					<bodyPart>NIPPLES_CROTCH</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				
+				<concealedSlots values="CONCEALED_TAUR"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_TAUR_BODY</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将没有拉拉链的马衣从头上拉下，然后允许微弱的念力附魔在[npc.her][npc.legRace]的身体下面拉上拉链。
+]]></self>
+    <other><![CDATA[
+[npc.Name]把没有拉上拉链的马衣拉下[npc2.namePos]的头部，然后在[npc2.her][npc2.legRace]的身体下拉上拉链。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗鲁地将没有拉上拉链的马衣往下拉，然后强行拉上位于[npc2.namePos][npc2.legRace]的身体下的拉链。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]专注于解开[npc.her]马衣的拉链，毫不意外，微弱的念力附魔开始工作，很快允许[npc.herHim]通过把它们拉上头部来脱下它们。
+]]></self>
+    <other><![CDATA[
+[npc.Name]抓住[npc.her]的马衣，然后把它拉过[npc2.namePos]的头顶。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]抓住[npc.her]的马衣，然后把它拽过[npc2.namePos]的头顶。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

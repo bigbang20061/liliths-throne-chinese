@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>1000000</value>
+		<melee>false</melee>
+		<twoHanded>true</twoHanded>
+		<determiner><![CDATA[]]></determiner>
+		<name appendDamageName="false"><![CDATA[MKAR]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[MKAR]]></namePlural>
+		<description><![CDATA[一把现代化突击步枪，可采用半自动和全自动两种射击模式，使用7.62×39mm苏制中间威力弹。采用旋转后拉枪机并由长行程导气活塞驱动，射速为600RPM。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[使用你的MKAR向你的目标发射一颗子弹！]]></attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		<weaponSet/> 
+		<equipText><![CDATA[[npc.Name]拿出[npc.her]的MKAR装上弹匣并拉动拉机柄，使其随时可以射击。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]放下[npc.her]的MKAR。]]></unequipText>
+		<imageName>mkar.svg</imageName>
+		<imageEquippedName>mkar_semi_auto.svg</imageEquippedName> 
+		
+		<damage>21000</damage>
+		<arcaneCost>0</arcaneCost>
+		<damageVariance>LOW</damageVariance>
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		<spells/>
+		<combatMoves>
+			<move>MKAR_MAG_DUMP</move>
+		</combatMoves>
+		<effects/>
+		
+		<primaryColours>
+			<colour>CLOTHING_GUNMETAL</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours> 
+			<colour>CLOTHING_BROWN</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<customColours>
+			<customColour c0="#6C5353" c1="#916F6F" c2="#AC9393" c3="#C8B7B7" c4="#E3DBDB">
+				<defaultColours>
+					<colour>CLOTHING_BROWN</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+			<customColour c0="#abc837" c1="#bcd35f" c2="#cdde87" c3="#dde9af" c4="#eef4d7">
+				<defaultColours>
+					<colour>CLOTHING_GUNMETAL</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags>
+			<tag>CHEAT_ITEM</tag>
+			<tag>CONTRABAND_HEAVY</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]用[npc.her]的MKAR瞄准[npc2.name]并扣动扳机，[npc.she]成功命中[npc2.herHim]的胸部！<br/>幸好，似乎有某种奥术力量阻止[npc2.name]重伤或死亡……
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]的MKAR瞄准[npc2.name]并扣动扳机发射一发子弹射向[npc2.name]，但是最终还是没有击中[npc2.herHim]！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

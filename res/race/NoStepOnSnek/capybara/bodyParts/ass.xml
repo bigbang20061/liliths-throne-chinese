@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ass>
+	<race>NoStepOnSnek_capybara</race>
+	<transformationName><![CDATA[水豚]]></transformationName>
+	<coveringType>NoStepOnSnek_capybara_fur</coveringType>
+	<anusType>NoStepOnSnek_capybara_anus</anusType>
+	<names/>
+	<namesPlural/>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<transformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldCapybara(水豚般)][npc.assholeFullDescription]。
+]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		拥有水豚般[npc.anusFullDescription(true)]
+]]></bodyDescription>
+</ass>

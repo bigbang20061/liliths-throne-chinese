@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[藏宝室(已劫掠)]]></name>
+	<tooltipDescription><![CDATA[一个空木箱摆在房间的中央。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在一个奇怪地下室中的藏宝库里]]></virginityLossDescription>	
+	<sexBlockedFromCharacterPresent/>
+	<svgName>chest</svgName>
+	<colour>BASE_WHITE</colour>
+	<backgroundColour>BASE_BLUE_LIGHT</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>dsg_places_fields_elis_eisek_sillymode_dungeon_treasure_taken</dialogue>
+	<loiteringEnabled>false</loiteringEnabled>
+	<globalMapTile>false</globalMapTile>	
+	<dangerous><![CDATA[true]]></dangerous>	
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<weatherImmunities immuneToAll="true"/>
+	<applyInventoryInit/>
+</placeType>

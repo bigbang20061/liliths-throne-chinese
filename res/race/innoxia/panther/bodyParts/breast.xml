@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<breast>
+	<race>innoxia_panther</race>
+	
+	<transformationName><![CDATA[豹]]></transformationName>
+	
+	<coveringType>innoxia_panther_fur</coveringType>
+	
+	<nippleType>innoxia_panther_nipple</nippleType>
+	
+	<fluidType>innoxia_panther_milk</fluidType>
+	
+	<names/>
+	<namesPlural/>
+	<descriptors/>
+	
+	<namesFlat/>
+	<namesPluralFlat/>
+	<descriptorsFlat/>
+	
+	<transformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldPanther(豹般)][npc.nipplesFullDescription]，[npc.she]在哺乳期会分泌[style.boldPanther(豹乳汁)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.her]的每个[npc.breastSize][npc.breasts]上都长着[npc.nipplesPerBreast]豹般[npc.nipplesFullDescription]。
+]]></bodyDescription>
+	
+	<crotchBoobsTransformationDescription><![CDATA[
+		[npc.She]现在拥有[style.boldPanther(豹般)][npc.crotchNipplesFullDescription]，[npc.she]在哺乳期内会分泌[style.boldPanther(豹乳汁)]。
+	]]></crotchBoobsTransformationDescription>
+	
+	<crotchBoobsBodyDescription><![CDATA[
+		[npc.her]的每个[npc.crotchBoobSize][npc.crotchBoobs]上都长着[npc.crotchNipplesPerBreast]颗豹般[npc.crotchNipplesFullDescription]。
+]]></crotchBoobsBodyDescription>
+</breast>

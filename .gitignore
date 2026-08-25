@@ -1,0 +1,28 @@
+# Maven 构建产物
+target/
+dependency-reduced-pom.xml
+
+# 残留的 git 内部文件
+FETCH_HEAD
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# 日志与临时文件
+*.log
+*.tmp
+
+e2e/
+data/
+e2e-cp.txt
+
+dependency-reduced-pom.xml

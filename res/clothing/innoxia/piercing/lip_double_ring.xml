@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>160</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[唇环]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[唇环]]></namePlural>
+		<description><![CDATA[一对细环，用于戴在一个人的嘴唇穿孔上。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_LIP</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>lip_double_ring.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把唇环戴在[npc.her]的[npc.lip]穿孔上。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把唇环穿在[npc2.namePos]的[npc2.lip]穿孔上。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地将唇环穿在[npc2.namePos]的[npc2.lip]穿孔上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把[npc.her]的唇环从[npc.her]的[npc.lip]上取下。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]把[npc2.namePos]的唇环从[npc2.her]的[npc2.lip]上取下。
+]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地将[npc2.namePos]的唇环从[npc2.her]的[npc2.lip]上拽下。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

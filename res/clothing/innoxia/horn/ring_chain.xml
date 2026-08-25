@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[角环]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[角环]]></namePlural>
+		<description><![CDATA[两对由装饰性的链条相连环，这些环的大小适合套在角上。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+			<slot>HORNS</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>ring_chain.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<stickers>
+			<category id="more_chains" priority="1">
+				<categoryName><![CDATA[Chain count]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="0" colourSelected="GENERIC_GOOD">
+					<stickerName><![CDATA[一条链子]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="add1" priority="1" defaultSticker="true" zLayer="-1">
+					<stickerName><![CDATA[两条链子]]></stickerName>
+					<namePrefix/>
+					<descriptionModification/>
+					<imageName>ring_chain_extra_1.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="add2" priority="2" defaultSticker="true" zLayer="-2">
+					<stickerName><![CDATA[三条链子]]></stickerName>
+					<namePrefix/>
+					<descriptionModification/>
+					<imageName>ring_chain_extra_2.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+		
+		<blockedPartsList slot="HORNS">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="HORNS"/>
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+	<self><![CDATA[
+[npc.Name]将角环挂到[npc.her]的[npc.horns]上，然后允许连接的链子自由悬挂。
+]]></self>
+	<other><![CDATA[
+[npc.Name]将角环挂到[npc2.namePos]的[npc2.horns]上，然后允许连接的链子自由悬挂。
+]]></other>
+	<otherRough><![CDATA[
+[npc.Name]粗暴地将角环挂到[npc2.namePos]的[npc2.horns]上，然后允许连接的链子自由悬挂。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+	<self><![CDATA[
+[npc.Name]将[npc.her]的环从[npc.her]的[npc.horns]上摘下来。
+]]></self>
+	<other><![CDATA[
+[npc.Name]将[npc2.namePos]的环从[npc2.her]的[npc2.horns]上摘下来。
+]]></other>
+	<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的环从[npc2.her]的[npc2.horns]上拽下来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

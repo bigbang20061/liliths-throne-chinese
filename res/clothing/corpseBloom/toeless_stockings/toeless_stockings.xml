@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<authorTag><![CDATA[内衬里缝着的标签告诉你这是由"Blooms"制作的。]]></authorTag>
+		<value>150</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[踩脚袜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[踩脚袜]]></namePlural>
+		<description><![CDATA[一双尼龙过膝踩脚袜。脚趾和脚跟周围的材料已被剪掉，穿着者的足部大部分裸露在外。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>SOCK</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>toeless_stockings.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>FITS_TALONS</tag>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]拽住长筒袜向上拉，一直拉到[npc.her]大腿上。
+]]></self>
+    <other><![CDATA[
+      [npc.Name]将长筒袜套到[npc2.namePos]的[npc2.feet]上，将它一路拉到[npc2.her]的大腿上侧。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地将长筒袜套到[npc2.namePos]的[npc2.feet]上，将它一路拉到[npc2.her]的大腿上侧。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]脱下[npc.her]的长筒袜。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]脱下[npc2.namePos]的长筒袜。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地脱下[npc2.namePos]的长筒袜。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

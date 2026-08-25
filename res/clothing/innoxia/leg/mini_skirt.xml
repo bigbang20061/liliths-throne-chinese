@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>150</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[迷你裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[迷你裙]]></namePlural>
+		<description><![CDATA[一条非常短的裙子，裙摆几乎没到大腿中部。]]></description> 
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>LEG</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>mini_skirt.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_NON_BIPED_BODY_HUMANOID</tag>
+		</itemTags>
+	</coreAttributes>
+	
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]穿上迷你裙，然后把裙子提到[npc.her]的腰部。
+    ]]></self>
+    <other><![CDATA[
+[npc.Name]让[npc2.name]踏入迷你裙，然后拉上以合适[npc2.her]的腰部。]]></other>
+    <otherRough><![CDATA[
+[npc.Name]强迫[npc2.name]踩进迷你裙，然后猛地将它们拉上围上[npc2.her]的腰部。]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[[npc.Name]解开迷你裙，然后脱下它。
+]]></self>
+    <other><![CDATA[
+[npc.Name]拉下[npc2.namePos]迷你裙，然后脱下它。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地拉下[npc2.namePos]的迷你裙，随后用力将它们拽掉。]]></otherRough>
+  </displacementText>
+  
+</clothing>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>40</value> 
+		<determiner><![CDATA[一盒]]></determiner>
+		<name><![CDATA[果蝠沙拉]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[果蝠沙拉]]></namePlural>
+		<description><![CDATA[一个小塑料盒，里面装着一份看起来美味的水果沙拉。盖子上印着一个蝙蝠女盘腿坐着，她正享受着一座山的水果。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/bat/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">bat_fruit_bats_salad.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_BAT_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[蝙蝠]]></potionDescriptor>
+		<associatedRace>BAT_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到[npc.her]的奥术力量增强……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_ARCANE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>BAT_CAVERNS_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]揭开果蝠沙拉盖上的薄膜，然后开始吃其中的水果。橙子、芒果和草莓的切片都非常美味，不一会儿，[npc.herHim]就把整个锅里的食物吃光了。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]揭开果蝠沙拉盖上的薄膜，然后将它呈现给[npc2.name]，并让[npc2.herHim]开始吃其中的水果。橙子、芒果和草莓的切片都非常美味，不一会儿，[npc2.name]就把整个锅里的食物吃光了。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

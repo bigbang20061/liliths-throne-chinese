@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>350</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[低帮滑板鞋]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[低帮滑板鞋]]></namePlural>
+		<description><![CDATA[一双低帮滑板鞋，适合休闲穿着。主要由缝制的棉帆布制成，鞋头和鞋底由柔软的橡胶制成。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>FOOT</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>low_top_skater_shoes.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye/>
+		<secondaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的双脚塞进滑板鞋中，然后系上鞋带。
+]]></self>
+    <other><![CDATA[
+[npc.Name]让[npc2.namePos]将[npc2.feet]塞进滑板鞋中，然后系上鞋带。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地强行将[npc2.namePos]的[npc2.feet]塞进滑板鞋中，然后系上鞋带。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开[npc.her]的滑板鞋鞋带，然后脱下它们。
+]]></self>
+    <other><![CDATA[
+[npc.Name]解开[npc2.namePos]的滑板鞋鞋带，然后脱下它们。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地解开[npc2.namePos]的滑板鞋鞋带，然后用力将它们拖脱。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

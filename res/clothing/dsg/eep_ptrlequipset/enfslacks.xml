@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+		
+		<authorTag><![CDATA[腰间内侧有一个小标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>800</value>
+
+		<determiner><![CDATA[一条]]></determiner>
+
+		<name><![CDATA[执法者便裤]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者便裤]]></namePlural> 
+
+		<description><![CDATA[一条棉质斜纹裤。强化缝线和相对宽松的配合，使它适合穿着去巡逻和站岗。]]></description> 
+
+		<physicalResistance>0</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>LEG</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/>
+
+		<imageName>enfslacks.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/>
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts/> 
+
+				<clothingAccessBlocked> 
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots values="CONCEALED_ANKLES_FROM_TROUSERS"/> 
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>UNZIPS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>PENIS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots values="CONCEALED_UNZIPS_GROIN"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots>
+					<slot>GROIN</slot>
+					<slot>VAGINA</slot>
+					<slot>ANUS</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_VAGINA</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把脚放进裤子里，然后把它提到腰部之后从前面系好扣子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把[npc2.namePos]的休闲裤从腿上拉到腰部，然后系上前面的扣子。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]猛然将[npc2.namePos]腿边的休闲裤提到腰部位置，
+					#IF game.isSillyModeEnabled()
+					#THEN 直接将裤子勒入[npc2.namePos]的臀缝间，
+					#ENDIF
+					粗暴地系上前面的扣子。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]拉下[npc.her]的裤子到脚踝处，随后一脚踢开。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.name]的休闲裤，然后扒到小腿处从[npc2.her]的[npc2.feet]上脱下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]扯开[npc2.name]的休闲裤扣子，随后将它猛然拽掉。
+]]></otherRough>
+	</displacementText>	
+
+	<replacementText type="UNZIPS">
+		<self><![CDATA[
+[npc.Name]拉起[npc.her]休闲裤上的拉链。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉起[npc2.namePos]休闲裤上的拉链。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地拉上[npc2.namePos]休闲裤的拉链
+					#IF game.isSillyModeEnabled() && npc2.hasPenis()
+					#THEN ，毫不在意是否会被什么东西挡住，惊险地擦过[npc2.namePos]的肉棒！
+					#ELSE 。
+					#ENDIF
+					
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="UNZIPS">
+		<self><![CDATA[
+[npc.Name]解开[npc.her]休闲裤上的拉链。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.namePos]休闲裤前面的拉链。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]强行拉开[npc2.namePos]休闲裤的拉链。
+		]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]把[npc.her]的休闲裤拉到[npc.her]的腰部，然后从前面系好扣子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将裤子提到[npc2.her]的腰部，然后系上前面的扣子。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]强行把[npc2.namePos]的休闲裤拉到腰部，然后粗暴地系上前面的扣子。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[
+[npc.Name]解开[npc.her]的休闲裤，然后一把拉下来。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.name]的休闲裤然后脱下来。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]强行解开[npc2.name]的休闲裤然后将其从[npc2.her]腿上用力拉下。
+		]]></otherRough>
+	</displacementText>	
+	
+</clothing>

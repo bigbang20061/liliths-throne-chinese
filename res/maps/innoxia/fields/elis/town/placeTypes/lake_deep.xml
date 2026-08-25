@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[湖]]></name>
+	<tooltipDescription><![CDATA[湖中央深得吓人，看上去很适合埋藏宝藏。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在伊利斯东北部的湖里]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<colour>BASE_BLUE_DARK</colour>
+	<backgroundColour>MAP_BACKGROUND_BLUE</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_elis_generic_lake_deep</dialogue>
+	<furniturePresent>false</furniturePresent>
+	<loiteringEnabled>false</loiteringEnabled>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[WATER_SURFACE]]></aquatic>
+	<darkness><![CDATA[DAYLIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

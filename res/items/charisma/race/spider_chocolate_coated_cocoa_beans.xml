@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>250</value> 
+		<determiner><![CDATA[一罐]]></determiner>
+		<name><![CDATA[巧克力咖啡豆]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[巧克力咖啡豆]]></namePlural>
+		<description><![CDATA[一种金属罐，里面有几十个咖啡豆，上面覆盖着黑巧克力。在罐子的一侧，有一张脸红的蜘蛛女向观众眨眼的图片，还有警示语：<i>“警告！会使蜘蛛陷入严重的醉酒状态！”</i>]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/charisma/spider/subspecies/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">spider_chocolate_coated_cocoa_beans.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>charisma_spider_silk_white</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[蜘蛛]]></potionDescriptor>
+		<associatedRace>charisma_spider</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+			<tag>CAFFEINATED_040</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+[ncp.Name]倒了一把巧克力咖啡豆在[ncp.her][npc.mouth]中嚼碎。接着[npc.she]由于无法控制自己，迅速地吃完了整罐咖啡豆。]]></selfUse>
+		<otherUse><![CDATA[[ncp.Name]给[npc2.name]倒了一把巧克力咖啡豆并放入[ncp.her][npc.mouth]中嚼碎。接着[npc2.she]由于无法控制自己，迅速地吃完了整罐咖啡豆。]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

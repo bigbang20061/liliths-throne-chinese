@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[外皮上一处轻微的火漆印写着“由DSG农民工会的巨龙培育”]]></authorTag>
+		<value>8</value>
+		<determiner><![CDATA[一些]]></determiner>
+		<name><![CDATA[橘子]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[橘子]]></namePlural>
+		<description><![CDATA[这是一种冬季柑橘水果，比许多较大的柑橘果更不酸。果皮带有一种光泽，就好像被抛光过一样。]]></description>
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		<rarity>UNCOMMON</rarity>
+		
+		<imageName>tangerines.svg</imageName>
+		<colourPrimary>BASE_ORANGE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<associatedRace/>
+		<enchantmentItemTypeId/>
+		<enchantmentEffectId/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[在90分钟里[style.boldGood(增加)]5个[style.boldPoison([#ATTRIBUTE_RESISTANCE_POISON.getName()])]。]]></line>
+			<line><![CDATA[[style.colourBlueLight(改变)]液体的风味为[style.colourOrange(橘子味)]。]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/5)]
+			#IF (npc.hasBreasts())
+				[##npc.setMilkFlavour(FLUID_FLAVOUR_ORANGE)]
+			#ENDIF
+			#IF (npc.hasBreastsCrotch())
+				[##npc.setMilkFlavour(FLUID_FLAVOUR_ORANGE)]
+			#ENDIF
+			#IF (npc.hasPenis())
+				[##npc.setCumFlavour(FLUID_FLAVOUR_ORANGE)]
+			#ENDIF
+			#IF (npc.hasVagina())
+				[##npc.setGirlcumFlavour(FLUID_FLAVOUR_ORANGE)]
+			#ENDIF
+			#IF (!npc.hasStatusEffect(SE_dsg_item_fruit_buff_plus))
+				[##npc.addStatusEffect(SE_dsg_item_fruit_buff, 5400)]
+			#ENDIF
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]感到略微健康了一点……
+			</p>
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>SOLD_BY_EISEK</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+			[npc.Name]发现这个橘子很容易剥开，然后开始一瓣一瓣地吃。之后不久就吃完了整个橘子……
+	]]></selfUse>
+		<otherUse><![CDATA[
+[npc.Name]发现这个橘子居然很容易剥开，然后一瓣一瓣地把它喂给了[npc2.name]。之后不久就吃完了整个橘子……
+]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

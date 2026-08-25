@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[皮带扣上的小雕塑印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>500</value> 
+
+		<determiner><![CDATA[一条]]></determiner>
+
+		<name><![CDATA[执法者多功能腰带]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者多功能腰带]]></namePlural> 
+
+		<description><![CDATA[一条由弹道尼龙布制成的双层腰带，带有各类功能口袋和一个可放入副武器的枪套。]]></description> 
+
+		<physicalResistance>1</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>HIPS</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet>dsg_enforcer_patrol</clothingSet>
+
+		<imageName>utilbelt.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+				</clothingAccessRequired>
+
+				<blockedBodyParts> 
+				</blockedBodyParts>
+
+				<clothingAccessBlocked> 
+				</clothingAccessBlocked>
+
+				<concealedSlots/> 
+			</blockedParts>
+
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/> 
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]将多功能腰带环绕腰部，随后合上搭扣。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]将多功能腰带环绕[npc2.namePos]的腰部，随后合上搭扣。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]将多功能腰带紧紧环绕[npc2.namePos]的腰部，随后强行合上搭扣。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]解开多功能腰带。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]解开[npc2.namePos]的多功能腰带。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]从[npc2.namePos]的腰部将多功能腰带扯下。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

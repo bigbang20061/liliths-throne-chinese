@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+    <!-- Elizabeth encounter: -->
+
+    <scene id="elizabeth">
+        <author><![CDATA[AceXp]]></author>
+        <content folderPath="txt/acexp/submission/elizabeth">INTRO</content>
+        <secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+        <continuesDialogue>false</continuesDialogue>
+        <travelDisabled>true</travelDisabled>
+        <responses>
+            <response>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[进入房间]]></responseTitle>
+                <responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_acexp_elizabeth_introduced))
+						靠近伊丽莎白并向她致意。
+					#ELSE
+						进入房间看看是谁在弹钢琴。
+					#ENDIF
+                ]]></responseTooltip>
+                <nextDialogue><![CDATA[acexp_submission_palace_music]]></nextDialogue>
+                <effects><![CDATA[
+                   	[#pc.setNearestLocation(PLACE_TYPE_LYSSIETH_PALACE_ROOM)]
+				]]></effects>
+            </response>
+            <response>
+                <availabilityConditional/>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[0]]></index>
+                <responseTitle><![CDATA[继续]]></responseTitle>
+                <responseTooltip><![CDATA[
+					决定不进入房间，而是继续穿过宫殿。
+                ]]></responseTooltip>
+                <nextDialogue defaultPlaceType="LYSSIETH_PALACE_CORRIDOR"/>
+                <effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'INTRO_EXIT'))]
+					#IF(pc.getLastCell().getLocation().getY() > pc.getLocation().getY())
+						[#pc.moveLocation(0, -1)]
+					#ELSE
+						[#pc.moveLocation(0, 1)]
+					#ENDIF
+				]]></effects>
+            </response>
+        </responses>
+    </scene>
+
+    <scene id="music">
+        <author><![CDATA[AceXp]]></author>
+        <preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'MUSIC'))]
+			#IF(elizabeth.isVisiblyPregnant())
+				[#elizabeth.setCharacterReactedToPregnancy(pc, true)]
+			#ENDIF
+			[#flags.setFlag(FLAG_acexp_elizabeth_introduced, true)]
+			[#flags.setFlag(FLAG_acexp_elizabeth_daily_meeting, true)]
+		]]></preParsingEffects>
+        <content/>
+        <secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+        <continuesDialogue>true</continuesDialogue>
+        <travelDisabled>true</travelDisabled>
+        <responses>
+            <response>
+                <availabilityConditional/>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[交谈]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    和伊丽莎白聊一会她担任王宫守卫的经历。
+					<br/><i>如果你有
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)>=50)
+						[style.italicsGood(一副好身体)]
+					#ELSE
+						[style.italicsBad(一副好身体)]
+					#ENDIF
+					或者在之前的世界里是
+					#IF(pc.hasTraitActivated(PERK_JOB_SOLDIER))
+						[style.italicsGood(一名士兵)]
+					#ELSE
+						[style.italicsBad((一名士兵)]
+					#ENDIF
+					的话你会给伊丽莎白留下深刻的印象。</i>
+                ]]></responseTooltip>
+                <nextDialogue><![CDATA[acexp_submission_palace_interact]]></nextDialogue>
+                <effects><![CDATA[
+					#IF(elizabeth.getAffection(pc)<40)
+						#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)>=50 || pc.hasTraitActivated(PERK_JOB_SOLDIER))
+							[#game.appendToTextEndStringBuilder(elizabeth.incrementAffection(pc, 25))]
+						#ELSE
+							[#game.appendToTextEndStringBuilder(elizabeth.incrementAffection(pc, 5))]
+						#ENDIF
+					#ENDIF
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'CHAT'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'INTERACTION_END'))]
+				]]></effects>
+            </response>
+            <response>
+                <availabilityConditional/>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[2]]></index>
+                <responseTitle><![CDATA[赞美]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    称赞伊丽莎白的钢琴技艺。
+					<br/><i>如果你
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_ARCANE)>=50)
+						[style.italicsGood(精通奥术)]
+					#ELSE
+						[style.italicsBad(精通奥术)]
+					#ENDIF
+					或者在之前的世界里是
+					#IF(pc.hasTraitActivated(PERK_JOB_MUSICIAN))
+						[style.italicsGood(一位钢琴家)]
+					#ELSE
+						[style.italicsBad(一位钢琴家)]
+					#ENDIF
+					的话你会给伊丽莎白留下深刻的印象。</i>
+                ]]></responseTooltip>
+                <nextDialogue><![CDATA[acexp_submission_palace_interact]]></nextDialogue>
+                <effects><![CDATA[
+					#IF(elizabeth.getAffection(pc)<40)
+						#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_ARCANE)>=50 || pc.hasTraitActivated(PERK_JOB_MUSICIAN))
+							[#game.appendToTextEndStringBuilder(elizabeth.incrementAffection(pc, 25))]
+						#ELSE
+							[#game.appendToTextEndStringBuilder(elizabeth.incrementAffection(pc, 5))]
+						#ENDIF
+					#ENDIF
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'PRAISE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'INTERACTION_END'))]
+				]]></effects>
+            </response>
+            <response>
+                <availabilityConditional/>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[3]]></index>
+                <responseTitle><![CDATA[调情]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    与伊丽莎白调情。
+					<br/><i>如果你
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_CORRUPTION)>=50)
+						[style.italicsGood(高度堕落)]
+					#ELSE
+						[style.italicsBad(高度堕落)]
+					#ENDIF
+					或者在之前的世界里是
+					#IF(pc.hasTraitActivated(PERK_JOB_ARISTOCRAT))
+						[style.italicsGood(一位贵族)]
+					#ELSE
+						[style.italicsBad(一位贵族)]
+					#ENDIF
+					的话你会给伊丽莎白留下深刻的印象。</i>
+                ]]></responseTooltip>
+                <nextDialogue><![CDATA[acexp_submission_palace_interact]]></nextDialogue>
+                <effects><![CDATA[
+					#IF(elizabeth.getAffection(pc)<40)
+						#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_CORRUPTION)>=50 || pc.hasTraitActivated(PERK_JOB_ARISTOCRAT))
+							[#game.appendToTextEndStringBuilder(elizabeth.incrementAffection(pc, 25))]
+						#ELSE
+							[#game.appendToTextEndStringBuilder(elizabeth.incrementAffection(pc, 5))]
+						#ENDIF
+					#ENDIF
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'FLIRT'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'INTERACTION_END'))]
+				]]></effects>
+            </response>
+            <response>
+                <availabilityConditional/>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[0]]></index>
+                <responseTitle><![CDATA[离开]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    告诉伊丽莎白你得走了。
+                ]]></responseTooltip>
+                <nextDialogue defaultPlaceType="LYSSIETH_PALACE_CORRIDOR"/>
+                <effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'MUSIC_EXIT'))]
+                   	[#pc.setNearestLocation(PLACE_TYPE_LYSSIETH_PALACE_CORRIDOR)]
+			[#elizabeth.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL, false)]
+				]]></effects>
+            </response>
+        </responses>
+    </scene>
+
+    <scene id="interact">
+        <author><![CDATA[AceXp]]></author>
+        <content/>
+        <secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+        <continuesDialogue>true</continuesDialogue>
+        <travelDisabled>true</travelDisabled>
+        <responses>
+			<!-- Player has penis: -->
+            <response>
+                <availabilityConditional><![CDATA[
+                    [#elizabeth.getAffection(pc)>=25 && pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]
+                ]]></availabilityConditional>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[做爱]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    接受伊丽莎白的提议。
+                ]]></responseTooltip>
+                <nextDialogue/>
+                <secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+                <effects/>
+                <sexVariablesWithManager enabled="true">
+                    <id><![CDATA[acexp_elizabeth_sex]]></id>
+                    <startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+                    <dominants>
+                        <character>
+                            <id>elizabeth</id>
+                            <slot><![CDATA[OVER_DESK_OVER_DESK_ON_BACK]]></slot>
+                        </character>
+                    </dominants>
+                    <submissives>
+                        <character>
+                            <id>pc</id>
+                            <slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+                        </character>
+                    </submissives>
+                    <dominantSpectators/>
+                    <submissiveSpectators/>
+                    <postSexDialogue><![CDATA[acexp_submission_palace_after_sex]]></postSexDialogue>
+                    <sexStartContent folderPath="txt/acexp/submission/elizabeth">SEX_START</sexStartContent>
+                    <ongoingActionsAtStart>
+                        <action>
+                            <id><![CDATA[PenisThighs_THIGH_FUCKING_START]]></id>
+                            <performer><![CDATA[pc]]></performer>
+                            <target><![CDATA[elizabeth]]></target>
+                            <showDescription><![CDATA[false]]></showDescription>
+                            <showEffects><![CDATA[true]]></showEffects>
+                        </action>
+                    </ongoingActionsAtStart>
+                </sexVariablesWithManager>
+            </response>
+			<!-- Player has vagina: -->
+            <response>
+                <availabilityConditional><![CDATA[
+                    [#elizabeth.getAffection(pc)>=25 && (!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)) && pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]
+                ]]></availabilityConditional>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[做爱]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    接受伊丽莎白的提议。
+                ]]></responseTooltip>
+                <nextDialogue/>
+                <secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+                <effects/>
+                <sexVariablesWithManager enabled="true">
+                    <id><![CDATA[acexp_elizabeth_scissoring]]></id>
+                    <startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+                    <dominants>
+                        <character>
+                            <id>elizabeth</id>
+                            <slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+                        </character>
+                    </dominants>
+                    <submissives>
+                        <character>
+                            <id>pc</id>
+                            <slot><![CDATA[OVER_DESK_OVER_DESK_ON_BACK]]></slot>
+                        </character>
+                    </submissives>
+                    <dominantSpectators/>
+                    <submissiveSpectators/>
+                    <postSexDialogue><![CDATA[acexp_submission_palace_after_sex]]></postSexDialogue>
+                    <sexStartContent folderPath="txt/acexp/submission/elizabeth">SEX_START</sexStartContent>
+                    <ongoingActionsAtStart>
+                        <action>
+                            <id><![CDATA[ClitClit_TRIBBING_START]]></id>
+                            <performer><![CDATA[elizabeth]]></performer>
+                            <target><![CDATA[pc]]></target>
+                            <showDescription><![CDATA[false]]></showDescription>
+                            <showEffects><![CDATA[true]]></showEffects>
+                        </action>
+                    </ongoingActionsAtStart>
+                </sexVariablesWithManager>
+            </response>
+			<!-- Player has no penis and no vagina: -->
+            <response>
+                <availabilityConditional><![CDATA[
+                    [#elizabeth.getAffection(pc)>=25 && (!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)) && (!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))]
+                ]]></availabilityConditional>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[做爱]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    接受伊丽莎白的提议。
+                ]]></responseTooltip>
+                <nextDialogue/>
+                <secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+                <effects/>
+                <sexVariablesWithManager enabled="true">
+                    <id><![CDATA[acexp_elizabeth_standard]]></id>
+                    <startingPosition><![CDATA[SITTING]]></startingPosition>
+                    <dominants>
+                        <character>
+                            <id>elizabeth</id>
+                            <slot><![CDATA[SITTING_SITTING]]></slot>
+                        </character>
+                    </dominants>
+                    <submissives>
+                        <character>
+                            <id>pc</id>
+                            <slot><![CDATA[SITTING_SITTING_TWO]]></slot>
+                        </character>
+                    </submissives>
+                    <dominantSpectators/>
+                    <submissiveSpectators/>
+                    <postSexDialogue><![CDATA[acexp_submission_palace_after_sex]]></postSexDialogue>
+                    <sexStartContent folderPath="txt/acexp/submission/elizabeth">SEX_START</sexStartContent>
+                    <ongoingActionsAtStart>
+                        <action>
+							<condition><![CDATA[[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></condition>
+                            <id><![CDATA[TongueMouth_KISS_START]]></id>
+                            <performer><![CDATA[elizabeth]]></performer>
+                            <target><![CDATA[pc]]></target>
+                            <showDescription><![CDATA[false]]></showDescription>
+                            <showEffects><![CDATA[true]]></showEffects>
+                        </action>
+                    </ongoingActionsAtStart>
+                </sexVariablesWithManager>
+            </response>
+			<!-- No sex: -->
+            <response>
+                <availabilityConditional><![CDATA[
+                    [#elizabeth.getAffection(pc)<25]
+                ]]></availabilityConditional>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[做爱]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    要挑起伊丽莎白与你做爱的兴趣，你需要做得比这更好……
+                ]]></responseTooltip>
+                <nextDialogue><![CDATA[null]]></nextDialogue>
+                <secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+                <effects/>
+            </response>
+            <response>
+                <availabilityConditional/>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[2]]></index>
+                <responseTitle><![CDATA[离开]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    与伊丽莎白说再见并离开。
+                ]]></responseTooltip>
+                <nextDialogue defaultPlaceType="LYSSIETH_PALACE_CORRIDOR"/>
+                <effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'INTERACTION_EXIT'))]
+                   	[#pc.setNearestLocation(PLACE_TYPE_LYSSIETH_PALACE_CORRIDOR)]
+			[#elizabeth.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL, false)]
+				]]></effects>
+            </response>
+        </responses>
+    </scene>
+
+    <scene id="after_sex">
+        <author><![CDATA[AceXp]]></author>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[说再见并准备离开……]]></tooltip>
+        <content folderPath="txt/acexp/submission/elizabeth">AFTER_SEX</content>
+        <secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+        <continuesDialogue>false</continuesDialogue>
+        <travelDisabled>true</travelDisabled>
+        <responses>
+            <response>
+                <availabilityConditional/>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[离开]]></responseTitle>
+                <responseTooltip><![CDATA[
+                    与伊丽莎白说再见并离开。
+                ]]></responseTooltip>
+                <nextDialogue defaultPlaceType="LYSSIETH_PALACE_CORRIDOR"/>
+                <effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/acexp/submission/elizabeth', 'AFTER_SEX_EXIT'))]
+					[#elizabeth.applyWash(true, true, null, 0)]
+                   	[#pc.setNearestLocation(PLACE_TYPE_LYSSIETH_PALACE_CORRIDOR)]
+			[#elizabeth.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL, false)]
+				]]></effects>
+            </response>
+        </responses>
+    </scene>
+
+</dialogueNodes>

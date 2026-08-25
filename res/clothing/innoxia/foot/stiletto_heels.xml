@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[细高跟鞋]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[细高跟鞋]]></namePlural>
+		<description><![CDATA[这双鞋子配有细长的高跟，通常被称为细高跟鞋。鞋跟很高，旨在增加穿者的身高，同时远观拉长小腿肌肉和腿部的整体长度。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>FOOT</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>stiletto_heels.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_TAN"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_TAN</colour>
+			<colour>CLOTHING_GREY</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的双脚穿入细高跟鞋中。
+]]></self>
+    <other><![CDATA[
+[npc.Name]让[npc2.namePos]将[npc2.feet]穿入细高跟鞋中。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进细高跟鞋中。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下[npc.her]的细高跟鞋。
+]]></self>
+    <other><![CDATA[
+[npc.Name]帮[npc2.namePos]脱下细高跟鞋。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的细高跟鞋猛力拖脱。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

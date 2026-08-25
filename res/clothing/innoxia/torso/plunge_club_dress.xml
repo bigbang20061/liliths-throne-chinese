@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>600</value> 
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[扎领夜店风连衣裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[扎领夜店风连衣裙]]></namePlural>
+		<description><![CDATA[一件露脐的短裙连衣裙，深深的V领口非常暴露。这件薄薄的面料让穿着者的腹部和胸部完全暴露在外……]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>plunge_club_dress.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots>
+					<slot>NIPPLE</slot>
+					<slot>PIERCING_NIPPLE</slot>
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED_BURGUNDY</colour>
+			<colour>CLOTHING_GREEN_LIME</colour>
+			<colour>CLOTHING_TURQUOISE</colour>
+			<colour>CLOTHING_PURPLE_VERY_DARK</colour>
+			<colour>CLOTHING_PURPLE_ROYAL</colour>
+			<colour>CLOTHING_PURPLE_LIGHT</colour>
+			<colour>CLOTHING_PINK_LIGHT</colour>
+			<colour>CLOTHING_PINK</colour>
+			<colour>CLOTHING_PINK_DARK</colour>
+			<colour>CLOTHING_PINK_HOT</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_GOLD"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>DRESS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name][npc.steps]进夜店风连衣裙，并将它拉到[npc.her][npc.hips+]和[npc.breasts+]周围，然后将带子绕在[npc.her]脖子后面并打上结。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]让[npc2.name][npc.steps]进夜店风连衣裙，并将它拉到[npc2.her][npc2.hips+]和[npc2.breasts+]周围，然后将带子绕在[npc2.her]脖子后面并打上结。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗鲁地迫使[npc2.name][npc.steps]进夜店风连衣裙，并将它拉到[npc2.her][npc2.hips+]和[npc2.breasts+]周围，然后将带子绕在[npc2.her]脖子后面并打上结。
+	]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]解开了夜店风连衣裙，然后脱掉了它。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]解开[npc2.namePos]夜店风连衣裙的绳结并让[npc2.herHim]从滑落的衣服中[npc2.step]了出来。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地解开[npc2.namePos]夜店风连衣裙的绳结并让[npc2.herHim]从滑落的衣服中[npc2.step]了出来。
+		]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+		[npc.Name]将[npc.her]夜店风连衣裙的下裙摆拉回到正确的位置。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]将[npc2.namePos]夜店风连衣裙的下裙摆拉回到正确的位置。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地将[npc2.namePos]夜店风连衣裙的下裙摆拉回到正确的位置。
+	]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+		[npc.Name]拉起[npc.her]夜店风连衣裙的裙摆。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]将[npc2.namePos]夜店风连衣裙的裙摆拉起。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]抓住[npc2.namePos]夜店风连衣裙的裙摆，粗暴地拉了起来。
+		]]></otherRough>
+	</displacementText>
+
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[
+		[npc.Name]解开了夜店风连衣裙的绳结，让夜店风连衣裙的上半部分耷拉到[npc.her]的腰部。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]解开了[npc2.namePos]夜店风连衣裙的绳结，让夜店风连衣裙的上半部分耷拉到[npc2.her]的腰部。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地拽开了[npc2.namePos]夜店风连衣裙的绳结，并将夜店风连衣裙的上半部分拽到[npc2.her]的腰部。
+	]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+		[npc.Name]将[npc.her]夜店风连衣裙的上半部分拉起，并将带子在[npc2.her]的脖子后系了个松散的结。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]将[npc2.namePos]夜店风连衣裙的上半部分拉起，并将带子在[npc2.her]的脖子后系了个松散的结。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地将[npc2.namePos]夜店风连衣裙的上半部分拉起，并将带子在[npc2.her]的脖子后系了个松散的结。
+		]]></otherRough>
+	</replacementText>
+
+	
+</clothing>

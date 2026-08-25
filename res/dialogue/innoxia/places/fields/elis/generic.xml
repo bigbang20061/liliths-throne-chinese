@@ -1,0 +1,1005 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Place type id: innoxia_fields_elis_town_entry_east -->
+	
+	<scene id="entry_east">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'LEAVE_ELIS'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/generic">EXTERNAL_ROAD</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[true]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[离开伊利斯，然后返回弗洛伊田野。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="WORLD_MAP_FIELDS_CITY"/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_WORLD_MAP_FIELDS_CITY)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'EXIT_TO_WORLD_MAP'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_entry_west -->
+	
+	<scene id="entry_west">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'LEAVE_ELIS'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/generic">EXTERNAL_ROAD</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[true]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[离开伊利斯，然后返回弗洛伊田野。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="WORLD_MAP_FIELDS_CITY"/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_WORLD_MAP_FIELDS_CITY)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'EXIT_TO_WORLD_MAP'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_alley -->
+	<scene id="alley">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">ALLEY</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[探索]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(ENCOUNTER_innoxia_elis_alleyway.isAnyEncounterAvailable())
+						花点时间探索周围的小巷，看看能否找到感兴趣的东西。
+					#ELSE
+						你在周围的小巷里找不到任何有用的东西，没有理由浪费时间去探索……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(ENCOUNTER_innoxia_elis_alleyway.isAnyEncounterAvailable())
+						defaultForceEncounter
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_bank -->
+	<scene id="bank">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/bank">EXTERIOR</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#(game.getDayOfWeek()==DOW_SUNDAY && !game.isHourBetween(10, 16)) || (game.getDayOfWeek()!=DOW_SUNDAY && !game.isHourBetween(9, 17))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[银行目前打烊了……]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+				<effects/>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#(game.getDayOfWeek()==DOW_SUNDAY && game.isHourBetween(10, 16)) || (game.getDayOfWeek()!=DOW_SUNDAY && game.isHourBetween(9, 17))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[进入银行。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_bank_exit"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_bank, PLACE_TYPE_innoxia_fields_elis_bank_exit)]
+					[#game.moveBankInventory()]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/bank', 'ENTER'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_cult -->
+	<scene id="cult">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">CULT</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_enforcers -->
+	<scene id="enforcers">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">ENFORCERS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(8, 20))
+						进入执法局……
+					#ELSE
+						执法局目前不向公众开放……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isHourBetween(8, 20))
+						innoxia_places_fields_elis_enforcer_station_exit_initial_entry
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_enforcer_station, PLACE_TYPE_innoxia_fields_elis_enforcer_station_exit)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_fields -->
+	<scene id="fields">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects><![CDATA[
+			#IF(pc.isAtMapEdge())
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'LEAVE_ELIS'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/generic">FIELDS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- Edge of map leave (index 1): -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAtMapEdge()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[离开伊利斯，然后返回弗洛伊田野。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="WORLD_MAP_FIELDS_CITY"/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_WORLD_MAP_FIELDS_CITY)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'EXIT_TO_WORLD_MAP'))]
+				]]></effects>
+			</response>
+			<!-- Near walls fly (index 1): -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToFly() && pc.getNearestCellDistance(PLACE_TYPE_innoxia_fields_elis_town_wall)<3 && !pc.getNearestCellDistance(PLACE_TYPE_innoxia_fields_elis_town_tower)<3]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[飞到墙上]]></responseTitle>
+				<responseTooltip><![CDATA[你有飞行能力，可以从这里飞上伊利斯的城墙。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_wall"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_town_wall)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'FIELDS_FLY_TO_WALL'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToFly() && !pc.getNearestCellDistance(PLACE_TYPE_innoxia_fields_elis_town_wall)<3 && pc.getNearestCellDistance(PLACE_TYPE_innoxia_fields_elis_town_tower)<3]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[飞到塔上]]></responseTitle>
+				<responseTooltip><![CDATA[你有飞行能力，可以从这里飞到最近的塔上。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_tower"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_town_tower)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'FIELDS_FLY_TO_TOWER'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_gatehouse_east -->
+	<scene id="gatehouse_east">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">GATEHOUSE</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- The player is not travelling along the walls (index 1): -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getLastPlaceType()!=PLACE_TYPE_innoxia_fields_elis_town_wall]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[执法者]]></responseTitle>
+				<responseTooltip><![CDATA[接近守卫门房的执法者。<br/>[style.italicsBad(不久后会添加！)] ]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<!-- The player IS travelling along the walls (index 1): -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getLastPlaceType()==PLACE_TYPE_innoxia_fields_elis_town_wall]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[执法者]]></responseTitle>
+				<responseTooltip><![CDATA[接近守卫栅栏的执法者。<br/>[style.italicsBad(不久后会添加！)] ]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_gatehouse_west -->
+	<scene id="gatehouse_west">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">GATEHOUSE</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- The player is not travelling along the walls (index 1): -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getLastPlaceType()!=PLACE_TYPE_innoxia_fields_elis_town_wall]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[执法者]]></responseTitle>
+				<responseTooltip><![CDATA[接近守卫门房的执法者。<br/>[style.italicsBad(不久后会添加！)] ]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<!-- The player IS travelling along the walls (index 1): -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.getLastPlaceType()==PLACE_TYPE_innoxia_fields_elis_town_wall]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[执法者]]></responseTitle>
+				<responseTooltip><![CDATA[接近守卫栅栏的执法者。<br/>[style.italicsBad(不久后会添加！)] ]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_lake -->
+	<scene id="lake">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">LAKE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[转离湖岸，返回田野。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_fields"/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					#IF(pc.getLastCell().getPlace().getPlaceType()==PLACE_TYPE_innoxia_fields_elis_town_fields)
+						[#pc.setLocation(pc.getLastCell())]
+					#ELSE
+						[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_town_fields)]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[游泳]]></responseTitle>
+				<responseTooltip><![CDATA[游到湖中央。<br/>[style.italicsBad(不久后会添加！)] ]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[打水漂]]></responseTitle>
+				<responseTooltip><![CDATA[开始在湖面上打水漂。<br/>[style.italicsBad(不久后会添加！)] ]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_lake_deep -->
+	<scene id="lake_deep">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">LAKE_DEEP</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_market -->
+	<scene id="market">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">MARKET</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(8, 18))
+						进入农贸市场，逛逛摊位……
+					#ELSEIF(game.getHourOfDay()==7)
+						农贸市场的摊位还在布置，没什么可逛的。如果你想购物，应该在一小时后回来……
+					#ELSEIF(game.getHourOfDay()==18)
+						农贸市场的摊位目前开始清理了，没什么可逛的了。如果你想购物的话，明天再来吧……
+					#ELSE
+						农贸市场目前已经关闭，这里除了一个巨大、空旷的鹅卵石广场外，什么也没有。如果你想购物，应该明天再来……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isHourBetween(8, 18))
+						innoxia_places_fields_elis_market_exit
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_elis_market_entry_north))
+						[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_market, PLACE_TYPE_innoxia_fields_elis_market_exit_north)]
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_elis_market_entry_east))
+						[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_market, PLACE_TYPE_innoxia_fields_elis_market_exit_east)]
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_elis_market_entry_south))
+						[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_market, PLACE_TYPE_innoxia_fields_elis_market_exit_south)]
+					#ELSE
+						[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_market, PLACE_TYPE_innoxia_fields_elis_market_exit_west)]
+					#ENDIF
+					
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'MARKET_ENTER'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[信息标牌]]></responseTitle>
+				<responseTooltip><![CDATA[花点时间阅读市场每个入口处的信息标牌。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_elis_generic_market_info</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="market_info">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">MARKET_INFO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[你读完了，离开标牌。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_market"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_pond -->
+	<scene id="pond">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">POND</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[闲逛]]></responseTitle>
+				<responseTooltip><![CDATA[你不怕所谓的池塘怪兽！四处闲逛，看看它是否会现身。<br/>[style.italicsBad(不久后会添加！)] ]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_road_east -->
+	<scene id="road_east">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">EXTERNAL_ROAD</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_road_west -->
+	<scene id="road_west">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">EXTERNAL_ROAD</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_shops -->
+	<scene id="shops">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">SHOPS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[墙之尽头]]></responseTitle>
+				<responseTooltip><![CDATA[前往购物区。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_shops_exit"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_shops, PLACE_TYPE_innoxia_fields_elis_shops_exit)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_street -->
+	<scene id="street">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects><![CDATA[
+			#IF(!pc.isAtMapEdge())
+				[#flags.setFlag(FLAG_innoxia_elis_market_entry_north, false)]
+				[#flags.setFlag(FLAG_innoxia_elis_market_entry_east, false)]
+				[#flags.setFlag(FLAG_innoxia_elis_market_entry_south, false)]
+				[#flags.setFlag(FLAG_innoxia_elis_market_entry_west, false)]
+					
+				#IF(pc.getCellFromLocation(0, -1).getPlace().getPlaceType()==PLACE_TYPE_innoxia_fields_elis_town_market)
+					[#flags.setFlag(FLAG_innoxia_elis_market_entry_north, true)]
+				#ELSEIF(pc.getCellFromLocation(-1, 0).getPlace().getPlaceType()==PLACE_TYPE_innoxia_fields_elis_town_market)
+					[#flags.setFlag(FLAG_innoxia_elis_market_entry_east, true)]
+				#ELSEIF(pc.getCellFromLocation(0, 1).getPlace().getPlaceType()==PLACE_TYPE_innoxia_fields_elis_town_market)
+					[#flags.setFlag(FLAG_innoxia_elis_market_entry_south, true)]
+				#ELSEIF(pc.getCellFromLocation(1, 0).getPlace().getPlaceType()==PLACE_TYPE_innoxia_fields_elis_town_market)
+					[#flags.setFlag(FLAG_innoxia_elis_market_entry_west, true)]
+				#ENDIF
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/generic">STREET</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_tavern -->
+	<scene id="tavern">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">TAVERN</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- First entry -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.isQuestProgressGreaterThan(QUEST_LINE_MAIN, QUEST_MAIN_3_B_MEETING_MERAXIS)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[从酒馆的一个入口进去。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_tavern_f0_first_entry]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_elis_tavern_f0, PLACE_TYPE_innoxia_fields_elis_tavern_f0_exit)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'TAVERN_ENTER'))]
+				]]></effects>
+			</response>
+			<!-- Repeat entry -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isQuestProgressGreaterThan(QUEST_LINE_MAIN, QUEST_MAIN_3_B_MEETING_MERAXIS)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[从酒馆的一个入口进去。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_tavern_f0_exit"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_elis_tavern_f0, PLACE_TYPE_innoxia_fields_elis_tavern_f0_exit)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'TAVERN_ENTER'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_tavern_alley -->
+	<scene id="tavern_alley">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">TAVERN_SEEDY</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isHourBetween(5, 14)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					酒馆现在还没开门……
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					null
+				]]></nextDialogue>
+				<effects/>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.isHourBetween(0, 5) || game.isHourBetween(14, 24)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[推开酒馆的门，向里面走去。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_tavern_alley_exit"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_tavern_alley, PLACE_TYPE_innoxia_fields_elis_tavern_alley_exit)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/tavern_alley', 'INITIAL_ENTRY'))]
+					[#oglix.initBeerBitches()]
+					[#game.initGamblersInElisTavern()]
+				]]></effects>
+			</response>
+			<!-- Kheiron watching: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isQuestCompleted(QUEST_LINE_SIDE_OGLIX_BEER_BARRELS)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[旧马厩]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!game.isHourBetween(6, 7))
+						如果你想看看戈利克斯对喀戎做了什么，你得[units.time(6)]-[units.time(7)]来……
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_oglix_kheiron_spectated_today))
+						你今天看到戈利克斯对喀戎做的了……
+					#ELSE
+						悄悄绕到酒馆后面的旧马厩，看看戈利克斯要对喀戎做什么……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!game.isHourBetween(6, 7) || flags.hasFlag(FLAG_innoxia_oglix_kheiron_spectated_today))
+						null
+					#ELSE
+						innoxia_places_fields_elis_tavern_alley_old_stables
+					#ENDIF
+				]]></nextDialogue>
+				<effects/>
+			</response>
+			<!-- Waiting for Yui: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_yui_public_toy_unlocked)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[唯]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_yui_public_toy_unavailable_today))
+						由于你今天已经拒绝了唯的邀约，在下周五之前都无法在这里见到她……
+					#ELSE
+						唯让你在
+						#IF(game.getDayOfWeek()==DOW_FRIDAY)
+							[style.colourMinorGood(周五)]的
+						#ELSE
+							[style.colourMinorBad(周五)]的
+						#ENDIF
+						#IF(!game.isHourBetween(20, 23))
+							[style.italicsMinorBad([units.time(20)]-[units.time(23)])]之间来这里见她，
+						#ELSE
+							[style.italicsMinorGood([units.time(20)]-[units.time(23)])]之间来这里见她，
+						#ENDIF
+						#IF(game.isHourBetween(20, 23) && game.getDayOfWeek()==DOW_FRIDAY)
+							所以你可以在这里等她出现……
+						#ELSE
+							所以她现在不会出现……
+						#ENDIF
+						
+						#IF(!pc.hasFetish(FETISH_MASOCHIST))
+							<br/>由于你[style.italicsBad(不是受虐狂)]，并不太喜欢，[style.italicsBad(决定不与唯见面)]……
+						#ELSEIF(pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects() || pc.getDirtySlots().size()>0 || (!game.isAnalContentEnabled() && !pc.hasVagina()) || pc.getLegConfiguration()!=LEG_CONFIGURATION_BIPEDAL)
+							<br/>由于你
+							#IF(pc.isAnyEquippedClothingSealed())
+								装备了[style.italicsSealed(被封印)]的衣物，
+							#ENDIF
+							#IF(pc.isHasAnyPregnancyEffects())
+								有[style.italicsSex(怀孕相关的状态效果)]生效，
+							#ENDIF
+							#IF(pc.getDirtySlots().size()>0)
+								[style.italicsDirty(物品栏栏位脏污)]，
+							#ENDIF
+							#IF(!game.isAnalContentEnabled() && !pc.hasVagina())
+								[style.italicsSex(没有阴道)]，
+							#ENDIF
+							#IF(pc.getLegConfiguration()!=LEG_CONFIGURATION_BIPEDAL)
+								[style.italicsTfGeneric(下半身非双足)]，
+							#ENDIF
+							[style.italicsBad(唯不会出现)]！
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_yui_public_toy_unavailable_today) || !game.isHourBetween(20, 23) || game.getDayOfWeek()!=DOW_FRIDAY || pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects() || pc.getDirtySlots().size()>0 || (!game.isAnalContentEnabled() && !pc.hasVagina()) || pc.getLegConfiguration()!=LEG_CONFIGURATION_BIPEDAL)
+						null
+					#ELSE
+						innoxia_places_fields_elis_yui_alleyway_meeting
+					#ENDIF
+				]]></nextDialogue>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_MASOCHIST]]></fetish>
+				</requiredFetishes>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_tavern_taur -->
+	<scene id="tavern_taur">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">TAVERN_TAUR</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[从酒馆的一个入口进去。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_tavern_taur_exit"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_elis_tavern_taur, PLACE_TYPE_innoxia_fields_elis_tavern_taur_exit)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'TAVERN_TAUR_ENTER'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_tower -->
+	<scene id="tower">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">TOWER</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToFly()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[飞下来]]></responseTitle>
+				<responseTooltip><![CDATA[你有飞行能力，可以从这里飞到田野里去。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_fields"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_town_fields)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'TOWER_FLY_TO_FIELDS'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- A standard tower tile (the one in the south-west corner), but this one has the entrance to Yui's basement. -->
+	<scene id="tower_yui">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">TOWER</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_generic_tower">
+			<response>
+				<availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_innoxia_yui_dungeon_unlocked)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[
+					#IF(pc.isAbleToFly())
+						2
+					#ELSE
+						1
+					#ENDIF
+				]]></index>
+				<responseTitle><![CDATA[唯]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_yui_dungeon_unavailable_today))
+						由于你今晚已拒绝了唯的邀请，在她下次出现前你无法在此与她相见，时间要等到
+						#IF(game.getDayOfWeek()==DOW_MONDAY)
+							周三晚上……
+						#ELSE
+							周一晚上……
+						#ENDIF
+					#ELSE
+						#IF(!game.isHourBetween(20, 23))
+							唯让你在[style.italicsMinorBad([units.time(20)]-[units.time(23)])]之间来此找她，具体日期是
+						#ELSE
+							唯让你在[style.italicsMinorGood([units.time(20)]-[units.time(23)])]之间来此找她，具体日期是
+						#ENDIF
+						#IF(game.getDayOfWeek()==DOW_MONDAY)
+							[style.colourMinorGood(周一)]或周三。
+						#ELSEIF(game.getDayOfWeek()==DOW_WEDNESDAY)
+							周一或[style.colourMinorGood(周三)]，
+						#ELSE
+							[style.colourMinorBad(周一或周三)]，
+						#ENDIF
+						#IF(game.isHourBetween(20, 23)&& (game.getDayOfWeek()==DOW_MONDAY || game.getDayOfWeek()==DOW_WEDNESDAY))
+							所以你可以在此等候她的出现……
+						#ELSE
+							所以她此刻不会现身……
+						#ENDIF
+						
+						#IF(!pc.hasFetish(FETISH_MASOCHIST))
+							<br/>由于你[style.italicsBad(并非受虐狂)]，对此感到不安，[style.italicsBad(决定不与唯会面)]……
+						#ELSEIF(pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects() || pc.getDirtySlots().size()>0)
+							<br/>由于你
+							#IF(pc.isAnyEquippedClothingSealed())
+								装备了[style.italicsSealed(被封印)]衣物，
+							#ENDIF
+							#IF(pc.isHasAnyPregnancyEffects())
+								存在[style.italicsSex(怀孕相关状态效果)]，
+							#ENDIF
+							#IF(pc.getDirtySlots().size()>0)
+								[style.italicsDirty(物品栏位污损)]，
+							#ENDIF
+							[style.italicsBad(唯不会出现)]！
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_yui_dungeon_unavailable_today) || !game.isHourBetween(20, 23) || (game.getDayOfWeek()!=DOW_MONDAY && game.getDayOfWeek()!=DOW_WEDNESDAY) || pc.isAnyEquippedClothingSealed() || pc.isHasAnyPregnancyEffects() || pc.getDirtySlots().size()>0)
+						null
+					#ELSE
+						innoxia_places_fields_elis_yui_dungeon_meeting
+					#ENDIF
+				]]></nextDialogue>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_MASOCHIST]]></fetish>
+				</requiredFetishes>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_town_hall -->
+	<scene id="town_hall">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">TOWN_HALL</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getHourOfDay()>=7 && game.getHourOfDay()<21)
+						从标有“公共入口”的门进入伊利斯市镇议会。
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_elis_minotallys_introduced))
+						向执法者出示通行证，然后进入市镇议会。
+					#ELSE
+						市镇议会现在关闭，你不能进去……
+					#ENDIF
+					]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF((game.getHourOfDay()>=7 && game.getHourOfDay()<21) || flags.hasFlag(FLAG_innoxia_elis_minotallys_introduced))
+						innoxia_places_fields_elis_town_hall_f0_exit
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_elis_town_hall_f0, PLACE_TYPE_innoxia_fields_elis_town_hall_f0_exit)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'TOWN_HALL_ENTER'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_wall -->
+	<scene id="wall">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">WALL</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToFly()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[飞下来]]></responseTitle>
+				<responseTooltip><![CDATA[你有飞行能力，可以从这里飞到田野里去。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_elis_town_fields"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_town_fields)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/generic', 'WALL_FLY_TO_FIELDS'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_wood_hut -->
+	<scene id="wood_hut">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">WOOD_HUT</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[敲门]]></responseTitle>
+				<responseTooltip><![CDATA[敲开木屋的门，向友人住客介绍自己。<br/>[style.italicsBad(不久后会添加！)]]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Place type id: innoxia_fields_elis_town_woods -->
+	<scene id="woods">
+		<author><![CDATA[Innoxia]]></author>
+		<title/>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/places/fields/elis/generic">WOODS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[探索]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(ENCOUNTER_innoxia_elis_woodland.isAnyEncounterAvailable())
+						花点时间探索周围的林地，看看能否找到感兴趣的东西。
+					#ELSE
+						你在周围的林地里找不到任何有用的东西，没有理由浪费时间去探索……
+						<br/>
+						<i>或许明天再来会有新收获。</i>
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(ENCOUNTER_innoxia_elis_woodland.isAnyEncounterAvailable())
+						defaultForceEncounter
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>3500</value>
+		<melee>true</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[西福斯短剑]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[西福斯短剑]]></namePlural>
+		<description><![CDATA[一把双刃单手短剑，剑身笔直，刃长#IF(game.isMetricSizes())60cm#ELSE24 inch#ENDIF。古希腊人将其作为继长矛和标枪之后的第二战场武器。]]></description> 
+		<attackDescriptor><![CDATA[劈]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用短剑劈[npc2.name]。]]></attackTooltipDescription>
+		<rarity>COMMON</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]将短剑放在[npc.her]的腰间，以便[npc.she]拔剑。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]将短剑插回剑鞘，然后收好。]]></unequipText>
+		<imageName>xiphos_sheathed.svg</imageName> 
+		<imageEquippedName>xiphos.svg</imageEquippedName> 
+		<damage>25</damage>
+		<arcaneCost>0</arcaneCost>
+		<damageVariance>LOW</damageVariance> 
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>ICE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+			<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		
+		<customColours>
+			<customColour copyColourIndex="0" c0="#ABC837" c1="#BCD35F" c2="#CDDE87" c3="#DDE9AF" c4="#EEF4D7">
+				<defaultColours>
+					<colour>CLOTHING_BLACK</colour>
+					<colour>CLOTHING_DESATURATED_BROWN</colour>
+					<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags>
+			<tag>WEAPON_BLADE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]挥动西福斯短剑劈砍[npc2.name]，虚幻的奥术刀刃穿过了[npc2.her]的身体，[npc.Name]不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]挥舞西福斯短剑砍向[npc2.name]，[npc.she]看到虚幻的刀刃直接穿过了[npc2.namePos]的身体，不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用短剑砍向[npc2.name]，虚幻的刀刃穿过了[npc2.her]的胸膛，使得[npc2.herHim]向后踉跄！
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]用短剑砍向[npc2.name]，但最终没有击中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+[npc.Name]挥舞短剑砍向[npc2.name]，但最终没有击中[npc2.herHim]，[npc.her]发出一声沮丧的呼喊！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]前踏一步，用短剑猛地劈向[npc2.name]，却没能击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

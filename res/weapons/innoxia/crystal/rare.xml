@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>2000</value> 
+		<melee>true</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[晦暗魔石]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[晦暗魔石]]></namePlural> 
+		<description><![CDATA[一块常见的魔石，它的力量可以被吸收进使用者的灵气里来增强元素伤害。据说，像这样的魔石是莉琳高潮的精华结晶。]]></description> 
+		
+		<attackDescriptor><![CDATA[晶击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[近战攻击[npc.Name]，你利用水晶的力量造成额外伤害。]]></attackTooltipDescription>
+		
+		<rarity>RARE</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]将能量汇集于魔石后，魔石便溶解流入了[npc.her]的灵气中，使其能够进行灌注了奥术的徒手攻击。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]专注于将被吸收入灵气中的奥术能量抽取出来，能量重新化形为了晦暗魔石。]]></unequipText>
+		
+		<imageName>rare.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<damage>10</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells changeOnReforge="true">
+			<spell damageType="FIRE">FIREBALL</spell>
+			<spell damageType="ICE">ICE_SHARD</spell>
+			<spell damageType="LUST">ARCANE_AROUSAL</spell>
+			<spell damageType="PHYSICAL">SLAM</spell>
+			<spell damageType="POISON">POISON_VAPOURS</spell>
+		</spells>
+		
+		<effects>
+            <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours/> 
+		<primaryColoursDye/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>WEAPON_UNARMED</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>WEAPON_FERAL_EQUIPPABLE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		#IF(npc.isFeral())
+			[npc.name]立马冲上前去，扬起后躯对着[npc2.namePos]的躯干猛踹了一下。
+		#ELSE
+			[npc.name]立马冲上前去，一拳打在了[npc2.namePos]的[npc2.arm]上。
+		#ENDIF
+		]]></hitText>
+		<hitText><![CDATA[
+		#IF(npc.isFeral())
+			[npc.name]向[npc2.name]袭去，结实地踢在了[npc2.her]的[npc2.leg]上！
+		#ELSE
+			[npc.name]向[npc2.name]袭去，结实地打在了[npc2.her]的[npc2.arm]上！
+		#ENDIF
+		]]></hitText>
+		<hitText><![CDATA[
+		#IF(npc.isFeral())
+			[npc.Name]徒手向[npc2.name]袭去，结实地踢在了[npc2.her]的躯干上。
+		#ELSE
+			[npc.Name]徒手向[npc2.name]袭去，结实地打在了[npc2.her]的躯干上。
+		#ENDIF
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.name]立马冲上前去，向着[npc2.namePos]的[npc2.arm]挥出一拳，但被及时躲开了。
+		]]></missText>
+		<missText><![CDATA[
+		[npc.Name]向[npc2.name]挥出一拳，但却没能击中[npc2.her]身体的任何一处。
+		]]></missText>
+		<missText><![CDATA[
+		[npc.Name]徒手向[npc2.name]袭去，却没能击中。
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>80</value> 
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[棕鼠堡]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[棕鼠堡]]></namePlural>
+		<description><![CDATA[用油纸包起来的双层芝士汉堡。包装纸上有一张照片，一个长着棕色毛发的老鼠男正贪婪地把一个汉堡塞进嘴里。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/rat/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">rat_brown_rats_burger.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_RAT_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[老鼠]]></potionDescriptor>
+		<associatedRace>RAT_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+			<line><![CDATA[若体型不足[style.colourBodySizeThree(“大型”)]，将体型增加一级]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		#IF(npc.getOccupation()==OCCUPATION_TOURIST)
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/5)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				汉堡的味道让[npc.name]想起家，而[npc.she]开始感到更有活力！
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 4)]
+		#ELSE
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更有活力……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		#ENDIF
+		#IF(npc.getBodySizeValue()<60)
+			[#npc.incrementBodySize(1)]
+		#ENDIF
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD_POOR</tag>
+			<tag>SUBMISSION_TUNNEL_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		打开棕鼠堡的纸包装，[npc.name]迅速展露其中的多汁芝士汉堡。把它送到[npc.her]的嘴边，[npc.she]大口咬下，发现汉堡非常美味。在这美味的刺激下，[npc.herHim]只用了几分钟就吃完了这顿饭。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		解开棕鼠堡的纸包装后，[npc.name]迅速展露其中的多汁芝士汉堡，然后把它递给[npc2.name]。把它送到[npc2.her]的嘴边，[npc2.name]大口咬下，发现汉堡非常美味。在这美味的刺激下，[npc2.herHim]只用了几分钟就吃完了这顿饭。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

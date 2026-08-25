@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- START -->
+	
+	<htmlContent tag="START"><![CDATA[
+	#IF(npc.isPlayerKnowsName())
+		<p>
+			你走到[#SPECIAL_PARSE_0]区域的一张空桌前，决定再次坐在[npc.name]对面。
+		</p>
+		<p>
+			[npc.speech(又来了，是吧？)][npc.she]嘲弄道，[npc.speech(等我把你的钱全赢走，可别哭鼻子哦！)]
+		</p>
+		<p>
+			你把[#SPECIAL_PARSE_1]的赌注扣在桌子上，[npc.race]也亮出赌注，然后说道，[npc.speech(行，开始吧。)]
+		</p>
+	#ELSE
+		<p>
+			你走到[#SPECIAL_PARSE_0]区域的一张空桌前，决定坐在[npc.a_race]对面。
+		</p>
+		<p>
+			[npc.speech(你以为自己能赢过我？)][npc.she]嘲弄道，[npc.speech(等我把你的钱全赢走，可别哭鼻子哦！)]
+		</p>
+		<p>
+			你把[#SPECIAL_PARSE_1]的赌注扣在桌子上，[npc.race]也亮出赌注，然后说道，[npc.speech(顺便一说，我叫[npc.name(true)]。得了，开始吧。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- ROLL -->
+	
+	<htmlContent tag="ROLL_WINNING"><![CDATA[
+	<p>
+		你和[npc.name]分别掷出五颗骰子，游戏开始。你的对手盯着停下的骰子，发现你点数更大。[npc.she]懊恼地叹了口气，[npc.speech(真该死……好吧，这才刚刚开始！你要跟注，还是想加注？)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ROLL_DRAWING"><![CDATA[
+	<p>	
+		你和[npc.name]分别掷出五颗骰子，游戏开始。你的对手盯着停下的骰子，发现你稍差一点。[npc.she]讶异地哼了一声，[npc.speech(嗯，看看这个……你要跟注，还是想加注？)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ROLL_LOSING"><![CDATA[
+	<p>
+		你和[npc.name]分别掷出五颗骰子，游戏开始。你的对手盯着停下的骰子，发现自己[npc.sheHasFull]拥有更大的点数。[npc.she]哈哈大笑，[npc.speech(哈！这才刚开始，我已经领先了！这回，你要跟注，还是想加注？)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ROLL_CALL_OPPONENT_RAISES"><![CDATA[
+	<p>
+		[pc.speech(我跟注，)]你靠在椅子上说。
+	</p>
+	<p>
+		[npc.speech(嗯，毫不意外，)][npc.name]笑起来，[npc.speech(你我都知道我会赢。)]
+	</p>
+	<p>
+		[npc.name]向前倾身，把[#SPECIAL_PARSE_0]放在桌上。[npc.her]锁定了你的目光，又发出一声嘲笑。[npc.speech(继续，就弃牌吧。你要完蛋了。)]
+	</p>
+	<p style='text-align:center;'>
+		<i>[npc.Name]<b>加注</b>了[#SPECIAL_PARSE_0]！</i>
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ROLL_CALL_OPPONENT_CALLS"><![CDATA[
+	<p>
+		[pc.speech(我跟注，)]你靠在椅子上说。
+	</p>
+	<p>
+		[npc.speech(对，我觉得也是，)][npc.name]叹了口气，[npc.speech(我也跟注，就这么结了吧。)]
+	</p>
+	<p style='text-align:center;'>
+		<i>[npc.Name]也<b>跟注</b>了！<br/>
+		点击你想要重新掷的骰子，然后按“重摇”。</i>
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ROLL_RAISE_OPPONENT_FOLDS"><![CDATA[
+	<p>
+		[pc.speech(我想我要加注，)]你说，将[#SPECIAL_PARSE_0]放在桌上。
+	</p>
+	<p>
+		[npc.speech(该死……你赢了，)][npc.name]叹了口气，[npc.speech(我弃牌。)]
+	</p>
+	<p style='text-align:center;'>
+		<i>[npc.Name]<b>弃牌</b>！[style.colourExcellent(你赢了！)]</i>
+	</p>
+	[#SPECIAL_PARSE_1]
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ROLL_RAISE_OPPONENT_CALLS"><![CDATA[
+	[#SPECIAL_PARSE_1]
+	<p>
+		[pc.speech(我想我要加注，)]你说，将[#SPECIAL_PARSE_0]放在桌上。
+	</p>
+	<p>
+		[npc.speech(没问题，)][npc.name]回答，[npc.speech(我跟注。)]
+	</p>
+	<p>
+		[npc.Name]将[#SPECIAL_PARSE_0]放在桌上，对你咧嘴一笑，喊道，[npc.speech(让我们结束吧！)]
+	</p>
+	<p style='text-align:center;'>
+		<i>[npc.Name]<b>跟注</b>了你的加注！<br/>
+		点击你想要重新掷的骰子，然后按“重摇”。</i>
+	</p>
+	
+	]]></htmlContent>
+
+	
+	<!-- BET_NEED_REACT -->
+	
+	<htmlContent tag="BET_NEED_REACT_CALL"><![CDATA[
+	[#SPECIAL_PARSE_1]
+	<p>
+		[pc.speech(我跟注，)]你说，将[#SPECIAL_PARSE_0]放在桌上。
+	</p>
+	<p>
+		[npc.speech(好吧，)][npc.name]哼了一声，[npc.speech(只不过是让我赚得更多！现在，让我们结束吧！)]
+	</p>
+	<p style='text-align:center;'>
+		<i>你<b>跟注了</b>[npc.namePos]的加注！<br/>
+		点击你想要重新掷的骰子，然后按“重摇”。</i>
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="BET_NEED_REACT_FOLD"><![CDATA[
+	<p>
+		[pc.speech(对我来说风险太大了，)]你叹了口气，[pc.speech(我弃牌。)]
+	</p>
+	<p>
+		[npc.speech(哈哈！)][npc.name]心满意足地笑了。[npc.speech(你从来都没机会赢！)]
+	</p>
+	<p>
+		于是，[npc.she]过去拿走了一大堆[#SPECIAL_PARSE_0]。
+		#IF(npc.isAttractedTo(pc))
+			你可以离开，或者试试魅惑[npc.herHim]，留下你的钱……
+		#ELSE
+			你看出[npc.name]对你不感兴趣，你只能离开……
+		#ENDIF
+	</p>
+	<p style='text-align:center;'>
+		<i>你<b>弃牌</b>！[style.colourTerrible(你输了！)]</i>
+	</p>
+	
+	]]></htmlContent>
+
+	
+	<!-- REROLL -->
+	
+	<htmlContent tag="REROLL_DRAW_WITH_ROLL"><![CDATA[
+	<p>
+		你和[npc.name]盯着停下的骰子，发现点数完全相同。你们齐声叹息。由于游戏平局，你们将筹码均分，然后离开……
+	</p>
+	<p style='text-align:center;'>
+		<i>你们<b>平局</b>！你们平分了[#SPECIAL_PARSE_0]。</i>
+	</p>
+	[#SPECIAL_PARSE_1]
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REROLL_DRAW_WITHOUT_ROLL"><![CDATA[
+	<p>
+		你和[npc.name]都没选择重新骰点。你们发现点数完全相同，齐声叹息。由于游戏平局，你们将筹码均分，然后离开……
+	</p>
+	<p style='text-align:center;'>
+		<i>你们<b>平局</b>！你们平分了[#SPECIAL_PARSE_0]。</i>
+	</p>
+	[#SPECIAL_PARSE_1]
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REROLL_WIN_WITH_ROLL"><![CDATA[
+	<p>
+		骰子嘎嘎作响，最终停下。[npc.name]发现你赢了，沮丧地叹了口气。[npc.speech(该死……好吧，打得好……)]
+	</p>
+	<p>
+		你搂走赢来的赌注，回应了[npc.namePos]的话，转身离开……
+	</p>
+	<p style='text-align:center;'>
+		[style.colourExcellent(你赢了！)]</i>
+	</p>
+	[#SPECIAL_PARSE_0]
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REROLL_WIN_WITHOUT_ROLL"><![CDATA[
+	<p>
+		你和[npc.name]都没选择重新骰点。[npc.sheIs]已经接受了失败，沮丧地轻声叹息。[npc.speech(该死……好吧，打得好……)]
+	</p>
+	<p>
+		你搂走赢来的赌注，回应了[npc.namePos]的话，转身离开……
+	</p>
+	<p style='text-align:center;'>
+		[style.colourExcellent(你赢了！)]</i>
+	</p>
+	[#SPECIAL_PARSE_0]
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REROLL_LOSS_WITH_ROLL"><![CDATA[
+	<p>
+		骰子嘎嘎作响，最终停下。[npc.name]发现自己赢了，心满意足地笑起来，[npc.speech(哈哈！打得好，你从来都没机会赢！)]
+	</p>
+	<p>
+		于是，[npc.she]过去拿走了一大堆[#SPECIAL_PARSE_0]。
+		#IF(npc.isAttractedTo(pc))
+			你可以离开，或者试试魅惑[npc.herHim]，留下你的钱……
+		#ELSE
+			你看出[npc.name]对你不感兴趣，你只能离开……
+		#ENDIF
+	</p>
+	<p style='text-align:center;'>
+		[style.colourTerrible(你输了！)]</i>
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REROLL_LOSS_WITHOUT_ROLL"><![CDATA[
+	<p>
+		你和[npc.name]都没选择重新骰点。你已经接受了失败，努力抑制着自己的悲伤。你的对手发出胜利的笑声，[npc.speech(哈哈！打得好，你从来都没机会赢！)]
+	</p>
+	<p>
+		于是，[npc.she]过去拿走了一大堆[#SPECIAL_PARSE_0]。
+		#IF(npc.isAttractedTo(pc))
+			你可以离开，或者试试魅惑[npc.herHim]，留下你的钱……
+		#ELSE
+			你看出[npc.name]对你不感兴趣，你只能离开……
+		#ENDIF
+	</p>
+	<p style='text-align:center;'>
+		[style.colourTerrible(你输了！)]</i>
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- END_LOSS_OFFER_BODY -->
+	
+	<htmlContent tag="END_LOSS_OFFER_BODY"><![CDATA[
+	<p>
+		[pc.speech(等等！)]你担心失去你的钱，大声哭喊。
+	</p>
+	<p>
+		[npc.speech(啊？干什么？)][npc.name]问。[npc.she]拿起桌上的钱，眼睛怀疑地眯成一条缝，看向你。
+	</p>
+	<p>
+		[pc.speech(哦……我说……有没有办法拿回我的钱呢？)]你问道，装出最无辜的表情，顺从地垂下眼睛。	
+	</p>
+	<p>
+		[npc.speech(嗯，有一种方法可以让你拿回你那一半的筹码，)][npc.name]回答，低沉的声音中藏着难以抑制的情欲。[npc.speech(我可以把火币都给你，但你要让我操你，就在这，就现在。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="END_LOSS_OFFER_BODY_DECLINE"><![CDATA[
+	<p>
+		[pc.speech(我改变主意了，我不要钱了，)]你说，迅速转身离开。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="END_LOSS_OFFER_BODY_ACCEPT"><![CDATA[
+	<p>
+		你接受了[npc.namePos]的要求，告诉[npc.herHim]，[npc.she]可以随心所欲地使用你，只要[npc.she]先把输掉的钱还你。
+	</p>
+	<p>
+		[npc.Name]发出充满情欲的[npc.moan]，走到你身旁，用[npc.her]的[npc.arms]搂住你的背。[npc.she]对着你邪恶地笑了笑，饥渴地舔着[npc.lips]，低吼道，[npc.speech(会很舒服的哦！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- END_LOSS_SEX -->
+	
+	<htmlContent tag="END_LOSS_AFTER_SEX"><![CDATA[
+	<p>
+		[npc.Name]放开了你，满足地叹息着，[npc.speech(你真是个完美的床伴。或许你可以靠出卖身体吃饭？实话说，你真不擅长骰子扑克。)]
+	</p>
+	<p>
+		围观的众人听了[npc.she]给你的建议，发出一阵哄笑。你迅速收拾好东西，慌张跑走。你决定下次玩得更好一些……
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

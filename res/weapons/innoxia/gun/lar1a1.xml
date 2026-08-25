@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>1000000</value>
+		<melee>false</melee>
+		<twoHanded>true</twoHanded>
+		<determiner><![CDATA[]]></determiner>
+		<name appendDamageName="false"><![CDATA[LAR1A1]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[LAR1A1]]></namePlural>
+		<description><![CDATA[一把轻型半自动步枪，使用20发7.62×51mm北约子弹的可拆卸盒式弹匣。气动枪机由枪管上方的短冲程弹簧活塞驱动，射速约为700RPM。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[使用你的LAR1A1向你的目标发射一颗子弹！]]></attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]拿出[npc.her]的LAR1A1装上弹匣并拉动拉机柄，使其随时可以射击。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]丢下[npc.her]的LAR1A1。]]></unequipText>
+		<imageName>lar1a1.svg</imageName>
+		<imageEquippedName/> 
+		
+		<damage>35000</damage>
+		<arcaneCost>0</arcaneCost>
+		<damageVariance>LOW</damageVariance> 
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		<spells/>
+		<combatMoves/>
+		<effects/>
+		
+		<customColours>
+			<customColour c0="#6C5353" c1="#916F6F" c2="#AC9393" c3="#C8B7B7" c4="#E3DBDB">
+				<defaultColours>
+					<colour>CLOTHING_GUNMETAL</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+			<customColour c0="#6C5D53" c1="#917C6F" c2="#AC9D93" c3="#C8BEB7" c4="#E3DEDB">
+				<defaultColours>
+					<colour>CLOTHING_BLACK</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+			<customColour c0="#6C6753" c1="#918A6F" c2="#ACA793" c3="#C8C4B7" c4="#E3E2DB">
+				<defaultColours>
+					<colour>CLOTHING_BLACK</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+			<customColour c0="#676C53" c1="#8A916F" c2="#A7AC93" c3="#C4C8B7" c4="#E2E3DB">
+				<defaultColours>
+					<colour>CLOTHING_GUNMETAL</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags>
+			<tag>CHEAT_ITEM</tag>
+			<tag>CONTRABAND_HEAVY</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]用[npc.her]的LAR1A1瞄准[npc2.name]并扣动扳机，[npc.she]成功命中[npc2.herHim]的胸部！<br/>幸好，似乎有某种奥术力量阻止[npc2.name]重伤或死亡……
+]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]的LAR1A1瞄准[npc2.name]并扣动扳机发射一发子弹射向[npc2.name]，但是最终还是没有击中[npc2.herHim]！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

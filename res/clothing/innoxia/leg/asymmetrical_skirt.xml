@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>800</value> 
+		
+		<determiner><![CDATA[一条]]></determiner>
+		
+		<name><![CDATA[不对称裙]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[不对称裙]]></namePlural> 
+		
+		<description><![CDATA[一条不对称的裙子，带有有弹性的腰带和系在一侧的结。其中一侧的裁剪特别短，露出穿着者的整条腿。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>FEMININE</femininity> 
+		
+		<slot>LEG</slot> 
+		
+		<rarity>COMMON</rarity> 
+		
+		<clothingSet/>
+		
+		<imageName>asymmetrical_skirt.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType> 
+				
+				<clothingAccessRequired/>
+				
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_NON_BIPED_BODY_HUMANOID</tag>
+		</itemTags>
+	</coreAttributes>
+	
+</clothing>

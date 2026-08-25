@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+	<value>200</value>
+	<determiner><![CDATA[一条]]></determiner>
+	<name><![CDATA[皮带]]></name>
+	<namePlural pluralByDefault="false"><![CDATA[皮带]]></namePlural>
+	<description><![CDATA[一条普通的皮带，配有金属扣。]]></description>
+	<physicalResistance>0</physicalResistance>
+	<femininity>ANDROGYNOUS</femininity>
+	<slot>HIPS</slot>
+	<rarity>COMMON</rarity>
+	
+	<imageName>leather_belt.svg</imageName>
+	
+	<clothingSet/>
+	<imageEquippedName/>
+	<effects/>
+
+	<blockedPartsList>
+	  <blockedParts>
+		
+		<displacementType>REMOVE_OR_EQUIP</displacementType>
+		
+		<clothingAccessRequired/>
+		<blockedBodyParts/>
+		<clothingAccessBlocked/>
+		<concealedSlots/>
+		
+	  </blockedParts>
+	</blockedPartsList>
+	
+	<incompatibleSlots/>
+	
+	<primaryColours>
+		<colour>CLOTHING_BLACK</colour>
+		<colour>CLOTHING_DESATURATED_BROWN</colour>
+		<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+		<colour>CLOTHING_BROWN_DARK</colour>
+		<colour>CLOTHING_BROWN_VERY_DARK</colour>
+	</primaryColours>
+	<primaryColoursDye values="ALL"/>
+	<secondaryColours values="JUST_STEEL"/>
+	<secondaryColoursDye values="ALL_METAL"/>
+	<tertiaryColours/>
+	<tertiaryColoursDye/>
+	
+	<itemTags>
+	  <tag>SOLD_BY_NYAN</tag>
+	</itemTags>
+	
+  </coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将皮带缠绕在[npc.her]的腰上，然后扣上扣子。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将皮带缠绕在[npc2.namePos]的腰上，然后扣上皮带。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]紧紧地将皮带系在[npc2.namePos]腰上，然后扣上皮带。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开了[npc.her]的皮带并把它脱了下来。
+]]></self>
+    <other><![CDATA[
+[npc.Name]解开了[npc2.namePos]的皮带并把它脱了下来。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]不耐烦地解开了[npc2.namePos]皮带，然后把它拽了下来。
+]]></otherRough>
+  </displacementText>
+  
+  
+</clothing>

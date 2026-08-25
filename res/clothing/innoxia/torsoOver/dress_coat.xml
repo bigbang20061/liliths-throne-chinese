@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>2500</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[连衣礼服]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[连衣礼服]]></namePlural>
+		<description><![CDATA[一件连衣礼服，这种连衣礼服外套在穿着时完全不会掩盖穿者的腰部或臀部。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_OVER</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>dress_coat.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		<effects/>
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_WHITE"/>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]穿上了连衣礼服。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]将连衣礼服披在[npc2.namePos]身上并引导[npc2.namePos]的[npc2.arms]穿过连衣礼服的袖子。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将连衣礼服甩在[npc2.namePos]身上并迫使[npc2.namePos]的[npc2.arms]穿过连衣礼服的袖子。
+]]></otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]脱下了[npc.her]的连衣礼服。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的连衣礼服脱下。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的连衣礼服并粗暴地扯下来。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

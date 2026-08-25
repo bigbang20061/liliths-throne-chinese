@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<value>100000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>true</twoHanded>
+		
+		<determiner><![CDATA[​]]></determiner>
+		
+		<name><![CDATA[暗夜塞壬的镰刀]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[暗夜塞壬的镰刀]]></namePlural>
+		
+		<description><![CDATA[一把巨大的奥术刀刃金属镰刀。这把镰刀由 "暗夜塞壬 "亲自附魔，拥有巨大的力量，但挥舞它的人却感觉轻如鸿毛。然而，这种力量是有代价的，每一次挥舞都会消耗持镰者大量的奥术精华……]]></description> 
+		
+		<attackDescriptor><![CDATA[收割]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[向[npc2.name]挥舞镰刀。]]></attackTooltipDescription>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<weaponSet>DARK_SIREN</weaponSet> 
+		
+		<equipText><![CDATA[[npc.Name]抓起暗夜塞壬的镰刀，准备用于战斗。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]放下暗夜塞壬的镰刀。]]></unequipText>
+		
+		<imageName>scythe.svg</imageName> 
+		
+		<imageEquippedName>scythe.svg</imageEquippedName>
+		
+		<damage>100</damage> 
+		
+		<arcaneCost>10</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>ICE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells>
+			<spell>DARK_SIREN_SIRENS_CALL</spell>
+		</spells>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_MELEE_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK_STEEL</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours> 
+			<colour>CLOTHING_PURPLE_DARK</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>WEAPON_BLADE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]朝[npc2.name]挥动镰刀，虚幻的刀刃一接触到[npc2.her]的身体就爆发出巨大的奥术能量，[npc.Name]不禁发出一阵邪恶的笑声！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]朝[npc2.name]挥动镰刀，虚幻的刀刃一接触到[npc2.her]的身体就爆发出灾难性的能量，[npc.Name]愉悦地咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[		
+[npc.Name]朝[npc2.name]挥动镰刀，虚幻的奥术利刃深深地捅进[npc2.her]的肩膀，令其失去了一些能量！
+]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]用镰刀挥向[npc2.name]，但最终没有击中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]向着[npc2.name]挥出镰刀，却没能命中目标，让[npc.she]恼火地大喊一声！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]前踏一步，用镰刀猛地挥向[npc2.name]，却没能击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

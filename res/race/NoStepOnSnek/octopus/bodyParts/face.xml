@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<face>
+	<race>NoStepOnSnek_octopus</race>
+	<transformationName><![CDATA[章鱼]]></transformationName>
+	<coveringType>OCTOPUS_SKIN</coveringType>
+	<mouthType>NoStepOnSnek_octopus_mouth</mouthType>
+	<tags>
+		<tag>FACE_BEAK</tag>
+	</tags>
+	<names/>
+	<namesPlural/>
+	<descriptorsMasculine>
+		<descriptor><![CDATA[章鱼般拟人]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[章鱼般拟人]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</descriptorsFeminine>
+	<noseName><![CDATA[鼻子]]></noseName>
+	<noseNamePlural><![CDATA[noses]]></noseNamePlural>
+	<noseDescriptorsMasculine/>
+	<noseDescriptorsFeminine/>
+	<transformationDescription><![CDATA[
+		[npc.Her]的鼻子和嘴微微抽动，随后扭曲变形，融合在一起，最后伸出短喙，舌头也变薄，像章鱼一样。
+	#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		一层[npc.faceSkin+]细毛迅速长出并覆盖了[npc.her]的新脸，
+	#ELSE
+		就像[npc.her]身体的其它部位一样，[npc.her]的新脸[npc.materialDescriptor][npc.faceSkin+]。[npc.sheIs]得到了解脱。长出的喙能随心变换软硬，并以此做出表情。喙还能扩张并裹住几乎所有[npc.she]想吞进嘴里的东西。
+	#ENDIF
+	当转化彻底完成时，[npc.sheIs]试图喘口气，却发出了娇喘和呻吟。
+	<br/>[npc.Name]现在拥有一张似人的[style.boldOctopus(类章鱼脸)]，[npc.materialDescriptor][npc.faceFullDescription]。在[npc.her][npc.mouth]中有一根[style.boldOctopus(薄薄的章鱼舌头)]。
+]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull]拥有[npc.a_feminineDescriptor(true)]的章鱼面庞，有人类特征，[npc.materialCompositionDescriptor][npc.faceFullDescription(true)]，且有完整的喙。
+]]></bodyDescription>
+	<bodyDescriptionFeral><![CDATA[
+		[npc.SheHasFull] the [npc.feminineDescriptor(true)] face of a feral [npc.legRace], which is [npc.materialDescriptor] [npc.faceFullDescription(true)].
+	]]></bodyDescriptionFeral>
+</face>

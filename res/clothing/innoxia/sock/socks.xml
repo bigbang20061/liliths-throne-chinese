@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>50</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[袜子]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[袜子]]></namePlural>
+		<description><![CDATA[一双标准的及踝棉袜。顶部有松紧带以便固定。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>SOCK</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>socks.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚塞进袜子中。
+]]></self>
+    <other><![CDATA[
+[npc.Name]给[npc2.namePos]的[npc2.feet]套上袜子。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进袜子中。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下了[npc.her]的袜子。]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的袜子脱下。]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的袜子并粗暴地扯下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

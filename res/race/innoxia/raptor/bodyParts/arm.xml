@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<arm>
+	<race>innoxia_raptor</race>
+	
+	<transformationName><![CDATA[猛禽]]></transformationName>
+	
+	<coveringType>innoxia_raptor_feathers</coveringType>
+	
+	<allowsFlight>true</allowsFlight>
+	
+	<tags>
+		<tag>ARM_WINGS</tag>
+		<tag>ARM_WINGS_FEATHERED</tag>
+	</tags>
+	
+	<name><![CDATA[翅膀]]></name>
+	<namePlural><![CDATA[翼]]></namePlural> 
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+		<descriptor><![CDATA[鸟一般]]></descriptor>
+	</descriptorsMasculine>
+	
+	<descriptorsFeminine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+		<descriptor><![CDATA[鸟一般]]></descriptor>
+	</descriptorsFeminine>
+	
+	<handName><![CDATA[手]]></handName>
+	<handNamePlural><![CDATA[掌]]></handNamePlural>
+	<handDescriptorsMasculine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+	</handDescriptorsMasculine>
+	<handDescriptorsFeminine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+		<descriptor><![CDATA[女性化]]></descriptor>
+	</handDescriptorsFeminine>
+	
+	<fingerName><![CDATA[指爪]]></fingerName>
+	<fingerNamePlural><![CDATA[指爪]]></fingerNamePlural>
+	<fingerDescriptorsMasculine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+	</fingerDescriptorsMasculine>
+	<fingerDescriptorsFeminine>
+		<descriptor><![CDATA[覆羽]]></descriptor>
+		<descriptor><![CDATA[女性化]]></descriptor>
+	</fingerDescriptorsFeminine>
+	
+	<transformationDescription><![CDATA[
+		顷刻之间，一层[npc.armFullDescription]已迅速覆盖了它们，[npc.she]看着[npc.her]的新羽毛覆盖手背。当[npc.she]感觉[npc.her]的骨头断裂变成新的形态时，[npc.she]哭叫出声。万幸，转化很快结束，[npc.her]的双臂完全变成了覆羽的翅膀。在[npc.her]曾经的双手上，[npc.her]的两根手指已经缩进了[npc.her]新附属器官的中关节，有两根小食指和一根可对折的拇指，每根拇指的尖端都有一个利爪。在[npc.her]的肩膀处，[npc.her]的新翅膀与[npc.her]的肩膀相接，[npc.her]的新羽毛顺利过渡到覆盖[npc.her]的躯干其余部分的[npc.skin]。
+		<br/>转化结束后，[npc.nameIsFull]拥有的是巨大的[style.boldRaptor(猛禽翼)]手臂，并[npc.materialDescriptor][npc.armFullDescription]。
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+	代替手臂和手的是[npc.she]的[npc.has][npc.armRows]巨大的翅膀，并[npc.materialCompositionDescriptor][npc.armFullDescription(true)] 。
+	#IF(!npc.isFeral())
+	[npc.her]的手由两个食指和一个拇指组成，每个食指和拇指的尖端都有一个利爪。虽然比五个手指的手稍微不那么灵巧一些，但是[npc.sheIs]仍能用它们达成类似手掌的抓握能力。
+	#ENDIF
+	]]></bodyDescription>
+	
+</arm>

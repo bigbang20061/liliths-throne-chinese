@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>20</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[泡泡牛奶]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[泡泡牛奶]]></namePlural>
+		<description><![CDATA[这款“泡泡牛奶”的厚玻璃瓶，就像它的名字所暗示的那样，似乎装了大量的牛奶。透过玻璃，你能看到里面的液体里有小气泡在嘶嘶作响，使这种牛奶看起来像是碳酸饮料。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="75">cow_bubble_milk.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股强大的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]拧开泡泡牛奶瓶子顶部的盖子，头向后仰，迅速地吞下了奶油般的液体。尽管它的名字和外观都很像碳酸饮料，但它味道醇厚没有任何气泡，在喝光整瓶后，一种柔和，宜人的余味在[npc.namePos]口中萦绕。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]从泡泡牛奶瓶子顶部旋开盖子，然后将它送到[npc2.namePos][npc2.lips]边并让[npc2.herHim]喝下了浓郁的液体。尽管它的名字和看起来带有气泡，但口感温和，没有任何气泡感，喝完整瓶后，口中留有一股柔和愉悦的余味。
+	]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

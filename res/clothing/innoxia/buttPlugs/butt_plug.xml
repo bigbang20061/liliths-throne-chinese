@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>150</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[肛塞]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[肛塞]]></namePlural>
+		<description><![CDATA[一个金属塞子，用于塞入某人的肛门。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>ANUS</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>butt_plug.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+				  <bodyPart>ANUS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> <!-- tag values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/ItemTag.java -->
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>PLUGS_ANUS</tag>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>TRANSPARENT</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<sexAttributesSelf> <!-- These are the sex attributes applicable to the wearer (i.e. when inserted in the wearer's orifices or when the wearer is penetrating this clothing type. Mainly used for insertable dildos.) -->
+		<penetration>
+			<length>10</length> <!-- cm value -->
+			<girth>6</girth> <!-- 0-6 corresponding to PenetrationGirth Enum values -->
+			<modifiers/> <!-- This item has no modifiers, but if they are needed, use the format below: -->
+			<!--
+			<modifiers>
+				<mod>VEINY</mod> Drawn from PenetrationModifier Enum values
+			</modifiers>
+			-->
+		</penetration>
+		<orifice/> <!-- This item has no orifice -->
+		<!-- Warning! As of v0.3.7, orifice sex toy support is not fully implemented into the game! -->
+		<!--
+		<orifice>
+			<depth>0</depth> cm value
+			<capacity>0</capacity> cm value corresponding to diameter of orifice
+			<elasticity>3</elasticity> 0-7 corresponding to OrificeElasticity Enum values
+			<plasticity>3</plasticity> 0-7 corresponding to OrificePlasticity Enum values
+			<wetness>0</wetness> 0-7 corresponding to Wetness Enum values
+			<modifiers>
+				<mod>PUFFY</mod> Drawn from OrificeModifier Enum values
+			</modifiers>
+		</orifice>
+		-->
+	</sexAttributesSelf>
+	
+	<sexAttributesOther/> <!-- These are the sex attributes applicable to someone who is interacting with the wearer (i.e. the penetration/orifice which is available for people other than the wearer. Mainly used for strap-on dildos.) -->
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把肛塞塞进[npc.her][npc.asshole+]。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]把肛塞塞进[npc2.namePos][npc2.asshole+]。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]牢牢抓住[npc2.name]并且粗暴地把肛塞插进[npc2.her][npc2.asshole+]。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把肛塞从[npc.her][npc.asshole+]里拔出。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]把肛塞从[npc2.namePos][npc2.asshole+]里拔出。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]紧紧抓住[npc2.namePos]的肛塞并从[npc2.her][npc2.asshole+]里扯出来。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

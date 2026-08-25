@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>DOMINION</worldRegion>
+	<name><![CDATA[前厅]]></name>
+	<tooltipDescription><![CDATA[御城区银行的前厅是一个宽敞的房间，地上铺满了抛光的大理石地砖，拱形的天花板高高在上。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[于御城区银行的前厅]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<colour>BASE_GREY</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_dominion_bank_generic_foyer</dialogue>
+	<populationPresent>
+		<population>
+			<populationType plural="true" density="NUMEROUS">PERSON</populationType>
+			<subspeciesPresent worldType="DOMINION"/>
+		</population>
+		<population>
+			<populationType plural="true" density="COUPLE">SECURITY_GUARD</populationType>
+			<subspeciesPresent worldType="DOMINION">
+				<subspeciesToRemove>HUMAN</subspeciesToRemove>
+			</subspeciesPresent>
+		</population>
+		<population>
+			<populationType plural="true" density="FEW">CLERK</populationType>
+			<subspeciesPresent>
+				<subspecies>DEMON</subspecies>
+			</subspeciesPresent>
+		</population>
+	</populationPresent>
+	<furniturePresent>true</furniturePresent>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>OUTGOING_ONLY</teleportPermissions>
+	<weatherImmunities immuneToAll="true"/>
+	<applyInventoryInit/>
+</placeType>

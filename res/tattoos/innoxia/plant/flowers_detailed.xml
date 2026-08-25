@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>1000</value> 
+		
+		<name><![CDATA[精致的花朵]]></name>
+		
+		<description><![CDATA[交织在一起的盛开的花朵。]]></description> 
+		<bodyOverviewDescription><![CDATA[以花卉为主题的纹身，描绘了一系列交织在一起的盛开花朵]]></bodyOverviewDescription> 
+		
+		<imageName>flowers_detailed.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_PINK_LIGHT"/> 
+		<secondaryColours values="ALL" defaultColour="CLOTHING_GREEN"/> 
+		<tertiaryColours values="ALL" defaultColour="CLOTHING_YELLOW"/>
+		
+	</coreAttributes>
+	
+</tattoo>

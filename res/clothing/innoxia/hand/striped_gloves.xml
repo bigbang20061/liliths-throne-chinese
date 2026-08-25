@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>100</value> 
+		
+		<determiner><![CDATA[一双]]></determiner>
+		
+		<name><![CDATA[条纹手套]]></name>
+		
+		<namePlural pluralByDefault="true"><![CDATA[条纹手套]]></namePlural> 
+		
+		<description><![CDATA[一双由柔软羊毛面料制成的长款露指手套，它们最显著的特征是它们的彩色条纹环状装饰图案。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>ANDROGYNOUS</femininity> 
+		
+		<slot>HAND</slot> 
+		
+		<rarity>COMMON</rarity> 
+		
+		<clothingSet/> 
+		
+		<imageName>striped_gloves.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的[npc.hands]穿进手套，然后将它们拉到[npc.her]的肘部。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将手套穿进[npc2.namePos]的[npc2.hands]，然后将它们拉到[npc2.her]的肘部。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将手套强行戴在[npc2.namePos]的[npc2.hands]上，然后猛力将它们拉到[npc2.her]的肘部。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将手套从[npc.her]的肘部脱下，然后将它们从[npc.her]的[npc.hands]上取下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将手套从[npc2.namePos]的肘部脱下，然后将它们从[npc2.her]的[npc2.hands]上取下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]猛地将手套从[npc2.namePos]的肘部拽下，然后粗暴地将它们从[npc2.her]的[npc2.hands]上拽走。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

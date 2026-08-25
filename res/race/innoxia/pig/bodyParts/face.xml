@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<face>
+	<race>innoxia_pig</race>
+	
+	<transformationName><![CDATA[猪]]></transformationName>
+	
+	<coveringType>innoxia_pig_fur</coveringType>
+	
+	<mouthType>innoxia_pig_mouth</mouthType>
+	
+	<tags>
+		<tag>FACE_MUZZLE</tag>
+		<tag>FACE_NATURAL_BALDNESS_FURRY</tag>
+	</tags>
+	
+	<names/>
+	<namesPlural/> 
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[猪般拟人]]></descriptor>
+		<descriptor><![CDATA[猪般]]></descriptor>
+	</descriptorsMasculine>
+	
+	<descriptorsFeminine>
+		<descriptor><![CDATA[猪般拟人]]></descriptor>
+		<descriptor><![CDATA[猪般]]></descriptor>
+	</descriptorsFeminine>
+	
+	<noseName><![CDATA[猪嘴]]></noseName>
+	<noseNamePlural><![CDATA[snouts]]></noseNamePlural>
+	
+	<noseDescriptorsMasculine/>
+	<noseDescriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[
+		[npc.Her]的鼻子和嘴微微抽动，随后便转化为了似人的猪吻部，[npc.her]的鼻子翘起来就像猪鼻。在[npc.her]嘴里，[npc.her]感到舌头变成了猪一样强壮的舌头。
+	#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		一层[紧致丝滑的细毛迅速长出并覆盖了[npc.her]的新脸，
+	#ELSE
+		就像[npc.her]身体的其它部位一样，[npc.her]的新脸[npc.materialDescriptor][npc.faceSkin+]，
+	#ENDIF
+	当转化彻底完成时，[npc.sheIs]试图喘口气，却发出了娇喘和呻吟。
+	<br/>[npc.Name]现在拥有一张似人的[style.boldPig(类猪脸)]，[npc.materialDescriptor][npc.faceFullDescription]。在[npc.her]嘴中有一根[style.boldPig(强壮的猪舌头)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull]拥有[npc.a_feminineDescriptor(true)]的猪面庞，有人类特征，[npc.materialCompositionDescriptor][npc.faceFullDescription(true)]，且有完整的吻部。
+]]></bodyDescription>
+	
+	<!-- Feral variant of the above. -->
+	<bodyDescriptionFeral><![CDATA[
+		[npc.SheHasFull] the [npc.feminineDescriptor(true)] face of a feral [npc.legRace], which is [npc.materialDescriptor] [npc.faceFullDescription(true)] and complete with a muzzle and pig-like snout.
+	]]></bodyDescriptionFeral>
+	
+</face>

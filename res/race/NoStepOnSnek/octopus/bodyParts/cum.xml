@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<fluid>
+	<race>NoStepOnSnek_octopus</race>
+	<transformationName><![CDATA[章鱼]]></transformationName>
+	<baseFluidType>CUM</baseFluidType>
+	<flavour>CUM</flavour>
+	<namesMasculine>
+		<name><![CDATA[章鱼]]></name>
+	</namesMasculine>
+	<namesFeminine>
+		<name><![CDATA[章鱼]]></name>
+	</namesFeminine>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<defaultFluidModifiers>
+		<modifier>STICKY</modifier>
+		<modifier>SLIMY</modifier>
+	</defaultFluidModifiers>
+</fluid>

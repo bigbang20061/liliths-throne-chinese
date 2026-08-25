@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	
+	
+	<coreAtributes>
+	
+		<authorTag><![CDATA[背心褡裢上有个小标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+	
+		
+		<value>1500</value> 
+		
+		
+		<determiner><![CDATA[一件]]></determiner>
+		
+		
+		<name><![CDATA[防刺背心]]></name>
+		
+		
+		<namePlural pluralByDefault="false"><![CDATA[防刺背心]]></namePlural>
+		
+		
+		<description><![CDATA[一件由弹道织物制成的低调口袋背心，它牺牲防护能力换来了机动性和隐蔽性。]]></description>
+		
+		
+		<physicalResistance>10</physicalResistance> 
+		
+		
+		<femininity>ANDROGYNOUS</femininity> 
+		
+		
+		<slot>TORSO_OVER</slot> 
+		
+		
+		<rarity>EPIC</rarity> 
+		
+		
+		<clothingSet>dsg_enforcer_patrol</clothingSet>
+		
+		
+		<imageName>stpvest.svg</imageName> 
+		
+		
+		<imageEquippedName/> 
+		
+		
+		<stickers>
+			
+			<category id="name_plate" priority="1"> 
+				<categoryName><![CDATA[Name Plate]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1" colourSelected="TEXT_GREY"> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix priority="1"><![CDATA[承包商]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="enforcer" priority="1" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE"> 			
+					<stickerName><![CDATA[执法者]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者]]></namePrefix> 
+					<namePostfix/> 
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>它明确标注为执法者使用。</i>]]></descriptionModification> 
+					<imageName>stpvest_st_enf.svg</imageName> 
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded> 
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved> 
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL) ||
+							!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_SWORD) ||
+							!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_ORICL))
+							Only Enforcers can use an Enforcer nameplate!
+						#ENDIF
+					]]></unavailabilityText> 
+					<availabilityText><![CDATA[
+						As an Enforcer, you can freely use Enforcer name plates.
+					]]></availabilityText> 
+				</sticker>
+				<sticker id="claire" priority="2" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="FEMININE_PLUS"> 
+					<stickerName><![CDATA[克莱尔]]></stickerName>
+					<namePrefix priority="1"><![CDATA[克莱尔的]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这属于克莱尔。</i>]]></descriptionModification>
+					<imageName>stpvest_st_claire.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="false"><![CDATA[
+						#IF(pc.getId() != claire.getId())
+							You can't use Claire's name plate!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText><![CDATA[
+						I don't know what kind of hax you used to unlock this, but apparently you are Claire.
+					]]></availabilityText>
+				</sticker>
+				<sticker id="sean" priority="2" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="FEMININE_PLUS"> 
+					<stickerName><![CDATA[肖恩]]></stickerName>
+					<namePrefix priority="1"><![CDATA[肖恩的]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这属于肖恩。</i>]]></descriptionModification>
+					<imageName>stpvest_st_sean.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="false"><![CDATA[
+						#IF(pc.getId() != sean.getId())
+							You can't use Sean's name plate!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText><![CDATA[
+						Beware of flying CRT monitors.
+					]]></availabilityText>
+				</sticker>
+			</category>
+		</stickers>
+		
+		
+		<effects>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_ICE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>	
+		</effects>
+		
+		
+		<blockedPartsList> 
+		
+			
+			<blockedParts>
+			
+				
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				
+				
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				
+				
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				
+				
+				<clothingAccessBlocked> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked>
+				
+				
+				
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/> 
+
+			</blockedParts>
+
+		</blockedPartsList>
+		
+		
+		<incompatibleSlots/> 
+		
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_GREY"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL"/>
+		
+		
+		
+		<itemTags> 
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	
+	
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]将背心从[npc.her]头顶滑下，把躯干周围的束腰带系紧。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]将背心从[npc2.namePos]的头顶滑下，把躯干周围的束腰带系紧。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]将背心从[npc2.namePos]的头顶压下，把躯干周围的束腰带紧紧系牢。
+		]]></otherRough>
+	</replacementText>
+	
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]解开马甲侧面的束腰带，将头从马甲的领口钻过。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]解开马甲侧面的束腰带，将[npc2.namePos]的头从马甲的领口钻过。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]撕开马甲侧面的束腰带，将[npc2.namePos]的头从马甲的领口猛地拉过。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

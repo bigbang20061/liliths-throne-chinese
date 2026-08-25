@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>250</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[泳裤]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[泳裤]]></namePlural>
+		<description><![CDATA[这款男性泳裤覆盖穿戴者的腹股沟并延伸到大腿上。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>MASCULINE</femininity>
+		<slot>GROIN</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>swim_shorts.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>PENIS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots values="CONCEALED_GENITALS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED_BURGUNDY</colour>
+			<colour>CLOTHING_YELLOW</colour>
+			<colour>CLOTHING_BLUE_LIGHT</colour>
+			<colour>CLOTHING_BLUE</colour>
+			<colour>CLOTHING_BLUE_NAVY</colour>
+			<colour>CLOTHING_BLUE_DARK</colour>
+			<colour>CLOTHING_BLUE_GREY</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK_STEEL</colour>
+			<colour>CLOTHING_STEEL</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>SWIMWEAR</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+      [npc.Name]穿上泳裤，然后用内裤盖住[npc.her]的隐私部位。
+    ]]></self>
+		<other><![CDATA[
+[npc.Name]将泳裤拉上[npc2.namePos]的[npc2.legs]，遮盖[npc2.her]的私密部位。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将泳裤拉上[npc2.namePos]的[npc2.legs]，遮盖住[npc2.her]的私密部位。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的泳裤拉下来，然后用[npc.her]的[npc.feet]将它们踢掉。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉下[npc2.namePos]的泳裤，然后将它们从[npc2.her]的[npc2.feet]上拿走。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的泳裤拉下，然后用力将它们从[npc2.her]的[npc2.feet]上脱下。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

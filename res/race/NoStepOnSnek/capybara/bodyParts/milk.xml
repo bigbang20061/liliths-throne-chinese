@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<fluid>
+	<race>NoStepOnSnek_capybara</race>
+	<transformationName><![CDATA[水豚]]></transformationName>
+	<baseFluidType>MILK</baseFluidType>
+	<flavour>MILK</flavour>
+	<namesMasculine/>
+	<namesFeminine/>
+	<descriptorsMasculine>
+		<name><![CDATA[水豚]]></name>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<name><![CDATA[水豚]]></name>
+	</descriptorsFeminine>
+	<defaultFluidModifiers/>
+</fluid>

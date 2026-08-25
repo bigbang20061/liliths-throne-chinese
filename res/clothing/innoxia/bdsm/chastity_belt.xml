@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>500</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[贞操带]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[贞操带]]></namePlural>
+		<description><![CDATA[一条贞操带，防止穿戴者的阴道被插入。后方的带子上有一个小洞，通向穿戴者的肛门。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>GROIN</slot>
+		<rarity>EPIC</rarity> 
+		<clothingSet>innoxia_bdsm</clothingSet>
+		<imageName>chastity_belt.svg</imageName> 
+		<imageEquippedName/> 
+		<enchantmentLimit/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="MINOR_BOOST" primaryModifier="CLOTHING_SPECIAL" secondaryModifier="CLOTHING_SEALING" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_DRAIN" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GENITALS_NO_ANUS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours values="JUST_GOLD"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		
+		<itemTags> 
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CHASTITY</tag>
+			<tag>PROVIDES_KEY</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]穿上贞操带并上锁。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将贞操带穿在[npc2.namePos]腹股沟，然后锁上贞操带。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将贞操带穿在[npc2.namePos]腹股沟，然后锁上贞操带。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]解开贞操带扣子上的锁并脱下贞操带。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]解开[npc2.namePos]贞操带扣子上的锁并脱下贞操带。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]匆忙地解开[npc2.namePos]贞操带扣子上的锁并脱下贞操带。
+		]]></otherRough>
+	</displacementText>
+</clothing>

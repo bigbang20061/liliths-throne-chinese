@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>100000</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[天使之泪]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[天使之泪]]></namePlural>
+		<description><![CDATA[一支精致的玻璃小瓶，里面装满了淡蓝色的液体。玻璃上刻有一个哭泣的天使的图像，你看到她的眼泪正滴入一个与这个瓶子类似的小瓶中。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">angel_angels_tears.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_CORRUPTION</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_CORRUPTION</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]100%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldGood(回复)]100%[style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.boldExcellent(降低)][style.boldLust(性欲)]到平静水平]]></line>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_LUST.getFormattedValue(50)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM))]
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM))]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股宁静的纯净能量波浪席卷了[npc.name]……
+			</p>
+			#IF(npc.getLust()>npc.getRestingLust())
+				[#npc.setLust(npc.getRestingLust())]
+			#ENDIF
+			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_LUST, 50)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK_QUALITY</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		从天使之泪小瓶中拔出塞子后，[npc.name]将其送到[npc.her]等待[npc.lips]边。淡淡的玫瑰香气从瓶口散发出来，[npc.she]注意到[npc.herself]发出轻轻的叹息，然后将头仰起，喝下了所有的凉爽液体。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		从天使之泪小瓶中拔出塞子后，[npc.name]将其送到[npc2.namePos]等待[npc2.lips]边。淡淡的玫瑰香气从瓶口散发出来，[npc2.name]注意到[npc2.herself]发出轻轻的叹息，然后将头仰起，喝下了所有的冷却液体。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

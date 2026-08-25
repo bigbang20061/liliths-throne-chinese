@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<torso>
+	<race>innoxia_raptor</race>
+	
+	<transformationName><![CDATA[猛禽]]></transformationName>
+	
+	<coveringType>innoxia_raptor_feathers</coveringType>
+	
+	<descriptorsMasculine/>
+	
+	<descriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[
+		片刻后，转化来到末尾。[npc.she]身上的瘙痒终于褪去，发出了解脱的叹息。层层叠叠的羽毛覆盖在[npc.her]的躯干上。新生的羽毛与[npc.her]的身体线条紧密贴合，触感相当光滑。
+		<br/>[npc.Name]现在拥有[style.boldRaptor(猛禽般)][npc.skinFullDescription]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.Her]的躯干有着[npc.a_femininity(true)]外观，并且是[npc.materialCompositionDescriptor][npc.skinFullDescription(true)]。
+]]></bodyDescription>
+</torso>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- AMBUSH -->
+	
+	<htmlContent tag="AMBUSH"><![CDATA[
+	<p>
+		你小心翼翼地走下楼打开了门，发现里面出奇地光亮。入口两旁随意地堆满了山高的垃圾，也许是上百年来的怪异的工艺品和其他庸俗粗制的东西。你没什么时间为这些东西分心。然而，一股无形的力量猛地关上了门，连带着两旁的垃圾堆倾塌而下，万幸你及时避开了！
+	</p>
+	<p>
+		当一切尘埃落定，你发现入口已经被堵死。你别无他法，只能继续深入……
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- BOSS -->
+	
+	<htmlContent tag="BOSS"><![CDATA[
+	<p>
+		相对其他“房间”来说，这间的内饰装修会好很多，但仍然是一片昏暗。墙上画着许多骷髅头、沾满蛛网的旧书以及其他死气沉沉的东西，地上散乱躺着的正是画中之物。角落的梯子通向屋内其他地方，房间正中央的则是曾经托放过神秘命运宝珠的大理石底座，但再仔细看看，这好像只是个鸟池。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- ENTRY -->
+	
+	<htmlContent tag="ENTRY"><![CDATA[
+	<p>
+		在这倾塌的垃圾山背后的曾是通往外界的门路，但你甚至无法看见门框在哪，因为垃圾堆得实在太高了，满是粗制滥造的工艺品和毫无价值的垃圾。一路挖出去是一个肮脏又危险的
+		#IF(pc.hasSpell(SPELL_TELEKENETIC_SHOWER))
+			选择，即便你能用念力驱动土魔法。
+		#ELSE
+			选择。
+		#ENDIF
+		居住在这“地牢”里的人是怎么重置这个陷阱的，又或者他们会不会真的费心这么做，实在令人上心。除了继续深入外，这里根本没有其他的路可走。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- EXIT -->
+	
+	<htmlContent tag="EXIT"><![CDATA[
+	<p>
+		来到这扇门前，空气迅速变得清新起来。这里一定是出去的路，或者至少离出口更接近了。真是奇怪，一个地下室怎么会有两个出入口……
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- EXIT_TAKEN -->
+	
+	<htmlContent tag="EXIT_TAKEN"><![CDATA[
+	<p>
+		你打开门，循着楼梯走回了伊利斯街。你听到背后的门猛地关上了。你转身想再次打开门，但是被堵住了。也许是另一堆垃圾堆塌下来了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- PASSAGE -->
+	
+	<htmlContent tag="PASSAGE"><![CDATA[
+	<p>
+		从地面到天花板，通道两侧的墙壁似乎都用不合适的硬纸板拼接而成。但透过缝隙，你偶尔会瞥见灰尘覆盖的垃圾，像是来自未知时代。墙上画着鹅卵石、手铐、烛台和各种相关的物件，或多或少模拟出地牢的真实场景。脚下是一块不起眼的鹅卵石地面，家具拖动的痕迹和人的脚印仍然清晰可见。上方悬挂着一团奥术灯光，给此地增添了更多的阴郁气氛。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TRAP -->
+	
+	<htmlContent tag="TRAP"><![CDATA[
+	<p>
+		这个区域明显比前后的通道更宽敞。在中央，你可以看到一些点燃的蜡烛和气罐组成的简陋喷火陷阱。在这个由纸板制成，还有守卫的地牢中安装这个陷阱是鲁莽的。虽然陷阱本体很简陋，但它的触发绊线密集得像张网。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TRAP_SUCCESS -->
+	
+	<htmlContent tag="TRAP_SUCCESS"><![CDATA[
+	<p>
+		#IF(pc.hasSpell(SPELL_TELEKENETIC_SHOWER))
+			利用土控魔法在安全距离外引爆陷阱简直是小菜一碟。当陷阱被触发时，一股烈焰射入房间，熄灭了蜡烛。这当然是解除陷阱的一种方法。
+		#ELSEIF(pc.hasSpell(SPELL_VACUUM))
+			你可以轻松地用真空魔法熄灭蜡烛，解除陷阱。为验证陷阱已失效，你漫不经心地走进房间，触发了所有的绊线，但什么都没有发生。
+		#ELSEIF(pc.hasSpell(SPELL_PROTECTIVE_GUSTS))
+			你可以轻松地用风魔法吹灭蜡烛，解除陷阱。为验证陷阱已失效，你漫不经心地走进房间，触发了所有的绊线，但什么都没有发生。
+		#ELSEIF(pc.hasSpell(SPELL_SOOTHING_WATERS)||pc.hasSpell(SPELL_RAIN_CLOUD))
+			你可以轻松地用冰魔法浇灭蜡烛，解除陷阱。为验证陷阱已失效，你漫不经心地走进房间，触发了所有的绊线，但什么都没有发生。
+		#ELSE
+			你设法在没有触发陷阱的情况下通过了这些绊线，并小心地吹灭了每一支蜡烛，解除了陷阱。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TRAP_FAILURE -->
+	
+	<htmlContent tag="TRAP_FAILURE"><![CDATA[
+	<p>
+		你试着穿过这些绊线，但却不小心触发了其中一根，一股烈焰射入房间，
+		#IF(pc.isImmuneToDamageType(DAMAGE_TYPE_FIRE) || pc.getAttributeValue(ATTRIBUTE_RESISTANCE_FIRE) >= 30)
+			但你的火抗保护了你！定睛一看，你发现刚才爆发的烈焰也把蜡烛熄灭了。这里应该安全了。
+		#ELSE
+			逼得你赶紧后退！定睛一看，你发现刚才爆发的烈焰也把蜡烛熄灭了。这里应该安全了。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TRAP_TRIGGERED -->
+	
+	<htmlContent tag="TRAP_TRIGGERED"><![CDATA[
+	<p>
+		这个区域明显比它前后的通道更宽敞。中间有一个喷火陷阱，但作为其点火源的蜡烛已经熄灭，使其无害。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TREASURE -->
+	
+	<htmlContent tag="TREASURE"><![CDATA[
+	<p>
+		这是一个死胡同，三面都有墙。这里空无一物，除了一个没有上锁的古老的箱子，盖子上潦草地写着“零食储备”。偷看一下里面，肯定没人会介意吧？
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TREASURE_TAKING -->
+	
+	<htmlContent tag="TREASURE_TAKING"><![CDATA[
+	<p>
+		你打开箱子，发现有一堆散乱的火币。嗯……是你的了。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TREASURE_TAKEN -->
+	
+	<htmlContent tag="TREASURE_TAKEN"><![CDATA[
+	<p>
+		这是一个三面都有墙的死胡同。这里空无一物，除了一个被你洗劫的古老箱子。这个奇怪的地方有一段时间没有零食了。
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

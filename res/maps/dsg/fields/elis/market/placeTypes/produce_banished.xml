@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	
+	<name><![CDATA[
+		空地
+	]]></name>
+
+	<tooltipDescription><![CDATA[
+		一个还没有新租户的空地。
+	]]></tooltipDescription>
+	
+	<virginityLossDescription><![CDATA[在伊利斯的农贸市场]]></virginityLossDescription>
+	
+	<sexBlockedFromCharacterPresent>false</sexBlockedFromCharacterPresent>
+	<colour>BASE_GREY</colour>
+	
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>	
+	<encounterType/>
+	
+	<dialogue>dsg_places_fields_elis_market_produce_banished_stall</dialogue>
+	
+	<populationPresent/>
+	
+	<furniturePresent>false</furniturePresent>	
+	<wallsPresent>false</wallsPresent>	
+	<loiteringEnabled>true</loiteringEnabled>	
+	<globalMapTile>false</globalMapTile>	
+	<dangerous><![CDATA[false]]></dangerous>	
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>	
+	<aquatic><![CDATA[LAND]]></aquatic>	
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>	
+	<teleportPermissions>BOTH</teleportPermissions>	
+	<weatherImmunities/>
+	<applyInventoryInit/>
+	
+</placeType>

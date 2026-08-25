@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>225</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[硅油]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[硅油]]></namePlural>
+		<description><![CDATA[这是一瓶装满了“硅油”的塑料瓶。它声称是一种用于“性玩具、玩偶和重型机械”的润滑剂，并带有大字标识“禁止饮用”。背面的说明继续说明它只能安全地用于玩偶，这应该会让玩偶的腔道更湿润。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">doll_silic_oil.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>GENERIC_SEX</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_SEXUAL</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.colourHuman(非玩偶：)][style.colourTerrible(吸取)]75% [style.colourHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[style.colourDoll(玩偶：)][style.colourGood(增加)]所有[style.colourSex(腔穴)]的[style.colourWetness(湿度)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			#IF(npc.getRace()!=RACE_DOLL)
+				[##npc.incrementHealth(-npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)*(3/4))]
+				<p style='margin-bottom:0; padding-bottom:0;'>
+					[npc.name]的胃里涌上一种不适感，让[npc.herHim]感觉非常难受……
+				</p>
+			#ELSE
+				<p style='margin-bottom:0; padding-bottom:0;'>
+					[npc.Name]感到油在[npc.her]的硅胶身体中扩散，片刻后它开始从[npc.her]的孔洞里开始渗出……
+				</p>
+				[#npc.incrementFaceWetness(1)]
+				#IF(npc.hasBreasts())
+					[#npc.incrementBreastMilkStorage(50)]
+				#ENDIF
+				#IF(npc.hasBreastsCrotch())
+					[#npc.incrementBreastCrotchMilkStorage(50)]
+				#ENDIF
+				#IF(npc.hasVagina())
+					[#npc.incrementVaginaWetness(1)]
+				#ENDIF
+				[#npc.incrementAssWetness(1)]
+				#IF(npc.hasSpinneret())
+					[#npc.incrementSpinneretWetness(1)]
+				#ENDIF
+			#ENDIF
+			
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]打开了硅油瓶的盖子，然后将瓶子举到[npc.her]等待[npc.lips]边上，并立刻将整瓶液体喝光。
+		#IF(npc.getRace()!=RACE_DOLL)
+			[npc.She]因这讨厌的硅油滑入[npc.her]的喉咙而哽咽并发出咕噜声。
+		#ELSE
+			[npc.She]急切地吞下每一滴，发现硅油的味道非常美味。
+		#ENDIF
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]打开硅油瓶子的盖子，然后将它举到[npc2.namePos]等待[npc2.lips]边并让[npc2.her]喝下整瓶。
+		#IF(npc.getRace()!=RACE_DOLL)
+			[npc2.Name]因这讨厌的硅油滑入[npc2.her]的喉咙而哽咽并发出咕噜声。
+		#ELSE
+			[npc2.Name]急切地吞下每一滴，发现硅油的味道非常美味。
+		#ENDIF
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

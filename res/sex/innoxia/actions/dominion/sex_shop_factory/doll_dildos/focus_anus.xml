@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		#IF(sex.getNumberOfOrgasms(pc)==0)
+			[#pc.getClothingInSlot(IS_ANUS)!=null]
+		#ELSE
+			[#pc.getClothingInSlot(IS_ANUS).getColour(0)==COLOUR_CLOTHING_PINK_DARK]
+		#ENDIF
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>FIVE_EXTREME</arousalPerformer>
+	<arousalTarget>ZERO_NONE</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		[##pc.setArousal(100)]
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[骑乘假阳具]]></title>
+	<tooltip><![CDATA[
+		按照玩偶的命令，在大假阳具上起起伏伏。
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)==0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				你不假思索地顺从了玩偶，沉入巨大的马科假阳具中。巨大的假阳具整个插入你的硅胶屁眼时，你不禁发出一声高亢的呜咽。你的人造屁眼能轻易伸展，以容纳巨大的假阳具。你俯下身将臀颊贴在水泥地板上，感觉到平平的龟头正深深地插入你深不可测的腔穴。
+				
+				<br/><br/>
+				
+				现在，你的三个洞都被用来测试性玩具，你真的觉得自己不过是个听话的性爱玩偶。带着这种想法，你突然发现自己正处于羞耻的高潮边缘。
+			]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getNumberOfOrgasms(pc)>0]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				玩偶命令你骑上巨大的螺纹假阳具，你被巨大硅胶马屌堵着的嘴巴发出一声轻柔而低沉的呻吟。你向后伸手分开臀瓣，沉入假阳具中，感觉着玩具的每一根粗肋都在强行进入你的屁眼，然后深深地将其插入你的硅胶腔穴中，你发出了愉悦的呻吟。到了底部，你的臀颊拍打着冰冷的水泥地面，这时你抬起身子，开始上下起伏。
+				
+				<br/><br/>
+				
+				你放松屁眼，抓住塞进你小穴深处的马科假阳具的一端，继续操你的小穴，同时肛交这个巨大的螺纹假阳具。这种强烈的刺激很快就把你推到了你所能承受的极限，你意识到自己即将达到高潮！
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

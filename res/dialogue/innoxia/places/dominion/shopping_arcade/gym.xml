@@ -1,0 +1,1306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_path -->
+	<scene id="path">
+		<!-- Set session started here so that if the player is a member then returning to reception will trigger the 'repeat' dialogue -->
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_pix_session_started, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">PATH</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_dominion_shopping_arcade_gym_exit -->
+	<scene id="exit">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">EXIT</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[走出健身房，回到购物中心。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="SHOPPING_ARCADE_PIXS_GYM"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_SHOPPING_ARCADE, PLACE_TYPE_SHOPPING_ARCADE_PIXS_GYM)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'EXIT_LEAVE'))]
+					[#flags.setFlag(FLAG_innoxia_pix_session_started, false)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="exit_initial_entry">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_pix_workout_pix_completed, false)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">EXIT_INITIAL_ENTRY</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_exit"/>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_reception -->
+	<scene id="reception">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION'))]
+			[#flags.setFlag(FLAG_innoxia_pix_introduced, true)]
+			[#flags.setFlag(FLAG_innoxia_pix_talk_gym, false)]
+			[#flags.setFlag(FLAG_innoxia_pix_talk_boxing, false)]
+			[#flags.setFlag(FLAG_innoxia_pix_talk_yoga, false)]
+			#IF(pix.isVisiblyPregnant())
+				[#pix.setCharacterReactedToPregnancy(pc, true)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!pc.hasItemType(ITEM_innoxia_quest_gym_membership_card) && !flags.hasFlag(FLAG_innoxia_pix_session_started)]]]></travelDisabled>
+		<responses>
+			<!-- Tour: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_pix_had_tour)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[观光]]></responseTitle>
+				<responseTooltip><![CDATA[跟着皮克斯带你参观健身房。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_tour]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.walkPathNoEffects(3, 0, true, 1)]
+					[#pix.setLocation(pc)]
+				]]></effects>
+			</response>
+			<!-- Session access: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_pix_had_tour) && !pc.hasItemType(ITEM_innoxia_quest_gym_membership_card)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_session_started) || pc.getMoney()<100)
+						一次([style.moneyFormatUncoloured(100, span)])
+					#ELSE
+						一次([style.moneyFormat(100, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_session_started))
+						你已经在健身房买过课了！
+					#ELSEIF(pc.getMoney()<100)
+						你没有100火币在健身房买课！
+					#ELSE
+						告诉皮克斯你想花100火币在健身房买课。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_session_started) || pc.getMoney()<100)
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_session
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-100))]
+					[#flags.setFlag(FLAG_innoxia_pix_session_started, true)]
+				]]></effects>
+			</response>
+			<!-- Membership: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_pix_had_tour) && !pc.hasItemType(ITEM_innoxia_quest_gym_membership_card)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.getMoney()<8000 || !game.getCharactersPresent().contains(pix))
+						办卡([style.moneyFormatUncoloured(8000, span)])
+					#ELSE
+						办卡([style.moneyFormat(8000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!game.getCharactersPresent().contains(pix))
+						你只能从皮克斯这办卡成为终身会员，她只有白天在这。
+					#ELSEIF(pc.getMoney()<8000)
+						你没有八千火币来办卡成为终身会员！
+					#ELSE
+						给皮克斯八千火币，告诉她想办卡成为终身会员。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()<8000 || !game.getCharactersPresent().contains(pix))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_membership
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-8000))]
+					[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_quest_gym_membership_card), false, true))]
+					[#flags.setFlag(FLAG_innoxia_pix_session_started, true)]
+				]]></effects>
+			</response>
+			<!-- Pix session: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(pix) && flags.hasFlag(FLAG_innoxia_pix_had_tour) && pc.hasItemType(ITEM_innoxia_quest_gym_membership_card)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[皮克斯的锻炼场]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isVisiblyPregnant())
+						皮克斯不愿意让你在怀孕时做剧烈运动！
+					#ELSEIF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你太累了，做不了皮克斯那累人的日常训练！
+					#ELSE
+						皮克斯就在附近，她一边做上下跳动，一边瞟你。显然她想让你约她来点私人训练……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE) || pc.isVisiblyPregnant())
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_dominion_shopping_arcade_gym, PLACE_TYPE_innoxia_dominion_shopping_arcade_gym_weights)]
+					[#pix.setLocation(pc)]
+					[#flags.setFlag(FLAG_innoxia_pix_workout_weights_saved_energy, true)]
+					[#flags.setFlag(FLAG_innoxia_pix_workout_cardio_saved_energy, true)]
+				]]></effects>
+			</response>
+			<!-- Talking: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_pix_had_tour) && game.getCharactersPresent().contains(pix)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[健身房]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_talk_gym))
+						你已经问过皮克斯健身房的历史了！
+					#ELSE
+						问问皮克斯健身房的历史。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_talk_gym))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_pix_talk_gym, true)]
+					[#flags.setFlag(FLAG_innoxia_pix_talk_boxing, false)]
+					[#flags.setFlag(FLAG_innoxia_pix_talk_yoga, false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_TALK_GYM'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_pix_had_tour) && game.getCharactersPresent().contains(pix)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[汉娜]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_talk_boxing))
+						你已经向皮克斯打听过汉娜了！
+					#ELSE
+						向皮克斯打听打听拳击教练，那个斑鬣狗女汉娜。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_talk_boxing))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_pix_talk_gym, false)]
+					[#flags.setFlag(FLAG_innoxia_pix_talk_boxing, true)]
+					[#flags.setFlag(FLAG_innoxia_pix_talk_yoga, false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_TALK_BOXING'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_pix_had_tour) && game.getCharactersPresent().contains(pix)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[梵天]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_talk_yoga))
+						你已经向皮克斯打听过梵天了！
+					#ELSE
+						向皮克斯打听打听瑜伽教练，那个牛男梵天。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_pix_talk_yoga))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_pix_talk_gym, false)]
+					[#flags.setFlag(FLAG_innoxia_pix_talk_boxing, false)]
+					[#flags.setFlag(FLAG_innoxia_pix_talk_yoga, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_TALK_YOGA'))]
+				]]></effects>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasItemType(ITEM_innoxia_quest_gym_membership_card) && !flags.hasFlag(FLAG_innoxia_pix_session_started)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉皮克斯你现在没空，但你稍后会回来。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_shopping_arcade_gym_exit"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_dominion_shopping_arcade_gym, PLACE_TYPE_innoxia_dominion_shopping_arcade_gym_exit)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_tour">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_TOUR</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟着皮克斯穿过健身房。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_tour_next]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.walkPathNoEffects(0, 2, true, 1)]
+					[#pix.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_tour_next">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_TOUR_NEXT</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[回去]]></responseTitle>
+				<responseTooltip><![CDATA[跟随皮克斯回到接待处。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_tour_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_dominion_shopping_arcade_gym, PLACE_TYPE_innoxia_dominion_shopping_arcade_gym_reception)]
+					[#pix.setLocation(pc)]
+					[#flags.setFlag(FLAG_innoxia_pix_had_tour, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_tour_end">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_TOUR_END</content>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_reception"/>
+	</scene>
+	
+	<scene id="reception_membership">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_MEMBERSHIP</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_reception"/>
+	</scene>
+	
+	<scene id="reception_session">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_SESSION</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_reception"/>
+	</scene>
+	
+	<scene id="reception_talk">
+		<content/>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#!pc.hasItemType(ITEM_innoxia_quest_gym_membership_card) && !flags.hasFlag(FLAG_innoxia_pix_session_started)]]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_reception"/>
+	</scene>
+	
+	<scene id="reception_pix_workout">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT</content>
+		<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[全力以赴]]></responseTitle>
+				<responseTooltip><![CDATA[全力以赴举重训练。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_cardio]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_dominion_shopping_arcade_gym, PLACE_TYPE_innoxia_dominion_shopping_arcade_gym_cardio)]
+					[#pix.setLocation(pc)]
+					[#flags.setFlag(FLAG_innoxia_pix_workout_weights_saved_energy, false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_FULL_EFFORT'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMuscle(5))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[顶住]]></responseTitle>
+				<responseTooltip><![CDATA[撑住，保存体力……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_cardio]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_dominion_shopping_arcade_gym, PLACE_TYPE_innoxia_dominion_shopping_arcade_gym_cardio)]
+					[#pix.setLocation(pc)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_HELD_BACK'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMuscle(2))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_pix_workout_cardio">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_CARDIO</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[稳步前进]]></responseTitle>
+				<responseTooltip><![CDATA[将跑步机设在稳定的速度。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_pix_workout_cardio_saved_energy, false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_CARDIO_FULL_EFFORT'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementBodySize(-5))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[慢跑]]></responseTitle>
+				<responseTooltip><![CDATA[将跑步机设在慢跑来保存体力。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_CARDIO_HELD_BACK'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementBodySize(-2))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_pix_workout_end">
+		<preParsingEffects><![CDATA[
+			[#pc.addStatusEffect(SE_GYM_FATIGUE, 23400)]
+			[#pix.incrementPerkProgress()]
+			[#flags.setFlag(FLAG_innoxia_pix_workout_pix_completed, true)]
+			[#game.appendToTextEndStringBuilder(pix.incrementAffection(pc, 5))]
+			
+			[#game.appendToTextEndStringBuilder(pix.getPerkProgressString())]
+			
+			#IF(!pc.hasPerkAnywhereInTree(PERK_PIX_TRAINING) && flags.getSavedLong('gym_perk_progress')>=100)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'PERK_PROGRESS_COMPLETE'))]
+				[#game.appendToTextEndStringBuilder(pc.addSpecialPerk(PERK_PIX_TRAINING))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[皮克斯的报酬]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isAbleToOrgasm())
+						你没办法高潮，故而无法接受皮克斯“一对一冷却训练”的提议……
+					#ELSE
+						你清楚皮克斯说的“一对一冷却训练”是什么意思……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.isAbleToOrgasm())
+						null
+					#ELSEIF(!game.isNonConEnabled())
+						innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward_non_con
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_dominion_shopping_arcade_gym, PLACE_TYPE_innoxia_dominion_shopping_arcade_gym_showers)]
+					[#pix.setLocation(pc)]
+					[#pc.applyWash(true, false, SE_CLEANED_SHOWER, 270)]
+					[#pix.applyWash(true, true, SE_CLEANED_SHOWER, 270)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[回绝]]></responseTitle>
+				<responseTooltip><![CDATA[你太累了，没力气应付皮克斯……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_no_reward]]></nextDialogue>
+				<effects><![CDATA[
+					[#pix.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_pix_workout_end_no_reward">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_NO_REWARD</content>
+		<secondsPassed><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_cardio"/>
+	</scene>
+	
+	<scene id="reception_pix_workout_end_reward">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接受]]></responseTitle>
+				<responseTooltip><![CDATA[让皮克斯跟你爽爽。]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_shopping_arcade_gym_pix_shower]]></id>
+					<startingPosition><![CDATA[SHOWER_TIME_PIX]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pix</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_FACING_TARGET_SHOWER_PIX]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_AGAINST_WALL_SHOWER_PIX]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[回绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉皮克斯你现在太累了……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_shopping_arcade_gym_showers"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_END_REWARD_DECLINED'))]
+					[#pix.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_pix_workout_end_reward_after_sex">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[皮克斯爽够了，帮你离开浴室……]]></tooltip>
+		<preParsingEffects><![CDATA[
+			[#pix.returnToHome()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[恢复体力后，你可以回到健身房了……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_shopping_arcade_gym_showers"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_END_REWARD_AFTER_SEX_LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_pix_workout_end_reward_non_con">
+		<preParsingEffects><![CDATA[
+			#IF(!flags.hasFlag(FLAG_innoxia_pix_workout_weights_saved_energy) || !flags.hasFlag(FLAG_innoxia_pix_workout_cardio_saved_energy))
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_EXHAUSTED'))]
+			#ELSEIF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)<pix.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE))
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_WEAKER'))]
+			#ELSE
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_STRONGER'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[太累了]]></responseTitle>
+				<responseTooltip><![CDATA[告诉皮克斯，你太累了，做不了任何锻炼了。]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_shopping_arcade_gym_pix_shower_non_con]]></id>
+					<startingPosition><![CDATA[SHOWER_TIME_PIX]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pix</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_FACING_TARGET_SHOWER_PIX]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_AGAINST_WALL_SHOWER_PIX]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_TOO_TIRED</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[提供性爱]]></responseTitle>
+				<responseTooltip><![CDATA[告诉皮克斯你可以补偿她……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_shopping_arcade_gym_pix_shower_non_con]]></id>
+					<startingPosition><![CDATA[SHOWER_TIME_PIX]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pix</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_FACING_TARGET_SHOWER_PIX]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_AGAINST_WALL_SHOWER_PIX]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_OFFER_SEX</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[接受惩罚]]></responseTitle>
+				<responseTooltip><![CDATA[向皮克斯道歉并接受她的惩罚。]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_shopping_arcade_gym_pix_shower_non_con]]></id>
+					<startingPosition><![CDATA[SHOWER_TIME_PIX]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pix</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_FACING_TARGET_SHOWER_PIX]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[UNIQUE_FACE_TO_WALL_AGAINST_WALL_SHOWER_PIX]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_ACCEPT_PUNISHMENT</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[挣脱束缚]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_pix_workout_weights_saved_energy) || !flags.hasFlag(FLAG_innoxia_pix_workout_cardio_saved_energy))
+						你把所有体力都放在皮克斯有氧和举重运动了，没力气挣脱束缚！
+					#ELSE
+						用运动保留的体力挣脱皮克斯的控制。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_pix_workout_weights_saved_energy) || !flags.hasFlag(FLAG_innoxia_pix_workout_cardio_saved_energy))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward_non_con_break_free
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pix.returnToHome()]
+				]]></effects>
+			</response>
+			<!-- Turn tables: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_pix_workout_weights_saved_energy) || !flags.hasFlag(FLAG_innoxia_pix_workout_cardio_saved_energy) || pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)<pix.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[扭转形势]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_pix_workout_weights_saved_energy) || !flags.hasFlag(FLAG_innoxia_pix_workout_cardio_saved_energy))
+						你把所有体力都放在皮克斯有氧和举重运动了，没力气来扭转局面！
+					#ELSE
+						皮克斯比你更强壮(她[#pix.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)]的体格比你[#pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)]强)，在这种情况下你无法扭转局面。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#(flags.hasFlag(FLAG_innoxia_pix_workout_weights_saved_energy) && flags.hasFlag(FLAG_innoxia_pix_workout_cardio_saved_energy)) && pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)>=pix.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[扭转形势]]></responseTitle>
+				<responseTooltip><![CDATA[用运动保留的体力脱皮克斯的控制，扭转局面……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_shopping_arcade_gym_pix_shower_as_dom]]></id>
+					<startingPosition><![CDATA[AGAINST_WALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[AGAINST_WALL_STANDING_WALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pix</id>
+							<slot><![CDATA[AGAINST_WALL_BACK_TO_WALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_reception_pix_workout_end_reward_after_sex_as_dom]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_TURN_TABLES</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_pix_workout_end_reward_after_sex_as_dom">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你和皮克斯爽够了……]]></tooltip>
+		<preParsingEffects><![CDATA[
+			[#pix.returnToHome()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_AFTER_SEX_AS_DOM</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[true]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[恢复体力后，你可以回到健身房了……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_shopping_arcade_gym_showers"/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_pix_workout_end_reward_non_con_break_free">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">RECEPTION_PIX_WORKOUT_END_REWARD_NON_CON_BREAK_FREE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[处理完皮克斯的问题，你回到了健身房……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_shopping_arcade_gym_showers"/>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_cardio -->
+	<scene id="cardio">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">CARDIO</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- Running: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跑]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你累到不能再锻炼了！
+					#ELSE
+						使用跑步机来减小你的体型。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_cardio_workout
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'CARDIO_WORKOUT_RUNNING'))]
+					[#pc.addStatusEffect(SE_GYM_FATIGUE, 25200)]
+					[#game.appendToTextEndStringBuilder(pc.incrementBodySize(-5))]
+					#IF(pix.getSexCount(pc).getTotalTimesHadSex()>0 && pix.getWorldLocation()==WORLD_TYPE_innoxia_dominion_shopping_arcade_gym)
+						[#game.appendToTextEndStringBuilder(pix.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Cycling: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[骑]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你累到不能再锻炼了！
+					#ELSEIF(!pc.isBipedal())
+						因为你不是双足行走身体类型，所以你不能使用自行车机……
+					#ELSE
+						使用自行车机来减小你的体型。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE) || !pc.isBipedal())
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_cardio_workout
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'CARDIO_WORKOUT_CYCLING'))]
+					[#pc.addStatusEffect(SE_GYM_FATIGUE, 25200)]
+					[#game.appendToTextEndStringBuilder(pc.incrementBodySize(-5))]
+					#IF(pix.getSexCount(pc).getTotalTimesHadSex()>0 && pix.getWorldLocation()==WORLD_TYPE_innoxia_dominion_shopping_arcade_gym)
+						[#game.appendToTextEndStringBuilder(pix.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Rowing: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[划]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你累到不能再锻炼了！
+					#ELSEIF(!pc.isBipedal())
+						因为你不是双足行走身体类型，所以你不能使用划船机……
+					#ELSE
+						使用划船机来减小你的体型。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE) || !pc.isBipedal())
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_cardio_workout
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'CARDIO_WORKOUT_ROWING'))]
+					[#pc.addStatusEffect(SE_GYM_FATIGUE, 25200)]
+					[#game.appendToTextEndStringBuilder(pc.incrementBodySize(-5))]
+					#IF(pix.getSexCount(pc).getTotalTimesHadSex()>0 && pix.getWorldLocation()==WORLD_TYPE_innoxia_dominion_shopping_arcade_gym)
+						[#game.appendToTextEndStringBuilder(pix.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="cardio_workout">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">POST_WORKOUT_FATIGUE</content>
+		<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_cardio"/>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_weights -->
+	<scene id="weights">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">WEIGHTS</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- Weights: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[自由重量器材]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你累到不能再锻炼了！
+					#ELSE
+						使用自由举重器来减小你的体型。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_weights_workout
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'WEIGHTS_WORKOUT_WEIGHTS'))]
+					[#pc.addStatusEffect(SE_GYM_FATIGUE, 25200)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMuscle(5))]
+					#IF(pix.getSexCount(pc).getTotalTimesHadSex()>0 && pix.getWorldLocation()==WORLD_TYPE_innoxia_dominion_shopping_arcade_gym)
+						[#game.appendToTextEndStringBuilder(pix.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Resistance machines: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[机械]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你累到不能再锻炼了！
+					#ELSE
+						使用杠铃机来减小你的体型。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_weights_workout
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'WEIGHTS_WORKOUT_MACHINES'))]
+					[#pc.addStatusEffect(SE_GYM_FATIGUE, 25200)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMuscle(5))]
+					#IF(pix.getSexCount(pc).getTotalTimesHadSex()>0 && pix.getWorldLocation()==WORLD_TYPE_innoxia_dominion_shopping_arcade_gym)
+						[#game.appendToTextEndStringBuilder(pix.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Body weight: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[体重]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你累到不能再锻炼了！
+					#ELSE
+						做一系列基于身体重量的锻炼来增长肌肉。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_weights_workout
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'WEIGHTS_WORKOUT_BODY_WEIGHT'))]
+					[#pc.addStatusEffect(SE_GYM_FATIGUE, 25200)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMuscle(5))]
+					#IF(pix.getSexCount(pc).getTotalTimesHadSex()>0 && pix.getWorldLocation()==WORLD_TYPE_innoxia_dominion_shopping_arcade_gym)
+						[#game.appendToTextEndStringBuilder(pix.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="weights_workout">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">POST_WORKOUT_FATIGUE</content>
+		<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_weights"/>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_yoga -->
+	<scene id="yoga">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">YOGA</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[瑜伽]]></responseTitle>
+				<responseTooltip><![CDATA[
+					等待Brahman来上瑜伽课……
+					<br/>[style.italicsMinorBad(未来会更新的！)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_showers -->
+	<scene id="showers">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">SHOWERS</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[快速淋浴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					洗个快澡。
+					<br/>[style.italicsGood(最多能从所有腔穴种清理<b>[style.fluid(500)]</b>液体。)]
+					<br/>[style.italicsGood(这<b>只能</b>清理你正在装备的衣物。)]
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_dominion_shopping_arcade_gym_showers]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'SHOWERS_QUICK'))]
+					[#game.appendToTextStartStringBuilder(pc.applyWash(false, false, SE_CLEANED_SHOWER, 120+10))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[全身冲淋]]></responseTitle>
+				<responseTooltip><![CDATA[
+					洗个澡，花些时间清理自己。
+					<br/>[style.italicsExcellent(这会清理你腔穴里的<b>所有</b>液体。)]
+					<br/>[style.italicsGood(这<b>只能</b>清理你正在装备的衣物。)]
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_dominion_shopping_arcade_gym_showers]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'SHOWERS_THOROUGH'))]
+					[#game.appendToTextStartStringBuilder(pc.applyWash(true, false, SE_CLEANED_SHOWER, 240+20))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_sauna -->
+	<scene id="sauna">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">SAUNA</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[桑拿]]></responseTitle>
+				<responseTooltip><![CDATA[
+					走进桑拿房，在蒸汽中度过美好时光……
+					<br/>[style.italicsMinorBad(未来会更新的！)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_pool -->
+	<scene id="pool">
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">POOL</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[游泳]]></responseTitle>
+				<responseTooltip><![CDATA[
+					滑进泳池游泳……
+					<br/>[style.italicsMinorBad(未来会更新的！)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+    <!-- Place type id: innoxia_dominion_shopping_arcade_gym_boxing -->
+	<scene id="boxing">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING'))]
+			[#flags.setFlag(FLAG_innoxia_hannah_talk_history, false)]
+			[#flags.setFlag(FLAG_innoxia_hannah_talk_pix, false)]
+			[#flags.setFlag(FLAG_innoxia_hannah_talk_yoga, false)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- Intro: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(hannah) && !flags.hasFlag(FLAG_innoxia_hannah_introduced)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[汉娜]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType(ITEM_innoxia_quest_gym_membership_card))
+						你不是健身房的会员，不能上汉娜的课，最好还是不要打扰她……
+					#ELSE
+						靠近正在训练的汉娜，介绍你自己。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.hasItemType(ITEM_innoxia_quest_gym_membership_card))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_boxing_hannah
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_HANNAH_INTRO'))]
+					[#flags.setFlag(FLAG_innoxia_hannah_introduced, true)]
+				]]></effects>
+			</response>
+			<!-- Repeat: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(hannah) && flags.hasFlag(FLAG_innoxia_hannah_introduced)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[汉娜]]></responseTitle>
+				<responseTooltip><![CDATA[靠近正在训练的汉娜打个招呼。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_boxing_hannah]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_HANNAH'))]
+					[#flags.setFlag(FLAG_innoxia_lights_out_hannah_last_night_met, false)]
+					[#flags.setFlag(FLAG_innoxia_lights_out_hannah_last_night_sex, false)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="boxing_hannah">
+		<preParsingEffects><![CDATA[
+			#IF(hannah.isVisiblyPregnant())
+				[#hannah.setCharacterReactedToPregnancy(pc, true)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉汉娜你得走了。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_dominion_shopping_arcade_gym_path"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(WORLD_TYPE_innoxia_dominion_shopping_arcade_gym, PLACE_TYPE_innoxia_dominion_shopping_arcade_gym_path)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_HANNAH_LEAVE'))]
+				]]></effects>
+			</response>
+			<!-- Boxing lesson: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(hannah) && flags.hasFlag(FLAG_innoxia_hannah_introduced)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[拳击课]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasItemType(ITEM_innoxia_quest_gym_membership_card))
+						你得成为健身房的会员才能上汉娜的拳击课……
+					#ELSEIF(pc.isVisiblyPregnant())
+						汉娜不想在你怀孕的时候给你上课！
+					#ELSEIF(pc.hasStatusEffect(SE_GYM_FATIGUE))
+						你太累了，上不了汉娜的拳击课！
+					#ELSE
+						告诉汉娜想上她的拳击课……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_GYM_FATIGUE) || pc.isVisiblyPregnant() || !pc.hasItemType(ITEM_innoxia_quest_gym_membership_card))
+						null
+					#ELSEIF(!flags.hasFlag(FLAG_innoxia_hannah_training_complete) && flags.getSavedLong('boxing_perk_progress')>=80)
+						innoxia_places_dominion_shopping_arcade_gym_boxing_lesson_final
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_boxing_lesson
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<!-- Talk: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(hannah) && flags.hasFlag(FLAG_innoxia_hannah_introduced)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[历史]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_hannah_talk_history))
+						你已经向汉娜打听过她的过去了！
+					#ELSE
+						向汉娜打听打听怎么来这上班。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_hannah_talk_history))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_boxing_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_history, true)]
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_pix, false)]
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_yoga, false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_TALK_HISTORY'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(hannah) && flags.hasFlag(FLAG_innoxia_hannah_introduced)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[皮克斯]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_hannah_talk_pix))
+						你已经向汉娜打听过对皮克斯的看法了！
+					#ELSE
+						问问汉娜怎么看待皮克斯。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_hannah_talk_pix))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_boxing_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_history, false)]
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_pix, true)]
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_yoga, false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_TALK_PIX'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(hannah) && flags.hasFlag(FLAG_innoxia_hannah_introduced)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[梵天]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_hannah_talk_yoga))
+						你已经向汉娜打听过对梵天的看法了！
+					#ELSE
+						问问汉娜怎么看待梵天。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_hannah_talk_yoga))
+						null
+					#ELSE
+						innoxia_places_dominion_shopping_arcade_gym_boxing_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_history, false)]
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_pix, false)]
+					[#flags.setFlag(FLAG_innoxia_hannah_talk_yoga, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_TALK_YOGA'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="boxing_lesson">
+		<preParsingEffects><![CDATA[
+			[#pc.addStatusEffect(SE_GYM_FATIGUE, 23400)]
+			[#hannah.incrementPerkProgress()]
+			[#game.appendToTextEndStringBuilder(hannah.getPerkProgressString())]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">BOXING_LESSON</content>
+		<secondsPassed minutes="true"><![CDATA[90]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_boxing_hannah"/>
+	</scene>
+	
+	<scene id="boxing_lesson_final">
+		<preParsingEffects><![CDATA[
+			[#pc.addStatusEffect(SE_GYM_FATIGUE, 23400)]
+			[#hannah.incrementPerkProgress()]
+			[#game.appendToTextEndStringBuilder(hannah.getPerkProgressString())]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_PERK_PROGRESS_COMPLETE'))]
+			[#game.appendToTextEndStringBuilder(pc.addSpecialPerk(PERK_MARTIAL_ARTIST))]
+			[#flags.setFlag(FLAG_innoxia_hannah_training_complete, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/shoppingArcade/pixsPlayground">BOXING_LESSON_FINAL</content>
+		<secondsPassed minutes="true"><![CDATA[90]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[“影液”]]></responseTitle>
+				<responseTooltip><![CDATA[告诉汉娜你从未听过那个酒吧。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_shopping_arcade_gym_boxing_talk]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/shoppingArcade/pixsPlayground', 'BOXING_LESSON_FINAL_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="boxing_talk">
+		<content/>
+		<secondsPassed><![CDATA[120]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_shopping_arcade_gym_boxing_hannah"/>
+	</scene>
+
+</dialogueNodes>

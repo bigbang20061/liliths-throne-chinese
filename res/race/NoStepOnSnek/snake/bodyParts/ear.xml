@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ear>
+	<race>NoStepOnSnek_snake</race>
+	<transformationName><![CDATA[蛇]]></transformationName>
+	<coveringType>SNAKE_SCALES</coveringType>
+	<tags/>
+	<name><![CDATA[耳朵]]></name>
+	<namePlural><![CDATA[耳朵]]></namePlural>
+	<descriptorsMasculine>
+		<descriptor><![CDATA[有鳞]]></descriptor>
+		<descriptor><![CDATA[蛇般]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[有鳞]]></descriptor>
+		<descriptor><![CDATA[蛇般]]></descriptor>
+	</descriptorsFeminine>
+	<transformationDescription><![CDATA[
+		它们迅速缩成小结，大部分外软骨转移到[npc.her]头部两侧。
+		#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+			一层[npc.earFullDescriptionColour]长出来覆盖内耳，
+		#ELSE
+			就像身体其他部分一样，内耳呈[npc.earFullDescription]，
+		#ENDIF
+		转化完成了，[npc.she]拥有了一对蛇内耳。
+		<br/>[npc.Name]现在拥有[style.boldSnake(蛇内耳)]，[npc.materialCompositionDescriptor][npc.earFullDescription]。
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.Her]的耳朵位于头内部，并被一层[npc.earFullDescription(true)]包围。
+		#IF(npc.isPiercedEar())它们很巧妙地穿了孔，从而能够戴上为耳部设计的首饰。#ENDIF
+	]]></bodyDescription>
+</ear>

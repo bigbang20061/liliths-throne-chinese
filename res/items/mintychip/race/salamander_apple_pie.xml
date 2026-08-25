@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>400</value> 
+		<determiner><![CDATA[一块]]></determiner>
+		<name><![CDATA[冰淇淋苹果派]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[冰淇淋苹果派]]></namePlural>
+		<description><![CDATA[一个盘子容器里放着一块派和一勺香草冰淇淋，它们都在玻璃罩下面。尽管容器是冰冷的，但标签上却写着，当掀开玻璃盖子时，馅饼会瞬间被神奇地加热。标签上还有一个蝾螈女，她一边吃派，一边让融化的冰淇淋滴在自己赤裸的身体上。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<!-- instead of defining a simple path name for your image, you can use the layering system as shown here.
+		Each of the svg images you define here will be rendered on top of or beneath the others, based on the zLayer attribute defined for it.
+			zLayers of a higher value will be rendered on top of lower zLayers.
+		'imageRotation' and 'imageSize' affect the image's rotation and size, respectively.
+			You should define imageRotation in degrees, from 0 to 360.
+			You should define imageSize as a percentage, from 1 to 100.
+		Text inside of the svg image can be replaced at time of rendering, via the target/replacement attributes.
+			You can define any number of target/replacement pairs, but they must follow the naming convention: 'targetX' 'replacementX', where X is the number of the replacement pair, starting at 1.
+			The contents of the 'targetX' attribute will be searched for in the svg file and replaced with the contents of the corresponding 'replacementX' attribute.
+			In this example, I use the target/replacement pairs to recolour all edge strokes of colour #000 with the colour #ff5555 (which effectively removes the black edges of the icon.svg by recolouring it to the same colour as the interior.)
+			I also replace all instances of the colour '#ff8080' with 'ff5555'. While this isn't necessary for the hyena icon, it's designed to remove the lighter shade from an icon and replace it with the same 'ff5555' colour as the rest of the icon so as to make it a uniform colour for the item's background icon.
+		So, with the 4 imageName elements defined below, I'm:
+			1) Rendering the bottom background.
+			2) Recolouring an rendering the hyena race icon on top of that.
+			3) Rendering the item icon on top of those two.
+			4) Finally, rendering the highlights of the background on top of everything. -->
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="100" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/mintychip/salamander/subspecies/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">salamander_apple_pie.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>mintychip_salamander</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[蝾螈]]></potionDescriptor>
+		<associatedRace>mintychip_salamander</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(3)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更有活力……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 3)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]移除玻璃盖，看到冰淇淋开始融化。无法等待这美味的派继续冷却，[npc.she]拿起附赠的叉子，开始急切地享用这美味的甜点，片刻之间[npc.has]完全吃光了整盘食物。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]移除玻璃盖，将盘子递给给[npc2.name]，让[npc2.herHim]看到冰淇淋开始融化。无法等待这美味的派继续冷却，[npc2.she]抓起了附赠的叉子，开始急切地享用这美味的甜点，片刻之间[npc2.has]完全吃光了整盘。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

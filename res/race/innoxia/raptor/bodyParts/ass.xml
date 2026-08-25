@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ass>
+	<race>innoxia_raptor</race>
+	
+	<transformationName><![CDATA[猛禽]]></transformationName>
+	
+	<coveringType>innoxia_raptor_feathers</coveringType>
+	
+	<anusType>innoxia_raptor_anus</anusType>
+	
+	<names/>
+	<namesPlural/>
+	
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[ 
+		[npc.She]现在拥有[style.boldRaptor(禽鸟般)][npc.assholeFullDescription]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		拥有禽鸟般[npc.anusFullDescription(true)]
+]]></bodyDescription>
+</ass>

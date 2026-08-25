@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[瓶底刻着细小的字迹，写着“DSG食品有限公司提纯”。]]></authorTag>
+		
+		<value>15</value> 
+		<determiner><![CDATA[一罐]]></determiner>
+		<name><![CDATA[浆果苏打水]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[浆果苏打水]]></namePlural>
+		<description><![CDATA[一罐听装的浆果口味苏打。罐头上的标签描绘了一个穿着泳裤的水獭男坐在河岸边，同时喝着一个类似的饮料。
+]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">otter_berry_soda.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_ARCANE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_ARCANE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_HEALTH_MAXIMUM.getFormattedValue(2)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_HEALTH_MAXIMUM.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM) * 0.15)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一道振奋人心的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_HEALTH_MAXIMUM, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		在打开汽水罐后，[npc.name]将浆果口味苏打的汽水罐提到嘴边。一道出奇不意地道的浆果气味从开口处升腾而起，而当[npc.name]仰起头，开始喝下这股气泡饮料时，[npc.she]感到清爽无比。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		在拉开拉环后，[npc.name]将汽水罐端到了[npc2.name]等待[npc2.lips]前。一股出奇不意的浓郁浆果气味从罐口升腾而上，当[npc2.name]把头仰起，开始饮下这冒着气泡的液体时，[npc.she]感到自己焕然一新。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

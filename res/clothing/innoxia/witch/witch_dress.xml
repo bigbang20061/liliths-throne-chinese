@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>3000</value> 
+		
+		<determiner><![CDATA[一条]]></determiner>
+		
+		<name><![CDATA[魔女连衣裙]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[魔女连衣裙]]></namePlural> 
+		
+		<description><![CDATA[魔女的连衣裙，由薄而柔软的织物制成。它有宽大的袖子和短裙。一系列丝带连接着领子和连衣裙的前部，在穿着时形成五角星图案。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>FEMININE</femininity> 
+		
+		<slot>TORSO_UNDER</slot> 
+		
+		<rarity>EPIC</rarity> 
+		
+		<clothingSet>WITCH</clothingSet> 
+		
+		<imageName>witch_dress.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+		</effects>
+		
+		<blockedPartsList> 
+		
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType> 
+				
+				<clothingAccessRequired/>
+				
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="BLACK_OR_WHITE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_GOLD"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>DRESS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿上魔女连衣裙，整理下裙子，然后把肩带移到舒适的位置。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将魔女连衣裙拉过[npc2.namePos]头，裹在[npc2.her]的腰间，整理下裙子，然后把肩带移到[npc2.her]舒适的位置。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行将魔女连衣裙拉过[npc2.namePos]头，裹在[npc2.her]的腰间，整理下裙子，然后把肩带移到[npc2.her]舒适的位置。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将魔女连衣裙拉到[npc.her]的头上并脱了下来。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的魔女连衣裙拉过[npc2.her]头上，然后把它脱掉。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]抓住[npc2.namePos]的魔女连衣裙并粗暴的将它从[npc2.her]的头上拽下来。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]魔女连衣裙的裙子下摆放到正确的位置。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的魔女连衣裙拉回到正确的位置。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的魔女连衣裙拉回到正确的位置。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]拉起[npc.her]魔女连衣裙的裙子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉起[npc2.namePos]的魔女连衣裙的下摆。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]抓住[npc2.namePos]魔女连衣裙的裙子，并粗暴地拉起来。]]></otherRough>
+	</displacementText>
+
+	
+</clothing>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[在左护腿板内侧，淡淡的橡胶油墨写着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>1000</value> 
+
+		<determiner><![CDATA[一条]]></determiner>
+
+		<name><![CDATA[执法者防暴腰带]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者防暴腰带]]></namePlural> 
+
+		<description><![CDATA[一条加装了护裆板和防弹纤维护腿的重型防暴腰带，护腿板上奇怪的凸起来自于防弹纤维外的金属插板。]]></description> 
+
+		<physicalResistance>10</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>HIPS</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet>dsg_enforcer_riot</clothingSet>
+
+		<imageName>riotbelt.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired/>
+
+				<blockedBodyParts> 
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+
+				<clothingAccessBlocked> 
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots/> 
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots>
+					<slot>GROIN</slot>
+					<slot>VAGINA</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_VAGINA</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_GREY"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_GREY"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将防爆腰带系在[npc.her]的腰上，并调整了护裆和护腿板的位置，直到变得能够活动自如。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将防暴腰带围在[npc2.namePos]的身上，并帮助[npc2.her]调整护裆和护腿，直到能够活动自如。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行将防爆腰带围在[npc2.namePos]的身上，并匆忙的拉紧卡扣。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了防爆腰带的卡扣并脱了下来。]]></self>
+		<other><![CDATA[
+[npc.Name]松开了[npc2.namePos]的防暴腰带上的卡扣并脱了下来。]]></other>
+		<otherRough><![CDATA[[npc.Name]扯开[npc2.namePos]防暴腰带的卡扣并丢在了一边。]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的腰带上的护裆板拉低并收紧了调节带。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc.her]的腰带上的护裆板拉低并收紧了调节带。]]></other>
+		<otherRough><![CDATA[[npc.Name]将护裆板向下扯了扯并草草的拉紧了调节带。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]解开了[npc.her]腰带上的护裆板，并移到了一边。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]防暴腰带上的护裆拉开并移到一边。]]></other>
+		<otherRough><![CDATA[[npc.Name]猛地拽[npc2.namePos]的护裆板，当护裆板松开以后将它翻了起来。]]></otherRough>
+	</displacementText>
+	
+</clothing>

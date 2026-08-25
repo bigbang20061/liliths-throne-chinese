@@ -1,0 +1,1420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- SPA_INSTALLATION -->
+
+	<htmlContent tag="SPA_INSTALLATION"><![CDATA[
+	<p>
+		在获得了大量火币后，你觉得扩建莉莱雅宅邸的一部分，并改建一个私人水疗中心是个不错的投资。你用附近的拉铃召唤萝丝，把你的计划告诉了她，她礼貌地行了屈膝礼，并回复道，[rose.speech(这件事需要和我的主人商量一下。请在此稍候，我去找她。)]
+	</p>
+	<p>
+		说罢，猫女仆匆匆走出房间，几分钟后，她带着你的恶魔[lilaya.relation(pc)]回来了。莉莱雅推了推鼻梁上的眼镜，气呼呼地哼了一声，问道，[lilaya.speech(你说要扩建这个屋子，是怎么回事？我忙着做实验呢！)] 
+	</p>
+	<p>
+		在你解释关于扩建一个私人水疗中心的想法后，莉莱雅走进了房间，思考了片刻，然后转过身来对你说，[lilaya.speech(你知道吗，其实我以前也考虑过这样做……你知道离这里不远的地方，有许多地热温泉吗？只要施展适当的念动力法术，就能把水引到这个房间里来，这太令人兴奋了！)]
+	</p>
+	<p>
+		就在莉莱雅开始得意忘形，异想天开的时候，萝丝清了清嗓子，严厉地看了你[lilaya.relationship(pc)]一眼。莉莱雅想起了自己的现实处境，泄了气，[lilaya.speech(哦，对了……妈妈给我的零花钱不够搞这种东西……)]
+	</p>
+	<p>
+		[rose.speech(你之前让我研究这个工程时，我算了一笔账，扩建一个设备齐全的水疗中心需要不少于一百五十万火币，)]萝丝说完，然后转过身来微笑着向你示意，[rose.speech(我相信[pc.name]有一个支付这些费用的计划……)]
+	</p>
+	<p>
+		当莉莱雅低沉的表情迅速转变为满怀希望的兴奋时，你意识到这件事能成，你现在可以全心全意地着手把这个房间永久改造成私人水疗中心，也可以和他们两个说你改主意了……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_INSTALLATION_COMMIT"><![CDATA[
+	<p>
+		你决定将积累的财富用于建造私人水疗中心，便告诉莉莱雅你有能力支付这笔费用。你的恶魔[lilaya.relationship(pc)]兴奋地拍着手，尖叫道：[lilaya.speech(哦！好棒！谢谢你，[pc.name]！妈咪永远不会给我资金来建造这些东西！)]
+	</p>
+	<p>
+		[rose.speech(您可以把施工的组织工作交给我，)]萝丝行了个屈膝礼说，[rose.speech(工程应该不超过七天就能完工。)]
+	</p>
+	<p>
+		[lilaya.speech(哦好，谢谢你萝丝！)]莉莱雅向女仆道谢，又凑到猫女面前，压低声音耳语了几句。虽然你的[lilaya.relation(pc)]极力掩饰，可你还是听见了她兴奋的挑逗：[lilaya.speech(今晚晚些时候我会成为你的乖女孩……)]
+	</p>
+	#IF(pc.getTrueRace()==RACE_DEMON && lilaya.getSubspeciesOverride()!=SUBSPECIES_DEMON)
+		<p>
+			萝丝快速地对着她所谓的“主人”坏笑了一下，最后恭敬地行了一个屈膝礼，匆匆离开了房间。猫女离开后，你的半恶魔姨妈双手叉腰，借此机会再次要求道：[lilaya.speech(你知道吗，我还在期待你说服妈咪把我转化成纯恶魔！我很感谢你花钱建这个水疗中心，但在我和你一样变成恶魔之前，我是不会允许你和我做爱的！)]
+		</p>
+		<p>
+			你说会尽最大努力尽早和莉西丝谈谈，莉西丝听完你不置可否的回答后，气呼呼地叹了口气，走出了房间。你在这里无事可做，便准备跟随她的脚步回到走廊上……
+		</p>
+	#ELSE
+		<p>
+			萝丝快速地对着她所谓的“主人”坏笑了一下，最后恭敬地行了一个屈膝礼，匆匆离开了房间。猫女离开后，你的半恶魔姨妈微笑着对你说道：[lilaya.speech(你刚刚叫我来的时候，我有一个重要的实验正做到一半呢，所以我得回去了。即使水疗中心建好了，我怕是也没时间用它了……)]
+		</p>
+		<p>
+			你的[lilaya.relationship(pc)]气呼呼地叹了口气，走出了房间，留下你一个人。你在这里无事可做，便准备跟随她的脚步回到走廊上……
+		</p>
+	#ENDIF
+	<p style='text-align:center;'><i>
+		[style.italicsGood(开始建造私人水疗中心！)]
+		<br/>这需要[style.italicsMinorBad(建七天)]，待建造完成后，你可以指派奴隶在这里工作，也可以在水疗中心里放松片刻！
+	</i></p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_INSTALLATION_CHANGE_MIND"><![CDATA[
+	<p>
+	考虑到为修建这个扩建部分投入如此巨额的资金，你向萝丝和莉莱雅透露你已经改变心意，最终无法确定要建造一个水疗中心。你的[lilaya.relation(pc)]发出了失望的声音，[lilaya.speech(唉……我明白这确实非常昂贵……看来我现在该继续进行我的实验了……)]
+</p>
+	<p>
+	随后，莉莱雅和萝丝都离开了房间，留下你独自一人。既然无事可做，你准备跟上她们的步伐返回走廊中去……
+</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_INSTALLATION_COMMIT -->
+
+	<htmlContent tag="SPA_INSTALLATION_COMMIT_LEAVE"><![CDATA[
+	<p>
+	在空荡荡的房间里是做不了什么的，你[pc.step]出房间回到走廊中，思索着接下来该做什么……
+</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_CONSTRUCTION -->
+
+	<htmlContent tag="SPA_CONSTRUCTION"><![CDATA[
+	<p>
+		#IF(game.isWorkTime())
+			几名建筑工人正在努力建造扩建部分，该扩建部分将容纳你的私人水疗中心。由于其中一个工人是恶魔，并且正在使用奥术能力毫不费力地在建筑工地上移动材料，工程看起来似乎进展顺利。
+		#ELSE
+			由于此时不是正常工作时间，施工现场目前空无一人。环顾四周，你发现工作进展非常迅速，不久之后，你的私人水疗中心就会建造完成了。
+		#ENDIF
+	</p>
+	<p>
+		正如莉莱雅所提到的，你看到一股天然泉水正被引进施工现场的一处水沟中，一旦工程结束，这股泉水就将用于填充水疗中心的水池。你把手指伸进了水中，然后发现，由于奥术能量的作用，水温非常舒适。面对你即将完工的私人水疗中心，你不禁感到无比兴奋与期待……
+	</p>
+	<p style='text-align:center;'><i>
+		水疗中心即将在[style.italicsGood([#SPECIAL_PARSE_0])]之内准备好！
+	</i></p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_RECEPTION -->
+	
+	<htmlContent tag="SPA_RECEPTION_CONSTRUCTION"><![CDATA[
+	<p>
+	#IF(game.isExtendedWorkTime())
+		这个房间目前正保持着空置状态，直到你的私人水疗中心主扩建工程完工。你在附近一张桌子上发现了一些建筑工人留下的设计图，图纸显示这个房间计划改造成集接待区、更衣室以及淋浴设施于一体的区域。
+	#ELSE
+		这个房间将保持目前的空置状态，直到你的私人水疗中心主扩建工程完工。你在一张桌子上发现了建筑工人留下的一些设计图，图纸显示这个房间计划改造成集接待区、更衣室以及淋浴设施于一体的区域。
+	#ENDIF
+</p>
+	<p style='text-align:center;'><i>
+		水疗中心即将在[style.italicsGood([#SPECIAL_PARSE_0])]后完工！
+	</i></p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_RECEPTION"><![CDATA[
+	<p>
+		这个房间已被改造成了私人水疗中心的接待区。大理石地面中间是一个长长的柜台，左右两边是通往水疗中心更衣室的入口。在每一个私人空间里都有设备齐全的淋浴设施，前来休息的每个人都可以在进入水疗中心之前先清洁一下自己。
+	</p>
+	<p>
+		#IF(game.getNonCompanionCharactersPresent().isEmpty())
+			这个接待区的柜台后面目前没有人在这……
+		#ELSEIF(game.getNonCompanionCharactersPresent().size()==1)
+			[npc.Name]正在接待区的柜台处负责前台工作，在你进入房间的时候[npc.she]就看见了你……
+		#ELSE
+			你的奴隶们正一直坚守在接待区的柜台后面，当你在进入房间的时候，他们就看见了你……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_RECEPTION_END"><![CDATA[
+	<p>
+	从此处出发，你可以选择进入其中一个更衣室，快速冲个澡，或者直接走向水疗中心的核心区域。当然，你还可以选择通过主门离开，重新回到走廊中去……
+</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_RECEPTION_CLOTHING_CLEAN"><![CDATA[
+	<p style='text-align:center;'><i>
+		你卸下并留在该地的任何衣物都会在你进入水疗中心时[style.italicsGood(自动清洗)]！
+	</i></p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_RECEPTION_SHOWER -->
+	
+	<htmlContent tag="SPA_RECEPTION_SHOWER"><![CDATA[
+	<p>
+		你决定使用水疗中心的淋浴设施快速洗个澡，于是进入更衣室，迅速脱掉衣服，将衣物放在其中一个篮子里，然后走进铺设着豪华的大理石和精致玻璃的步入式淋浴间，打开水龙头。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_RECEPTION_SHOWER_END"><![CDATA[
+	<p>
+	#IF([#SPECIAL_PARSE_0]==0)
+		五分钟后，你感觉身体已经完全清洁干净到可以进入水疗区域了……
+	#ELSEIF([#SPECIAL_PARSE_0]==1)
+		五分钟后，你感觉身体已经完全清洁干净到可以进入水疗区域了。不过在那之前，你也可以先和[npc.name]玩乐一番……
+	#ELSE
+		五分钟后，你感觉身体已经完全清洁干净到可以进入水疗区域了。不过在那之前，你也可以先和你的奴隶们玩乐一番……
+	#ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="START_SHOWER_SEX_AS_DOM"><![CDATA[
+	<p>
+	#IF([#SPECIAL_PARSE_0]==1)
+		你现在正与[npc.name]独处，你决定把握这个机会和[npc.herHim]爽上一爽，在淋浴的温水流过你们的身体时，你准备与[npc.herHim]做爱……
+	#ELSE
+		你现在正与[npc.name]和[npc2.name]独处，你决定把握这个机会爽上一爽，在淋浴的温水流过你们的身体时，你准备与[npc.name]和[npc2.name]一起做爱……
+	#ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="START_SHOWER_SEX_AS_SUB"><![CDATA[
+	<p>
+	#IF([#SPECIAL_PARSE_0]==1)
+		你现在正与[npc.name]独处，你决定充分利用这一机会，顺从地紧贴在[npc.herHim]的身边，在淋浴的温水流过你们的身体时，你告诉[npc.herHim]你想做爱……
+	#ELSE
+		你现在正与[npc.name]和[npc2.name]独处，你决定充分利用这一机会，顺从地紧贴在他们的身边，你告诉[npc.name]和[npc2.name]，你想和他们一起做爱……
+	#ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_SHOWER_SEX -->
+	
+	<htmlContent tag="AFTER_SHOWER_SEX"><![CDATA[
+	#IF([#SPECIAL_PARSE_0]==1)
+		<p>
+			#IF(sex.isDom(pc))
+				你已从[npc.name]身上得到了满足，于是关掉了花洒，然后告诉[npc.herHim]接下来你不再需要[npc.her]的协助了。[npc.she]发出一声深深地[npc.moan]，随后便迅速擦干了[npc.herself]的身体，然后穿戴整齐，回到了接待处。
+			#ELSE
+				由于[npc.her]已从你身上得到了满足，[npc.name]关掉了花洒，然后表示你看起来不再需要进一步“协助”了。随后，[npc.she]便迅速擦干了[npc.herself]的身体，然后穿戴整齐，回到了接待处。
+			#ENDIF
+		</p>
+		<p>
+			跟着你的奴隶走进了更衣室后，你开始思考接下来要不要进去水疗中心看看……
+		</p>
+	#ELSE
+		<p>
+			#IF(sex.isDom(pc))
+				你已从[npc.name]和[npc2.name]的身上得到了满足，于是关掉了花洒，然后告诉他们接下来你不再需要他们的协助了。随着一声深深地[npc.moan]，两人迅速擦干了自己的身体，然后穿戴整齐，回到了接待处。
+			#ELSE
+				由于[npc.name]和[npc2.name]已从你的身上得到了满足，于是他们关掉了花洒，表示你看起来不再需要进一步“协助”了。随后，便迅速擦干自己的身体，然后回到了接待处。
+			#ENDIF
+		</p>
+		<p>
+			跟着你的奴隶们走进了更衣室后，你开始思考接下来要不要进去水疗中心看看……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_SHOWER_FINISHED -->
+	
+	<htmlContent tag="AFTER_SHOWER_FINISHED"><![CDATA[
+	#IF([#SPECIAL_PARSE_0]==0)
+		<p>
+			你把自己彻彻底底洗了个干净，随后便关上了花洒，回到了更衣室里。找出一条软绵绵的毛巾擦干了身体后，你开始思考接下来要不要进入水疗中心看看……
+		</p>
+	#ELSEIF([#SPECIAL_PARSE_0]==1)
+		<p>
+			在[npc.name]的协助下，你把自己清洗干净，然后便关掉了花洒，回到了更衣室。让你的奴隶用一条软绵绵的毛巾擦干身体之后，你命令[npc.herHim]回到[npc.her]在接待处的岗位上去。
+		</p>
+		<p>
+			现在你终于结束了淋浴，便猴急地进入了水疗中心……
+		</p>
+	#ELSE
+		<p>
+			在[npc.name]和[npc2.name]的协助下，你把自己清洗干净，然后便关掉了花洒，回到了更衣室。让你的奴隶们用一条软绵绵的毛巾擦干身体之后，你命令他们回到他们接待处的岗位上去。
+		</p>
+		<p>
+			现在你终于结束了淋浴，便猴急地进入了水疗中心……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_CORE -->
+	
+	<htmlContent tag="SPA_CORE"><![CDATA[
+	<p>
+		私人水疗中心的扩建部分大得令人叹为观止，它整体为长方形，建筑风格让人联想起古罗马的澡堂：两边是一排排大理石柱，柱子支撑着四周的狭窄瓦顶。除此以外，水疗中心的其他部分均为露天设计，但奥术隔绝了这里，让它既不会受到外界环境的影响，也不会听到城市的喧闹声。
+	</p>
+	<p>
+		这个房间的主要特色当然是一个个水池，它们占据了绝大部分空间。水池周围环绕着许多软垫躺椅，池内满是天然泉水，因地热而非常温暖。
+	</p>
+	<p>
+		你[pc.Walking]过抛光的大理石地板，朝水池走去，不禁思索起要不要进水中放松片刻……
+	</p>
+	#IF(!game.getWorlds().get(WORLD_TYPE_LILAYAS_HOUSE_GROUND_FLOOR).getCells(PLACE_UPGRADE_LILAYA_SPA_BAR).isEmpty())
+		<p>
+			[style.boldOrange(吧台)]<b>：</b>
+<br/>紧邻水疗中心的入口处建有一处时尚吧台，备有各式饮品与烈酒，若你愿意的话可以在此稍作停留，好为自己
+			#IF([#SPECIAL_PARSE_0])
+				调制一杯饮品……
+			#ELSE
+				或为你的奴隶调制一杯饮品……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_CORE_BAR_DRINK"><![CDATA[
+	#IF(npc.equals(lilaya))
+		<p>
+			莉莱雅开始痛饮，她似乎并不在意自己会不会因此醉倒。
+		</p>
+	#ELSEIF(npc.equals(rose))
+		<p>
+			萝丝喝了些无酒精饮品。
+		</p>
+	#ELSEIF(npc.equals(arthur))
+		<p>
+			亚瑟喝了些无酒精饮品。
+		</p>
+	#ELSEIF(npc.isPlayer())
+		<p>
+			你想了想，[pc.step]到吧台后面，为自己倒了一杯[#SPECIAL_PARSE_0]。你深深叹了一口气，花了几分钟来享受饮料，放松自己。不知不觉中，你喝光了饮料，准备再次回到水疗中心的主区域……
+		</p>
+	#ELSE
+		<p>
+			你想了想，[pc.step]到吧台前，招呼[npc.name]过来。你的奴隶按照吩咐，匆忙跑到你身边，候在一旁，你给[npc.herHim]倒了杯[#SPECIAL_PARSE_0]。
+		</p>
+		<p>
+			你把饮料递给[npc.name]，在[npc.herHim]喝饮料的时候，你们两个放松了片刻。不知不觉间，你的奴隶喝光了饮料，你觉得是时候回到水疗中心的主区域了……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_CORE_BATHING -->
+	
+	<htmlContent tag="SPA_CORE_BATHING"><![CDATA[
+	<p>
+		#IF([#SPECIAL_PARSE_0])
+			你想使用私人水疗中心，于是脱光衣服，[pc.step]进附近浴池的温水中。
+		#ELSE
+			你想使用私人水疗中心，于是[pc.step]进附近浴池的温水中。
+		#ENDIF
+		瞬间，一股深沉的平静感涌上心头，你沉入浅水中，不禁长叹一声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_CORE_BATHING_END"><![CDATA[
+	<p>
+		#IF([#SPECIAL_PARSE_0]==0)
+			你在水池中放松了半小时，感觉容光焕发，准备继续前行……
+		#ELSEIF([#SPECIAL_PARSE_0]==1)
+			你在水池中放松了半小时，感觉容光焕发，准备继续前行。
+			#IF(!npc.isAttractedTo(pc) && game.isNonConEnabled())
+				不过，只要你愿意，也可以强迫[npc.name]和你找点乐子先……
+			#ELSEIF(npc.isAttractedTo(pc))
+				不过，只要你愿意，也可以和[npc.name]找点乐子先……
+			#ENDIF
+		#ELSE
+			你在水池中放松了半小时，感觉容光焕发，可以继续上路了。不过，只要你愿意，也可以和奴隶找点乐子先……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_CORE_BATHING_SEX_DOM"><![CDATA[
+	<p>
+		#IF([#SPECIAL_PARSE_0]==1)
+			你想趁机和[npc.name]找点乐子，便一把将[npc.herHim]拉到你腿上，准备和[npc.herHim]做爱……
+		#ELSEIF([#SPECIAL_PARSE_0]==2)
+			你想趁机和奴隶找点乐子，便猛然将[npc.Name]拉到你腿上，准备和[npc.herHim]还有[npc2.name]做爱……
+		#ELSE
+			你想趁机和奴隶找点乐子，便猛然将[npc.Name]拉到你腿上，准备和[npc.herHim]、[npc2.name]还有[npc3.name]做爱……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_CORE_BATHING_SEX_SUB"><![CDATA[
+	<p>
+		#IF([#SPECIAL_PARSE_0]==1)
+			你想趁机和[npc.name]找点乐子，便顺从地鼓励[npc.herHim]过来你腿上，接着让[npc.herHim]操你……
+		#ELSEIF([#SPECIAL_PARSE_0]==2)
+			你想趁机和奴隶找点乐子，便顺从地鼓励[npc.Name]过来你腿上，接着让[npc.herHim]和[npc2.name]操你……
+		#ELSE
+			你想趁机和奴隶找点乐子，便顺从地鼓励[npc.Name]过来你腿上，接着让[npc.herHim]、[npc2.name]还有[npc3.name]操你……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BATHING_AFTER_SEX -->
+	
+	<htmlContent tag="BATHING_AFTER_SEX"><![CDATA[
+	<p>
+		#IF([#SPECIAL_PARSE_0]==1)
+			在和[npc.name]爽过之后，你放松地瘫倒在水池里，满足地长叹一口气。看到你的奴隶也同样开始在热水中放松时，你开始思考接下来要做点啥……
+		#ELSEIF([#SPECIAL_PARSE_0]==2)
+			在和你的奴隶们爽过之后，你放松地瘫倒在水池里，满足地长叹一口气。看到[npc.name]和[npc2.name]也同样开始在热水中放松时，你开始思考接下来要做点啥……
+		#ELSE
+			在和你的奴隶们爽过之后，你放松地瘫倒在水池里，满足地长叹一口气。看到[npc.name]，[npc2.name]，还有[npc3.name]都同样开始在热水中放松时，你开始思考接下来要做点啥……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BATHING_FINISHED -->
+	
+	<htmlContent tag="BATHING_FINISHED"><![CDATA[
+	<p>
+		感觉到全身上下神清气爽，你决定要从水池里出去了。
+		#IF([#SPECIAL_PARSE_0]==0)
+			你迅速把自己擦干，开始一边环顾水疗中心，一边思考接下来要做些什么……
+		#ELSEIF([#SPECIAL_PARSE_0]==1)
+			听从你的指示，[npc.name]离开了热水池，开始帮你擦干身体，然后便告退了。你开始一边环顾水疗中心，一边思考接下来要做些什么……
+		#ELSE
+			听从你的指示，你的奴隶们离开了热水池，开始帮你擦干身体，然后便告退了。你开始一边环顾水疗中心，一边思考接下来要做些什么……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_MASSAGE_SELECTION -->
+	
+	<htmlContent tag="SPA_MASSAGE_SELECTION"><![CDATA[
+	<p>
+		为了放松身心并享受一次按摩，你走向附近的躺椅，然后开始思考选谁来为你提供这次按摩服务。
+		#IF([#SPECIAL_PARSE_0]==1)
+			由于你仅指定了[#SPECIAL_PARSE_1]作为可以提供按摩服务的奴隶，除了选择[npc.herHim]之外，你实际上没有太多别的选择，或者你可以改变整个计划……
+		#ELSE
+			既然你已指定[#SPECIAL_PARSE_1]作为可以提供按摩服务的人选，你可以选择
+			#IF([#SPECIAL_PARSE_0]==2)
+				其中一位
+			#ELSE
+				其中任何一位
+			#ENDIF
+			来为你按摩，或者改变整个想法……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_MASSAGE_SELECTION_BACK"><![CDATA[
+	<p>
+		你决定不接受按摩，从躺椅旁[pc.step]开，再次环顾整个水疗中心……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_MASSAGE -->
+	
+	<htmlContent tag="SPA_MASSAGE"><![CDATA[
+	<p>
+		呼唤[npc.name]来到你站立的地方，你告知[npc.name]你希望[npc.name]为你提供按摩服务，随后你躺在椅子上，并指示[npc.name]开始按摩。
+</p>
+	#IF(npc.getObedienceBasic()!=OBEDIENCE_BASIC_OBEDIENT && npc.getAffectionLevelBasic(pc)!=AFFECTION_BASIC_LIKE)
+		<p>
+		#IF([npc.isMute] || [npc.hasSlavePermissionSetting][SLAVE_PERMISSION_SETTING_GENERAL_SILENCE])
+			[npc.name]皱眉并发出不满的叹息，[npc.she]虽然明确表示不想要做这个，但还是按照要求开始了并不热情的按摩。在按压你的背部和肩部时，[npc.name]不断地叹气和抱怨，[npc.namePos]的行为举止明确表示[npc.she]希望尽快结束这个过程。
+		#ELSE
+			尽管[npc.name]在心里抱怨着，但[npc.she]还是遵照指示开始为你提供一个颇显敷衍的按摩。在按压你的背部和肩部时，[npc.she]不断地叹气和抱怨：[npc.speech(真讨厌……快点满足然后结束吧……)]
+		#ENDIF
+	</p>
+		<p>
+		尽管[npc.she]很不情愿，但[npc.name]在按摩方面却非常熟练。在这种情况下，你选择性的忽略[npc.she]所有不满的声音，全身心的享受[npc.she]为你带来的愉悦与舒驰感。
+			#IF(pc.isTaur())
+			由于你拥有[pc.legRace]种族特有的壮硕下肢，所以你的奴隶花了相当长的时间才彻底按摩到你的臀部区域。等到[npc.she]终于按到屁股时，你扭头看去，只见[npc.she]正
+			#ELSE
+			由于你要求[npc.herHim]为你进行全身按摩，这使得你的奴隶花费了相当长的时间来完成这项工作。当[npc.she]最终按到你[pc.foot+]时，你扭头看去，只见[npc.she]正
+			#ENDIF
+			#IF(npc.isAttractedTo(pc))
+				#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+					饥渴地盯着你[pc.pussy+]。
+				#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+					饥渴地盯着你[pc.cock+]。
+				#ELSEIF(pc.isCoverableAreaVisible(CA_ANUS) && game.isAnalContentEnabled())
+					饥渴地盯着你[pc.asshole+]。
+				#ELSE
+					饥渴地盯着你[pc.ass+]。
+				#ENDIF
+			你暗自窃喜，心中思忖着是否值得趁此机会和[npc.name]多找点乐子，但转念一想，[npc.she]已按了大概半小时了，也许你该让[npc.herHim]休息休息……
+			#ELSE
+			噘嘴等待着你让[npc.herHim]离开。
+				#IF(game.isNonConEnabled())
+						你暗自窃喜，心中思忖着是否值得趁此机会和[npc.name]多找点乐子，但转念一想，[npc.she]已按了大概半小时了，也许你该让[npc.herHim]休息休息……
+				#ELSE
+					[npc.she]已按了大概半小时了，也许你该让[npc.herHim]休息休息了……
+				#ENDIF
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			[npc.name]遵循指示，迅速并且恭顺地来到你身边站立，然后弯下腰开始为你按摩。
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+					[npc.name]以极富专业性的动作从你的颈部和肩部开始按摩，然后慢慢地按摩你身体的其余部分。
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+					[npc.name]用[npc.her]的手指在你的背部诱惑地滑过，然后才从颈部和肩部开始按摩，并无声地继续按摩你身体的其余部分。
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+					在无所顾忌地摸了一把你[pc.ass+]之后，[npc.name]将注意力转移到你的颈部和肩部按摩，然后默默地按摩你身体的其余部分。
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+					[npc.name]向你投以一个充满爱意的微笑，从颈部和肩部开始按摩，然后默默地按摩你身体的其余部分。
+				#ELSE
+					[npc.name]向你微微一笑，从颈部和肩部开始按摩，然后默默地按摩你身体的其余部分。
+				#ENDIF
+			#ELSE
+				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+					[npc.name]从颈部和肩部开始按摩，然后慢慢地按摩你身体的其余部分，并说道：[npc.speech(希望这项服务能让你感到满意，[pc.name]……)]
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+					[npc.name]用[npc.her]的手指在你的背部诱人地滑动，从颈部和肩部开始按摩，然后按摩你身体的其余部分，同时调笑道：[npc.speech(也许按摩结束后，你会想要更多的身体接触……)]
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+					在大胆地抓捏了你[pc.ass+]后，[npc.name]专注于按摩你的颈部和肩部，然后按摩你身体的其余部分，并粗俗地调笑道：[npc.speech(希望按摩后能一起爽一爽呢……)]
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+					[npc.name]向你展现出一个温馨的笑容，从颈部和肩部开始按摩，然后按摩你身体的其余部分，并轻声感叹道：[npc.speech(感谢你让我这样做，[pc.name]！希望你会觉得舒服……)]
+				#ELSE
+					[npc.name]向你微微一笑，从颈部和肩部开始按摩，然后按摩你身体的其余部分，并说道：[npc.speech(希望你会觉得舒服，[pc.name]……)]
+				#ENDIF
+			#ENDIF
+		</p>
+		<p>
+		[npc.name]在按摩方面却非常熟练。在这种情况下，你放松精神，全身心的享受[npc.she]为你带来的愉悦与舒驰感。
+			#IF(pc.isTaur())
+			由于你拥有[pc.legRace]种族特有的壮硕下肢，所以你的奴隶花了相当长的时间才彻底按摩到你的臀部区域。等到[npc.she]终于按到屁股时，你扭头看去，只见[npc.she]正
+			#ELSE
+			由于你要求[npc.herHim]为你进行全身按摩，这使得你的奴隶花费了相当长的时间来完成这项工作。当[npc.she]最终按到你[pc.foot+]时，你扭头看去，只见[npc.she]正
+			#ENDIF
+			#IF(npc.isAttractedTo(pc))
+				#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+					饥渴地盯着你[pc.pussy+]。
+				#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+					饥渴地盯着你[pc.cock+]。
+				#ELSEIF(pc.isCoverableAreaVisible(CA_ANUS) && game.isAnalContentEnabled())
+					饥渴地盯着你[pc.asshole+]。
+				#ELSE
+					饥渴地盯着你[pc.ass+]。
+				#ENDIF
+			你暗自窃喜，心中思忖着是否值得趁此机会和[npc.name]多找点乐子，但转念一想，[npc.she]已按了大概半小时了，也许你该让[npc.herHim]休息休息……
+			#ELSE
+			噘嘴等待着你让[npc.herHim]离开。
+				#IF(game.isNonConEnabled())
+						你暗自窃喜，心中思忖着是否值得趁此机会和[npc.name]多找点乐子，但转念一想，[npc.she]已按了大概半小时了，也许你该让[npc.herHim]休息休息……
+				#ELSE
+					[npc.she]已按了大概半小时了，也许你该让[npc.herHim]休息休息了……
+				#ENDIF
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_MASSAGE_SEX"><![CDATA[
+	<p>
+		呼唤[npc.name]来到你站立的地方，你告知[npc.name]你希望[npc.name]为你提供按摩服务，随后你躺在椅子上，并指示[npc.name]开始按摩。
+</p>
+	#IF(npc.getObedienceBasic()!=OBEDIENCE_BASIC_OBEDIENT && npc.getAffectionLevelBasic(pc)!=AFFECTION_BASIC_LIKE)
+		<p>
+			尽管[npc.name]在心里抱怨着，但[npc.she]还是遵照指示开始为你提供一个颇显敷衍的按摩。然而当[npc.she]开始用手掌按压你的肩膀时，[npc.her]的态度逐渐转变，原本那不悦的嘟囔声很快变成了饱含渴望的淫靡声。
+		</p>
+		<p>
+			#IF(pc.isTaur())
+				[npc.name]沿着你那[pc.legRace]身体向下摸索，然后
+			#ELSE
+				[npc.name]沿着你的身体向下摸索并将你翻了个身，在朝你狡黠一笑后，
+			#ENDIF
+			#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+				猛抓了一把你[pc.pussy+]，
+			#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+				猛抓了一把你[pc.cock+]，
+			#ELSE
+				猛抓了一把你[pc.ass+]，
+			#ENDIF
+			#IF(pc.isTaur())
+				#IF(npc.isTaur())
+					接着骑到了你的身上，
+				#ELSE
+					接着紧紧抓住你那[pc.hips+]，
+				#ENDIF
+			#ELSE
+				#IF(npc.isTaur())
+				接着骑到了你的身上，
+				#ELSEIF(pc.hasLegs())
+					接着在你的[pc.legs]之间蹲下，紧紧抓住你[pc.hips+]。
+				#ELSE
+					紧接着在你腹股沟前方蹲下，紧紧抓住你[pc.hips+]。
+				#ENDIF
+			#ENDIF
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+					[npc.name]用嘲笑般的轻笑了一声，随后[npc.moansVerb]道：[npc.speech(准备好了吗？<i>[pc.name]</i>？来好好爽一把！)]
+				</p>
+				<p>
+			#ELSE
+				你突然想起，你允许[npc.name]在[npc.name]喜欢的时候用你来满足性欲，你意识到自己即将被你的奴隶[npc.name]“享用”了……
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			[npc.name]遵循指示，迅速并且恭顺地来到你身边站立，然后弯下腰开始为你按摩。
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+					[npc.name]以极富专业性的动作从你的颈部和肩部开始按摩，然后慢慢地按摩你身体的其余部分。
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+					[npc.name]用[npc.her]的手指在你的背部诱惑地滑过，然后才从颈部和肩部开始按摩，并无声地继续按摩你身体的其余部分。
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+					在无所顾忌地摸了一把你[pc.ass+]之后，[npc.name]将注意力转移到你的颈部和肩部按摩，然后默默地按摩你身体的其余部分。
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+					[npc.name]向你投以一个充满爱意的微笑，从颈部和肩部开始按摩，然后默默地按摩你身体的其余部分。
+				#ELSE
+					[npc.name]向你微微一笑，从颈部和肩部开始按摩，然后默默地按摩你身体的其余部分。
+				#ENDIF
+			#ELSE
+				#IF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_PROFESSIONAL))
+					[npc.name]从颈部和肩部开始按摩，然后慢慢地按摩你身体的其余部分，并说道：[npc.speech(希望这项服务能让你感到满意，[pc.name]……)]
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SEDUCTIVE))
+					[npc.name]用[npc.her]的手指在你的背部诱人地滑动，从颈部和肩部开始按摩，然后按摩你身体的其余部分，同时调笑道：[npc.speech(也许按摩结束后，你会想要更多的身体接触……)]
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_SLUTTY))
+					在大胆地抓捏了你[pc.ass+]后，[npc.name]专注于按摩你的颈部和肩部，然后按摩你身体的其余部分，并粗俗地调笑道：[npc.speech(希望按摩后能一起爽一爽呢……)]
+				#ELSEIF(npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_BEHAVIOUR_WHOLESOME))
+					[npc.name]向你展现出一个温馨的笑容，从颈部和肩部开始按摩，然后按摩你身体的其余部分，并轻声感叹道：[npc.speech(感谢你让我这样做，[pc.name]！希望你会觉得舒服……)]
+				#ELSE
+					[npc.name]向你微微一笑，从颈部和肩部开始按摩，然后按摩你身体的其余部分，并说道：[npc.speech(希望你会觉得舒服，[pc.name]……)]
+				#ENDIF
+			#ENDIF
+		</p>
+		<p>
+			当[npc.she]为你做了完整的按摩后，[npc.name]最终开始表现出极度兴奋的迹象。伴随着沉重地喘息声，你的奴隶很快就无法抑制[npc.her]对获得与你进行身体接触的机会而产生的性奋，在
+			#IF(pc.isTaur())
+				[npc.her]顺着触摸你那[pc.legRace]身体线条时，[npc.she]突然
+			#ELSE
+				[npc.her]顺着你的身体向下移动时，[npc.she]突然将你翻了个身，并
+			#ENDIF
+			#IF(pc.isCoverableAreaVisible(CA_VAGINA) && pc.hasVagina())
+				用力的抚摸起你[pc.pussy+]，
+			#ELSEIF(pc.isCoverableAreaVisible(CA_PENIS) && pc.hasPenisIgnoresDildo())
+				用力的抚摸起你[pc.cock+]，
+			#ELSE
+				用力的抚摸起你[pc.ass+]，
+			#ENDIF
+			#IF(pc.isTaur())
+				#IF(npc.isTaur())
+					在[npc.stepping]骑上你之前，
+				#ELSE
+					在[npc.she]俯身在你臀部后方并紧紧抓住你[pc.hips+]之前，
+				#ENDIF
+			#ELSE
+				#IF(npc.isTaur())
+					在[npc.she]跨骑上你之前，
+				#ELSEIF(pc.hasLegs())
+					当[npc.she]在你的[pc.legs]之间蹲下并紧紧抓住你[pc.hips+]之前，
+				#ELSE
+					当[npc.she]在你的面前蹲下并紧紧抓住你[pc.hips+]之前，
+				#ENDIF
+			#ENDIF
+			#IF(npc.isMute() || npc.hasSlavePermissionSetting(SLAVE_PERMISSION_SETTING_GENERAL_SILENCE))
+					[npc.name]发出了一声[npc.a_moan+]，并说道：[npc.speech(抱歉，[pc.name]，我现在必须和你发生关系……)]
+				</p>
+				<p>
+			#ELSE
+				你突然想起，你允许[npc.name]在[npc.name]喜欢的时候用你来满足性欲，你意识到自己即将被你的奴隶[npc.name]“享用”了……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_MASSAGE_FUCKED"><![CDATA[
+	<p>
+	[npc.name]继续将你按在躺椅上，所以你只能发出无助的[pc.a_moan+]，并准备好接受[npc.name]即将为你带来的任何体验……
+</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_MASSAGE_FINISHED"><![CDATA[
+	<p>
+		在享受完[npc.name]的精心按摩之后，你从躺椅上起身，再次环顾你的私人水疗中心，开始思索接下来该做些什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_MASSAGE_SEX_AS_DOM"><![CDATA[
+	#IF(npc.isTaur())
+		#IF(pc.isTaur())
+			<p>
+				你想要与[npc.name]共享更多乐趣，于是抓住[npc.her]的[npc.hand+]，将[npc.her]拉至你身边坐下。然后通过给予[npc.her]一个深情而热烈的吻来阻止了[npc.her]的惊呼声。
+			</p>
+			<p>
+				在这样的姿势下相互热吻片刻后，你结束了亲吻并调整位置，让[npc.name]躺在躺椅上，而你跨在了[npc.her]的臀部上方。将自己的[pc.legRace]下体对准位置，
+				#IF(npc.isAttractedTo(pc))
+					准备占有性地骑在[npc.name]身上……
+				#ELSE
+					无视[npc.her]的反对，你准备占有性地骑上并强暴[npc.name]……
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				你想要与[npc.name]共享更多乐趣，于是抓住[npc.her]的[npc.hand+]，将[npc.her]拉至你身边坐下。然后通过给予[npc.her]一个深情而热烈的吻来阻止了[npc.her]的惊呼声。
+			</p>
+			<p>
+			在这样的姿势下相互热吻片刻后，你结束了亲吻并调整位置，让[npc.name]躺在躺椅上，而你跨在了[npc.her]的[npc.legs]上方。将自己的[pc.legRace]下体对准位置，
+				#IF(npc.isAttractedTo(pc))
+					你准备以主导的姿态与[npc.name]做爱……
+				#ELSE
+					无视[npc.her]的反对，你准备占有性地强暴[npc.name]……
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(pc.isTaur())
+			<p>
+				你想要与[npc.name]共享更多乐趣，于是抓住[npc.her]的[npc.hand+]，将[npc.her]拉至你身边坐下。然后通过给予[npc.her]一个深情而热烈的吻来阻止了[npc.her]的惊呼声。
+			</p>
+			<p>
+			在这样的姿势下相互热吻片刻后，你结束了亲吻并调整位置，让[npc.name]躺在躺椅上，而你跨在了[npc.her]的[npc.legs]上方。将自己的[pc.legRace]下体对准位置，
+				#IF(npc.isAttractedTo(pc))
+					你准备以主导的姿态与[npc.name]做爱……
+				#ELSE
+					无视[npc.her]的反对，你准备强暴[npc.name]……
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+			你想要与[npc.name]共享更多乐趣，你转身平躺，然后抓住[npc.her]的[npc.hand+]，将[npc.her]拉到你的身上。然后通过给予[npc.her]一个深情而热烈的吻来阻止了[npc.her]的惊呼声。
+			</p>
+			<p>
+			在这样的姿势下相互热吻片刻后，你结束了亲吻并调整位置，让[npc.name]躺在躺椅上，而你则
+			#IF(npc.hasLegs())
+					跨坐在了[npc.her]的[npc.legs]上方。
+				#ELSE
+					将自己的[pc.legRace]下体对准了[npc.her]的腹股沟。
+				#ENDIF
+				你微笑着俯视你的奴隶时，
+				#IF(npc.isAttractedTo(pc))
+					现在你准备来一场支配性爱……
+				#ELSE
+					你无视[npc.her]的反对，准备强行侵犯[npc.herHim]……
+				#ENDIF
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SPA_MASSAGE_SEX_AS_SUB"><![CDATA[
+	<p>
+	#IF(npc.isTaur())
+		#IF(pc.isTaur())
+			你希望与[npc.name]获得一些额外的乐趣，于是便顺从地把你[pc.ass+]推向[npc.herHim]，用这种允许[npc.herHim]像这样与你交配的可能性来引诱[npc.name]。而[npc.name]也明显有些等不及了，[npc.name]迅速骑上你的臀部，然后将[npc.her]那[npc.legRace]下身对准你，好以主导位与你爽上那么一爽……
+		#ELSE
+			你希望与[npc.name]获得一些额外的乐趣，于是便顺从地翻身躺下，用这种允许[npc.herHim]像这样与你交配的可能性来引诱[npc.name]。而[npc.name]也明显有些等不及了，[npc.name]迅速跨过你的下半身，然后将[npc.her]那[npc.legRace]下身对准你，好以主导位与你爽上那么一爽……
+		#ENDIF
+	#ELSE
+		#IF(pc.isTaur())
+				你希望与[npc.name]获得一些额外的乐趣，于是便顺从地把你[pc.ass+]推向[npc.herHim]，用这种允许[npc.herHim]像这样与你交配的可能性来引诱[npc.name]。而[npc.name]也明显有些等不及了，[npc.name]已经迫不及待的想以主导位与你爽上那么一爽……
+		#ELSE
+		你希望与[npc.name]获得一些额外的乐趣，于是便顺从地翻身躺下，用这种允许[npc.herHim]像这样与你交配的可能性来引诱[npc.name]。而[npc.name]也明显有些等不及了，[npc.name]迅速
+			#IF(pc.hasLegs())
+				跨过你的下半身
+			#ELSE
+				将[npc.her]的胯部贴在你的腹股沟上
+			#ENDIF
+				好以主导位与你爽上那么一爽……
+		#ENDIF
+	#ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_MASSAGE_SEX -->
+
+	<htmlContent tag="AFTER_MASSAGE_SEX"><![CDATA[
+	<p>
+		#IF(sex.isDom(pc))
+			你已经从[npc.name]身上获得了满足，于是你站起身来，打算结束这场性爱，并且告诉[npc.herHim]接下来你有其他事情要忙。
+			#IF(npc.isSatisfiedFromLastSex())
+				伴随着一声悠长而又满足的叹息声，[npc.name]懒散地支起身子，开始收拾[npc.her]的东西，然后退开几步，看你接下来是否还有需要[npc.herHim]做的事情……
+			#ELSE
+				伴随着一声欲求不满的轻哼，[npc.name]懒散地支起身子，开始收拾[npc.her]的东西，然后退开几步，看你接下来是否还有需要[npc.herHim]做的事情……
+			#ENDIF
+		#ELSE
+			随着[npc.her]在你身上得到了满足，[npc.name]站起身来，打算结束这场性爱，并且提醒你，接下来你应该还有其他事情要去做。
+			#IF(pc.isSatisfiedFromLastSex())
+				伴随着一声悠长而又满足的叹息声，你懒散地支起身子，开始收拾自己的东西。与此同时，[npc.name]退开几步，看你接下来是否还有需要[npc.herHim]做的事情……
+			#ELSE
+				伴随着一声欲求不满的轻哼，你懒散地支起身子，开始收拾自己的东西。与此同时，[npc.name]退开几步，看你接下来是否还有需要[npc.herHim]做的事情……
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="AFTER_MASSAGE_SEX_FINISHED"><![CDATA[
+	<p>
+		你从躺椅旁[pc.Stepping]开，环顾你的私人水疗中心，思索接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- REFUSE_SLAVE_SEX -->
+
+	<htmlContent tag="REFUSE_SLAVE_SEX"><![CDATA[
+	<p>
+		你现在真的没心情和[npc.Name]做爱，所以你言简意赅地让[npc.herHim]停下，迅速终止了[npc.her]的计划。
+	</p>
+	<p>
+		[npc.speech(好吧……)][npc.she]不情愿地
+		#IF(npc.isFeminine())
+			哀号道。
+		#ELSE
+			咕哝道。
+		#ENDIF
+	</p>
+	<p>
+		你不想再让你的奴隶有机会扑向你，于是你站起来告诉[npc.name]你还有其他事情要做，从而结束了按摩……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="REFUSE_SLAVE_SEX_FINISHED"><![CDATA[
+	<p>
+		你从躺椅旁[pc.Stepping]开，环顾你的私人水疗中心，思索接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- Guest content: -->
+	
+	<htmlContent tag="SPA_GUEST_INVITE"><![CDATA[
+	<p>
+		你想要与[npc.name]共度一些时光，于是你询问[npc.herHim]是否愿意陪你一起去你在莉莱雅豪宅里建的那个水疗中心。
+		#IF(npc.isMute())
+			当[npc.she]听到你的提议时，[这个npc.race]微笑着点了点头，明确表示[npc.sheIs]现在就可以准备出发。
+		#ELSE
+			#IF(npc.isShy())
+				当[npc.she]听到你的提议时，[npc.race]羞涩的回复道，[npc.speech(谢谢，[pc.name]，这听上去挺有趣的……)]
+			#ELSEIF(npc.isConfident())
+				当[npc.she]听到你的提议时，[npc.race]笑着回复道，[npc.speech(听起来太棒了，[pc.name]！来吧，让我们出发！)]
+			#ELSE
+				当[npc.she]听到你的提议时，[npc.race]微笑着回复道：[npc.speech(听上去很有意思，让我们出发吧。)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		你[pc.step]向门口，准备带[npc.name]前往水疗中心……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_ARRIVE"><![CDATA[
+	<p>
+你与[npc.name]并肩[pc.Walking]在走廊上，很快就来到了通往水疗中心的门口。进入内部穿过接待区，便来到了更衣室的门前。
+</p>
+	<p>
+	#IF(npc.isMute())
+		[npc.Name]拉了拉你的[pc.arm]，在引起你的注意后，[npc.she]用手势告诉你没有[npc.she]没有合适的泳装可以更换。
+	#ELSE
+		[npc.name]在你身边停下，随后说道：[npc.speech(我好像没有合适的泳装呢，你有能借我的泳装么？)]
+	#ENDIF
+</p>
+	<p>
+	你的手头是有那么几件备用泳装，你在想该给[npc.herHim]提供哪一件……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_ARRIVE_SWIMSUIT"><![CDATA[
+	<p>
+	出于保守的考虑，你告诉[npc.herHim]可以从附近的储物柜里拿取一件备用泳衣。[npc.name]向你表示了感谢，随后带着泳装迅速[npc.steps]进更衣室。
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_ARRIVE_BIKINI"><![CDATA[
+	<p>
+		考虑到这套泳装略显保守，你建议[npc.name]可以从附近的储物柜里拿一套备用比基尼。[npc.name]在向你致谢后取来了泳装，随即步入更衣室迅速更换起了衣服。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_ARRIVE_MICRO_BIKINI"><![CDATA[
+	<p>
+	为了让[npc.name]展现[npc.her]的身材，你告诉[npc.herHim]附近的储物柜里有一套备用的超小比基尼给[npc.her]穿。
+</p>
+	#IF(npc.getFetishDesire(FETISH_EXHIBITIONIST).isNegative())
+		<p>
+		#IF(npc.isMute())
+			[npc.Name]在听到你的提议后有些忸怩不安，无法言语的[npc.race]带着羞涩的表情摇头明确表示拒绝。
+		#ELSE
+			[npc.Name]在听到你的提议后有些忸怩不安，[npc.she]带着羞涩的表情，弱弱的异议道：[npc.speech(那不太好吧……超小比基尼？我感觉太暴露了……)]
+		#ENDIF
+</p>
+		<p>
+		你继续施压，告诉[npc.name]没有别的选择，要么选微型比基尼，要么就裸体。[npc.she]无奈地叹了一口气，然后从附近的储物柜里翻出微型比基尼，在狠狠的瞪了你一眼之后，[npc.she]迅速[npc.stepping]到了更衣室里。
+</p>
+	#ELSEIF(npc.hasFetish(FETISH_EXHIBITIONIST))
+		<p>
+		#IF(npc.isMute())
+			这个[npc.race]的脸上洋溢着兴奋之情，无法言语的[npc.her]只能用兴奋的点头来表示接受。
+		#ELSE
+			[npc.name]的脸上洋溢着兴奋之情，[npc.speech(超小比基尼听起来太棒了！光是想想穿着那样的东西我就已经感觉好暴露了……)]
+		#ENDIF
+</p>
+		<p>
+			你很高兴
+			#IF(npc.isMute())
+				看到[npc.name]
+			#ELSE
+				听到[npc.name]说
+			#ENDIF
+			愿意穿微型比基尼，在你的催促下，[npc.she]从附近的储物柜里翻出微型比基尼，随后带着它[npc.steps]进了更衣室.
+		</p>
+	#ELSE
+		<p>
+	#IF(npc.isMute())
+		虽然[npc.namePos]在听到你的提议时流露出了一丝惊讶的神情，但[npc.she]还是同意了你的建议，由于无法说话，所以[npc.race]只能通过点头给予你明确的回应。
+	#ELSE
+		虽然[npc.namePos]在听到你的提议时流露出了一丝惊讶的神情，但[npc.she]还是同意了你的建议，[npc.speech(虽然这有些暴露，但我想这还在我的可接受范围内……)]
+	#ENDIF
+</p>
+		<p>
+			你很高兴
+			#IF(npc.isMute())
+				看到[npc.name]
+			#ELSE
+				听到[npc.name]说
+			#ENDIF
+			愿意穿微型比基尼，[npc.she]从附近的储物柜里翻出微型比基尼，随后带着它[npc.steps]进了更衣室.
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_ARRIVE_NAKED"><![CDATA[
+	<p>
+		为了让[npc.name]充分展示[npc.her]的身体，你告诉[npc.herHim]这里不需要穿任何泳装，[npc.she]可以直接脱掉衣物，全身赤裸地进来。
+</p>
+	#IF(npc.getFetishDesire(FETISH_EXHIBITIONIST).isNegative())
+		<p>
+		#IF(npc.isMute())
+			[npc.Name]在听到你的提议后有些忸怩不安，无法言语的[npc.race]带着羞涩的表情摇头明确表示拒绝。
+		#ELSE
+			[npc.Name]在听到你的提议后有些忸怩不安，[npc.she]带着羞涩的表情，弱弱地异议道：[npc.speech(不太好吧……那也太暴露了吧……)]
+		#ENDIF
+</p>
+		<p>
+		你继续施压，告诉[npc.name]没有别的选择，要么脱光，要么就回房间。[npc.she]无奈地叹了一口气，然后才不情不愿地脱下衣服，在狠狠的瞪了你一眼之后，[npc.she]迅速[npc.stepping]到了更衣室里。
+</p>
+	#ELSEIF(npc.hasFetish(FETISH_EXHIBITIONIST))
+		<p>
+		#IF(npc.isMute())
+			这个[npc.race]的脸上洋溢着兴奋之情，无法言语的[npc.her]只能用兴奋的点头来表示接受。
+		#ELSE
+			[npc.name]的脸上洋溢着兴奋之情，[npc.speech(太棒了！光是想想我就已经爽翻天了……)]
+		#ENDIF
+</p>
+		<p>
+			你很高兴
+			#IF(npc.isMute())
+				看到[npc.name]
+			#ELSE
+				听到[npc.name]说
+			#ENDIF
+			愿意裸体，在你的催促下，[npc.she]快速脱下身上的衣服，随后[npc.steps]进了更衣室.
+		</p>
+	#ELSE
+		<p>
+	#IF(npc.isMute())
+		虽然[npc.namePos]在听到你的提议时流露出了一丝惊讶的神情，但[npc.she]还是同意了你的建议，由于无法说话，所以[npc.race]只能通过点头给予你明确的回应。
+	#ELSE
+		虽然[npc.namePos]在听到你的提议时流露出了一丝惊讶的神情，但[npc.she]还是同意了你的建议，[npc.speech(虽然这有些暴露，但我想这还在我的可接受范围内……)]
+	#ENDIF
+</p>
+		<p>
+			你很高兴
+			#IF(npc.isMute())
+				看到[npc.name]
+			#ELSE
+				听到[npc.name]说
+			#ENDIF
+			愿意裸体，[npc.she]脱下身上的衣服，随后[npc.steps]进了更衣室.
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_ARRIVE_SWIM_SHORTS"><![CDATA[
+	<p>
+	由于[npc.name]的选择并不多，你告诉[npc.herHim]，目前唯一的选择是从附近的储物柜里拿一套备用的游泳短裤。[npc.name]向你表示了感谢，随后带着泳装迅速[npc.steps]进更衣室。
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_PLAYER_CLOTHING"><![CDATA[
+	<p>
+		你听到[npc.name]开锁进入的声音，你开始思考是保持当前的穿着进入水疗中心，还是先脱光衣服……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_PLAYER_CLOTHING_CONTINUE"><![CDATA[
+	<p>
+		由于决定不裸体进入，所以你选择保留当前的穿着并等待[npc.name]从更衣室出来。大约几分钟后，[npc.name]打开了门并[npc.steps]了出来。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_PLAYER_CLOTHING_NAKED"><![CDATA[
+	<p>
+		在决定赤身裸体去享受水浴后，你迅速脱掉衣物，等待[npc.name]从更衣室出来。大约几分钟后，[npc.name]打开门并[npc.steps]了出来。
+		#IF(npc.isPrude() || npc.isInnocent())
+			这个[npc.race]在看到你脱掉了所有衣服，脸上不禁微微泛红了起来
+		#ELSE
+			这个[npc.race]见状微笑了起来
+		#ENDIF
+		，然后等待你带着一起进入水疗中心的浴池区域。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_PLAYER_CLOTHING_REVEAL"><![CDATA[
+	<p>
+		你借此机会仔细打量起了[npc.name]，
+		#IF(npc.getClothingInSlot(IS_CHEST)!=null && npc.getClothingInSlot(IS_CHEST).getClothingType()==CT_innoxia_chest_swimsuit)
+			你将目光投向[npc.her]的身体，注意到紧绷的泳衣布料紧紧包裹着[npc.her][npc.hips+]和[npc.breasts+]。[npc.name]顺着[npc.her]的身体向下抚平了泳装上的几处褶皱，转过身展示[npc.her][npc.ass+]，
+		#ELSEIF(npc.getClothingInSlot(IS_GROIN)!=null)
+			#IF(npc.getClothingInSlot(IS_GROIN).getClothingType()==CT_innoxia_groin_micro_bikini)
+				你审视着[npc.her]的身体，注意到[npc.her]微型比基尼的那些布片几乎无法遮盖[npc.her]那
+				#IF(npc.hasVagina())
+					#IF(npc.hasPenis())
+						[npc.nipples+]，[npc.cock+]和[npc.pussy+]。
+					#ELSE
+						[npc.nipples+]和[npc.pussy+]。
+					#ENDIF
+				#ELSEIF(npc.hasPenis())
+					[npc.nipples+]和[npc.cock+]。
+				#ELSE
+					[npc.nipples+]和光滑如玩偶般的下体。
+				#ENDIF
+				[npc.name]在[npc.her][npc.breasts+]上方来回挪动着[npc.her]的[npc.hands]，好调整泳装的细绳，然后
+				#IF(npc.getFetishDesire(FETISH_EXHIBITIONIST).isNegative())
+					在转身时因羞涩而满脸通红，
+				#ELSEIF(npc.hasFetish(FETISH_EXHIBITIONIST))
+					在转身时狡黠一笑，
+				#ELSE
+					面带微笑的看向你，
+				#ENDIF
+			#ELSEIF(npc.getClothingInSlot(IS_GROIN).getClothingType()==CT_innoxia_groin_bikini)
+				你欣赏着[npc.her]的身体，注意到比基尼紧贴着[npc.her]的私密部位和[npc.breasts+]。[npc.name]在身上挪动[npc.her]的[npc.hands]调整泳装，转过身展示了[npc.her][npc.ass+]，此时[npc.she]
+			#ELSEIF(npc.getClothingInSlot(IS_GROIN).getClothingType()==CT_innoxia_groin_swim_shorts)
+				[npc.name]转过身展示[npc.her][npc.ass+]，你死死地注视着[npc.her]的身体，
+			#ENDIF
+		#ELSE
+			你凝视着[npc.her]赤裸的身体，欣赏着[npc.her]
+			#IF(npc.hasVagina())
+				#IF(npc.hasPenis())
+				[npc.nipples+]，[npc.cock+]和[npc.pussy+]。
+					#ELSE
+						[npc.nipples+]和[npc.pussy+]。
+					#ENDIF
+				#ELSEIF(npc.hasPenis())
+					[npc.nipples+]和[npc.cock+]。
+				#ELSE
+					[npc.nipples+]和光滑如玩偶般的下体。
+				#ENDIF
+			[npc.name]在[npc.her][npc.hips+]上方抚过[npc.her]的[npc.hands]，然后
+			#IF(npc.getFetishDesire(FETISH_EXHIBITIONIST).isNegative())
+				在转身时因羞涩而满脸通红，
+				#ELSEIF(npc.hasFetish(FETISH_EXHIBITIONIST))
+					在转身时狡黠一笑，
+				#ELSE
+					面带微笑看向你，
+				#ENDIF
+		#ENDIF
+		#IF(npc.isMute())
+			随后点头指向通往泳池的门，向你投来一个疑问的眼神。
+		#ELSE
+			随后问道，[npc.speech(我们现在就进去吗？)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_PLAYER_CLOTHING_REVEAL_POOLS"><![CDATA[
+	<p>
+		现在你们俩已经准备好在水疗中心接受服务了，你告诉[npc.name]，让她跟着你带领[npc.herHim]进入水疗中心。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE"><![CDATA[
+	<p>
+		私人水疗中心的扩建部分大得令人叹为观止，它整体为长方形，建筑风格让人联想起古罗马的澡堂：两边是一排排大理石柱，柱子支撑着四周的狭窄瓦顶。除此以外，水疗中心的其他部分均为露天设计，但奥术隔绝了这里，让它既不会受到外界环境的影响，也不会听到城市的喧闹声。
+	</p>
+	<p>
+		这个房间的主要特色当然是一个个水池，它们占据了绝大部分空间。水池周围环绕着许多软垫躺椅，池内满是天然泉水，因地热而非常温暖。[npc.Name]对你微笑，静候你说要做什么……
+	</p>
+	#IF(!game.getWorlds().get(WORLD_TYPE_LILAYAS_HOUSE_GROUND_FLOOR).getCells(PLACE_UPGRADE_LILAYA_SPA_BAR).isEmpty())
+		<p>
+			[style.boldOrange(吧台)]<b>：</b>
+<br/>入口旁边设有一个精致时尚的吧台，备有各式饮品与烈酒，若你愿意的话可以在此稍作停留，为自己或[npc.name]倒上一杯饮品。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_BATHING"><![CDATA[
+	<p>
+	你想要充分利用私人水疗中心的主要设施，于是邀请[npc.name]一同进入最近的温泉浴池。刚一踏入温暖的池水，一种深深的宁静感瞬间笼罩住你。当你缓缓坐进相对较浅的水中时，你不由自主地长出了一口气。
+</p>
+	<p>
+	[npc.name]滑入了你身边的水中后也发出了放松的叹息声。随后在转向你投以开心的笑容后，这个[npc.race]闭上了[npc.her]的[npc.eyes]并放松了起来……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_BATHING_END"><![CDATA[
+	<p>
+		你在水池中放松了半小时，感觉容光焕发，准备去做其他的事情。
+		#IF(npc.isAttractedTo(pc))
+			不过要是你愿意的话，在离开水之前，你还可以与[npc.name]一起玩乐一番……
+		#ELSE
+			由于[npc.name]并未对你产生兴趣，所以目前除了离开，水池里也没啥可做的了……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_BATHING_SEX_START"><![CDATA[
+	<p>
+	你想要趁此与[npc.name]找点乐子，于是你建议你们两人可以在泳池里来一发。
+	#IF(npc.isPrude() || npc.isInnocent())
+		在听到你的提议后，[npc.name]明显被吓了一跳，但还是满脸通红地靠在了你的身边
+			#IF(npc.isMute())
+				并贪婪地凝视着你的[pc.eyes]。
+			#ELSE
+				并小声说道：[npc.speech(好吧，[pc.name]，如果你真的想要的话……)]
+			#ENDIF
+	#ELSE
+		在听到你的提议后，[npc.name]便满脸笑容地抱住你的胳膊
+			#IF(npc.isMute())
+				并贪婪地凝视着你的[pc.eyes]。
+			#ELSE
+				并妩媚地说道：[npc.speech(来吧，[pc.name]，我就等着你说这话呢……)]
+			#ENDIF
+	#ENDIF
+</p>
+	<p>
+	在将[npc.race]抱住之后，你在[npc.her]的[npc.lips+]上轻轻一吻，继而做好开始的准备……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_BATHING_SUBMISSIVE_SEX_START"><![CDATA[
+	<p>
+	为了抓住这个与[npc.name]共享快乐时光的机会，你小声地告诉[npc.she]可以趁此机会在泳池里与你发生关系。
+	#IF(npc.isPrude() || npc.isInnocent())
+		在听到你的提议后，[npc.name]明显被吓了一跳，但还是满脸通红地靠在了你的身边
+			#IF(npc.isMute())
+				并贪婪地凝视着你的[pc.eyes]。
+			#ELSE
+				并说道：[npc.speech(好吧，[pc.name]，我也是这么想的……)]
+			#ENDIF
+	#ELSE
+		在听到你的提议后，[npc.name]便满脸笑容地抱住你的胳膊
+			#IF(npc.isMute())
+				并贪婪地凝视着你的[pc.eyes]。
+			#ELSE
+				并妩媚地说道：[npc.speech(来吧，[pc.name]，我还以为你要让我一直等下去呢……)]
+			#ENDIF
+	#ENDIF
+</p>
+	<p>
+	[npc.race]将你拉入[npc.her]的怀中，在开始做爱之前，[npc.her]迅速地在你的[pc.lips+]上留下一吻……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_BATHING_AFTER_SEX"><![CDATA[
+	<p>
+	在与[npc.name]愉快共度了一段时光后，你沉入水底，发出一声满足的长叹。在温暖的水中又再放松几分钟后，你和这个[npc.race]都准备好离开水池，去做些其他事情了……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_BATHING_AFTER_SEX_END"><![CDATA[
+	<p>
+	你感觉全身心都得到了放松，于是你率先离开了水池。随着[npc.name]从水中出来并回到你的身旁后，你开始思索接下来该干些什么……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_GIVE"><![CDATA[
+	<p>
+	你觉得使用水疗中心角落里的一张按摩床会很有趣，于是你告诉[npc.name]，你可以给[npc.herHim]做个按摩。[npc.Name]朝你露出一个欢快的微笑，
+	#IF(npc.isMute())
+			随后默默地
+	#ELSE
+			随后
+	#ENDIF
+	跟随你来到按摩床前躺下并等待你的服务。
+</p>
+	<p>
+		你不想让[npc.name]等太久，便开始用[pc.hands]抚摸[npc.her]的肩膀，接着沿着[npc.her]的背部向下按摩。当你帮[npc.name]舒缓肌肉紧张时，[npc.she]发出了一连串满足的叹息，[npc.she]
+		#IF(npc.isMute())
+			回头看向你，用满是期待的眼神无声地示意你继续按摩。
+		#ELSE
+			[npc.moans]着说，[npc.speech(你真的很擅长这个……~嗯呣~ 继续吧……)]
+		#ENDIF
+	</p>
+	<p>
+    #IF(npc.isAttractedTo(pc))
+        从[npc.name]的行为可以判断，[npc.she]正因你的举动而逐渐产生性趣，当你用[pc.hands]下滑按向[npc.her][npc.ass+]时，[npc.she]将[npc.her]那[npc.hips+]向后挺起，并发出淫靡的[npc.moan]。在你持续按摩[npc.her]炙热的身体时，你在考虑是否要再进一步……
+    #ELSE
+        尽管你明显让[npc.name]得到了愉悦，但你能感觉到[npc.her]的享受并未带有性意味。因此，你只能继续为这个[npc.race]提供无任何色情预期的按摩服务……
+    #ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_GIVE_END"><![CDATA[
+	<p>
+	在继续为[npc.namePos]按摩了一会儿后，你宣告按摩已经完毕了。[npc.name]从按摩台上起身并伸展身躯，在发出满足的长叹声后，[npc.she]笑着看向你
+	#IF(npc.isMute())
+			并用充满感激的眼神看着你，那么接下来要干什么呢……
+	#ELSE
+			并对你说道：[npc.speech(真是太舒服了，谢谢你[pc.name]！我们现在做什么好呢？)]
+	#ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_GIVE_SEX_START"><![CDATA[
+	<p>
+	在知晓只需小小的挑逗就能让[npc.name]变得极度炽热和渴望后，你将[pc.hands]缓缓下滑，
+	#IF(npc.isTaur())
+		越过[npc.her]那[npc.legRace]的背部，然后
+	#ELSE
+		越过[npc.her]的背部，并轻轻分开[npc.her]的[npc.legs]，接着
+	#ENDIF
+	小心翼翼地开始揉捏[npc.her]
+	#IF(npc.hasVagina())
+		[npc.pussy+]。
+	#ELSEIF(npc.hasPenis())
+		[npc.cock+]。
+	#ELSE
+		那光滑如娃娃般的腹股沟。
+	#ENDIF
+</p>
+	#IF(npc.isTaur())
+		#IF(npc.isMute())
+			<p>
+				作为回应，这个无法言语的[npc.race]发出了一系列焦急的哀鸣，随后急不可耐地挺动着[npc.her]的[npc.hips+]，好来表现出[npc.she]希望你与[npc.herHim]交媾的欲望。而你也十分乐意满足[npc.herHim]的愿望，你爬上按摩台，让自己位于[npc.her]那[npc.legRace]腿的后方，准备开始与[npc.herHim]尽情嬉戏……
+			</p>
+		#ELSE
+			<p>
+				作为回应，这个[npc.race]发出了一连串迫切的低吟，随后急不可耐地挺动着[npc.her]的[npc.hips+]，好来表现出[npc.she]希望你与[npc.herHim]交媾的欲望。[npc.she]扭过头来，一边[npc.moansVerb]一边说着[npc.speech(来吧，[pc.name]！~嗯呣！~快上我！)]
+</p>
+			<p>
+			你爬上按摩台，让自己位于[npc.her]那[npc.legRace]腿的后方，准备开始与[npc.herHim]尽情嬉戏……
+</p>
+		#ENDIF
+	#ELSE
+		#IF(npc.isMute())
+			<p>
+				作为回应，这个无法言语的[npc.race]发出了一系列焦急的哀鸣，然后突然翻身并向你展示自己。而你也十分乐意满足[npc.herHim]的愿望，你爬上按摩台，让自己位于[npc.namePos]两腿之间，准备开始与[npc.herHim]共享欢乐时光……
+</p>
+		#ELSE
+			<p>
+				作为回应，[npc.race]发出了一系列焦急的哀鸣，然后突然翻身将正面暴露在你的眼前，并妩媚地看向你的[pc.eyes]，[npc.she][npc.moansVerb]道：[npc.speech(快点！[pc.name]！操死我！)]
+			</p>
+			<p>
+			你爬上按摩台，让自己位于[npc.her]的双[npc.legs]之间，准备开始与[npc.herHim]尽情嬉戏……
+</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_RECEIVE"><![CDATA[
+	<p>
+	你觉得使用水疗中心角落里的一张按摩床会很有趣，于是你告诉[npc.name]，你想让[npc.herHim]给你做个按摩。[npc.Name]朝你露出一个欢快的微笑，
+	#IF(npc.isMute())
+			默默地点头同意。
+	#ELSE
+			回答道，[npc.speech(没问题啦！[pc.name]！)]
+	#ENDIF
+</p>
+	<p>
+		你带着[npc.name]走向按摩桌，而后躺下来等待[npc.race]的按摩。[npc.herHim]先将[npc.hands]滑过你的肩膀，随后沿着脊背缓缓施力。随着肌肉紧张感逐渐消退，你舒服地发出一连串叹息声，随后全身心地放松下来，沉浸在这美妙的感觉之中。
+	</p>
+	<p>
+		#IF(npc.isAttractedTo(pc))
+	很快，事实表明[npc.name]正因这身体接触而变得兴奋不已，因为[npc.she]突然将[npc.her]的[npc.hands]向下挪动，开始按摩你[pc.ass+]并发出了猥琐的[npc.moan]，原本正规的按摩很快就变成了更具挑逗性的爱抚环节。随着[npc.she]开始发出更淫靡的声音时，你不禁思索是否要屈服，并允许[npc.herHim]更进一步……
+		#ELSE
+			即便[npc.she]似乎在为你按摩的过程中相当愉快，但你能感知到[npc.name]的乐趣里并未掺杂性欲因素。因此你继续保持放松状态来享受这次按摩过程，而不期待它会引申出任何淫秽的行为……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_RECEIVE_END"><![CDATA[
+	<p>
+	在继续为你按摩了一会儿后，[npc.Name]宣告按摩已经完毕了。你从按摩台上起身并伸展身躯，在发出满足的长叹声后，[npc.she]笑着看向你
+	#IF(npc.isMute())
+			并默默的等待着你接下来的命令……
+	#ELSE
+			并对你说道：[npc.speech(舒服么？，希望你能喜欢！不过我们现在做些什么好呢？)]
+	#ENDIF
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_RECEIVE_SEX_START"><![CDATA[
+	<p>
+	在知晓只需小小的挑逗就能让[npc.name]变得极度炽热和渴望后，你告诉[npc.herHim]不必克制，可以尽情按摩你身上的任何部位。在听到这话后，[npc.name]开心地嗯了一声，随后迅速将[npc.her]的[npc.hands]向下滑动，
+	#IF(npc.isTaur())
+		越过你那[pc.legRace]的背部，然后
+	#ELSE
+		越过你的背部，并轻轻分开你的[pc.legs]，接着
+	#ENDIF
+	小心翼翼地开始揉捏[npc.her]
+	#IF(npc.hasVagina())
+		[pc.pussy+]。
+	#ELSEIF(npc.hasPenis())
+		[pc.cock+]。
+	#ELSE
+		那光滑如娃娃般的腹股沟。
+	#ENDIF
+</p>
+	#IF(pc.isTaur())
+		<p>
+				作为回应，你发出了一系列焦急的哀鸣，随后急不可耐地挺动着你[pc.hips+]，好来表现出你想和[npc.herHim]交媾的欲望。而[npc.herHim]也十分乐意满足你的愿望，在爬上按摩台后，[npc.her]快速趴在你的后方，准备开始与你尽情嬉戏……
+			</p>
+	#ELSE
+		<p>
+			作为回应，你先是发出了一系列焦急的哀鸣，然后突然翻身向[npc.name]展示自己。而这个[npc.race]也十分乐意满足你的愿望，在爬上按摩台后，[npc.sheIs]调整姿势使[npc.sheIs]位于你的[pc.legs]之间，准备开始与你一起享受快乐时光……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_AFTER_SEX"><![CDATA[
+	<p>
+	在与[npc.name]共同度过了欢乐时光后，你离开按摩台并深深地舒了一口气。随后在交换了一个快速的吻之后，你和这个[npc.race]都准备好去做些其他的事情了……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_CORE_MASSAGE_AFTER_SEX_FINISHED"><![CDATA[
+	<p>
+		你返回到水疗中心的主区域，开始思考接下来要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_GUEST_END"><![CDATA[
+	<p>
+		是时候结束本次水疗体验了，你告诉[npc.name]你与[npc.herHim]度过了一段愉快的时光，但现在是时候离开了，
+		#IF(npc.isMute())
+			无法言语的[npc.race]微笑着点点头，暗示[npc.she]也度过了这段愉快的时光。
+		#ELSE
+			[npc.herHim]高兴的回答道：[npc.speech(我也玩得很开心。谢谢你邀请我来这里，[pc.name]！)]
+		#ENDIF
+	</p>
+	<p>
+		[npc.name]在取回[npc.her]的衣服并穿好后陪同你走出了走廊。在告别之后，[npc.she]回到了[npc.her]的房间，只留下你思索接下来该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SAUNA UPGRADE -->
+	
+	<!-- SPA_SAUNA_INSTALLATION -->
+	
+	<htmlContent tag="SPA_SAUNA_INSTALLATION"><![CDATA[
+	<p>
+		安装桑拿房。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_SAUNA_INSTALLATION_COMMIT"><![CDATA[
+	<p>
+		承诺。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_SAUNA_INSTALLATION_CHANGE_MIND"><![CDATA[
+	<p>
+		改变主意。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_SAUNA -->
+	
+	<htmlContent tag="SPA_SAUNA"><![CDATA[
+	<p>
+		桑拿房。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- POOL UPGRADE -->
+	
+	<!-- SPA_POOL_INSTALLATION -->
+	
+	<htmlContent tag="SPA_POOL_INSTALLATION"><![CDATA[
+	<p>
+		安装桑拿房。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_POOL_INSTALLATION_COMMIT"><![CDATA[
+	<p>
+		承诺。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SPA_POOL_INSTALLATION_CHANGE_MIND"><![CDATA[
+	<p>
+		改变主意。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SPA_POOL -->
+	
+	<htmlContent tag="SPA_POOL"><![CDATA[
+	<p>
+		游泳池。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

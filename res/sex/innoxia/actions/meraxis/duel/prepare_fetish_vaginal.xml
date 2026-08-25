@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#npc.isPlayer()
+		&& !meraxis.hasFetish(FETISH_VAGINAL_RECEIVING)
+		&& (sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_THIGHS, PENETRATION_PENIS).contains(pc)
+			|| sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_VAGINA, PENETRATION_PENIS).contains(pc)
+			|| sex.getOngoingCharactersUsingAreas(meraxis, PENETRATION_CLIT, PENETRATION_CLIT).contains(pc))]
+	]]></actionConditional>
+	<type>PREPARE_FOR_PARTNER_ORGASM</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[NORMAL]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes>
+		<performer>
+			<fetish>FETISH_KINK_GIVING</fetish>
+		</performer>
+		<target>
+			<fetish>FETISH_KINK_RECEIVING</fetish>
+		</target>
+	</associatedFetishes>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+		[#meraxis.addFetish(FETISH_VAGINAL_RECEIVING, true)]
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[
+		[style.colourFetish(淫穴荡妇)]
+	]]></title>
+	<tooltip><![CDATA[
+		#IF(sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_THIGHS, PENETRATION_PENIS).contains(pc))
+			让梅拉克西丝向你承认，她想在腿交高潮后被操小穴。
+		#ELSEIF(sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_VAGINA, PENETRATION_PENIS).contains(pc))
+			让梅拉克西丝向你承认，她喜欢被操小穴，你的鸡巴在她体内的感觉会让她高潮。
+		#ELSE
+			让梅拉克西丝向你承认，她喜欢在与你接吻时刺激她的小穴。
+		#ENDIF
+		<br/>[style.italicsSex(梅拉克西丝会获得“[#FETISH_VAGINAL_RECEIVING.getName(meraxis)]”性癖！)]
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_THIGHS, PENETRATION_PENIS).contains(pc)]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				感觉到梅拉克西丝即将达到高潮，你停止了在她大腿间滑动你[pc.cock+]，开始挑逗她：[pc.speech(你想这样高潮吗？)]
+				<br/><br/>
+				梅拉克西丝马上要高潮，你突然停下了，她拼命用双腿来回磨蹭，抵住你的阴茎，尖叫道：[meraxis.speechNoEffects(对！~啊！~你为什么停了？！继续，我快了！~嗯~我要，我要！)]
+				<br/><br/>
+				意识到你有机会永久性地改变梅拉克西丝对接受阴道性交的态度，于是你向前一推，将你[pc.cock+]顶端滑到她[meraxis.pussy+]上。看着她因你的举动发出饥渴呻吟，你冷笑着提出了你的要求：[pc.speech(告诉我你是个喜欢用淫穴的下流小骚货，我就让你高潮。)]
+				<br/><br/>
+				[meraxis.speechNoEffects(什么？！我……[pc.name]，你真变态……)]她抱怨着，但当你抽回坚硬的阴茎，在她湿润的小穴上摩擦时，她变得温和下来，拼命哭喊道：[meraxis.speechNoEffects(好好！我……我是个下流的小骚货，喜欢用自己的淫穴。现在让我高潮吧！)]
+				<br/><br/>
+				你将[pc.cock+]向前推，顶到她[meraxis.labia+]上，然后继续刚才的动作，霸道地将[pc.cock+]在梅拉克西丝柔软的大腿间来回滑动。[meraxis.race]发出一连串越来越大的尖叫声：[meraxis.speechNoEffects(~啊！~ 我去了！)]
+			]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_VAGINA, PENETRATION_PENIS).contains(pc)]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				感觉到梅拉克西丝即将达到高潮，你将[pc.cock+]滑出她的小穴，用[pc.cockHead+]摩擦她的[meraxis.labia+]，开始挑逗她：[pc.speech(你想这样高潮吗？)]
+				<br/><br/>
+				梅拉克西丝马上要高潮，你突然停下操她，她拼命用[meraxis.pussy+]抵住你的鸡巴，尖叫道：[meraxis.speechNoEffects(对！~啊！~你为什么停了？！继续，我快了！~嗯~我要，我要！)]
+				<br/><br/>
+		意识到你有机会永久性地改变梅拉克西丝对接受阴道性交的态度，于是你向前一推，将你[pc.cock+]顶端滑到她[meraxis.pussy+]上。看着她因你的举动而发出的狂乱呻吟，你冷笑着提出要求：[pc.speech(告诉我你是个喜欢用淫穴的下流小骚货，我就让你高潮。)]
+				<br/><br/>
+				[meraxis.speechNoEffects(什么？！我……[pc.name]，你真变态……)]她抱怨着，但当你抽回坚硬的阴茎，在她湿润的小穴上摩擦时，她变得温和下来，拼命哭喊道：[meraxis.speechNoEffects(好好！我……我是个下流的小骚货，喜欢用自己的淫穴！)]
+				<br/><br/>
+				你向前推进，将你[pc.cock+]重新插入她[meraxis.pussy+]中，继续之前的动作，霸道地将你[pc.cock+]在梅拉克西丝好操的淫穴中进进出出。[meraxis.race]发出一连串越来越大的尖叫声：[meraxis.speechNoEffects(~啊！~ 我去了！)]
+]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getOngoingCharactersUsingAreas(meraxis, PENETRATION_CLIT, PENETRATION_CLIT).contains(pc)]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				感觉到梅拉克西丝即将达到高潮，你抬起[pc.hips+]将[pc.clit+]移开她的小穴，开始挑逗她：[pc.speech(你想这样高潮吗？)]
+				<br/><br/>
+				梅拉克西丝马上要高潮，你突然停下和她磨豆腐，她拼命用[meraxis.pussy+]抵住你的阴蒂，尖叫道：[meraxis.speechNoEffects(对！~啊！~你为什么停了？！继续，我快了！~嗯~我要，我要！)]
+				<br/><br/>
+		意识到你有机会永久性地改变梅拉克西丝对接受阴道性交的态度，你俯下身，将[pc.clit+]滑过她[meraxis.labia+]。看着她因你的举动而发出的狂乱的呻吟，你冷笑着提出要求：[pc.speech(告诉我你是个喜欢用淫穴的下流小骚货，我就让你高潮。)]
+				<br/><br/>
+				[meraxis.speechNoEffects(什么？！我……[pc.name]，你真变态……)]她抱怨着，但当你再次移开你的小穴，她变得温和下来，拼命哭喊道：[meraxis.speechNoEffects(好好！我……我是个下流的小骚货，喜欢用自己的淫穴！)]
+				<br/><br/>
+				你俯下身子，在她[meraxis.pussy+]上摩擦你[pc.clit+]，继续刚才的动作，霸道地用你[pc.pussy+]摩擦梅拉克西丝[meraxis.pussy+]。[meraxis.race]发出一连串越来越大的尖叫声：[meraxis.speechNoEffects(~啊！~ 我去了！)]
+]]></text>
+		</description>
+	</descriptions>
+</sexAction>

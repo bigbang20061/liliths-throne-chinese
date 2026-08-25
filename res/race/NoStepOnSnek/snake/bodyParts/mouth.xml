@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<mouth>
+	<race>NoStepOnSnek_snake</race>
+	<coveringType>MOUTH</coveringType>
+	<tongueType>NoStepOnSnek_snake_tongue</tongueType>
+	<names>
+		<name><![CDATA[吻]]></name>
+	</names>
+	<namesPlural>
+		<name><![CDATA[吻]]></name>
+	</namesPlural>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull]有着[npc.lipSize]的[npc.mouthColourPrimary(true)]
+		#IF(npc.isWearingLipstick())
+			#IF(npc.isPiercedLip())
+				的穿孔[npc.lips]，且
+			#ELSE
+				[npc.lips]，
+			#ENDIF
+			目前[npc.materialCompositionDescriptor]
+			#IF(npc.isHeavyMakeup(BODY_COVERING_TYPE_MAKEUP_LIPSTICK) && game.isLipstickMarkingEnabled())
+				[style.colourPinkDeep(厚厚一层)]
+			#ENDIF
+			[#npc.getLipstick().getFullDescription(npc, true)]。
+		#ELSE
+			#IF(npc.isPiercedLip())
+				的穿孔[npc.lips]。
+			#ELSE
+				[npc.lips]。
+			#ENDIF
+		#ENDIF
+		[npc.Her]喉咙内壁呈[npc.mouthColourSecondary(true)]。
+	]]></bodyDescription>
+	<defaultOrificeModifiers>
+		<modifier>MUSCLE_CONTROL</modifier>
+	</defaultOrificeModifiers>
+</mouth>

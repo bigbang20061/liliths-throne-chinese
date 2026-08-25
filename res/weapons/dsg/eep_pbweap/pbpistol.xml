@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		
+		<authorTag><![CDATA[枪管外壳的底部刻着细小的字迹，写着“执法者官方分配，DSG铸造厂生产。”]]></authorTag>
+	
+		<value>3500</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[一把]]></determiner>
+		
+		<name><![CDATA[胡椒弹手枪]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[胡椒弹手枪]]></namePlural> 
+		
+		<description><![CDATA[一把胡椒弹步枪的缩小版本，带有较弱的风系附魔，使用相同的胡椒油弹药，但射程和伤害都更低。执法者喜欢将其作为备用或辅助武器。]]></description> 
+		
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用你的胡椒弹手枪射向[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]拔出手枪，插入弹夹，取消保险。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]取出弹夹，锁上保险，收枪入套。]]></unequipText>
+		
+		<imageName>pbpistol_nomag.svg</imageName> 
+		
+		<imageEquippedName>pbpistol.svg</imageEquippedName>
+		
+		<damage>25</damage> 
+		
+		<arcaneCost>1</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>FIRE</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/> 
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_GUNMETAL</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_MEDIUM</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，明橙色的油飞溅到[npc2.her][npc2.arm]上。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，明橙色的油飞溅到[npc2.her][npc2.leg]上。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，明橙色的油飞溅到[npc2.her][npc2.face]上。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，燃烧灼痛的油飞溅到[npc2.her][npc2.arm]上。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，燃烧灼痛的油飞溅到[npc2.her][npc2.leg]上。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，燃烧灼痛的油飞溅到[npc2.her][npc2.face]上。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，胡椒油飞溅到[npc2.her][npc2.arm]上，迅速覆盖了附近的[npc2.skin]。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，胡椒油飞溅到[npc2.her][npc2.leg]上，迅速覆盖了附近的[npc2.skin]。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。胡椒弹在[npc2.name]的灵气上破碎，胡椒油飞溅到[npc2.her][npc2.face]上，迅速覆盖了附近的[npc2.skin]。
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]瞄准[npc2.name]并扣动扳机。子弹偏向了一边！胡椒弹毫无用处地在地面上破碎了。
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+  <coreAttributes>
+    <value>0</value>
+    <determiner><![CDATA[一层]]></determiner>
+    <name><![CDATA[覆盖阴部的蛛网]]></name>
+    <namePlural pluralByDefault="false"><![CDATA[覆盖阴部的蛛网]]></namePlural>
+    <description><![CDATA[[npc.namePos][npc.pussy+]上射满了一层厚厚的粘稠蛛网，将其完全封闭，无法穿透！]]></description>
+
+    <physicalResistance>0</physicalResistance>
+    <femininity>ANDROGYNOUS</femininity>
+    <slot>VAGINA</slot>
+    <rarity>COMMON</rarity>
+
+    <imageName>seal.svg</imageName>
+
+    <clothingSet/>
+    <imageEquippedName/>
+    <effects/>
+
+    <blockedPartsList>
+      <blockedParts>
+
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+
+        <clothingAccessRequired>
+          <clothingAccess>GROIN</clothingAccess>
+        </clothingAccessRequired>
+		<blockedBodyParts>
+          <bodyPart>VAGINA</bodyPart>
+        </blockedBodyParts>
+		<clothingAccessBlocked/>
+        <concealedSlots/>
+
+      </blockedParts>
+    </blockedPartsList>
+
+    <incompatibleSlots/>
+
+    <primaryColours>
+		<colour>CLOTHING_WHITE</colour>
+    </primaryColours>
+    <primaryColoursDye/>
+    <secondaryColours/>
+    <secondaryColoursDye/>
+    <tertiaryColours/>
+    <tertiaryColoursDye/>
+
+    <itemTags>
+		<tag>REQUIRES_VAGINA</tag>
+		<tag>SEALS_VAGINA</tag>
+		<tag>DISCARDED_WHEN_UNEQUIPPED</tag>
+		<tag>NO_RANDOM_SPAWN</tag>
+    </itemTags>
+
+  </coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]用[npc.her]的丝囊快速的在[npc.her][npc.pussy+]上吐丝并织成一层厚厚的蜘蛛网。
+]]></self>
+    <other><![CDATA[
+[npc.Name]用[npc.her]的丝囊快速的在[npc2.namePos][npc2.pussy+]上吐丝并织成一层厚厚的蜘蛛网。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]急促的用[npc.her]的丝囊快速的在[npc2.namePos][npc2.pussy+]上吐丝并织成一层厚厚的蜘蛛网。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]摘下[npc.her][npc.pussy]的蛛网并扔到了一边。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将盖在[npc2.namePos][npc2.pussy]的蜘蛛网扯下来并扔在一边。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]急躁的将盖在[npc2.namePos]的[npc2.pussy]的蜘蛛网扯下来并扔在一边。
+]]></otherRough>
+  </displacementText>
+
+
+</clothing>

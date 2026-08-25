@@ -1,0 +1,4235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- World map dialogue: -->
+	<scene id="exterior">
+		<content folderPath="txt/places/fields/dairyFarm">EXTERIOR</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[艾弗利克斯乳业]]></responseTitle>
+				<responseTooltip><![CDATA[走进艾弗利克斯乳业……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_exit</nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_exit)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'EXTERIOR_ENTER'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Entrance/exit: -->
+	<scene id="exit">
+		<content folderPath="txt/places/fields/dairyFarm">EXIT</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[退出]]></responseTitle>
+				<responseTooltip><![CDATA[离开艾弗利克斯乳业，返回弗洛伊田野]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_dairyFarm"/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_innoxia_fields_dairyFarm)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'EXIT_LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Corridor: -->
+	<scene id="corridor">
+		<content folderPath="txt/places/fields/dairyFarm">CORRIDOR</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	
+	<!-- Locked door: -->
+	<scene id="locked_door">
+		<content folderPath="txt/places/fields/dairyFarm">LOCKED_DOOR</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[[pc.Step]回去]]></responseTitle>
+				<responseTooltip><![CDATA[你进不了门……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_corridor</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_corridor)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'LOCKED_DOOR_STEP_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Reception: -->
+	<scene id="reception">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION'))]
+			#IF(game.getCharactersPresent().contains(dale))
+				[#dale.setPlayerKnowsName(true)]
+			#ENDIF
+			[#pc.setCharacterReactedToPregnancy(dale, true)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_started) || !game.getCharactersPresent().contains(dale))
+				1
+			#ELSE
+				5
+			#ENDIF
+		]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_evelyx_work_started)]
+		]]></travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交谈]]></responseTitle>
+				<responseTooltip><![CDATA[问问戴尔有没有空聊聊。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_reception_talk</nextDialogue>
+			</response>
+			<!-- Sex with cow: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[奶工性爱]]></responseTitle>
+				<responseTooltip><![CDATA[问问戴尔和农场的一只“牛”做爱的事。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_reception_milker_sex</nextDialogue>
+			</response>
+			<!-- Work/Promotions: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && !flags.hasFlag(FLAG_innoxia_evelyx_work_started)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[工作]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!game.isLactationContentEnabled())
+						需启用泌乳内容才能在这里工作！
+					#ELSE
+						告诉戴尔你想了解更多关于当奶牛的事。
+					#ENDIF
+					]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!game.isLactationContentEnabled())
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_reception_milker_work
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && flags.hasFlag(FLAG_innoxia_evelyx_work_started) && !flags.hasFlag(FLAG_innoxia_evelyx_work_promotion_meeting)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[晋升]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_promotion1) || flags.hasFlag(FLAG_innoxia_evelyx_work_promotion2) || flags.hasFlag(FLAG_innoxia_evelyx_work_promotion3))
+						#IF(!pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true))
+							你必须拥有耳标才能获得晋升！你得找找你把耳标给了谁，从他们那拿回来……
+						#ELSE
+							告诉戴尔你已经获得了晋升资格，希望升级你的标签。
+						#ENDIF
+					#ELSE
+						你还没有挣够资格……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true) && (flags.hasFlag(FLAG_innoxia_evelyx_work_promotion1) || flags.hasFlag(FLAG_innoxia_evelyx_work_promotion2) || flags.hasFlag(FLAG_innoxia_evelyx_work_promotion3)))
+						innoxia_places_fields_dairyFarm_work_promotion
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && flags.hasFlag(FLAG_innoxia_evelyx_work_started) && flags.hasFlag(FLAG_innoxia_evelyx_work_promotion_meeting) && !flags.hasFlag(FLAG_innoxia_evelyx_finished_no_bad_end)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[艾弗利克斯促销]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true) || !pc.isFeminine() || pc.getLegConfiguration()!=LEG_CONFIGURATION_QUADRUPEDAL || (pc.getRace()!=RACE_COW_MORPH && pc.isAbleToHaveRaceTransformed()))
+						想获得最终晋升，你需要
+						#IF(!pc.hasVagina())
+							[style.colourBad(小穴)]
+						#ELSE
+							[style.colourGood(小穴)]
+						#ENDIF
+						和
+						#IF(!pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+							[style.colourBad(不被限制)]，并拥有
+						#ELSE
+							[style.colourGood(不被限制)]，并拥有
+						#ENDIF
+						#IF(!pc.isFeminine())
+							[style.colourBad(女性化的外貌)],
+						#ELSE
+							[style.colourGood(女性化的外貌)],
+						#ENDIF
+						并拥有
+						#IF(pc.getLegConfiguration()!=LEG_CONFIGURATION_QUADRUPEDAL)
+							[style.colourBad(四足的下半身)]，
+						#ELSE
+							[style.colourGood(四足的下半身)],
+						#ENDIF
+						并转化为
+						#IF(pc.getRace()!=RACE_COW_MORPH && pc.isAbleToHaveRaceTransformed())
+							[style.colourBad(牛女或无法被转化)]。
+						#ELSE
+							[style.colourGood(牛女或无法被转化)]。
+						#ENDIF
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_evelyx_work_promotion_meeting_didnt_sign))
+						艾弗利克斯说今天不想看见你了，你或许得明天再来……
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_evelyx_work_promotion_meeting_happened))
+						告诉戴尔你改变主意了，想就你的特别晋升与艾弗利克斯再见一面。
+					#ELSE
+						告诉戴尔你决定去见艾弗利克斯来获得你的特殊晋升。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_promotion_meeting_didnt_sign) || !pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true) || !pc.isFeminine() || pc.getLegConfiguration()!=LEG_CONFIGURATION_QUADRUPEDAL || (pc.getRace()!=RACE_COW_MORPH && pc.isAbleToHaveRaceTransformed()))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_work_promotion_evelyx
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<!-- Monica quest: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && pc.hasQuest(QUEST_LINE_ROMANCE_MONICA) && pc.isQuestProgressLessThan(QUEST_LINE_ROMANCE_MONICA, QUEST_ROMANCE_MONICA_3_THE_JOURNEY_HOME)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[莫妮卡挤奶器]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_monica_meeting_refused))
+						你拒绝了艾弗利克斯关于莫妮卡的吸奶器的提议，她可能明天才愿意见你……
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_evelyx_monica_meeting))
+						问问戴尔，你能否就莫妮卡的吸奶器问题再和艾弗利克斯见一面。
+					#ELSE
+						问问戴尔是否知道莫妮卡的定制吸奶器在哪里，你能不能有一个。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_monica_meeting_refused))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_monica_quest_start
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && flags.hasFlag(FLAG_innoxia_evelyx_daily_fuck_unlocked)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[艾弗利克斯]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_daily_fuck))
+						你今天已经和艾弗利克斯见过面了……
+					#ELSE
+						告诉戴尔你想和艾弗利克斯来一场特殊会面……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_daily_fuck))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_evelyx_sex_meeting
+					#ENDIF
+				]]></nextDialogue>
+				<effects/>
+			</response>
+			<!-- Under desk blowjob: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && dale.getTotalTimesHadSex(pc)>0 && !pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[口交]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，无法嗦戴尔的牛子……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && dale.getTotalTimesHadSex(pc)>0 && pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && flags.hasFlag(FLAG_innoxia_evelyx_reception_sex)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[口交]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你今天已经在桌子下给戴尔口过了，他目前警惕你再来一次……
+					<br/>[style.italicsMinorBad(如果想给他口交得明天再来。)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && dale.getTotalTimesHadSex(pc)>0 && pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && !flags.hasFlag(FLAG_innoxia_evelyx_reception_sex)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[口交]]></responseTitle>
+				<responseTooltip><![CDATA[爬到戴尔桌子下面给他口交。]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_desk_oral]]></id>
+					<startingPosition><![CDATA[SITTING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[SITTING_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_reception_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">RECEPTION_BLOWJOB_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[dale]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+			<!-- Step back -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_evelyx_work_started)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[
+					#IF(game.getCharactersPresent().contains(dale))
+						0
+					#ELSE
+						1
+					#ENDIF
+				]]></index>
+				<responseTitle><![CDATA[[pc.Step]回去]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCharactersPresent().contains(dale))
+						告诉戴尔你没别的事了并走向出口。
+					#ELSEIF(dale.isPlayerKnowsName())
+						戴尔现在不在，你只能回到等候区了。
+					#ELSE
+						接待员现在不在，你只能回到等候区了。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_exit</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_STEP_BACK'))]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_exit)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_after_sex">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_evelyx_reception_sex, true)]
+		]]></preParsingEffects>
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你爽够了，用口交结束……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">RECEPTION_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_reception"/>
+	</scene>
+	
+	<scene id="reception_no_content">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_evelyx_work_started)]
+		]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_reception"/>
+	</scene>
+	
+	<scene id="reception_no_content_continue_dialogue">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_evelyx_work_started)]
+		]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_reception"/>
+	</scene>
+	
+	<scene id="reception_talk">
+		<content folderPath="txt/places/fields/dairyFarm">RECEPTION_TALK</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[他自己]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_himself))
+						你今天已经问过戴尔他的情况了，如果想重复这段对话或许明天再来……
+					#ELSE
+						和戴尔聊聊他自己。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_himself))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_dale_talk_himself, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_HIMSELF'))]
+					#IF(dale.getAffection(pc)<40)
+						[#game.appendToTextStartStringBuilder(dale.incrementAffection(pc, 10))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[工作]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_work))
+						你今天已经问过戴尔他在农场做什么工作了，如果想重复这段对话或许明天再来……
+					#ELSE
+						问问戴尔他在农场做什么工作。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_work))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_dale_talk_work, true)]
+					[#flags.setFlag(FLAG_innoxia_dale_talk_work_revealed, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_WORK'))]
+					#IF(dale.getAffection(pc)<40)
+						[#game.appendToTextStartStringBuilder(dale.incrementAffection(pc, 5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[艾弗利克斯]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_evelyx))
+						你今天已经问过戴尔关于他的老板艾弗利克斯了，如果想重复这段对话或许明天再来……
+					#ELSE
+						向戴尔打听打听他的老板艾弗利克斯。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_evelyx))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_dale_talk_evelyx, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_EVELYX'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[农场]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_farm))
+						你今天已经问过戴尔农场的历史了，如果想重复这段对话或许明天再来……
+					#ELSE
+						向戴尔打听打听农场的历史。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_farm))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_dale_talk_farm, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_FARM'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[露内特]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_lunette))
+						你今天已经向戴尔问过露内特了，如果想重复这段对话或许明天再来……
+					#ELSE
+						向戴尔打听打听露内特为什么能使农场幸免遇难。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_dale_talk_lunette))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_reception_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_dale_talk_lunette, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_LUNETTE'))]
+				]]></effects>
+			</response>
+			<!-- Dale sleep improvement -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_dale_talk_work_revealed) && !flags.hasFlag(FLAG_innoxia_dale_talk_sleep)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[睡觉]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(dale.getAffection(pc)<AFFECTION_POSITIVE_THREE_CARING.getMinimumValue())
+							你觉得戴尔对你的喜爱度还不足以让他与你讨论自己睡得有多好……
+							<br/>[style.italicsBad(要求戴尔对你的好感至少达到‘[#AFFECTION_POSITIVE_THREE_CARING.getName()]’。)]
+						#ELSE
+							你不喜欢戴尔说他“基本上”睡眠充足，问问他每晚具体休息多少小时。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue stripContent="true"><![CDATA[
+						#IF(dale.getAffection(pc)<AFFECTION_POSITIVE_THREE_CARING.getMinimumValue())
+							null
+						#ELSE
+							innoxia_places_fields_dairyFarm_reception_talk
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_dale_talk_sleep, true)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_SLEEP'))]
+						#IF(dale.getAffection(pc)<60)
+							[#game.appendToTextStartStringBuilder(dale.incrementAffection(pc, 5))]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_dale_talk_sleep) && !dale.hasTrait(PERK_HEAVY_SLEEPER, true)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[泰迪熊]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(pc.hasItemType(ITEM_GIFT_TEDDY_BEAR))
+							送戴尔一个泰迪熊助眠。
+						#ELSE
+							你没有泰迪熊，无法送给戴尔……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue stripContent="true"><![CDATA[
+						#IF(pc.hasItemType(ITEM_GIFT_TEDDY_BEAR))
+							innoxia_places_fields_dairyFarm_reception_talk
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_dale_teddy_bear_given, true)]
+						[#dale.addTrait(PERK_HEAVY_SLEEPER)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_TEDDY_BEAR'))]
+						[#pc.removeItemByType(ITEM_GIFT_TEDDY_BEAR)]
+						[#dale.addItem(itemGen.generateItem(ITEM_GIFT_TEDDY_BEAR), false, true)]
+						#IF(dale.getAffection(pc)<80)
+							[#game.appendToTextStartStringBuilder(dale.setAffection(pc, 80))]
+						#ENDIF
+					]]></effects>
+				</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[感谢戴尔，你已经耽误他很长时间了。]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_reception_no_content</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_TALK_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_milker_sex">
+		<content folderPath="txt/places/fields/dairyFarm">RECEPTION_MILKER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[学徒(#IF(pc.getMoney()>=10000)[style.moneyFormat(10000, span)]#ELSE[style.moneyFormatUncoloured(10000, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=10000) 交一万火币，和一个学徒奶工做爱。#ELSE 你付不起和一个学徒奶工做爱…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=10000)innoxia_places_fields_dairyFarm_milker_sex_start#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(10000)]', true)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-10000))]
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_barn1)]
+					[#dale.setLocation(pc)]
+					[#evelyx.setDairyRevealed(0)]
+					[#game.addNPC('EvelyxMilker', 'cow')]
+					[#cow.initMilkerLevel(0)]
+					[#cow.setLocation(pc, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_SEX_TRAINEE'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[小母牛(#IF(pc.getMoney()>=5000)[style.moneyFormat(5000, span)]#ELSE[style.moneyFormatUncoloured(5000, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=5000) 交五千火币，和农场的小母牛做爱。#ELSE 你付不起火币和小母牛做爱…… #ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=5000)innoxia_places_fields_dairyFarm_milker_sex_start#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(5000)]', true)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-5000))]
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_barn2)]
+					[#dale.setLocation(pc)]
+					[#evelyx.setDairyRevealed(1)]
+					[#game.addNPC('EvelyxMilker', 'cow')]
+					[#cow.initMilkerLevel(1)]
+					[#cow.setLocation(pc, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_SEX_HEIFER'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[奶牛(#IF(pc.getMoney()>=2500)[style.moneyFormat(2500, span)]#ELSE[style.moneyFormatUncoloured(2500, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=2500) 交两千五火币，和农场的奶牛做爱。#ELSE 你付不起钱和奶牛做爱……#ENDIF]]></responseTooltip>
+				<nextDialogue><![CDATA[#IF(pc.getMoney()>=2500)innoxia_places_fields_dairyFarm_milker_sex_cow_choices#ELSEnull#ENDIF]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(2500)]', true)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-2500))]
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_barn3)]
+					[#dale.setLocation(pc)]
+					[#evelyx.setDairyRevealed(2)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[告诉戴尔你改变主意了，不想和牛女做爱。]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_reception_no_content</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_SEX_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="milker_sex_start">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[开始]]></responseTitle>
+				<responseTooltip><![CDATA[站到[cow.name]准备操她……]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_milking_stall]]></id>
+					<startingPosition><![CDATA[MILKING_STALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[MILKING_STALL_BEHIND_MILKING_STALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>cow</id>
+							<slot><![CDATA[MILKING_STALL_LOCKED_IN_MILKING_STALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_milker_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">RECEPTION_MILKER_SEX_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#dale.returnToHome()]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[
+					退钱
+					#IF(flags.getSavedLong('evelyx_work_level')==0)
+						([style.moneyFormat(9500, span)])
+					#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+						([style.moneyFormat(4500, span)])
+					#ELSE
+						([style.moneyFormat(2000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉戴尔你改变主意了，不想和这只奶牛做爱。
+					<br/>[style.italicsMinorGood(你会得到退款)]
+					#IF(flags.getSavedLong('evelyx_work_level')==0)
+						9500火币！
+					#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+						4500火币！
+					#ELSE
+						2000火币！
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_reception_no_content</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_SEX_START_BACK'))]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_reception)]
+					[#dale.returnToHome()]
+					#IF(flags.getSavedLong('evelyx_work_level')==0)
+						[#game.appendToTextStartStringBuilder(pc.incrementMoney(9500))]
+					#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+						[#game.appendToTextStartStringBuilder(pc.incrementMoney(4500))]
+					#ELSE
+						[#game.appendToTextStartStringBuilder(pc.incrementMoney(2000))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="milker_sex_cow_choices">
+		<content folderPath="txt/places/fields/dairyFarm">MILKER_SEX_COW_SEARCH</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[找到母牛]]></responseTitle>
+				<responseTooltip><![CDATA[找个合你口味的奶牛……]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_milker_sex_start</nextDialogue>
+				<effects><![CDATA[
+					[#game.addNPC('EvelyxMilker', 'cow')]
+					[#cow.initMilkerLevel(2)]
+					[#cow.setLocation(pc, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'MILKER_SEX_COW_SEARCH_FOUND'))]
+				]]></effects>
+			</response>
+			<!-- Furry level: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_furry))
+						Stage: [style.colourTfGreater(纯兽)]
+					#ELSE
+						Stage: [style.colourTfPartial(似兽)]
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					决定找个似牛女或是纯牛女。
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_furry))
+						<br/>[style.colourTfGreater(你要找一个纯牛女，她会是完全福瑞。)]
+					#ELSE
+						<br/>[style.italicsTfPartial(你要找一个似牛女，她除了耳朵、角、头发、尾巴和眼部以外都是人类。)]
+					#ENDIF
+				]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[0]]></secondsPassed>
+				<nextDialogue/>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_furry))
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_furry, false)]
+					#ELSE
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_furry, true)]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Taur: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_taur))
+						下半身：[style.colourTfGreater(半兽身人)]
+					#ELSE
+						下半身：[style.colourTfHuman(两足)]
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					决定找个普通的双足行走的牛女或是半兽身人。
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_taur))
+						<br/>[style.colourTfGreater(你要找一个半兽身人牛女，她的下半身回事兽态的牛。)]
+					#ELSE
+						<br/>[style.colourTfHuman(你要找一个普通的双足行走的牛女。)]
+					#ENDIF
+				]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[0]]></secondsPassed>
+				<nextDialogue/>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_taur))
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_taur, false)]
+					#ELSE
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_taur, true)]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Pregnant: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_pregnant))
+						腹部：[style.colourSexDom(怀孕)]
+					#ELSE
+						腹部：[style.colourSex(没怀孕)]
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					决定找个怀孕的牛女或是没怀孕的牛女。
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_pregnant))
+						<br/>[style.colourSexDom(你要找一个显怀的牛女。)]
+					#ELSE
+						<br/>[style.colourSex(你要找一个未孕的牛女。)]
+					#ENDIF
+				]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[0]]></secondsPassed>
+				<nextDialogue/>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_pregnant))
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_pregnant, false)]
+					#ELSE
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_pregnant, true)]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Mileage: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_high_mileage))
+						使用“里程”：[style.colourMinorBad(高)]
+					#ELSE
+						使用“里程”：[style.colourMinorGood(普通)]
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					决定找个比较“紧”的牛女或是比较“松”的牛女。
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_high_mileage))
+						<br/>[style.colourMinorBad(你要找一个“松”的、很好操的牛女。)]
+					#ELSE
+						<br/>[style.colourMinorGood(你要找一个很“紧”的牛女)]
+					#ENDIF
+				]]></responseTooltip>
+				<secondsPassed minutes="true"><![CDATA[0]]></secondsPassed>
+				<nextDialogue/>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_cow_search_high_mileage))
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_high_mileage, false)]
+					#ELSE
+						[#flags.setFlag(FLAG_innoxia_evelyx_cow_search_high_mileage, true)]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="milker_after_sex">
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你觉得足够了……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">RECEPTION_MILKER_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接待处]]></responseTitle>
+				<responseTooltip><![CDATA[跟戴尔回到他的办公桌。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_reception_no_content]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_AFTER_SEX_END'))]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_reception)]
+					[#dale.setLocation(pc)]
+					[#game.banishNPC(cow)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="reception_milker_work">
+		<content folderPath="txt/places/fields/dairyFarm">RECEPTION_MILKER_WORK</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接受]]></responseTitle>
+				<responseTooltip><![CDATA[告诉戴尔你同意这些条件并在合同上签字。]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_reception_no_content</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_WORK_ACCEPT'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_WORK_ACCEPT_END'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_started, true)]
+					[#game.appendToTextEndStringBuilder(pc.addClothing(evelyx.getEvelyxEarTag(pc, 0), false))]
+					[#flags.setSavedLong('evelyx_work_level', 0)]
+					[#flags.setSavedLong('evelyx_player_number', game.getNpcTally()+2000)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[回绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉戴尔你对在这些条件下工作没兴趣。]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_reception_no_content</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_WORK_DECLINE'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_offered, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.isPiercedEar()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[接受(被穿孔)]]></responseTitle>
+				<responseTooltip><![CDATA[告诉戴尔你同意这些条件并在合同上签字，同时接受他为你打耳洞的提议。]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_reception_no_content</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_WORK_ACCEPT'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_WORK_ACCEPT_PIERCED'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_WORK_ACCEPT_END'))]
+					[#pc.setPiercedEar(true)]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_started, true)]
+					[#game.appendToTextEndStringBuilder(pc.addClothing(evelyx.getEvelyxEarTag(pc, 0), false))]
+					[#flags.setSavedLong('evelyx_work_level', 0)]
+					[#flags.setSavedLong('evelyx_player_number', game.getNpcTally()+2000)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="work_promotion">
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_promotion1))
+				[#game.appendToTextEndStringBuilder(evelyx.upgradeEarTag(pc, 1))]
+				[#flags.setSavedLong('evelyx_work_level', 1)]
+			#ELSEIF(flags.hasFlag(FLAG_innoxia_evelyx_work_promotion2))
+				[#game.appendToTextEndStringBuilder(evelyx.upgradeEarTag(pc, 2))]
+				[#flags.setSavedLong('evelyx_work_level', 2)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[感谢戴尔，决定下一步该怎么做……]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_reception_no_content_continue_dialogue</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'RECEPTION_MILKER_WORK_PROMOTION_END'))]
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_promotion3))
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_promotion_meeting, true)]
+					#ENDIF
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_promotion1, false)]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_promotion2, false)]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_promotion3, false)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="work_promotion_evelyx">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_manager)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION_EVELYX</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[进入艾弗利克斯的办公室。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_work_promotion_evelyx_enter</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="work_promotion_evelyx_enter">
+		<content folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION_EVELYX_ENTER</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[服从]]></responseTitle>
+				<responseTooltip><![CDATA[听从艾弗利克斯的命令，在她读你业绩报告的同时向她展示你的小穴。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_work_promotion_evelyx_contract</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'WORK_PROMOTION_EVELYX_ENTER_OBEY'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝在艾弗利克斯面前自取其辱，在她阅读你的业绩报告时保持安静。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_work_promotion_evelyx_contract</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'WORK_PROMOTION_EVELYX_ENTER_REFUSE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="work_promotion_evelyx_contract">
+		<preParsingEffects><![CDATA[
+			[#evelyx.transformCock(true)]
+			[#evelyx.displaceClothingForAccess(CA_PENIS, null)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION_EVELYX_CONTRACT</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[不签]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝签合同，这会导致你被赶出艾弗利克斯的办公室。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_work_promotion_evelyx_contract_refused</nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.transformCock(false)]
+					[#evelyx.equipClothing()]
+					[pc.setNearestLocation(PLACE_TYPE_innoxia_fields_dairyFarm_corridor)]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_promotion_meeting_didnt_sign, true)]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_promotion_meeting_happened, true)]
+				]]></effects>
+			</response>
+			<!-- Bad end variations: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isBadEndsEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<colour>GENERIC_BAD_END</colour>
+				<responseTitle><![CDATA[签字]]></responseTitle>
+				<responseTooltip><![CDATA[
+					将自己签为奴隶，从而允许艾弗利克斯拥有你，并随心所欲地处置你……
+					<br/>[style.boldBadEnd(坏结局：)]成为艾弗利克斯的奴隶，就再也没有未来了！
+				]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_work_promotion_evelyx_contract_signed</nextDialogue>
+				<effects><![CDATA[
+					[#game.setBadEnd("艾弗利克斯的奴隶")]
+					[#game.appendToTextEndStringBuilder(evelyx.stripPlayer())]
+					[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'WORK_PROMOTION_EVELYX_CONTRACT_SIGNED_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isBadEndsEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[签字]]></responseTitle>
+				<responseTooltip><![CDATA[
+					签署合同，允许自己被恶魔半人马操，日薪一千火币。这也会导致艾弗利克斯操你的小穴……
+				]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_work_promotion_evelyx_contract_signed</nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_evelyx_finished_no_bad_end, true)]
+					[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'WORK_PROMOTION_EVELYX_CONTRACT_SIGNED_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="work_promotion_evelyx_contract_refused">
+		<content folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION_EVELYX_CONTRACT_DONT_SIGN</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[至少你没被解雇……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_dairyFarm_corridor"/>
+				<effects><![CDATA[
+					[#evelyx.transformCock(false)]
+					[#evelyx.equipClothing()]
+					[pc.setNearestLocation(PLACE_TYPE_innoxia_fields_dairyFarm_corridor)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="work_promotion_evelyx_contract_signed">
+		<content folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION_EVELYX_CONTRACT_SIGNED</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[服从]]></responseTitle>
+				<responseTooltip><![CDATA[将你自己献给艾弗利克斯，让她用巨大的肉棒深深插入你的小穴……]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_doggy]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_work_promotion_evelyx_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION_EVELYX_CONTRACT_SIGNED_FUCK_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[evelyx]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="work_promotion_evelyx_after_sex">
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[艾弗利克斯爽够了，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">WORK_PROMOTION_EVELYX_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Bad end slave: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_evelyx_finished_no_bad_end)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟着你的新主人，她会带你到奴隶谷仓……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_start</nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.transformCock(false)]
+					[#evelyx.equipClothing()]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_barn4_door)]
+					[#evelyx.setDairyRevealed(3)]
+					[#evelyx.setLocation(pc)]
+				]]></effects>
+			</response>
+			<!-- No bad end: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_evelyx_finished_no_bad_end)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[按艾弗利克斯说的做，离开她的办公室。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_dairyFarm_corridor"/>
+				<effects><![CDATA[
+					[#evelyx.transformCock(false)]
+					[#evelyx.equipClothing()]
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_dairyFarm_corridor)]
+					[#flags.setFlag(FLAG_innoxia_evelyx_no_bad_end_daily_fuck, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'WORK_PROMOTION_EVELYX_AFTER_SEX_NO_BAD_END_FINISHED'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Monica quest scenes: -->
+	<scene id="monica_quest_start">
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_START</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[会面]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_monica_meeting) && pc.hasTraitActivated(PERK_CHUUNI))
+						直接去艾弗利克斯的办公室，让戴尔来追你……
+					#ELSE
+						跟随戴尔来到艾弗利克斯的办公室见她。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_monica_meeting))
+						innoxia_places_fields_dairyFarm_monica_quest_meeting_repeat
+					#ELSE
+						innoxia_places_fields_dairyFarm_monica_quest_meeting
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_manager)]
+					[#evelyx.setDairyRevealed(-1)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting">
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING</content>
+		<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[解释]]></responseTitle>
+				<responseTooltip><![CDATA[告诉艾弗利克斯为什么你想要那个吸奶器。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_intro</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_ROMANCE_MONICA, QUEST_ROMANCE_MONICA_2_UNREASONABLE_DEMAND))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_repeat">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_manager)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_REPEAT</content>
+		<secondsPassed minutes="true"><![CDATA[
+			#IF(pc.hasTraitActivated(PERK_CHUUNI))
+				5
+			#ELSE
+				20
+			#ENDIF
+		]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_monica_quest_meeting_intro"/>
+	</scene>
+	
+	<scene id="monica_quest_meeting_intro">
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_INTRO</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[支付(#IF(pc.getMoney()>=50000)[style.moneyFormat(50000, span)]#ELSE[style.moneyFormatUncoloured(50000, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=50000) 给艾弗利克斯五万火币让她代购莫妮卡的吸奶器。#ELSE 你没有五万火币来买莫妮卡的吸奶器……#ENDIF]]></responseTooltip>
+				<nextDialogue><![CDATA[#IF(pc.getMoney()>=50000)innoxia_places_fields_dairyFarm_monica_quest_meeting_paid#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-50000))]
+					[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem('innoxia_quest_monica_milker')))]
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_ROMANCE_MONICA, QUEST_ROMANCE_MONICA_3_THE_JOURNEY_HOME))]
+					[#dale.setLocation(pc)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[戴戒指]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isAbleToEquip(evelyx.getOralRing(), true, pc))
+						你无法装备艾弗利克斯的特殊环，无法佩戴它来换取莫妮卡的吸奶器……
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						你的嘴被限制，无法佩戴艾弗利克斯的特殊环来换取莫妮卡的吸奶器……
+					#ELSE
+						装备艾弗利克斯的特殊环并回答她的问题来换取莫妮卡的吸奶器……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.isAbleToEquip(evelyx.getOralRing(), true, evelyx) && pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						innoxia_places_fields_dairyFarm_monica_quest_meeting_ring
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.equipClothingFromNowhere(evelyx.getOralRing(), true, evelyx)]
+					[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem('innoxia_quest_monica_milker')))]
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_ROMANCE_MONICA, QUEST_ROMANCE_MONICA_3_THE_JOURNEY_HOME))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<requiredPerks>
+					<perk><![CDATA[FEMALE_ATTRACTION]]></perk>
+					<perk><![CDATA[CHUUNI]]></perk>
+				</requiredPerks>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_ORAL_GIVING]]></fetish>
+				</requiredFetishes>
+				<responseTitle><![CDATA[诱惑她]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						你的嘴被限制，无法勾引艾弗利克斯……
+					#ELSE
+						告诉艾弗利克斯你能提供一些比火币更有价值的东西……
+						<br/>[style.italicsSex(这会让你给艾弗利克斯舔阴。)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_monica_quest_meeting_seduce
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.addItem(itemGen.generateItem('innoxia_quest_monica_milker')))]
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_ROMANCE_MONICA, QUEST_ROMANCE_MONICA_3_THE_JOURNEY_HOME))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉艾弗利克斯你对她的交易不感兴趣，离开她的办公室……]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_monica_quest_meeting_end</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'MONICA_QUEST_MEETING_INTRO_LEAVE'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_monica_meeting_refused, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_paid">
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_PAID</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[戴尔带你回到接待处……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_end</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_ring">
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_RING</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[赞同]]></responseTitle>
+				<responseTooltip><![CDATA[同意艾弗利克斯并告诉她你无法想象还有什么比给她舔阴更好的事了……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_next</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'MONICA_QUEST_MEETING_RING_AGREE'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[不同意]]></responseTitle>
+				<responseTooltip><![CDATA[告诉艾弗利克斯，你可以来点比口她更好的事情……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_next</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'MONICA_QUEST_MEETING_RING_DISAGREE'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_monica_ring_questions_failed, true)]
+					[#game.appendToTextStartStringBuilder(evelyx.incrementAffection(pc, -5))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_ring_next">
+		<preParsingEffects><![CDATA[
+			[#evelyx.displaceClothingForAccess(CA_VAGINA, null)]
+			[#evelyx.unequipClothingIntoVoid(evelyx.getClothingInSlot(IS_GROIN), true, evelyx)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[讨好]]></responseTitle>
+				<responseTooltip><![CDATA[奉承艾弗利克斯，告诉她这是你见过最漂亮的小穴……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_final</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'MONICA_QUEST_MEETING_RING_NEXT_FLATTER'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[印象平平]]></responseTitle>
+				<responseTooltip><![CDATA[告诉艾弗利克斯你见过更好的小穴……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_final</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'MONICA_QUEST_MEETING_RING_NEXT_UNIMPRESSED'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_monica_ring_questions_failed, true)]
+					[#game.appendToTextStartStringBuilder(evelyx.incrementAffection(pc, -5))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_ring_final">
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_RING_FINAL</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[顺从]]></responseTitle>
+				<responseTooltip><![CDATA[顺从艾弗利克斯，舔干净她的手指，然后俯下身子准备给她口……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_final_pussy_tf</nextDialogue>
+				<effects><![CDATA[
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝艾弗利克斯的offer，让戴尔带你回到接待处……]]></responseTooltip>
+				<nextDialogue stripContent="true">innoxia_places_fields_dairyFarm_monica_quest_meeting_end</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'MONICA_QUEST_MEETING_RING_REFUSE'))]
+					[#evelyx.equipClothing()]
+					[#game.appendToTextStartStringBuilder(evelyx.incrementAffection(pc, -10))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_ring_final_pussy_tf">
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_RING_FINAL_PUSSY_TF</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Keep pussy as-is: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[给她口]]></responseTitle>
+				<responseTooltip><![CDATA[开始给艾弗利克斯舔阴……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_oral]]></id>
+					<startingPosition><![CDATA[SITTING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[SITTING_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_RING_OBEY_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[evelyx]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+			<!-- Loosen pussy: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_evelyx_monica_ring_questions_failed)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[稍微松动]]></responseTitle>
+				<responseTooltip><![CDATA[你没有给艾弗利克斯满意的答复，不能要求她转化阴部小穴！]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_evelyx_monica_ring_questions_failed)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[稍微松动]]></responseTitle>
+				<responseTooltip><![CDATA[在开始给她口之前，先让艾弗利克斯把她的小穴弄松一点……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_oral]]></id>
+					<startingPosition><![CDATA[SITTING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[SITTING_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_RING_OBEY_ORAL_START_LOOSEN</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[evelyx]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#evelyx.loosenPussy()]
+				]]></effects>
+			</response>
+			<!-- Gaping mess pussy: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_evelyx_monica_ring_questions_failed) && game.isGapeContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[松垮不堪]]></responseTitle>
+				<responseTooltip><![CDATA[你没有给艾弗利克斯满意的答复，不能要求她转化小穴！]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_evelyx_monica_ring_questions_failed) && game.isGapeContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[松垮不堪]]></responseTitle>
+				<responseTooltip><![CDATA[在添她的小穴之前，让艾弗利克斯把她紧致美丽的小穴变得松垮洞开……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_oral]]></id>
+					<startingPosition><![CDATA[SITTING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[SITTING_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_monica_quest_meeting_ring_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_RING_OBEY_ORAL_START_GAPING_MESS</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[evelyx]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#evelyx.gapingMessPussy()]
+					[#flags.setFlag(FLAG_innoxia_evelyx_daily_fuck_gaped, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_ring_after_sex">
+		<preParsingEffects><![CDATA[
+			#IF(pc.getClothingInSlot(IS_FINGER)!=null)
+				[#pc.getClothingInSlot(IS_FINGER).setSealed(false)]
+			#ENDIF
+			[#dale.setLocation(pc)]
+			[#flags.setFlag(FLAG_innoxia_evelyx_daily_fuck_unlocked, true)]
+			[#flags.setFlag(FLAG_innoxia_evelyx_daily_fuck, true)]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[艾弗利克斯很满意，现在……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_RING_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[戴尔带你回到接待处……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_end</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_seduce">
+		<preParsingEffects><![CDATA[
+			[#evelyx.displaceClothingForAccess(CA_VAGINA, null)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_SEDUCE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[舔阴]]></responseTitle>
+				<responseTooltip><![CDATA[在艾弗利克斯前面跪下，给她口……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_oral]]></id>
+					<startingPosition><![CDATA[SITTING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[SITTING_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_monica_quest_meeting_seduce_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_SEDUCE_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[evelyx]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+			<!-- Fuck her: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[操她]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis())
+						你没有鸡巴，没法操艾弗利克斯的小穴，这是无鸡之谈……
+					#ELSE
+						你的鸡巴被限制，没法操艾弗利克斯……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[操她]]></responseTitle>
+				<responseTooltip><![CDATA[说服艾弗利克斯让你操她的小穴……]]></responseTooltip>
+				<requiredPerks>
+					<perk><![CDATA[CONVINCING_REQUESTS]]></perk>
+				</requiredPerks>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_vaginal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_monica_quest_meeting_seduce_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_SEDUCE_VAGINAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[evelyx]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_seduce_after_sex">
+		<preParsingEffects><![CDATA[
+			[#dale.setLocation(pc)]
+			[#flags.setFlag(FLAG_innoxia_evelyx_daily_fuck_unlocked, true)]
+			[#flags.setFlag(FLAG_innoxia_evelyx_daily_fuck, true)]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[艾弗利克斯很满足，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_SEDUCE_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[戴尔带你回到接待处……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_monica_quest_meeting_end</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="monica_quest_meeting_end">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_reception)]
+			[#dale.setLocation(pc)]
+			[#flags.setFlag(FLAG_innoxia_evelyx_monica_meeting, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">MONICA_QUEST_MEETING_END</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_evelyx_work_started)]
+		]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_reception"/>
+	</scene>
+	
+	<!-- Repeat meeting after Monica quest completed via sex: -->
+	
+	<scene id="evelyx_sex_meeting">
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_SEX_MEETING</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[等待]]></responseTitle>
+				<responseTooltip><![CDATA[等艾弗利克斯准备好见你……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_evelyx_sex_meeting_office</nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_manager)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="evelyx_sex_meeting_office">
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_SEX_MEETING_OFFICE</content>
+		<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[保持紧致]]></responseTitle>
+				<responseTooltip><![CDATA[告诉艾弗利克斯她的小穴太棒了。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_evelyx_sex_meeting_pussy_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'EVELYX_SEX_MEETING_TF_NONE'))]
+				]]></effects>
+			</response>
+			<!-- Loosen pussy: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[稍微松动]]></responseTitle>
+				<responseTooltip><![CDATA[让艾弗利克斯把她的小穴弄松点。]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_evelyx_sex_meeting_pussy_tf</nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.loosenPussy()]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'EVELYX_SEX_MEETING_TF_LOOSEN'))]
+				]]></effects>
+			</response>
+			<!-- Gaping mess pussy: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isGapeContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[松垮不堪]]></responseTitle>
+				<responseTooltip><![CDATA[让艾弗利克斯把她紧致美丽的小穴变得松垮洞开……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_evelyx_sex_meeting_pussy_tf</nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.gapingMessPussy()]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'EVELYX_SEX_MEETING_TF_GAPING'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_daily_fuck_gaped, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="evelyx_sex_meeting_pussy_tf">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[舔阴]]></responseTitle>
+				<responseTooltip><![CDATA[在艾弗利克斯前面跪下，给她口……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_oral]]></id>
+					<startingPosition><![CDATA[SITTING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[SITTING_SITTING]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_evelyx_sex_meeting_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">EVELYX_SEX_MEETING_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[evelyx]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+			<!-- Fuck her: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[操她]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis())
+						你没有鸡巴，没法操艾弗利克斯的小穴，这是无鸡之谈……
+					#ELSE
+						你的鸡巴被限制，没法操艾弗利克斯……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[操她]]></responseTitle>
+				<responseTooltip><![CDATA[说服艾弗利克斯让你操她的小穴……]]></responseTooltip>
+				<requiredPerks>
+					<perk><![CDATA[CONVINCING_REQUESTS]]></perk>
+				</requiredPerks>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_vaginal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_BACK]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_evelyx_sex_meeting_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">EVELYX_SEX_MEETING_VAGINAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[evelyx]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="evelyx_sex_meeting_after_sex">
+		<preParsingEffects><![CDATA[
+			[#dale.setLocation(pc)]
+			[#flags.setFlag(FLAG_innoxia_evelyx_daily_fuck, true)]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[艾弗利克斯很满足，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_SEX_MEETING_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[戴尔带你回到接待处……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_evelyx_sex_meeting_end</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="evelyx_sex_meeting_end">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_reception)]
+			[#dale.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_SEX_MEETING_END</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_evelyx_work_started)]
+		]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_reception"/>
+	</scene>
+	
+	
+	<!-- Dormitory: -->
+	<scene id="dormitory">
+		<content folderPath="txt/places/fields/dairyFarm">DORMITORY</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<!-- Rest: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[休息 (1小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息一小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_REST'))]
+					[#pc.applySleep(60)]
+					#IF(((game.getHourOfDay() + 1) % 24 < 1 ) || ((game.getHourOfDay() + 1) % 24 >= 5))
+						[#dale.returnToHome()]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[休息(4小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息四小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[240]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_REST'))]
+					[#pc.applySleep(240)]
+					#IF(((game.getHourOfDay() + 4) % 24 < 1) || ((game.getHourOfDay() + 4) % 24 >= 5))
+						[#dale.returnToHome()]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[休息(8小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息八小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[480]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_REST'))]
+					[#pc.applySleep(480)]
+					#IF(((game.getHourOfDay() + 8) % 24 < 1) || ((game.getHourOfDay() + 8) % 24 >= 5))
+						[#dale.returnToHome()]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[休息(12小时)]]></responseTitle>
+				<responseTooltip><![CDATA[休息十二小时，不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[720]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_REST'))]
+					[#pc.applySleep(720)]
+					#IF(((game.getHourOfDay() + 12) % 24 < 1) || ((game.getHourOfDay() + 12) % 24 >= 5))
+						[#dale.returnToHome()]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[
+					休息直到
+					#IF(game.isDayTime())
+						日落
+					#ELSE
+						日出
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					五分钟后，休息
+					#IF(game.getMinutesUntilNextMorningOrEvening() >= 60)
+						[#~~(game.getMinutesUntilNextMorningOrEvening()/60)]时
+					#ENDIF
+					#IF(game.getMinutesUntilNextMorningOrEvening() % 60 != 0)
+						[#~~(game.getMinutesUntilNextMorningOrEvening()%60)]分
+					#ENDIF
+					直到
+					#IF(game.isDayTime())
+						日落。
+					#ELSE
+						天明。
+					#ENDIF
+					不仅会恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]和[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能获得“充分休息”效果。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					[#~~(game.getMinutesUntilNextMorningOrEvening() + 5)]
+				]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_REST'))]
+					[#pc.applySleep(~~(game.getMinutesUntilNextMorningOrEvening() + 5))]
+					#IF(((game.getHourOfDay() + (game.getMinutesUntilNextMorningOrEvening()/60)) % 24 < 1) || ((game.getHourOfDay() + (game.getMinutesUntilNextMorningOrEvening()/60)) % 24 >= 5))
+						[#dale.returnToHome()]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- Shower: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[快速淋浴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					用宿舍的浴室洗个快澡。
+					<br/>[style.italicsGood(最多能从所有腔穴种清理<b>[style.fluid(500)]</b>液体。)]
+					<br/>[style.italicsGood(这<b>只能</b>清理你正在装备的衣物。)]
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_SHOWER_QUICK'))]
+					[#game.appendToTextStartStringBuilder(pc.applyWash(false, false, SE_CLEANED_SHOWER, 120+10))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[全身冲淋]]></responseTitle>
+				<responseTooltip><![CDATA[
+					用宿舍的浴室好好洗个澡，花些时间彻底清理自己。
+					<br/>[style.italicsExcellent(这会清理你腔穴里的<b>所有</b>液体。)]
+					<br/>[style.italicsGood(这<b>只能</b>清理你正在装备的衣物。)]
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[20]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_SHOWER'))]
+					[#game.appendToTextStartStringBuilder(pc.applyWash(true, false, SE_CLEANED_SHOWER, 240+20))]
+				]]></effects>
+			</response>
+			
+			<!-- Alarm Clock: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[调闹钟]]></responseTitle>
+				<responseTooltip><![CDATA[在手机上设置闹钟，这样你就能在特定时间醒来。]]></responseTooltip>
+				<nextDialogue stripContent="false"><![CDATA[ROOM_SET_ALARM]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[[#game.saveDialogueNode()]]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.getSavedLong('player_phone_alarm') < 0)
+						睡到闹铃响起(未设置)
+					#ELSE
+						睡到闹铃响起 ([#
+							var alarm = flags.getSavedLong('player_phone_alarm');
+							var alarmObj = game.getCustomTime(alarm/60, alarm%60, 0);
+							game.getDisplayTime(alarmObj)
+						])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.getSavedLong('player_phone_alarm') < 0)
+						[style.colourBad(未设定闹铃！)]
+					#ELSE
+						休息
+						#IF(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))==0)
+							24小时，
+						#ELSE
+							#IF((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))) >= 60)
+								[#~~((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))) / 60)]小时，
+							#ENDIF
+							#IF((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))) % 60 != 0)
+								[#~~((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))) % 60)]分钟，
+							#ENDIF
+						#ENDIF
+						直到闹钟响起。除了恢复[#ATTRIBUTE_HEALTH_MAXIMUM.getName()]与[#ATTRIBUTE_MANA_MAXIMUM.getName()]，还能使你获得“充分休息”效果。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(flags.getSavedLong('player_phone_alarm') < 0)
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_dormitory
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					#IF(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))==0)
+						1440
+					#ELSE
+						[#~~(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm')))]
+					#ENDIF
+				]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_REST'))]
+					#IF(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))==0)
+						[#pc.applySleep(24*60)]
+					#ELSE
+						[#pc.applySleep(~~(game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm'))))]
+					#ENDIF
+					#IF(((game.getHourOfDay() + ((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm')))/60)) % 24 < 1) ||
+						((game.getHourOfDay() + ((game.getMinutesUntilTimeInMinutes(flags.getSavedLong('player_phone_alarm')))/60)) % 24 >= 5))
+						[#dale.returnToHome()]
+					#ENDIF
+				]]></effects>
+			</response>
+			
+			<!-- Vending Machine: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[11]]></index>
+				<responseTitle><![CDATA[自动贩卖机]]></responseTitle>
+				<responseTooltip><![CDATA[走到自动售货机前，仔细看看有什么。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_dormitory_vending_machine]]></nextDialogue>
+			</response>
+			
+			<!-- Dale: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(dale) && dale.getTotalTimesHadSex(pc)>0]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[12]]></index>
+				<responseTitle><![CDATA[戴尔]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_dorm_sex))
+						这个时候戴尔正在员工宿舍睡觉。不过，你已经让他疲惫了一个晚上，所以应该让他自己好好睡……
+					#ELSE
+						这个时候戴尔正在员工宿舍睡觉。你可以溜进去看看能不能找到他……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_dorm_sex))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_dormitory_dale
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="dormitory_vending_machine">
+		<content folderPath="txt/places/fields/dairyFarm">DORMITORY_VENDING_MACHINE</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue><![CDATA[
+			[#game.getCurrentDialogueNode().getId().equals('innoxia_places_fields_dairyFarm_dormitory_vending_machine')]
+		]]></continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Food/Drinks: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[水(#IF(pc.getMoney()>=20)[style.moneyFormat(20, span)]#ELSE[style.moneyFormatUncoloured(20, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=20)买瓶水。#ELSE你没钱买水……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=20)innoxia_places_fields_dairyFarm_dormitory_vending_machine#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(20)]', true)]
+					[#game.addSpecialParsingString('一瓶香草水', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_DRINK'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-20))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem('innoxia_race_human_vanilla_water')))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[泡泡牛奶(#IF(pc.getMoney()>=30)[style.moneyFormat(30, span)]#ELSE[style.moneyFormatUncoloured(30, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=30)买瓶泡泡牛奶。#ELSE你买不起泡泡牛奶……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=30)innoxia_places_fields_dairyFarm_dormitory_vending_machine#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(30)]', true)]
+					[#game.addSpecialParsingString('一瓶泡泡牛奶', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_DRINK'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-30))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem('innoxia_race_cow_bubble_milk')))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[小面包(#IF(pc.getMoney()>=30)[style.moneyFormat(30, span)]#ELSE[style.moneyFormatUncoloured(30, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=30)买个独立包装小面包。#ELSE你买不起小面包……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=30)innoxia_places_fields_dairyFarm_dormitory_vending_machine#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(30)]', true)]
+					[#game.addSpecialParsingString('一块独立包装小面包', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_FOOD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-30))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem('innoxia_race_human_bread_roll')))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[泡泡奶油(#IF(pc.getMoney()>=40)[style.moneyFormat(40, span)]#ELSE[style.moneyFormatUncoloured(40, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=40)买一壶泡泡奶油。#ELSE你买不起泡泡奶油……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=40)innoxia_places_fields_dairyFarm_dormitory_vending_machine#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(40)]', true)]
+					[#game.addSpecialParsingString('一罐泡泡奶油', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_FOOD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-40))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem('innoxia_race_cow_bubble_cream')))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[浆果松饼 (#IF(pc.getMoney()>=60)[style.moneyFormat(60, span)]#ELSE[style.moneyFormatUncoloured(60, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=60)买一盘浆果松饼。#ELSE你买不起浆果松饼……#ENDIF]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[#IF(pc.getMoney()>=60)innoxia_places_fields_dairyFarm_dormitory_vending_machine#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(60)]', true)]
+					[#game.addSpecialParsingString('一盘浆果松饼', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_FOOD'))]
+					[#game.appendToTextStartStringBuilder(pc.incrementMoney(-60))]
+					[#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem('innoxia_race_badger_berry_trifle')))]
+				]]></effects>
+			</response>
+			<!-- Potions: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[“美牛牛”(#IF(pc.getMoney()>=1200)[style.moneyFormat(1200, span)]#ELSE[style.moneyFormatUncoloured(1200, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<1200)
+						你买不起“美牛牛”药水……
+					#ELSE
+						将1200火币投入贩卖机，买一瓶“美牛牛”药水。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.getMoney()>=1200)
+						innoxia_places_fields_dairyFarm_dormitory_vending_machine
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(1200)]', true)]
+					[#game.addSpecialParsingString('“美牛牛”', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_POTION'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-1200))]
+					[#game.appendToTextEndStringBuilder(pc.addItem(evelyx.getVendingMachinePotionFem()))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[“波牛牛”(#IF(pc.getMoney()>=1400)[style.moneyFormat(1400, span)]#ELSE[style.moneyFormatUncoloured(1400, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<1400)
+						你买不起“波牛牛”药水……
+					#ELSE
+						将1400火币投入贩卖机，买一瓶“波牛牛”药水。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.getMoney()>=1400)
+						innoxia_places_fields_dairyFarm_dormitory_vending_machine
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(1400)]', true)]
+					[#game.addSpecialParsingString('“波牛牛”', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_POTION'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-1400))]
+					[#game.appendToTextEndStringBuilder(pc.addItem(evelyx.getVendingMachinePotionBusty()))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[“乳牛牛”(#IF(pc.getMoney()>=1600)[style.moneyFormat(1600, span)]#ELSE[style.moneyFormatUncoloured(1600, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<1600)
+						你买不起“乳牛牛”药水……
+					#ELSE
+						将1600火币投入贩卖机，买一瓶“乳牛牛”药水。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.getMoney()>=1600)
+						innoxia_places_fields_dairyFarm_dormitory_vending_machine
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(1600)]', true)]
+					[#game.addSpecialParsingString('“乳牛牛”', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_POTION'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-1600))]
+					[#game.appendToTextEndStringBuilder(pc.addItem(evelyx.getVendingMachinePotionMilky()))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[“淫牛牛”(#IF(pc.getMoney()>=1800)[style.moneyFormat(1800, span)]#ELSE[style.moneyFormatUncoloured(1800, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<1800)
+						你买不起“淫牛牛”药水……
+					#ELSE
+						将1800火币投入贩卖机，买一瓶“淫牛牛”药水。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.getMoney()>=1800)
+						innoxia_places_fields_dairyFarm_dormitory_vending_machine
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(1800)]', true)]
+					[#game.addSpecialParsingString('“淫牛牛”', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_POTION'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-1800))]
+					[#game.appendToTextEndStringBuilder(pc.addItem(evelyx.getVendingMachinePotionWet()))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[“喜牛牛”(#IF(pc.getMoney()>=2000)[style.moneyFormat(2000, span)]#ELSE[style.moneyFormatUncoloured(2000, span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<2000)
+						你买不起“喜牛牛”药水……
+					#ELSE
+						将2000火币投入贩卖机，买一瓶“喜牛牛”药水。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[
+					#IF(pc.getMoney()>=2000)
+						innoxia_places_fields_dairyFarm_dormitory_vending_machine
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString(2000)]', true)]
+					[#game.addSpecialParsingString('“喜牛牛”', false)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_PURCHASE_POTION'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-2000))]
+					[#game.appendToTextEndStringBuilder(pc.addItem(evelyx.getVendingMachinePotionBimbo()))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[离开自动贩卖机……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_VENDING_MACHINE_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="dormitory_dale">
+		<content folderPath="txt/places/fields/dairyFarm">DORMITORY_DALE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开他]]></responseTitle>
+				<responseTooltip><![CDATA[你觉得吵醒他不好，留下睡着的戴尔，返回奶牛宿舍……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_DALE_BACK'))]
+				]]></effects>
+			</response>
+			<!-- Generic sex: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[加入他]]></responseTitle>
+				<responseTooltip><![CDATA[爬上戴尔的床，告诉他你对鸡巴十分饥渴……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_dorms]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN_TWO]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_dormitory_dale_after_sex]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_DALE_SEX_START'))]
+					[#pc.setCharacterReactedToPregnancy(dale, true)]
+					[#dale.wakeUp()]
+				]]></effects>
+			</response>
+			<!-- Oral: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[口交]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，无法嗦戴尔的牛子……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[口交]]></responseTitle>
+				<responseTooltip><![CDATA[温柔地掀开被子，开始给戴尔口交……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_dorms_oral]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_MISSIONARY_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_dormitory_dale_after_sex]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[dale]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_DALE_SEX_START_ORAL'))]
+					[#pc.setCharacterReactedToPregnancy(dale, true)]
+					[#dale.wakeUp()]
+				]]></effects>
+			</response>
+			<!-- Sex: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[骑上鸡巴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasVagina())
+						你没有小穴，没法骑上戴尔的鸡巴……
+					#ELSE
+						你的小穴被限制，没法骑上戴尔的鸡巴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isVaginaVirgin())
+						献上童贞
+					#ELSE
+						骑上鸡巴
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isVaginaVirgin())
+						温柔地拉开戴尔床单，爬到他的上位，用他的鸡巴挑逗你的处女小穴，告诉他他可以成为你的第一次……
+					#ELSE
+						温柔地拉开戴尔床单，爬到他的上位，用他的鸡巴挑逗你的小穴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_dorms_vaginal]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_COWGIRL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_dormitory_dale_after_sex]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[dale]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_DALE_SEX_START_PUSSY'))]
+					[#pc.setCharacterReactedToPregnancy(dale, true)]
+					[#dale.wakeUp()]
+				]]></effects>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && !pc.isAbleToAccessCoverableArea(CA_ANUS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[骑上鸡巴(肛门)]]></responseTitle>
+				<responseTooltip><![CDATA[你的肛门被限制，没办法骑到戴尔的鸡巴上……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isAssVirgin())
+						献上菊穴童贞
+					#ELSE
+						骑上鸡巴(肛门)
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isVaginaVirgin())
+						温柔地拉开戴尔床单，爬到他的上位，用他的鸡巴挑逗你的童贞菊穴，告诉他他可以成为你的第一次……
+					#ELSE
+						温柔地拉开戴尔床单，爬到他的上位，用他的鸡巴挑逗你的菊穴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_dorms_anal]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_COWGIRL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_dormitory_dale_after_sex]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[dale]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_DALE_SEX_START_ANAL'))]
+					[#pc.setCharacterReactedToPregnancy(dale, true)]
+					[#dale.wakeUp()]
+				]]></effects>
+			</response>
+			<!-- Sleep sex: -->
+			<response>
+				<availabilityConditional><![CDATA[[#dale.hasTrait(PERK_HEAVY_SLEEPER, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[睡奸]]></responseTitle>
+				<responseTooltip><![CDATA[多亏了你送的泰迪熊，戴尔睡得很沉，所以只要你温柔点，你可以在不弄醒他的情况下和他做爱……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_sleep_sex]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_COWGIRL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_dormitory_dale_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">DORMITORY_DALE_SLEEP_SEX_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="dormitory_dale_after_sex">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_evelyx_dorm_sex, true)]
+		]]></preParsingEffects>
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[戴尔太累了需要睡觉……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">DORMITORY_DALE_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[留下睡着的戴尔，返回奶牛宿舍……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_dormitory]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'DORMITORY_DALE_AFTER_SEX_LEAVE'))]
+					[#dale.goToSleep()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Storage area: -->
+	<scene id="storage">
+		<content folderPath="txt/places/fields/dairyFarm">STORAGE</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交谈]]></responseTitle>
+				<responseTooltip><![CDATA[靠近一个办公室职员问好。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_storage_talk]]></nextDialogue>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="storage_talk">
+		<content folderPath="txt/places/fields/dairyFarm">STORAGE_TALK</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[交谈]]></responseTitle>
+				<responseTooltip><![CDATA[这个职员貌似没工夫聊天……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Evelyx's office: -->
+	<scene id="manager">
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_evelyx_finished_no_bad_end)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[给半人马操 (+[style.moneyFormat(1000, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isTaur())
+						你需要有半兽身人下半身才能进行你的半人马每日一操……
+					#ELSEIF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+						你需要有小穴并且不受限制才能进行你的半人马每日一操……
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_evelyx_no_bad_end_daily_fuck))
+						你今天完成半人马每日一操了，如果想要的话明天再来……
+					#ELSE
+						敲艾弗利克斯办公室的门，说你来完成半人马每日一操……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.isTaur() || !pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true) || flags.hasFlag(FLAG_innoxia_evelyx_no_bad_end_daily_fuck))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_manager_enter
+					#ENDIF
+				]]></nextDialogue>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="manager_enter">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_evelyx_no_bad_end_daily_fuck, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_ENTER</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟随艾弗利克斯前往拍卖厅。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_manager_enter_auction]]></nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.transformCock(false)]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_auction)]
+					[#evelyx.setLocation(pc)]
+					[#pc.setCharacterReactedToPregnancy(evelyx, true)]
+					[#evelyx.setCharacterReactedToPregnancy(pc, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[热身]]></responseTitle>
+				<responseTooltip><![CDATA[乞求艾弗利克斯将她巨大的肉棒深深插入你的小穴，为即将到来的一切做好准备……]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_evelyx_office_doggy]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>evelyx</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_manager_enter_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_ENTER_SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[evelyx]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#evelyx.transformCock(true)]
+					[#pc.setCharacterReactedToPregnancy(evelyx, true)]
+					[#evelyx.setCharacterReactedToPregnancy(pc, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="manager_enter_after_sex">
+		<preParsingEffects><![CDATA[
+			[#pc.applyWash(true, true, null, 0)]
+			[#evelyx.applyWash(true, true, null, 0)]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[艾弗利克斯爽够了，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟随艾弗利克斯前往拍卖厅。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_manager_enter_auction]]></nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.transformCock(false)]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_auction)]
+					[#evelyx.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="manager_enter_auction">
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_AUCTION</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[竞拍]]></responseTitle>
+				<responseTooltip><![CDATA[恶魔半人马们开始争相竞价，都想拍下你……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_manager_enter_auction_end</nextDialogue>
+				<effects><![CDATA[
+					[#game.addNPC('LunetteMelee', 'owner')]
+					[#owner.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="manager_enter_auction_end">
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_AUCTION_END</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被骑]]></responseTitle>
+				<responseTooltip><![CDATA[[owner.Name]为了庆祝中标，骑在你身上，当着她姐妹的面粗暴地蹂躏你的小穴……]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_centauress_mounted]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>owner</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_manager_enter_auction_sex_end]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_AUCTION_END_SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition/>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[owner]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="manager_enter_auction_sex_end">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[半人马爽够了，结束了性爱……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_AUCTION_SEX_END</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[结束]]></responseTitle>
+				<responseTooltip><![CDATA[艾弗利克斯带你回到接待处……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_manager_enter_auction_sex_end_leave]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.banishNPC(owner)]
+					[#evelyx.returnToHome()]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_reception)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(1000))]
+					[#dale.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="manager_enter_auction_sex_end_leave">
+		<content folderPath="txt/places/fields/dairyFarm">EVELYX_OFFICE_AUCTION_SEX_END_LEAVE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[
+			[#!flags.hasFlag(FLAG_innoxia_evelyx_work_started)]
+		]]></travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_reception"/>
+	</scene>
+	
+	
+	<!-- Training barn: -->
+	<scene id="barn1">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REQUIREMENTS'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_TRAINING</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[开始工作]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.hasStatusEffect(SE_FATIGUED))
+						你不能在如此疲劳的情况下工作！
+						<br/>[style.italicsMinorBad(当你受到 “疲劳”状态效果影响时，你不能开始工作……)]
+					#ELSEIF(!game.isLactationContentEnabled())
+						挤奶场景需要启用泌乳内容才能正常工作！
+					#ELSEIF(!pc.isCoverableAreaExposed(CA_NIPPLES))
+						在开始工作之前，你需要完全露出乳头！
+					#ELSEIF(pc.hasVagina() && !pc.isCoverableAreaExposed(CA_VAGINA))
+						在开始工作之前，你需要完全露出小穴！
+					#ELSEIF(pc.hasBreastsCrotch() && !pc.isCoverableAreaExposed(CA_NIPPLES_CROTCH))
+						在开始工作之前，你需要完全露出胯乳乳头！
+					#ELSE
+						躺在一个空着的挤奶台上，准备在接下来的四个小时里挤奶……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.hasStatusEffect(SE_FATIGUED) || !game.isLactationContentEnabled() || !pc.isCoverableAreaExposed(CA_NIPPLES) || (pc.hasVagina() && !pc.isCoverableAreaExposed(CA_VAGINA)) || (pc.hasBreastsCrotch() && !pc.isCoverableAreaExposed(CA_NIPPLES_CROTCH)))
+						null
+					#ELSEIF(pc.getBreastRawMilkStorageValue()==0)
+						innoxia_places_fields_dairyFarm_barn_work_no_milk
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_initial
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setSavedLong('evelyx_work_hours', 0)]
+					#IF(!pc.isPregnant())
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_not_pregnant_at_start, true)]
+					#ELSE
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_not_pregnant_at_start, false)]
+					#ENDIF
+					#IF(pc.getBreastRawMilkStorageValue()>0)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_INITIAL_START'))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Training barn door: -->
+	<scene id="barn1_door">
+		<preParsingEffects><![CDATA[
+			#IF(pc.getLastPlaceType()==PLACE_TYPE_innoxia_fields_dairyFarm_corridor)
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_TRAINING_DOOR'))]
+			#ELSE
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_DOOR_EXIT'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=0 && pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true)]]]></travelDisabled>
+		<responses>
+			<!-- Player is not trainee: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=0 && pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[[pc.Step]回去]]></responseTitle>
+				<responseTooltip><![CDATA[你进不了门……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_corridor</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_corridor)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_TRAINING_DOOR_STEP_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Heifer barn: -->
+	<scene id="barn2">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REQUIREMENTS'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_HEIFER</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_barn1"/>
+	</scene>
+	
+	<!-- Heifer barn door: -->
+	<scene id="barn2_door">
+		<preParsingEffects><![CDATA[
+			#IF(pc.getLastPlaceType()==PLACE_TYPE_innoxia_fields_dairyFarm_corridor)
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_HEIFER_DOOR'))]
+			#ELSE
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_DOOR_EXIT'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=1 && pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true)]]]></travelDisabled>
+		<responses>
+			<!-- Player is not heifer: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=1 && pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[[pc.Step]回去]]></responseTitle>
+				<responseTooltip><![CDATA[你进不了门……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_corridor</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_corridor)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_HEIFER_DOOR_STEP_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Cow barn: -->
+	<scene id="barn3">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REQUIREMENTS'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_COW</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_barn1"/>
+	</scene>
+	
+	<!-- Cow barn door: -->
+	<scene id="barn3_door">
+		<preParsingEffects><![CDATA[
+			#IF(pc.getLastPlaceType()==PLACE_TYPE_innoxia_fields_dairyFarm_corridor)
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_COW_DOOR'))]
+			#ELSE
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_DOOR_EXIT'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=2 && pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true)]]]></travelDisabled>
+		<responses>
+			<!-- Player is not cow: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=2 && pc.hasClothingType(CT_innoxia_quest_dairy_ear_tag, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[[pc.Step]回去]]></responseTitle>
+				<responseTooltip><![CDATA[你进不了门……]]></responseTooltip>
+				<nextDialogue>innoxia_places_fields_dairyFarm_corridor</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_corridor)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_COW_DOOR_STEP_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Generic barn work dialogues for all three barns: -->
+	
+	<!-- If no milk production, player has to accept lactation boosters before working -->
+	<scene id="barn_work_no_milk">
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_NO_MILK</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[喝]]></responseTitle>
+				<responseTooltip><![CDATA[喝下浓稠的黄色液体，它能让你开始泌乳。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_barn_work_no_milk_drink]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝喝浓稠的黄色液体，离开挤奶台……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_places_fields_dairyFarm_barn1]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_NO_MILK_NO_DRINK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_no_milk_drink">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.incrementBreastMilkStorage(250))]
+			[#pc.fillMilkToMaxStorage()]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_NO_MILK_DRINK_END'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_NO_MILK_DRINK</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[工作]]></responseTitle>
+				<responseTooltip><![CDATA[现在你正在哺乳期，可以开始工作了。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_barn_work_initial]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_sex_interrupt">
+		<preParsingEffects><![CDATA[
+			[#game.addNPC('EvelyxSexualPartner', 'partner')]
+			[#partner.removeSealsFromBlockingClothing(CA_PENIS)]
+			[#partner.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_SEX_INTERRUPT</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[保持安静]]></responseTitle>
+				<responseTooltip><![CDATA[
+					保持沉默，祈祷[partner.race]不选择操你。
+					<br/>[style.italicsSex([partner.she]有10%的概率选择操你！)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(RND.nextInt(100)<10)
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt_fucked
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt_ignored
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SEX_INTERRUPT_QUIET'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[炫耀]]></responseTitle>
+				<responseTooltip><![CDATA[
+					左右摇晃你[pc.hips+]，微微张开腿，希望[partner.she]选择操你。
+					<br/>[style.italicsSex([partner.she]有50%的几率选择操你！)]
+				]]></responseTooltip>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[TWO_HORNY]]></corruptionLevel>
+				<nextDialogue><![CDATA[
+					#IF(RND.nextInt(100)<50)
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt_fucked
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt_ignored
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SEX_INTERRUPT_SHOW_OFF'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[乞求]]></responseTitle>
+				<responseTooltip><![CDATA[
+					抬起你[pc.hips+]，张开腿开始叫喊，让[partner.race]来操你。
+					<br/>[style.italicsSex([partner.she]有90%的概率选择操你！)]
+				]]></responseTooltip>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<nextDialogue><![CDATA[
+					#IF(RND.nextInt(100)<90)
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt_fucked
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt_ignored
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SEX_INTERRUPT_BEG'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_sex_interrupt_fucked">
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_SEX_INTERRUPT_FUCKED</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被操 (+[style.moneyFormat(500, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[
+					[partner.race]选择操你的小穴……
+					<br/>[style.italicsGood(你会得到[style.moneyFormat(500, span)]奖金！)]
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_milking_stall_as_cow]]></id>
+					<startingPosition><![CDATA[MILKING_STALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>partner</id>
+							<slot><![CDATA[MILKING_STALL_BEHIND_MILKING_STALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[MILKING_STALL_LOCKED_IN_MILKING_STALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_player_as_cow_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">BARN_WORK_SEX_INTERRUPT_FUCKED_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[[#!pc.isAbleToAccessCoverableArea(CA_ANUS, true) || !partner.hasFetish(FETISH_ANAL_GIVING)]]]></condition>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[partner]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#pc.isAbleToAccessCoverableArea(CA_ANUS, true) && partner.hasFetish(FETISH_ANAL_GIVING)]]]></condition>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[partner]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_fucked, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_sex_interrupt_ignored">
+		<!-- Set 'FLAG_innoxia_evelyx_work_sex_scene_just_ended' to true here as otherwise can get stuck in a limited loop of sex encounters. -->
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SEX_INTERRUPT_IGNORED'))]
+			[#game.banishNPC(partner)]
+			[#flags.setFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended, true)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[你没有被选为挨操的母牛，你只能继续工作……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_barn_work_after_interrupt]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_initial">
+		<preParsingEffects><![CDATA[
+			[#dale.setLocation(pc)]
+			[#evelyx.equipMilkingPumps(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_INITIAL</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[工作]]></responseTitle>
+				<responseTooltip><![CDATA[放松准备接下来四个小时的挤奶……]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_level')==2 && !flags.hasFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended) && (pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && RND.nextInt(100)<40)
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_INITIAL_END'))]
+					[#dale.returnToHome()]
+					[#pc.setCharacterReactedToPregnancy(dale, true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[挑逗戴尔]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(dale.isAttractedTo(pc))
+						与戴尔调情……
+					#ELSE
+						戴尔没有被你吸引，和他调情或许不是个好主意……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(dale.isAttractedTo(pc))
+						innoxia_places_fields_dairyFarm_barn_work_dale_tease
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(dale.getAffection(pc)<60)
+						[#game.appendToTextStartStringBuilder(dale.incrementAffection(pc, 10))]
+					#ENDIF
+					[#pc.setCharacterReactedToPregnancy(dale, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_dale_tease">
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_DALE_TEASE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[工作]]></responseTitle>
+				<responseTooltip><![CDATA[感谢戴尔的关注，继续工作……]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_level')==2 && !flags.hasFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended) && (pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && RND.nextInt(100)<40)
+						innoxia_places_fields_dairyFarm_barn_work_sex_interrupt
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_DALE_TEASE_END'))]
+					[#dale.returnToHome()]
+				]]></effects>
+			</response>
+			<!-- Oral: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[提供口交]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，无法嗦戴尔的牛子……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isFaceVirgin())
+						提供口穴童贞
+					#ELSE
+						提供口交
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isFaceVirgin())
+						告诉戴尔你想给他你的口穴童贞……
+					#ELSE
+						告诉戴尔你想嗦他的牛子……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_milking_stall_as_cow_oral]]></id>
+					<startingPosition><![CDATA[MILKING_STALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[MILKING_STALL_RECEIVING_ORAL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[MILKING_STALL_LOCKED_IN_MILKING_STALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_barn_work_dale_tease_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">BARN_WORK_DALE_TEASE_SEX_ORAL</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[dale]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_fucked, true)]
+				]]></effects>
+			</response>
+			<!-- Sex: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[献上小穴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasVagina())
+						你没有小穴，不能被戴尔操……
+					#ELSE
+						你的小穴被限制，没法被戴尔操……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[
+					#IF(!pc.isVaginaVirgin() && pc.hasHymen())
+						献上“处女童贞”
+					#ELSEIF(pc.isVaginaVirgin())
+						献上童贞
+					#ELSE
+						献上小穴
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isVaginaVirgin() && pc.hasHymen())
+						告诉戴尔，即使你不是处女，破处的感觉也会和真的一样好……
+					#ELSEIF(pc.isVaginaVirgin())
+						告诉戴尔你想给他你的处女……
+					#ELSE
+						告诉戴尔你想他操你的小穴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_milking_stall_as_cow]]></id>
+					<startingPosition><![CDATA[MILKING_STALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[MILKING_STALL_BEHIND_MILKING_STALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[MILKING_STALL_LOCKED_IN_MILKING_STALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_barn_work_dale_tease_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">BARN_WORK_DALE_TEASE_SEX_PUSSY</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[dale]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_fucked, true)]
+				]]></effects>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && !pc.isAbleToAccessCoverableArea(CA_ANUS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[献上屁股]]></responseTitle>
+				<responseTooltip><![CDATA[你的肛门被限制，没办法被戴尔操……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isAssVirgin())
+						献上菊穴童贞
+					#ELSE
+						献上屁穴
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isAssVirgin())
+						告诉戴尔你想给他你的菊穴童贞……
+					#ELSE
+						告诉戴尔你想他操你的屁穴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_dale_milking_stall_as_cow_anal]]></id>
+					<startingPosition><![CDATA[MILKING_STALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>dale</id>
+							<slot><![CDATA[MILKING_STALL_BEHIND_MILKING_STALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[MILKING_STALL_LOCKED_IN_MILKING_STALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_barn_work_dale_tease_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">BARN_WORK_DALE_TEASE_SEX_ANAL</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[dale]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_fucked, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_dale_tease_after_sex">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended, true)]
+		]]></preParsingEffects>
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[戴尔觉得足够了，撤开了……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_DALE_TEASE_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[工作]]></responseTitle>
+				<responseTooltip><![CDATA[告别戴尔，继续工作……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_dairyFarm_barn_work]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_not_pregnant_at_start) && pc.isPregnant())
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_impregnated, true)]
+					#ENDIF
+					[#dale.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_after_interrupt">
+		<preParsingEffects><![CDATA[
+			[#game.addSpecialParsingString(evelyx.getMilkedAmountForSession(pc, 4), true)]
+			#IF(!flags.hasSavedLong('evelyx_total_milked'))
+				[#flags.setSavedLong('evelyx_total_milked', 0)]
+			#ENDIF
+			[#flags.incrementSavedLong('evelyx_total_milked', evelyx.getMilkedAmountForSession(pc, 4))]
+			[#game.addSpecialParsingString(flags.getSavedLong('evelyx_total_milked'), false)]
+			[#pc.setBreastStoredMilk(0)]
+			[#flags.incrementSavedLong('evelyx_work_hours', 4)]
+			[#evelyx.applyWorkSessionEndEffects()]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SESSION_END_EFFECTS_AFTER_INTERRUPT'))]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SESSION_END_EFFECTS_CORE'))]
+			#IF(flags.getSavedLong('evelyx_work_level')==0)
+				[#game.appendToTextEndStringBuilder(pc.incrementMoney(400))]
+			#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+				[#game.appendToTextEndStringBuilder(pc.incrementMoney(600))]
+			#ELSE
+				[#game.appendToTextEndStringBuilder(pc.incrementMoney(800))]
+			#ENDIF
+			[#flags.setFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended, false)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[240]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_dairyFarm_barn_work"/>
+	</scene>
+	
+	<scene id="barn_work">
+		<preParsingEffects><![CDATA[
+			[#game.addSpecialParsingString(evelyx.getMilkedAmountForSession(pc, 4), true)]
+			#IF(!flags.hasSavedLong('evelyx_total_milked'))
+				[#flags.setSavedLong('evelyx_total_milked', 0)]
+			#ENDIF
+			[#flags.incrementSavedLong('evelyx_total_milked', evelyx.getMilkedAmountForSession(pc, 4))]
+			[#game.addSpecialParsingString(flags.getSavedLong('evelyx_total_milked'), false)]
+			[#pc.setBreastStoredMilk(0)]
+			[#flags.incrementSavedLong('evelyx_work_hours', 4)]
+			[#evelyx.applyWorkSessionEndEffects()]
+			#IF(flags.getSavedLong('evelyx_work_hours')==4)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SESSION_END_EFFECTS_INITIAL'))]
+			#ELSE
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SESSION_END_EFFECTS_REPEAT'))]
+			#ENDIF
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_SESSION_END_EFFECTS_CORE'))]
+			#IF(flags.getSavedLong('evelyx_work_level')==0)
+				[#game.appendToTextEndStringBuilder(pc.incrementMoney(400))]
+			#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+				[#game.appendToTextEndStringBuilder(pc.incrementMoney(600))]
+			#ELSE
+				[#game.appendToTextEndStringBuilder(pc.incrementMoney(800))]
+			#ENDIF
+			[#flags.setFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended, false)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[240]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续工作]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_hours')<16)
+						决定不选择奖品，继续挤奶四个小时。
+						<br/>[style.italicsMinorGood(你一次最多工作16小时，你已经工作了[#flags.getSavedLong('evelyx_work_hours')]小时。)]
+					#ELSE
+						你太累了，来不了另一个四小时了……
+						<br/>[style.italicsMinorBad(你一次最多工作16小时，你已经工作了[#flags.getSavedLong('evelyx_work_hours')]小时。))]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_hours')<16)
+						#IF(flags.getSavedLong('evelyx_work_level')==2 && !flags.hasFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended) && (pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && RND.nextInt(100)<40)
+							innoxia_places_fields_dairyFarm_barn_work_sex_interrupt
+						#ELSE
+							innoxia_places_fields_dairyFarm_barn_work
+						#ENDIF
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[结束]]></responseTitle>
+				<responseTooltip><![CDATA[你挤奶挤得够多了……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<!-- fatigued for 6 hours (21600 seconds) when ending -->
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_FINISHED'))]
+					[#evelyx.applyEndWorkEffects()]
+				]]></effects>
+			</response>
+			<!-- Rewards: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[身体倍棒]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(evelyx.isAnyCowTransformationAvailable(pc))
+						选择“身体倍棒”药水作为奖励……
+					#ELSE
+						你已经有了合适的身体，所以“身体倍棒”药水对你无效……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(evelyx.isAnyCowTransformationAvailable(pc))
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_BODY'))]
+					[#game.appendToTextStartStringBuilder(evelyx.applyCowTransformation(pc))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_BODY_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[大脑升级]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(evelyx.isAnyCowFetishAvailable(pc))
+						选择“大脑升级”药水作为奖励……
+					#ELSE
+						你已经有了合适的心态，所以“大脑升级”药水对你无效……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(evelyx.isAnyCowFetishAvailable(pc))
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_MIND'))]
+					[#game.appendToTextStartStringBuilder(evelyx.applyCowFetish(pc))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_MIND_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_level')==0)
+						学徒配件
+					#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+						小母牛配件
+					#ELSE
+						奶牛配件
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!evelyx.isCowAbleToEquipGear(pc))
+						你无法装备项圈和鼻环，无法选择此奖励……
+					#ELSE
+						#IF(flags.getSavedLong('evelyx_work_level')==0)
+							#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_accessories_trainee))
+								你之前已领取过此奖励，无法再次领取……
+							#ELSE
+								选择“学徒配件”，这会给你一个牛铃项圈和鼻环。
+								#IF(!pc.isPiercedNose())
+									<br/>[style.colourPink(佩戴鼻环需要在鼻子上穿孔！)]
+								#ENDIF
+							#ENDIF
+						#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+							#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_accessories_heifer))
+								你之前已领取过此奖励，无法再次领取……
+							#ELSE
+								选择“小母牛配件”，这会给你一个牛铃项圈和鼻环。
+								#IF(!pc.isPiercedNose())
+									<br/>[style.colourPink(佩戴鼻环需要在鼻子上穿孔！)]
+								#ENDIF
+							#ENDIF
+						#ELSE
+							#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_accessories_cow))
+								你之前已领取过此奖励，无法再次领取……
+							#ELSE
+								选择“奶牛配件”，这会给你一个牛铃项圈和鼻环。
+								#IF(!pc.isPiercedNose())
+									<br/>[style.colourPink(佩戴鼻环需要在鼻子上穿孔！)]
+								#ENDIF
+							#ENDIF
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!evelyx.isCowAbleToEquipGear(pc) || (flags.getSavedLong('evelyx_work_level')==0 && flags.hasFlag(FLAG_innoxia_evelyx_work_accessories_trainee)) || (flags.getSavedLong('evelyx_work_level')==1 && flags.hasFlag(FLAG_innoxia_evelyx_work_accessories_heifer)) || (flags.getSavedLong('evelyx_work_level')==2 && flags.hasFlag(FLAG_innoxia_evelyx_work_accessories_cow)))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_CLOTHING'))]
+					#IF(!pc.isPiercedNose())
+						[#pc.setPiercedNose(true)]
+					#ENDIF
+					#IF(flags.getSavedLong('evelyx_work_level')==0)
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_accessories_trainee, true)]
+						[#(pc.equipClothingFromNowhere(evelyx.getEvelyxCollar(0), true, pc))]
+						[#(pc.equipClothingFromNowhere(evelyx.getEvelyxNoseRing(0), true, pc))]
+					#ELSEIF(flags.getSavedLong('evelyx_work_level')==1)
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_accessories_heifer, true)]
+						[#(pc.equipClothingFromNowhere(evelyx.getEvelyxCollar(1), true, pc))]
+						[#(pc.equipClothingFromNowhere(evelyx.getEvelyxNoseRing(1), true, pc))]
+					#ELSE
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_accessories_cow, true)]
+						[#(pc.equipClothingFromNowhere(evelyx.getEvelyxCollar(2), true, pc))]
+						[#(pc.equipClothingFromNowhere(evelyx.getEvelyxNoseRing(2), true, pc))]
+					#ENDIF
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_CLOTHING_END'))]
+				]]></effects>
+			</response>
+			<!-- Sex: -->
+			<!-- Optional -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=2 && (!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[交配 (+[style.moneyFormatUncoloured(500, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[你需要有小穴且不被限制才能被操……]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')!=2 && pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[交配 (+[style.moneyFormat(500, span)])]]></responseTitle>
+				<responseTooltip><![CDATA[
+					按下按钮请求交配，这将导致一名随机的成员操你的小穴……
+					<br/>[style.italicsGood(你会得到[style.moneyFormat(500, span)]奖金！)]
+				]]></responseTooltip>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+				<nextDialogue>innoxia_places_fields_dairyFarm_player_as_cow_sex</nextDialogue>
+				<effects><![CDATA[
+					[#game.addNPC('EvelyxSexualPartner', 'partner')]
+					[#partner.removeSealsFromBlockingClothing(CA_PENIS)]
+					[#partner.setLocation(pc)]
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_fucked, true)]
+				]]></effects>
+			</response>
+			<!-- Mandatory -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')==2]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[交配]]></responseTitle>
+				<responseTooltip><![CDATA[你不再有权选择何时要求交配，在这里工作期间，你随时都可能被随机的什么人操……]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<!-- Heifer+ rewards: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')>0]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[牛女(亚)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isAbleToHaveRaceTransformed())
+						由于你的种族无法转化，你无法选择这项奖励，也无法转化成为亚牛女！
+					#ELSEIF(pc.getRace()==RACE_COW_MORPH)
+						你已经是牛女了，不能选择这项奖励！
+					#ELSE
+						选择牛女奖励，可以转化成为亚牛女。
+						<br/>[style.italicsTfPartial(你将转化成一个有牛女耳朵、尾巴、角、毛和眼的人！)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.isAbleToHaveRaceTransformed() || pc.getRace()==RACE_COW_MORPH)
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_COW_GIRL_PARTIAL'))]
+					[#game.appendToTextStartStringBuilder(evelyx.applyCowRaceTransformationLesser(pc))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_COW_GIRL_PARTIAL_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')>0]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[牛女(纯)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isAbleToHaveRaceTransformed())
+						由于你的种族无法转化，你无法选择这项奖励，也无法转化成为纯牛女！
+					#ELSEIF(pc.getRace()==RACE_COW_MORPH && pc.getRaceStage()==RACE_STAGE_GREATER)
+						你已经是纯牛女了，不能选择这项奖励！
+					#ELSE
+						选择牛女奖励，可以转化成为纯牛女。
+						<br/>[style.italicsTfGreater(你会转化为完全福瑞牛女！)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.isAbleToHaveRaceTransformed() || (pc.getRace()==RACE_COW_MORPH && pc.getRaceStage()==RACE_STAGE_GREATER))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_COW_GIRL_GREATER'))]
+					[#game.appendToTextStartStringBuilder(evelyx.applyCowRaceTransformationGreater(pc))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_COW_GIRL_GREATER_END'))]
+				]]></effects>
+			</response>
+			<!-- Cow+ rewards: -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')>1]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[半母牛人]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.isAbleToHaveRaceTransformed())
+						由于你的种族无法转化，你无法选择这项奖励，也无法转化成为半母牛人！
+					#ELSEIF(pc.getLegRace()==RACE_COW_MORPH && pc.getLegConfiguration()==LEG_CONFIGURATION_QUADRUPEDAL)
+						你已经是半母牛人了，不能选择这项奖励！
+					#ELSE
+						选择牛女奖励，可以转化成为半母牛人，下半身变成兽态的牛。
+						<br/>[style.italicsTfGreater(这会让你的下半身变成兽态的牛！)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!pc.isAbleToHaveRaceTransformed() || (pc.getLegRace()==RACE_COW_MORPH && pc.getLegConfiguration()==LEG_CONFIGURATION_QUADRUPEDAL))
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_COWTAURESS'))]
+					[#game.appendToTextStartStringBuilder(pc.setLegConfiguration(LEG_TYPE_COW_MORPH, LEG_CONFIGURATION_QUADRUPEDAL, true))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_COWTAURESS_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.getSavedLong('evelyx_work_level')>1]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[纹身]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getTattooInSlot(IS_ANUS)!=null)
+						你的屁股上已经有纹身了，所以不能被标记为艾弗利克斯的奶牛……
+					#ELSE
+						选择纹身奖励，在屁股上纹一个数字。
+						<br/>[style.italicsMinorBad(你的屁股上会纹上“艾弗利克斯乳业奶工 #[#flags.getSavedLong('evelyx_player_number')]' ”！)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getTattooInSlot(IS_ANUS)!=null)
+						null
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_REWARD_TATTOO'))]
+					[#evelyx.applyCowTattoo(pc, false)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barn_work_reward">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续工作]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_hours')<16)
+						继续下个四小时的挤奶。
+						<br/>[style.italicsMinorGood(你一次最多工作16小时，你已经工作了[#flags.getSavedLong('evelyx_work_hours')]小时。)]
+					#ELSE
+						你太累了，来不了另一个四小时了……
+						<br/>[style.italicsMinorBad(你一次最多工作16小时，你已经工作了[#flags.getSavedLong('evelyx_work_hours')]小时。)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_hours')<16)
+						#IF(flags.getSavedLong('evelyx_work_level')==2 && !flags.hasFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended) && (pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && RND.nextInt(100)<40)
+							innoxia_places_fields_dairyFarm_barn_work_sex_interrupt
+						#ELSE
+							innoxia_places_fields_dairyFarm_barn_work
+						#ENDIF
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[结束]]></responseTitle>
+				<responseTooltip><![CDATA[你挤奶挤得够多了……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<!-- fatigued for 6 hours (21600 seconds) when ending -->
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_FINISHED'))]
+					[#evelyx.applyEndWorkEffects()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="player_as_cow_sex">
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[[partner.Name]毫不犹豫地将[partner.her]的肉棒插入你的小穴！]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_milking_stall_as_cow]]></id>
+					<startingPosition><![CDATA[MILKING_STALL]]></startingPosition>
+					<dominants>
+						<character>
+							<id>partner</id>
+							<slot><![CDATA[MILKING_STALL_BEHIND_MILKING_STALL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[MILKING_STALL_LOCKED_IN_MILKING_STALL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_dairyFarm_player_as_cow_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/dairyFarm">BARN_WORK_SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[[#!pc.isAbleToAccessCoverableArea(CA_ANUS, true) || !partner.hasFetish(FETISH_ANAL_GIVING)]]]></condition>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[partner]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#pc.isAbleToAccessCoverableArea(CA_ANUS, true) && partner.hasFetish(FETISH_ANAL_GIVING)]]]></condition>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[partner]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_evelyx_work_fucked, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="player_as_cow_after_sex">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.incrementMoney(500))]
+			[#flags.setFlag(FLAG_innoxia_evelyx_work_sex_scene_just_ended, true)]
+		]]></preParsingEffects>
+		<author><![CDATA[Innoxia]]></author>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[[partner.Name]觉得足够了，撤开了……]]></tooltip>
+		<content folderPath="txt/places/fields/dairyFarm">BARN_WORK_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[[partner.Name]离开牛舍，留你继续挤奶……]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.getSavedLong('evelyx_work_level')==2)
+						innoxia_places_fields_dairyFarm_barn_work_after_interrupt
+					#ELSE
+						innoxia_places_fields_dairyFarm_barn_work_reward
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_evelyx_work_not_pregnant_at_start) && pc.isPregnant())
+						[#flags.setFlag(FLAG_innoxia_evelyx_work_impregnated, true)]
+					#ENDIF
+					#IF(flags.getSavedLong('evelyx_work_level')!=2)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/dairyFarm', 'BARN_WORK_AFTER_SEX_END'))]
+					#ENDIF
+					[#game.banishNPC(partner)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Slave barn: -->
+	<scene id="barn4">
+		<content folderPath="txt/places/fields/dairyFarm">BARN_SLAVE</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Slave barn door: -->
+	<scene id="barn4_door">
+		<content folderPath="txt/places/fields/dairyFarm">BARN_SLAVE_DOOR</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	
+	<!-- Auction room: -->
+	<scene id="auction">
+		<content folderPath="txt/places/fields/dairyFarm">AUCTION</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+</dialogueNodes>

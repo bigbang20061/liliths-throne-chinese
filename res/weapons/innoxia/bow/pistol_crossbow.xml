@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>2800</value>
+		<melee>false</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[一把]]></determiner>
+		<name><![CDATA[手弩]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[手弩]]></namePlural>
+		<description><![CDATA[这把手弩由水平安装在手枪形框架上的弓臂等组件组装而成，单手即可轻松操控。当拉开弩弦时，持弩者体内的奥术精华就会被提取出来，并转化为虚无缥缈的弩箭，随时准备射向目标。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用你的手弩射向[npc2.name]。]]></attackTooltipDescription>
+		<rarity>COMMON</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]给[npc.her]的手弩充能，准备用于战斗。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]收回[npc.her]的手弩。]]></unequipText>
+		
+		<imageName>pistol_crossbow.svg</imageName> 
+		<imageEquippedName>pistol_crossbow_equipped.svg</imageEquippedName>
+		
+		<damage>20</damage> 
+		
+		<arcaneCost>1</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_RANGED_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK_STEEL</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours> 
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours> 
+			<colour>CLOTHING_STEEL</colour>
+		</tertiaryColours> 
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags>
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]瞄准并用手弩射击，成功用威力强大的奥术弩箭命中了[npc2.name]！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.name]用手弩瞄准[npc2.name]并扣下扳机，释放出一股强大的奥术能量击中[npc2.namePos]的躯干！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用[npc.her]的手弩瞄准[npc2.name]并扣动扳机，[npc.she]成功命中[npc2.herHim]的胸部！
+]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]瞄准并用手弩射击，[npc.Name]未命中[npc2.name]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.name]用手弩瞄准[npc2.name]并扣下扳机，在[npc.she]射偏了[npc.her]目标时发出了沮丧的声音！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]的手弩瞄准[npc2.name]并扣动扳机，但是[npc.she]最终还是没有击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

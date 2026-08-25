@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[外皮上一处轻微的火漆印写着“由DSG农民工会的巨龙培育”]]></authorTag>
+		
+		<value>100</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[黄火龙果]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[黄火龙果]]></namePlural>
+		<description><![CDATA[以其外部鳞片状的多刺叶子而得名，这种稀有水果是几个世纪前由龙形生物首次培育的。传说中，它现在生长的每个隐秘树林曾经是一位龙形生物的家园。这个品种在岩石和沙质土壤中生长最好。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>EPIC</rarity> 
+		
+		<imageName>dragon_dragonfruit_yellow.svg</imageName>
+		
+		<colourPrimary>dsg_dragonRed</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[龙]]></potionDescriptor>
+		<associatedRace>dsg_dragon</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(5)]到“药剂效果” ]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(5)]到“药剂效果” ]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 5)]
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_ARCANE, 5)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD_QUALITY</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]剥开水果，欣赏着里面嫩滑的果肉和脆脆的种子。无法抵挡这种美味的诱惑，[npc.she]无比期待地开始狼吞虎咽，仅仅片刻工夫就把果肉吃得干净得只剩个果皮。
+	]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]为[npc2.name]剥开了水果，然后将它递给[npc2.her]，让[npc2.herHim]欣赏里面嫩滑的果肉和脆脆的种子。[npc2.she]无法抵挡这诱人的美味，开始贪婪地大口吃掉，仅仅片刻工夫就把果皮里的果肉吃得一干二净。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

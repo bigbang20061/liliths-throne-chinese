@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[内侧缝着一个标签印着“DSG制革公司，专为酷佬打造。”]]></authorTag>
+
+		<value>1200</value> 
+
+		<determiner><![CDATA[一件]]></determiner>
+
+		<name><![CDATA[女款皮夹克]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[女款皮夹克]]></namePlural> 
+
+		<description><![CDATA[一件女式剪裁的摩托车风格的皮夹克。穿着者常涂太多的发胶和随身佩戴弹簧刀。]]></description> 
+
+		<physicalResistance>2</physicalResistance> 
+
+		<femininity>FEMININE</femininity> 
+
+		<slot>TORSO_OVER</slot> 
+
+		<rarity>COMMON</rarity> 
+
+		<clothingSet/> 
+
+		<imageName>ljacket_f.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/>
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked> 
+
+				<concealedSlots/> 
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>UNZIPS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots values="CONCEALED_FULL_TORSO"/>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]脱下[npc.her]的夹克。
+]]></self>
+		<other><![CDATA[
+		[npc.Name]脱下[npc2.namePos]的夹克。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]几乎扯下了[npc2.namePos]的夹克。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]拉上[npc.her]的夹克。
+]]></self>
+		<other><![CDATA[[npc.Name]引导[npc2.namePos][npc2.arms]穿过夹克的袖子，把夹克套在[npc2.her]的肩膀上。]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]强行拉着[npc2.namePos]的[npc2.arms]穿过夹克的袖子，把夹克套在[npc2.her]的肩膀上。
+		]]></otherRough>
+	</replacementText>
+
+	<replacementText type="UNZIPS">
+		<self><![CDATA[
+[npc.Name]拉上[npc.her]的夹克拉链。
+]]></self>
+		<other><![CDATA[
+		[npc.Name]拉上[npc2.namePos]的夹克的拉链。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地拉上[npc2.namePos]的夹克的拉链。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+		[npc.Name]拉下[npc.her]的夹克的拉链。
+]]></self>
+		<other><![CDATA[
+		[npc.Name]拉开[npc2.namePos]的夹克的拉链。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]扣开[npc2.namePos]夹克上的拉链。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

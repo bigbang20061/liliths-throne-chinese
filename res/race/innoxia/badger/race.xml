@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<race>
+	<racialBody>innoxia_badger</racialBody>
+	
+	<applyRaceChanges/>
+	
+	<name><![CDATA[獾化形]]></name>
+	<namePlural><![CDATA[獾化形]]></namePlural>
+	
+	<nameFeral>
+		<name legConfiguration="QUADRUPEDAL"><![CDATA[獾]]></name>
+	</nameFeral>
+	<nameFeralPlural>
+		<name legConfiguration="QUADRUPEDAL"><![CDATA[獾]]></name>
+	</nameFeralPlural>
+	
+	<defaultTransformName><![CDATA[獾]]></defaultTransformName>
+	
+	<colour>innoxia_badger</colour>
+	
+	<disposition>CIVILIZED</disposition>
+	
+	<racialClass>MAMMAL</racialClass>
+	
+	<feralPartsAvailable>true</feralPartsAvailable>
+	
+	<ableToSelfTransform>false</ableToSelfTransform>
+	
+	<flyingRace>false</flyingRace>
+	
+	<combatBehaviour>BALANCED</combatBehaviour>
+	
+	<chanceForMaleOffspring>0.5</chanceForMaleOffspring>
+	
+	<numberOfOffspringLow>1</numberOfOffspringLow>
+	<numberOfOffspringHigh>3</numberOfOffspringHigh>
+	
+	<defaultFemininePreference>NORMAL</defaultFemininePreference>
+	<defaultMasculinePreference>NORMAL</defaultMasculinePreference>
+	
+	<affectedByFurryPreference>true</affectedByFurryPreference>
+</race>

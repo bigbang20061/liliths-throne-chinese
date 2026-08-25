@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- OUTSIDE -->
+	
+	<htmlContent tag="OUTSIDE"><![CDATA[
+	<p>
+		由暗黑色石头砌成的巨大尖塔主宰着御城区的天际线。你越靠近那座塔，就会发现巡逻的执法者越多。
+	</p>
+	<p>
+		一座精致的金色拱门将塔院与你所站的街道连接起来。金属制品上刻有“莉莉丝”三个大字，这让你瞬间明白了住在这里的恶魔的身份。
+	</p>
+	#IF(pc.getOccupation()==OCCUPATION_TOURIST)
+		<p>
+			你对本该是英国政府所在地的出现感到困惑，喃喃自语道，[pc.speech(
+			[game.random(宣传册上肯定不是这样写的……
+			| 不是应该有个大钟在这吗？或者像一个大日晷的东西？)]
+			)]
+		</p>
+	#ENDIF
+	#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
+		<p>
+			头顶上肆虐的奥术风暴让这一地区出现了大量恶魔执法者。这些精英执法者们不受风暴雷霆催情之力的影响，在你穿过这片几乎荒无人烟的区域时一直密切注视着你。在他们的注视下，任何人都无法攻击你，你可以安心地继续前行……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- LILITHS_DISTRICT_APPROACH -->
+	
+	<htmlContent tag="LILITHS_DISTRICT_APPROACH"><![CDATA[
+	<p>
+		你走到拱门前，但当你走近时，一对精英恶魔执法者突然出现，挡住了你的去路。即使你有足够的信心打败他们，但你也知道，面对数量众多的执法者，你根本没有战斗的机会，他们很快就会赶来支援。
+	</p>
+	#IF(pc.getOccupation()==OCCUPATION_TOURIST)
+		<p>
+			你不想两手空空地离开这里，决定为家乡的人们拍一张照片。你摆出一个自拍的姿势，对着镜头微笑。两名执法者对你的活动产生了怀疑，上前询问你在做什么，你回复道：[pc.speech(没什么好担心的，我是美国人。)]
+		</p>
+		<p>
+			执法者脸上的困惑让你有些恼火，你简单地告诉他们美国是世界上最伟大的国家，然后对他们的无知摇摇头，告辞离去……
+		</p>
+	#ENDIF
+	<p>
+		<b>莉莉丝之塔相关内容将在很晚的时候添加，大约在0.8.0版本左右。</b>
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

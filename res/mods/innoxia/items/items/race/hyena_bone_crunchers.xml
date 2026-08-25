@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>250</value> 
+		<determiner><![CDATA[一袋]]></determiner>
+		<name><![CDATA[烤骨头]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[烤骨头]]></namePlural>
+		<description><![CDATA[一个牛皮纸袋，里面装着半打烤骨。虽然多汁的骨髓是大多数正常人都会吃的，但袋子背面的图片显示，一个水灵灵的鬣狗女正用她强壮的下巴将每一块骨头都咬碎吞下。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<!-- instead of defining a simple path name for your image, you can use the layering system as shown here.
+		Each of the svg images you define here will be rendered on top of or beneath the others, based on the zLayer attribute defined for it.
+			zLayers of a higher value will be rendered on top of lower zLayers.
+		'imageRotation' and 'imageSize' affect the image's rotation and size, respectively.
+			You should define imageRotation in degrees, from 0 to 360.
+			You should define imageSize as a percentage, from 1 to 100.
+		Text inside of the svg image can be replaced at time of rendering, via the target/replacement attributes.
+			You can define any number of target/replacement pairs, but they must follow the naming convention: 'targetX' 'replacementX', where X is the number of the replacement pair, starting at 1.
+			The contents of the 'targetX' attribute will be searched for in the svg file and replaced with the contents of the corresponding 'replacementX' attribute.
+			In this example, I use the target/replacement pairs to recolour all edge strokes of colour #000 with the colour #ff5555 (which effectively removes the black edges of the icon.svg by recolouring it to the same colour as the interior.)
+			I also replace all instances of the colour '#ff8080' with 'ff5555'. While this isn't necessary for the hyena icon, it's designed to remove the lighter shade from an icon and replace it with the same 'ff5555' colour as the rest of the icon so as to make it a uniform colour for the item's background icon.
+		So, with the 4 imageName elements defined below, I'm:
+			1) Rendering the bottom background.
+			2) Recolouring an rendering the hyena race icon on top of that.
+			3) Rendering the item icon on top of those two.
+			4) Finally, rendering the highlights of the background on top of everything. -->
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/mods/innoxia/race/hyena/subspecies/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">hyena_bone_crunchers.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>innoxia_hyena</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[鬣狗]]></potionDescriptor>
+		<associatedRace>innoxia_hyena</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]打开褐色纸袋的顶部，然后深吸里面浓郁的肉味。无法抗拒袋内那些美味的烤骨头，[npc.she]
+		#IF(npc.getFaceType()==FACE_TYPE_innoxia_hyena_face)
+			[npc.her]开始使用强大的鬣狗下颌咬碎每一块，不一会儿就吃光了整袋。
+		#ELSE
+			[npc.her]开始迫不及待地吮吸每一块美味的骨髓，不一会儿就吃光了整袋。
+		#ENDIF
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]打开褐色纸袋的顶部，将其递给[npc2.name]，让[npc2.herHim]能够闻到里面浓郁的肉味。无法抗拒袋内那些美味的烤骨头，[npc2.she]
+		#IF(npc.getFaceType()==FACE_TYPE_innoxia_hyena_face)
+			开始使用[npc2.her]强大的鬣狗下颌咬碎每一块，仅仅几刹那，[npc2.has]就完全吃光了整袋内容。
+		#ELSE
+			迫不及待地吮吸每一块美味的骨髓，仅仅几刹那，[npc2.has]就完全吃光了整个袋子。
+		#ENDIF
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value>
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[毛线帽]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[毛线帽]]></namePlural>
+		<description><![CDATA[一顶贴头的无檐帽，由美利奴羊毛编织而成。厚实的有螺纹缝线有助于保持其形状并提供额外的保暖效果。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>beanie.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]将毛线帽拉下来戴在[npc.her]头上。]]></self>
+		<other><![CDATA[[npc.Name]将毛线帽往下拽，套在[npc2.namePos]头上。]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地将毛线帽往下按在[npc2.namePos]的头上。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]摘下了自己的毛线帽。]]></self>
+		<other><![CDATA[[npc.Name]一把扯下[npc2.namePos]的毛线帽。]]></other>
+		<otherRough><![CDATA[[npc.Name]一把扯下[npc2.namePos]的毛线帽。]]></otherRough>
+	</displacementText>
+  
+</clothing>

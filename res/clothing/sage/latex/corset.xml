@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAtributes>
+		<value>200</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[乳胶束腰]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[乳胶束腰]]></namePlural>
+		<description><![CDATA[一件用乳胶制作的束腰。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>STOMACH</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet>
+		<imageName>corset.svg</imageName>
+		<imageEquippedName/>
+		<effects/> 
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots>
+					<slot>PIERCING_STOMACH</slot>
+				</concealedSlots> 
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/>
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED</colour>
+			<colour>CLOTHING_PURPLE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags> 
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAtributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]系紧[npc.her]腰上的乳胶束腰并扣上搭扣。]]></self>
+		<other><![CDATA[
+[npc.Name]系紧[npc2.namePos]腰上的乳胶束腰并扣上搭扣。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]系紧[npc2.namePos]腰上的乳胶束腰并用力的拉紧并扣上搭扣。
+]]></otherRough>
+	</replacementText>
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的乳胶束腰解了下来。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的乳胶束腰解了下来。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.namePos]的乳胶束腰扯了下来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

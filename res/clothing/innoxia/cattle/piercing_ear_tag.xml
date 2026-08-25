@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>150</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[耳部标签]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[耳部标签]]></namePlural>
+		<description><![CDATA[一个亮黄色的塑料标签，通常被家畜佩戴在耳洞中以便快速、轻松地识别。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_EAR</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>CATTLE</clothingSet>
+		<imageName>piercing_ear_tag.svg</imageName>
+		<imageEquippedName/>
+		<effects>
+			<effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="JUST_YELLOW"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_RED"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把标签穿在[npc.her]的[npc.ear]上。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把标签穿在[npc2.namePos]的[npc2.ear]上。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把标签穿在[npc2.namePos]的[npc2.ear]上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]解开[npc.her]的标签并从[npc.her]的[npc.ear]穿孔中取出。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]解开[npc2.namePos]的标签并从[npc2.her]的[npc2.ear]穿孔中取出。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]解开[npc2.namePos]的标签并粗暴地从[npc2.her]的[npc2.ear]穿孔中扯下来。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

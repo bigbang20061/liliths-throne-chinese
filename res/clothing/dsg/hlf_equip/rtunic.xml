@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAtributes>
+		<authorTag><![CDATA[内侧缝着一个小标签印着“DSG织厂生产。”]]></authorTag>
+		<value>250</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[复古工装上衣]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[复古工装上衣]]></namePlural>
+		<description><![CDATA[一件由棉质斜纹织物制成的齐腰束腰外衣，胸部有两个口袋。衣领上已经缝上了织物标签，但你不熟悉它的风格或含义。]]></description>
+		<physicalResistance>1</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>TORSO_UNDER</slot>
+		<rarity>RARE</rarity>
+		<clothingSet>dsg_hlf_regular</clothingSet>
+		<imageName>rtunic.svg</imageName>
+		<imageEquippedName/>
+		
+		<stickers>
+			<category id="wearntear" priority="1"> 
+				<categoryName><![CDATA[Wear and Tear]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1" colourSelected="TEXT_GREY"> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix priority="1"><![CDATA[]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="patched" priority="1" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BROWN"> 
+					<stickerName><![CDATA[补丁]]></stickerName>
+					<namePrefix priority="1"><![CDATA[补丁]]></namePrefix> 
+					<namePostfix/> 
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>这个已经被缝缝补补多次，你都不敢想象那些斑驳的补丁。</i>]]></descriptionModification> 
+					<imageName>rtunic_st_ragged.svg</imageName> 
+					<itemTagsAdded/> 
+					<itemTagsRemoved/> 
+					<unavailabilityText/> 
+					<availabilityText>
+						If you really want that vintage look...
+					</availabilityText> 
+				</sticker>
+			</category>
+		</stickers>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+					<clothingAccessRequired>
+						<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					</clothingAccessRequired>
+					<blockedBodyParts>
+						<bodyPart>BACK</bodyPart>
+						<bodyPart>ARMPITS</bodyPart>
+					</blockedBodyParts>
+					<clothingAccessBlocked>
+					</clothingAccessBlocked>
+				<concealedSlots>
+				</concealedSlots>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType>
+					<clothingAccessRequired>
+					</clothingAccessRequired>
+					<blockedBodyParts>
+						<bodyPart>BREASTS</bodyPart>
+						<bodyPart>NIPPLES</bodyPart>
+						<bodyPart>STOMACH</bodyPart>
+					</blockedBodyParts>
+					<clothingAccessBlocked>
+						<clothingAccess>CHEST</clothingAccess>
+						<clothingAccess>WAIST</clothingAccess>
+					</clothingAccessBlocked>
+					<concealedSlots>
+						<slot>STOMACH</slot>
+						<slot>CHEST</slot>
+						<slot>NIPPLE</slot>
+						<slot>PIERCING_NIPPLE</slot>
+						<slot>PIERCING_STOMACH</slot>
+					</concealedSlots>
+				</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_OLIVE</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_RED_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		
+		<customColours>			
+			<customColour copyColourIndex="3" c0="#483737" c1="#6c5353" c2="#916f6f" c3="#ac9393" c4="#c8b7b7">
+				<defaultColours>
+					<colour>CLOTHING_BROWN_DARK</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags/>
+	</coreAtributes>
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]解开扣子并脱下[npc.her]的上衣。
+]]></self>
+		<other><![CDATA[
+		[npc.Name]解开[npc2.namePos]的上衣并脱了下来。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]几乎要扯下[npc2.namePos]的上衣。
+		]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿上[npc.her]的上衣并扣上扣子。]]></self>
+		<other><![CDATA[
+[npc.Name]帮[npc2.name]将[npc2.her]的胳膊伸进上衣的袖子并扣好扣子。]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴的把外衣套在[npc2.name]身上并粗暴地系上了纽扣。
+		]]></otherRough>
+	</replacementText>
+	
+	<displacementText type="UNBUTTONS">
+		<self><![CDATA[
+		[npc.Name]解开了[npc.her]的上衣扣子。
+]]></self>
+		<other><![CDATA[
+		[npc.Name]解开了[npc2.namePos]的上衣。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地解开了[npc2.namePos]的上衣。
+		]]></otherRough>
+	</displacementText>
+
+	<replacementText type="UNBUTTONS">
+		<self><![CDATA[
+[npc.Name]扣起[npc.her]的上衣。]]></self>
+		<other><![CDATA[
+[npc.Name]扣上[npc2.namePos]上衣的扣子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]匆忙地扣上[npc2.namePos]上衣的扣子。
+]]></otherRough>
+	</replacementText>
+	
+</clothing>

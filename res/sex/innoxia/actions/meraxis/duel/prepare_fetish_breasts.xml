@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#npc.isPlayer()
+		&& !meraxis.hasFetish(FETISH_BREASTS_SELF)
+		&& (sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_NIPPLE, PENETRATION_TONGUE).contains(pc)
+			|| sex.getOngoingCharactersUsingAreas(pc, PENETRATION_PENIS, ORIFICE_BREAST).contains(meraxis))]
+	]]></actionConditional>
+	<type>PREPARE_FOR_PARTNER_ORGASM</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[NORMAL]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes>
+		<performer>
+			<fetish>FETISH_KINK_GIVING</fetish>
+		</performer>
+		<target>
+			<fetish>FETISH_KINK_RECEIVING</fetish>
+		</target>
+	</associatedFetishes>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+		[#meraxis.addFetish(FETISH_BREASTS_SELF, true)]
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[
+		[style.colourFetish(乳房爱好者)]
+	]]></title>
+	<tooltip><![CDATA[
+		#IF(sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_NIPPLE, PENETRATION_TONGUE).contains(pc))
+			让梅拉克西丝向你承认，她喜欢被人使用乳房，你会吮吸她的乳头，让她高潮。
+		#ELSE
+			让梅拉克西丝向你承认，她喜欢你用她的乳房，你会抽插她的奶子，让她高潮。
+		#ENDIF
+		<br/>[style.italicsSex(梅拉克西丝会因此获得“[#FETISH_BREASTS_SELF.getName(meraxis)]”性癖！)]]]></tooltip>
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getOngoingCharactersUsingAreas(meraxis, ORIFICE_NIPPLE, PENETRATION_TONGUE).contains(pc)]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				你感觉梅拉克西丝就要高潮了，于是不再吸吮她[meraxis.nipples+]，你调戏她说，[pc.speech(你想要这样高潮吗？)]
+				<br/><br/>
+				梅拉克西丝在濒临高潮的一刻之前停下，她变得歇斯底里，用她[meraxis.breasts+]用力磨蹭着你的脸，尖叫着，[meraxis.speechNoEffects(是啊！啊~为什么？！为什么停下了？！快来，我就要去了~姆~快给我！)]
+				<br/><br/>
+				你意识到这是改变梅拉克西丝对于被使用胸部态度的绝好时机，于是你靠上前去，给了梅拉克西丝[meraxis.nipples+]一个深深的湿吻，冷笑着看向身下因你的挑逗而兴奋到发狂的梅拉克西丝，说出了你的要求，[pc.speech(告诉我你喜欢别人玩弄你那性感的乳头，否则，我不会让你高潮。)]
+				<br/><br/>
+				[meraxis.speechNoEffects(什么？！你可真是变态，[pc.name]……)]她抱怨着，但你又俯下身去，舔了舔她的右边乳头，她终于忍不住向你屈服，大声说道，[meraxis.speechNoEffects(我，我说！……我喜欢别人玩弄我的乳头！现在，快来！让我去吧！)]
+				<br/><br/>
+				#IF(meraxis.getBreastRawSizeValue()>5)
+				把你的脸埋在梅拉克西丝[meraxis.breasts+]。
+				#ELSE
+				贴向梅拉克西丝的飞机场。
+				#ENDIF
+				你继续刚才停下的舔舐，含住了梅拉克西丝[meraxis.nipples+]，对它边吸吮边轻咬，身下的[meraxis.race]发出一连串越发高亢的呻吟声，她尖叫起来，[meraxis.speechNoEffects(~啊！我要去了！)]]]></text>
+		</description>
+		<description>
+			<descriptionConditional><![CDATA[
+				[#sex.getOngoingCharactersUsingAreas(pc, PENETRATION_PENIS, ORIFICE_BREAST).contains(meraxis)]
+			]]></descriptionConditional>
+			<text><![CDATA[
+				#IF(meraxis.isBreastFuckablePaizuri())
+					你感觉梅拉克西丝已经濒临高潮，于是把你[pc.cock+]从她[meraxis.breasts+]中抽出来, 调戏着她，[pc.speech(你想就这样高潮吗？)]
+					<br/><br/>
+					梅拉克西丝已经即将绝顶，但你猝不及防的停止使她近乎疯狂，她急切地用她[meraxis.breasts+]夹住你的肉棒，然后上下撸动，尖叫着，[meraxis.speechNoEffects(对！啊~为什么~你要停下来？！快来~我就要高潮了！姆唔~快给我！)]
+					<br/><br/>
+					你认为这是一个绝佳的机会来改变梅拉克西丝对于被使用胸部的态度，于是你上前，把你[pc.cock+]再次插进她的乳沟，当身下的人发出歇斯底里的呻吟时，你冷笑一声，提出了自己的要求，[pc.speech(告诉我你喜欢别人用你的大奶子，我才会让你高潮。)]
+					<br/><br/>
+					[meraxis.speechNoEffects(什么？！你真是下流，[pc.name]……)]她抱怨着，但当你抽出鸡巴，用你的肉棒抽打了几下她[meraxis.breasts+]之后，她屈服了，急切地叫着，[meraxis.speechNoEffects(我说！我……我喜欢别人用我的大奶子！快让我高潮吧！)]
+					<br/><br/>
+					你上前一步，把你[pc.cock+]插进她的乳沟，继续上次没做完的事情，主动地在她[meraxis.breasts+]之间抽插你[pc.cock+]。身下的[meraxis.race]发出一声高过一声的尖叫，[meraxis.speechNoEffects(~啊！我要高潮了！)]
+				#ELSE
+					你感觉梅拉克西丝已经濒临高潮，于是把你[pc.cock+]从她[meraxis.breasts+]上面拿开, 调戏着她，[pc.speech(你想就这样高潮吗？)]
+					<br/><br/>
+					梅拉克西丝已经即将绝顶，但你猝不及防的停止使她近乎疯狂，她急切地用她[meraxis.breasts+]蹭你的肉棒，尖叫着，[meraxis.speechNoEffects(对！啊~为什么~你要停下来？！快来~我就要高潮了！姆唔~快给我！)]
+					<br/><br/>
+					你认为这是一个绝佳的机会来改变梅拉克西丝对于被使用胸部的态度，于是你上前，把你[pc.cock+]放在她的飞机场上摩擦，当身下的人发出歇斯底里的呻吟时，你冷笑一声，提出了自己的要求，[pc.speech(告诉我你喜欢别人用你的胸，我才会让你高潮。)]
+					<br/><br/>
+					[meraxis.speechNoEffects(什么？！你真是下流，[pc.name]……)]她抱怨着，但当你用你的肉棒抽打了几下她[meraxis.breasts+]之后，她屈服了，急切地叫着，[meraxis.speechNoEffects(我说！我……我喜欢别人用我的胸！快让我高潮吧！)]
+					<br/><br/>
+					你上前一步，把你[pc.cock+]在她的平坦胸部上摩擦，继续上次没做完的事情，主动地在她[meraxis.breasts+]之间抽插你[pc.cock+]。身下的[meraxis.race]发出一声高过一声的尖叫，[meraxis.speechNoEffects(~啊！我要高潮了！)]
+				#ENDIF
+		]]></text>
+		</description>
+	</descriptions>
+</sexAction>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>30</value> 
+		<determiner><![CDATA[一袋]]></determiner>
+		<name><![CDATA[树芽沙拉]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[树芽沙拉]]></namePlural>
+		<description><![CDATA[一个装有一堆看起来相当平淡的绿叶、茎和嫩芽的塑料袋。在袋子的背面自豪地宣称它“含有鹿所需的所有营养”，旁边有一张裸体的鹿女抚摸自己的胸部的图片。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/deer/subspecies/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">deer_tree_shoots_salad.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>innoxia_deer</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[鹿]]></potionDescriptor>
+		<associatedRace>innoxia_deer</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId> <!-- 'RACE' is a special value, and when defined, this item will use the defined 'associatedRace' to give the player enchantment options for making a TF elixir for that race. -->
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加健康……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+			[npc.Name]打开了树芽沙拉袋子，然后迅速吞噬了它，留下清新的、多汁的绿叶味道充满[npc.her]的口腔。
+		]]></selfUse>
+		<otherUse><![CDATA[
+			[npc.Name]打开了树芽沙拉袋子，然后将它送到[npc2.namePos][npc2.lips]边并让[npc2.herHim]吃。[npc2.name]迅速吞噬了它，留下清新的、多汁的绿叶味道充满[npc2.her]的口腔。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

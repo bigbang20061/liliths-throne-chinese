@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>25</value> 
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[桃子]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[桃子]]></namePlural>
+		<description><![CDATA[是桃树所结出一种多汁水果，通常在温带种植。如果你眯着眼看，它的形状有点像屁股……]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName>peach.svg</imageName> 
+		
+		<colourPrimary>BASE_PINK_SALMON</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldTfGrow(+1)][style.boldTfSex(屁股尺寸)]]]></line>
+			<line><![CDATA[[style.boldTfGrow(+1)][style.boldTfSex(臀部尺寸)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		[#npc.incrementAssSize(1)]
+		[#npc.incrementHipSize(1)]
+]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>SILLY_MODE</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]擦了擦这个桃子，并决定拿起它咬一大口。这个桃子甜美多汁的滋味使[npc.herHim]忍不住大快朵颐，不一会儿[npc.sheHas]就吃完了它。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]擦了擦这个桃子，让[npc2.name]咬了一大口。这桃子甜美多汁的味道使[npc2.herHim]忍不住大快朵颐，片刻之后[npc2.sheHas]便吃完了。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

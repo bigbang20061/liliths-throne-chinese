@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<value>500</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[]]></determiner>
+		
+		<name><![CDATA[指虎]]></name>
+		
+		<namePlural pluralByDefault="true"><![CDATA[指虎]]></namePlural> 
+		
+		<description><![CDATA[一块形状适合握在拳头上的金属。其外缘已被奥术附魔。]]></description> 
+		
+		<attackDescriptor><![CDATA[拳击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用指虎打向[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>COMMON</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]在拳头上套上指虎，准备用于战斗。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]取下指虎，然后收好。]]></unequipText>
+		
+		<imageName>knuckle_dusters.svg</imageName> 
+		
+		<imageEquippedName/>
+		
+		<damage>15</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>MEDIUM</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_BRASS</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>WEAPON_UNARMED</tag>
+			<tag>DOMINION_ALLEYWAY_SPAWN</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<!-- Descriptions that are used when hitting an enemy. One of the hitText values will be randomly selected each time the attacker hits their target. Follow the same guidelines as equipText. -->
+	<hitDescriptions>
+		<hitText><![CDATA[
+[npc.Name]挥动着戴着指虎的拳头，结结实实地打在了[npc2.name]的[npc2.arm]上。
+]]></hitText>
+		<hitText><![CDATA[
+[npc.Name]套着指虎挥出一拳，结结实实地打在了[npc2.name]的[npc2.arm]上。
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]快步上前，一拳打向[npc2.name]，用指虎打中[npc2.her]的肩膀上。
+]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]挥动着戴着指虎的拳头，锤向[npc2.name]的[npc2.arm]。但没有打中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]套着指虎挥向[npc2.name]，却没能命中目标，让[npc.she]恼火地大喊！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]前踏一步，用拳头猛地打向[npc2.name]，却没能击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

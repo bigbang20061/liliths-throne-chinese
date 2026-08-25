@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>800</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[乳胶头罩]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[乳胶头罩]]></namePlural>
+		<description><![CDATA[一个能完全包裹住佩戴者头部的乳胶头罩。借助某种奥术技巧，这个头罩能自行重塑以适应任何佩戴者的头部，无论他们长着人形口鼻、鸟喙还是其他非人类的面部构造。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet> 
+		<imageName>hood.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<stickers>
+			<category id="ponytail" priority="1">
+				<categoryName><![CDATA[Ponytail]]></categoryName>
+				<sticker id="present" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[显示]]></stickerName>
+					<namePrefix/>
+					<descriptionModification/>
+					<imageName zLayer="-1" slot="HEAD">hood_stickers/ponytail.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="absent" priority="2" defaultSticker="false" zLayer="1">
+					<stickerName><![CDATA[隐藏]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+			<category id="eyes" priority="2">
+				<categoryName><![CDATA[Eye holes]]></categoryName>
+				<sticker id="present" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[赠送]]></stickerName>
+					<namePrefix/>
+					<descriptionModification/>
+					<imageName zLayer="1" slot="HEAD">hood_stickers/eyes.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="absent" priority="2" defaultSticker="false" zLayer="1">
+					<stickerName><![CDATA[隐藏]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded>
+						<tag>APPLIES_BLOCKED_BODY_PART_EYES</tag>
+						<tag>BLOCKS_SIGHT</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+			<category id="mouth" priority="3">
+				<categoryName><![CDATA[Mouth holes]]></categoryName>
+				<sticker id="present" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[赠送]]></stickerName>
+					<namePrefix/>
+					<descriptionModification/>
+					<imageName zLayer="1" slot="HEAD">hood_stickers/mouth.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="absent" priority="2" defaultSticker="false" zLayer="1">
+					<stickerName><![CDATA[隐藏]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded>
+						<tag>APPLIES_BLOCKED_BODY_PART_MOUTH</tag>
+						<tag>MUFFLES_SPEECH</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+		
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_RED</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL"/>
+	
+		<itemTags/>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将乳胶头罩戴在[npc.her]的头上。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将乳胶头罩戴在[npc2.namePos]的头上。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地将乳胶头罩套到[npc2.namePos]的头上。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]脱下了[npc.her]的乳胶头罩。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]脱下[npc2.namePos]的乳胶头罩。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]猛地拉下[npc2.namePos]的乳胶头罩。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1250</value> 
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[嘴套]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[嘴套]]></namePlural> 
+		<description><![CDATA[铁丝笼筐嘴套，最初是为狗和其他需要戴嘴套的动物制作的，以防止它们咬人。它的设计使其可以绑在任何人的头上，即使他们并不需要戴。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+			<slot>MOUTH</slot>
+		</equipSlots>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_bdsm</clothingSet>
+		<imageName>muzzle.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="MINOR_BOOST" primaryModifier="CLOTHING_SPECIAL" secondaryModifier="CLOTHING_SEALING" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_DRAIN" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>MOUTH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/>
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags> 
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将嘴套笼撞在了自己的嘴巴上，用扣带扣紧在脑后并固定好。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将嘴套笼撞在了[npc2.namePos]的嘴巴上，用扣带扣紧在脑后并固定好。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地把嘴套扣在[npc2.namePos]的嘴上，然后再伸手紧紧扣住扣子，使其固定到位。
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]解开了嘴套的扣子并将其取下。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]解开了嘴套的扣子并将其取下。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]匆忙地解开了嘴套的扣子并把它拽了下来。
+		]]></otherRough>
+	</displacementText>
+</clothing>

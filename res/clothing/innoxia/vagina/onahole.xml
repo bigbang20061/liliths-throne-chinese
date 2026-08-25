@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[飞机杯]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[飞机杯]]></namePlural>
+		<description><![CDATA[一个人工阴道，位于一根紧密的中空管的末端。该管的长度柔软、有弹性并且柔韧，使其能够像假屌一样插入腔穴。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		
+		<equipSlots>
+			<slot>VAGINA</slot>
+			<slot>ANUS</slot>
+			<slot>MOUTH</slot>
+		</equipSlots>
+		
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>onahole.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList slot="VAGINA">
+			<blockedParts>
+			  <displacementType>REMOVE_OR_EQUIP</displacementType>
+			  <clothingAccessRequired>
+				<clothingAccess>VAGINA</clothingAccess>
+			  </clothingAccessRequired>
+			  <blockedBodyParts/>
+			  <clothingAccessBlocked/>
+			  <concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+
+		<blockedPartsList slot="ANUS">
+			<blockedParts>
+			  <displacementType>REMOVE_OR_EQUIP</displacementType>
+			  <clothingAccessRequired>
+				<clothingAccess>ANUS</clothingAccess>
+			  </clothingAccessRequired>
+			  <blockedBodyParts/>
+			  <clothingAccessBlocked/>
+			  <concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+
+		<blockedPartsList slot="MOUTH">
+			<blockedParts>
+			  <displacementType>REMOVE_OR_EQUIP</displacementType>
+			  <clothingAccessRequired>
+				<clothingAccess>MOUTH</clothingAccess>
+			  </clothingAccessRequired>
+			  <blockedBodyParts/>
+			  <clothingAccessBlocked/>
+			  <concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="VAGINA"/>
+		<incompatibleSlots slot="ANUS"/>
+		<incompatibleSlots slot="MOUTH"/>
+		
+		<primaryColours>
+			<colour>CLOTHING_PINK_LIGHT</colour>
+			<colour>CLOTHING_PINK</colour>
+			<colour>CLOTHING_PURPLE_LIGHT</colour>
+			<colour>CLOTHING_PURPLE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>TRANSPARENT</tag>
+			<!-- Still a test item, so don't add it for sale or in the spawner -->
+			<tag>CHEAT_ITEM</tag>
+			<tag>NOT_FOR_SALE</tag>
+			<tag>NO_RANDOM_SPAWN</tag>
+		</itemTags>
+		<itemTags slot="VAGINA">
+			<tag>PLUGS_VAGINA</tag>
+			<tag>REQUIRES_VAGINA</tag>
+		</itemTags>
+		<itemTags slot="ANUS">
+			<tag>PLUGS_ANUS</tag>
+		</itemTags>
+		<itemTags slot="MOUTH">
+			<tag>MUFFLES_SPEECH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<sexAttributesSelf>
+		<penetration>
+			<length>25</length>
+			<girth>5</girth>
+			<modifiers/>
+		</penetration>
+		<orifice/>
+	</sexAttributesSelf>
+	
+	<!-- These are the sex attributes applicable to someone who is interacting with the wearer (i.e. the penetration/orifice which is available for people other than the wearer. Mainly used for strap-on dildos.) -->
+	<sexAttributesOther>
+		<orifice>
+			<labiaSize>2</labiaSize> <!-- 0-4 corresponding to labia size -->
+			<clitSize>0</clitSize> <!-- cm value -->
+			<clitGirth>3</clitGirth> <!-- 0-7 corresponding to penetration girth values -->
+			<depth>28</depth> <!-- cm value -->
+			<capacity>2</capacity> <!-- cm value corresponding to diameter of orifice -->
+			<elasticity>1</elasticity> <!-- 0-7 corresponding to OrificeElasticity Enum values -->
+			<plasticity>0</plasticity> <!-- 0-7 corresponding to OrificePlasticity Enum values -->
+			<wetness>0</wetness>
+			<modifiers>
+				<mod>PUFFY</mod>
+			</modifiers>
+		</orifice>
+	</sexAttributesOther>
+	
+	
+	
+	<replacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]将飞机杯塞进[npc.her][npc.vagina+]里，任何想要操[npc.her]小穴的人只好将就着用这个玩具……]]></self>
+		<other><![CDATA[[npc.Name]将飞机杯塞进[npc2.namePos][npc2.vagina+]里，任何想要操[npc2.namePos]小穴的人只好将就着用这个玩具……]]></other>
+		<otherRough><![CDATA[[npc.Name]强行将飞机杯塞进[npc2.namePos][npc2.vagina+]里，任何想要操[npc2.namePos]小穴的人只好将就着用这个玩具……]]></otherRough>
+	</replacementText>
+	
+	<displacementText slot="VAGINA" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把飞机杯从[npc.her][npc.vagina+]拔出。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把飞机杯从[npc2.namePos][npc2.vagina+]拔出。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的假阳具并从[npc2.her][npc2.vagina+]里扯出。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText slot="ANUS" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]将飞机杯塞进[npc.her][npc.anus+]里，任何想要操[npc.her]屁股的人只好将就着用这个玩具……]]></self>
+		<other><![CDATA[[npc.Name]将飞机杯塞进[npc2.namePos][npc2.anus+]里，任何想要操[npc2.namePos]屁股的人只好将就着用这个玩具……]]></other>
+		<otherRough><![CDATA[[npc.Name]强行将飞机杯塞进[npc2.namePos][npc2.anus+]里，任何想要操[npc2.namePos]屁股的人只好将就着用这个玩具……]]></otherRough>
+	</replacementText>
+	
+	<displacementText slot="ANUS" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把飞机杯从[npc.her][npc.anus+]拔出。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把飞机杯从[npc2.namePos][npc2.anus+]拔出。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的飞机杯并从[npc2.her][npc2.anus+]扯出。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText slot="MOUTH" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]将飞机杯塞进[npc.her][npc.mouth+]里，任何想要操[npc.her]喉咙的人只好将就着用这个玩具……]]></self>
+		<other><![CDATA[[npc.Name]将飞机杯塞进[npc2.namePos][npc2.mouth+]里，任何想要操[npc2.namePos]喉咙的人只好将就着用这个玩具……]]></other>
+		<otherRough><![CDATA[[npc.Name]强行将飞机杯塞进[npc2.namePos][npc2.mouth+]里，任何想要操[npc2.namePos]喉咙的人只好将就着用这个玩具……]]></otherRough>
+	</replacementText>
+	
+	<displacementText slot="MOUTH" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把飞机杯从[npc.her][npc.mouth+]拔出。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把飞机杯从[npc2.namePos][npc2.mouth+]里拔出。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的飞机杯并从[npc2.her][npc2.mouth+]扯出。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

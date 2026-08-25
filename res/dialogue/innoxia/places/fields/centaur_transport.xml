@@ -1,0 +1,1952 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<scene id="exterior">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/global/globalPlaces', 'FOLOI_FIELDS'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">EXTERIOR</content>
+		<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[车站]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_transport_setup_in_progress))
+						阿斯特拉皮告诉你，现在已经过了乘车服务的时间段，如果你想乘坐马车，还请明天再来。
+					#ELSE
+						靠近半人马拉车站，看看能否找到阿斯特拉皮或弗洛狄。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_transport_setup_in_progress))
+						null
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_centaur_transport_introduced))
+						innoxia_places_fields_centaur_transport_approach_repeat
+					#ELSE
+						innoxia_places_fields_centaur_transport_approach
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- First time encounter: -->
+	
+	<!-- Approaching: -->
+	<scene id="approach">
+		<content folderPath="txt/places/fields/centaur_transport">APPROACH</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						现在是半人马马拉车的开放时间，所以你可以循着嘈杂热闹的声音进去看看这个齐整的马厩内部。
+					#ELSE
+						半人马马拉车只在[style.italicsMinorBad([units.time(5.75)]-[units.time(15)])]时间段开放，如果你想进去看看，得等到开放时间再来。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						innoxia_places_fields_centaur_transport_approach_inside
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!game.isHourBetween(5.75, 15)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[等待&进入]]></responseTitle>
+				<responseTooltip><![CDATA[车站目前关闭了，你在考虑是否要在原地待到[units.time(5.75)]等车站开门再进去。你决定……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_approach_inside]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					[#game.getMinutesUntilTimeInMinutes(5.75*60)]
+				]]></secondsPassed>
+				<!-- Manually set Astrapi here in effects as preParsing is called after time passed -->
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'APPROACH_WAIT'))]
+					[#astrapi.setLocation(pc, false)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						你决定不去车站，继续在弗洛伊田野探索。
+					#ELSE
+						目前半人马马拉车车站处于关闭状态，你在这无事可做。你应该在[style.italicsMinorBad([units.time(5.75)]-[units.time(15)])]时间段再来。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="approach_inside">
+		<preParsingEffects><![CDATA[
+			[#astrapi.setLocation(pc)]
+			[#vronti.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">APPROACH_INSIDE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[介绍]]></responseTitle>
+				<responseTooltip><![CDATA[向这两位半人马介绍自己。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_introductions]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_centaur_transport_introduced, true)]
+					[#flags.setFlag(FLAG_innoxia_centaur_transport_setup_in_progress, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="introductions">
+		<preParsingEffects><![CDATA[
+			[#astrapi.setPlayerKnowsName(true)]
+			[#vronti.setPlayerKnowsName(true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">INTRODUCTIONS</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.getMoney()>=250)
+						伊利斯[style.moneyFormat(250, span)]
+					#ELSE
+						伊利斯[style.moneyFormatUncoloured(250, span)]
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()>=250)
+						选择阿斯特拉皮的服务，让她载你到伊利斯。
+					#ELSE
+						你没有足够的火币购买马车服务。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()>=250)
+						innoxia_places_fields_centaur_transport_astrapi_start
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_centaur_travel_to_elis, true)]
+					[#vronti.returnToHome()]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉阿斯特拉皮你暂时不想前往伊利斯。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'LEAVE_BARN'))]
+					[#astrapi.returnToHome()]
+					[#vronti.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Repeat encounter: -->
+	
+	<!-- Approaching: -->
+	<scene id="approach_repeat">
+		<content folderPath="txt/places/fields/centaur_transport">APPROACH_REPEAT</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						现在是半人马马拉车的开放时间，所以你可以进去看看阿斯特拉皮或者弗洛狄在不在。
+					#ELSE
+						半人马马拉车只在[style.italicsMinorBad([units.time(5.75)]-[units.time(15)])]时间段开放，如果你找阿斯特拉皮或者弗洛狄，得等到开放时间再来。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						innoxia_places_fields_centaur_transport_approach_inside_repeat
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!game.isHourBetween(5.75, 15)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[等待&进入]]></responseTitle>
+				<responseTooltip><![CDATA[车站目前关闭了，你在考虑是否要在原地待到[units.time(5.75)]等车站开门再进去。你决定……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_approach_inside_repeat]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					[#game.getMinutesUntilTimeInMinutes(5.75*60)]
+				]]></secondsPassed>
+				<!-- Manually set Astrapi here in effects as preParsing is called after time passed -->
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'APPROACH_REPEAT_WAIT'))]
+					[#astrapi.setLocation(pc, false)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						你决定不去车站，继续在弗洛伊田野探索。
+					#ELSE
+						目前半人马马拉车车站处于关闭状态，你在这无事可做。你应该在[style.italicsMinorBad([units.time(5.75)]-[units.time(15)])]时间段再来找阿斯特拉皮或者弗洛狄。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'LEAVE'))]
+					[#astrapi.returnToHome()]
+					[#vronti.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="approach_inside_repeat">
+		<!-- If time is:
+			05:45-6:00 - Astrapi waiting there
+			08:45-9:00 - Vronti waiting there
+			11:45-12:00 - Astrapi waiting there
+			14:45-15:00 - Vronti waiting there
+			-->
+		<preParsingEffects><![CDATA[
+			#IF(game.isHourBetween(5.75, 6) || game.isHourBetween(11.75, 12))
+				[#astrapi.setLocation(pc, false)]
+			#ELSEIF(game.isHourBetween(8.75, 9) || game.isHourBetween(14.75, 15))
+				[#vronti.setLocation(pc, false)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">APPROACH_INSIDE_REPEAT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!game.getCharactersPresent().contains(astrapi) && !game.getCharactersPresent().contains(vronti)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[等待]]></responseTitle>
+				<responseTooltip><![CDATA[目前阿斯特拉皮和弗洛狄都不在，如果你还想坐车去伊利斯，你必须等到下次发车时间。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_approach_inside_repeat]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					#IF(game.getHourOfDay()>12)
+						[#game.getMinutesUntilTimeInMinutes(14.75*60)]
+					#ELSEIF(game.getHourOfDay()>9)
+						[#game.getMinutesUntilTimeInMinutes(11.75*60)]
+					#ELSE
+						[#game.getMinutesUntilTimeInMinutes(8.75*60)]
+					#ENDIF
+				]]></secondsPassed>
+				<!-- Duplicate effects as preParsing is called after time passed, so these effects aren't applied unless put here -->
+				<effects><![CDATA[
+					#IF(game.getHourOfDay()>12)
+						[#vronti.setLocation(pc, false)]
+					#ELSEIF(game.getHourOfDay()>9)
+						[#astrapi.setLocation(pc, false)]
+					#ELSEIF(game.getHourOfDay()>6)
+						[#vronti.setLocation(pc, false)]
+					#ELSE
+						[#astrapi.setLocation(pc, false)]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(astrapi) || game.getCharactersPresent().contains(vronti)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.getMoney()>=250)
+						伊利斯([style.moneyFormat(250, span)])
+					#ELSE
+						伊利斯([style.moneyFormatUncoloured(250, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()>=250)
+						#IF(game.getCharactersPresent().contains(astrapi))
+							选择阿斯特拉皮的服务，让她载你到伊利斯。
+						#ELSE
+							选择弗洛狄的服务，让他载你到伊利斯。
+						#ENDIF
+					#ELSE
+						你没有火币来购买任何一人的服务。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()>=250)
+						#IF(game.getCharactersPresent().contains(astrapi))
+							innoxia_places_fields_centaur_transport_astrapi_start
+						#ELSE
+							innoxia_places_fields_centaur_transport_vronti_start
+						#ENDIF
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(game.getCharactersPresent().contains(astrapi) && astrapi.isVisiblyPregnant())
+						[#astrapi.setCharacterReactedToPregnancy(pc, true)]
+					#ENDIF
+					[#flags.setFlag(FLAG_innoxia_centaur_travel_to_elis, true)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(astrapi) || game.getCharactersPresent().contains(vronti)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉阿斯特拉皮你现在不想坐车去伊利斯，然后离开谷仓。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(game.getCharactersPresent().contains(astrapi) && astrapi.isVisiblyPregnant())
+						[#astrapi.setCharacterReactedToPregnancy(pc, true)]
+					#ENDIF
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'LEAVE_BARN'))]
+					[#astrapi.returnToHome()]
+					[#vronti.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Astrapi travel: -->
+	
+	<scene id="astrapi_start">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.incrementMoney(-250))]
+			[#astrapi.applySportsBra(true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_START</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[出发]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						出发前往伊利斯。
+					#ELSE
+						出发前往御城区。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_journey">
+		<!-- Move along route by 30% -->
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 0.3)]
+			#ELSE
+				[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_WORLD_MAP_FIELDS_CITY, false)]
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 0.3)]
+			#ENDIF
+			[#astrapi.setLocation(pc)]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'JOURNEY_CORE'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_JOURNEY</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						放松，享受前往伊利斯路上的宁静。
+					#ELSE
+						放松，享受前往御城区路上的宁静。
+					#ENDIF
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_QUIET_JOURNEY'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[历史]]></responseTitle>
+				<responseTooltip><![CDATA[
+					询问阿斯特拉皮她和她的兄长担任半人马车夫多久了。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_talk]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_TALK_HISTORY'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[行业竞争]]></responseTitle>
+				<responseTooltip><![CDATA[
+					询问阿斯特拉皮，作为半人马车夫会遇到什么样的竞争压力。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_talk]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_TALK_COMPETITION'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[露内特]]></responseTitle>
+				<responseTooltip><![CDATA[
+					询问阿斯特拉皮有关露内特半人马的事，以及她如何避免与他们接触的。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_talk]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_TALK_LUNETTE'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[调情]]></responseTitle>
+				<responseTooltip><![CDATA[
+					向阿斯特拉调情。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_flirt]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_journey_talk">
+		<!-- move along route -->
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 0.6)]
+			#ELSE
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 0.6)]
+			#ENDIF
+			[#astrapi.setLocation(pc)]
+			[#game.appendToTextEndStringBuilder(astrapi.incrementAffection(pc, 5))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_TALK_END</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						放松并享受前往伊利斯路上的闲聊。
+					#ELSE
+						放松并享受前往御城区路上的闲聊。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_journey_flirt">
+		<!-- move along route by 1 tile -->
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(astrapi.incrementLust(10, false))]
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 0.01)]
+			#ELSE
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 0.01)]
+			#ENDIF
+			[#astrapi.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_FLIRT</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[引诱她]]></responseTitle>
+				<responseTooltip><![CDATA[阿斯特甩动她的尾巴，拉皮恬不知耻地向你展示她的雌马阴户。你可以确信，只要再朝正确的方向推一把，她就会主动向你提出性要求。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_flirt_pushed]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[停止调情]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						对她的反应很满意，你浅尝即止，在接下来去往伊利斯的旅程中保持安静。
+					#ELSE
+						对她的反应很满意，你浅尝即止，在接下来去往御城区的旅程中保持安静。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_FLIRT_STOP'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_journey_flirt_pushed">
+		<!-- move along route by 1 tile -->
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 0.01)]
+			#ELSE
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 0.01)]
+			#ENDIF
+			[#astrapi.setLocation(pc)]
+			[#astrapi.applySportsBra(false)]
+			[#game.appendToTextEndStringBuilder(astrapi.incrementLust(25, false))]
+			#IF(!astrapi.isVisiblyPregnant() && !flags.hasFlag(FLAG_innoxia_astrapi_impregnation_talk))
+				[#game.appendToTextEndStringBuilder(astrapi.useItem(game.getItemGen().generateItem('innoxia_pills_sterility'), astrapi, false, true))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_FLIRT_PUSHED</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- 1: Receive oral -->
+			<response>
+				<availabilityConditional><![CDATA[[#(!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)) && (!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接受口交]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis() && !pc.hasVagina())
+						你没有阴茎或者阴道，阿斯特拉皮无法为你口交……
+					#ELSEIF(pc.hasPenis())
+						你的阴茎目前被限制了，阿斯特拉皮无法为你口交……
+					#ELSE
+						你的阴道目前被限制了，阿斯特拉皮无法为你舔阴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#(pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)) || (pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接受口交]]></responseTitle>
+				<responseTooltip><![CDATA[让阿斯特拉皮跪下为你口交。]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_oral_on_player]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_ASTRAPI_ORAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[
+								[#!pc.hasPenis()]
+							]]></condition>
+							<id><![CDATA[TongueVagina_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[astrapi]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[
+								[#!pc.hasVagina()]
+							]]></condition>
+							<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START]]></id>
+							<performer><![CDATA[astrapi]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 2: Titjob -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[乳交]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis())
+						你没有阴茎，阿斯特拉皮无法为你乳交……
+					#ELSE
+						你的阴茎目前被限制了，阿斯特拉皮无法为你乳交……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[乳交]]></responseTitle>
+				<responseTooltip><![CDATA[让阿斯特拉皮将她巨大的乳房包住你的阴茎，并开始抽插。]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_titjob_for_player]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_ASTRAPI_TITJOB_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisBreasts_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[astrapi]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 3: Service pussy -->
+			<response>
+				<availabilityConditional/>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[服务小穴]]></responseTitle>
+				<responseTooltip><![CDATA[让阿斯特拉皮把她的雌马阴道对准你，这样你就能给她指交或者舔阴了。]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_oral_on_astrapi]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_ASTRAPI_SERVICING_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[FingerVagina_FINGERING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[astrapi]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 4: Fuck -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isTaur())
+						骑配她
+					#ELSE
+						操她
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis())
+						你没有阴茎，所以你不能操阿斯特拉皮……
+					#ELSE
+						你的阴茎目前被限制了，所以你不能操阿斯特拉皮……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isTaur())
+						骑配她
+					#ELSE
+						操她
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isTaur())
+						让阿斯特拉皮把她的马臀对着你，这样你就能骑配着抱着她的马腰操她的阴道了。
+					#ELSE
+						让阿斯特拉皮把她的马臀对着你，这样你就能操她的阴道了。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_fuck_astrapi]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_ASTRAPI_FUCK_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[astrapi]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 5: Pregnancy discussion -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_astrapi_impregnation_talk)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[授精]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!astrapi.isAffectionAtLeast(pc, AFFECTION_POSITIVE_FOUR_LOVE))
+						意识到阿斯特拉皮并不希望怀孕，你决定等你们关系再进一步后再谈谈这个。
+						<br/>[style.italicsBad(Requires affection of at least [#AFFECTION_POSITIVE_FOUR_LOVE.getMinimumValue()].)]
+						<br/>Current affection: [#~~astrapi.getAffection(pc)]
+					#ELSE
+						你非常想让阿斯特拉皮怀上你的孩子，于是你询问阿斯特拉皮是否愿意让自己为她授精。
+						<br/>[style.italicsGood(Requires affection of at least [#AFFECTION_POSITIVE_FOUR_LOVE.getMinimumValue()].)]
+						<br/>Current affection: [#~~astrapi.getAffection(pc)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(astrapi.isAffectionAtLeast(pc, AFFECTION_POSITIVE_FOUR_LOVE))
+						innoxia_places_fields_centaur_transport_astrapi_impregnation_talk
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_astrapi_impregnation_talk, true)]
+				]]></effects>
+			</response>
+			<!-- 6: Service ass -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[服务屁股]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getClothingInSlot(IS_NECK)!=null && pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker'))
+						告诉阿斯特拉皮，像你这样的[style.mules]是如何训练有素地进行肛交的，想在她身上演示一下。
+					#ELSE
+						让阿斯特拉皮将她的马臀对着你，这样你就能指交她的屁穴或者舔肛。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_oral_on_astrapi_ass]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_ASTRAPI_SERVICING_ASS_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[
+								[#pc.getClothingInSlot(IS_NECK)==null || !pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker')]
+							]]></condition>
+							<id><![CDATA[FingerAnus_ANAL_FINGERING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[astrapi]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[
+								[#pc.getClothingInSlot(IS_NECK)!=null && pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker')]
+							]]></condition>
+							<id><![CDATA[TongueAnus_ANILINGUS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[astrapi]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 7: Fuck ass -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && (!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isTaur())
+						骑配她(肛交)
+					#ELSE
+						操她肛门
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenis())
+						你没有阴茎，所以你不能操阿斯特拉皮……
+					#ELSE
+						你的阴茎目前被限制了，所以你不能操阿斯特拉皮……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.isTaur())
+						骑配她(肛交)
+					#ELSE
+						操她肛门
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isTaur())
+						让阿斯特拉皮准备好被你搂着马腰骑配着操她的屁眼。
+					#ELSE
+						让阿斯特拉皮准备好被你操她的屁眼。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_fuck_astrapi]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_ASTRAPI_FUCK_ASS_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[astrapi]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 0: Stop flirting -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[反悔]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						心满意足后，你停止了当前的动作，告诉阿斯特拉皮自己不是真的想和她做，然后一路保持安静前往伊利斯。
+					#ELSE
+						心满意足后，你停止了当前的动作，告诉阿斯特拉皮自己不是真的想和她做，然后一路保持安静前往御城区。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_FLIRT_BACK_OUT'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_impregnation_talk">
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_IMPREGNATION_TALK</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_centaur_transport_astrapi_journey_flirt_pushed"/>
+	</scene>
+	
+	<scene id="astrapi_post_sex">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你和阿斯特拉皮结束了这场寻欢。]]></tooltip>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_POST_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						在阿斯特拉皮的马车上放松，让她载你到伊利斯。
+					#ELSE
+						在阿斯特拉皮的马车上放松，让她载你到御城区。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_journey_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_journey_end">
+		<!-- Complete route -->
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 1)]
+				[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_centaur_transport, false)]
+			#ELSE
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 1)]
+				[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_innoxia_fields_centaur_transport, false)]
+			#ENDIF
+			[#astrapi.setLocation(pc)]
+			[#astrapi.applySportsBra(false)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_JOURNEY_END</content>
+		<secondsPassed minutes="true"><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_transport_setup_in_progress))
+				60
+			#ELSE
+				#IF(game.getHourOfDay()>=15)
+					[#game.getMinutesUntilTimeInMinutes(17.75*60)]
+				#ELSEIF(game.getHourOfDay()>=12)
+					[#game.getMinutesUntilTimeInMinutes(14.75*60)]
+				#ELSEIF(game.getHourOfDay()>=9)
+					[#game.getMinutesUntilTimeInMinutes(11.75*60)]
+				#ELSE
+					[#game.getMinutesUntilTimeInMinutes(8.75*60)]
+				#ENDIF
+			#ENDIF
+		]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						在前往伊利斯的大门之前，你向阿斯特拉皮道谢并道别。
+					#ELSE
+						在前往御城区的中心之前，你向阿斯特拉皮道谢并道别。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_JOURNEY_END_GOODBYE'))]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#(astrapi.getTotalTimesHadSex(pc)==0)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[帮忙清洗]]></responseTitle>
+				<responseTooltip><![CDATA[你觉得阿斯特拉皮还无法接受让你为她清洗身体，或许再培养一下感情事情会变得不一样……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#(astrapi.getTotalTimesHadSex(pc)>0)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[帮忙清洗]]></responseTitle>
+				<responseTooltip><![CDATA[你看到阿斯特拉皮人的半边身体上有一层细细的汗珠，而她的马的半边身体看起来需要刷一刷。帮她擦擦吧。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_clean]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_clean">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(astrapi.incrementAffection(pc, 5))]
+			[#game.appendToTextEndStringBuilder(astrapi.incrementLust(15, false))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_CLEAN</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[擦拭背部]]></responseTitle>
+				<responseTooltip><![CDATA[告诉阿斯特拉皮你会帮她擦拭背部的汗珠。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_clean_wipe]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[舔舐腹肌]]></responseTitle>
+				<responseTooltip><![CDATA[阿斯特拉皮显然已经欲火中烧，你肯定她会同意让你舔她腹肌上的汗液。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_clean_abs]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isArmpitContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[舔腋窝]]></responseTitle>
+				<responseTooltip><![CDATA[阿斯特拉皮显然已经欲火中烧，你肯定她会同意让你舔她腋窝处的汗液。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_clean_armpits]]></nextDialogue>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_ARMPIT_GIVING]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_clean_wipe">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(astrapi.incrementAffection(pc, 5))]
+			[#game.appendToTextEndStringBuilder(astrapi.incrementLust(5, false))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_CLEAN_WIPE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[结束]]></responseTitle>
+				<responseTooltip><![CDATA[帮完她之后，是时候和阿斯特拉皮道别了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_CLEAN_END'))]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_clean_abs">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(astrapi.incrementAffection(pc, 5))]
+			[#game.appendToTextEndStringBuilder(astrapi.incrementLust(10, false))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_CLEAN_ABS</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[结束]]></responseTitle>
+				<responseTooltip><![CDATA[帮完她之后，是时候和阿斯特拉皮道别了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_CLEAN_ABS_END'))]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+			<!-- Handjob: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasPenisIgnoresDildo() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[手交]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenisIgnoresDildo())
+						你没有阴茎，阿斯特拉皮无法为你手交……
+					#ELSE
+						你的阴茎目前被限制了，阿斯特拉皮不能为你手交……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasPenisIgnoresDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[手交]]></responseTitle>
+				<responseTooltip><![CDATA[接受阿斯特拉皮的手交，射在她的腹肌上。]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_abs_handjob]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex_abs]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">ASTRAPI_CLEAN_ABS_HANDJOB</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[FingerPenis_COCK_MASTURBATING_START]]></id>
+							<performer><![CDATA[astrapi]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_post_sex_abs">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你和阿斯特拉皮结束了这场寻欢。]]></tooltip>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_POST_SEX_ABS</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[帮完她之后，是时候和阿斯特拉皮道别了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_CLEAN_END'))]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_clean_armpits">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(astrapi.incrementAffection(pc, 5))]
+			[#game.appendToTextEndStringBuilder(astrapi.incrementLust(10, false))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_CLEAN_ARMPITS</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[结束]]></responseTitle>
+				<responseTooltip><![CDATA[帮完她之后，是时候和阿斯特拉皮道别了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_CLEAN_ARMPITS_END'))]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+			<!-- Armpit fuck: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.hasPenisIgnoresDildo() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[腋交]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasPenisIgnoresDildo())
+						你没有阴茎，无法操阿斯特拉皮的腋窝……
+					#ELSE
+						你的阴茎目前被限制了，无法操阿斯特拉皮的腋窝……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.hasPenisIgnoresDildo() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[腋交]]></responseTitle>
+				<responseTooltip><![CDATA[接受阿斯特拉皮的好意，用你的鸡巴在她的腋窝间抽插并在里面射精。]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_astrapi_armpit]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>astrapi</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_astrapi_post_sex_armpits]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">ASTRAPI_CLEAN_ARMPITS_FUCK</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisArmpit_ARMPIT_SEX_GIVING_START]]></id>
+							<performer><![CDATA[astrapi]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="astrapi_post_sex_armpits">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你和阿斯特拉皮结束了这场寻欢。]]></tooltip>
+		<content folderPath="txt/places/fields/centaur_transport">ASTRAPI_POST_SEX_ARMPITS</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[帮完她之后，是时候和阿斯特拉皮道别了。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_CLEAN_END'))]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_astrapi_not_shaving) && game.isBodyHairEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[不要剃毛]]></responseTitle>
+				<responseTooltip><![CDATA[在向阿斯特拉皮道别前，告诉她不要剃腋窝的毛。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_POST_SEX_ARMPITS_SHAVING_STOP'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_CLEAN_END'))]
+					[#flags.setFlag(FLAG_innoxia_astrapi_not_shaving, true)]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_astrapi_not_shaving) && game.isBodyHairEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[多多剃毛]]></responseTitle>
+				<responseTooltip><![CDATA[在向阿斯特拉皮道别前，告诉她还是多剃剃腋窝的毛吧。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_POST_SEX_ARMPITS_SHAVING_START'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'ASTRAPI_CLEAN_END'))]
+					[#flags.setFlag(FLAG_innoxia_astrapi_not_shaving, false)]
+					[#astrapi.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Vronti travel: -->
+	
+	<scene id="vronti_start">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.incrementMoney(-250))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">VRONTI_START</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[出发]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						登上马车，前往伊利斯。
+					#ELSE
+						登上马车，前往御城区。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="vronti_journey">
+		<!-- move along route by 30% -->
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 0.3)]
+			#ELSE
+				[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_WORLD_MAP_FIELDS_CITY, false)]
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 0.3)]
+			#ENDIF
+			[#vronti.setLocation(pc)]
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'JOURNEY_CORE'))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">VRONTI_JOURNEY</content>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						放松，享受前往伊利斯路上的宁静。
+					#ELSE
+						放松，享受前往御城区路上的宁静。
+					#ENDIF
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_QUIET_JOURNEY'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[历史]]></responseTitle>
+				<responseTooltip><![CDATA[
+					询问弗洛狄他和他的兄妹担任半人马车夫多久了。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_TALK_HISTORY'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_TALK_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[行业竞争]]></responseTitle>
+				<responseTooltip><![CDATA[
+					询问弗洛狄，作为半人马车夫会遇到什么样的竞争压力。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_TALK_COMPETITION'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_TALK_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[露内特]]></responseTitle>
+				<responseTooltip><![CDATA[
+					询问弗洛狄有关露内特半人马的事，以及他如何避免与他们接触的。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_TALK_LUNETTE'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_TALK_END'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[调情]]></responseTitle>
+				<responseTooltip><![CDATA[
+					向弗洛狄调情。
+					<br/><i>车程长度只允许你选择这里的五个动作之一。</i>
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_flirt]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="vronti_journey_flirt">
+		<!-- move along route by 1 tile -->
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(vronti.incrementLust(5, false))]
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 0.01)]
+			#ELSE
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 0.01)]
+			#ENDIF
+			[#vronti.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">VRONTI_FLIRT</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<requiredPerks>
+					<perk><![CDATA[CONVINCING_REQUESTS]]></perk>
+					<perk><![CDATA[OBJECT_OF_DESIRE]]></perk>
+					<perk><![CDATA[MALE_ATTRACTION]]></perk>
+				</requiredPerks>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[引诱他]]></responseTitle>
+				<responseTooltip><![CDATA[用尽一切方法色诱弗洛狄，让他回应你的挑逗。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_flirt_pushed]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[放弃]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						弗洛狄的冷淡似乎不可动摇。别再跟他调情，安静坐着前往伊利斯吧。
+					#ELSE
+						弗洛狄的冷淡似乎不可动摇。别再跟他调情，安静坐着前往御城区吧。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_FLIRT_STOP'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="vronti_journey_flirt_pushed">
+		<!-- move along route by 1 tile -->
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(vronti.incrementLust(25, false))]
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 0.01)]
+			#ELSE
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 0.01)]
+			#ENDIF
+			[#vronti.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">VRONTI_FLIRT_PUSHED</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- 1: Give handjob -->
+			<response>
+				<availabilityConditional/>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[手交]]></responseTitle>
+				<responseTooltip><![CDATA[你成功让他勃起，告诉他你可以帮他打飞机缓解一下需要。]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_vronti_handjob_given, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_vronti_handjob]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>vronti</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_VRONTI_HANDJOB_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[FingerPenis_COCK_MASTURBATING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[vronti]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 2: Blowjob -->
+			<response>
+				<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_vronti_handjob_given) || !pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[口交]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_vronti_handjob_given))
+						你看得出，弗洛狄除了手交之外，不会同意其他任何事情。给他打完手枪后，你确信下次再遇到这种情况时，他会尝试你的口交。
+					#ELSE
+						你的嘴巴目前被限制了，无法为弗洛狄口交……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_vronti_handjob_given) && pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[口交]]></responseTitle>
+				<responseTooltip><![CDATA[你成功让他勃起，告诉他你可以帮他吸一下缓解他的需要。]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_vronti_blowjob_given, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_vronti_blowjob]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>vronti</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_VRONTI_BLOWJOB_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[vronti]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 3: Fucked -->
+			<response>
+				<availabilityConditional><![CDATA[[#(!flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) && !flags.hasFlag(FLAG_innoxia_vronti_anilingus_given)) || !pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) && !flags.hasFlag(FLAG_innoxia_vronti_anilingus_given))
+						#IF(game.isAnalContentEnabled())
+							你看得出弗洛狄不会接受口交和舔肛以外的动作。你可以肯定在做过这两件事后，下次他会接受操你。
+						#ELSE
+							你看得出弗洛狄不会接受口交以外的动作。为他口交之后，你可以肯定下次他会接受操你。
+						#ENDIF
+					#ELSEIF(!pc.hasVagina())
+						你没有小穴，弗洛狄没办法操你……
+					#ELSE
+						你的小穴目前被限制了，弗洛狄没办法操你……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#(flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) || flags.hasFlag(FLAG_innoxia_vronti_anilingus_given)) && pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[你成功让他勃起，告诉他你可以把自己的小穴借给他缓解一下需要。]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_vronti_sex_given, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_vronti_fucked]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>vronti</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_VRONTI_FUCK_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[vronti]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 5: Stop flirting -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[停止调情]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						对他的反应很满意，你浅尝即止，在接下来去往伊利斯的旅程中保持安静。
+					#ELSE
+						对他的反应很满意，你浅尝即止，在接下来去往御城区的旅程中保持安静。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_FLIRT_BACK_OUT'))]
+				]]></effects>
+			</response>
+			<!-- 6: Service ass -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && !flags.hasFlag(FLAG_innoxia_vronti_handjob_given)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[服务屁股]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你看得出弗洛狄不会接受打飞机以外的行为。在为他手冲之后，你确信下一次他会愿意让你服务他的肛门。
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && flags.hasFlag(FLAG_innoxia_vronti_handjob_given)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[服务屁股]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getClothingInSlot(IS_NECK)!=null && pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker'))
+						成功让他勃起后，你告诉弗洛狄自己是训练有素的[style.mules]，将会为他展示自己高超的舔肛绝技。
+					#ELSE
+						成功让他勃起后，你告诉弗洛狄自己可以帮他指交他的菊穴，或者为他舔肛来缓解他的需要。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_vronti_anilingus_given, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_vronti_anilingus]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>vronti</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_VRONTI_ASS_SERVICE_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[
+								[#pc.getClothingInSlot(IS_NECK)==null || !pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker')]
+							]]></condition>
+							<id><![CDATA[FingerAnus_ANAL_FINGERING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[vronti]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[
+								[#pc.getClothingInSlot(IS_NECK)!=null && pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker')]
+							]]></condition>
+							<id><![CDATA[TongueAnus_ANILINGUS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[vronti]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 7: Anally fucked -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && ((!flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) && !flags.hasFlag(FLAG_innoxia_vronti_anilingus_given)) || !pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[挨操(肛交)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) && !flags.hasFlag(FLAG_innoxia_vronti_anilingus_given))
+						你看得出来弗洛狄不会接受口交和玩肛以外的行为。你确信在做过这两件事之后，下一次他会尝试操你屁股。
+					#ELSE
+						你的肛门目前被限制了，弗洛狄无法操你的屁穴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && (flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) || flags.hasFlag(FLAG_innoxia_vronti_anilingus_given)) && pc.isAbleToAccessCoverableArea(CA_ANUS, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[挨操(肛交)]]></responseTitle>
+				<responseTooltip><![CDATA[你成功让他勃起，告诉他你可以把自己的肛门借给他缓解一下需要。]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_vronti_anal_sex_given, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_vronti_fucked_anal]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>vronti</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_VRONTI_ANAL_FUCK_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[vronti]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- 8: Anal fucking -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && ((!flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) && !flags.hasFlag(FLAG_innoxia_vronti_anilingus_given)) || !pc.isAbleToAccessCoverableArea(CA_PENIS, true) || !pc.hasPenis())]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[操他的屁股]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) && !flags.hasFlag(FLAG_innoxia_vronti_anilingus_given))
+						你看得出弗洛狄只愿意接受口交或肛交服务。做完其中任意一项后，他应该会更愿意尝试其他刺激方式……
+					#ELSEIF(!pc.hasPenis())
+						你没有阴茎，所以无法跟弗洛狄肛交……
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+						你的阴茎目前无法使用，所以无法跟弗洛狄肛交……
+					#ENDIF]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled() && (flags.hasFlag(FLAG_innoxia_vronti_blowjob_given) || flags.hasFlag(FLAG_innoxia_vronti_anilingus_given)) && pc.isAbleToAccessCoverableArea(CA_PENIS, true) && pc.hasPenis()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[操他的屁股]]></responseTitle>
+				<responseTooltip><![CDATA[成功让弗洛狄勃起后，你觉得应该能说服他让你操他的屁股。]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_vronti_ass_fucked, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_vronti_ass_fucking]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>vronti</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/centaur_transport">SEX_VRONTI_ASS_FUCKING_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[vronti]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="vronti_post_sex">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你和弗洛狄结束了这场寻欢。]]></tooltip>
+		<content folderPath="txt/places/fields/centaur_transport">VRONTI_POST_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						在弗洛狄的马车上放松，让他载你到伊利斯。
+					#ELSE
+						在弗洛狄的马车上放松，让他载你到御城区。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_centaur_transport_vronti_journey_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="vronti_journey_end">
+		<!-- Complete route -->
+		<preParsingEffects><![CDATA[
+			#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+				[#pc.walkPathNoEffects(PLACE_TYPE_WORLD_MAP_FIELDS_CITY, true, 1)]
+				[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_centaur_transport, false)]
+			#ELSE
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_fields_centaur_transport, true, 1)]
+				[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_innoxia_fields_centaur_transport, false)]
+			#ENDIF
+			[#vronti.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/centaur_transport">VRONTI_JOURNEY_END</content>
+		<secondsPassed minutes="true"><![CDATA[
+			#IF(game.getHourOfDay()>=15)
+				[#game.getMinutesUntilTimeInMinutes(17.75*60)]
+			#ELSEIF(game.getHourOfDay()>=12)
+				[#game.getMinutesUntilTimeInMinutes(14.75*60)]
+			#ELSEIF(game.getHourOfDay()>=9)
+				[#game.getMinutesUntilTimeInMinutes(11.75*60)]
+			#ELSE
+				[#game.getMinutesUntilTimeInMinutes(8.75*60)]
+			#ENDIF
+		]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_centaur_travel_to_elis))
+						在前往伊利斯的大门之前，你向弗洛狄道谢并道别。
+					#ELSE
+						在前往御城区的中心之前，你向弗洛狄道谢并道别。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/centaur_transport', 'VRONTI_JOURNEY_END_GOODYBE'))]
+					[#vronti.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>10000</value> 
+		<melee>false</melee>
+		<twoHanded>true</twoHanded>
+		<determiner><![CDATA[​]]></determiner>
+		<name appendDamageName="false"><![CDATA[破魔弓]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[欺骗者的弓]]></namePlural> 
+		<description><![CDATA[一把为妖狐莉琳打造的为了保护弱小的弓。这把奥术弓射出的箭精准并强而有力，同时还十分优雅。]]></description> 
+		<attackDescriptor><![CDATA[放箭]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[向[npc2.name]射出一支奥术箭。]]></attackTooltipDescription>
+		<rarity>LEGENDARY</rarity> 
+		<weaponSet>c4mg1rl_benevolent</weaponSet>
+		<equipText><![CDATA[[npc.Name]拉开破魔弓，准备战斗。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]收起[npc.her]的弓。]]></unequipText>
+		<imageName>hama_yumi.svg</imageName> 
+		<imageEquippedName>hama_yumi.svg</imageEquippedName>
+		<physicalResistance>0</physicalResistance> 
+		<damage>50</damage>
+		<arcaneCost>2</arcaneCost> 
+		<damageVariance>NONE</damageVariance> 
+		<availableDamageTypes>
+			<damageType>ICE</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		<spells/>
+		<combatMoves/>
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_CHANCE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_CHANCE" timer="0"/>
+		</effects>
+		<extraEffects/>
+		<onHitEffect/>
+		<onCriticalHitEffect/>
+		<primaryColours recolouringAllowed="true" values="JUST_BROWN"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_TAN"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_SILVER"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+		<itemTags/>
+		
+	</coreAttributes>
+	<hitDescriptions>
+		<hitText><![CDATA[
+用[npc.name]的弓瞄准，成功射中[npc2.name]的胸口；虚幻的奥术箭穿过[npc2.her]的躯体，吸取[npc2.her]的能量！
+]]></hitText>
+		<hitText><![CDATA[
+用[npc.name]的弓矢瞄准，成功用奥术箭射穿[npc2.her]的[npc2.arm]，吸取[npc2.her]的能量！
+]]></hitText>
+		<hitText><![CDATA[
+[npc.name]急切地发射了一支虚幻的箭矢，射入[npc2.name]的肩膀，导致[npc2.herHim]失去了一些能量！
+]]></hitText>
+		<criticalHitText><![CDATA[
+[npc.name]屏息，放出一支充能箭矢，对[npc2.her]的脖子造成了毁灭性的打击！
+]]></criticalHitText>
+	</hitDescriptions>
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]用[npc.her]的弓瞄准，试图射击[npc2.name]的胸部，但没有命中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+用[npc.her]的弓瞄准[npc2.name]，但[npc.she]没能击中目标，[npc.name]沮丧地大叫着！
+]]></missText>
+		<missText><![CDATA[
+[npc.name]紧咬牙关，用[npc.her]的弓射出了一支虚幻的箭矢，但[npc.her]没能命中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

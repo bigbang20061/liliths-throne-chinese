@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name appendColourName="false"><![CDATA[榨精泵]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[榨精泵]]></namePlural>
+		<description><![CDATA[这个中空的塑料圆筒连接着两根管子，可以通过开口端套在穿戴者的阴茎上。一根给容器减压，另一根则吸取穿戴者阴茎喷出的精液。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PENIS</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>penis_pump.svg</imageName>
+		<imageEquippedName/>
+		<effects>
+			<effect limit="0" mod1="CLOTHING_SEXUAL" mod2="CLOTHING_VIBRATION" potency="MAJOR_BOOST" timer="0" type="CLOTHING"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>PENIS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+				  <bodyPart>PENIS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLUE_GREY</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> <!-- tag values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/ItemTag.java -->
+			<tag>MILKING_EQUIPMENT</tag>
+			<tag>TRANSPARENT</tag>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>RIGID_MATERIAL</tag>
+			<tag>DISCARDED_WHEN_UNEQUIPPED</tag>
+			<tag>NO_RANDOM_SPAWN</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<sexAttributesSelf>
+		<orifice/> <!-- This item has no orifice stats -->
+		<!-- Warning! As of v0.3.7, orifice sex toy support is not fully implemented into the game! -->
+		<!--
+		<orifice>
+			<depth>0</depth> cm value
+			<capacity>0</capacity> cm value corresponding to diameter of orifice
+			<elasticity>3</elasticity> 0-7 corresponding to OrificeElasticity Enum values
+			<plasticity>3</plasticity> 0-7 corresponding to OrificePlasticity Enum values
+			<wetness>0</wetness> 0-7 corresponding to Wetness Enum values
+			<modifiers>
+				<mod>PUFFY</mod> Drawn from OrificeModifier Enum values
+			</modifiers>
+		</orifice>
+		-->
+	</sexAttributesSelf>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]打开榨精泵的开关，然后把正在减压的圆筒套在[npc.her][npc.cock+]上。
+			#IF(npc.getTotalFluidInArea(ORIFICE_URETHRA_PENIS)>0)
+				<br/>[style.italicsCum(榨精泵快速地从[npc.namePos]的尿道吸出液体)]
+			#ENDIF
+			
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]打开榨精泵的开关，然后把正在减压的圆筒套在[npc2.namePos][npc2.cock+上。
+			#IF(npc2.getTotalFluidInArea(ORIFICE_URETHRA_PENIS)>0)
+				<br/>[style.italicsCum(榨精泵快速地从[npc2.namePos]的尿道吸出液体！)]
+			#ENDIF
+			
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]打开榨精泵的开关，然后粗暴地把[npc2.namePos][npc2.cock+]塞进正在减压的圆筒里。
+			#IF(npc2.getTotalFluidInArea(ORIFICE_URETHRA_PENIS)>0)
+				<br/>[style.italicsCum(榨精泵快速地从[npc2.namePos]尿道吸出液体！)]
+			#ENDIF
+			
+		]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]关闭榨精泵的开关，让快速加压的圆筒从[npc.her][npc.cock+]脱落。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]关闭榨精泵的开关，让快速加压的圆筒从[npc2.namePos][npc2.cock+]脱落。
+]]></other>
+		<otherRough><![CDATA[
+			不顾[npc2.her]感受，[npc.name]粗暴地把正在减压的圆筒从[npc2.namePos][npc2.cock+]上扯下。
+]]></otherRough>
+	</displacementText>
+</clothing>

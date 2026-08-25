@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<subspecies>
+	<race>NoStepOnSnek_octopus</race>
+	<colour>NoStepOnSnek_octopus</colour>
+	<secondaryColour>NoStepOnSnek_octopus</secondaryColour>
+	<tertiaryColour>NoStepOnSnek_octopus</tertiaryColour>
+	<mainSubspecies>true</mainSubspecies>
+	<baseSlaveValue>10000</baseSlaveValue>
+	<attributeItemId>NoStepOnSnek_race_octopus_ink_vodka</attributeItemId>
+	<transformativeItemId>NoStepOnSnek_race_octopus_shrimp_cocktail</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<nocturnality>NOCTURNAL</nocturnality>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>false</bipedalSubspecies>
+	<affinity>AQUATIC</affinity>
+	<applySubspeciesChanges><![CDATA[
+		[#targetedBody.applyLegConfigurationTransformation(LEG_TYPE_NoStepOnSnek_octopus_leg, LEG_CONFIGURATION_CEPHALOPOD, true)]
+		[#targetedBody.getTentacle().setType(null, TENTACLE_TYPE_NoStepOnSnek_octopus_tentacle)]
+	]]></applySubspeciesChanges>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_NoStepOnSnek_octopus)
+			100
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="80">octopus</iconName>
+	<backgroundName>background</backgroundName>
+	<bookIconName>octopus</bookIconName>
+	<bookName><![CDATA[全副武装的吸盘]]></bookName>
+	<basicDescriptionId>OCTOPUS_BASIC</basicDescriptionId>
+	<advancedDescriptionId>OCTOPUS_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<nameAnthro>
+		<namesDefault>
+			<name><![CDATA[章鱼化形]]></name>
+			<namePlural><![CDATA[章鱼化形]]></namePlural>
+			<singularMaleName><![CDATA[章鱼男]]></singularMaleName>
+			<singularFemaleName><![CDATA[章鱼女]]></singularFemaleName>
+			<pluralMaleName><![CDATA[章鱼男]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[章鱼女]]></pluralFemaleName>
+		</namesDefault>
+	</nameAnthro>
+	<description><![CDATA[一种人形的章鱼，被称为“章鱼化形”。]]></description>
+	<nameHalfDemon>
+		<namesDefault>
+			<name><![CDATA[克拉肯]]></name>
+			<namePlural><![CDATA[克拉肯]]></namePlural>
+			<singularMaleName><![CDATA[克拉肯]]></singularMaleName>
+			<singularFemaleName><![CDATA[克拉肯]]></singularFemaleName>
+			<pluralMaleName><![CDATA[克拉肯]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[克拉肯]]></pluralFemaleName>
+		</namesDefault>
+	</nameHalfDemon>
+	<feralAttributes>
+		<feralName><![CDATA[章鱼]]></feralName>
+		<feralNamePlural><![CDATA[章鱼]]></feralNamePlural>
+		<feralSingularMaleName><![CDATA[章鱼]]></feralSingularMaleName>
+		<feralSingularFemaleName><![CDATA[章鱼]]></feralSingularFemaleName>
+		<feralPluralMaleName><![CDATA[章鱼]]></feralPluralMaleName>
+		<feralPluralFemaleName><![CDATA[章鱼]]></feralPluralFemaleName>
+		<legConfiguration>CEPHALOPOD</legConfiguration>
+		<sizeHeight>true</sizeHeight>
+		<size>40</size>
+		<breastRowCount>0</breastRowCount>
+		<nipplesPerBreastCount>1</nipplesPerBreastCount>
+		<crotchBreastRowCount>0</crotchBreastRowCount>
+		<nipplesPerCrotchBreastCount>1</nipplesPerCrotchBreastCount>
+		<armsOrWingsPresent>false</armsOrWingsPresent>
+		<fingerActionsAvailable>false</fingerActionsAvailable>
+		<hairPresent>false</hairPresent>
+	</feralAttributes>
+	<statusEffectDescription><![CDATA[
+		[npc.NamePos]章鱼般的身体相当强壮，[npc.she]增长了奥术亲和力。
+	]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="10">MAJOR_PHYSIQUE</attribute>
+		<attribute value="10">MAJOR_ARCANE</attribute> 
+		<attribute value="0">MAJOR_CORRUPTION</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="1" feminineWeighting="1">PHYSICAL</category>
+		<category masculineWeighting="1" feminineWeighting="1">LUST</category>
+		<category masculineWeighting="1" feminineWeighting="1">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="FOUR_COMMON">SEA_CITY</region>
+		<region rarity="FOUR_COMMON">SEA</region>
+		<region rarity="THREE_UNCOMMON">RIVER</region>
+	</regionLocations>
+	<worldLocations>
+		<world rarity="ONE_VERY_RARE">NIGHTLIFE_CLUB</world>
+	</worldLocations>
+	<placeLocations>
+		<place rarity="TWO_RARE">DOMINION_CANAL</place>
+		<place rarity="TWO_RARE">DOMINION_ALLEYS_CANAL_CROSSING</place>
+	</placeLocations>
+	<flags/>
+</subspecies>

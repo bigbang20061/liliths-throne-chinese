@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>10000</value>
+		<determiner><![CDATA[​]]></determiner>
+		<name><![CDATA[暗夜塞壬的斗篷]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[暗夜塞壬的斗篷]]></namePlural>
+		<description><![CDATA[这件斗篷被自称“暗夜塞壬”的恶魔附魔，它能够为佩戴者注入巨大的奥术力量。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+    <equipSlots>
+      <slot>TORSO_OVER</slot>
+      <slot>NECK</slot>
+    </equipSlots>
+		<rarity>LEGENDARY</rarity>
+		<clothingSet>DARK_SIREN</clothingSet>
+		<imageName>siren_cloak.svg</imageName>
+    <imageEquippedName slot="TORSO_OVER">siren_cloak.svg</imageEquippedName>
+		<imageEquippedName/>
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="INTELLIGENCE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="INTELLIGENCE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="INTELLIGENCE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="INTELLIGENCE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="INTELLIGENCE" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="SPELL_COST_MODIFIER" timer="0"/>
+		</effects>
+		
+		<blockedPartsList slot="TORSO_OVER">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+
+    <blockedPartsList slot="NECK">
+      <blockedParts>
+        <displacementType>REMOVE_OR_EQUIP</displacementType>
+        <clothingAccessRequired/>
+        <blockedBodyParts/>
+        <clothingAccessBlocked/>
+        <concealedSlots/>
+      </blockedParts>
+    </blockedPartsList>
+		
+		<incompatibleSlots slot="TORSO_OVER"/>
+    <incompatibleSlots slot="NECK"/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_PURPLE_VERY_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_METAL"/>
+	
+		<itemTags>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>FITS_FERAL_ALL_BODY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	
+  <replacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]把斗篷披在[npc.her]的肩膀上，然后把带子系在[npc.her]的脖子上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]把斗篷披在了[npc2.namePos]的肩上，并把带子系在[npc2.her]的脖子上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗鲁地把斗篷套在[npc2.namePos]的肩上，并紧紧地把带子系在[npc2.her]的脖子上。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="NECK" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开了[npc.her]系在脖子上的带子，然后脱下了[npc.her]的斗篷。
+]]></self>
+    <other><![CDATA[
+[npc.Name]把[npc2.namePos]脖子上的带子解开，并脱下了[npc2.her]的斗篷。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地把[npc2.namePos]脖子上系的带子扯开，并把[npc2.her]的斗篷拽了下来。
+]]></otherRough>
+  </displacementText>
+
+  <replacementText slot="TORSO_OVER" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]把斗篷披在[npc.her]的肩膀上，然后把带子系在[npc.her]的脖子上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]把斗篷披在了[npc2.namePos]的肩上，并把带子系在[npc2.her]的脖子上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗鲁地把斗篷套在[npc2.namePos]的肩上，并紧紧地把带子系在[npc2.her]的脖子上。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="TORSO_OVER" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]解开了[npc.her]系在脖子上的带子，然后脱下了[npc.her]的斗篷。
+]]></self>
+    <other><![CDATA[
+[npc.Name]把[npc2.namePos]脖子上的带子解开，并脱下了[npc2.her]的斗篷。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地把[npc2.namePos]脖子上系的带子扯开，并把[npc2.her]的斗篷拽了下来。
+]]></otherRough>
+  </displacementText>
+
+</clothing>

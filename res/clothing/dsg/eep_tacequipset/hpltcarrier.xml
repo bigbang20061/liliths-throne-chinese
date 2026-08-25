@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[背部侧缝上有个小标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>3000</value> 
+
+		<determiner><![CDATA[一套]]></determiner>
+
+		<name><![CDATA[重型插板防弹衣]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[重型插板防弹衣]]></namePlural> 
+
+		<description><![CDATA[一套标准的防弹插板套装，配有额外的大臂、大腿根、颈部和喉部防护。它用于高烈度交战，而不是快速突袭。]]></description>
+
+		<physicalResistance>40</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>TORSO_OVER</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet>dsg_enforcer_tactical_heavy</clothingSet> 
+
+		<imageName>hpltcarrier.svg</imageName> 
+
+		<imageEquippedName/>
+
+		<stickers>
+			
+			<category id="branchtape" priority="1"> 
+				<categoryName><![CDATA[Branchtape]]></categoryName>
+				<sticker id="None" priority="0" defaultSticker="true" zLayer="1" colourSelected="TEXT_GREY"> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="enforcer" priority="1" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE"> 			
+					<stickerName><![CDATA[执法者]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者]]></namePrefix> 
+					<namePostfix/> 
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[<i>它明确标注为执法者使用。</i>]]></descriptionModification> 
+					<imageName>hpltcarrier_st_enftape.svg</imageName> 
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded> 
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved> 
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL) ||
+							!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_SWORD) ||
+							!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_ORICL))
+							Only Enforcers can use an Enforcer branchtape!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText><![CDATA[
+						As an Enforcer, you can freely use Enforcer branchtapes.
+					]]></availabilityText> 
+				</sticker>
+			</category>
+		</stickers>
+
+		<effects>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_FIRE" potency="BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_ICE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_ICE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_ICE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_ICE" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>	
+		</effects>
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+
+				<clothingAccessBlocked> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/> 
+
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+
+				<concealedSlots>
+					<slot>GROIN</slot>
+					<slot>VAGINA</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_VAGINA</slot>
+				</concealedSlots>
+			</blockedParts>
+
+		</blockedPartsList>
+
+		<incompatibleSlots/>
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>RIGID_MATERIAL</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的头套在护甲之间，并让腰封防护[npc.her]的两侧的躯干。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的头套在护甲之间，并让腰封防护[npc2.her]的两侧的躯干。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.namePos]塞进护甲里，让[npc2.her]的头从护颈里伸出来，并迅速的将腰封紧紧的缠在[npc2.her]躯干的两侧。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了[npc.her]护甲两侧的腰封，从护臂里缩回[npc.her]的[npc.arms]，并将[npc.her]的头从护颈里退出来。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开了[npc2.name]护甲两侧的腰封，从护臂里缩回[npc.her]的[npc.arms]，并将[npc2.her]的头从护颈里退出来。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]撕开了[npc2.namePos]护甲两侧的腰封并迫使[npc.her]的[npc.arms]从护臂里退出，然后将护甲从[npc2.her]的头顶上拽走。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+[npc.Name]将护甲的护腿向下拉了拉。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将护甲的护腿向下拉了拉。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc.her]的护甲的护腿翻向下面。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]将护甲的护腿向上提了提。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的护腿向上提了提。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.her]的护甲的护腿翻起来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

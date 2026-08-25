@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<arm>
+	<race>innoxia_badger</race>
+	
+	<transformationName><![CDATA[獾]]></transformationName>
+	
+	<coveringType>innoxia_badger_fur</coveringType>
+	
+	<allowsFlight>false</allowsFlight>
+	
+	<tags>
+		<tag>ARM_STANDARD</tag>
+	</tags>
+	
+	<name><![CDATA[手臂]]></name>
+	<namePlural><![CDATA[手臂]]></namePlural> 
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[覆盖着毛发的]]></descriptor>
+	</descriptorsMasculine>
+	
+	<descriptorsFeminine>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+		<descriptor><![CDATA[覆盖着毛发的]]></descriptor>
+	</descriptorsFeminine>
+	
+	<handName><![CDATA[手]]></handName>
+	<handNamePlural><![CDATA[手]]></handNamePlural>
+	<handDescriptorsMasculine>
+		<descriptor><![CDATA[獾一般]]></descriptor>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+	</handDescriptorsMasculine>
+	<handDescriptorsFeminine>
+		<descriptor><![CDATA[柔软的]]></descriptor>
+		<descriptor><![CDATA[女性特征的]]></descriptor>
+		<descriptor><![CDATA[獾一般]]></descriptor>
+		<descriptor><![CDATA[毛茸茸]]></descriptor>
+	</handDescriptorsFeminine>
+	
+	<fingerName><![CDATA[手指]]></fingerName>
+	<fingerNamePlural><![CDATA[手指]]></fingerNamePlural>
+	<fingerDescriptorsMasculine>
+		<descriptor><![CDATA[獾一般]]></descriptor>
+	</fingerDescriptorsMasculine>
+	<fingerDescriptorsFeminine>
+		<descriptor><![CDATA[柔软的]]></descriptor>
+		<descriptor><![CDATA[女性特征的]]></descriptor>
+		<descriptor><![CDATA[獾一般]]></descriptor>
+	</fingerDescriptorsFeminine>
+	
+	<transformationDescription><![CDATA[
+		霎时间，一层[npc.armFullDescription]迅速长了出来，低头看去，[npc.she]看见[npc.her]新的毛发覆盖了[npc.her]的手背，尖锐的爪子伸出来，取代了[npc.her]的指甲。[npc.Her]的掌心迅速变成了[npc.materialDescriptor]小垫子，而在[npc.her]的上臂处，[npc.her]的毛发平稳地过渡到了[npc.skin]，覆盖了[npc.her]的身体的其余部分。
+		<br/>转变已经完全完成，[npc.nameIsFull]现在拥有类人的、[style.boldBadger(獾类的手臂和手)]，这些手臂是[npc.materialDescriptor][npc.armFullDescription]。
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[[npc.She]拥有了[npc.armRows]只胳膊，它们是[npc.materialCompositionDescriptor][npc.armFullDescription(true)]。[npc.Her]的双手变成了类人类獾的形态，配有锋利的爪子和坚韧的肉垫。]]></bodyDescription>
+	
+</arm>

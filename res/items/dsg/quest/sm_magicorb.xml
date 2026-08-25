@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[“DSG奇物公司制造”被印在球体极点的附近。]]></authorTag>
+		
+		<value>1000</value> 
+		<determiner><![CDATA[一颗]]></determiner>
+		<name><![CDATA[神秘的命运之珠]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[神秘的命运之珠]]></namePlural>
+		<description><![CDATA[这个据说是一个强大的奥术遗物，能够预知未来，但实际上只是一个小玩具。在它的球形塑料外壳内，有一个二十面体的骰子漂浮在酒精中。小窗户允许使用者看到骰子上漂浮的随机答案。]]></description> 
+		
+		<useDescriptor><![CDATA[思索]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>LEGENDARY</rarity> 
+		
+		<imageName>sm_magicorb.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_BLACK</colourPrimary>
+		<colourSecondary>CLOTHING_BLUE_DARK</colourSecondary>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[回答“是”或“否”的问题。]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p>
+			一个蓝色的三角形浮现在视野中。上面的铭文写着：<i>"[style.random(肯定的|明确的|毫无疑问|绝对|可以指望|我看情况是这样|很可能|机会很大|是的|迹象是好的|太色情了，请再试一次|一会儿再试|回答延迟|不确定|自慰后再试|可疑的|不行|别指望它|来源不行|很糟糕)]。"</i>
+		</p>
+		]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]小心翼翼地摇晃着这个水晶球，然后凝视着它朦胧的内部……
+]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]摇动了这个水晶球，然后把上面的画面转向[npc2.name]，以便[npc2.her]能够凝视着它朦胧的内部……
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<authorTag><![CDATA[在填充口的盖子上，有几个微微凸起的字："执法者官方分配，由DSG锻造厂生产。"]]></authorTag>
+	
+		<value>7500</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>true</twoHanded>
+		
+		<determiner><![CDATA[一把]]></determiner>
+		
+		<name><![CDATA[奥术流体电击枪]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[奥术流体电击枪]]></namePlural> 
+		
+		<description><![CDATA[这是镇暴的终极武器，它使用水系法术将水流射向目标，并在瞄准的任何目标上释放奥术闪电。你寻思，如果适当修改，它可能可以装满<i>任何</i>液体。]]></description> 
+		
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用电击枪射击[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>EPIC</rarity> 
+		
+		<equipText><![CDATA[
+		[npc.Name]拿出电击枪，将吊带挎在肩上。内置的水罐自动灌满了水，经过奥术强化的水在其中荡来荡去。
+		]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]将电击枪收起。]]></unequipText>
+		
+		<imageName>liqstungun_holstered.svg</imageName> 
+		
+		<imageEquippedName>liqstungun.svg</imageEquippedName>
+		
+		<damage>50</damage>
+		
+		<aoe chance="85">25</aoe>
+		<aoe chance="85">25</aoe>
+		<aoe chance="10">10</aoe>
+		<aoe chance="10">10</aoe>
+		
+		<arcaneCost>5</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>LUST</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<extraEffects>
+			<effect><![CDATA[暴击附带[style.boldLust(“情迷欲乱”)]效果。]]></effect>
+		</extraEffects>
+		
+		<onHitEffect/>
+		
+		<onCriticalHitEffect><![CDATA[
+		#IF !npc2.hasStatusEffect(SE_ARCANE_AROUSAL_LUSTFUL_DISTRACTION)
+		#THEN [##npc2.addStatusEffect(SE_ARCANE_AROUSAL_LUSTFUL_DISTRACTION, 6)][npc2.Name][style.boldLust(感受到了奥术闪电的余响。)]
+		#ENDIF
+		]]></onCriticalHitEffect>
+		
+		<primaryColours>
+			<colour>CLOTHING_GUNMETAL</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLUE</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_ORANGE</colour>
+		</tertiaryColours> 
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_HEAVY</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.she]将电击枪对准[npc2.name]，按动了扳机。一道水流直冲[npc2.name]而去，随后便是一道劈啪作响的奥术闪电。[npc2.Name]只能露出难以置信的神情，眼睁睁看着自己被奥术闪电击中！[npc2.Name]的[npc2.skinSkin]被冷水打湿，身子微微一抖。
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.she]将电击枪对准[npc2.name]，按动了扳机。一道水流直冲[npc2.name]而去，但最后偏向了一边！只在地面上留下了一滩无用的水洼。
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

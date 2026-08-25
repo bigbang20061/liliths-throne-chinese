@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[鬓角边巧妙地印着的标志告诉你这是由"Phlarx"设计的。]]></clothingAuthorTag>
+		<value>750</value>
+		<determiner><![CDATA[一副]]></determiner>
+		<name><![CDATA[圆形太阳镜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[圆形太阳镜]]></namePlural>
+		<description><![CDATA[一副圆形太阳镜。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>EYES</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>round_sunglasses.svg</imageName> 
+		<imageEquippedName/>
+		<effects/>
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>EYES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/>
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLUE_DARK</colour>
+			<colour>CLOTHING_RED_BURGUNDY</colour>
+			<colour>CLOTHING_BLACK_JET</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours>
+			<colour>CLOTHING_GREEN_DARK</colour>
+			<colour>CLOTHING_PINK_DARK</colour>
+			<colour>CLOTHING_GREY_DARK</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>PRESCRIPTION_GLASSES</tag>
+		</itemTags>
+	</coreAttributes>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]摘下[npc.her]的太阳镜。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]摘下[npc2.namePos]的太阳镜。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]像挑衅般摘下[npc2.namePos]的太阳镜。
+]]></otherRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]戴上[npc.her]的太阳镜。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]给[npc2.namePos]戴上太阳镜。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]像挑衅般给[npc2.namePos]戴上太阳镜。
+]]></otherRough>
+	</replacementText>
+</clothing>

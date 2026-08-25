@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- WAREHOUSE_DISTRICT -->
+	
+	<htmlContent tag="WAREHOUSE_DISTRICT"><![CDATA[
+	<p>
+		虽然整个御城区都散布着数不清的工业建筑，但最集中的地方莫过于你现在所经过的地方。它的官方名称在很多地区被骄傲地标注为“御城区仓库”——这有些笼统，但很准确。
+	</p>
+	<p>
+		你周围看到的大多数建筑都是用红砖或波状钢建造的，而且无一例外外面都停着许多半人马拉的车。
+		#IF(game.isExtendedWorkTime())
+			#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
+				由于其紧邻御城区运河和主要林荫大道的重要位置，这里通常是工业交通繁忙的地方。但由于持续的奥术风暴，所有活动都已停止，整个地区完全荒芜。
+			#ELSE
+				由于其紧邻御城区运河和主要林荫大道的重要位置，这里的工业交通繁忙，你经常不得不靠边站，让满载货物的小车隆隆驶过。
+			#ENDIF
+		#ELSE
+			#IF(game.getCurrentWeather()==WEATHER_MAGIC_STORM)
+				由于其紧邻御城区运河和主要林荫大道的重要位置，这里通常是工业交通繁忙的地方。但由于持续的奥术风暴，所有活动都已停止，整个地区完全荒芜。
+			#ELSE
+				由于其紧邻御城区运河和主要林荫大道的重要位置，这里任何时间都有大量的工业车辆经过。
+			#ENDIF
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WAREHOUSE_DISTRICT_NO_BUSINESS"><![CDATA[
+	<p>
+		虽然这里有很多企业，但都是那种只为其他大公司提供服务的企业。这里不向路过的公众提供任何服务，你也没有来到这里的具体理由，所以除了继续前往其他地方之外，你也没有什么可做的事情……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<penis>
+	<race>innoxia_mouse</race>
+	
+	<transformationName><![CDATA[鼷鼠]]></transformationName>
+	
+	<coveringType>PENIS</coveringType>
+	
+	<testicleType>innoxia_mouse_testicle</testicleType>
+	
+	<additionalTransformationEffect/>
+	
+	<namesMasculine>
+		<name><![CDATA[鼷鼠]]></name>
+	</namesMasculine>
+	<namesPluralMasculine>
+		<name><![CDATA[鼷鼠]]></name>
+	</namesPluralMasculine>
+	
+	<namesFeminine>
+		<name><![CDATA[鼷鼠]]></name>
+	</namesFeminine>
+	<namesPluralFeminine>
+		<name><![CDATA[鼷鼠]]></name>
+	</namesPluralFeminine>
+	
+	<descriptors/>
+	
+	<defaultPenetrationModifiers>
+		<modifier>SHEATHED</modifier>
+	</defaultPenetrationModifiers>
+	
+	<transformationDescription><![CDATA[
+		[npc.name]情不自禁地呻吟，感觉自己的阴茎转变为了新的形态。[npc.her]的阴茎根部突然长出了阴茎鞘，[npc.sheIs]被一股无法忍耐的快感彻底击垮了。
+		<br/>[npc.She]现在拥有一根[style.boldMouse(鼷鼠的阴茎)]，[npc.materialDescriptor][npc.penisFullDescription(true)]。
+		<br/>[npc.She]有[style.boldMouse([npc.ballsCount]颗#IF(npc.isInternalTesticles())体内#ELSE鼷鼠#ENDIF睾丸)]，[npc.materialDescriptor][npc.ballsFullDescription(true)]，能够产生[npc.cumColour(true)][style.boldMouse(鼷鼠精液)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.She]有[npc.a_cockGirth]的鼷鼠阴茎，[npc.cockLengthValue]长，[npc.materialCompositionDescriptor][npc.cockFullDescription(true)]。
+]]></bodyDescription>
+</penis>

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<value>5000</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[]]></determiner>
+		
+		<name><![CDATA[武装剑]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[武装剑]]></namePlural>
+		
+		<description><![CDATA[这把直刃短剑有着一字剑格。75厘米长的剑刃由虚无缥缈的奥术能量制成，在穿过人的身体时，它非但不会割伤人，反而会耗尽人的能量。]]></description> 
+		
+		<attackDescriptor><![CDATA[劈]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[用武装剑劈[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>COMMON</rarity> 
+		
+		<weaponSet/> 
+		
+		<equipText><![CDATA[[npc.Name]将武装剑放在[npc.her]的腰间，以便[npc.she]拔剑。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]将武装剑插回剑鞘，然后收好。]]></unequipText>
+		
+		<imageName>arming_sword_sheathed.svg</imageName> 
+		
+		<imageEquippedName>arming_sword.svg</imageEquippedName> 
+		
+		<damage>35</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+			<damageType>FIRE</damageType>
+			<damageType>ICE</damageType>
+			<damageType>POISON</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_WEAPON" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="CRITICAL_DAMAGE" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+			<colour>CLOTHING_BROWN_DARK</colour>
+			<colour>CLOTHING_BROWN_VERY_DARK</colour>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_STEEL"/> 
+		<secondaryColoursDye values="ALL_METAL"/>
+		
+		<customColours>
+			<customColour copyColourIndex="0" c0="#6C5353" c1="#916F6F" c2="#AC9393" c3="#C8B7B7" c4="#E3DBDB">
+				<defaultColours>
+					<colour>CLOTHING_DESATURATED_BROWN</colour>
+				</defaultColours> 
+				<extraColours values="ALL_WITH_METALS"/>
+			</customColour>
+			<customColour copyColourIndex="1" c0="#6C5D53" c1="#917C6F" c2="#AC9D93" c3="#C8BEB7" c4="#E3DEDB">
+				<defaultColours>
+					<colour>CLOTHING_STEEL</colour>
+				</defaultColours> 
+				<extraColours values="ALL_METAL"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+			<tag>WEAPON_BLADE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]用武装剑劈砍[npc2.name]，虚幻的奥术刀刃穿过了[npc2.her]的身体，[npc.Name]不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]挥舞武装剑砍向[npc2.name]，[npc.she]看到虚幻的刀刃直接穿过了[npc2.namePos]的身体，不禁咧嘴大笑！
+]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用武装剑砍向[npc2.name]，虚幻的刀刃穿过了[npc2.her]的胸膛，使得[npc2.herHim]向后踉跄！
+]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+[npc.Name]用武装剑砍向[npc2.name]，但最终没有击中[npc2.herHim]！
+]]></missText>
+		<missText><![CDATA[
+[npc.Name]挥舞武装剑砍向[npc2.name]，但最终没有击中[npc2.herHim]，[npc.her]发出一声沮丧的呼喊！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]前踏一步，用武装剑猛地劈向[npc2.name]，却没能击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

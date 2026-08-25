@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>300</value> <!--10 flames = £1 ~ $1.5-->
+		<determiner><![CDATA[一串]]></determiner>
+		<name><![CDATA[肛门拉珠]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[肛门拉珠]]></namePlural>
+		<description><![CDATA[一串由六个大硅胶球组成的拉珠，用于插入肛门。]]></description>
+		
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity> <!-- FEMININE, MASCULINE ANDROGYNOUS -->
+		<slot>ANUS</slot> <!-- slot values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/InventorySlot.java -->
+		<rarity>COMMON</rarity> <!-- rarity values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/Rarity.java -->
+		
+		<imageName>anal_beads.svg</imageName>
+		
+		<clothingSet/> <!-- No way to define custom sets yet -->
+		<imageEquippedName/> <!-- The file path for this clothing's image while equipped -->
+		<effects/> <!-- Default enchantments -->
+
+		<blockedPartsList>
+		  <blockedParts>
+			
+			<displacementType>REMOVE_OR_EQUIP</displacementType> <!-- displacementType values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/DisplacementType.java -->
+			
+			<clothingAccessRequired> <!-- clothingAccess values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/ClothingAccess.java -->
+			  <clothingAccess>ANUS</clothingAccess>
+			</clothingAccessRequired>
+			
+			<blockedBodyParts> <!--bodyPart values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/character/body/CoverableArea.java -->
+			  <bodyPart>ANUS</bodyPart>
+			</blockedBodyParts>
+			
+			<clothingAccessBlocked/> <!-- clothingAccess -->
+			<concealedSlots/> <!-- slot -->
+			
+		  </blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> <!-- slot(s) not compatible -->
+		
+		<!-- Colour values: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/utils/colours/PresetColour.java -->
+		<primaryColours values="ALL"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> <!-- tag values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/ItemTag.java -->
+		  <tag>SOLD_BY_FINCH</tag>
+		  <tag>PLUGS_ANUS</tag>
+		  <tag>ENABLE_SEX_EQUIP</tag>
+		  <tag>TRANSPARENT</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将拉珠塞进[npc.her][npc.ass+]里。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]把拉珠塞进[npc2.namePos][npc2.ass+]。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]牢牢抓住[npc2.name]并且粗暴地把拉珠塞进[npc2.her][npc2.ass+]。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将拉珠从[npc.her][npc.ass+]里拔出。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]把拉珠从[npc2.namePos][npc2.ass+]拔出。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]紧紧抓住[npc2.namePos]的拉珠并从[npc2.her][npc2.ass+]里扯出来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<penis>
+	<race>innoxia_raptor</race>
+	
+	<transformationName><![CDATA[猛禽]]></transformationName>
+	
+	<coveringType>PENIS</coveringType>
+	
+	<testicleType>innoxia_raptor_testicle</testicleType>
+	
+	<additionalTransformationEffect/>
+	
+	<namesMasculine>
+		<name><![CDATA[猛禽]]></name>
+	</namesMasculine>
+	<namesPluralMasculine>
+		<name><![CDATA[猛禽]]></name>
+	</namesPluralMasculine>
+	
+	<namesFeminine>
+		<name><![CDATA[猛禽]]></name>
+	</namesFeminine>
+	<namesPluralFeminine>
+		<name><![CDATA[猛禽]]></name>
+	</namesPluralFeminine>
+	
+	<descriptors/>
+	
+	<defaultPenetrationModifiers>
+		<modifier>SHEATHED</modifier>
+	</defaultPenetrationModifiers>
+	
+	<transformationDescription><![CDATA[
+		伴随着情不自禁的呻吟，[npc.name]感觉自己的阴茎转变为了新的形态。阴茎向下缩进基部形成的新鞘中，[npc.sheIs]被一股无法忍耐的快感彻底击垮了。
+		<br/>[npc.She]现在有[style.boldRaptor(猛禽的阴茎)]，[npc.materialDescriptor][npc.penisFullDescription(true)]。
+		<br/>[npc.She]有着[style.boldRaptor([npc.ballsCount]颗#IF(npc.isInternalTesticles())体内的#ENDIF鸟类阴囊)]，[npc.materialDescriptor][npc.ballsFullDescription(true)]，能够生产[npc.cumColour(true)]的[style.boldHarpy(鸟类精液)]。
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.She]有[npc.a_cockGirth]的猛禽阴茎，[npc.cockLengthValue]长，[npc.materialCompositionDescriptor][npc.cockFullDescription(true)]。
+]]></bodyDescription>
+</penis>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[黄金宝藏]]></name>
+	<tooltipDescription><![CDATA[一个白鼬男经营着这个摊位，他卖各种珠宝和饰品，其中一些甚至有附魔。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在伊利斯的农贸市场]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<svgName>trinkets</svgName>
+	<colour>BASE_GOLD</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_elis_market_trinkets</dialogue>
+	<populationPresent>
+		<population startMinutes="480" endMinutes="1079">
+			<populationType plural="true" density="OCCASIONAL">SHOPPER</populationType>
+			<subspeciesPresent worldType="innoxia_fields_elis_town"/>
+		</population>
+	</populationPresent>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

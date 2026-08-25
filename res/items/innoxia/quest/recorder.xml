@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>50000</value> 
+		<determiner><![CDATA[一台]]></determiner>
+		<name><![CDATA[奥术录像机]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[奥术录像机]]></namePlural>
+		<description><![CDATA[一台由韦斯赠送给你的奥术录像机。它看起来像一个老式的摄像机，与你以前的现实中的老式录像机功能类似。]]></description> 
+		
+		<useDescriptor><![CDATA[检查]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>QUEST</rarity> 
+		
+		<imageName>recorder.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_TAN</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[能够录制高达30分钟的影片素材]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p>
+			这个设备看起来像一台老式摄像机，功能方式与你以前的现实中的老式录像机类似。它的型号代码'C4M-1L'以粗体字印在一侧，而在后面，有一张标签宣称它是“御城区执法者”的财产。
+		</p>
+		<p style='text-align:center;'>
+			<i>你决定不在现在启动录像机，因为你需要保存影片来记录埃勒的犯罪活动……</i>
+		</p>
+		]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]仔细观察这个奥术录像机……
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]向[npc2.name]炫耀着[npc.her]的奥术录像机，而[npc2.name]对[npc.her]的录像机感到印象深刻……
+	]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

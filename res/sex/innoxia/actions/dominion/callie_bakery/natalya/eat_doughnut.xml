@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#(flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_chocolate) || flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_multi) || flags.hasFlag(FLAG_innoxia_callie_natalya_sprinkles_stars)) && !flags.hasFlag(FLAG_innoxia_callie_natalya_decoration_finished)]
+	]]></actionConditional>
+	<category>MISCELLANEOUS</category>
+	<type>START_ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>ZERO_PURE</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea>PENETRATION_TONGUE</performingArea>
+	<targetedArea>ORIFICE_ANUS</targetedArea>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		[##flags.setFlag(FLAG_innoxia_callie_natalya_decoration_finished, true)]
+		[##sex.addLubrication(callie, ORIFICE_ANUS, pc, LUBRICATION_SALIVA, true)]
+		[##sex.addLubrication(natalya, ORIFICE_ANUS, pc, LUBRICATION_SALIVA, true)]
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[吃甜甜圈]]></title>
+	<tooltip><![CDATA[
+		#IF(npc2==natalya)
+			听从主人娜塔莉亚的命令，先吃掉她的糖霜甜甜圈，再转向卡丽。
+		#ELSE
+			从卡丽的糖霜甜甜圈开始享用，再转向主人娜塔莉亚。
+		#ENDIF
+]]></tooltip>
+	<descriptions>
+		<description>
+			<text><![CDATA[
+					#IF(npc2==natalya)
+	你从主人娜塔莉亚身后靠近，发现自己处于一个非常熟悉的姿势，只不过与之前舔舐她肛门的经历不同，此刻半人马女性那肉感的肛门看起来就像一只诱人的糖霜甜甜圈。当你俯身向前时，她马匹般的尾巴甩向一侧，你用[pc.tongue+]划过她沾满糖霜的穴口，一声情动的呻吟从她丰满的唇间溢出。
+	<br/><br/>
+	[natalya.speechNoEffects(~嗯！~没错……吃掉我的甜甜圈，你这骚[style.mule]！)]主人命令道。你欣然从命，开始亢奋地舔舐亲吻起她裹满糖衣的肛门。随着你不断享用她的后庭，那层甜腻的糖衣逐渐从她肉感的穴口剥离，你咽下那些不到一分钟前才涂抹上的糖霜和彩糖，她黝黑的肛门很快暴露无遗。
+	<br/><br/>
+	[callie.speechNoEffects(就是这样……吃掉她的甜甜圈！)]卡丽看着你饥渴地为半人马进行吻肛，在一旁鼓励道。
+	<br/><br/>
+	你热情地舔吮掉主人娜塔莉亚肛门上最后一滴甜腻糖霜后，她那根硕大的兽态阳具勃然怒挺。现在她丰满的穴口只剩下你的唾液覆盖，你最后亲吻了一下，然后转头看向卡丽完好无损的甜甜圈。主人发出一声低沉的情动呻吟，命令道，[natalya.speechNoEffects(继续，让卡丽看看我驯养的[style.mules]有什么能耐！)]
+	<br/><br/>
+	你挪动到卡丽身后，俯身在她糖霜覆盖的肛门上印下一个湿漉漉的吻。马女发出一阵欢愉的轻叫，你开始用[pc.tongue]滑过她肉感的肛门，就像对待主人那样迅速剥落她甜甜圈形状后庭上的糖衣。不到一分钟，她的后穴就只剩下你黏滑的唾液，最后亲吻一次后，你退后欣赏自己的杰作。
+	<br/><br/>
+	清理了卡丽和娜塔莉亚肛门上的糖霜后，便将装饰精美的甜甜圈变成了淫液淋漓的性器。她们马状的巨根因渴望而悸动，两人都饥渴地后挺臀部，向你展示发情的马肛。你的欲望还没被满足，想要看着这两根巨型马屌将精液喷射在地上，决定继续用口舌服务，让两位爱人高潮。你回到主人娜塔莉亚身后，将嘴唇贴上她肉感的肛门，开始激情地享用起她的后庭……
+#ELSE
+	你从卡丽身后靠近，发现自己处于熟悉的姿势，只不过与之前舔舐她肛门的经历不同，此刻马女那肉感的肛门看起来就像一只诱人的糖霜甜甜圈。当你俯身向前时，她马匹般的尾巴甩向一侧，你用[pc.tongue+]划过她沾满糖霜的穴口，一声情动的呻吟从她丰满的唇间溢出。
+	<br/><br/>
+	[callie.speechNoEffects(~嗯！~哦！太棒了……吃掉我的甜甜圈……~噢！~)]卡丽兴奋地呻吟着。你欣然从命，开始亢奋地舔舐亲吻起她裹满糖衣的肛门。随着你不断享用她的后庭，那层甜腻的糖衣逐渐从她肉感的穴口剥离，你咽下那些不到一分钟前才涂抹上的糖霜和彩糖，她黝黑的肛门很快暴露无遗。
+	<br/><br/>
+	[natalya.speechNoEffects(就是这样，让卡丽看看我驯养的[style.mules]有什么能耐！)]主人娜塔莉亚看着你饥渴地为身旁的马女进行吻肛，鼓励道。
+	<br/><br/>
+	你热情地舔吮掉卡丽肛门上最后一滴甜腻糖霜时，她那根硕大的马屌勃然怒挺。现在她丰满的穴口只剩下你的唾液覆盖，你最后亲吻了一下，然后转头看向主人完好无损的甜甜圈。半人马发出一声低沉的情动呻吟，命令道，[natalya.speechNoEffects(来吧[style.mule]，轮到我了！过来享用我的屁股！)]
+	<br/><br/>
+	你挪动到主人身后，俯身在她糖霜覆盖的肛门上印下一个湿漉漉的吻。随着半人马发出赞许的呻吟，你开始用[pc.tongue]滑过她肉感的肛门，就像对待卡丽那样迅速剥落她甜甜圈形状后庭上的糖衣。不到一分钟，她的后穴就只剩下你黏滑的唾液，最后亲吻一次后，你退后欣赏自己的杰作。
+	<br/><br/>
+	清除了卡丽和娜塔莉亚肛门上的糖霜后，便将装饰精美的甜甜圈变成了淫液淋漓的性器。她们马状的巨根因渴望而悸动，两人都饥渴地后挺臀部，向你展示发情的马肛。你的欲望还没被满足，想要看着这两根巨型马屌将精液喷射在地上，决定继续用口舌服务，让两位爱人高潮。你回到卡丽身后，将嘴唇贴上她肉感的肛门，开始激情地享用起她的后庭……
+#ENDIF
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

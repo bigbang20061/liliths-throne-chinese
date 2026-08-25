@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>400</value> 
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[皮质手铐]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[皮质手铐]]></namePlural> 
+		<description><![CDATA[一对由金属链条连接的皮质手铐。皮带可以调节，以适应最粗的肢体，甚至还可以固定在脚踝上。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+			<slot>WRIST</slot>
+			<slot>ANKLE</slot>
+		</equipSlots>
+		<rarity>EPIC</rarity> 
+		<clothingSet>innoxia_bdsm</clothingSet>
+		<imageName>wrist_restraints.svg</imageName>
+		<imageEquippedName slot="WRIST">wrist_restraints.svg</imageEquippedName>
+		<imageEquippedName slot="ANKLE">wrist_restraints.svg</imageEquippedName>
+		<enchantmentLimit/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="MINOR_BOOST" primaryModifier="CLOTHING_SPECIAL" secondaryModifier="CLOTHING_SEALING" timer="0"/>
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_DRAIN" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList slot="WRIST"> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired>
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked>
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+
+		<blockedPartsList slot="ANKLE">
+		  <blockedParts>
+			<displacementType>REMOVE_OR_EQUIP</displacementType>
+			<clothingAccessRequired>
+			  <clothingAccess>CALVES</clothingAccess>
+			</clothingAccessRequired>
+			<blockedBodyParts/>
+			<clothingAccessBlocked>
+			  <clothingAccess>CALVES</clothingAccess>
+			</clothingAccessBlocked>
+			<concealedSlots/>
+		  </blockedParts>
+		</blockedPartsList>
+			
+		<incompatibleSlots slot="WRIST"/>
+		<incompatibleSlots slot="ANKLE"/>
+
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>PROVIDES_KEY</tag>
+		</itemTags>
+		<itemTags slot="WRIST">
+			<tag>HINDERS_ARM_MOVEMENT</tag>
+		</itemTags>
+		<itemTags slot="ANKLE">
+			<tag>HINDERS_LEG_MOVEMENT</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]把皮质手铐套在[npc.her]手腕上，并系好皮带。
+]]></self>
+		<other><![CDATA[
+		[npc.Name]把皮质手铐套在[npc2.namePos]手腕上，并系好皮带。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地把皮质手铐套在[npc2.namePos]手腕上，并系紧皮带。
+]]></otherRough>
+	</replacementText>
+	<displacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]把皮质手铐从[npc.her]手腕上解开，并把它们取下。
+]]></self>
+		<other><![CDATA[
+		[npc.Name]把皮质手铐从[npc2.namePos]手腕上解开，并把它们取下。
+]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地把皮质手铐从[npc2.namePos]手腕上解开，并把它们扯下。
+]]></otherRough>
+	</displacementText>
+
+  <replacementText slot="ANKLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+		[npc.Name]把皮质手铐套在[npc.her]脚踝上，并系好皮带。
+]]></self>
+    <other><![CDATA[
+		[npc.Name]把皮质手铐套在[npc2.namePos]脚踝上，并系好皮带。
+]]></other>
+    <otherRough><![CDATA[
+		[npc.Name]粗暴地把皮质手铐套在[npc2.namePos]脚踝上，并系紧皮带。
+]]></otherRough>
+  </replacementText>
+  <displacementText slot="ANKLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+		[npc.Name]把皮质手铐从[npc.her]脚踝上解开，并把它们取下。
+]]></self>
+    <other><![CDATA[
+		[npc.Name]把皮质手铐从[npc2.namePos]脚踝上解开，并把它们取下。
+]]></other>
+    <otherRough><![CDATA[
+		[npc.Name]粗暴地把皮质手铐从[npc2.namePos]脚踝上解开，并把它们扯下。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

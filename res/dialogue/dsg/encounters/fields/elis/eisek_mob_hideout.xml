@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<scene id="poster">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[一张龙的海报……]]></title>
+		<tooltip/>	
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">POSTER</content>		
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>		
+			<response>	
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[对峙暴徒]]></responseTitle>
+				<!-- TODO Add seduction route conditional check: && !pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_ARCANE) -->
+				<responseTooltip><![CDATA[
+					按照海报上的指引，与骚扰艾瑟克的暴徒对峙。
+					#IF(flags.getSavedLong("elis_eisek_talk_score") >= 4)
+						<br/>[style.colourGood(你花了一些时间了解艾瑟克，你认为有机会说服暴徒放过他。)]
+					#ELSE
+						<br/>[style.colourBad(你和艾瑟克并不熟，可能要动用武力。他可能不会喜欢这样的结果。)]
+						#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) < 30
+							&& pc.getAttributeValue(ATTRIBUTE_MAJOR_ARCANE) < 30)
+							<br/>[style.colourTerrible(你目前的状态可能应付不了……)]
+						#ENDIF
+					#ENDIF
+				]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[dsg_encounters_fields_elis_eisek_mob_hideout_confront]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_TWO))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[丢弃海报]]></responseTitle>
+				<responseTooltip><![CDATA[你现在不想与暴徒对峙，但你可以把墙上的海报撕下来。]]></responseTooltip>
+				<nextDialogue><![CDATA[dsg_encounters_fields_elis_eisek_mob_hideout_discard_poster]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="discard_poster">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[撤下海报]]></title>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">DISCARD_POSTER</content>		
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[上路吧。]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[default]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="confront">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[对峙暴徒]]></title>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">CONFRONT</content>		
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[说服]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.getSavedLong("elis_eisek_talk_score") >= 4)
+						你了解艾瑟克，没有任何危险。<br/>[style.colourGood(艾瑟克可能会很感激你以非暴力的方式解决。)]
+					#ELSE
+						你和艾瑟克不熟，提不出令人信服的理由让他一个人呆着。
+					#ENDIF
+				]]></responseTooltip>
+				<colour><![CDATA[
+					#IF(flags.getSavedLong("elis_eisek_talk_score") >= 4)
+						GENERIC_GOOD
+					#ELSE
+						TEXT
+					#ENDIF
+				]]></colour>
+				<nextDialogue><![CDATA[
+					#IF(flags.getSavedLong("elis_eisek_talk_score") >= 4)
+						dsg_encounters_fields_elis_eisek_mob_hideout_persuade
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_dsg_elis_eisek_mob_quest_persuade, true)]
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_THREE))]
+				]]></effects>
+			</response>
+			
+			<response>	
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[恐吓]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) >= 30)
+						他们会放过艾瑟克，否则的话。
+					#ELSE
+						你的体格不足以完成这项任务……
+					#ENDIF
+				]]></responseTooltip>
+				<colour><![CDATA[
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) >= 30)
+						ATTRIBUTE_PHYSIQUE
+					#ELSE
+						TEXT
+					#ENDIF
+				]]></colour>
+				<nextDialogue><![CDATA[
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) >= 30)
+						dsg_encounters_fields_elis_eisek_mob_hideout_intimidate
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_dsg_elis_eisek_mob_quest_intimidate, true)]
+				]]></effects>
+			</response>
+			
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[恐吓(奥术)]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_ARCANE) >= 30)
+						如果他们不放过艾瑟克，就会尝尝你的奥术技艺。
+					#ELSE
+						你没有足够的奥术能量来做到这一点……
+					#ENDIF
+				]]></responseTooltip>
+				<colour><![CDATA[
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_ARCANE) >= 30)
+						ATTRIBUTE_ARCANE
+					#ELSE
+						TEXT
+					#ENDIF
+				]]></colour>
+				<nextDialogue><![CDATA[
+					#IF(pc.getAttributeValue(ATTRIBUTE_MAJOR_ARCANE) >= 30)
+						dsg_encounters_fields_elis_eisek_mob_hideout_intimidate_arcane
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_dsg_elis_eisek_mob_quest_intimidate_arcane, true)]
+				]]></effects>
+			</response>
+			<!-- TODO Add seduction route
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[Seduce]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_ARCANE))
+						Use your mastery of lust spells to make things interesting. [style.boldBad(NYI)]
+					#ELSE
+						You haven't mastered the school of the arcane so you can't do this...
+					#ENDIF
+				]]></responseTooltip>
+				<colour><![CDATA[
+					#IF(pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_ARCANE))
+						SPELL_SCHOOL_ARCANE
+					#ELSE
+						TEXT
+					#ENDIF
+				]]></colour>
+				<nextDialogue><![CDATA[
+					#IF(pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_ARCANE))
+						null
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_dsg_elis_eisek_mob_quest_seduce, true)]
+				]]></effects>
+			</response>
+			-->
+			<response>
+				<!-- TODO Add seduction route conditional check: && !pc.isSpellSchoolSpecialAbilityUnlocked(SPELL_SCHOOL_ARCANE) -->
+				<availabilityConditional><![CDATA[
+					[#flags.getSavedLong("elis_eisek_talk_score") < 4
+					&& pc.getAttributeValue(ATTRIBUTE_MAJOR_PHYSIQUE) < 30
+					&& pc.getAttributeValue(ATTRIBUTE_MAJOR_ARCANE) < 30]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[恐吓？]]></responseTitle>
+				<responseTooltip><![CDATA[他们会放过艾瑟克，或者……]]></responseTooltip>
+				<colour><![CDATA[GENERIC_BAD]]></colour>
+				<nextDialogue><![CDATA[dsg_encounters_fields_elis_eisek_mob_hideout_intimidate_fail]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_TWO_FAILED))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="persuade">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[说服暴徒]]></title>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">PERSUADE</content>		
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你这里的工作结束了。回到街上去吧。]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[default]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="intimidate">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[恐吓暴徒]]></title>
+		<tooltip/>
+		<preParsingEffects><![CDATA[
+			[#game.addNPC('fields.ElisAlleywayAttacker', 'dsg_muscle')]
+			[#game.setActiveNPC(dsg_muscle)]
+			[#npc.setHistory(OCCUPATION_NPC_MUGGER)]
+			[#npc.equipClothing()]
+			[#npc.setLocation(pc, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">INTIMIDATE</content>		
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[看来你得证明你的观点了！]]></responseTooltip>
+				<colour><![CDATA[GENERIC_COMBAT]]></colour>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects/>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[dsg_encounters_fields_elis_eisek_mob_hideout_intimidate_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[dsg_encounters_fields_elis_eisek_mob_hideout_intimidate_lost]]></nextDialoguePlayerDefeat>
+					<allies/>
+					<enemies>
+						<enemy leader="true"><![CDATA[dsg_muscle]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="dsg_muscle"><![CDATA[[dsg_muscle.speech(让我看看你是否像自己想象的那样坚强！)][dsg_muscle.name]喊道。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+				</combatVariables>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="intimidate_arcane">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[恐吓暴徒]]></title>
+		<tooltip/>
+		<preParsingEffects><![CDATA[
+			[#game.addNPC('fields.ElisAlleywayAttacker', 'dsg_muscle')]
+			[#game.setActiveNPC(dsg_muscle)]
+			[#npc.setHistory(OCCUPATION_NPC_MUGGER)]
+			[#npc.equipClothing()]
+			[#npc.setLocation(pc, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">INTIMIDATE_ARCANE</content>		
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[看来你得证明你的观点了！]]></responseTooltip>
+				<colour><![CDATA[GENERIC_COMBAT]]></colour>
+				<nextDialogue/>
+				<secondsPassed/>
+				<effects/>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[dsg_encounters_fields_elis_eisek_mob_hideout_intimidate_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[dsg_encounters_fields_elis_eisek_mob_hideout_intimidate_lost]]></nextDialoguePlayerDefeat>
+					<allies/>
+					<enemies>
+						<enemy leader="true"><![CDATA[dsg_muscle]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="dsg_muscle"><![CDATA[[dsg_muscle.speech(讲讲这个，讲讲那个。看我打的你连自己是谁都不知道！)][dsg_muscle.name]叫喊道。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+				</combatVariables>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="intimidate_won">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[恐吓成功]]></title>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">INTIMIDATE_WON</content>		
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你这里的工作结束了。回到街上去吧。]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[default]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_THREE))]
+					[#game.banishNPC(dsg_muscle)]
+				]]></effects>	
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="intimidate_lost">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[战斗失败]]></title>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">INTIMIDATE_LOST</content>		
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你尽力了。回到街上去吧。]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[default]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_SIDE_EISEK_MOB, QUEST_EISEK_MOB_QUEST_STAGE_TWO_FAILED))]
+					[#game.banishNPC(dsg_muscle)]
+				]]></effects>	
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="intimidate_fail">
+		<author><![CDATA[DSG]]></author>
+		<title><![CDATA[太弱了……]]></title>
+		<tooltip/>
+		<preParsingEffects/>
+		<content folderPath="txt/dsg/encounters/fields/elis/eisek_mob_hideout">INTIMIDATE_FAIL</content>		
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responseTabs/>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你尽力了。回到街上去吧]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[default]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+		
+		<authorTag><![CDATA[在每个护胫板的内侧，淡淡的橡胶油墨写着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>450</value> 
+
+		<determiner><![CDATA[一对]]></determiner>
+
+		<name><![CDATA[执法者防暴护腿]]></name>
+
+		<namePlural pluralByDefault="true"><![CDATA[执法者防暴护腿]]></namePlural> 
+
+		<description><![CDATA[一组金属板，用于保护穿戴者的胫部以及足部的顶端。]]></description> 
+
+		<physicalResistance>4</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>ANKLE</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet>dsg_enforcer_riot</clothingSet>
+
+		<imageName>riotshinguards.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts/> 
+
+				<clothingAccessBlocked> 
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots/> 
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_STEEL"/> 
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours values="JUST_BLACK"/> 
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将护腿套在了[npc.her]的小[npc.legs]并拉紧了带子。]]></self>
+		<other><![CDATA[
+			[npc.Name]将护腿套在了[npc2.namePos]的小[npc.legs]并拉紧了带子。]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]将护腿穿过[npc2.namePos]的[npc2.legs]并仓促地拉紧了带子。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]松开了[npc.her]小[npc.legs]上的带子并把护腿脱了下来。]]></self>
+		<other><![CDATA[
+			[npc.Name]松开了[npc2.namePos]小[npc.legs]上的带子并把护腿脱了下来。]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]撕扯着[npc2.namePos][npc2.legs]上的带子，在带子松动后将护臂一把扯下并扔到了一边。]]></otherRough>
+	</displacementText>
+	
+</clothing>

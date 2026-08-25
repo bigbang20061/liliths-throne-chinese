@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>50</value> 
+		<determiner><![CDATA[一颗]]></determiner>
+		<name><![CDATA[孕母药]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[孕母药]]></namePlural>
+		<description><![CDATA[一颗单独包装在铝箔和塑料中的粉色小胶囊。铝箔纸上印有“口服生殖增强剂”的字样，俗称“孕母药”，它的主要作用是让使用者怀上更多的后代。]]></description> 
+		
+		<useDescriptor><![CDATA[吞下]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>COMMON</rarity> 
+		
+		<imageName>pill_plus.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_PINK_DARK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<statusEffects>
+			<effect seconds="86400">BROODMOTHER_PILL</effect>
+		</statusEffects>
+		
+		<effectTooltipLines>
+			<line><![CDATA[孕育的后代数量[style.colourExcellent(翻倍)]]]></line>
+			<line><![CDATA[[style.colourExcellent(去除)]“绝经”效果]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.removeStatusEffect(SE_PROMISCUITY_PILL)]
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				当胶囊滑下[npc.name]的喉咙时，[npc.she]以为不会有什么效果，但突然间，[npc.her]的胃开始剧烈痉挛！
+			</p>
+			<p>
+				#IF(npc.hasVagina())
+					[npc.Name]感到卵巢开始高速运转，卵子开始流向[npc.her]的子宫。随着不适感的消失，[npc.she]意识到现在可以怀更多的孩子，而不仅仅是通常能怀的
+					#IF(npc.hasFetish(FETISH_PREGNANCY))
+						数量，这个念头让[npc.her]的脸上挂上了幸福的微笑，因为[npc.her]现在可以轻松怀上更多孩子。
+					#ELSE
+						数量。
+					#ENDIF
+					#IF(npc.hasPenisIgnoreDildo())
+						这种感觉不会就此停止，随后，抽搐感迅速传播到了[npc.her]的下体。[npc.she]感觉到自己的睾丸以超自然的速度制造精子。不适感最终消失了，[npc.sheIs]意识到[npc.her]的精子进入的任何子宫都能容纳比平常更多的
+						#IF(npc.hasFetish(FETISH_PREGNANCY))
+							孩子，[npc.she]禁不住对有人的肚子因[npc.she]众多的后代而鼓胀到极限的想法露出了微笑。
+						#ELSE
+							孩子。
+						#ENDIF
+					#ENDIF
+				#ELSEIF(npc.hasPenisIgnoreDildo())
+					然而，这种感觉并未止步于此，腹部的疼痛很快转移到了[npc.her]的下体。[npc.she]感到睾丸在高速产生精子，不适感最终消失，[npc.she]意识到任何受精卵受到[npc.her]精子影响都能产生比平时更多的
+					#IF(npc.hasFetish(FETISH_PREGNANCY))
+						孩子，一想到有人的肚子和众多的后代一起膨胀到了极点，[npc.she]就忍不住咧嘴笑了。
+					#ELSE
+						孩子。
+					#ENDIF
+				#ENDIF
+				#IF(!npc.hasVagina() && !npc.hasPenisIgnoreDildo())
+					虽然疼痛很快消退，但[npc.sheIs]开始思考，如果[npc.she]能获得一种阴道或阴茎，那么[npc.she]将能够怀远远超出正常情况下的可能性的数量的后代。
+				#ENDIF
+			</p>
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>ALL_AREAS_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]从小小的箔纸包装中取出孕母药，然后迅速将其放入口中并吞下。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]从小小的箔纸包装中取出孕母药，然后把它送到[npc2.namePos]的[npc2.lips]处，强迫[npc2.she]吞入口中，并确保[npc2.she]将其咽下。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

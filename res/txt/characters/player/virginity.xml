@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- Player virginity losses: -->
+	<!-- [#SPECIAL_PARSE_0] is the penetration type's name -->
+	
+	<!-- PURE -->
+	
+	<htmlContent tag="VIRGINITY_LOSS_PURE_SELF"><![CDATA[
+		<p style='text-align:center;'>
+			[style.boldTerrible(失格处女)]
+		</p>
+		<p>
+			你不敢相信自己现在在对自己做些什么。当你的[#sex.getFirstOngoingSexAreaPenetration(pc, ORIFICE_VAGINA).getName(npc)]一举之下夺走了你的贞操，你不禁倒吸了一口冷气。
+		</p>
+		<p style='text-align:center;'>
+			[pc.thought(我，我在干什么？！
+				<br/>我，我只是太……<i>淫荡了</i>！
+				<br/>我，我控制不住自己！)]
+		</p>
+		<p>
+			你不知道该作何反应。你失去了曾经珍视无比的童贞，双眼变得空洞无神，但是仍然向[#SPECIAL_PARSE_0]淫荡地卖弄着你[pc.pussy+]。
+		</p>
+		<p>
+		当你还是个处女时，你以为自己战无不胜，仿佛能克服任何阻碍你前进的障碍。然而现在……
+	</p>
+		<p style='text-align:center;'>
+			[pc.thought(现在我也只不过是个臭婊子而已……
+				<br/>欲火如此高涨，令我最终选择要自己操自己……
+				<br/>我现在能做的就是当个可以随意丢弃的性玩具……)]
+		</p>
+		<p>
+			你颤抖着叹息一声，只得说服自己接受了现实，你现在不过是个[style.boldTerrible(失格处女)]……
+		</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_PURE"><![CDATA[
+	<p style='text-align:center;'>
+		[style.boldTerrible(失格处女)]
+	</p>
+	<p>
+		你不敢相信发生了什么。[npc.namePos]的[#sex.getFirstOngoingSexAreaPenetration(pc, ORIFICE_VAGINA).getName(npc)]一举之下夺走了你的贞操，你不禁倒吸了一口冷气。
+	</p>
+	<p style='text-align:center;'>
+		[pc.thought(我就这样失贞了？！
+			<br/>被……<i>
+			#IF(npc.isSlave() && npc.getOwner().isPlayer())
+				我的奴隶
+			#ELSE
+				[npc.a_race]
+			#ENDIF
+			</i>？！
+			<br/>这不可能发生！)]
+	</p>
+	<p>
+		你不知道该如何反应。你格外珍视的贞操如今已经离你而去，脸上只留下空虚的注视，而你[pc.pussy+]依然在[npc.namePos]的[#SPECIAL_PARSE_0]周围淫靡地蠕动着。
+	</p>
+	<p>
+		当你还是个处女时，你以为自己战无不胜，仿佛能克服任何阻碍你前进的障碍。然而现在……
+	</p>
+	<p style='text-align:center;'>
+		[pc.thought(现在我也只不过是个臭婊子而已……
+			<br/>被遇到的随便一个人操……
+			<br/>我现在能做的就是当下个#IF(pc.getSexualOrientation().isAttractedToMasculine())幸运儿#ELSE幸运女#ENDIF's 的性玩具……)]
+	</p>
+	<p>
+		#IF(npc.isAsleep())
+			[npc.nameIsFull]熟睡着，完全不知道失去贞操对你造成了多大的打击。
+		#ELSE
+			你隐约听到背景音中混杂着[npc.Name]的[npc.moan]声，[npc.she]完全没意识到失去贞操对你造成了多大的打击。
+		#ENDIF
+		随着一声颤抖的叹息，你只能认命，你现在不过是个[style.boldTerrible(失格处女)]罢了……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_PURE_DOLL"><![CDATA[
+	<p style='text-align:center;'>
+		[style.boldTerrible(失格处女)]
+	</p>
+	<p>
+		你不敢相信发生了什么。[npc.namePos]的[#SPECIAL_PARSE_0]一举之下夺走了你的贞操，你一时之间想不出该作出何种反应来证明它对你有多重要。
+	</p>
+	<p style='text-align:center;'>
+		[pc.thought(我就这样失贞了？！
+			<br/>被……<i>
+			#IF(npc.isSlave() && npc.getOwner().isPlayer())
+				我的奴隶
+			#ELSE
+				[npc.a_race]
+			#ENDIF
+			</i>，而我不过是个愚蠢的性玩具？！
+			<br/>这不可能发生！)]
+	</p>
+	<p>
+		无论你多想尖叫着将[npc.name]推开，你的身体背叛了你，只是在原处完全沉默着一动不动。你格外珍视的贞操如今已经离你而去，你却甚至无法做出反应，而你[pc.pussy+]依然在[npc.namePos]的[#SPECIAL_PARSE_0]周围淫靡地蠕动着。
+	</p>
+	<p>
+		当你还是个处女时，你以为自己战无不胜，仿佛能克服任何阻碍你前进的障碍。然而现在……
+	</p>
+	<p style='text-align:center;'>
+		[pc.thought(现在的我也不过是个性玩具而已……
+			<br/>被随便一个想使用我的人操……
+			<br/>我现在能做的就是当下个#IF(pc.getSexualOrientation().isAttractedToMasculine())幸运儿#ELSE幸运女#ENDIF的肉便器……)]
+	</p>
+	<p>
+		#IF(npc.isAsleep())
+			[npc.nameIsFull]熟睡着，完全不知道失去贞操对你造成了多大的打击。
+		#ELSE
+			你隐约听到背景音中混杂着[npc.Name]的[npc.moan]声，[npc.she]完全没意识到失去贞操对你造成了多大的打击。
+		#ENDIF
+		在完全无能为力的情况下，你只能认命，你现在不过是个[style.boldTerrible(失格处女)]罢了……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_PURE_SLEEPING"><![CDATA[
+	<p style='text-align:center;'>
+		[style.boldTerrible(失格处女)]
+	</p>
+	<p>
+		你漫无目的地在许多春梦中飘荡着，直到进入一个过于真实的梦境。你紧致的处女小穴在[npc.name]面前毫无防备，立刻被[npc.her]的[#SPECIAL_PARSE_0]插入进来。你的贞操被轻而易举地偷走，而即使是在这梦中你一时之间也想不出该作出何种反应来证明它对你有多重要。
+	</p>
+	<p style='text-align:center;'>
+		[pc.thought(我就这样失贞了？！
+			<br/>被……<i>
+			#IF(npc.isSlave() && npc.getOwner().isPlayer())
+				我的奴隶？！
+			#ELSE
+				[npc.a_race]？！
+			#ENDIF
+			<br/>这不可能发生！)]
+	</p>
+	<p>
+		尽管你想尖叫着将[npc.name]推开，你此刻正被困在梦中，在[npc.she]开始操你的时候顺从地躺着一动不动。你格外珍视的贞操如今已经离你而去，你却甚至无法发出半声抗议，而你[pc.pussy+]依然在[npc.namePos]的[#SPECIAL_PARSE_0]周围淫靡地蠕动着。
+	</p>
+	<p>
+		当你还是个处女时，你以为自己战无不胜，仿佛能克服任何阻碍你前进的障碍。然而现在……
+	</p>
+	<p style='text-align:center;'>
+		[pc.thought(现在的我也不过是个性玩具而已……
+			<br/>被随便一个想使用我的人操……
+			<br/>我现在能做的就是当下个#IF(pc.getSexualOrientation().isAttractedToMasculine())幸运儿#ELSE幸运女#ENDIF的肉便器……)]
+	</p>
+	<p>
+		[npc.Name]继续操着你，完全没意识到失去贞操对你造成了多大的打击。你的梦境继续向你展示着淫秽的场景，你的内心深处开始接受自己是一名[style.boldTerrible(失格处女)]……
+	</p>
+	]]></htmlContent>
+	
+	<!-- ANAL -->
+	
+	<htmlContent tag="VIRGINITY_LOSS_ANAL_SELF"><![CDATA[
+	<p>
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_ANUS))
+			你把[#SPECIAL_PARSE_0]强行插入你干涩的[pc.asshole]，不由得发出了痛苦的呻吟。当你开始操自己的[pc.ass]时，你的叫声越来越大。因为缺乏润滑，你的第一次肛交体验变成了一种令人麻木的痛苦。
+		#ELSE
+			你把[#SPECIAL_PARSE_0]强行插入自己[pc.asshole+]，不由得发出了痛苦的呻吟。当你开始操自己的[pc.asshole]时，你在不适中扭动着身体，不断发出轻微的呜咽声。幸亏你事先涂了润滑剂，否则不敢想象第一次肛交体验会有多痛苦。
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasFetish(FETISH_MASOCHIST))
+			由于你是一个极端的受虐狂，你发现自己痛苦的叫声中夹杂着淫荡的呻吟。失去屁穴童贞的痛苦和不适感是一种纯粹的幸福，你很快发现自己[pc.moaning]着沉浸在压抑不住的狂喜之中。
+		#ELSE
+			当你把[#SPECIAL_PARSE_0]抽回，你的[pc.eyes]中涌出了泪水，发出了另一声痛苦的哀鸣，然后再次深深地插入。这一次，疼痛没有之前那么剧烈了，你意识到自己已经开始习惯使用屁穴的感觉了。
+		#ENDIF
+	</p>
+	<p>
+		当你的[#SPECIAL_PARSE_0]再次插入你[pc.asshole+]时，你发出了一声轻微而舒缓呜咽，你很快就适应了插入。
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_ANAL"><![CDATA[
+	<p>
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_ANUS))
+			你感受到[npc.namePos]的[#SPECIAL_PARSE_0]塞进了你干燥的[pc.asshole]，痛苦地哀嚎起来。
+			#IF(npc.isAsleep())
+				你骑着[npc.name]，
+			#ELSE
+				[npc.name]操着你的[pc.ass]，你
+			#ENDIF
+			难受地扭动着身体，你的叫喊声越来越大，缺乏润滑导致你的初次肛门体验疼痛到近乎麻木。
+		#ELSE
+			你感受到[npc.namePos]的[#SPECIAL_PARSE_0]塞进了你[pc.asshole+]，痛苦地哀嚎起来。
+			#IF(npc.isAsleep())
+				你骑着[npc.name]，
+			#ELSE
+				[npc.name]操着你的[pc.ass]，你
+			#ENDIF
+			难受地扭动着身体，不住地发出小声呜咽。所幸，你的[pc.asshole]已经预先润滑过了，否则你不敢想象你的初次肛门体验将会有多么痛苦。
+		#ENDIF
+	</p>
+	#IF(pc.hasFetish(FETISH_MASOCHIST))
+		<p>
+			由于你是一个极端的受虐狂，你发现自己痛苦的叫声中夹杂着淫荡的呻吟。失去屁穴童贞的痛苦和不适感是一种纯粹的幸福，你很快发现自己[pc.moaning]着沉浸在压抑不住的狂喜之中。
+		</p>
+	#ENDIF
+	<p>
+		#IF(npc.hasFetish(FETISH_SADIST) && !npc.isAsleep())
+			[npc.name]把[npc.her]的[#SPECIAL_PARSE_0]扯出来，再次猛烈地插入你的身体深处。泪水盈满了你的[pc.eyes]，你又发出一声痛苦的哀嚎。[npc.she]对你狞笑着，让你痛苦地扭动着身体，[npc.she]的虐待狂本性让[npc.she]更猛烈地插入你的[pc.asshole]，无情地操干着你的[pc.ass]。
+		#ELSE
+			泪水盈满了你的[pc.eyes]，
+			#IF(npc.isAsleep())
+				你将[pc.ass]顶向[npc.namePos]的[#SPECIAL_PARSE_0]，
+			#ELSE
+				[npc.name]把[npc.her]的[#SPECIAL_PARSE_0]抽出，再次插入你的身体深处，
+			#ENDIF
+			你又发出了一声痛苦的哀嚎。这一次，疼痛没有之前那么剧烈了，你意识到自己已经开始习惯屁股被操的感觉了。
+		#ENDIF
+	</p>
+	#IF(npc.hasFetish(FETISH_DEFLOWERING) && !npc.isMute() && !npc.isDoll() && !npc.isAsleep())
+		<p>
+			[npc.speech(哦，爽！)][npc.she]大叫着，[npc.speech(好[pc.girl]，把你的屁穴童贞留给我！记住这一刻，记住是<i>我</i>的[#SPECIAL_PARSE_0]第一次把你变成#IF(pc.isFeminine())屁穴荡妇#ELSE小娈童#ENDIF的！)]
+		</p>
+	#ENDIF
+	<p>
+		你[pc.ass]上的疼痛开始慢慢消失，随着[npc.namePos][#SPECIAL_PARSE_0]再一次插入你[pc.asshole+]时，这一次你没有感觉到刺痛，这让发出了一声轻微而舒缓地呜咽。
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_ANAL_DOLL"><![CDATA[
+	<p>
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_ANUS))
+			[npc.namePos][#SPECIAL_PARSE_0]插入你干燥的[pc.asshole]让你差点哭了出来，但你顺从地保持沉默，一动不动。缺少润滑为你的肛交初体验带来一种锥心之痛，但你只能默默忍受着[npc.name]操你[pc.ass]的痛苦。
+		#ELSE
+			[npc.namePos][#SPECIAL_PARSE_0]插入你干燥的[pc.asshole]让你差点哭了出来，但你顺从地保持沉默，一动不动。多亏你的[pc.asshole]事先润滑过，当[npc.name]操你的[pc.ass]时，那阵痛苦很快消退。
+		#ENDIF
+	</p>
+	#IF(pc.hasFetish(FETISH_MASOCHIST))
+		<p>
+			由于你是一个极端的受虐狂，你认为这种体验是一种极致快感的源泉。失去肛门童贞的痛苦和不适感是一种纯粹的幸福，很快你就发现自己的感官已经被一种难以抑制的狂喜所麻痹。
+		</p>
+	#ENDIF
+	<p>
+		#IF(npc.hasFetish(FETISH_SADIST))
+			尽管你对失去肛门童贞没有任何反应，但[npc.name]清楚地知道你一定很痛苦。[npc.her]将[#SPECIAL_PARSE_0]抽出，[npc.she]对你狞笑着，然后再次猛烈地深深插入你。[npc.she]发出邪恶的笑声，用[npc.she]所能使出的最快、最粗暴的动作抽插；[npc.she]的虐待狂本性让[npc.she]更猛烈地插入你的[pc.asshole]。
+		#ELSE
+			[npc.name]把[npc.her][#SPECIAL_PARSE_0]抽出时，你无法做出任何反应，只能继续像个没有生命的性爱玩偶一样，[npc.her]再次深深插入你。这一次，疼痛没有之前那么剧烈了，你意识到自己已经开始习惯屁股被操的感觉了。
+		#ENDIF
+	</p>
+	#IF(npc.hasFetish(FETISH_DEFLOWERING) && !npc.isMute() && !npc.isDoll())
+		<p>
+			[npc.speech(哦，爽！)][npc.she]大叫着，[npc.speech(好[pc.girl]，把你的屁穴童贞留给我！记住这一刻，记住是<i>我</i>的[#SPECIAL_PARSE_0]第一次把你变成屁穴荡妇的！)]
+		</p>
+	#ENDIF
+	<p>
+		你[pc.ass]上的疼痛开始慢慢消失，随着[npc.namePos][#SPECIAL_PARSE_0]再一次插入你[pc.asshole+]时，这一次你没有感觉到刺痛，这让你松了一口气。
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_ANAL_SLEEPING"><![CDATA[
+	<p>
+		在此之前，你的春梦都是稍纵即逝、非常普通的，而现在突然变成了一个清晰的画面：[npc.name]把你推倒，然后把[npc.her][#SPECIAL_PARSE_0]对准你的童贞屁穴。
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_ANUS))
+			还没等你惊呼出声，[npc.namePos][#SPECIAL_PARSE_0]插入你干燥的[pc.asshole]的疼痛感就袭来了。由于缺乏润滑，你的第一次肛交体验让你痛苦不已，但[npc.name]继续操你的[pc.ass]，你只能默默忍受疼痛。
+		#ELSE
+			还没等你惊呼出声，[npc.namePos][#SPECIAL_PARSE_0]就插进了你的[pc.asshole]，让你痛不欲生。幸好你的[pc.asshole]有事先润滑，当[npc.Name]开始操你的[pc.ass]时，疼痛感很快就消失了。
+		#ENDIF
+	</p>
+	#IF(pc.hasFetish(FETISH_MASOCHIST))
+		<p>
+			由于你是一个极端的受虐狂，你认为这种体验是一种极致快感的源泉。失去肛门童贞的痛苦和不适感是一种纯粹的幸福，很快你就发现自己的感官已经被一种难以抑制的狂喜所麻痹。
+		</p>
+	#ENDIF
+	<p>
+		#IF(npc.hasFetish(FETISH_SADIST))
+			[npc.name]把[npc.her][#SPECIAL_PARSE_0]扯出来，又再次猛烈地插入你的身体深处。成股的泪水从你的[pc.eyes]中溢出，你又发出一声痛苦的哀嚎。[npc.she]对你狞笑着，让你痛苦地扭动，[npc.she]的虐待狂本性让[npc.she]更猛烈地插入你的[pc.asshole]。
+		#ELSE
+			[npc.name]把[npc.her][#SPECIAL_PARSE_0]扯出来，又再次插入你的身体深处。成股的泪水从你的[pc.eyes]中溢出，你又发出一声痛苦的哀嚎。这一次，疼痛没有之前那么剧烈了，你意识到自己已经开始习惯屁股被操的感觉了。
+		#ENDIF
+	</p>
+	#IF(npc.hasFetish(FETISH_DEFLOWERING) && !npc.isMute() && !npc.isDoll())
+		<p>
+			[npc.speech(哦，爽！)][npc.she]大叫着，[npc.speech(好[pc.girl]，把你的屁穴童贞留给我！记住这一刻，记住是<i>我</i>的[#SPECIAL_PARSE_0]第一次把你变成#IF(pc.isFeminine())屁穴荡妇#ELSE小娈童#ENDIF的！)]
+		</p>
+	#ENDIF
+	<p>
+		你[pc.ass]上的疼痛开始慢慢消失，随着[npc.namePos][#SPECIAL_PARSE_0]再一次插入你[pc.asshole+]时，这一次你没有感觉到刺痛，这让发出了一声轻微而舒缓地呜咽。
+	</p>
+	]]></htmlContent>
+
+	<htmlContent tag="VIRGINITY_LOSS_ANAL_ENDING"><![CDATA[
+	<p style='text-align:center;'>
+		[style.italicsTerrible(你丢失了肛门童贞！你会永远记住这一刻！)]
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- VAGINAL -->
+	
+	<htmlContent tag="VIRGINITY_LOSS_VAGINAL_SELF"><![CDATA[
+	<p>
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_VAGINA))
+			#IF(pc.hasHymen())
+				你将[#SPECIAL_PARSE_0]深深插入你干燥的[pc.pussy]，眼前突然冒起金星，一声痛苦而高亢的尖叫也随之从你的[pc.lips]之间逸出。在没有丝毫润滑的情况下被插入，最好的情况也会有强烈的不适感，但由于你刚刚撕裂了处女膜，这已经不是“不适”二字可以描述的了。你的尖叫变成了颤抖的哭泣，在纯粹的痛苦中扭动着身体。
+			#ELSE
+				你将[#SPECIAL_PARSE_0]深深插入你的[pc.pussy]，难受得不禁发出了呻吟。在没有丝毫润滑的情况下被插入，最好的情况也会有强烈的不适感，但由于你刚刚夺走自己的贞操，你生涩无知，只觉得自己极其难受。
+			#ENDIF
+		#ELSE
+			#IF(pc.hasHymen())
+				你将[#SPECIAL_PARSE_0]深深插入你[pc.pussy+]，突然觉得眼前一黑，[pc.lips]之间逸出痛苦而迷乱的哀嚎。幸好，你的小穴在被插入前已经润滑过，但由于你刚刚撕裂了处女膜，你仍然能感受到下体传来的疼痛。你的哀嚎渐转为颤抖的呻吟，你在不适中扭动着身体。
+			#ELSE
+				你将[#SPECIAL_PARSE_0]深深插入你[pc.pussy+]，突然觉得眼前一黑，[pc.lips]之间迸发出色情的[pc.moan]。一方面你[pc.pussy+]润滑良好，一方面你已失去处女膜，所以小穴初体验倒也不难受。你开始享受起[#SPECIAL_PARSE_0]在你的小穴中抽插的美妙感觉，再次发出急切的[pc.moan]。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasHymen())
+			#IF(pc.hasFetish(FETISH_MASOCHIST))
+				由于你是一个极端的受虐狂，你发现自己痛苦的叫声中夹杂着淫荡的呻吟。双腿间的痛苦是一种纯粹的幸福，你很快发现自己痛苦的尖叫中夹杂着淫荡的呻吟，沉浸在压抑不住的狂喜之中。不幸的是，由于你的受虐欲望，你的处女膜现在撕裂了，所以疼痛没有先前那么剧烈。但即使没有处女膜，你也发现自己开始发出淫荡的[pc.moans]。
+			#ELSE
+				本能驱使你夹紧双腿，你再次发出痛苦的哀鸣，同时将[#SPECIAL_PARSE_0]抽出，又再次深深插入自己的体内。由于你的处女膜已经被撕裂，疼痛感没有先前那么强烈了，你痛苦的叫声逐渐变成淫荡的[pc.moans]。
+			#ENDIF
+			
+		#ELSE
+			你渐渐进入了状态，迫不及待地抽回自己的[#SPECIAL_PARSE_0]，又再次插入自己的身体深处。在自慰间，你情不自禁地发出了连绵而极其淫荡的[pc.moans]。
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasHymen())
+			#IF(pc.hasFetish(FETISH_PURE_VIRGIN) && pc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+				最初的痛感现在已经慢慢减弱，变成了酸胀的钝痛。你感觉血液正一点点从你被撑裂的阴户里流出来。屈服在这种愉悦的新体验中，你不禁地又发出一阵呜咽，同时又加快了节奏，发出[pc.a_moan+]，再次将[#SPECIAL_PARSE_0]插入了你[pc.pussy+]中……
+			#ELSE
+				最初的痛感现在已经慢慢减弱，伴随着阵阵呜咽声已经变成了微微酸胀的钝痛，你意识到这就自己已经永久地失去了童贞。屈服在这种愉悦的新体验中，你不禁地又发出一阵呜咽，同时又加快了节奏，发出[pc.a_moan+]，再次将[#SPECIAL_PARSE_0]插入了你[pc.pussy+]中……
+			#ENDIF
+		#ELSE
+			你并没有感到想象中处女被夺取的痛楚，只是在深深的[pc.moan]声中，才让你意识到：自己已经永远失去了童贞。屈服在这种愉悦的新体验中，你不禁地又发出一阵呜咽，同时又加快了节奏，发出[pc.a_moan+]，再次将[#SPECIAL_PARSE_0]插入了你[pc.pussy+]中……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_VAGINAL"><![CDATA[
+	<p>
+		#IF(npc.isAsleep())
+			你强迫[npc.namePos]的[#SPECIAL_PARSE_0]深深进入你
+		#ELSE
+			[npc.name]将[npc.her]的[#SPECIAL_PARSE_0]深深插入你
+		#ENDIF
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_VAGINA))
+			#IF(pc.hasHymen())
+				干涩的[pc.pussy]，你突然感到眼冒金星，[pc.lips]之间发出痛苦而高亢的尖叫。在没有任何润滑的情况下被插入，在最好的情况下也会很不舒服，但由于[npc.nameHasFull]刚刚也捅破了你的处女膜，这就不仅仅是一点点不适了，你的尖叫变成了颤抖的哭泣，你在纯粹的痛苦中扭动着身体。
+			#ELSE
+				干涩的[pc.pussy]，你不禁发出了一声不舒服的呻吟。在没有任何润滑的情况下被插入，在最好的情况下也会很不舒服，但由于[npc.name]此刻正在夺走你的贞操，你完全不习惯目前正在经历的这种感觉，只觉得极度难受。
+			#ENDIF
+		#ELSE
+			#IF(pc.hasHymen())
+				[pc.pussy+]，你的视野突然变窄，一声痛苦而绝望的哀嚎从你的[pc.lips]间发出。幸运的是，你的小穴在被插入之前已经得到了润滑，但由于[npc.nameHasFull]刚刚也捅破了你的处女膜，所以这并不足以完全缓解你下体现在的疼痛。你的哀嚎逐渐变成了颤抖的呻吟，你在不适中扭动着身体。
+			#ELSE
+				[pc.pussy+]，你的视野突然变窄，一声淫荡的[pc.moan]从你的[pc.lips]间迸发出来。由于你[pc.pussy+]润滑良好，而且处女膜已经破损，第一次被插入处女小穴的体验一点也不难受。你专注于[npc.namePos][#SPECIAL_PARSE_0]插入的奇妙感觉，又发出了一声急切的[pc.moan]。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasHymen())
+			#IF(npc.hasFetish(FETISH_SADIST) && !npc.isAsleep())
+				[npc.she]发出了邪恶的笑声，让你痛苦地扭动着身体，[npc.she]的虐待狂本性助长了[npc.she]对你小穴的粗暴插入，[npc.she]无情地撕裂了你的处女膜。
+			#ENDIF
+			#IF(pc.hasFetish(FETISH_MASOCHIST))
+				由于你是一个极端的受虐狂，你会发现自己痛苦的叫声中夹杂着淫荡的快感呻吟。双腿间的痛苦是一种纯粹的幸福，你在尖叫和呻吟中专注于疼痛，沉浸在难以抑制的狂喜之中。不幸的是，由于你的受虐欲望，你的处女膜现在被撕裂了，所以疼痛没有以前那么剧烈，但即使没有处女膜，你也发现自己开始发出淫荡的[pc.moans]。
+			#ELSE
+				你本能地想把双腿夹紧，
+				#IF(npc.isAsleep())
+					你顶向[npc.namePos]的[#SPECIAL_PARSE_0]，
+				#ELSE
+					[npc.name]将[npc.her]的[#SPECIAL_PARSE_0]抽回，再次深深地插入你的身体，
+				#ENDIF
+				你又发出了一声痛苦的哀嚎。由于你的处女膜已经被撕裂，疼痛感没有之前那么强烈了，你痛苦的叫声开始变成淫荡的[pc.moan]。
+			#ENDIF
+		#ELSE
+			你开始进入状态，发出[pc.a_moan+]，
+			#IF(npc.isAsleep())
+				你一次又一次地顶向[npc.namePos]的[#SPECIAL_PARSE_0]。你骑着熟睡的性伴侣，情不自禁地发出一连串极度淫荡且色情的[pc.moans]。
+			#ELSE
+				[npc.name]将[npc.her]的[#SPECIAL_PARSE_0]抽回，再次深深地插入你的身体。[npc.she]开始操你，你情不自禁地发出一连串极度淫荡且色情的[pc.moans]。
+			#ENDIF
+			
+		#ENDIF
+	</p>
+	#IF(!npc.isMute() && !npc.isDoll() && !npc.isAsleep())
+		<p>
+			#IF(game.isInSex())
+				#IF(sex.getSexPace(npc)==SEX_PACE_DOM_GENTLE)
+					[npc.speech(你还是处女？)][npc.she]轻声自语着，[npc.speech(你真是个非常好的好[pc.girl]，特意把你的处女留给我！你会永远记住，第一次进入你的是我的[#SPECIAL_PARSE_0]……)]
+				#ELSEIF(sex.getSexPace(npc)==SEX_PACE_DOM_ROUGH:
+					[npc.speech(才刚开始呢，荡妇！)][npc.she]厉声[npc.moansVerb]着，[npc.speech(现在我已经夺走了你的童贞，我要让你尝尝被狠狠蹂躏的滋味！你永远都忘不了我用[#SPECIAL_PARSE_0]破你处的感觉！)]
+				#ELSEIF(sex.getSexPace(npc)==SEX_PACE_SUB_RESISTING:
+					[npc.speech(住手！我不想这么做！)][npc.she]意识到自己已经夺走了你的贞操，抱怨着，[npc.speech(从我身上下去，让我一个人静静！)]
+				#ELSE
+					[npc.speech(太棒了！)][npc.she]大叫着，[npc.speech(好[pc.girl]，特意把你的处女留给我！记住这一刻，记住是<i>我的</i>[#SPECIAL_PARSE_0]把你破处的！)]
+				#ENDIF
+			#ELSE
+				[npc.speech(太棒了！)][npc.she]大叫着，[npc.speech(好[pc.girl]，特意把你的处女留给我！记住这一刻，记住是<i>我的</i>[#SPECIAL_PARSE_0]把你破处的！)]
+			#ENDIF
+		</p>
+	#ENDIF
+	<p>
+		#IF(pc.hasHymen())
+			#IF(pc.hasFetish(FETISH_PURE_VIRGIN) && pc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+				随着最初的疼痛逐渐消失，变成了微弱的钝痛，当你感觉到涓涓细流从破损的阴道中流出时，你忍不住发出了最后一声呜咽。随着[npc.namePos][#SPECIAL_PARSE_0]再次插入你[pc.pussy+]，你发出了[pc.a_moan+]，你屈服于这种新的愉悦体验……
+			#ELSE
+				随着最初的疼痛逐渐消失为微弱的钝痛，你发出了最后的呜咽声，你想到了这是你将永远铭记的失去贞操的事实。随着[npc.namePos][#SPECIAL_PARSE_0]再次插入你[pc.pussy+]，你发出了[pc.a_moan+]，你屈服于这种新的快乐体验……
+			#ENDIF
+		#ELSE
+			由于没有经历过失去处女膜的痛苦，你发出了低沉的[pc.moan]，你想到了这是你将永远铭记的失去贞操的事实。随着[npc.namePos][#SPECIAL_PARSE_0]再次插入你[pc.pussy+]，你发出了[pc.a_moan+]，你屈服于这种新的快乐体验……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_VAGINAL_DOLL"><![CDATA[
+	<p>
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_VAGINA))
+			#IF(pc.hasHymen())
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你干燥的[pc.pussy]中时，你的眼前突然冒起金星。你非常想大叫出声，但你的身体仍顺从地一动不动保持安静。在没有丝毫润滑的情况下被插入，最好的情况也会有强烈的不适感，但由于[npc.nameHasFull]同时撕裂了你的处女膜，这已经不是“不适”二字可以描述的了。你努力想要无视这纯粹的痛苦。
+			#ELSE
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你干燥的[pc.pussy]中时，你遏制着自己想要呻吟的欲望，顺从地一动不动保持安静。在没有丝毫润滑的情况下被插入，最好的情况也会有强烈的不适感，但由于[npc.name]同时还夺走了你的贞操，你此刻的不适感强烈到前所未有。
+			#ENDIF
+		#ELSE
+			#IF(pc.hasHymen())
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你[pc.pussy+]中时，你突然觉得眼前一黑。你非常想大叫出声，但你的身体仍顺从地一动不动保持安静。幸好，你的小穴在被插入前已经润滑过，但由于[npc.nameHasFull]同时撕裂了你的处女膜，你仍然能感受到下体传来的疼痛。你努力想要无视这种不适感。
+			#ELSE
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你[pc.pussy+]中时，你突然觉得眼前一黑。你遏制着自己想要呻吟的欲望，顺从地一动不动保持安静。由于你已经润滑好了，而且早就丢掉了处女膜，你的处女小穴第一次被插入时完全没有不舒服的感觉，你开始享受起[npc.namePos]的[#SPECIAL_PARSE_0]在你的小穴中抽插的美妙感觉。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasHymen())
+			#IF(npc.hasFetish(FETISH_SADIST))
+				[npc.She]意识到你一定很痛苦，不禁发出邪恶的笑声。[npc.her]的施虐天性火上浇油，令[npc.her]在撕裂你处女膜的同时更为粗暴地插进你的小穴。
+			#ENDIF
+			#IF(pc.hasFetish(FETISH_MASOCHIST))
+				由于你是个极端的受虐狂，你的痛苦同时给你带来了巨大的快感。股间的剧痛反而带来纯粹的愉悦，你专注于这份痛感，在狂喜之中迷失自我。不幸的是，你的处女膜已经撕裂了，疼痛便也没有以前那样剧烈。即便如此，你仍然乐在其中。
+			#ELSE
+				尽管你想合拢双腿，你还是控制住了自己在[npc.name]抽出[npc.her]的[#SPECIAL_PARSE_0]还未重新插入时保持原位，你的处女膜已被撕裂，疼痛便也不再像之前的那样剧烈。你很快发现所有不适感都被快感取代。
+			#ENDIF
+		#ELSE
+			你渐渐进入了状态，在[npc.name]抽出[npc.her]的[#SPECIAL_PARSE_0]又重新插入时变得兴奋起来。而[npc.she]开始操你时，你不禁沉醉在快感中迷失自我。
+		#ENDIF
+	</p>
+	#IF(!npc.isMute() && !npc.isDoll())
+		<p>
+			#IF(game.isInSex())
+				#IF(sex.getSexPace(npc)==SEX_PACE_DOM_GENTLE)
+					[npc.speech(你还是处女？)][npc.she]轻声自语着，[npc.speech(你真是个非常好的好[pc.girl]，特意把你的处女留给我！你会永远记住，第一次进入你的是我的[#SPECIAL_PARSE_0]……)]
+				#ELSEIF(sex.getSexPace(npc)==SEX_PACE_DOM_ROUGH)
+					[npc.speech(才刚开始呢，骚货！)][npc.she]厉声[npc.moansVerb]着，[npc.speech(现在我已经夺走了你的童贞，我要让你尝尝被狠狠蹂躏的滋味！你永远都忘不了我的[#SPECIAL_PARSE_0]把你破处的感觉！)]
+				#ELSEIF(sex.getSexPace(npc)==SEX_PACE_SUB_RESISTING)
+					[npc.speech(住手！我不想这么做！)][npc.she]意识到自己已经夺走了你的贞操，懊恼地说着，[npc.speech(从我身上下去，让我一个人静静！)]
+				#ELSE
+					[npc.speech(太棒了！)][npc.she]大叫着，[npc.speech(好[pc.girl]，特意把你的处女留给我！记住这一刻，记住是<i>我的</i>[#SPECIAL_PARSE_0]把你破处的！)]
+				#ENDIF
+			#ELSE
+				[npc.speech(太棒了！)][npc.she]大叫着，[npc.speech(好[pc.girl]，特意把你的处女留给我！记住这一刻，记住是<i>我的</i>[#SPECIAL_PARSE_0]把你破处的！)]
+			#ENDIF
+		</p>
+	#ENDIF
+	<p>
+		#IF(pc.hasHymen())
+			#IF(pc.hasFetish(FETISH_PURE_VIRGIN) && pc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+				随着最初的疼痛逐渐消失，变成了微弱的钝痛，你仍然一动不动地待在原地，而你被破处的小穴中有一小股血液流淌出来。当[npc.namePos]的[#SPECIAL_PARSE_0]再次插进你[pc.pussy+]时，你集中注意感受着快感，屈服于这一崭新的体验……
+			#ELSE
+				随着最初的疼痛逐渐消失，变成了微弱的钝痛，你仍然一动不动地待在原地，想着你以后将永远记得你就是这样丢掉你的贞操的。当[npc.namePos]的[#SPECIAL_PARSE_0]再次插进你[pc.pussy+]时，你集中注意感受着快感，屈服于这一崭新的体验……
+			#ENDIF
+		#ELSE
+			尽管你无需经历失去处女摸的痛苦，你仍然一动不动地待在原地，想着你以后将永远记得你就是这样丢掉你的贞操的。当[npc.namePos]的[#SPECIAL_PARSE_0]再次插进你[pc.pussy+]时，你集中注意感受着快感，屈服于这一崭新的体验……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_VAGINAL_SLEEPING"><![CDATA[
+	<p>
+		你的梦境逐渐变得真实、躁动起来，你感觉自己的阴部在高涨的情欲中开始隐隐发痛，迫切需要被用力操。突然，你发现[npc.name]来到了你的面前，他将你扑倒在地，然后将[npc.her]的[#SPECIAL_PARSE_0]抵在了你[pc.labia+]上。虽然这正是你梦寐以求的，但是你发现，当自己真的身临其境的时候，自己又对即将童贞这件事感到了些许不确定以及不安。然而，在你尚未表达自己的想法之前，[npc.name]就贪婪地向前耸动，一下子就穿透了你的下体。
+	</p>
+	<p>
+		#IF(game.isInSex() && !sex.hasLubricationTypeFromAnyone(pc, ORIFICE_VAGINA))
+			#IF(pc.hasHymen())
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你干燥的[pc.pussy]中时，你的眼前突然冒起金星。你非常想大叫出声，但你的身体仍顺从地一动不动保持安静。在没有丝毫润滑的情况下被插入，最好的情况也会有强烈的不适感，但由于[npc.nameHasFull]同时撕裂了你的处女膜，这已经不是“不适”二字可以描述的了。你努力想要无视这纯粹的痛苦。
+			#ELSE
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你干燥的[pc.pussy]中时，你遏制着自己想要呻吟的欲望，顺从地一动不动保持安静。在没有丝毫润滑的情况下被插入，最好的情况也会有强烈的不适感，但由于[npc.name]同时还夺走了你的贞操，你此刻的不适感强烈到前所未有。
+			#ENDIF
+		#ELSE
+			#IF(pc.hasHymen())
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你[pc.pussy+]中时，你突然觉得眼前一黑。你非常想大叫出声，但你的身体仍顺从地一动不动保持安静。幸好，你的小穴在被插入前已经润滑过，但由于[npc.nameHasFull]同时撕裂了你的处女膜，你仍然能感受到下体传来的疼痛。你努力想要无视这种不适感。
+			#ELSE
+				当[npc.name]将[#SPECIAL_PARSE_0]深深插入你[pc.pussy+]中时，你突然觉得眼前一黑。你遏制着自己想要呻吟的欲望，顺从地一动不动保持安静。由于你已经润滑好了，而且早就丢掉了处女膜，你的处女小穴第一次被插入时完全没有不舒服的感觉，你开始享受起[npc.namePos]的[#SPECIAL_PARSE_0]在你的小穴中抽插的美妙感觉。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasHymen())
+			#IF(npc.hasFetish(FETISH_SADIST))
+				[npc.She]意识到你一定很痛苦，不禁发出邪恶的笑声。[npc.her]的施虐天性火上浇油，令[npc.her]在撕裂你处女膜的同时更为粗暴地插进你的小穴。
+			#ENDIF
+			#IF(pc.hasFetish(FETISH_MASOCHIST))
+				由于你是个极端的受虐狂，你的痛苦同时给你带来了巨大的快感。股间的剧痛反而带来纯粹的愉悦，你专注于这份痛感，在狂喜之中迷失自我。不幸的是，你的处女膜已经撕裂了，疼痛便也没有以前那样剧烈。即便如此，你仍然乐在其中。
+			#ELSE
+				尽管你想合拢双腿，你还是控制住了自己在[npc.name]抽出[npc.her]的[#SPECIAL_PARSE_0]还未重新插入时保持原位，你的处女膜已被撕裂，疼痛便也不再像之前的那样剧烈。你很快发现所有不适感都被快感取代。
+			#ENDIF
+		#ELSE
+			你渐渐进入了状态，在[npc.name]抽出[npc.her]的[#SPECIAL_PARSE_0]又重新插入时变得兴奋起来。而[npc.she]开始操你时，你不禁沉醉在快感中迷失自我。
+		#ENDIF
+	</p>
+	#IF(!npc.isMute() && !npc.isDoll())
+		<p>
+			#IF(game.isInSex())
+				#IF(sex.getSexPace(npc)==SEX_PACE_DOM_GENTLE)
+					[npc.speech(你还是处女？)][npc.she]轻声自语着，[npc.speech(你真是个非常好的好[pc.girl]，特意把你的处女留给我！你会永远记住，第一次进入你的是我的[#SPECIAL_PARSE_0]……)]
+				#ELSEIF(sex.getSexPace(npc)==SEX_PACE_DOM_ROUGH)
+					[npc.speech(才刚开始呢，骚货！)][npc.she]厉声[npc.moansVerb]着，[npc.speech(现在我已经夺走了你的童贞，我要让你尝尝被狠狠蹂躏的滋味！你永远都忘不了我的[#SPECIAL_PARSE_0]把你破处的感觉！)]
+				#ELSEIF(sex.getSexPace(npc)==SEX_PACE_SUB_RESISTING)
+					[npc.speech(住手！我不想这么做！)][npc.she]意识到自己已经夺走了你的贞操，懊恼地说着，[npc.speech(从我身上下去，让我一个人静静！)]
+				#ELSE
+					[npc.speech(太棒了！)][npc.she]大叫着，[npc.speech(好[pc.girl]，特意把你的处女留给我！记住这一刻，记住是<i>我的</i>[#SPECIAL_PARSE_0]把你破处的！)]
+				#ENDIF
+			#ELSE
+				[npc.speech(太棒了！)][npc.she]大叫着，[npc.speech(好[pc.girl]，特意把你的处女留给我！记住这一刻，记住是<i>我的</i>[#SPECIAL_PARSE_0]把你破处的！)]
+			#ENDIF
+		</p>
+	#ENDIF
+	<p>
+		#IF(pc.hasHymen())
+			#IF(pc.hasFetish(FETISH_PURE_VIRGIN) && pc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+				随着最初的疼痛逐渐消失，变成了微弱的钝痛，你仍然一动不动地待在原地，而你被破处的小穴中有一小股血液流淌出来。当[npc.namePos]的[#SPECIAL_PARSE_0]再次插进你[pc.pussy+]时，你集中注意感受着快感，屈服于这一崭新的体验……
+			#ELSE
+				随着最初的疼痛逐渐消失，变成了微弱的钝痛，你仍然一动不动地待在原地，想着你以后将永远记得你就是这样丢掉你的贞操的。当[npc.namePos]的[#SPECIAL_PARSE_0]再次插进你[pc.pussy+]时，你集中注意感受着快感，屈服于这一崭新的体验……
+			#ENDIF
+		#ELSE
+			尽管你无需经历失去处女摸的痛苦，你仍然一动不动地待在原地，想着你以后将永远记得你就是这样丢掉你的贞操的。当[npc.namePos]的[#SPECIAL_PARSE_0]再次插进你[pc.pussy+]时，你集中注意感受着快感，屈服于这一崭新的体验……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="VIRGINITY_LOSS_VAGINAL_ENDING"><![CDATA[
+	<p style='text-align:center;'>
+		#IF(pc.hasHymen())
+			[style.italicsTerrible(你的处女膜被撕裂了，失去了贞操！)]
+		#ELSEIF(pc.isDoll())
+			[style.italicsTerrible(你正式地失去了你的贞操！)]
+		#ELSE
+			[style.italicsTerrible(虽然你的处女膜已经被撕裂，但现在你已经正式失去了贞操！)]
+		#ENDIF
+	</p>
+	]]></htmlContent>
+	
+</dialogue>

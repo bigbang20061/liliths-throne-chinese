@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<ear>
+	<race>NoStepOnSnek_snake</race>
+	<transformationName><![CDATA[斑点蛇]]></transformationName>
+	<coveringType>SNAKE_SCALES</coveringType>
+	<tags/>
+	<name><![CDATA[耳朵]]></name>
+	<namePlural><![CDATA[耳朵]]></namePlural>
+	<descriptorsMasculine>
+		<descriptor><![CDATA[有鳞]]></descriptor>
+		<descriptor><![CDATA[锐利]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[有鳞]]></descriptor>
+		<descriptor><![CDATA[锐利]]></descriptor>
+	</descriptorsFeminine>
+	<transformationDescription><![CDATA[
+		几分钟后，热痒感逐渐消失。[npc.herHim]长出了精致的、鳞片覆盖的耳朵，末端又长又尖。<br/>
+		[npc.Name]现在拥有[style.boldSnake(尖尖的蛇耳朵)]，[npc.materialCompositionDescriptor][npc.earFullDescription]。
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.She]有着一对尖尖的蛇耳，[npc.materialCompositionDescriptor][npc.earFullDescription(true)]#IF(npc.isPiercedEar())，且已经打过孔#ENDIF。
+		#IF(npc.getFaceType()==FACE_TYPE_HUMAN)
+			细碎的鳞片从[npc.her]的耳朵根延伸至脸颊。
+		#ENDIF
+	]]></bodyDescription>
+</ear>

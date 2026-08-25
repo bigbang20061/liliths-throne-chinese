@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[裙子里缝着的标签告诉你这是由"Phlarx"制作的。]]></clothingAuthorTag>
+		<value>800</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[复古连衣裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[复古连衣裙]]></namePlural> 
+		<description><![CDATA[一条及膝连衣裙，看起来非常适合女明星或者是汽车餐厅里的顾客。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>vintage_dress.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"> 
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN">
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="NOT_WHITE"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="BLACK_OR_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="BLACK_OR_WHITE"/>
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColoursDye/>
+		
+		<defaultPatterns patternChance="0.5" colourNameDerivedFromPattern="false"> 
+			<pattern>polka_dots_tiny</pattern>
+			<pattern>polka_dots_small</pattern>
+			<pattern>polka_dots_big</pattern>
+			<pattern>cow_patterned</pattern>
+			<pattern>horizontally_tiger_striped</pattern>
+		</defaultPatterns>
+		<patternPrimaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_WHITE</colour>
+		</patternPrimaryColours>
+		<patternPrimaryColoursDye values="ALL"/>
+		<patternSecondaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_WHITE</colour>
+		</patternSecondaryColours>
+		<patternSecondaryColoursDye values="ALL"/>
+		<patternTertiaryColours/>
+		<patternTertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>DRESS</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]拉开[npc.her]的拉链然后将复古连衣裙从[npc.her]的头上脱下。]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.namePos]的腰带然后将复古连衣裙从[npc2.her]的头上脱下。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]解开[npc2.namePos]的腰带然后粗暴地将复古连衣裙从[npc2.her]的头上拽下。]]></otherRough>
+	</displacementText>
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将复古连衣裙从头上拉下覆盖[npc.her]的身体，然后[npc.her]系上腰带。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将复古连衣裙从头上拉下覆盖[npc2.namePos]的身体，然后[npc2.her]系上腰带。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将复古连衣裙从头上拉下覆盖[npc2.namePos]的身体，然后[npc2.her]系上腰带。
+]]></otherRough>
+	</replacementText>
+
+	
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]提起[npc.her]复古连衣裙的裙子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉起[npc2.namePos]复古连衣裙的裙子的下摆。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拉起[npc2.namePos]复古连衣裙的下摆。]]></otherRough>
+	</displacementText><replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]拉下[npc.her]复古连衣裙的裙子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]放下[npc2.namePos]的复古连衣裙的下摆。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地放下[npc2.namePos]的复古连衣裙的下摆。]]></otherRough>
+	</replacementText>
+</clothing>

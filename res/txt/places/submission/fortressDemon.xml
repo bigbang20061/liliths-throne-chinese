@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+	
+	<htmlContent tag="ENTER_FORTRESS"><![CDATA[
+	<p>
+		进入要塞
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE"><![CDATA[
+	<p>
+		大门口
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LEAVE_FORTRESS"><![CDATA[
+	<p>
+		离开要塞
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="COURTYARD"><![CDATA[
+	<p>
+		空旷而肮脏的庭院
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WELL"><![CDATA[
+	<p>
+		井
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP"><![CDATA[
+	<p>
+		主楼
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="CELLS"><![CDATA[
+	<p>
+		单元建筑
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="TREASURY"><![CDATA[
+	<p>
+		小藏宝阁
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

@@ -1,0 +1,807 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<scene id="start">
+		<preParsingEffects><![CDATA[
+			[#game.addNPC('LunetteRanged', 'attacker')]
+			[#attacker.setLocation(pc)]
+			[#flags.setFlag(FLAG_innoxia_fields_centaur_attacker_talked, false)]
+		]]></preParsingEffects>
+		<title><![CDATA[掠夺者来袭]]></title>
+		<author><![CDATA[Innoxia]]></author>
+		<content folderPath="txt/encounters/fields/centaur_ranged">START</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Fight: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					拒绝向半人马付钱，准备自卫！
+]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_encounters_fields_centaur_ranged_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_encounters_fields_centaur_ranged_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies companionsAreAllies="true"/>
+					<enemies>
+						<enemy leader="true"><![CDATA[attacker]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[你告诉半人马她拿不到一分钱，准备自卫。]]></combatant>
+						<combatant id="attacker"><![CDATA[掠夺者的脸因愤怒而扭曲，她尖叫起来：[attacker.speech(你这个无耻的[pc.insult]！我会让你生不如死！)]]]></combatant>
+					</openingDescriptions>
+				</combatVariables>
+			</response>
+			<!-- Pay: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[留下买路钱(#IF(pc.getMoney()>=attacker.getPaymentDemand())[style.moneyFormat([#attacker.getPaymentDemand()], span)]#ELSE[style.moneyFormatUncoloured([#attacker.getPaymentDemand()], span)]#ENDIF)]]></responseTitle>
+				<responseTooltip><![CDATA[#IF(pc.getMoney()>=attacker.getPaymentDemand())交出劫匪要的[style.intToString([#attacker.getPaymentDemand()])]个火币。#ELSE你付不起……#ENDIF]]></responseTooltip>
+				<nextDialogue><![CDATA[#IF(pc.getMoney()>=attacker.getPaymentDemand())innoxia_encounters_fields_centaur_ranged_payment#ELSEnull#ENDIF]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.addSpecialParsingString('[style.intToString([#attacker.getPaymentDemand()])]', true)]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-attacker.getPaymentDemand()))]
+				]]></effects>
+			</response>
+			<!-- Submit: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[顺从]]></responseTitle>
+				<responseTooltip><![CDATA[
+					向掠夺者屈服，乞求怜悯。
+]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_submit]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(attacker.incrementLust(10, false))]
+				]]></effects>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Payment given: -->
+	
+	<scene id="payment">
+		<content folderPath="txt/encounters/fields/centaur_ranged">PAYMENT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_NPC_REMOVAL]]></colour>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					掠夺者对给出的报酬很满意，便告辞离去，放你离开……
+					<br/>[style.italicsBad(该半人马将永远从游戏中移除。)]
+]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.banishNPC(attacker)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Submit: -->
+	
+	<scene id="submit">
+		<content folderPath="txt/encounters/fields/centaur_ranged">SUBMIT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- 1: Generic submit -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跪下]]></responseTitle>
+				<responseTooltip><![CDATA[
+					跪在地上，等待半人马会怎么处置你。
+]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'SUBMIT_GENERIC'))]
+					#IF(!attacker.hasPenis())
+						[#attacker.growPenis()]
+					#ENDIF
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_standard]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_STANDING_SUBMISSIVE]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			
+			<!-- 2: Present pussy (grow/use cock to fuck player) -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[露出小穴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasVagina())
+						你没有小穴给掠夺者……
+					#ELSE
+						你的阴道被限制了，没办法献给掠夺者……
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[露出小穴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					露出小穴，让掠夺者对你发情。
+					#IF(!attacker.hasPenis())
+						<br/>[style.italicsSexDom(半人马会长出恶魔般的肉棒操你！)]
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'SUBMIT_PUSSY'))]
+					#IF(!attacker.hasPenis())
+						[#attacker.growPenis()]
+					#ENDIF
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_vaginal]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[attacker]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			
+			<!-- 3: Kiss cock (face-fuck) -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[亲吻肉棒]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，无法亲吻掠夺者的鸡巴……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[亲吻肉棒]]></responseTitle>
+				<responseTooltip><![CDATA[
+					爬到掠夺者身下亲吻她的鸡巴。
+					#IF(!attacker.hasPenis())
+						<br/>[style.italicsSexDom(半人马会长出恶魔般的肉棒给你亲！)]
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'SUBMIT_KISS_COCK'))]
+					#IF(!attacker.hasPenis())
+						[#attacker.growPenis()]
+					#ENDIF
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_blowjob]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[attacker]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			
+			<!-- 4: Kiss pussy (face-sitting) -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[亲吻小穴]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，无法亲吻掠夺者的小穴……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[亲吻小穴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					爬到掠夺者身下亲吻她的小穴。
+					#IF(!attacker.hasVagina())
+						<br/>[style.italicsSexDom(半人马会长出恶魔般的淫穴给你亲！)]
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'SUBMIT_KISS_PUSSY'))]
+					#IF(!attacker.hasVagina())
+						[#attacker.growVagina()]
+					#ENDIF
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_cunnilingus]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[LYING_DOWN_FACE_SITTING_REVERSE]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_RECEIVING_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[attacker]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			
+			<!-- 6: Present asshole (grow/use cock to fuck player's ass) -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.isAbleToAccessCoverableArea(CA_ANUS, true) && game.isAnalContentEnabled()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[露出肛门]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你的屁股被限制，没办法把屁穴献给掠夺者……
+]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToAccessCoverableArea(CA_ANUS, true) && game.isAnalContentEnabled()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[露出肛门]]></responseTitle>
+				<responseTooltip><![CDATA[
+					露出屁穴以便掠夺者操你的屁眼。
+					#IF(!attacker.hasPenis())
+						<br/>[style.italicsSexDom(半人马会长出恶魔般的肉棒操你！)]
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'SUBMIT_ASSHOLE'))]
+					#IF(!attacker.hasPenis())
+						[#attacker.growPenis()]
+					#ENDIF
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_anal]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[attacker]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			
+			<!-- 7: Kiss asshole (face-sitting) -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && game.isAnalContentEnabled()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[亲吻肛门]]></responseTitle>
+				<responseTooltip><![CDATA[你的嘴被限制，无法亲吻掠夺者的屁穴……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && game.isAnalContentEnabled()]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[亲吻肛门]]></responseTitle>
+				<responseTooltip><![CDATA[
+					爬到掠夺者身下亲吻她的屁穴。
+]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'SUBMIT_KISS_ASSHOLE'))]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_anilingus]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[LYING_DOWN_FACE_SITTING_REVERSE]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent/>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueAnus_RECEIVING_ANILINGUS_START]]></id>
+							<performer><![CDATA[attacker]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			
+		</responses>
+	</scene>
+	
+	<scene id="after_sex_sub">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'AFTER_SEX_SUB'))]
+		]]></preParsingEffects>
+		<!-- TODO expansion:
+			#IF(game.isNonConEnabled())
+				[#pc.addStatusEffect(SE_innoxia_centaur_ranged_seal, 14400)]
+			#ENDIF
+		-->
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[掠夺者已经玩腻了，她残忍地一笑，一脚把你踢开……]]></tooltip>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_NPC_REMOVAL]]></colour>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					既然掠夺者已经离开，你也只能继续赶路……
+					<br/>[style.italicsBad(该半人马将永远从游戏中移除。)]
+]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.banishNPC(attacker)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Won combat: -->
+	
+	<scene id="combat_won">
+		<content folderPath="txt/encounters/fields/centaur_ranged">COMBAT_WON</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Continue: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_NPC_REMOVAL]]></colour>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你决定不和掠夺者扯上关系，于是继续赶路……
+					<br/>[style.italicsBad(该半人马将永远从游戏中移除。)]
+]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'COMBAT_WON_END'))]
+					[#game.banishNPC(attacker)]
+				]]></effects>
+			</response>
+			
+			<!-- Sex (no pace, gentle, rough): -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[做爱]]></responseTitle>
+				<responseTooltip><![CDATA[乘胜追击，和掠夺者来一场支配型性爱。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariables enabled="true">
+					<consensual><![CDATA[true]]></consensual>
+					<subHasEqualControl><![CDATA[false]]></subHasEqualControl>
+					<dominants>
+						<character><![CDATA[pc]]></character>
+					</dominants>
+					<submissives>
+						<character><![CDATA[attacker]]></character>
+					</submissives>
+					<dominantSpectators/>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_dom]]></postSexDialogue>
+					<sexStartContent folderPath="txt/encounters/fields/centaur_ranged">COMBAT_WON_SEX</sexStartContent>
+					<tags/>
+					<ongoingActionsAtStart/>
+				</sexVariables>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[做爱(温柔)]]></responseTitle>
+				<responseTooltip><![CDATA[乘胜追击，和掠夺者来一场温柔的支配型性爱。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariables enabled="true">
+					<consensual><![CDATA[true]]></consensual>
+					<subHasEqualControl><![CDATA[false]]></subHasEqualControl>
+					<dominants>
+						<character><![CDATA[pc]]></character>
+					</dominants>
+					<submissives>
+						<character><![CDATA[attacker]]></character>
+					</submissives>
+					<dominantSpectators/>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_dom]]></postSexDialogue>
+					<sexStartContent folderPath="txt/encounters/fields/centaur_ranged">COMBAT_WON_SEX_GENTLE</sexStartContent>
+					<tags>
+						<tag>START_PACE_PLAYER_DOM_GENTLE</tag>
+					</tags>
+					<ongoingActionsAtStart/>
+				</sexVariables>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[做爱(粗暴)]]></responseTitle>
+				<responseTooltip><![CDATA[乘胜追击，和掠夺者来一场粗暴的支配型性爱。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariables enabled="true">
+					<consensual><![CDATA[true]]></consensual>
+					<subHasEqualControl><![CDATA[false]]></subHasEqualControl>
+					<dominants>
+						<character><![CDATA[pc]]></character>
+					</dominants>
+					<submissives>
+						<character><![CDATA[attacker]]></character>
+					</submissives>
+					<dominantSpectators/>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_dom]]></postSexDialogue>
+					<sexStartContent folderPath="txt/encounters/fields/centaur_ranged">COMBAT_WON_SEX_ROUGH</sexStartContent>
+					<tags>
+						<tag>START_PACE_PLAYER_DOM_ROUGH</tag>
+					</tags>
+					<ongoingActionsAtStart/>
+				</sexVariables>
+			</response>
+			
+			<!-- Submit: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[顺从]]></responseTitle>
+				<responseTooltip><![CDATA[
+					向掠夺者屈服。
+]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[innoxia_encounters_fields_centaur_ranged_submit]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'COMBAT_WON_SUBMIT'))]
+					[#game.appendToTextStartStringBuilder(attacker.incrementLust(10, false))]
+				]]></effects>
+				<requiredFetishes>
+					<fetish><![CDATA[FETISH_SUBMISSIVE]]></fetish>
+				</requiredFetishes>
+				<corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+			</response>
+			
+			<!-- Open inventory: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[物品栏]]></responseTitle>
+				<responseTooltip><![CDATA[你打败了半人马，此时再也没什么能阻挡你把手伸向[attacker.her]的衣服和道具……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.openInventoryDialogue(attacker, INVENTORY_INTERACTION_FULL_MANAGEMENT)]
+				]]></effects>
+			</response>
+			
+			<!-- Talk: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[质疑]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_fields_centaur_attacker_talked))
+						你尝试问半人马问题，但她完全不合作……
+					#ELSE
+						问掠夺者从哪里来，为什么要袭击无辜的游客。
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_fields_centaur_attacker_talked))
+						null
+					#ELSE
+						innoxia_encounters_fields_centaur_ranged_combat_won_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_fields_centaur_attacker_talked, true)]
+				]]></effects>
+			</response>
+			
+		</responses>
+	</scene>
+	
+	<scene id="after_sex_dom">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你已经和掠夺者爽够了……]]></tooltip>
+		<content folderPath="txt/encounters/fields/centaur_ranged">AFTER_SEX_DOM</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_NPC_REMOVAL]]></colour>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你爽过了，决定离开掠夺者，继续上路……
+					<br/>[style.italicsBad(该半人马将永远从游戏中移除。)]
+]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'AFTER_SEX_DOM_END'))]
+					[#game.banishNPC(attacker)]
+				]]></effects>
+			</response>
+			
+			<!-- Open inventory: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[物品栏]]></responseTitle>
+				<responseTooltip><![CDATA[你打败了半人马，此时再也没什么能阻挡你把手伸向[attacker.her]的衣服和道具……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.openInventoryDialogue(attacker, INVENTORY_INTERACTION_FULL_MANAGEMENT)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="combat_won_talk">
+		<content folderPath="txt/encounters/fields/centaur_ranged">COMBAT_WON_TALK</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_encounters_fields_centaur_ranged_combat_won"/>
+	</scene>
+	
+	<!-- Lost combat: -->
+	
+	<scene id="combat_lost">
+		<content folderPath="txt/encounters/fields/centaur_ranged">COMBAT_LOST</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Non-con fucked: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[你无法阻止半人马支配性地操你……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_standard]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent folderPath="txt/encounters/fields/centaur_ranged">COMBAT_LOST_FUCKED</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[抵抗]]></responseTitle>
+				<responseTooltip><![CDATA[拒绝服从半人马，并尝试在她操你时反抗……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_standard_noncon]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_melee_after_sex_sub]]></postSexDialogue>
+					<sexStartContent folderPath="txt/encounters/fields/centaur_ranged">COMBAT_LOST_FUCKED_RESIST</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			
+			<!-- Non-con disabled, so give player chance to leave: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_NPC_REMOVAL]]></colour>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					拒绝向半人马屈服，等待[attacker.herHim]离开后继续上路……
+					<br/>[style.italicsBad(该半人马将永远从游戏中移除。)]
+]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/encounters/fields/centaur_ranged', 'COMBAT_LOST_CONTINUE'))]
+					[#game.banishNPC(attacker)]
+				]]></effects>
+			</response>
+			
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[顺从]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你按照半人马所说的那样服从她，允许她支配你的一切……
+]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_centaur_player_sub_standard]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_encounters_fields_centaur_ranged_after_sex_sub]]></postSexDialogue>
+					<sexStartContent folderPath="txt/encounters/fields/centaur_ranged">COMBAT_LOST_FUCKED_WILLING</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	
+	<coreAtributes>
+	
+		<authorTag><![CDATA["Made by the DSG Jewellers Guild" 被刻在宝石背面的桥上。]]></authorTag>
+		
+		<value>500000</value>
+		
+		<determiner><![CDATA[]]></determiner>
+		
+		<name appendColourName="false"><![CDATA[艾瑟克的戒指]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[艾瑟克的戒指]]></namePlural>
+		
+		<description><![CDATA[一件怪异的珠宝，内圈镌刻着未知语言的铭文，看起来非常古旧。中央的眼形宝石似乎正在凝视着你。]]></description>
+		
+		<physicalResistance>0</physicalResistance>
+		
+		<femininity>ANDROGYNOUS</femininity>
+		
+		<slot>FINGER</slot>
+		
+		<rarity>QUEST</rarity>
+		
+		<clothingSet/>
+		
+		<imageName>seawings_ring.svg</imageName>
+		
+		<imageEquippedName/>
+		
+		<enchantmentLimit/>
+		
+		<stickers>
+			<category id="inscription" priority="1"> 
+				<categoryName><![CDATA[Inscription]]></categoryName> 
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1" colourSelected=""> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix priority="1"><![CDATA[]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="scratches" priority="1" defaultSticker="false" zLayer="1" colourSelected="55a2d5"> 
+					<stickerName><![CDATA[刮痕]]></stickerName> 
+					<namePrefix/> 
+					<namePostfix/> 
+					<descriptionModification fullReplacement="true" priority="1"><![CDATA[这枚戒指是一件罕见的前龙陨时代手工艺品，由莉索菲亚赠送给那些她认为特别忠诚的人。大多数现代龙认为它是奴隶制度的象征，然而，仍有些人将其作为传家宝，以提醒他们在古老的时代犯下的过错。戒指上的铭文曾是“忠实仆人”，但[eisek.Name]擦去了“仆人”二字，将旧时代令人沮丧的残渣变为伴你走向未来的希望之征。]]></descriptionModification> 
+					<imageName zLayer="1">seawings_ring_st_scratch.svg</imageName> 					
+					<itemTagsAdded/> 
+					<itemTagsRemoved/> 
+					<unavailabilityText showDisabledButton="false"><![CDATA[
+							unavailable
+					]]></unavailabilityText> 
+					<availabilityText><![CDATA[
+						Part of the inscription has been scratched out.
+					]]></availabilityText> 
+				</sticker>
+			</category>
+		</stickers>
+		
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>FINGERS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="JUST_GOLD"/>
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLUE</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL_WITH_METAL"/>
+		
+		<itemTags> 
+			<tag>NOT_FOR_SALE</tag>
+			<tag>NO_RANDOM_SPAWN</tag>
+			<tag>UNENCHANTABLE</tag>
+		</itemTags>
+	</coreAtributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把戒指滑到[npc.her][npc.finger]上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]把戒指滑到[npc2.namePos]的[npc2.finger]上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行把戒指套在[npc2.namePos]的[npc2.finger]上。
+]]></otherRough>
+	</replacementText>
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+ [npc.Name]从[npc.her][npc.finger]上摘下戒指。
+]]></self>
+		<other><![CDATA[
+[npc.Name]从[npc2.namePos]的[npc2.finger]上摘下戒指。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]猛力将戒指从[npc2.namePos]的[npc2.finger]上拽下。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

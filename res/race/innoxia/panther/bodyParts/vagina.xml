@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<vagina>
+	<race>innoxia_panther</race>
+	
+	<transformationName><![CDATA[豹]]></transformationName>
+	
+	<coveringType>VAGINA</coveringType>
+	
+	<fluidType>innoxia_panther_girlcum</fluidType>
+	
+	<eggLayer>false</eggLayer>
+	
+	<names>
+		<name><![CDATA[豹]]></name>
+	</names>
+	<namesPlural>
+		<name><![CDATA[豹]]></name>
+	</namesPlural>
+	
+	<descriptors>
+		<descriptor><![CDATA[性感]]></descriptor>
+	</descriptors>
+	
+	<defaultOrificeModifiers>
+		<modifier>PUFFY</modifier>
+	</defaultOrificeModifiers>
+	
+	<transformationDescription><![CDATA[
+			[npc.She]感受到快感的波浪上蹿到腹股沟，发出了兴奋的浪叫声。这加剧了[npc.her]的小缝不受控制地抽动和收缩。片刻后，快感消散，[npc.she]发现[npc.her]的小穴形状变成了明显的豹形态。
+		</p>
+		<p>
+			[npc.she]刚以为转化要结束了，小穴就不由自主地缩紧，[npc.her][npc.lips+]间发出狂喜的尖叫，一种温暖的抽痛传遍小腹。[npc.she]眼前闪现出幻想的图景：跳动的豹阴茎深深插入[npc.her]稚嫩的小穴。[npc.her]的尖叫渐渐变为饕足的呜咽，[npc.she]想象着它把精液泵入[npc.her]新生的子宫。来得快去得也快，这副图景从[npc.her]的脑海中消散。抽痛的余波冲刷过[npc.her]的身体，[npc.her]的女性生殖器官完成了转化。
+			<br/>[npc.Name]现在拥有[style.boldPanther(豹的阴道)]，[npc.pussyColourPrimary(true)]阴唇和[npc.pussyColourSecondary(true)]内壁。
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.she]拥有#IF(npc.isPiercedVagina())一个打孔的#ELSE一个#ENDIF豹小穴，[npc.labiaSize]，[npc.pussyPrimaryColour(true)]阴唇和[npc.pussySecondaryColour(true)]内壁。
+]]></bodyDescription>
+	
+</vagina>

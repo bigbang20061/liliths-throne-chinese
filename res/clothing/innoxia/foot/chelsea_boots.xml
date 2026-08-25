@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[切尔西靴]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[切尔西靴]]></namePlural>
+		<description><![CDATA[一双中性风格的切尔西风踝靴。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>FOOT</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>chelsea_boots.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/> 
+		<primaryColours values="LEATHER"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚滑入切尔西靴中。
+]]></self>
+    <other><![CDATA[
+[npc.Name]让[npc2.namePos]将[npc2.feet]滑入切尔西靴中。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的脚强行塞进切尔西靴中。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下[npc.her]的切尔西靴。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的切尔西靴脱下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地把[npc2.namePos]的切尔西靴猛力拖脱。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

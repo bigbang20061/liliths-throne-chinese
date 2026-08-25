@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>25</value> 
+		<determiner><![CDATA[一块]]></determiner>
+		<name><![CDATA[糖饼干]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[糖饼干]]></namePlural>
+		<description><![CDATA[这是一种独立包装的糖饼干，表面覆盖着白色糖衣和五颜六色的糖粉。虽然包装上的图标是一只驯鹿，但它宣称所有种族都可以放心食用。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/reindeer/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">reindeer_sugar_cookie.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_REINDEER_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[驯鹿]]></potionDescriptor>
+		<associatedRace>REINDEER_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(3)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感觉强壮了很多……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 3)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>REINDEER_GIFT</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]从包装中取出糖饼干，然后扔进嘴里。尽管看起来很正常，但不久后，[npc.she]意识到这个味道完全不同寻常，因为它既甜腻又咸。尽管味道有点不同寻常，但它还是美味的，不久后，[npc.she]发现[npc.herself]已经吃光了整个饼干。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]从包装中取出糖饼干，然后扔进[npc2.namePos]嘴里。尽管看起来很正常，但不久后，[npc2.name]意识到这个味道完全不同寻常，因为它既甜腻又咸。尽管味道有点不同寻常，但它还是美味的，不久后，[npc2.she]发现[npc2.herself]已经吃光了整个饼干。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

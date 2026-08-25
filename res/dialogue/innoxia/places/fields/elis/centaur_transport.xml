@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<scene id="exterior">
+		<content folderPath="txt/places/fields/elis/centaur_transport">EXTERIOR</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[马厩]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_centaur_transport_introduced))
+						这个马厩看起来真的荒废了。除了继续赶路，你在这里无事可做。
+					#ELSEIF(flags.hasFlag(FLAG_innoxia_centaur_transport_setup_in_progress))
+						阿斯特拉皮告诉你，如果你想使用他们的服务，请明天再来。
+					#ELSE
+						走近马厩，看看能否找到阿斯特拉皮或弗洛狄。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_centaur_transport_introduced) || flags.hasFlag(FLAG_innoxia_centaur_transport_setup_in_progress))
+						null
+					#ELSE
+						innoxia_places_fields_elis_centaur_transport_approach
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="approach">
+		<content folderPath="txt/places/fields/elis/centaur_transport">APPROACH</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						马厩目前正在开放，你可以进去寻找阿斯特拉皮或者弗洛狄。
+					#ELSE
+						马厩只在[style.italicsMinorBad([units.time(5.75)]-[units.time(15)])]时间段开放，如果你想找阿斯特拉皮或者弗洛狄，你需要在正确的时间过来。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						innoxia_places_fields_elis_centaur_transport_approach_inside
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!game.isHourBetween(5.75, 15)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[等待&进入]]></responseTitle>
+				<responseTooltip><![CDATA[车站目前关闭了，你在考虑是否要在原地待到[units.time(5.75)]等车站开门再进去。你决定……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_centaur_transport_approach_inside]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					[#game.getMinutesUntilTimeInMinutes(5.75*60)]
+				]]></secondsPassed>
+				<!-- Manually set Vronti here in effects as preParsing is called after time passed -->
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/centaur_transport', 'APPROACH_WAIT'))]
+					[#vronti.setLocation(pc, false)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.isHourBetween(5.75, 15))
+						你决定离开这个建筑。
+					#ELSE
+						马厩只在[style.italicsMinorBad([units.time(5.75)]-[units.time(15)])]时间段开放，你应该在那个时候再来找阿斯特拉皮或者弗洛狄。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/centaur_transport', 'LEAVE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="approach_inside">
+		<!-- If time is:
+			05:45-6:00 - Vronti waiting there
+			08:45-9:00 - Astrapi waiting there
+			11:45-12:00 - Vronti waiting there
+			14:45-15:00 - Astrapi waiting there
+			-->
+		<preParsingEffects><![CDATA[
+			#IF(game.isHourBetween(5.75, 6) || game.isHourBetween(11.75, 12))
+				[#vronti.setLocation(pc, false)]
+			#ELSEIF(game.isHourBetween(8.75, 9) || game.isHourBetween(14.75, 15))
+				[#astrapi.setLocation(pc, false)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/centaur_transport">APPROACH_INSIDE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!game.getCharactersPresent().contains(astrapi) && !game.getCharactersPresent().contains(vronti)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[等待]]></responseTitle>
+				<responseTooltip><![CDATA[目前阿斯特拉皮和弗洛狄都不在，如果你还想坐车去伊利斯，你必须等到下次发车时间。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_centaur_transport_approach_inside]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					#IF(game.getHourOfDay()>12)
+						[#game.getMinutesUntilTimeInMinutes(14.75*60)]
+					#ELSEIF(game.getHourOfDay()>9)
+						[#game.getMinutesUntilTimeInMinutes(11.75*60)]
+					#ELSEIF(game.getHourOfDay()>6)
+						[#game.getMinutesUntilTimeInMinutes(8.75*60)]
+					#ENDIF
+				]]></secondsPassed>
+				<!-- Duplicate effects as preParsing is called after time passed, so these effects aren't applied unless put here -->
+				<effects><![CDATA[
+					#IF(game.getHourOfDay()>12)
+						[#vronti.setLocation(pc, false)]
+					#ELSEIF(game.getHourOfDay()>9)
+						[#astrapi.setLocation(pc, false)]
+					#ELSEIF(game.getHourOfDay()>6)
+						[#vronti.setLocation(pc, false)]
+					#ELSE
+						[#astrapi.setLocation(pc, false)]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(astrapi) || game.getCharactersPresent().contains(vronti)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.getMoney()>=250)
+						御城区[style.moneyFormat(250, span)]
+					#ELSE
+						御城区[style.moneyFormatUncoloured(250, span)]
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()>=250)
+						#IF(game.getCharactersPresent().contains(astrapi))
+							选择阿斯特拉皮的服务，让她载你到御城区。
+						#ELSE
+							选择弗洛狄的服务，让他载你到御城区。
+						#ENDIF
+					#ELSE
+						你没有足够的火币购买前往御城区的乘车服务。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(pc.getMoney()>=250)
+						#IF(game.getCharactersPresent().contains(astrapi))
+							innoxia_places_fields_centaur_transport_astrapi_start
+						#ELSE
+							innoxia_places_fields_centaur_transport_vronti_start
+						#ENDIF
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(game.getCharactersPresent().contains(astrapi) && astrapi.isVisiblyPregnant())
+						[#astrapi.setCharacterReactedToPregnancy(pc, true)]
+					#ENDIF
+					[#flags.setFlag(FLAG_innoxia_centaur_travel_to_elis, false)]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#game.getCharactersPresent().contains(astrapi) || game.getCharactersPresent().contains(vronti)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[回绝]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCharactersPresent().contains(astrapi))
+						告诉阿斯特拉皮你目前不想前往御城区，并离开马厩。
+					#ELSE
+						告诉弗洛狄你目前不想前往御城区，并离开马厩。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(game.getCharactersPresent().contains(astrapi) && astrapi.isVisiblyPregnant())
+						[#astrapi.setCharacterReactedToPregnancy(pc, true)]
+					#ENDIF
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/centaur_transport', 'LEAVE_BARN'))]
+					[#astrapi.returnToHome()]
+					[#vronti.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

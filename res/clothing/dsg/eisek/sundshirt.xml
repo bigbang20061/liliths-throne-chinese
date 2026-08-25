@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[“DSG织厂定制” 被粗糙地缝在侧缝旁的面料上。]]></authorTag>
+
+		<value>100</value> 
+
+		<determiner><![CDATA[一件]]></determiner>
+
+		<name><![CDATA[亚麻衬衫]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[亚麻衬衫]]></namePlural> 
+
+		<description><![CDATA[由粗亚麻制成的简单短袖衬衫。尽管长度较长，但侧下部开口，以保持良好的机动性。它本来可以作为打底衫穿着，但它却足够不透明，可以作为外衣穿着。]]></description> 
+
+		<physicalResistance>0</physicalResistance> 
+
+		<femininity>MASCULINE</femininity> 
+
+		<slot>TORSO_UNDER</slot> 
+
+		<rarity>COMMON</rarity> 
+
+		<clothingSet/>
+
+		<imageName>sundshirt.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+
+				<clothingAccessBlocked/> 
+
+				<concealedSlots/> 
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots>
+					<slot>CHEST</slot>
+					<slot>NIPPLE</slot>
+					<slot>STOMACH</slot>
+					<slot>PIERCING_STOMACH</slot>
+					<slot>PIERCING_NIPPLE</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_WHITE"/> 
+		<primaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>NO_RANDOM_SPAWN</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]穿上了亚麻衬衫。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]帮助[npc2.name]把[npc2.her]的双臂穿过亚麻衬衣的袖子，[npc.she]拉下上衣覆盖[npc2.her]的躯干。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把[npc2.name]的双臂塞入亚麻衬衣的袖子，同时粗鲁地将剩余部分拉下覆盖[npc2.her]的躯干。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]脱下了亚麻衬衫。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的亚麻衬衣拉下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]抓住[npc2.namePos]的蛙服，粗暴地把它从[npc2.her]头上扯下。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+		[npc.Name]向下拽了拽身上的亚麻衬衫。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的亚麻衬衣拉回覆盖[npc2.her]的躯干。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把[npc2.namePos]的亚麻衬衣拉回覆盖[npc2.her]的躯干。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+		[npc.Name]上卷身上的亚麻衬衫到[npc.her]下巴。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的亚麻衬衣拉起，几乎到[npc2.her]下巴下方。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的亚麻衬衣拉上，仅仅到[npc2.her]下巴下方。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

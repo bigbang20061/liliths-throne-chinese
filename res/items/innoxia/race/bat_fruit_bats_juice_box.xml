@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>20</value> 
+		<determiner><![CDATA[一盒]]></determiner>
+		<name><![CDATA[果蝠果汁]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[果蝠果汁]]></namePlural>
+		<description><![CDATA[一个小纸板盒，标签上写着“果蝠果汁”。在盒子的一侧，有一个半裸的蝙蝠女的图像，她正在把各种水果的果汁挤在她的胸部上。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="75">bat_fruit_bats_juice_box.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_ARCANE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_ARCANE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(1)]到“药剂效果” ]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股清爽的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_ARCANE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>BAT_CAVERNS_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.name]拆下果蝠果汁的盒前附着的吸管，用它穿破顶部的铝箔圆圈，然后将[npc.her][npc.lips]紧紧包裹在上面，迅速喝掉盒子内包含的所有热带水果味液体。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.name]拆下果蝠果汁的盒前面附着的吸管，用它穿破顶部的铝箔圆圈，然后让[npc2.name]将[npc2.her][npc2.lips]紧紧包裹在吸管上，喝掉盒子内包含的所有热带水果味液体。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

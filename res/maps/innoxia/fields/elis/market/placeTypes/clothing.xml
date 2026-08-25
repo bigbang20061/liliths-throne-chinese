@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<placeType>
+	<worldRegion>FIELD_CITY</worldRegion>
+	<name><![CDATA[彩虹的尽头]]></name>
+	<tooltipDescription><![CDATA[这个摊位由一对雌性半狐人经营，她们卖各种色彩斑斓的服饰。]]></tooltipDescription>
+	<virginityLossDescription><![CDATA[在伊利斯的农贸市场]]></virginityLossDescription>
+	<sexBlockedFromCharacterPresent>true</sexBlockedFromCharacterPresent>
+	<svgName>clothing</svgName>
+	<colour>BASE_ROSE</colour>
+	<backgroundColour>MAP_BACKGROUND</backgroundColour>
+	<encounterType>null</encounterType>
+	<dialogue>innoxia_places_fields_elis_market_clothing</dialogue>
+	<populationPresent>
+		<population startMinutes="480" endMinutes="1079">
+			<populationType plural="true" density="OCCASIONAL">SHOPPER</populationType>
+			<subspeciesPresent worldType="innoxia_fields_elis_town"/>
+		</population>
+	</populationPresent>
+	<globalMapTile>false</globalMapTile>
+	<dangerous><![CDATA[false]]></dangerous>
+	<itemsDisappear><![CDATA[true]]></itemsDisappear>
+	<aquatic><![CDATA[LAND]]></aquatic>
+	<darkness><![CDATA[ALWAYS_LIGHT]]></darkness>
+	<teleportPermissions>BOTH</teleportPermissions>
+	<weatherImmunities/>
+	<applyInventoryInit/>
+</placeType>

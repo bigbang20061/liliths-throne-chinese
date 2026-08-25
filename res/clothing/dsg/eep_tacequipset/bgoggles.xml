@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	
+	
+	<coreAtributes>
+	
+		<authorTag><![CDATA[在防护套内侧，淡淡的橡胶油墨写着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+	
+		
+		<value>1000</value> 
+		
+		
+		<determiner><![CDATA[一套]]></determiner>
+		
+		
+		<name><![CDATA[执法者战术护目镜]]></name>
+		
+		
+		<namePlural pluralByDefault="false"><![CDATA[执法者战术护目镜]]></namePlural> 
+		
+		
+		<description><![CDATA[一副通风良好的战术护目镜，带有抗冲击聚碳酸酯镜片。不使用时，可以将它们滑入保护套中。头带有很多调节功能，可以适应各种不同的头部尺寸。]]></description> 
+		
+		
+		<physicalResistance>2</physicalResistance> 
+		
+		
+		<femininity>ANDROGYNOUS</femininity> 
+		
+		
+		<slot>EYES</slot> 
+		
+		
+		<rarity>EPIC</rarity> 
+		
+		
+		<clothingSet/>
+		
+		
+		<imageName>bgoggles.svg</imageName> 
+		
+		
+		<imageEquippedName/> 
+		
+		
+		<effects/> 
+		
+		
+		<blockedPartsList> 
+		
+			
+			<blockedParts>
+			
+				
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				
+				
+				<clothingAccessRequired> 
+					<clothingAccess>EYES</clothingAccess>
+				</clothingAccessRequired>
+				
+				
+				<blockedBodyParts/> 
+				
+				
+				<clothingAccessBlocked/> 
+				
+				
+				
+				<concealedSlots/> 
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		
+		<incompatibleSlots/> 
+		
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_SILVER"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours values="JUST_GREY"/>
+		
+		<tertiaryColoursDye values="ALL"/>
+		
+		
+		<itemTags> 
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	
+	
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]戴上护目镜并调整头带直到穿戴舒适。]]></self>
+		<other><![CDATA[
+[npc.Name]将护目镜贴在[npc2.namePos]的脸上，并帮助[npc2.her]调整头带直到佩戴舒适。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将护目镜按在[npc2.namePos]的脸上并用力绑紧了头带。]]></otherRough>
+	</replacementText>
+
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]松开了[npc.her]的头带并将护目镜取下。]]></self>
+		<other><![CDATA[
+[npc.Name]松开了[npc2.namePos]护目镜上的头带并将其取下。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将护目镜从[npc2.namePos]的[npc2.face]上拽了下来。]]></otherRough>
+	</displacementText>
+	
+</clothing>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>200</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[墨汁伏特加]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[墨汁伏特加]]></namePlural>
+		<description><![CDATA[玻璃瓶采用简约的全黑设计。标签上写着 "墨汁伏特加"，并在标签上画了一大块墨水的图案。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">octopus_ink_vodka.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]15%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_ICE.getFormattedValue(3)]到“药剂效果”]]></line>
+			<line><![CDATA[[style.boldMinorBad(增加)]25%[style.boldAlcohol(醉酒度)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM) * 0.15)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股强大的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_ICE, 3)]
+			[#npc.incrementAlcoholLevel(0.25)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ALCOHOLIC</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]拧开墨汁伏特加瓶上的瓶盖，然后仰起头将瓶端到[npc.her]等待[npc.lips]前。大口喝下液体后，[npc.name]发现尽管它的颜色新奇，但几乎没有味道。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]拧开了墨汁伏特加瓶的盖子，然后将它端到[npc2.namePos]等待[npc2.lips]前。大口喝下液体后，[npc2.name]发现尽管它的颜色新奇但几乎没有味道。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

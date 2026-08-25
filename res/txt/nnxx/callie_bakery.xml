@@ -1,0 +1,574 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- Trade & misc. dialogues: -->
+	
+	<htmlContent tag="TRANSACTION_START"><![CDATA[
+	<p>
+		[callie.speech(告诉我你喜欢哪个甜甜圈，)]卡丽一边说着一边指向柜台玻璃后面的甜甜圈。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="TRANSACTION_COMPLETE"><![CDATA[
+	<p>
+		卡丽拿走你买[#SPECIAL_PARSE_0]用的火币，说道：[callie.speech(谢谢光临，[pc.name]。希望你喜欢甜甜圈。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DONATION_PROGRESS"><![CDATA[
+	<p style='text-align:center;'>
+		#IF(flags.getSavedLong('nnxx_callie_total_donated')<100000)
+			你总共给卡丽捐献了[style.moneyFormat([#flags.getSavedLong('nnxx_callie_total_donated')], b)]！
+			<br/>
+		#ENDIF
+		#IF(flags.getSavedLong('nnxx_callie_total_donated')>=100000)
+			#IF(flags.hasFlag(FLAG_nnxx_callie_upgrade_3))
+				[style.italicsExcellent(你捐赠了这么多，卡丽会为你提供八折优惠，储存更多的甜甜圈，并且提供免费的性爱！)]
+			#ELSE
+				[style.italicsExcellent(你捐赠了这么多，所以从明天开始，卡丽会为你提供八折优惠，储存更多的甜甜圈，并且提供免费的性爱！)]
+			#ENDIF
+			<br/>[style.italics(已达到最高捐赠级别。)]
+		#ELSEIF(flags.getSavedLong('nnxx_callie_total_donated')>=50000)
+			#IF(flags.hasFlag(FLAG_nnxx_callie_upgrade_2))
+				[style.italicsGood(你捐的钱已足够让卡丽给你打八折并储存更多的甜甜圈！)]
+				<br/>[style.italics(下一捐赠级别需要100,000火币……)]
+			#ELSE
+				[style.italicsGood(你捐的钱已足够让卡丽给你打八折并储存更多的甜甜圈，从明天开始算起！)]
+				<br/>[style.italics(下一捐赠级别需要100,000火币……)]
+			#ENDIF
+		#ELSEIF(flags.getSavedLong('nnxx_callie_total_donated')>=3000)
+			#IF(flags.hasFlag(FLAG_nnxx_callie_upgrade_1))
+				[style.italicsMinorGood(你捐的钱已足够让卡丽开始储备更多的甜甜圈！)]
+				<br/>[style.italics(下一捐赠级别需要50,000火币……)]
+			#ELSE
+				[style.italicsMinorGood(你捐的钱已足够让卡丽开始储备更多的甜甜圈，从明天开始算起！)]
+				<br/>[style.italics(下一捐赠级别需要50,000火币……)]
+			#ENDIF
+		#ELSE
+			[style.italics(你目前的捐赠还不够让卡丽装修商店……)]
+			<br/>[style.italics(下一捐赠级别需要3,000火币……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- Callie dialogues: -->
+	
+	<htmlContent tag="EXTERIOR"><![CDATA[
+	#IF(!flags.hasFlag(FLAG_nnxx_callie_upgrade_2))
+		<p>
+			位于道路和附近小巷的交叉口矗立着一家初看起来很普通的精品店，但仔细看的话就会看到上面有几处年久失修的痕迹，尤其是那些剥落的油漆和锈迹斑斑的门铰链实在是太显眼了，你不禁要问，什么样的店主会如此不爱惜自己的生意。你透过最近的一扇窗户(窗户已经破裂，旁边的一扇窗户已经完全破损并用木板封了起来)窥视了一下，只见一个面容乏味的女服务员正在店里的柜台后面疲惫地擦着指甲。
+		</p>
+		<p>
+			门上方矗立着一块古旧味十足的木牌，上面用最简单的方式写着“奶油烘焙店”几个大字。而在门边靠窗的地方则挂着写有营业时间的牌子，上面写着: 
+			#IF(game.isWorkTime())
+				[style.colourMinorGood(从[unit.time(9)]到[unit.time(15)])]
+			#ELSE
+				[style.colourMinorBad(从[unit.time(9)]到[unit.time(15)])]
+			#ENDIF
+			营业日期
+			#IF(game.getDayOfWeek()==DOW_SUNDAY)
+				[style.colourMinorBad(周一到周六)]。
+			#ELSE
+				[style.colourMinorGood(周一到周六)]。
+			#ENDIF
+			#IF(game.getDayOfWeek()==DOW_SUNDAY || !game.isWorkTime())
+				这家店已经[style.colourBad(歇业)]了，如果你想进去，最好等到营业时间再来……
+			#ELSE
+				这家店正在[style.colourGood(营业)]，你在想是否该进去看看……
+			#ENDIF
+		</p>
+	#ELSE
+		 <p>
+			凯丽的奶油烘焙店位于道路和附近小巷的交叉口。这家店相比于刚见到它的时候简直是大变身，那个曾经破旧不堪的烘焙店现在看起来更像一家正规的店铺了。手工制作的橡木招牌取代了原来的木质招牌，而且还被漆成了糖果粉色，上面骄傲地印着“奶油烘焙店”的名字。而不仅门框被换成了糖果手杖的样子，连门本身也被漆成了酥脆饼干的样子。透过干净整洁的新窗户，你可以看到内部已经完全翻新。新桌椅为店里不多的顾客提供了舒适的就餐场所，在店里的玻璃柜台上摆放着各种各样的面包和糖果。
+		</p>
+		 <p>
+			在门边靠窗的地方则挂着写有营业时间的牌子，上面写着: 
+			#IF(game.isWorkTime())
+				[style.colourMinorGood(从[unit.time(7)]到[unit.time(17)])]
+			#ELSE
+				[style.colourMinorBad(从[unit.time(7)]到[unit.time(17)])]
+			#ENDIF
+			营业日期
+			#IF(game.getDayOfWeek()==DOW_SUNDAY)
+				[style.colourMinorBad(周一到周六)]。
+			#ELSE
+				[style.colourMinorGood(周一到周六)]。
+			#ENDIF
+			#IF(game.getDayOfWeek()==DOW_SUNDAY || !game.isWorkTime())
+				这家店已经[style.colourBad(歇业)]了，如果你想进去，最好等到营业时间再来……
+			#ELSE
+				这家店正在[style.colourGood(营业)]，你在想要不要进去看看……
+			#ENDIF
+		</p>
+	#ENDIF
+	]]></htmlContent>
+
+	<htmlContent tag="ENTRY_FIRST_TIME"><![CDATA[
+	<p>
+		你决定去拜访一下“奶油烘焙店”。你推开店门[pc.step]进去。环顾四周，发现店内装饰着各种假糖果和烘焙食品。你面前的柜台上摆放着一支散发着香草芬芳香味的蜡烛，它与柜台玻璃顶后面摆放的一打甜甜圈的香味温柔地混合在一起。在蜡烛旁边则放着一个小费罐，它看起来和商店本身一样空空如也。
+	</p>
+	<p>
+		[callie.speech(你好，欢迎来到‘奶油烘焙店’，)]柜台后的马女服务员看到你进来，先是无所谓地哼了一下，然后叫道，[callie.speech(我是这家店的店主卡丽，如你所见，这里生意兴隆且人来人往的，所以小心别在人群中迷路了。)]
+	</p>
+	<p>
+		马女说完，又把注意力转移到了她的指甲油上，这让你可以停下来好好地观察一下她。虽然卡丽外表的大部分都是人类，但你注意到她有着很明显的一对马耳朵和一条马尾巴，这些部位和她的波浪长发一样黑且顺滑。她穿着的深红色短袖衬衫的最上面的几颗扣子没有扣上，这让你可以看到她那浅色的皮肤和[callie.cupSize]罩杯的胸部。由于柜台的底部有着大面积的空隙，这让你可以看到她穿着的简洁米白色牛仔裤，你的视线从她的一双马蹄上移开，发现她两胯之间有个十分显眼的隆起。在注意到你在她介绍完之后还没有离开后，她再次看了你一眼，然后叹了口气说，[callie.speech(抱歉，我一无聊就想挖苦人。所以想买点甜甜圈吃么？虽然我这也只有甜甜圈了。)]
+	</p>
+	<p>
+		似乎卡丽对于自己的烘焙店只卖甜甜圈这一事实显得有些不好意思，于是她不等你回答便赶紧解释了起来，[callie.speech(我在这个垃圾地方几乎赚不到什么钱，所以只够做甜甜圈。这是所有我做过的口味里卖得最好的那款。所以你想尝尝吗？)]
+	</p>
+	<p>
+		卡丽的问题有些拖沓，不过其中明里暗里的都在暗示她正在询问你的名字。你抓住这个机会，告诉了卡丽你的名字，然后她又重复了一遍她的问题，[callie.speech(所以，你想买个甜甜圈么？[pc.name]？)]
+	</p>
+	]]></htmlContent>
+
+	<htmlContent tag="ENTRY_REPEAT"><![CDATA[
+	#IF(flags.hasFlag(FLAG_nnxx_callie_upgrade_3))
+		<p>
+			你决定去拜访一下“奶油烘焙店”。你推开店门[pc.step]进去。环顾四周，发现店内简直就是甜食爱好者的天堂。粉红色的地毯将你引向各种货架，货架上摆放着几十种各式各样的甜食，而玻璃顶的柜台上则摆放着种类繁多的糕点，其中最引人注目的是那几种甜甜圈。整个店面被一盏做成婚礼蛋糕样式的吊灯照得通亮，整个房间都弥漫着新鲜出炉的面包的香气，令人不禁心旷神怡。
+		</p>
+		#IF(flags.hasFlag(FLAG_nnxx_callie_upgrade_reaction_pending))
+			<p>
+			卡丽一看到你进店，马上从柜台后面冲出来。她热情地抱住你，高兴地说：[callie.speech(哦，[pc.name]！你无法理解这一切对我意味着什么！这一切都要感谢你，我永远都会感谢你，而且也无法报答你的恩情！)]
+			</p>
+			<p>
+				#IF(callie.isAttractedTo(pc))
+					她将你埋在了她那[callie.cupSize]罩杯的乳房里，然后慢慢地滑动一只手，摸索你的[pc.ass]，挑逗地说：[callie.speech(如果你想再来一次的话，只要说一声就好……这次完全免费哦……)]
+				#ELSE
+					卡丽给了你一个大大的拥抱，退后一步，说：[callie.speech(如果你能变回女性，我很乐意再干你一次，而这次是完全免费的哦！)]
+				#ENDIF
+			</p>
+			<p>
+				你微笑着看向卡丽，然后走到柜台边，却不知道该问她什么……
+			</p>
+		#ELSE
+			#IF(callie.isAttractedTo(pc))
+				<p>
+					[callie.speech(这不是我最喜欢的顾客吗？你好啊，[pc.name]，请问你是来买东西的吗？)]卡丽看见你进店，开口询问道。
+					#IF(flags.hasFlag(FLAG_nnxx_callie_daily_fucked))
+						还没等你反应过来，她就向你眨了眨眼睛，并调侃：[callie.speech(我还没从刚才的欢愉中回过神来呢，但如果你明天再来的话，我很乐意再让你尝尝我的甜甜圈或法棍……)]
+					#ELSE
+						还没等你反应过来，她就放下一只手，开始抚摸自己两腿间的凸起，然后对你使了个眼色，挑逗地说：[callie.speech(或者你还想再尝尝我的甜甜圈或法棍？你做了这么多，我想你不需要再捐赠了……)]
+					#ENDIF
+				</p>
+			#ELSE
+				<p>
+					卡丽看到你走进她的商店，给了你一个温柔的微笑，高兴地说：[callie.speech(这不是我最喜欢的顾客吗？你好啊，[pc.name]，我能为你做些什么吗？)]
+				</p>
+			#ENDIF
+			<p>
+				你微笑着看向卡丽，然后走到柜台边，却不知道该问她什么……
+			</p>
+		#ENDIF
+	#ELSEIF(flags.hasFlag(FLAG_nnxx_callie_upgrade_2))
+		<p>
+			你决定去拜访一下“奶油烘焙店”。你推开店门[pc.step]进去。环顾四周，发现店内简直就是甜食爱好者的天堂。粉红色的地毯将你引向各种货架，货架上摆放着几十种各式各样的甜食，而玻璃顶的柜台上则摆放着种类繁多的糕点，其中最引人注目的是那几种甜甜圈。整个店面被一盏做成婚礼蛋糕样式的吊灯照得通亮，整个房间都弥漫着新鲜出炉的面包的香气，令人不禁心旷神怡。
+		</p>
+		#IF(flags.hasFlag(FLAG_nnxx_callie_upgrade_reaction_pending))
+			<p>
+			卡丽一看到你进店，马上从柜台后面冲出来，她热情地抱住你，高兴地说：[callie.speech([pc.name]，你快看啊！多亏了你，我终于可以把我的商店重新装修一下，让它看起来像我一直想要的样子！为了感谢你，我给你打八折！对了，我还决定延长营业时间，从现在开始，我的营业时间改为早上七点到晚上五点。)]
+			</p>
+			<p>
+				#IF(callie.isAttractedTo(pc))
+					她将你埋在了她那[callie.cupSize]罩杯的乳房里，然后慢慢地滑动一只手，摸索你的[pc.ass]，挑逗地说：[callie.speech(如果你想再来一次的话，只要说一声就好了……这次完全免费哦……)]
+				#ELSE
+					卡丽给了你一个大大的拥抱，退后一步说：[callie.speech(如果你能变回女性，我很乐意再干你一次，而这次是完全免费的哦！)]
+				#ENDIF
+			</p>
+			<p>
+				你微笑着看向卡丽，然后走到柜台边，却不知道该问她什么……
+			</p>
+		#ELSE
+			#IF(callie.isAttractedTo(pc))
+				<p>
+					[callie.speech(这不是我最喜欢的顾客吗？你好啊，[pc.name]，请问你是来买东西的吗？)]卡丽看见你进店，开口询问。
+					#IF(flags.hasFlag(FLAG_nnxx_callie_daily_fucked))
+						还没等你反应过来，她就向你眨了眨眼睛，调侃道：[callie.speech(你之前给我的‘捐赠’还让我很疲惫呢，但如果你明天再来的话，我很乐意再让你尝尝我的甜甜圈或法棍……)]
+					#ELSE
+						还没等你反应过来，她就放下一只手，开始抚摸自己两腿间的凸起，然后对你使了个眼色。挑逗地说：[callie.speech(还是说你想再捐赠一笔么？)]
+					#ENDIF
+				</p>
+			#ELSE
+				<p>
+					卡丽看到你走进她的商店，给了你一个温柔的微笑，高兴地说：[callie.speech(这不是我最喜欢的顾客吗？你好啊，[pc.name]，我能为你做些什么吗？)]
+				</p>
+			#ENDIF
+			<p>
+				你微笑着看向卡丽，然后走到柜台边，却不知道该问她什么……
+			</p>
+		#ENDIF
+	#ELSEIF(flags.hasFlag(FLAG_nnxx_callie_upgrade_1))
+		<p>
+			你决定再次拜访“奶油烘焙店”。你推开店门[pc.step]进去，环顾四周，发现店内几乎和你第一次来时一样，不过最明显的变化是所有东西看起来都被整理和打扫过了。卡丽似乎从你的各种捐赠中得到了鼓励，开始打理她的生意，你看到她除了把所有东西都打扫得干干净净外，还做出了一些调整来让这里更有品位，其中就包括在房间里装饰一些额外的香味蜡烛。
+		</p>
+		#IF(flags.hasFlag(FLAG_nnxx_callie_upgrade_reaction_pending))
+			<p>
+				看到你走进她的商店，卡丽微笑并热情地欢迎道：[callie.speech(你好，[pc.name]！希望你喜欢我做的一些调整！你的慷慨捐赠给了我足够的动力，让我开始把这间小屋改造成一个像样的店面！我甚至已经开始备货新口味的甜甜圈了，你想买一个吗？)]
+			</p>
+			#IF(callie.isAttractedTo(pc))
+				<p>
+					还没等你反应过来，她就放下一只手，开始抚摸自己两腿间的凸起，然后对你使了个眼色，挑逗地说：[callie.speech(还是说你想再捐赠一笔么？)]
+				</p>
+			#ELSE
+				<p>
+					你微笑着看向倚靠在柜台的卡丽，但不知道该说些什么……				</p>
+			#ENDIF
+		#ELSE
+			#IF(callie.isAttractedTo(pc))
+				<p>
+					[callie.speech(你好，[pc.name]，请问你是来买东西的吗？)]卡丽见你进店，开口询问。
+					#IF(flags.hasFlag(FLAG_nnxx_callie_daily_fucked))
+						还没等你反应过来，她就向你眨了眨眼睛，并调侃道：[callie.speech(你之前给我的‘捐赠’还让我很疲惫呢，但如果你明天再来的话，我很乐意再让你尝尝我的甜甜圈或法棍……)]
+					#ELSE
+						还没等你反应过来，她就放下一只手，开始抚摸自己两腿间的凸起，然后对你使了个眼色并挑逗道：[callie.speech(还是说你想再捐赠一笔么？)]
+					#ENDIF
+				</p>
+			#ELSE
+				<p>
+					卡丽看到你进店，给了你一个温柔的微笑，然后说：[callie.speech(你好啊，[pc.name]，想买点什么吗？)]
+				</p>
+			#ENDIF
+			<p>
+				你微笑着看向卡丽，然后走到柜台边，却不知道该问她什么……
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你决定再次拜访“奶油烘焙店”。你推开店门[pc.step]进去，环顾四周，发现店内装饰着各种假糖果和烘焙食品。你面前的柜台上摆放着一支散发着香草芬芳香味的蜡烛，它与柜台玻璃顶后面摆放的一打甜甜圈的香味温柔地混合在一起。在蜡烛旁边则放着一个小费罐，它看起来和商店本身一样空空如也。
+		</p>
+		<p>
+			卡丽抬头看到你进来，打起招呼：[callie.speech(哦，[pc.name]，又是你啊。欢迎光临，你是要买东西，还是来闲聊的？)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+
+	<htmlContent tag="COUNTER"><![CDATA[
+	<p>
+		你[pc.Stepping]到卡丽站的柜台后面，停下低头看了看陈列的烘焙食品。卡丽擦完指甲油，抬起头问：[callie.speech(需要点什么吗，[pc.name]？)]
+	</p>
+	]]></htmlContent>
+
+	
+	<!-- Anilingus: -->
+	
+	<htmlContent tag="PROPOSE_ANILINGUS"><![CDATA[
+	#IF(callie.isAttractedTo(pc))
+		<p>
+			你微笑着告诉卡丽，想品尝另一种甜甜圈，可惜柜台上没有摆放这种甜甜圈，卡丽挑了挑眉，然后微笑着揶揄：[callie.speech(哦，你现在想吃吗？嗯，让我想想……)]
+		</p>
+		<p>
+			#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+				可爱的马女俏皮地停顿了几秒钟，咬着嘴唇呻吟： [callie.speech(我想，如果你好好求我，那可以让你尝尝我的甜甜圈。)]
+			#ELSE
+				卡丽停顿了几秒钟，用手指敲了敲旁边的小费罐，然后说：[callie.speech(你要什么我都可以给你，但鉴于我现在的处境，我不能因为和你玩而失去哪怕一个潜在顾客。所以作为交换，嗯……一千火币，我就让你尝尝我的甜甜圈。)]
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			你走向卡丽，告诉她你想尝尝另一种甜甜圈，可惜柜台上没有摆放这种甜甜圈。
+		</p>
+		<p>
+			[callie.speech(对不起，你不是我喜欢的类型。我喜欢我的伴侣更……有女人味一点……)]她一边道歉一边转过头去，似乎不知道怎么应对现在尴尬的气氛。为了转移话题，她赶紧接着问：[callie.speech(总之，你想吃点别的吗？比如，嗯……甜甜圈？)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+
+	<htmlContent tag="ANILINGUS_START"><![CDATA[
+	<p>
+		#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+			你告诉卡丽，能不能让你尝尝她那美味且肉感的甜甜圈。
+		#ELSE
+			你没有中断与卡丽的目光接触。你在小费罐里放了一千块钱，[pc.stepping]向柜台后。
+		#ENDIF
+		凯丽满脸堆笑地走到店门口，然后锁上门翻过招牌，来表明她的店已经关门了。凯丽放下百叶窗，给你保留一些隐私，回到柜台旁站定，然后拉下牛仔裤，露出巨大的马鸡巴和肉感十足的屁眼。她转过身来展示裸露的屁股，并呻吟道：[callie.speech(你不知道我有多需要这个……如果我不满意的话你就别想走了，明白吗？)]
+	</p>
+	<p>
+		你同意了卡丽的条件，坐到她身后。伸手掰开她的屁股，看着她那肉感十足的黑色屁眼。你凑上去快速地亲吻那性感的屁眼，这迫使她向前弓腰并紧抓住柜台边缘，她情不自禁地呻吟：[callie.speech(没错！就这样……~就这样吃我的甜甜圈……)]
+	</p>
+	<p>
+		你非常乐意按照她说的去做。你那[pc.lips+]抵住凯丽的屁股，同时那[pc.tongue+]滑过她那丰厚如甜甜圈的屁眼，并给予它应有的爱……
+	</p>
+	]]></htmlContent>
+
+	<htmlContent tag="ANILINGUS_BACK_OUT"><![CDATA[
+	<p>
+		#IF(callie.isAttractedTo(pc))
+			#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+				你稍加考虑，改变了主意，告诉卡丽你不想尝她屁股的味道。
+			#ELSE
+				你觉得一千美元的要价太贵了，于是告诉卡丽你改变主意了，不打算花钱尝她的屁股。
+			#ENDIF
+			卡丽听了这话，垂下头叹了口气：[callie.speech(好吧，我不能说我不失望。所以，你还想要点别的吗？)]
+		#ELSE
+			既然卡丽认为你没有吸引力，那你就不可能和她发生关系。你失望地叹了口气，不知道接下来该怎么办……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+
+	<htmlContent tag="AFTER_SEX_ANILINGUS"><![CDATA[
+	<p>
+		卡丽玩够了，她肉感的甜甜圈也被你的口水舔得亮晶晶的。卡丽叹了口气：[callie.speech(再来个吻，然后就让我们结束吧。)]
+	</p>
+	<p>
+		卡丽把她那肉感十足的黑色甜甜圈靠近你的脸庞，你根本无法抗拒，俯身给了它最后一吻……
+	</p>
+	]]></htmlContent>
+
+	<htmlContent tag="AFTER_SEX_ANILINGUS_CONTINUE"><![CDATA[
+	<p>
+		你向前倾身，那[pc.lips+]抵住卡丽那火热的屁眼，送上最后一记湿吻。你听到她发出满足的呻吟，微笑着向后起身。她叹息着提起牛仔裤，[callie.speech(你真的很会玩弄马肛……)]
+	</p>
+	<p>
+		卡丽走过去拉上百叶窗，打开前门的锁，
+		#IF(pc.getClothingInSlot(IS_NECK)!=null && pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker'))
+			你指了指脖子上的颈圈，然后告诉卡丽，作为娜塔莉亚的[style.mules]之一，你受过良好的训练，给马吻肛是你最喜欢的工作之一。
+		#ELSE
+			你告诉卡丽，要满足她很容易，这多亏了她那完美且肉感的美味屁眼。
+		#ENDIF
+			卡丽听到你这么说，笑着回答，[callie.speech(好吧，既然你这么喜欢，明天你可以再来吃我的甜甜圈……今天还需要点什么吗？一个真正的甜甜圈么？)]
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- Vaginal/anal sex: -->
+	
+	<htmlContent tag="PROPOSE_SEX_RECEIVING"><![CDATA[
+	#IF(callie.isAttractedTo(pc))
+		#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+			<p>
+				你对凯丽眨眨眼睛，说你想订购她那又大又肥的法棍。她笑着上下打量你，感叹道：[callie.speech(我，哦，我，这，多直接啊！我怎么能拒绝这么可爱的[pc.race]呢……但我想知道，你想把‘法棍’塞在哪个洞里呢？)] 
+			</p>
+		#ELSE
+			<p>
+				你对凯丽眨眨眼睛，说你想订购她那又大又肥的法棍。她笑着上下打量你，然后惊叹道：[callie.speech(我，哦，我，这，多么直接啊！我怎么能拒绝这么可爱的[pc.race]呢……但还有个小问题，那就是我的商店必须因此暂时关闭。但是呢，如果你在小费罐里扔下一万火币的话，我想这就能弥补可能的生意损失了……)] 
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你对凯丽眨眨眼睛，说你想订购她那又大又肥的法棍。
+		</p>
+		<p>
+			[callie.speech(对不起，你不是我喜欢的类型。我喜欢我的伴侣更……有女人味一点……)]她一边道歉一边转过头去，似乎不知道怎么应对现在尴尬的气氛。为了转移话题，她赶紧接着问道：[callie.speech(总之，你想吃点别的吗？比如，嗯……甜甜圈？)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+
+	<htmlContent tag="SEX_START"><![CDATA[
+	<p>
+		#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+			发出一声淫荡的呻吟，你告诉马女你要她把“法棍”深深捅进你温热的小穴里。
+		#ELSE
+			告诉卡丽她绝对值得，你将她要求的一万火币放进她的小费罐。
+		#ENDIF
+		卡丽开心地笑着，走向商店的前门，随后锁上门并挂上了“暂停营业”的标志牌。为了给你保留隐私，她放下了百叶窗，随后卡丽回来站在柜台旁边，脱下她的牛仔裤，解放出她巨大的马屌和肿胀的屁眼。她用手指逗弄着她快速变硬的乌黑色的柱身，呻吟着命令道，[callie.speech(~唔！~ 那就来吧，趴在柜台上，把你的小穴露出来。)]
+	</p>
+	<p>
+		按照她说的做，你弯腰趴在卡丽面前的柜台上，将你[pc.pussy+]展示给她。色欲上涌的马女立即上前，将她那野兽般肉棒外扩的顶端顶在你[pc.labia+]上。漫不经心地将她悸动的肉棒在你饥渴的阴部上下磨蹭，她调笑着说，[callie.speech(在我满意之前我是不会停的……现在，乞求那早点到来吧……)]
+	</p>
+	<p>
+		无法抑制地发出一声色情的尖叫，你将你[pc.hips+]向后顶去，不顾一切地乞求卡丽开始操你。在你疯狂的恳求中，马女很快给了你你想要的，卡丽向前猛顶，将她肥硕巨大的马屌捣进你的小穴，随后开始扭动臀部，隔着柜台开始操你，而你沉浸在狂喜的呻吟之中……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SEX_ANAL_START"><![CDATA[
+	<p>
+		#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+			发出一声淫荡的呻吟，你告诉马女你要她把“法棍”深深捅进你温热的屁穴里。
+		#ELSE
+			告诉卡丽她绝对值得，你将她要求的一万火币放进她的小费罐。
+		#ENDIF
+		卡丽开心地笑着，走向商店的前门，随后锁上门并挂上了“暂停营业”的标志牌。为了给你保留隐私，她放下了百叶窗，随后卡丽回来站在柜台旁边，脱下她的牛仔裤，解放出她巨大的马屌和肿胀的屁眼。她用手指逗弄着她快速变硬的乌黑色的柱身，呻吟着命令道，[callie.speech(~唔！~ 那就来吧，趴在柜台上，把你的屁穴露出来。)]
+	</p>
+	<p>
+		按照她说的做，你弯腰趴在卡丽面前的柜台上，将你[pc.asshole+]展示给她。色欲上涌的马女立即上前，将她那野兽般肉棒外扩的顶端顶在你[pc.asshole+]上。漫不经心地将她悸动的肉棒在你饥渴的屁穴外上下磨蹭，她调笑着说，[callie.speech(在我满意之前我是不会停的……现在，乞求那早点到来吧……)]
+	</p>
+	<p>
+		无法抑制地发出一声色情的尖叫，你将你[pc.hips+]向后顶去，不顾一切地乞求卡丽开始操你的屁穴。在你疯狂的恳求中，马女很快给了你你想要的，卡丽向前猛顶，将她肥硕巨大的马屌捣进你的屁穴，随后开始扭动臀部，隔着柜台开始操你，而你沉浸在狂喜的呻吟之中……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SEX_BACK_OUT"><![CDATA[
+	<p>
+		#IF(callie.isAttractedTo(pc))
+			#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+				多加考虑之后，你告诉卡丽你不想付钱让她用“法棍”把你填满了。
+			#ELSE
+				感觉到一万火币的要价似乎有点太高，你告诉卡丽你不想付钱让她用“法棍”把你填满了。
+			#ENDIF
+			听到这个，马女发出一声失望的嘶鸣和叹息， [callie.speech(啊……这就太可惜了，我已经开始浑身发热，沉浸于把你改造成我的专属鸡巴套的想法了……我想我还得等一阵。)]
+		#ELSE
+			由于卡丽对你没有足够吸引力，你不会有可能和她做爱。发出一声失望的叹息，你考虑这接下来该做什么……
+		#ENDIF
+	</p>
+	]]></htmlContent>
+
+	<htmlContent tag="AFTER_SEX"><![CDATA[
+	<p>
+		卡丽玩够了，肥大的马屌开始变软。她退后一步，叹了口气说，[callie.speech(我想你今天已经差不多了……)]
+	</p>
+	<p>
+		她提上牛仔裤，你深深地叹了一口气，然后开始拾掇自己……
+	</p>
+	]]></htmlContent>
+
+	<htmlContent tag="AFTER_SEX_CONTINUE"><![CDATA[
+	<p>
+		你快速整理好自己的东西，卡丽走过去卷起百叶窗并打开前门的锁。她忙完，转过身和你面对面，微笑着说：[callie.speech(你真的很擅长马杀鸡呢……)]
+	</p>
+	<p>
+		马女随后走过去，回到柜台旁，
+		#IF(pc.getClothingInSlot(IS_NECK)!=null && pc.getClothingInSlot(IS_NECK).getClothingType().getId().equals('innoxia_neck_filly_choker'))
+			你指了指脖子上的颈圈，然后告诉卡丽：作为娜塔莉亚的[style.mules]之一，你受过良好的训练，被大马的鸡巴操是你最喜欢的工作之一。
+		#ELSE
+			你告诉卡丽，因为她勃起的大鸡巴太完美了，所以你很容易就能够满足她。
+		#ENDIF
+		卡丽听到你这么说，笑着回答：[callie.speech(好吧，既然你这么喜欢，明天你可以再来吃我的法棍……今天还需要点什么吗？要点甜甜圈么？)]
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="DONATION"><![CDATA[
+	<p>
+		你想帮卡丽一把，给她一些经济支持，于是问她需要多少小费才能改善她的店铺。
+	</p>
+	<p>
+		#IF(flags.hasFlag(FLAG_nnxx_callie_daily_fucked))
+			[callie.speech(嘿，我说你今天享受的已经够多了吧，)]她笑着说，她误解了你的问题，以为你是在请求更多的性行为。你迅速解释这次只是想给她的小费罐里加点钱，你再次问她需要多少，马女回答道，[callie.speech(哦，我想我需要[style.intToString([#callie.getFlamesToNextUpgrade()])]。我不指望你每天都过来和我付钱做爱，所以我没想着很快就能得到这些。)]
+		#ELSE
+			[callie.speech(好吧，我想我需要[style.intToString([#callie.getFlamesToNextUpgrade()])]。我不指望你每天都过来和我付钱做爱，所以我没想着很快就能得到这些，)]她回答道。
+		#ENDIF
+	</p>
+	<p>
+		拿出[style.intToString([#callie.getFlamesToNextUpgrade()])]火币，放入卡丽的小费罐，并告诉她你很高兴能帮助她改善生意。
+	</p>
+	<p>
+		[callie.speech(你是认真的吗？)]半人马女问道，她睁大了眼睛，看着你往她的小费罐里放钱。在你确认这些钱是给她的后，她开心地朝你微笑，兴奋地说道，[callie.speech(这真是太有帮助了，非常感谢你，[pc.name]！你明天应该就能看到这里的改善！)]
+	</p>
+	<p>
+		卡丽把小费罐从柜台上拿下来，把它安全地锁在柜台下面，然后向前倾身，露出她的乳沟，问道，[callie.speech(那么，需要我给你拿个甜甜圈吗？)]
+	</p>
+	]]></htmlContent>
+	
+	<!-- Seating area: -->
+	
+	<htmlContent tag="SEATING"><![CDATA[
+	<p>
+		虽然卡丽的烘焙店很小，但这个座位区还是有足够的空间摆放几张桌子和椅子。不过目前还没有人使用这些桌椅，因为你目前所看到的所有顾客都选择外带甜甜圈。
+	</p>
+	<p>
+		你在这里也没什么可做的，只能转身回到卡丽的柜台……
+	</p>
+	]]></htmlContent>
+	
+	
+	<!-- Natalya encounter content: -->
+	
+	
+	<htmlContent tag="NATALYA_ENTRY"><![CDATA[
+	
+	<p>
+		你决定再次造访卡丽的店铺，推开“奶油烘焙店”的门[pc.step]了进去。得益于店铺的升级改造，这个时段通常会有不少顾客，但今天似乎正好赶上了生意清淡的时候。你进入的时候，最后几位顾客正巧离开，店内只剩下两个人。
+	</p>
+	<p>
+		其中一人自然是这家店的老板。柜台后的卡丽朝你望来，微笑着挥了挥手。而站在马女面前的另一人，正是主人娜塔莉亚。半人马转头看向卡丽挥手的方向，而认出是你后，嘴角扬起一抹笑意。
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="NATALYA_START"><![CDATA[
+	<p>
+		你走向柜台，你向卡丽和主人娜塔莉亚打了个招呼。
+	</p>
+	#IF(!flags.hasFlag(FLAG_innoxia_callie_natalya_encountered))
+		<p>
+			[callie.speech(这就是我刚才跟你提到过的[pc.race]，)]卡丽对主人说道。她并不知晓你们之间的关系，继续说，[callie.speech(这位[pc.Name]真的帮我扭转了生意。要不是[pc.herHim]，我这会儿可能都已经关门大吉了！)]
+		</p>
+		<p>
+			[natalya.speech(哦，我确实很了解这[style.mule]，)]主人娜塔莉亚说完，又得意地坏笑着挑逗道，[natalya.speech([pc.SheIs]平时吃的甜甜圈可不是你这里卖的品种。[pc.She]口上功夫技巧确实相当不错呢……)]
+		</p>
+		<p>
+			[callie.speech(我已经亲身体验过了！)]卡丽笑着说，向半人马露出微笑，问道，[callie.speech(我想我得感谢你把[pc.herHim]训练得这么会吃屁股？嘿！我有个主意！你以前有给“甜甜圈”上过糖霜吗？)]
+		</p>
+		<p>
+			[natalya.speech(应该没有吧……)]主人娜塔莉亚回答道，然后看了看手表，[natalya.speech(如果你邀请了，那我大概有一个小时可以打发。)]
+		</p>
+		<p>
+			[callie.speech(看来现在没别的客人呢，不如我们找点乐子？)]卡丽随后看着你说，[callie.speech(去把前门锁上，[pc.name]。你今天走运了，可以给两个甜甜圈上糖霜然后吃掉！)]
+		</p>
+	#ELSE
+		<p>
+			[natalya.speech(希望还能再在这里见到你，[style.mule]，)]娜塔莉亚主人对你说道，然后又问卡丽，[natalya.speech(你之前说给我的甜甜圈加糖霜的建议还做吗？我还有一个小时可以打发……)]
+		</p>
+		<p>
+			[callie.speech(看来没其他客人了，我正好想玩玩后面，咱们开始吧！)]卡丽饥渴地答道，然后看着你说，[callie.speech(去把前门锁上，[pc.name]。你今天走运了，可以给两个甜甜圈上糖霜然后吃掉！)]
+		</p>
+	#ENDIF
+	]]></htmlContent>
+	
+	<htmlContent tag="NATALYA_ESCAPE"><![CDATA[
+	<p>
+		虽然你过去很乐意为卡丽和主人娜塔莉亚做吻肛服务，但现在实在没这个心情。于是你迅速找了个借口离开，还没等她们开口挽留，你就匆忙道了声歉，冲出了正门。
+	</p>
+	<p>
+		你快步沿着街道走了一小段路，闪身躲进一条幽暗小巷的尽头，从拐角处偷偷张望。几分钟后，你看见主人娜塔莉亚拎着塞满甜甜圈的牛皮纸袋走出店铺，迈着轻快的步伐沿街离去，很快消失在视线中。
+	</p>
+	<p>
+		如果你还有兴趣，随时可以回到“奶油烘焙店”拜访卡丽，这次她肯定是一个人在店里……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="NATALYA_ANILINGUS_START"><![CDATA[
+	<p>
+		你依指示迅速锁上大门，将门牌翻到“停止营业”那面。转身看时，卡丽已绕到柜台内侧，手里握着裱花袋和三罐糖针。
+	</p>
+	<p>
+		[callie.speech(拿着这些，[pc.name]，)]你向她[pc.step]去时她说道。你从笑容满面的马女手中接过糖霜材料，听着她的指示，[callie.speech(一袋是白色糖霜，另一袋是粉色的。每袋剩下的量都足够覆盖一个甜甜圈。之后选些糖针做最后装饰，就可以开吃啦！)]
+	</p>
+	<p>
+		说罢，她转过身去，俯身靠在柜台边。主人娜塔莉亚走近马女，调整姿势让自己肥硕的臀部也紧挨着卡丽的翘臀。她扭头回望，厉声命令道，[natalya.speech(掀开我的裙子，[style.mule]，把卡丽的裤子也扒下来！你明白规矩，亲吻我们的屁股来表示你的顺从，然后你就可以去舔它们了。)]
+	</p>
+	<p>
+		你顺从地执行主人的命令，掀开她的裙子露出臀部。她肉感饱满的乌黑菊穴夹在屁股之间，下方那根狂野的马鞭和一对沉甸甸的睾丸随着撅臀的动作轻轻晃动。你按照主人的要求，跪在她身后俯身向前，在她散发着浓郁气味的菊穴上留下一个湿漉漉的深吻，随后转身爬向卡丽。
+	</p>
+	<p>
+		[callie.speech(看来你经常做这种事嘛？)]马女咯咯笑着，任你褪下她的裤子。她那饱满的乌黑菊穴与主人娜塔莉亚的颇为相似，只是由于长在人形躯体而非兽态马身上，尺寸要娇小些。她的马屌与睾丸虽然颜色形状都与主人如出一辙，但比起半人马还是小了一圈。你俯身热情亲吻了一下卡丽发烫的菊穴，她发出了甜腻的呻吟，[callie.speech(~嗯啊！~就是这样……现在给我们的小甜甜圈抹奶油吧……)]
+	</p>
+	<p>
+		你低头看着[pc.hands]中的两个裱花袋，思考着该把哪个肛门涂成白色，哪个涂成粉色……
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="NATALYA_AFTER_ANILINGUS"><![CDATA[
+	<p>
+		卡丽和娜塔莉亚主人感受着你的[pc.tongue]在她们屁眼里的触感，都达到了猛烈的高潮，她们发出满足的叹息并互相点了点头。你的主人回头命令道，[natalya.speech(再给我们每人一个吻，[style.mule]，然后我们就结束了。)]
+	</p>
+	<p>
+		你听从指令，对面前两个肉感的乌黑甜甜圈最后亲吻了一下，然后站起身来，把娜塔莉亚主人的裙子拉回去，遮住了她的下体。卡丽拉起她的裤子，得意地看着你问道，[callie.speech(你喜欢吃我们的糖霜甜甜圈吗，[pc.name]？)]
+	</p>
+	<p>
+		你饥渴地做出了肯定的回答，娜塔莉亚主人轻笑一声说道，[natalya.speech([pc.she]当然喜欢。我的这些[style.mules]都经过训练，爱舔马屁股。现在给我来一打你的甜甜圈，我得继续我的行程了。)]
+	</p>
+	<p>
+		卡丽迅速将十二个甜甜圈装进纸袋，收下你主人的付款，并祝她有个美妙的夜晚。半人马转向你，微笑着说，[natalya.speech(表现得很好，[style.mule]。我期待不久后在仓库再见到你。毕竟，还有许多半人马奴隶需要服务呢。)]
+	</p>
+	]]></htmlContent>
+	
+	<htmlContent tag="NATALYA_AFTER_ANILINGUS_CONTINUE"><![CDATA[
+	<p>
+		在娜塔莉亚主人开门离开之前，你勉强向她进行了简短的道别。半人马沿着街道走远后，你转过身来面向卡丽，看到她拿来了拖把和桶。她迅速清理着她和你主人在地上留下的杂乱，她问道，[callie.speech(你可以帮我重新开店吗？今天我可能还会有几个顾客上门。)]
+	</p>
+	<p>
+		你按照马女的要求，将门上的标志翻转，使其显示“营业中”，以便公众可以看到。卡丽结束清理工作后回到了柜台，你正低头看着展柜上的糖霜甜甜圈，不禁回想起了卡丽和娜塔莉亚的糖霜菊穴是什么样子。卡丽看到你注视的东西后，笑着挑逗道，[callie.speech(想再吃一遍我们的甜甜圈吗？别担心，我相信娜塔莉亚会在某个时候回来的。等过上几天，你大概就能再次在这里找到她了。)]
+	</p>
+	<p>
+		你点头表示同意，询问卡丽她玩得是否开心。卡丽开心地对你微笑，回答道，[callie.speech(我当然开心了！你表现得很棒，[pc.name]。今天我没有空余时间再做爱了，但如果你想要一个真正的甜甜圈，也许你可以挑一个？)]
+	</p>
+	<p>
+		你俯视着眼前的商品，思考着接下来该做什么……
+	</p>
+	]]></htmlContent>
+	
+</dialogue>

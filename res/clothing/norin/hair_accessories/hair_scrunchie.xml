@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[小小的刺绣字样告诉你这个发带是由'Norin'制作的。]]></clothingAuthorTag>
+		<value>200</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[发带]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[发带]]></namePlural> 
+		<description><![CDATA[一条弹性束发带，通常用于将头发束起。它也可以缠在尾巴上，或套在手腕上。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<equipSlots>
+			<slot>HAIR</slot>
+			<slot>TAIL</slot>
+			<slot>WRIST</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>hair_scrunchie.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		
+		<blockedPartsList slot="HAIR"> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/> 
+				<clothingAccessBlocked/> 
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<blockedPartsList slot="TAIL"> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/> 
+				<clothingAccessBlocked/> 
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<blockedPartsList slot="WRIST"> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/> 
+				<clothingAccessBlocked/> 
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="HAIR"/>
+		<incompatibleSlots slot="TAIL"/>
+		<incompatibleSlots slot="WRIST"/>
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		<tertiaryColoursDye/>
+    
+		<defaultPatterns patternChance="1" colourNameDerivedFromPattern="true"> 
+			<pattern>polka_dots_small</pattern>
+			<pattern>polka_dots_big</pattern>
+			<pattern>cow_patterned</pattern>
+		</defaultPatterns>
+  
+		<patternPrimaryColours values="ALL"/>
+		<patternSecondaryColours values="ALL"/>
+		<patternTertiaryColours/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>TRANSPARENT</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	
+	<displacementText slot="HAIR" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]将发带从[npc.her][npc.hairSkin+]上取下。
+]]></self>
+		<other><![CDATA[
+[npc.her]将[npc.her][npc2.hairSkin+]从发带中拉出来。
+]]></other>
+		<otherRough><![CDATA[
+[npc.her]将[npc2.namePos][npc2.hairSkin+]从发带中拽出来。
+]]></otherRough>
+	</displacementText>
+	<replacementText slot="HAIR" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]聚集起[npc.her][npc.hairSkin+]，然后把它穿过发圈。
+]]></self>
+		<other><![CDATA[
+[npc.Name]聚集起[npc2.namePos][npc2.hairSkin+]，然后把它穿过发圈。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]收拾起[npc2.NamePos][npc2.hairSkin+]，然后将它穿过发带。
+]]></otherRough>
+	</replacementText>
+	
+	<displacementText slot="TAIL" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.her]将发带从[npc.her][npc.tail+]上摘下。
+]]></self>
+		<other><![CDATA[
+[npc.her]将发带从[npc2.namePos][npc2.tail+]上摘下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.her]将发带从[npc2.namePos][npc2.tail+]上摘下。
+]]></otherRough>
+	</displacementText>
+	<replacementText slot="TAIL" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.her]将发带从[npc.her][npc.tail+]上拉下。
+]]></self>
+		<other><![CDATA[
+[npc.her]将发带从[npc2.namePos][npc2.tail+]上拉下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.her]粗暴地将发带从[npc2.namePos][npc2.tail+]上拽下。
+]]></otherRough>
+	</replacementText>
+	
+	<displacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.her]将发带从[npc.her]的手腕上取下来。
+]]></self>
+		<other><![CDATA[
+[npc.her]将发带从[npc2.namePos]的手腕上摘下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地从[npc2.NamePos]手腕上拽下发带。
+]]></otherRough>
+	</displacementText>
+	<replacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.her]将发带从[npc.her]的手腕上拉下。
+]]></self>
+		<other><![CDATA[
+[npc.her]将发带从[npc2.namePos]的手腕上拉下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将发圈戴到[npc2.namePos]的手腕上。
+]]></otherRough>
+	</replacementText>
+	
+</clothing>

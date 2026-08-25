@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[帽顶衬里上有个皮质标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>800</value> 
+
+		<determiner><![CDATA[一顶]]></determiner>
+
+		<name><![CDATA[贝雷帽]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[贝雷帽]]></namePlural> 
+
+		<description><![CDATA[一顶平顶帽，由羊毛毡制成，系在一条坚硬的皮带上，有时执法者会穿戴。]]></description> 
+
+		<physicalResistance>0</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>HEAD</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/>
+
+		<imageName>enfberet.svg</imageName> 
+
+		<imageEquippedName/>
+		
+		<stickers>
+			
+			<category id="flash" priority="1"> 
+				<categoryName><![CDATA[Beret Flash]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1" colourSelected="TEXT_GREY"> 
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="flash_patrol_dominion" priority="1" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_BLUE"> 
+					<stickerName><![CDATA[御城区巡逻队]]></stickerName>
+					<namePrefix priority="1"><![CDATA[御城区巡逻执法者]]></namePrefix> 
+					<namePostfix/> 
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[
+					<i>这上面有御城区前线巡逻队的徽章。</i><br/>
+					<span style="color:#3971C6;font-style:italic">守护正义。</span>
+]]></descriptionModification> 
+					<imageName>enfberet_st_flash_patrol_dominion.svg</imageName> 
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded> 
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved> 
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_PATROL))
+							Only Patrol Enforcers can use this beret flash!
+						#ENDIF
+					]]></unavailabilityText> 
+					<availabilityText>
+						As a Patrol Enforcer, you can freely use this beret flash.
+					</availabilityText> 
+				</sticker>
+				<sticker id="flash_sword" priority="2" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_GREY"> 
+					<stickerName><![CDATA[SWORD]]></stickerName>
+					<namePrefix priority="1"><![CDATA[SWORD执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[
+					<i>这上面装饰着执法者精英武装特遣队SWORD的帽徽。</i><br/>
+					<span style="color:#777777;font-style:italic">我们护卫王国。</span>
+]]></descriptionModification>
+					<imageName>enfberet_st_flash_sword.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_SWORD))
+							Only SWORD Enforcers can use this beret flash!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As a SWORD Enforcer, you can freely use this beret flash.
+					</availabilityText>
+				</sticker>
+				<sticker id="flash_oricl" priority="3" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_PURPLE_DARK">
+					<stickerName><![CDATA[ORICL]]></stickerName>
+					<namePrefix priority="1"><![CDATA[ORICL执法者]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[
+					<i>这上面装饰着执法者精英秘密恶魔特遣队SWORD的帽徽。</i><br/>
+					<span style="color:#674A95;font-style:italic">预见和平。</span>
+]]></descriptionModification>
+					<imageName>enfberet_st_flash_oricl.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(!pc.hasOccupationTag(OCCUPATION_TAG_ENFORCER_ORICL))
+							Only ORICL Enforcers can use this beret flash!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an ORICL Enforcer, you can freely use this beret flash.
+					</availabilityText>
+				</sticker>
+				<sticker id="flash_academy" priority="4" defaultSticker="false" zLayer="1" colourDisabled="TEXT_GREY" colourSelected="CLOTHING_WHITE">
+					<stickerName><![CDATA[执法者学会]]></stickerName>
+					<namePrefix priority="1"><![CDATA[执法者学会讲师]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[
+					<i>这上面装饰着执法者学会的帽徽。</i><br/>
+					<span style="color:#aaaaaa;font-style:italic">物质与意识。</span>
+]]></descriptionModification>
+					<imageName>enfberet_st_flash_academy.svg</imageName>
+					<itemTagsAdded>
+						<tag>CONTRABAND_HEAVY</tag>
+					</itemTagsAdded>
+					<itemTagsRemoved>
+						<tag>CONTRABAND_MEDIUM</tag>
+					</itemTagsRemoved>
+					<unavailabilityText showDisabledButton="true"><![CDATA[
+						#IF(true)
+							Only instructors at the Enforcer Academy can use this beret flash!
+						#ENDIF
+					]]></unavailabilityText>
+					<availabilityText>
+						As an instructor at the Enforcer Academy, you can freely use this beret_flash.
+					</availabilityText>
+				</sticker>
+			</category>
+		</stickers>
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired> 
+
+				<blockedBodyParts>
+					<bodyPart>HAIR</bodyPart>
+				</blockedBodyParts>
+
+				<clothingAccessBlocked/> 
+
+				<concealedSlots/> 
+			</blockedParts>
+			
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours>
+			<colour>CLOTHING_BLUE</colour>
+			<colour>CLOTHING_PINK</colour>
+			<colour>CLOTHING_GREY</colour>
+			<colour>CLOTHING_PURPLE_DARK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]戴上了贝雷帽，确保右侧紧贴在[npc.her]的头上，然后旋转帽子，直到徽章在[npc.her]的左[npc.eye]上方。]]></self>
+		<other><![CDATA[
+[npc.Name]为[npc2.namePos]戴上了贝雷帽，确保右侧紧贴在[npc2.her]的头上，然后旋转帽子，直到徽章在[npc2.her]的左[npc2.eye]上方。]]></other>
+		<otherRough><![CDATA[[npc.Name]将贝雷帽按在了[npc2.namePos]的头上，但是并没有认真调整位置，使得[npc2.her]的帽子看起来非常不专业。]]></otherRough>
+  </replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的贝雷帽脱下。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的贝雷帽脱下。]]></other>
+		<otherRough><![CDATA[[npc.Name]将贝雷帽从[npc2.namePos]的头上拽了下来。]]></otherRough>
+	</displacementText>
+	
+</clothing>

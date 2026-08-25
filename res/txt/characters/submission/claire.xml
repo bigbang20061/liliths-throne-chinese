@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- PARTNER_INTERRUPTED  -->
+	
+	<htmlContent tag="PARTNER_INTERRUPTED"><![CDATA[
+		[claire.speechNoEffects(~嗯嗯！~好舒服！)]克莱尔呻吟道，忽然她瞪大了眼睛，连忙压低了声音，[claire.speechNoEffects(好像有人来了！)]
+	</p>
+	<p>
+		的确，你看向储藏室的门，门把手正在转动。
+		#IF(sex.getSexPositionSlot(pc).isStanding(pc))
+			在你从僵硬中恢复之前，克莱尔猛地把你拉进身旁的文件柜里。她呼出的热气喷在你赤裸的[pc.skin]上，[npc.she]发出嘶嘶声，[claire.speech(别出声！)]
+		#ELSE
+			在你从僵硬中恢复之前，在你反应过来之前，克莱尔猛地抓住你，把你按在地毯上，躲在一堆文件后面。她呼出的热气喷在你赤裸的[pc.skin]上，[npc.she]发出嘶嘶声，[claire.speech(别出声！)]
+		#ENDIF
+	</p>
+	<p style='text-align:center;'>
+		[style.italicsBad(一名执法者闯进了储藏室！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- PLAYER_STAY_QUIET and PLAYER_KEEP_GOING -->
+	
+	<htmlContent tag="ENFORCER_ENTERING"><![CDATA[
+		躲在你们的藏身之处，进门的人只是刚好看不见你和克莱尔，你听见开门的吱嘎声，你担惊受怕，畏惧着被发现。你扭头看向他们的肩膀，跨入房间的执法者大喊道：
+	#IF(RND.nextInt(100)<50)
+		[style.speechFeminine(
+	#ELSE
+		[style.speechMasculine(
+	#ENDIF
+	[style.random(
+		什么？！只有一盒？！
+		|
+		对，我知道了，我这就去拿！
+		|
+		你不是说在那个红的后面么……，好吧。
+		|
+		我想到他们在哪儿了！我<i>已经</i>在这工作两年了，忘了吗？
+		|
+		嗯嗯，我再给你带点铅笔，稍等一下！)]
+	)]
+	
+	]]></htmlContent>
+	
+</dialogue>

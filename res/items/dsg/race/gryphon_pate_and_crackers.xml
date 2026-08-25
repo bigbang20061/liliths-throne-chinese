@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[包装上印着细小的字迹，写着“DSG食品材料有限公司打包”。]]></authorTag>
+		
+		<value>350</value> 
+		<determiner><![CDATA[一包]]></determiner>
+		<name><![CDATA[肉酱酥脆饼干]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[金枪鱼刺身]]></namePlural>
+		<description><![CDATA[一个小罐肉酱和包在蜡纸包装中的饼干。包装上的标签描绘了一个面带微笑的卡通狮鹫男，嘴巴周围都是饼干屑。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName>gryphon_pate_and_crackers.svg</imageName>
+		
+		<colourPrimary>dsg_gryphonBlue</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[狮鹫]]></potionDescriptor>
+		<associatedRace>dsg_gryphon</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]20%[style.boldMana([#ATTRIBUTE_MANA_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(1)]到“药剂效果”]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_ARCANE.getFormattedValue(1)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/5)]
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM)/5)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮和警觉……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_ARCANE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		#IF(game.isSillyModeEnabled())
+		[npc.speech(好的，让我们把这个从包装中拿出来，)][npc.name]说给一个看不见的观众，然后打开饼干和罐头。当空气涌入时，听到罐头发出轻微的嘶嘶声。[npc.speech(不错的嘶嘶声，)][npc.she]评价道。
+		#ELSE
+		[npc.Name]拆开了饼干的包装并打开了罐头。
+		#ENDIF 
+		[npc.She]深深吸入了刚出炉的饼干和新鲜烹制的肉的浓郁香气。无法抗拒这诱人的美食，[npc.she]迅速将它全部吞咽下去，只留下了一个空罐头盒和撕破的蜡纸。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		#IF(game.isSillyModeEnabled())
+		[npc.speech(好的，让我们把它从包装中取出。)][npc.Name]在打开之前说道。
+		#ELSE
+		[npc.Name]打开
+		#END IF
+		饼干的包装并打开罐头
+		#IF(game.isSillyModeEnabled())
+		。听到锡罐发出轻微的嘶嘶声，[npc.speech(嘶嘶声不错。)][npc.she]说的同时撕开盖子
+		#ELSE
+		，倒出
+		#ENDIF
+		食物放在[npc2.name]面前。[npc2.she]深深吸入了刚出炉的饼干和新鲜烹制的肉的浓郁香气。[npc2.she]无法抗拒地迅速将它全部吞咽下去，只留下了一个空罐头盒和撕破的蜡纸。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

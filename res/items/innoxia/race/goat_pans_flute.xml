@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>180</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[潘笛香槟]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[潘笛香槟]]></namePlural>
+		<description><![CDATA[一瓶装有高品质香槟的厚玻璃瓶。瓶子的标签宣称它是“潘笛”品牌，这似乎指的是香槟的名称，也与品牌的竹笛标志有关。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">goat_pans_flute.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+			<line><![CDATA[[style.boldMinorBad(增加)]15%[style.boldAlcohol(醉酒度)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股丝滑的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+			[#npc.incrementAlcoholLevel(0.15)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ALCOHOLIC</tag>
+			<tag>ELIS_ALLEYWAY_SPAWN</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		在发出“碰！”的一声巨大的声音后，[npc.name]将潘笛香槟的玻璃瓶送到[npc.her]的[npc.mouth]边。将头仰起，[npc.she]开始喝下气泡酒，发现它的味道真是极好的。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		在发出“碰！”的一声巨大的声音后，[npc.name]将Pan's Flute的玻璃瓶送到[npc2.namePos]等待[npc2.lips]边。将头仰起，[npc2.she]开始喝下气泡酒，发现它的味道真是极好的。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

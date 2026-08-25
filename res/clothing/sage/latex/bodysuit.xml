@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAtributes>
+		<value>3900</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[乳胶紧身衣]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[乳胶紧身衣]]></namePlural>
+		<description><![CDATA[一件莉莉丝异教高级成员所穿的闪亮乳胶紧身衣，表面看起来就像油一样，以一种近乎罪恶的方式贴合每一处身体曲线。]]></description>
+		<physicalResistance>1</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>STOMACH</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet> 
+		<imageName>bodysuit.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>BREASTS_CROTCH</bodyPart>
+					<bodyPart>NIPPLES_CROTCH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots>
+					<slot>NIPPLE</slot>
+					<slot>STOMACH</slot>
+					<slot>ANUS</slot>
+					<slot>GROIN</slot>
+					<slot>PENIS</slot>
+					<slot>VAGINA</slot>
+					<slot>PIERCING_NIPPLE</slot>
+					<slot>PIERCING_VAGINA</slot>
+					<slot>PIERCING_PENIS</slot>
+				</concealedSlots> 
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>BREASTS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+				</clothingAccessBlocked>
+				<concealedSlots>
+					<slot>NIPPLE</slot>
+					<slot>CHEST</slot>
+					<slot>PIERCING_NIPPLE</slot>
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>SHIFTS_ASIDE</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+				</clothingAccessBlocked>
+				<concealedSlots>
+					<slot>ANUS</slot>
+					<slot>GROIN</slot>
+					<slot>PENIS</slot>
+					<slot>VAGINA</slot>
+					<slot>PIERCING_VAGINA</slot>
+					<slot>PIERCING_PENIS</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots>
+			<slot>GROIN</slot>
+			<slot>CHEST</slot>
+		</incompatibleSlots>
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours values="JUST_BLACK"/>
+		<tertiaryColoursDye values="ALL"/>
+
+		<itemTags> 
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAtributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]穿上[npc.her]的紧身衣，然后扣紧搭扣。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]引导[npc2.name]穿进紧身衣里，然后将[npc2.herHim]的搭扣扣好。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地将[npc2.name]塞进紧身衣里，然后不耐烦地将[npc2.herHim]的搭扣扣好。
+		]]></otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+		[npc.Name]解开[npc.her]紧身衣的搭扣，然后将其脱掉。
+		]]></self>
+		<other><![CDATA[
+		[npc.Name]解开[npc2.namePos]紧身衣的搭扣，然后将其脱掉。
+		]]></other>
+		<otherRough><![CDATA[
+		[npc.Name]粗暴地解开[npc2.namePos]紧身衣的搭扣，然后不耐烦地将其脱下。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

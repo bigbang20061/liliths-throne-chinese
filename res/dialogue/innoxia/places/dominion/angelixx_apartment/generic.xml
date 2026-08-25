@@ -1,0 +1,1871 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Place type dialogues aren't used as player can't move freely around when in Angelixx's apartment -->
+	
+	<!-- Place type id: innoxia_angelixx_apartment_exit -->
+	<scene id="exit">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">EXIT</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_hallway -->
+	<scene id="hallway">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">HALLWAY</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_kitchen -->
+	<scene id="kitchen">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">KITCHEN</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_dining_room -->
+	<scene id="dining_room">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">DINING_ROOM</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_toilet -->
+	<scene id="toilet">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">TOILET</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_bathroom -->
+	<scene id="bathroom">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">BATHROOM</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_lounge -->
+	<scene id="lounge">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">LOUNGE</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_bedroom -->
+	<scene id="bedroom">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">BEDROOM</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	<!-- Place type id: innoxia_angelixx_apartment_bedroom_angelixx -->
+	<scene id="bedroom_angelixx">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">BEDROOM_ANGELIXX</content>
+		<secondsPassed><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+
+	
+	
+	<!-- Start visit dialogue: -->
+	
+	<scene id="visit">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_angelixx_apartment_visited, true)]
+			[#pc.setLocation(WORLD_TYPE_innoxia_dominion_angelixx_apartment, PLACE_TYPE_innoxia_dominion_angelixx_apartment_exit)]
+			
+			#IF(RND.nextInt(100)<80)
+				[#angelixx.setLocation(pc)]
+				#IF(RND.nextInt(100)<50)
+					[#sleip.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+				#ELSE
+					[#sleip.setLocation(WORLD_TYPE_innoxia_dominion_angelixx_apartment, PLACE_TYPE_innoxia_dominion_angelixx_apartment_lounge)]
+				#ENDIF
+				[#nir.setLocation(sleip)]
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'VISIT'))]
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'VISIT_ANGELIXX'))]
+			#ELSE
+				[#angelixx.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+				[#sleip.equipClothing()]
+				[#nir.equipClothing()]
+				[#itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(sleip, sleip)]
+				[#itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(sleip, sleip)]
+				[#itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(nir, nir)]
+				[#itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(nir, nir)]
+				[#sleip.setLocation(pc)]
+				[#nir.setLocation(WORLD_TYPE_innoxia_dominion_angelixx_apartment, PLACE_TYPE_innoxia_dominion_angelixx_apartment_lounge)]
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'VISIT'))]
+				[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'VISIT_SLEIP_NIR'))]
+				[#flags.setFlag(FLAG_innoxia_sleip_nir_apartment_seen, true)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Invited in: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCharactersPresent().contains(angelixx))
+						#IF(sleip.getWorldLocation()==WORLD_TYPE_EMPTY)
+							接受安吉莉克丝德邀请，进入她的公寓。
+						#ELSE
+							安吉莉克丝的儿子们此刻在这里，她不想邀请你进去。
+						#ENDIF
+					#ELSE
+						接受斯雷普的邀请，进入公寓。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCharactersPresent().contains(angelixx) && sleip.getWorldLocation()!=WORLD_TYPE_EMPTY)
+						null
+					#ELSE
+						#IF(game.getCharactersPresent().contains(angelixx))
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom
+						#ELSE
+							innoxia_places_dominion_angelixx_apartment_generic_sleip_nir
+						#ENDIF
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					#IF(!game.getCharactersPresent().contains(angelixx))
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_ENTER'))]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_INTRO'))]
+						[#flags.setFlag(FLAG_innoxia_sleip_nir_apartment_lounge_seen, true)]
+						
+						[#game.getDialogueFlags().setSavedLong('sleip_nir_conversation_progress', 1)]
+					#ENDIF
+				]]></effects>
+			</response>
+			<!-- See Sleip & Nir -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(angelixx)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[斯雷普和尼尔]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(sleip.getWorldLocation()==WORLD_TYPE_EMPTY)
+						由于斯雷普和尼尔此刻不在这里，你无法请求见到他们。
+					#ELSE
+						告诉安吉莉克丝你来是为了见她的儿子们……
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCharactersPresent().contains(angelixx) && sleip.getWorldLocation()!=WORLD_TYPE_EMPTY)
+						innoxia_places_dominion_angelixx_apartment_generic_sleip_nir
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#angelixx.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_START'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_INTRO'))]
+					[#flags.setFlag(FLAG_innoxia_sleip_nir_apartment_seen, true)]
+					[#flags.setFlag(FLAG_innoxia_sleip_nir_apartment_lounge_seen, true)]
+					
+					[#game.getDialogueFlags().setSavedLong('sleip_nir_conversation_progress', 1)]
+				]]></effects>
+			</response>
+			<!-- Clubbing: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getCharactersPresent().contains(angelixx)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[出去]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(sleip.getWorldLocation()!=WORLD_TYPE_EMPTY)
+						建议安吉莉克丝你们可以一起出去走走。
+					#ELSE
+						安吉莉克丝此刻似乎对外出没有丝毫兴趣。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getCharactersPresent().contains(angelixx) && sleip.getWorldLocation()!=WORLD_TYPE_EMPTY)
+						innoxia_places_dominion_angelixx_apartment_generic_angelixx_go_out
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#sleip.returnToHome()]
+					[#nir.returnToHome()]
+				]]></effects>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getCharactersPresent().contains(angelixx))
+						告诉安吉莉克丝，你只是顺路过来打个招呼，现在你得走了。
+					#ELSE
+						告诉斯雷普，你只是顺道过来打个招呼，现在你得走了。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_DEMON_HOME_SEX_SHOP"/>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'VISIT_LEAVE'))]
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+					[#angelixx.returnToHome()]
+					[#sleip.returnToHome()]
+					[#nir.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Angelixx in apartment dialogues: -->
+	
+	<scene id="angelixx_bedroom">
+		<preParsingEffects><![CDATA[
+			[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_dominion_angelixx_apartment_bedroom_angelixx, true, 1)]
+			[#angelixx.setLocation(pc)]
+			
+			[#flags.setFlag(FLAG_innoxia_angelixx_bedroom_talked, false)]
+			[#flags.setFlag(FLAG_innoxia_angelixx_bedroom_flirted, false)]
+			
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_BEDROOM'))]
+			#IF(pc.isVisiblyPregnant())
+				[#pc.setCharacterReactedToPregnancy(angelixx, true)]
+			#ENDIF
+			
+			[#angelixx.equipClothing()]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Talk: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[交谈]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!flags.hasFlag(FLAG_innoxia_angelixx_bedroom_talked))
+							试着更深入地了解一下安吉莉克丝。
+						#ELSE
+							你已经和安吉莉克丝聊过一段时间，现在她显然想要的远不止于此……
+						#ENDIF
+]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(!flags.hasFlag(FLAG_innoxia_angelixx_bedroom_talked))
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_talk
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_angelixx_bedroom_talked, true)]
+					]]></effects>
+				</response>
+			<!-- Flirt: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[调情]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!flags.hasFlag(FLAG_innoxia_angelixx_bedroom_flirted))
+							挑逗安吉莉克丝，和她调一会情。
+						#ELSE
+							你已经和安吉莉克丝调过情了，看起来她不会再接受了……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(!flags.hasFlag(FLAG_innoxia_angelixx_bedroom_flirted))
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_flirt
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#flags.setFlag(FLAG_innoxia_angelixx_bedroom_flirted, true)]
+					]]></effects>
+				</response>
+			<!-- Sex: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!angelixx.isTaur()]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[操她]]></responseTitle>
+					<responseTooltip><![CDATA[给安吉莉克丝她迫切想要的东西……]]></responseTooltip>
+					<nextDialogue/>
+					<effects/>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_angelixx_apartment_angelixx_bedroom_sex]]></id>
+						<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+						<dominants>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[LYING_DOWN_MISSIONARY]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>angelixx</id>
+								<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_BEDROOM_SEX_START</sexStartContent>
+						<ongoingActionsAtStart/>
+					</sexVariablesWithManager>
+				</response>
+			<!-- Demands: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_angelixx_demands_unlocked)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[需求]]></responseTitle>
+					<responseTooltip><![CDATA[为了让你站在她那一边，安吉莉克丝似乎愿意做任何事情，你认为你可以对她提出一些要求……]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_demand]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'BEDROOM_ANGELIXX_DEMANDS'))]
+						[#flags.setFlag(FLAG_innoxia_angelixx_demands_unlocked, true)]
+					]]></effects>
+				</response>
+			<!-- Demands unlocked: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_angelixx_demands_unlocked)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[
+						#IF(angelixx.getBreastRawSizeValue()>0)
+							平胸
+						#ELSE
+							A杯
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(angelixx.getBreastRawSizeValue()>0)
+							告诉安吉莉克丝你更喜欢她拥有完全平坦的胸部。
+						#ELSE
+							告诉安吉莉克丝你看腻了她的平胸，因此她可以转化回她最喜欢的B罩杯胸部。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_demand]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_DEMAND_FLAT_CHEST'))]
+						#IF(angelixx.getBreastRawSizeValue()>0)
+							[#angelixx.setBreastSize(0)]
+						#ELSE
+							[#angelixx.setBreastSize(5)]
+						#ENDIF
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_DEMAND_FLAT_CHEST_END'))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_angelixx_demands_unlocked)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[7]]></index>
+					<responseTitle><![CDATA[
+						#IF(angelixx.getBreastRawSizeValue()!=10)
+							大奶子
+						#ELSE
+							A杯
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(angelixx.getBreastRawSizeValue()!=10)
+							告诉安吉莉克丝你更喜欢她拥有一对大奶子。
+						#ELSE
+							告诉安吉莉克丝你看腻了她的大奶子，因此她可以转化回她最喜欢的B罩杯胸部。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_demand]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_DEMAND_BIG_TITS'))]
+						#IF(angelixx.getBreastRawSizeValue()!=10)
+							[#angelixx.setBreastSize(10)]
+						#ELSE
+							[#angelixx.setBreastSize(5)]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_angelixx_demands_unlocked)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[8]]></index>
+					<responseTitle><![CDATA[
+						#IF(angelixx.hasPenis() && !angelixx.hasVagina())
+							仅小穴
+						#ELSE
+							仅鸡巴
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(angelixx.hasPenis() && !angelixx.hasVagina())
+							让安吉莉克丝去掉她的鸡巴，回到仅小穴。
+						#ELSE
+							告诉安吉莉克丝，你希望她没有小穴，而是有一个鸡巴让你玩。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_demand]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_DEMAND_COCK_ONLY'))]
+						#IF(angelixx.hasPenis() && !angelixx.hasVagina())
+							[#angelixx.setPenisType(PENIS_TYPE_NONE)]
+							[#angelixx.setVaginaType(VAGINA_TYPE_DEMON_COMMON)]
+						#ELSE
+							[#angelixx.growPenis()]
+							[#angelixx.setVaginaType(VAGINA_TYPE_NONE)]
+						#ENDIF
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_DEMAND_COCK_ONLY_END'))]
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_angelixx_demands_unlocked)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[9]]></index>
+					<responseTitle><![CDATA[
+						#IF((angelixx.hasPenis() && !angelixx.hasVagina()) || (!angelixx.hasPenis() && angelixx.hasVagina()))
+							扶她
+						#ELSE
+							仅小穴
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF((angelixx.hasPenis() && !angelixx.hasVagina()) || (!angelixx.hasPenis() && angelixx.hasVagina()))
+							告诉安吉莉克丝你希望她同时拥有鸡巴和小穴。
+						#ELSE
+							让安吉莉克丝去掉她的鸡巴，回到仅小穴。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom_demand]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_DEMAND_FUTA'))]
+						#IF((angelixx.hasPenis() && !angelixx.hasVagina()) || (!angelixx.hasPenis() && angelixx.hasVagina()))
+							[#angelixx.setVaginaType(VAGINA_TYPE_DEMON_COMMON)]
+							[#angelixx.growPenis()]
+						#ELSE
+							[#angelixx.setPenisType(PENIS_TYPE_NONE)]
+							[#angelixx.setVaginaType(VAGINA_TYPE_DEMON_COMMON)]
+						#ENDIF
+					]]></effects>
+				</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉安吉莉克丝，是时候离开了。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_DEMON_HOME_SEX_SHOP"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_LEAVE'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.equipClothing()]
+					[#sleip.returnToHome()]
+					[#nir.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_bedroom_talk">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">BEDROOM_ANGELIXX_TALK</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom"/>
+	</scene>
+	
+	<scene id="angelixx_bedroom_flirt">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">BEDROOM_ANGELIXX_FLIRT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom"/>
+	</scene>
+	
+	<scene id="angelixx_bedroom_demand">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_dominion_angelixx_apartment_generic_angelixx_bedroom"/>
+	</scene>
+	
+	<scene id="angelixx_bedroom_after_sex">
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[安吉莉克丝已经玩够了……]]></tooltip>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_AFTER_SEX</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[道别]]></responseTitle>
+				<responseTooltip><![CDATA[是时候离开了。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_DEMON_HOME_SEX_SHOP"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_AFTER_SEX_LEAVE'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.applyWash(true, true, null, 0)]
+					[#angelixx.equipClothing()]
+					[#sleip.returnToHome()]
+					[#nir.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Angelixx clubbing scenes: -->
+	
+	<scene id="angelixx_go_out">
+		<preParsingEffects><![CDATA[
+			[#angelixx.equipClubbingClothing()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_GO_OUT</content>
+		<secondsPassed minutes="true"><![CDATA[
+			#IF(!game.isHourBetween(19, 12))
+				[#~~(game.getMinutesUntilTimeInMinutes(19 * 60))]
+			#ELSE
+				5
+			#ENDIF
+		]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Club: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[泡吧]]></responseTitle>
+				<responseTooltip><![CDATA[和安吉莉克丝一起去夜店。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_ENTRANCE)]
+			[#angelixx.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[直接走进夜店。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_start]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_start">
+		<preParsingEffects><![CDATA[
+			[#pc.walkPathNoEffects(PLACE_TYPE_WATERING_HOLE_BAR, true, 1)]
+			[#angelixx.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_START</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[
+					#IF(pc.getMoney()<400)
+						支付([style.moneyFormatUncoloured(400, span)])
+					#ELSE
+						支付([style.moneyFormat(400, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<400)
+						你没有足够的火币来为安吉莉克丝点的饮品付钱……
+					#ELSE
+						听安吉莉克丝的话，为你们两人的饮品付钱……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_PAY'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_BOTH_DRINK'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-400))]
+					[#game.appendToTextEndStringBuilder(angelixx.incrementAffection(pc, 2))]
+					[#game.getDialogueFlags().setSavedLong('angelixx_club_progress', 0)]
+					
+					[#game.appendToTextEndStringBuilder(angelixx.incrementAlcoholLevel(0.15))]
+					[#game.appendToTextEndStringBuilder(pc.incrementAlcoholLevel(0.15))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+                <responseTitle><![CDATA[安吉莉克丝支付]]></responseTitle>
+				<responseTooltip><![CDATA[告诉安吉莉克丝，这是她决定点这些饮料的，所以她得为此买单。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_ANGELIXX_PAYS'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_BOTH_DRINK'))]
+					[#game.getDialogueFlags().setSavedLong('angelixx_club_progress', 0)]
+					
+					[#game.appendToTextEndStringBuilder(angelixx.incrementAlcoholLevel(0.15))]
+					[#game.appendToTextEndStringBuilder(pc.incrementAlcoholLevel(0.15))]
+				]]></effects>
+			</response>
+			<!-- Don't drink -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+                <responseTitle><![CDATA[
+					#IF(pc.getMoney()<400)
+						支付并放弃([style.moneyFormatUncoloured(400, span)])
+					#ELSE
+						支付并放弃([style.moneyFormat(400, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(pc.getMoney()<400)
+						你没有足够的火币来支付安吉莉克丝点的饮料费用……
+					#ELSE
+						听从安吉莉克丝的建议，支付你们俩的饮料费用，但不喝她为你点的那一杯……
+					#ENDIF
+]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_PAY_ABSTAIN'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_SOLO_DRINK'))]
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(-400))]
+					[#game.appendToTextEndStringBuilder(angelixx.incrementAffection(pc, 2))]
+					[#game.getDialogueFlags().setSavedLong('angelixx_club_progress', 0)]
+					[#game.appendToTextEndStringBuilder(angelixx.incrementAlcoholLevel(0.25))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+                <responseTitle><![CDATA[安吉莉克丝支付并放弃]]></responseTitle>
+				<responseTooltip><![CDATA[告诉安吉莉克丝这杯饮料是她自己决定点的，所以她得为此买单。另外，不要喝她为你点的鸡尾酒。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_ANGELIXX_PAYS_ABSTAIN'))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_START_SOLO_DRINK'))]
+					[#game.getDialogueFlags().setSavedLong('angelixx_club_progress', 0)]
+					[#game.appendToTextEndStringBuilder(angelixx.incrementAlcoholLevel(0.25))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_core">
+		<preParsingEffects><![CDATA[
+			[#game.getDialogueFlags().incrementSavedLong('angelixx_club_progress', 1)]
+			#IF(game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_CORE_ANGELIXX_HORNY'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Dance: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[跳舞]]></responseTitle>
+					<responseTooltip><![CDATA[						
+						#IF(game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5)
+							安吉莉克丝想要做一些更刺激的事情……
+						#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_DANCE_FLOOR)
+							你刚和安吉莉克丝一起跳舞，是时候做点别的了……
+						#ELSE
+							带安吉莉克丝去舞池，尽情享受乐趣吧。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_DANCE_FLOOR || game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5)
+							null
+						#ELSE
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setRandomLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_DANCE_FLOOR, false)]
+						[#angelixx.setLocation(pc)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_DANCE'))]
+					]]></effects>
+				</response>
+			<!-- Drink: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+					<responseTitle><![CDATA[
+						#IF(pc.getMoney()<400 || game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5 || pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_BAR)
+							喝([style.moneyFormatUncoloured(400, span)])
+						#ELSE
+							喝([style.moneyFormat(400, span)])
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5)
+							安吉莉克丝想要做一些更刺激的事情……
+						#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_BAR)
+							你刚和安吉莉克丝共饮过了，再来一杯之前最好是先做点别的……
+						#ELSEIF(pc.getMoney()<400)
+							你没有足够的火币来为安吉莉克丝想要的饮品付钱……
+						#ELSE
+							带安吉莉克丝去酒吧，为你们两人的饮品付钱……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(pc.getMoney()<400 || game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5 || pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_BAR)
+							null
+						#ELSE
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setRandomLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_BAR, false)]
+						[#angelixx.setLocation(pc)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_DRINK'))]
+						[#game.appendToTextEndStringBuilder(pc.incrementMoney(-400))]
+						[#game.appendToTextEndStringBuilder(angelixx.incrementAffection(pc, 2))]
+						[#game.appendToTextEndStringBuilder(angelixx.incrementAlcoholLevel(0.15))]
+						[#game.appendToTextEndStringBuilder(pc.incrementAlcoholLevel(0.15))]
+					]]></effects>
+				</response>
+			<!-- Talk: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[交谈]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5)
+							安吉莉克丝想要做一些更刺激的事情……
+						#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_SEATING_AREA)
+							你刚和安吉莉克丝一起聊过天，是时候做点别的了……
+						#ELSE
+							把安吉莉克丝带去相对安静的座位区，和她聊会天……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5 || pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_SEATING_AREA)
+							null
+						#ELSE
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setRandomLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_SEATING_AREA, false)]
+						[#angelixx.setLocation(pc)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_TALK'))]
+					]]></effects>
+				</response>
+			<!-- Flirt: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+					<responseTitle><![CDATA[调情]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5)
+							安吉莉克丝想要做一些更刺激的事情……
+						#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_MAIN_AREA)
+							你刚和安吉莉克丝调过情，是时候做点别的了……
+						#ELSE
+							和安吉莉克丝调一会情……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5 || pc.getLocationPlaceType()==PLACE_TYPE_WATERING_HOLE_MAIN_AREA)
+							null
+						#ELSE
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_core
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setRandomLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_MAIN_AREA, false)]
+						[#angelixx.setLocation(pc)]
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_FLIRT'))]
+					]]></effects>
+				</response>
+			<!-- Ending actions: -->
+			<!-- Bathroom fuck: -->
+				<response>
+					<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[6]]></index>
+					<responseTitle><![CDATA[洗手间性爱]]></responseTitle>
+					<responseTooltip><![CDATA[把安吉莉克丝带到夜店的洗手间，在其中一个隔间与她做爱……]]></responseTooltip>
+					<nextDialogue/>
+					<effects><![CDATA[
+						[#pc.setLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_WATERING_HOLE_TOILETS)]
+						[#angelixx.setLocation(pc)]
+					]]></effects>
+					<sexVariablesWithManager enabled="true">
+						<id><![CDATA[innoxia_dominion_angelixx_apartment_club_bathroom]]></id>
+						<startingPosition><![CDATA[STANDING]]></startingPosition>
+						<dominants>
+							<character>
+								<id>pc</id>
+								<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+							</character>
+						</dominants>
+						<submissives>
+							<character>
+								<id>angelixx</id>
+								<slot><![CDATA[STANDING_STANDING_SUBMISSIVE]]></slot>
+							</character>
+						</submissives>
+						<postSexDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_bathroom_after_sex]]></postSexDialogue>
+						<sexStartContent folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_BATHROOM_SEX_START</sexStartContent>
+						<ongoingActionsAtStart/>
+					</sexVariablesWithManager>
+				</response>
+			<!-- Pose: -->
+				<response>
+					<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[7]]></index>
+					<colour><![CDATA[GENERIC_SEX]]></colour>
+					<responseTitle><![CDATA[姿势]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!angelixx.hasVagina() && !game.isAnalContentEnabled())
+							安吉莉克丝需要拥有小穴才能引诱一对陌生人一起做爱。
+						#ELSEIF((!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+							你需要拥有不被限制的小穴#IF(game.isAnalContentEnabled())或菊穴#ENDIF才能引诱一对陌生人一起做爱。
+						#ELSE
+							跟安吉莉克丝一起摆好姿势，尝试引诱一对陌生人一起做爱。<br/>[style.italicsSex(这会导致你在与安吉莉克丝和两名陌生人的4P性爱中处于顺从状态……)]
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF((!angelixx.hasVagina() && !game.isAnalContentEnabled()) || ((!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true))))
+							null
+						#ELSE
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_pose
+						#ENDIF
+					]]></nextDialogue>
+				</response>
+			<!-- Jules: -->
+				<response>
+					<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('angelixx_club_progress')>=5]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[8]]></index>
+					<colour><![CDATA[GENERIC_SEX]]></colour>
+					<responseTitle><![CDATA[朱勒斯]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+							你需要能够接触到你的嘴，以便向朱勒斯偿还他让你们俩进入夜店的恩情。
+						#ELSE
+							去向朱勒斯偿还他让你们俩进入夜店的恩情。<br/>[style.italicsSex(这将使你成为与安吉莉克丝和朱勒斯三人行中的一个顺从的对象……)]
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+							null
+						#ELSE
+							innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_jules
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#pc.setLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_ENTRANCE)]
+						[#angelixx.setLocation(pc)]
+					]]></effects>
+				</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉安吉莉克丝，你已经玩够了，准备离开夜店。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_NIGHTLIFE_DISTRICT"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_LEAVE'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.equipClothing()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_bathroom_after_sex">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+			[#angelixx.setLocation(pc)]
+		]]></preParsingEffects>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[你已经玩够了……]]></tooltip>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_BATHROOM_AFTER_SEX</content>
+		<secondsPassed><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[步行回家]]></responseTitle>
+				<responseTooltip><![CDATA[送安吉莉克丝回家……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_walked_home]]></nextDialogue>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉安吉莉克丝，她可以自己找到回去的路。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_NIGHTLIFE_DISTRICT"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_REFUSE_TO_WALK_HOME'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.equipClothing()]
+					[#angelixx.applyWash(true, true, null, 0)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_pose">
+		<preParsingEffects><![CDATA[
+			[#pc.setRandomLocation(WORLD_TYPE_NIGHTLIFE_CLUB, PLACE_TYPE_WATERING_HOLE_BAR, false)]
+			[#angelixx.setLocation(pc)]
+			[#angelixx.spawnClubStrangers()]
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_POSE'))]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[调情([stranger1.name])]]></responseTitle>
+				<responseTooltip><![CDATA[开始和[stranger1.name]调情，让安吉莉克丝去和[stranger2.name]调情。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_pose_flirt]]></nextDialogue>
+				<effects><![CDATA[
+					[#angelixx.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#angelixx.setNearestLocation(PLACE_TYPE_DOMINION_BACK_ALLEYS)]
+					[#stranger2.setLocation(angelixx)]
+					[#game.setParserTarget('chosenStranger', stranger1)]
+					[#game.setParserTarget('angelixxStranger', stranger2)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[调情([stranger2.name])]]></responseTitle>
+				<responseTooltip><![CDATA[开始向[stranger2.name]调情，让安吉莉克丝去和[stranger1.name]调情。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_pose_flirt]]></nextDialogue>
+				<effects><![CDATA[
+					[#angelixx.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#angelixx.setNearestLocation(PLACE_TYPE_DOMINION_BACK_ALLEYS)]
+					[#stranger1.setLocation(angelixx)]
+					[#game.setParserTarget('chosenStranger', stranger2)]
+					[#game.setParserTarget('angelixxStranger', stranger1)]
+				]]></effects>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉安吉莉克丝，你已经玩够了，准备离开夜店。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_NIGHTLIFE_DISTRICT"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_POSE_LEAVE'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.equipClothing()]
+					[#game.banishNPC(stranger1)]
+					[#game.banishNPC(stranger2)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_pose_flirt">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_POSE_FLIRT</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[和[chosenStranger.name]一起走]]></responseTitle>
+				<responseTooltip><![CDATA[顺从地让[chosenStranger.name]带你走出门外，你希望能与安吉莉克丝和[angelixxStranger.she]一起享受欢愉。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_pose_alleyway]]></nextDialogue>
+				<effects><![CDATA[
+					[#pc.setLocation(angelixx)]
+					[#chosenStranger.setLocation(pc)]
+					[#angelixx.displaceClothingForAccess(CA_VAGINA, null)]
+					[#angelixxStranger.displaceClothingForAccess(CA_PENIS, null)]
+				]]></effects>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[告诉[chosenStranger.name]你已经玩够了，并离开夜店。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_NIGHTLIFE_DISTRICT"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_POSE_FLIRT_LEAVE'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.equipClothing()]
+					[#game.banishNPC(stranger1)]
+					[#game.banishNPC(stranger2)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_pose_alleyway">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_POSE_ALLEYWAY</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[[chosenStranger.Name]开始操你，[angelixxStranger.name]也开始在你身边操安吉莉克丝……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_angelixx_apartment_club_alleyway_foursome]]></id>
+					<startingPosition><![CDATA[
+						#IF(chosenStranger.isTaur() || angelixxStranger.isTaur())
+							OVER_DESK
+						#ELSE
+							AGAINST_WALL
+						#ENDIF
+					]]></startingPosition>
+					<dominants>
+						<character>
+							<id>chosenStranger</id>
+							<slot><![CDATA[
+								#IF(chosenStranger.isTaur() || angelixxStranger.isTaur())
+									OVER_DESK_BETWEEN_LEGS
+								#ELSE
+									AGAINST_WALL_STANDING_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+						<character>
+							<id>angelixxStranger</id>
+							<slot><![CDATA[
+								#IF(chosenStranger.isTaur() || angelixxStranger.isTaur())
+									OVER_DESK_BETWEEN_LEGS_TWO
+								#ELSE
+									AGAINST_WALL_STANDING_WALL_TWO
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[
+								#IF(chosenStranger.isTaur() || angelixxStranger.isTaur())
+									OVER_DESK_OVER_DESK_ON_FRONT
+								#ELSE
+									AGAINST_WALL_FACE_TO_WALL
+								#ENDIF
+							]]></slot>
+						</character>
+						<character>
+							<id>angelixx</id>
+							<slot><![CDATA[
+								#IF(chosenStranger.isTaur() || angelixxStranger.isTaur())
+									OVER_DESK_OVER_DESK_ON_FRONT_TWO
+								#ELSE
+									AGAINST_WALL_FACE_TO_WALL_TWO
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_pose_alleyway_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_POSE_ALLEYWAY_SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<!-- Vaginal: -->
+							<action>
+								<condition><![CDATA[[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></condition>
+								<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+								<performer><![CDATA[chosenStranger]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+							<action>
+								<condition><![CDATA[[#angelixx.hasVagina()]]]></condition>
+								<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+								<performer><![CDATA[angelixxStranger]]></performer>
+								<target><![CDATA[angelixx]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						<!-- Anal: -->
+							<action>
+								<condition><![CDATA[[#!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></condition>
+								<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+								<performer><![CDATA[chosenStranger]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+							<action>
+								<condition><![CDATA[[#!angelixx.hasVagina()]]]></condition>
+								<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+								<performer><![CDATA[angelixxStranger]]></performer>
+								<target><![CDATA[angelixx]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						<!-- Kissing: -->
+							<action>
+								<condition><![CDATA[[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true) && ((!chosenStranger.isTaur() && !angelixxStranger.isTaur()) || pc.isTaur()==angelixx.isTaur())]]]></condition>
+								<id><![CDATA[TongueMouth_KISS_START]]></id>
+								<performer><![CDATA[pc]]></performer>
+								<target><![CDATA[angelixx]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_pose_alleyway_after_sex">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_POSE_ALLEYWAY_AFTER_SEX'))]
+			[#game.banishNPC(stranger1)]
+			[#game.banishNPC(stranger2)]
+		]]></preParsingEffects>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[[stranger1.Name]和[stranger2.name]爽够了，结束了性爱…… ]]></tooltip>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[步行回家]]></responseTitle>
+				<responseTooltip><![CDATA[送安吉莉克丝回家……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_walked_home]]></nextDialogue>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉安吉莉克丝，她可以自己找到回去的路。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_NIGHTLIFE_DISTRICT"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_REFUSE_TO_WALK_HOME'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.equipClothing()]
+					[#angelixx.applyWash(true, true, null, 0)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_jules">
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_JULES</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[吮吸鸡巴]]></responseTitle>
+				<responseTooltip><![CDATA[加入安吉莉克丝吮吸朱勒斯的肉棒……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_angelixx_apartment_club_jules]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>jules</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL]]></slot>
+						</character>
+						<character>
+							<id>angelixx</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL_TWO]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_club_jules_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_JULES_SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<!-- Oral: -->
+							<action>
+								<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START]]></id>
+								<performer><![CDATA[pc]]></performer>
+								<target><![CDATA[jules]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+							<action>
+								<id><![CDATA[PenisMouth_GIVING_BLOWJOB_START_ADDITIONAL]]></id>
+								<performer><![CDATA[angelixx]]></performer>
+								<target><![CDATA[jules]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_club_jules_after_sex">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+			[#angelixx.setLocation(pc)]
+		]]></preParsingEffects>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[朱勒斯爽够了，结束了与你们二人的性爱……]]></tooltip>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_CLUB_JULES_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[步行回家]]></responseTitle>
+				<responseTooltip><![CDATA[送安吉莉克丝回家……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_angelixx_walked_home]]></nextDialogue>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉安吉莉克丝，她可以自己找到回去的路。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_NIGHTLIFE_DISTRICT"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_NIGHTLIFE_DISTRICT)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'ANGELIXX_CLUB_REFUSE_TO_WALK_HOME'))]
+					[#angelixx.returnToHome()]
+					[#angelixx.equipClothing()]
+					[#angelixx.applyWash(true, true, null, 0)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="angelixx_walked_home">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+			[#angelixx.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">ANGELIXX_WALKED_HOME</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[现在安吉莉克丝已经回到家，接下来该做些什么……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="DOMINION_DEMON_HOME_SEX_SHOP"/>
+				<effects><![CDATA[
+					[#angelixx.returnToHome()]
+					[#angelixx.applyWash(true, true, null, 0)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Sleip & Nir scenes: -->
+	
+	<scene id="sleip_nir">
+		<preParsingEffects><![CDATA[
+			#IF(pc.isVisiblyPregnant())
+				[#pc.setCharacterReactedToPregnancy(sleip, true)]
+				[#pc.setCharacterReactedToPregnancy(nir, true)]
+			#ENDIF
+			
+			#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')==1)
+				[#pc.walkPathNoEffects(PLACE_TYPE_innoxia_dominion_angelixx_apartment_lounge, true, 1)]
+				[#sleip.setLocation(pc)]
+				[#nir.setLocation(pc)]
+				
+				[#flags.setFlag(FLAG_innoxia_sleip_nir_conversation_talked, false)]
+				[#flags.setFlag(FLAG_innoxia_sleip_nir_leave_denied, false)]
+			#ENDIF
+			
+			#IF(!sleip.isAttractedTo(pc) && game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=3)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_DEMAND_TF'))]
+			#ELSEIF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=5)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_DEMAND_COCK_STROKING'))]
+				[#sleip.displaceClothingForAccess(CA_PENIS, null, true)]
+				[#nir.displaceClothingForAccess(CA_PENIS, null, true)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Drink: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[喝啤酒]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF((sleip.isAttractedTo(pc) || game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<3) && game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<5)
+							喝一瓶放在咖啡桌上的啤酒。
+						#ELSE
+							在你做其他事情之前，你需要回应斯雷普的要求……
+						#ENDIF
+]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF((sleip.isAttractedTo(pc) || game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<3) && game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<5)
+							innoxia_places_dominion_angelixx_apartment_generic_sleip_nir
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_DRINK'))]
+						
+						[#game.appendToTextStartStringBuilder(itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(pc, pc))]
+						[#itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(sleip, sleip)]
+						[#itemGen.generateItem('innoxia_race_dog_canine_crush').applyEffect(nir, nir)]
+						[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+					]]></effects>
+				</response>
+			<!-- Talk: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[交谈]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_sleip_nir_conversation_talked))
+							你已经花了一些时间与这些梦魇尝试进行对话了……
+						#ELSEIF((sleip.isAttractedTo(pc) || game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<3) && game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<5)
+							试着和这些梦魇进行对话吧……
+						#ELSE
+							你需要先回应斯雷普的要求，才能做其他事情……
+						#ENDIF
+]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_sleip_nir_conversation_talked))
+							null
+						#ELSEIF((sleip.isAttractedTo(pc) || game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<3) && game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<5)
+							innoxia_places_dominion_angelixx_apartment_generic_sleip_nir
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_TALK'))]
+						[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+						[#flags.setFlag(FLAG_innoxia_sleip_nir_conversation_talked, true)]
+					]]></effects>
+				</response>
+			<!-- Flirt: -->
+				<response>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[调情]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=5)
+							简单调情的时间似乎已经结束了……
+						#ELSEIF(sleip.isAttractedTo(pc))
+							开始与斯雷普和尼尔调情……
+						#ELSE
+							你确信斯雷普和尼尔对你不感兴趣，继续和他们调情也不会有任何好处……
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=5)
+							null
+						#ELSEIF(sleip.isAttractedTo(pc))
+							innoxia_places_dominion_angelixx_apartment_generic_sleip_nir
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_FLIRT'))]
+						[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+					]]></effects>
+				</response>
+			<!-- Demands: -->
+				<!-- Feminine TF: -->
+					<response>
+						<availabilityConditional><![CDATA[[#!sleip.isAttractedTo(pc) && game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=3]]]></availabilityConditional>
+						<responseTabIndex><![CDATA[0]]></responseTabIndex>
+						<index><![CDATA[4]]></index>
+						<colour><![CDATA[FEMININE_PLUS]]></colour>
+						<responseTitle><![CDATA[
+							#IF(pc.isAbleToSelfTransform())
+								转化
+							#ELSE
+								喝魔药
+							#ENDIF
+						]]></responseTitle>
+						<responseTooltip><![CDATA[
+							#IF(pc.isAbleToSelfTransform())
+								按斯雷普说的做，用你的能力将自己转化成他喜欢的样子。
+							#ELSE
+								按斯雷普说的做，喝下这瓶通常是被给予玩偶化受害者的魔药……
+							#ENDIF
+						]]></responseTooltip>
+						<nextDialogue><![CDATA[
+							innoxia_places_dominion_angelixx_apartment_generic_sleip_nir
+						]]></nextDialogue>
+						<effects><![CDATA[
+							#IF(pc.isAbleToSelfTransform())
+								[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SELF_TF'))]
+								[#pc.setFemininity(100)]
+								#IF(!pc.hasBreasts())
+									[#pc.setBreastSize(CUP_SIZE_DD)]
+									#IF(pc.getNippleSize().getValue()<2)
+										[#pc.setNipplesSize(2)]
+									#ENDIF
+								#ENDIF
+								[#pc.setVaginaType(pc.getRace().getRacialBody().getVaginaType())]
+							#ELSE
+								[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_TF_POTION'))]
+								[#sleip.applyPlayerFeminineTf(pc)]
+							#ENDIF
+						]]></effects>
+					</response>
+				<!-- Orientation change as alternative to TF -->
+					<response>
+						<availabilityConditional><![CDATA[[#!sleip.isAttractedTo(pc) && game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=3 && pc.hasItemType(ITEM_ORIENTATION_HYPNO_WATCH)]]]></availabilityConditional>
+						<responseTabIndex><![CDATA[0]]></responseTabIndex>
+						<index><![CDATA[5]]></index>
+						<colour><![CDATA[ANDROGYNOUS]]></colour>
+						<responseTitle><![CDATA[催眠怀表]]></responseTitle>
+						<responseTooltip><![CDATA[向斯雷普和尼尔介绍你的催眠怀表，让他们相信你的身体就这样很好。]]></responseTooltip>
+						<nextDialogue><![CDATA[
+							innoxia_places_dominion_angelixx_apartment_generic_sleip_nir
+						]]></nextDialogue>
+						<effects><![CDATA[
+							[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_HYPNO_WATCH'))]
+							[#sleip.setSexualOrientation(ORIENTATION_AMBIPHILIC)]
+							[#nir.setSexualOrientation(ORIENTATION_AMBIPHILIC)]
+						]]></effects>
+					</response>
+				<!-- Stroke cocks: -->
+					<response>
+						<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=5]]]></availabilityConditional>
+						<responseTabIndex><![CDATA[0]]></responseTabIndex>
+						<index><![CDATA[4]]></index>
+						<colour><![CDATA[GENERIC_SEX]]></colour>
+						<responseTitle><![CDATA[轻抚肉棒]]></responseTitle>
+						<responseTooltip><![CDATA[按尼尔说的做，开始爱抚他和斯雷普的鸡巴。]]></responseTooltip>
+						<nextDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_sexual]]></nextDialogue>
+						<effects><![CDATA[
+							[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_HANDJOBS'))]
+							[#game.getDialogueFlags().setSavedLong('sleip_nir_conversation_progress', 5)]
+						]]></effects>
+					</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉斯雷普和尼尔，你该离开了。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_DEMON_HOME_SEX_SHOP"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_LEAVE'))]
+					[#angelixx.returnToHome()]
+					[#sleip.returnToHome()]
+					[#nir.returnToHome()]
+					
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=5)
+						[#game.appendToTextEndStringBuilder(sleip.incrementAffection(pc, -5))]
+						[#game.appendToTextEndStringBuilder(nir.incrementAffection(pc, -5))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sleip_nir_sexual">
+		<preParsingEffects><![CDATA[
+			#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=10)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_FUCK'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[使他们硬]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')==5)
+						爱抚梦魇鸡巴，让它们硬起来。
+					#ELSE
+						斯雷普和尼尔的下体已经像石头一样硬了……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')==5)
+						innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_sexual
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_GET_HARD'))]
+					[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+				]]></effects>
+			</response>
+			<!-- Focus: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>5]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[照顾鸡巴]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<10)
+						在梦魇们继续抚摸你的时候，专心为他们打飞机。
+					#ELSE
+						前戏时间已经结束了。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<10)
+						innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_sexual
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_FOCUS'))]
+					[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+				]]></effects>
+			</response>
+			<!-- Balls: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>5]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[照顾蛋蛋]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<10)
+						在梦魇们互相聊天的时候，转而专注于他们又大又重的睾丸。
+					#ELSE
+						前戏时间已经结束了。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<10)
+						innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_sexual
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_BALLS'))]
+					[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+				]]></effects>
+			</response>
+			<!-- Kiss: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>5]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[亲吻斯雷普]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=10)
+						简单亲吻的时间已经结束了。
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, false))
+						你的嘴巴受到限制，因此无法亲吻斯雷普……
+					#ELSE
+						倾身亲吻斯雷普。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<10 && pc.isAbleToAccessCoverableArea(CA_MOUTH, false))
+						innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_sexual
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_KISS_SLEIP'))]
+					[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+					[#game.appendToTextEndStringBuilder(sleip.incrementAffection(pc, 5))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>5]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[亲吻尼尔]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=10)
+						简单亲吻的时间已经结束了。
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, false))
+						你的嘴巴受到限制，因此无法亲吻尼尔……
+					#ELSE
+						倾身亲吻尼尔。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')<10 && pc.isAbleToAccessCoverableArea(CA_MOUTH, false))
+						innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_sexual
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_KISS_NIR'))]
+					[#game.getDialogueFlags().incrementSavedLong('sleip_nir_conversation_progress', 1)]
+					[#game.appendToTextEndStringBuilder(nir.incrementAffection(pc, 5))]
+				]]></effects>
+			</response>
+			<!-- Fucked: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=10]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[让斯雷普和尼尔来决定怎么操你最好……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_angelixx_apartment_sleip_nir_submissive_sex]]></id>
+					<startingPosition><![CDATA[
+						#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+							ALL_FOURS
+						#ELSE
+							STANDING
+						#ENDIF
+					]]></startingPosition>
+					<dominants>
+						<character>
+							<id>sleip</id>
+							<slot><![CDATA[
+								#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+									ALL_FOURS_BEHIND
+								#ELSE
+									STANDING_STANDING_DOMINANT
+								#ENDIF
+							]]></slot>
+						</character>
+						<character>
+							<id>nir</id>
+							<slot><![CDATA[
+								#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+									ALL_FOURS_IN_FRONT
+								#ELSE
+									STANDING_STANDING_DOMINANT_TWO
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[
+								#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+									ALL_FOURS_ALL_FOURS
+								#ELSE
+									STANDING_PERFORMING_ORAL
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/dominion/angelixx_apartment/generic">SLEIP_NIR_SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<!-- Vaginal: -->
+							<action>
+								<condition><![CDATA[[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></condition>
+								<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+								<performer><![CDATA[sleip]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						<!-- Anal: -->
+							<action>
+								<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)]]]></condition>
+								<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+								<performer><![CDATA[sleip]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						<!-- Oral: -->
+							<action>
+								<condition><![CDATA[[#pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></condition>
+								<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+								<performer><![CDATA[nir]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+						<!-- Masturbation: -->
+							<action>
+								<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></condition>
+								<id><![CDATA[FingerPenis_COCK_MASTURBATED_START]]></id>
+								<performer><![CDATA[sleip]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+							<action>
+								<condition><![CDATA[[#!pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></condition>
+								<id><![CDATA[FingerPenis_COCK_MASTURBATED_START]]></id>
+								<performer><![CDATA[nir]]></performer>
+								<target><![CDATA[pc]]></target>
+								<showDescription><![CDATA[false]]></showDescription>
+								<showEffects><![CDATA[true]]></showEffects>
+							</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Leave: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					告诉斯雷普和尼尔，你该离开了。
+				]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_DEMON_HOME_SEX_SHOP"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_LEAVE'))]
+					[#angelixx.returnToHome()]
+					[#sleip.returnToHome()]
+					[#nir.returnToHome()]
+					
+					#IF(game.getDialogueFlags().getSavedLong('sleip_nir_conversation_progress')>=10)
+						[#game.appendToTextEndStringBuilder(sleip.incrementAffection(pc, -10))]
+						[#game.appendToTextEndStringBuilder(nir.incrementAffection(pc, -10))]
+					#ELSE
+						[#game.appendToTextEndStringBuilder(sleip.incrementAffection(pc, -5))]
+						[#game.appendToTextEndStringBuilder(nir.incrementAffection(pc, -5))]
+					#ENDIF
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_sleip_nir_leave_denied))
+						告诉斯雷普和尼尔，你该离开了。
+					#ELSE
+						斯雷普和尼尔已经明确表示，在他们满足之前你不允许离开。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(!flags.hasFlag(FLAG_innoxia_sleip_nir_leave_denied))
+						innoxia_places_dominion_angelixx_apartment_generic_sleip_nir_sexual
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_SEXUAL_LEAVE_DENIED'))]
+					[#flags.setFlag(FLAG_innoxia_sleip_nir_leave_denied, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sleip_nir_after_sex">
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[梦魇们爽够了，便向后退开…… ]]></tooltip>
+		<content folderPath="txt/places/dominion/angelixx_apartment/generic">SLEIP_NIR_AFTER_SEX</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[梦魇们和你玩尽兴了，他们今晚还有其他事情要做，所以要求你离开……]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_DEMON_HOME_SEX_SHOP"/>
+				<effects><![CDATA[
+					[#pc.setLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_DEMON_HOME_SEX_SHOP)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/dominion/angelixx_apartment/generic', 'SLEIP_NIR_AFTER_SEX_LEAVE'))]
+					[#sleip.applyWash(true, true, null, 0)]
+					[#nir.applyWash(true, true, null, 0)]
+					[#angelixx.returnToHome()]
+					[#sleip.returnToHome()]
+					[#nir.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	
+</dialogueNodes>

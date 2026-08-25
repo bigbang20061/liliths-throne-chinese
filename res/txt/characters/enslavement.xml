@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="ENSLAVEMENT_SUCCESS_COLLAR"><![CDATA[
+	#IF(npc.getAffection(pc)>10)
+		<p>
+		你把项圈提到[npc.namePos]的脖子上，看到项圈前面的环开始发出绿光：这毫无疑问表明它把[npc.herHim]当成了一个潜在的奴役目标。你看到绿光，准备完成捕获奴隶的预备工作。随着金属撞击发出“叮”的一声，你将项圈扣在了[npc.namePos]的脖子上。
+	</p>
+		<p>
+		项圈的奥术附魔识别出新的佩戴者是犯罪分子，金属带投射出不祥的紫色字母，写道：
+	</p>
+		<p style='text-align:center;'>
+		[style.italicsArcane(奴隶已注册。
+			<br/>姓名：[npc.nameFull(true)]
+			<br/>种族：[npc.Race])]
+	</p>
+		<p>
+		#IF(npc.isMute())
+			[npc.name]终于意识到发生了什么。[npc.her]抬头看着你，[npc.eyes]中带着恐惧，发出几乎听不见的呻吟。
+		#ELSE
+			[npc.name]终于意识到发生了什么。[npc.her]抬头看着你，[npc.eyes]中带着恐惧，震惊地喊道：[npc.speech(等等，[npc.pcName]！这应该不是奴隶项圈吧，不是吧？！)]
+		#ENDIF
+	</p>
+		<p>
+		你对着[npc.name]咧嘴一笑，还没来得及回应。紫色的光芒闪烁，[npc.she]突然消失了。你视野中残留着一张遭到背叛和震惊的面庞。你能想象到下次见面时，[npc.herHim]会有多生气。
+	</p>
+	#ELSE
+		<p>
+		你将[#SPECIAL_PARSE_0]握在[pc.hand]中，朝[npc.race]迈出一步。[npc.She]看到你的动作，发出了痛苦的呼喊。但[npc.she]已经筋疲力尽，无法抵抗。
+	</p>
+		<p>
+		你把项圈提到[npc.her]的脖子上，看到项圈前面的环开始发出绿光：这毫无疑问表明它把[npc.race]当成了一个潜在的奴役目标。你看到绿光，准备完成捕获奴隶的预备工作。随着金属撞击发出“叮”的一声，你将项圈扣在了[npc.race]的脖子上。[#SPECIAL_PARSE_0]的奥术附魔立刻识别出[npc.herHim]是犯罪分子。随着紫色的光芒闪烁，<b>[npc.sheIs]被传送到奴隶巷的“奴隶行政管理”大楼</b>，[npc.she]将在那里等待你来接[npc.herHim]。
+	</p>
+		<p>
+		[npc.she]消失之前，金属带投射出不祥的紫色字母，写道：
+	</p>
+		<p style='text-align:center;'>
+		[style.italicsArcane(奴隶已注册。
+		<br/>姓名：[npc.nameFull(true)]
+		<br/>种族：[npc.Race])]
+	</p>
+	#ENDIF
+	<p>
+	你听了芬奇的指示，知道<b>[npc.sheHas]被传送到奴隶巷的“奴隶行政管理”大楼</b>，[npc.she]会在那等你来接[npc.herHim]。
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENSLAVEMENT_SUCCESS"><![CDATA[
+	#IF(npc.getAffection(pc)>10)
+		<p>
+		你将[#SPECIAL_PARSE_0]拿到[npc.name]旁边，感觉到[#SPECIAL_PARSE_1]正不断发出嗡嗡声，这清晰地表明它正在检测[npc.herHim]是否是潜在的可奴隶目标。你越发大胆，准备完成收服奴隶开始的工作，强迫[npc.Name]穿上奴役装。
+	</p>
+		<p>
+		佩饰上的奥术附魔识别出新的佩戴者是犯罪分子，将不祥的紫色字母投射到空气中，写道：
+	</p>
+		<p style='text-align:center;'>
+		[style.italicsArcane(奴隶已注册。
+			<br/>姓名：[npc.nameFull(true)]
+			<br/>种族：[npc.Race])]
+	</p>
+		<p>
+		#IF(npc.isMute())
+			[npc.name]终于意识到发生了什么。[npc.her]抬头看着你，[npc.eyes]中带着恐惧，发出几乎听不见的呻吟。
+		#ELSE
+			[npc.name]终于意识到发生了什么。[npc.her]抬头看着你，[npc.eyes]中带着恐惧，震惊地喊道：[npc.speech(等等，[npc.pcName]！你应该不是要奴役我，对吧？！)]
+		#ENDIF
+	</p>
+		<p>
+		你对着[npc.name]咧嘴一笑，还没来得及回应。紫色的光芒闪烁，[npc.she]突然消失了。你视野中残留着一张遭到背叛和震惊的面庞。你能想象到下次见面时，[npc.herHim]会有多生气。
+	</p>
+	#ELSE
+		<p>
+		你将[#SPECIAL_PARSE_0]握在[pc.hand]中，朝[npc.race]迈出一步。[npc.She]看到你的动作，发出了痛苦的呼喊。但[npc.she]已经筋疲力尽，无法抵抗。
+	</p>
+		<p>
+		你强迫[npc.name]穿上了这服饰，后退一步，看向[npc.herHim]恐惧的面庞。[#SPECIAL_PARSE_0]的奥术附魔立刻识别出[npc.herHim]是犯罪分子。紫色的光芒闪烁，<b>[npc.sheIs]被传送到奴隶巷的“奴隶行政管理”大楼</b>，[npc.she]将在那里等待你来接[npc.herHim]。
+	</p>
+		<p>
+		[npc.she]消失之前，金属带投射出不祥的紫色字母，写道：
+	</p>
+		<p style='text-align:center;'>
+		[style.italicsArcane(奴隶已注册。
+		<br/>姓名：[npc.nameFull(true)]
+		<br/>种族：[npc.Race])]
+	</p>
+	#ENDIF
+	<p>
+	你听了芬奇的指示，知道<b>[npc.sheHas]被传送到奴隶巷的“奴隶行政管理”大楼</b>，[npc.she]会在那等你来接[npc.herHim]。
+</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_ALREADY_SLAVE"><![CDATA[
+	<p>
+		你一只[pc.hand]拿着[#SPECIAL_PARSE_0]，向[npc.race]走了一步。当[npc.she]看到你要做什么时，[npc.she]发出了一声叹息，并说道，[npc.speech(如果你想奴役我，那是行不通的……我已经是奴隶了……)]
+	</p>
+	<p>
+		你无视[npc.her]的话，强行将衣服穿到[npc.race]身上，然后退后一步，等待观察是否会发生什么。然而，正如[npc.her]所言，[#SPECIAL_PARSE_0]的奥术魔法识别出[npc.herHim]已经是一名奴隶了，这一点可以从投射到空气中的绿色发光字看出，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.boldGreen(奴隶已注册！)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_FREEDOM_CERTIFICATION"><![CDATA[
+	<p>
+		你一只[pc.hand]拿着[#SPECIAL_PARSE_0]，向[npc.race]走了一步。当[npc.she]看到你要做什么时，[npc.she]放松下来，并说道，[npc.speech(如果你想再次奴役我，那是没用的！你已经给我自由了，还记得吗？)]
+	</p>
+	<p>
+		你无视[npc.her]的话，把[#SPECIAL_PARSE_0]强加到[npc.herHim]身上，然后退后一步，等待观察是否会发生什么。然而，正如[npc.her]所言，[#SPECIAL_PARSE_0]的奥术魔法并不承认[npc.herHim]是一名奴隶，这一点可以从投射到空气中的红色发光字看出，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.boldGreen(目标不能被奴役！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENSLAVEMENT_FAIL_NOT_WANTED_DEMON"><![CDATA[
+	<p>
+		你一只[pc.hand]拿着[#SPECIAL_PARSE_0]，向[npc.race]走了一步。当[npc.she]看到你要做什么时，[npc.she]嘲讽地大笑，并说道，[npc.speech(如果你想奴役我，那是不可能的！没有执法者会在恶魔的奴役令上签字！)]
+	</p>
+	<p>
+		你无视[npc.her]的话，把[#SPECIAL_PARSE_0]强加到[npc.herHim]身上，然后退后一步，等待观察是否会发生什么。然而，正如[npc.her]所言，[#SPECIAL_PARSE_0]的奥术魔法并不承认[npc.herHim]是一名奴隶，这一点可以从投射到空气中的红色发光字看出，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.boldGreen(目标不能被奴役！)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_NOT_WANTED"><![CDATA[
+	<p>
+		你一只[pc.hand]拿着[#SPECIAL_PARSE_0]，向[npc.race]走了一步。当[npc.she]看到你要做什么时，[npc.she]嘲讽地大笑，并说道，[npc.speech(如果你想奴役我，那是不可能的！我没有因为任何事情被执法者盯上！)]
+	</p>
+	<p>
+		你无视[npc.her]的话，把[#SPECIAL_PARSE_0]强加到[npc.herHim]身上，然后退后一步，等待观察是否会发生什么。然而，正如[npc.her]所言，[#SPECIAL_PARSE_0]的奥术魔法并不承认[npc.herHim]是一名奴隶，这一点可以从投射到空气中的红色发光字看出，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.boldGreen(目标不能被奴役！)]
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ENSLAVEMENT_FAIL_NO_LICENSE"><![CDATA[
+	<p>
+		你一只[pc.hand]拿着[#SPECIAL_PARSE_0]，向[npc.race]走了一步。强行给[npc.herHim]穿上衣服，你后退一步，低头看到一张充满恐惧的脸。尽管[npc.sheIs]是通缉犯，[#SPECIAL_PARSE_0]的奥术魔法识别出你事实上并没有贩奴许可，这一点可以从投射到空气中的红色发光字看出，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		[style.italicsBad(无效持有人！需要贩奴许可！<br/>
+		请联系最近的执法者，告知他们此目标是通缉犯！)]
+	</p>
+	<p>
+		[npc.race]松了一口气，因为[npc.she]意识到自己避免了被奴役的后果。你不想浪费时间去寻找另一个可以对付[npc.race]的执法者，当你退后一步并思考下一步该怎么做时，忍不住发出失望的声音……
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- SET_SLAVE_FREE_SCARLETT -->
+	
+	<htmlContent tag="SET_SLAVE_FREE_SCARLETT"><![CDATA[
+	<p>
+		你决定是时候让[npc.name]获得自由了，于是你在自由证书上写下了[npc.her]的名字，并在上面签了名，然后把它拿给你现在的前奴隶，让[npc.she]看看你刚刚做了什么。[npc.sheIs]不太相信自己看到了什么，[npc.she]伸手从你的[pc.hands]中接过那张纸，仔细地看了几遍。[npc.her]的[npc.eyes+]里闪烁着怀疑的目光，[npc.she]终于开口问道，[npc.speech(这不是骗局吧？我……我真的自由了？)]
+	</p>
+	<p>
+		当你确认[npc.sheIs]现在是一个自由的[npc.race]时，[npc.namePos]以前的态度突然又回来了，[npc.she]冲过你的身边，推开了门。[npc.she]不再害怕表达自己的真实感受，回头愤怒地咆哮着，[npc.speech(去你妈的把我当奴隶养，[pc.name]！我还是回海伦娜巢吧！)]
+	</p>
+	<p>
+		当你听到[npc.herHim]身后的前门关上的声音时，你意识到如果你想再见到[npc.herHim]，就必须回到哈比之巢……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SET_SLAVE_FREE -->
+
+	<htmlContent tag="SET_SLAVE_FREE_DISLIKE"><![CDATA[
+	<p>
+		你决定是时候让[npc.name]获得自由了，于是你在自由证书上写下了[npc.her]的名字，并在上面签了名，然后把它拿给你现在的前奴隶，让[npc.she]看看你刚刚做了什么。[npc.sheIs]不太相信自己看到了什么，[npc.she]伸手从你的[pc.hands]中接过那张纸，仔细地看了几遍。[npc.eyes+]里闪烁着怀疑的目光，[npc.she]终于开口问道，[npc.speech(这不是骗局吧？我……我真的自由了？)]
+	</p>
+	<p>
+		当你确认[npc.sheIs]现在是自由的[npc.race]时，[npc.name]会从你身边冲过去，然后推开门。[npc.she]不再害怕表达自己的真实感受，[npc.she]回头愤怒地咆哮着，[npc.speech(去你妈的，[pc.name]。我再也不想看到你那张该死的脸了！)]
+	</p>
+	<p>
+		就这样，[npc.name]沿着走廊飞奔而去，当你听到[npc.herHim]身后遥远的前门关上的声音时，你意识到你再也见不到[npc.herHim]了……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SET_SLAVE_FREE_NO_GUEST"><![CDATA[
+	<p>
+		你决定是时候让[npc.name]获得自由了，于是你在自由证书上写下了[npc.her]的名字，并在上面签了名，然后把它拿给你现在的前奴隶，让[npc.she]看看你刚刚做了什么。[npc.sheIs]不太相信自己看到了什么，[npc.she]伸手从你的[pc.hands]手中接过那张纸，仔细地看了几遍。[npc.her]的[npc.eyes+]里闪烁着怀疑的目光，[npc.she]终于开口问道，[npc.speech(这不是骗局吧？我……我真的自由了？)]
+	</p>
+	<p>
+		当你确认[npc.she]现在是一个自由的[npc.race]后，[npc.name]长叹一声，然后[npc.walks]到门口。不过，在[npc.she]离开之前，[npc.she]回头对你微微一笑，然后说，[npc.speech(我想你不是最糟糕的主人，[pc.name]。我希望你能善待你的其他奴隶……)]
+	</p>
+	<p>
+		就这样，[npc.name]沿着走廊走了，当你听到[npc.herHim]身后的前门关闭声时，你意识到你再也见不到[npc.herHim]了……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SET_SLAVE_FREE_GUEST_CHOICE"><![CDATA[
+	<p>
+		你决定是时候让[npc.name]获得自由了，于是你在自由证书上写下了[npc.her]的名字，并在上面签了名，然后把它拿给你现在的前奴隶，让[npc.she]看看你刚刚做了什么。[npc.sheIs]不太相信自己看到了什么，[npc.she]伸手从你的[pc.hands]手中接过那张纸，仔细地看了几遍。[npc.eyes+]里闪烁着怀疑的目光，[npc.she]终于开口问道，[npc.speech(这不是骗局吧？我……我真的自由了？)]
+	</p>
+	<p>
+		当你确认[npc.sheIs]现在是一个自由的[npc.race]时，[npc.name]长叹一声，然后[npc.walks]走到门边。在[npc.she]离开之前，你意识到你有这个机会阻止[npc.herHim]永远离开你的生活。如果你让[npc.Name]入住大宅的一间客房，就有可能与其建立真正的关系。话说回来，如果你只是想让[npc.herHim]离开，你可以直接说再见……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SET_SLAVE_FREE_GOODBYE"><![CDATA[
+	<p>
+		你不想让[npc.name]继续留在宅子里做客，于是向[npc.herHim]道别。[npc.she]在门口转过身来，对你微微一笑，说道，[npc.speech(我想你不是最糟糕的主人，[pc.name]。我希望你能善待你的其他奴隶……)]
+	</p>
+	<p>
+		就这样，[npc.name]沿着走廊走了，当你听到[npc.herHim]身后的前门关闭声时，你意识到你再也见不到[npc.herHim]了……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="SET_SLAVE_FREE_THROWN_OUT"><![CDATA[
+	<p>
+		你肯定不想让[npc.name]继续留在宅子里做客，因此决定通过[pc.step]到房间的拉铃处并拽住它来加快[npc.her]离开的速度。没过几秒钟，萝丝就出现在门口，你告诉猫女仆，[npc.name]擅自闯入，需要被赶出去。萝丝立刻抓住你的前奴隶的[npc.arm]，不给[npc.herHim]跟你多说什么的时间，强行把[npc.herHim]拉出了房间。
+	</p>
+	<p>
+		不久之后，你听到[npc.name]身后的大门关闭的声音，你意识到你再也不用见到[npc.herHim]了……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SET_SLAVE_FREE_GUEST_ROOM -->
+
+	<htmlContent tag="SET_SLAVE_FREE_GUEST_ROOM"><![CDATA[
+	<p>
+		继续前进，你可以阻止[npc.name]离开，告诉[npc.herHim]你不会赶走[npc.herHim]，如果[npc.she]愿意，[npc.she]可以作为你的客人继续住在这座宅子里。
+	</p>
+	<p>
+		你说这话的时候，[npc.NamePos]的[npc.eyes+]亮了一下，[npc.her]的声音里多了一丝兴奋，[npc.she]问道，[npc.speech(真的吗？你是说……我可以继续和你住在这里？)] 
+	</p>
+	<p>
+		在你确认这就是你的意思后，[npc.name]发出惊叹，[npc.speech(谢谢你，[pc.name]！你一直待我不薄，尽管我只是个奴隶……)]
+	</p>
+	<p>
+		你微笑着看着你的前奴隶，请[npc.herHim]陪你去[npc.her]的新房间。[npc.name]高兴地[npc.walks]在你身边，在你的带领下[npc.herHim]来到[npc.she]以后要住的客房。转过身来面对你，[npc.her][npc.eyes+]里满是幸福的泪水，[npc.name]感叹道，[npc.speech(谢谢你，[pc.name]！我……我不知道该怎么感谢你；我很害怕被赶回街上！谢谢你！)]
+	</p>
+	<p>
+		告诉[npc.name][npc.she]作为你的客人在这里会很安全，然后你来到[npc.her]的新房间门口。告诉[npc.herHim]花点时间安顿下来，你就离开了，不知道下一步该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

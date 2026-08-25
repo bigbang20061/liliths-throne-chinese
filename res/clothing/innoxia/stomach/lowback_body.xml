@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>450</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[露背紧身衣]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[露背紧身衣]]></namePlural> 
+		<description><![CDATA[一件低腰和可拆卸背带的紧身衣。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>STOMACH</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>lowback_body.svg</imageName>
+		<imageEquippedName/>
+		
+		<stickers>
+			<category id="straps" priority="1">
+				<categoryName><![CDATA[Shoulder Straps]]></categoryName>
+				<sticker id="attached" priority="1" defaultSticker="true" zLayer="-1">
+					<stickerName><![CDATA[固定]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="3"><![CDATA[肩带已固定在连体衣上。]]></descriptionModification>
+					<imageName>lowback_body_straps.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="removed" priority="0" defaultSticker="false" zLayer="1">
+					<stickerName><![CDATA[取下]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification fullReplacement="false" priority="3"><![CDATA[已从连体衣取下肩带。]]></descriptionModification>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+		
+		<enchantmentLimit/>
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_STOMACH"/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>SHIFTS_ASIDE</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GENITALS"/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType> 
+				<clothingAccessRequired>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_BREASTS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots>
+			<slot>GROIN</slot>
+			<slot>CHEST</slot>
+		</incompatibleSlots> 
+		
+		<primaryColours values="LINGERIE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]穿上露背紧身衣，轻轻提拉，恰好遮住了身体的上半部分，再把带子固定到[npc.her]的肩膀处。
+		]]></self>
+		<other><![CDATA[[npc.Name]让[npc2.name][npc2.step]进低背连体衣，然后拉上衣服，盖住[npc2.her]的躯干，接着将吊带系在[npc2.her]的肩膀上。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地强迫[npc2.name][npc2.step]进低背连体衣，然后粗鲁地拽上，覆盖[npc2.her]的躯干，接着将吊带系在[npc2.her]的肩膀上。
+]]></otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]从肩膀处轻轻地滑下[npc.her]紧身衣的带子，并且顺着[npc.her][npc.legs]一路脱下。
+		]]></self>
+		<other><![CDATA[[npc.Name]把[npc2.namePos]连体衣的吊带从[npc2.her]肩膀上滑下来，然后将它完全拉下[npc2.her]的[npc2.legs]，让[npc2.herHim][npc2.step]出来。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地把[npc2.namePos]连体衣的吊带从[npc2.her]肩膀上猛力拉下，然后用力把它完全拉下[npc2.her]的[npc2.legs]，让[npc2.herHim][npc2.step]出来。
+]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="SHIFTS_ASIDE">
+		<self><![CDATA[
+			[npc.Name]将[npc.her]紧身衣的下部分整理到正确的位置，使其能够遮住[npc.her]的腹股沟。
+		]]></self>
+		<other><![CDATA[[npc.Name]把[npc2.namePos]连体衣的下半部拽到正确的位置，以便覆盖[npc2.her]的腹股沟。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地将[npc2.namePos]连体衣的下半部猛力拉回正确的位置，以便覆盖[npc2.her]的腹股沟。
+]]></otherRough>
+	</replacementText>
+	<displacementText type="SHIFTS_ASIDE">
+		<self><![CDATA[
+			[npc.Name]将[npc.her]的紧身衣的下半部分滑到一侧，以便露出[npc.her]的腹部和大腿内侧。
+		]]></self>
+		<other><![CDATA[[npc.Name]把[npc2.namePos]连体衣的下半部拽到一边，以便进入[npc2.her]的腹股沟。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]不耐烦地将[npc2.namePos]连体衣的下半部猛力拉到一边，以便进入[npc2.her]的腹股沟。
+]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[[npc.Name]把[npc.her]的连体衣的上半部拉到了正确的位置。
+]]></self>
+		<other><![CDATA[[npc.Name]将[npc2.namePos]连体衣的上半部拉到合适的位置。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地将[npc2.namePos]连体衣的上半部猛力拉到合适的位置。
+]]></otherRough>
+	</replacementText>
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[[npc.Name]将[npc.her]连体衣的上半部拉下来。
+]]></self>
+		<other><![CDATA[[npc.Name]把[npc2.namePos]连体衣的上半部拉下来。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地拉下[npc2.namePos]连体衣的上半部。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

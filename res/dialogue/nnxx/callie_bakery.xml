@@ -1,0 +1,606 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+	
+	<scene id="entry_first_time">
+		<preParsingEffects><![CDATA[
+			[#flags.setSavedLong('nnxx_callie_total_donated', 0)]
+			[#flags.setFlag(FLAG_nnxx_callie_introduced, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/nnxx/callie_bakery">ENTRY_FIRST_TIME</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="nnxx_callie_bakery_counter"/>
+	</scene>
+	
+	<scene id="entry">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'ENTRY_REPEAT'))]
+			[#flags.setFlag(FLAG_nnxx_callie_upgrade_reaction_pending, false)]
+			
+			#IF(flags.getSavedLong('nnxx_callie_total_donated')>0)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION_PROGRESS'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="nnxx_callie_bakery_counter"/>
+	</scene>
+	
+	<scene id="entry_natalya">
+		<preParsingEffects><![CDATA[
+			[#natalya.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/nnxx/callie_bakery">NATALYA_ENTRY</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接近]]></responseTitle>
+				<responseTooltip><![CDATA[靠近柜台，向卡丽和主人娜塔莉亚打个招呼。]]></responseTooltip>
+				<nextDialogue><![CDATA[nnxx_callie_bakery_natalya_start]]></nextDialogue> <!-- Natalya content is at the end of the file -->
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="counter">
+		<preParsingEffects><![CDATA[
+			#IF(flags.getSavedLong('nnxx_callie_total_donated')>0)
+				[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION_PROGRESS'))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/nnxx/callie_bakery">COUNTER</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[甜甜圈]]></responseTitle>
+				<responseTooltip><![CDATA[看看卡丽卖的甜甜圈……]]></responseTooltip>
+				<nextDialogue/>
+				<tradingVariables enabled="true">
+					<tradePartner><![CDATA[callie]]></tradePartner>
+				</tradingVariables>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[她的“甜甜圈”]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!game.isAnalContentEnabled())
+						[style.italicsBad(这包含肛门内容，你已在设置中关闭！)]
+						<br/>如果你想进行这个场景，需要先打开肛门内容。I
+					#ELSEIF(flags.hasFlag(FLAG_nnxx_callie_daily_fucked))
+						你今天已经和卡丽做过爱了，明天她才能准备好再来一轮……
+					#ELSE
+						想给卡丽舔肛，你告诉你对另一种“甜甜圈”非常饥渴……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.isAnalContentEnabled() && !flags.hasFlag(FLAG_nnxx_callie_daily_fucked))
+						nnxx_callie_bakery_anilingus
+					#ELSE
+						null
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[她的“法棍”]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_daily_fucked))
+						你今天已经和卡丽上过床了，得等到明天她才会准备好再来一轮……
+					#ELSEIF((!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+						卡丽需要能操你的小穴或菊穴……
+					#ELSE
+						你想被卡丽巨大的马鸡巴操，告诉她你想尝尝她的“法棍”……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_daily_fucked) || (!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+						null
+					#ELSE
+						nnxx_callie_bakery_sex
+					#ENDIF
+				]]></nextDialogue>
+			</response>
+			<!-- Donations: -->
+				<response>
+					<availabilityConditional><![CDATA[
+						[#flags.getSavedLong('nnxx_callie_total_donated')>0 && !flags.hasFlag(FLAG_nnxx_callie_upgrade_3)]
+					]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[
+						#IF(callie.getFlamesToNextUpgrade()>0 && pc.getMoney()>=callie.getFlamesToNextUpgrade())
+							Donate ([style.moneyFormat([#callie.getFlamesToNextUpgrade()], span)])
+						#ELSE
+							Donate ([style.moneyFormatUncoloured([#callie.getFlamesToNextUpgrade()], span)])
+						#ENDIF
+					]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(callie.getFlamesToNextUpgrade()==0)
+							你已经为卡丽捐赠了足够的火币来升级店铺，最好等到明天再给她更多钱。
+						#ELSEIF(pc.getMoney()<callie.getFlamesToNextUpgrade())
+							你没有足够的火币捐给卡丽让她升级店铺……
+						#ELSE
+							捐赠足够的火币让卡丽能够升级店铺。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue stripContent="true"><![CDATA[
+						#IF(callie.getFlamesToNextUpgrade()>0 && pc.getMoney()>=callie.getFlamesToNextUpgrade())
+							nnxx_callie_bakery_counter
+						#ELSE
+							null
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION'))]
+						[#game.appendToTextEndStringBuilder(pc.incrementMoney(-callie.getFlamesToNextUpgrade()))]
+						[#flags.incrementSavedLong('nnxx_callie_total_donated', callie.getFlamesToNextUpgrade())]
+					]]></effects>
+				</response>
+			<!-- Leave: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[和卡丽道别，离开她的商店。]]></responseTooltip>
+				<nextDialogue defaultPlaceType="DOMINION_CALLIE_BAKERY"/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_CALLIE_BAKERY)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="anilingus">
+		<content folderPath="txt/nnxx/callie_bakery">PROPOSE_ANILINGUS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!callie.isAttractedTo(pc) || (pc.getMoney()<1000 && !flags.hasFlag(FLAG_nnxx_callie_sex_is_free)) || !pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						开始
+					#ELSE
+						捐赠([style.moneyFormatUncoloured(1000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!callie.isAttractedTo(pc))
+						卡丽没有被你吸引，她不想让你“吃”她的“甜甜圈”。
+					#ELSEIF(pc.getMoney()<1000 && !flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						你没有足够的钱捐给卡丽的面包房来“吃”她的“甜甜圈”。
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+						你的嘴被限制，没法“吃”卡丽的“甜甜圈”。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#callie.isAttractedTo(pc) && (pc.getMoney()>=1000 || flags.hasFlag(FLAG_nnxx_callie_sex_is_free)) && pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						开始
+					#ELSE
+						捐献([style.moneyFormat(1000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					捐献1000火币给卡丽的面包房，这样你就能“吃”她的“甜甜圈”。
+					<br/>[style.italicsSex(这会导致你给卡丽舔肛。)]
+				]]></responseTooltip>
+				<nextDialogue/><effects><![CDATA[
+					#IF(!flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						[#game.appendToTextEndStringBuilder(pc.incrementMoney(-1000))]
+						[#flags.incrementSavedLong('nnxx_callie_total_donated', 1000)]
+						[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION_PROGRESS'))]
+					#ENDIF
+					[#flags.setFlag(FLAG_nnxx_callie_daily_fucked, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[nnxx_callie_anilingus]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>callie</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL_BEHIND]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[nnxx_callie_bakery_after_anilingus]]></postSexDialogue>
+					<sexStartContent folderPath="txt/nnxx/callie_bakery">ANILINGUS_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition/>
+							<id><![CDATA[TongueAnus_ANILINGUS_START]]></id>
+							<performer><![CDATA[pc]]></performer>
+							<target><![CDATA[callie]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[
+					#IF(!callie.isAttractedTo(pc))
+						继续
+					#ELSE
+						反悔
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!callie.isAttractedTo(pc))
+						卡丽没有被你吸引，舔肛似乎并不在考虑范围内……
+					#ELSE
+						告诉卡丽你改变主意了……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[nnxx_callie_bakery_counter]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'ANILINGUS_BACK_OUT'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="after_anilingus">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION_PROGRESS'))]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[卡丽已经被吃够“甜甜圈”了……]]></tooltip>
+		<content folderPath="txt/nnxx/callie_bakery">AFTER_SEX_ANILINGUS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<responseTitle><![CDATA[接吻]]></responseTitle>
+				<responseTooltip><![CDATA[给卡丽的屁股最后一吻……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[nnxx_callie_bakery_counter]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'AFTER_SEX_ANILINGUS_CONTINUE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sex">
+		<content folderPath="txt/nnxx/callie_bakery">PROPOSE_SEX_RECEIVING</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Vaginal sex: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!callie.isAttractedTo(pc) || (pc.getMoney()<10000 && !flags.hasFlag(FLAG_nnxx_callie_sex_is_free)) || !pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						展示小穴
+					#ELSE
+						展示小穴([style.moneyFormatUncoloured(10000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+						你需要拥有阴道，才能在柜台上被卡丽操！
+					#ELSEIF(!callie.isAttractedTo(pc))
+						卡丽没有被你吸引，她不想和你做爱。
+					#ELSEIF(pc.getMoney()<10000 && !flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						你没有足够的钱捐给卡丽的面包店，不能和她做爱。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#callie.isAttractedTo(pc) && (pc.getMoney()>=10000 || flags.hasFlag(FLAG_nnxx_callie_sex_is_free)) && pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						展示小穴
+					#ELSE
+						展示小穴([style.moneyFormat(10000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					捐赠10000火币给卡丽的面包房，这样你能在柜台上被操。
+					<br/>[style.italicsSex(这会导致卡丽支配性地操你的小穴。)]
+]]></responseTooltip>
+				<nextDialogue/><effects><![CDATA[
+					#IF(!flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						[#game.appendToTextEndStringBuilder(pc.incrementMoney(-10000))]
+						[#flags.incrementSavedLong('nnxx_callie_total_donated', 10000)]
+						[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION_PROGRESS'))]
+					#ENDIF
+					[#flags.setFlag(FLAG_nnxx_callie_daily_fucked, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[nnxx_callie_sex]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>callie</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[nnxx_callie_bakery_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/nnxx/callie_bakery">SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition/>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[callie]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Anal sex: -->
+			<response>
+				<availabilityConditional><![CDATA[
+					[#!callie.isAttractedTo(pc) || (pc.getMoney()<10000 && !flags.hasFlag(FLAG_nnxx_callie_sex_is_free)) || !game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						展示菊穴
+					#ELSE
+						展示菊穴([style.moneyFormatUncoloured(10000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!game.isAnalContentEnabled())
+						该选项包括肛门性爱内容，你在设置里关闭了该内容……
+					#ELSEIF(!pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+						你需要让你的肛门不受限制，才能在柜台上被卡丽肛交！
+					#ELSEIF(!callie.isAttractedTo(pc))
+						卡丽没被你吸引，她不愿意和你做爱。
+					#ELSEIF(pc.getMoney()<10000 && !flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						你没钱捐给卡丽的面包房，没法和她做爱。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[
+					[#callie.isAttractedTo(pc) && (pc.getMoney()>=10000 || flags.hasFlag(FLAG_nnxx_callie_sex_is_free)) && game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)]
+				]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[
+					#IF(flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						展示菊穴
+					#ELSE
+						展示菊穴([style.moneyFormat(10000, span)])
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					捐赠10000火币给卡丽的面包房，这样你能在柜台上被肛交。
+					<br/>[style.italicsSex(这会导致卡丽支配性地操你的肛门。)]
+				]]></responseTooltip>
+				<nextDialogue/><effects><![CDATA[
+					#IF(!flags.hasFlag(FLAG_nnxx_callie_sex_is_free))
+						[#game.appendToTextEndStringBuilder(pc.incrementMoney(-10000))]
+						[#flags.incrementSavedLong('nnxx_callie_total_donated', 10000)]
+						[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION_PROGRESS'))]
+					#ENDIF
+					[#flags.setFlag(FLAG_nnxx_callie_daily_fucked, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[nnxx_callie_sex_anal]]></id>
+					<startingPosition><![CDATA[OVER_DESK]]></startingPosition>
+					<dominants>
+						<character>
+							<id>callie</id>
+							<slot><![CDATA[OVER_DESK_BETWEEN_LEGS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[OVER_DESK_OVER_DESK_ON_FRONT]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[nnxx_callie_bakery_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/nnxx/callie_bakery">SEX_ANAL_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition/>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[callie]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Back: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[反悔]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(!callie.isAttractedTo(pc))
+						卡丽没被你吸引，和她做爱似乎是考虑范围外的事……
+					#ELSE
+						告诉卡丽你改变注意了……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[nnxx_callie_bakery_counter]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'SEX_BACK_OUT'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="after_sex">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'DONATION_PROGRESS'))]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[卡丽已经被满足了，结束了性爱……]]></tooltip>
+		<content folderPath="txt/nnxx/callie_bakery">AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[结束与卡丽的性爱，考虑下一步做什么……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[nnxx_callie_bakery_counter]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'AFTER_SEX_CONTINUE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="seating">
+		<content folderPath="txt/nnxx/callie_bakery">SEATING</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	
+	<!-- Natalya encounter content: -->
+	
+	
+	<scene id="natalya_start">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'NATALYA_START'))]
+			[#flags.setFlag(FLAG_innoxia_callie_natalya_encountered, true)]
+			[#flags.setSavedLong('callie_natalya_encounter_time', game.getSecondsPassed())]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[品尝“甜甜圈”]]></responseTitle>
+				<responseTooltip><![CDATA[锁上前门，准备好尝尝马屁股的味道。<br/>[style.italicsSex(包括给卡丽和主人娜塔莉亚进行吻肛。)]]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_nnxx_callie_daily_fucked, true)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_dominion_callie_bakery_natalya_anilingus]]></id>
+					<startingPosition><![CDATA[STANDING]]></startingPosition>
+					<dominants>
+						<character>
+							<id>natalya</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT]]></slot>
+						</character>
+						<character>
+							<id>callie</id>
+							<slot><![CDATA[STANDING_STANDING_DOMINANT_TWO]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[STANDING_PERFORMING_ORAL_BEHIND]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[nnxx_callie_bakery_natalya_after_anilingus]]></postSexDialogue>
+					<sexStartContent folderPath="txt/nnxx/callie_bakery">NATALYA_ANILINGUS_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[借口离开并迅速逃走。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="DOMINION_CALLIE_BAKERY"/>
+				<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'NATALYA_ESCAPE'))]
+					[#pc.setNearestLocation(WORLD_TYPE_DOMINION, PLACE_TYPE_DOMINION_CALLIE_BAKERY)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="natalya_after_anilingus">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[娜塔莉亚主人已经满足。]]></tooltip>
+		<content folderPath="txt/nnxx/callie_bakery">NATALYA_AFTER_ANILINGUS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[完成对娜塔莉亚主人的吻肛后，向她道别，思考接下来要做什么……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[nnxx_callie_bakery_counter]]></nextDialogue>
+				<effects><![CDATA[
+					[#natalya.returnToHome()]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/nnxx/callie_bakery', 'NATALYA_AFTER_ANILINGUS_CONTINUE'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

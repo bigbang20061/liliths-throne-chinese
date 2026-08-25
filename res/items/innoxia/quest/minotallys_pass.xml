@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>1000</value> 
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[伊利斯市镇议会通行证]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[伊利斯市镇议会通行证]]></namePlural>
+		<description><![CDATA[一张塑料制的卡片，用于进入伊利斯的市镇议会。]]></description> 
+		
+		<useDescriptor><![CDATA[检查]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>QUEST</rarity> 
+		
+		<imageName>minotallys_pass.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_GOLD</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.colourGood(授予访问权限)]到伊利斯市镇议会]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p>
+			这张通行证由米诺塔利丝的私人助理阿里昂签署，具有“金色”级别的通行权限。由于这让你能无限制地接近米诺塔利丝本人，因此你假定它拥有着最高级别的通行权限。
+		</p>
+		]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]仔细观察这份通行证……
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]向[npc2.name]炫耀着她的通行证，而[npc2.name]对[npc.her]的证件感到印象深刻……
+	]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

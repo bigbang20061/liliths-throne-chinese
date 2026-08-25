@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="IMP_ATTACK"><![CDATA[
+	<p>
+		即使在最宁静的时刻，屈城区的隧道也会给人一种不祥的感觉。当你沿着那肮脏、荒凉的通道前行时，心头充盈着一股特殊的惶恐，仿佛一些可怕的事情即将降临。
+	</p>
+	<p>
+		起初，只有你踩踏垃圾时发出的沙沙声打破了这阴森幽暗的地下墓穴里的诡异寂静。然而随着你不断前行，你开始听到远处传来微弱的动静，仿佛有什么东西在悄悄移动。意识到自己被跟踪，你不愿成为可能前方设下陷阱的牺牲品，于是你毅然站定，扭头面对着追赶者的方向。
+	</p>
+	<p>
+		片刻后，你终于瞥见了一直跟随你的小恶魔们。从远处的拐角处，显现出四个小恶魔的身影。其中两个比其他的大，虽然它们的翅膀看起来足以支撑飞翔，但此刻却选择在地面上行走。而另外两个较小的小恶魔则在空中翩翩起舞，离你不远。
+	</p>
+	<p>
+		你发现这四只小恶魔似乎全都是衣衫褴褛的样子，其中两只体型较小的小恶魔甚至都没穿鞋，也许相比在地上行走，它们更喜欢呆在天上。你注意到，这些小恶魔全都拿着类似金属管的武器。
+	</p>
+	<p>
+		当两个阿尔法小恶魔看到你时，他们停下了脚步。
+		#IF RND.nextInt(2)==0
+		#THEN左边那个
+		#ELSE右边那个
+		#ENDIF
+		小恶魔看起来似乎是领头的，[npc.she]手里不仅拿着武器，还举着一面粗糙的盾牌。[npc.she]迈着步子走向你，仔细打量，然后声称：[npc.speech(你可真是个放肆的[pc.insult]，居然敢在我们的地盘里四出乱窜，以为自己能侥幸不被抓住？)]
+	</p>
+	<p>
+		两只较小的小恶魔扑腾扑腾地飞到前方，支援他们的领头者。[npc3.name]嘲笑道：[npc3.speech([pc.Insult]！你现在可要倒霉了！)]
+	</p>
+	<p>
+		[npc4.name]趁机侮辱你，小恶魔恶狠狠地说道：[npc4.speech(没错，[pc.insult]！准备好成为我们的性玩具了吗？我可要好好享受你尖叫的样子！)]
+	</p>
+	<p>
+		显而易见，这群小恶魔并不打算放过你。随着他们逐渐逼近，那只一直盯着你嗤笑着的小恶魔副头领，此刻毫不含糊地表露了自己的意图，[npc2.she]大声说到： 
+		#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
+		#THEN
+			[npc2.speech(老大给了我们一种药水，专门用在像你这样厚脸皮的小[pc.insultPlural]身上！它会把你变成一个性感的碧池，让你的湿屄充满淫水给我们操！)]
+		#ELSE
+			[npc2.speech(老大给了我们一种药水，专门用在像你这样厚脸皮的小[pc.insultPlural]身上！它会让你的小屄分泌出足够的润滑液，这样就能把你当做我们的专属飞机杯了！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_ATTACK_OFFER_BODY"><![CDATA[
+	<p>
+		被小恶魔的残酷侮辱和咄咄逼人的姿态吓坏了，你决定最好的行动方案就是满足这群人想要的东西。你退后一步，屈服地举起你的[pc.hands]：[pc.speech(拜托，没有必要暴力。你只是想要性，对吧？)]
+	</p>
+	<p>
+		[npc.speech(看起来，这位[pc.insult]知道自己的位置了！)][npc.name]咆哮着，然后扭过头，严厉地命令手下制伏你，[npc.speech(快点把[pc.herHim]拿下，一群废物！)]
+	</p>
+	<p>
+		两只较小的小恶魔立刻冲了上来，分别飞到你两侧，抓住了你的[pc.arms]，然后把翅膀折叠在背后，利用重量把你压倒在地，让你跪了下来。你重重地撞在地上，抬起头，只见两只阿尔法小恶魔笑容满面地迈向前，明显得意于看到你毫无反抗之意。
+	</p>
+	#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
+	#THEN
+		<p>
+			[npc.speech(给我药！)][npc.name]朝[npc.her]的同伴喝道，[npc2.name]见状急忙拿出一瓶奇怪液体递了过去。[npc.name]接过瓶子走到你面前，[npc.her]将瓶塞拔出，然后撩你的下巴，捏住你的脸颊。
+			#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
+			#THEN
+				[npc.speech(张开你的口穴，[pc.insult]！这玩意儿会帮你变成一个火辣的、流着口水的湿屄婊子！)]
+			#ELSE
+				[npc.speech(张开你的口穴，[pc.insult]！这玩意儿会让你分泌出足够的润滑液，让你做一个合格的飞机杯！)]
+			#ENDIF
+		</p>
+		<p>
+			没有任何警告，甚至没有给你时间按照[npc.she]的命令去做，[npc.name]猛地将瓶子塞进你[pc.lips]，你感觉到温暖、甜腻的液体进入你的嘴里……
+		</p>
+	#ELSE
+		<p>
+			[npc.speech(这个愚蠢的[pc.insult]把[pc.her]的嘴封住了！操蛋的[pc.insult]！)]，[npc.name]厌恶地吐口水。[npc.she]转向[npc.her]的下属，厉声说道：[npc.speech(把药水留着下次抓人用吧！让我们操尽[pc.insult]身上剩下所有的洞！)]
+		</p>
+		<p>
+			没有任何警告，[npc.name]伸手抓住你的脑后，强迫你跪伏在地：[npc.speech(趴下，[pc.insult]！是时候成为我们的好肉便器了！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<htmlContent tag="COMBAT_DEFEAT_NO_TF"><![CDATA[
+	<p>
+		小恶魔无法转化你。这绝无可能，这是个BUG！请向Innoxia报告这条信息： 'impAttackAlpha COMBAT_DEFEAT_NO_TF is being triggered.'
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="COMBAT_DEFEAT_TF"><![CDATA[
+	<p>
+		在无法承受下一波攻击的情况下，你崩溃跪倒在地，拼命地试图喘息，恳求着，[pc.speech(不要再……请……)]
+	</p>
+	<p>
+		不给你片刻喘息的机会，[npc.name]打了个响指，然后指着你，对下属命令道：[npc.speech(控制住这个贱人！快点，抓住[pc.herHim]！)]
+	</p>
+	<p>
+		立即，两个较小的小恶魔向前冲到你的两侧，并抓住你的[pc.arms]，他们利用自己的体重让你保持静止。当[npc3.she]伸手挤压你的[pc.ass]时，[npc3.Name]发出一声嘲笑，而[npc4.name]借此机会
+		#IF pc.hasBreasts()
+		#THEN
+			伸手摸索你的[pc.breasts]。
+		#ELSE
+			将[npc4.her]的腹股沟摩擦着你的腰部。
+		#ENDIF
+	</p>
+	#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
+	#THEN
+		<p>
+			[npc.speech(给我药水，)][npc.name]对[npc.her]的伙伴厉声说道。[npc2.name]迅速拿出一瓶奇怪的液体，将其交给头领。头领拔掉瓶塞的同时向前走来，然后撩起你的下巴，用力挤压你的脸颊。
+			#IF properties.getForcedTFTendency()==FORCED_TF_FEMININE || properties.getForcedTFTendency()==FORCED_TF_FEMININE_HEAVY
+			#THEN
+				[npc.speech(张大点，[pc.insult]！这样就能把你变成一个火辣的婊子，让你有一个会流水的屄！)]
+			#ELSE
+				[npc.speech(张大点，[pc.insult]！这会给你一个会流水的屄，准备好成为我的鸡巴套吧！)]
+			#ENDIF
+		</p>
+		<p>
+			没有任何警告，甚至没有给你时间按照[npc.she]的命令去做，[npc.name]猛地将瓶子塞进你[pc.lips]，你感觉到温暖、甜腻的液体进入你的嘴里……
+		</p>
+	#ELSE
+		<p>
+			[npc.speech(这个愚蠢的[pc.insult]把[pc.her]的嘴堵住了！操蛋的[pc.insult]！)]，[npc.name]厌恶地吐口水。[npc.she]转向[npc.her]的下属，厉声说道：[npc.speech(把药水留着下次抓人用吧！让我们操尽[pc.insult]身上剩下所有的洞！)]
+		</p>
+		<p>
+			没有任何警告，[npc.name]伸手抓住你的脑后，强迫你跪伏在地：[npc.speech(趴下，[pc.insult]！是时候成为我们的好肉便器了！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_DEFEAT_SEX"><![CDATA[
+	<p>
+		你发现自己跪趴在地，任由小恶魔们的肉欲摆布，你决定最好的办法就是顺从他们为你准备的一切。感觉到你的顺从，[npc.name]冷笑着俯视着你：[npc.speech(多么顺从的妓女！你其实只是一个小恶魔鸡巴的荡妇，不是吗？？)]
+	</p>
+	<p>
+		为了避免引起麻烦，你小声地咕哝着：[pc.speech(对、对的……)]
+	</p>
+	<p>
+		当你同意[npc.name]的说法时，你突然感觉到[npc3.name]开始对你的屁股又摸又抓，然后[npc3.she]叫道：[npc3.speech(我打赌你已经吃了好几英里的鸡巴了，是不是，荡妇？在我们之前，还有多少小恶魔蹂躏过你这可爱的屁股？我打赌你已经数不清了！)]
+	</p>
+	<p>
+		[npc2.speech(我想听这个荡妇求着要小恶魔的鸡巴！)]，[npc2.name]嘲笑道。那个小恶魔走到[npc.name]旁边，对着你的顺从的样子冷笑：[npc2.speech(继续，说啊，说你是小恶魔鸡巴的荡妇！)]
+	</p>
+	<p>
+		[pc.speech(我是个小恶魔鸡巴的荡妇……)]你说着，心知自己的话即将得到验证。
+	</p>
+	<p>
+		[npc2.speech(大声点！求<i>我的</i>鸡巴，荡妇！)][npc2.Name]厉声说道，显然对你敷衍的回答并不满意。
+	</p>
+	<p>
+		明白自己完全受制于这些邪恶的小恶魔，你决定最好照着吩咐去做，便大声喊出：[pc.speech(我是小恶魔肉棒的荡妇！拜托了，我想要你的鸡巴进入我体内！请操我！)]
+	</p>
+	<p>
+		[npc4.speech(这才对我们的胃口！)][npc4.Name]在一侧大声笑着，你情不自禁地发出了一声小小的[pc.moan]。小恶魔移动位置，准备按照你刚才的要求开始干你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_DEFEAT_SEX_EAGER"><![CDATA[
+	<p>
+		发现自己四肢着地，受到小恶魔肉体欲望的摆布，你感觉自己变得非常兴奋，几乎无法控制从你[pc.lips]之间飘出的[pc.moan+]。听到从你嘴里发出的猥亵声音，[npc.name]俯视着你，[npc.speech(你变成了一个多么肮脏的妓女！真是一个肮脏的、渴求小恶魔肉棒的荡妇，不是吗？)]
+	</p>
+	<p>
+		你的性欲占了上风，没仔细考虑，便大声喊道，[pc.speech(对！我是个小恶魔鸡巴的荡妇！)]
+	</p>
+	<p>
+		当你高兴地回应[npc.name]时，你突然感觉到[npc3.name]开始对你的屁股又摸又抓，然后[npc3.she]叫道：[npc3.speech(我打赌你已经吃了好几英里的鸡巴了，是不是，荡妇？在我们之前，还有多少小恶魔蹂躏过你这可爱的屁股？我打赌你已经数不清了！)]
+	</p>
+	<p>
+		[npc2.speech(我想听这个荡妇求着要小恶魔的鸡巴！)][npc2.name]嘲笑道。那个小恶魔走到[npc.name]旁边，对着你的顺从的样子冷笑：[npc2.speech(继续，说啊，求我的鸡巴！)]
+	</p>
+	<p>
+		[pc.speech(求你了，我想要你的鸡巴！不，我<i>需要</i>你的鸡巴！操我！求你了，操我吧！)]你一边[pc.moan]一边咬着你的[pc.lip]，抬头看着[npc2.name]。
+	</p>
+	<p>
+		[npc2.speech(真是个荡妇！)][npc2.Name]笑了，对你的热情回答很满意。[npc2.speech(别担心，妓女，你很快就会得到你渴望的小恶魔鸡巴！)]
+	</p>
+	<p>
+		[npc4.speech(我就喜欢你这么急切的样子！)][npc4.Name]在一侧大笑着，你情不自禁地发出了[pc.a_moan+]。小恶魔们开始移动位置，准备给你带来你渴望的鸡巴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_COMBAT_DEFEAT_SEX_RESIST"><![CDATA[
+	<p>
+		你发现自己跪趴在地，受到小恶魔肉欲的摆布，你惊慌失措，试图再次站起来，同时大声喊道：[pc.speech(别这样！走开！)]
+	</p>
+	<p>
+		当你试图挣扎站起时，[npc.name]迈步走了上来，抓住了你的后颈，随即用力将你粗暴地推回到顺从的姿势中去：[npc.speech(愚蠢的荡妇，这就是你闯入我们领地的下场！别担心，我们会让你在我们和你做完之前就呻吟着要小恶魔的鸡巴！)]
+	</p>
+	<p>
+		你哭闹着抗议，突然感觉[npc3.namePos]的[npc3.hands]开始对你的屁股又摸又抓。你转身告诉[npc3.herHim]停下来，但[npc3.she]吼道：[npc3.speech(我打赌你已经吃了好几英里的鸡巴了，是不是，荡妇？在我们之前，还有多少小恶魔蹂躏过你这可爱的屁股？我打赌你已经数不清了！)]
+	</p>
+	<p>
+		[npc2.speech(这个愚蠢的荡妇需要让[pc.her]知道自己的地位！)][npc2.Name]走到[npc.name]旁边嘲笑你的失败：[npc2.speech(你会喜欢成为小恶魔的鸡巴套的！我就知道！)]
+	</p>
+	<p>
+		[pc.speech(不！你不能这样！)]你在与小恶魔搏斗时大声喊叫。
+	</p>
+	<p>
+		[npc2.speech(你很快就会向我的鸡巴乞求的！)][npc2.Name]厉声说着，显然已经没有耐心再听你的抗议。
+	</p>
+	<p>
+		[npc4.speech(操像你这样不情愿的婊子真是太有趣了！)][npc4.Name]的笑声从一边传来，你不禁发出疯狂的哀嚎，小恶魔们移动位置准备开始干你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="COMBAT_DEFEAT_TF_REFUSED"><![CDATA[
+	<p>
+		你毫不犹豫地拒绝了吞下小恶魔们的转化药水，突然一甩头，将液体吐到地上。你的抵抗立即遭到了一记猛烈的巴掌，伴随着[npc.name]将瓶子扔一边时发出的尖叫：[npc.speech(你这该死的[pc.insult]！见鬼！你知道boss为了给我们弄到这些药剂费了多少功夫吗？！真是个该死的[pc.insult]！)]
+	</p>
+	<p>
+		[npc.NamePos]的侮辱很容易经受住，因为你知道替代方案是什么。你只需将目光投向地面，等待[npc.herHim]平静下来，然而，当你这样做时，[npc.she]突然向前伸出手，抓住你的后颈，迫使你四肢着地。[npc.speech(趴下，[pc.insult]！如果你连喝药这么简单的事情都做不到，那就只能做个供我们使用的性玩具了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="COMBAT_DEFEAT_TF_ACCEPTED"><![CDATA[
+	<p>
+		你咕咚一口将甜美如糖浆般的液体咽下，然后张开嘴巴向[npc.name]展示你已经照[npc.she]的命令做了。你顺从的表现引来了[npc.name]狡黠的笑容，随即[npc.she]漫不经心地将空瓶扔到一旁，退后一步，俯视着你。[npc.speech(好婊子……哼，你就是个让我们小恶魔指挥得团团转的婊子，不是吗？)]
+	</p>
+	<p>
+		[pc.speech(是的……)]你心不在焉地回应，更专注于体内开始涌现的奇异感觉，而不是小恶魔刚才问你的事情。这奇异感觉逐渐转变成一股持续的温暖弥漫全身，你意识到药水的转变效果即将显现出来……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="COMBAT_DEFEAT_TF_APPLIED"><![CDATA[
+	<p>
+		当药水的效果结束时，[npc.name]突然向前一步，抓住你的后颈，迫使你四肢着地。[npc.speech(好婊子！既然你已经是我们想要的样子了，是时候把你变成我们的性玩具了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_DEFEAT_SEX"><![CDATA[
+	<p>
+		小恶魔们玩得尽兴，哄散退开。你喘着粗气倒在地上。
+		#IF (pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc2.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc3.getId()) || pc.isCharactersCumInOrifice(ORIFICE_VAGINA, npc4.getId()))
+		#THEN
+			#IF pc.isVisiblyPregnant()
+			#THEN
+				突然间，你感觉[npc.name]将手指滑入你刚被射满的阴户。你疲惫地呻吟着，而[npc.she]则嬉皮笑脸：[npc.speech(可惜你已经怀孕了，荡妇。我们本来可以让你再生一些小恶魔给我们添点人手。)]
+			#ELSE
+				突然间，你感觉[npc.name]将手指滑入你刚被射满的阴户。你疲惫地呻吟着，而[npc.she]则嬉皮笑脸：[npc.speech(你想知道有没有被我们操怀孕吗？荡妇？好吧，如果你真的生出小恶魔，就把他们送到这边来，给我们添点人手！)]
+			#ENDIF
+			#IF pc.isAbleToAccessCoverableArea(CA_MOUTH, true)
+			#THEN
+				</p>
+				<p>
+					你根本来不及反应，[npc.name]走过来，将涂满精液的手指塞进你的嘴里：[npc.speech(清理掉，婊子。)]
+				</p>
+				<p>
+					你别无选择，只能按照吩咐舔掉[npc.namePos]手指上的精液
+					#IF pc.isVisiblyPregnant()
+					#THEN。
+					#ELSE，你边这样做，边情不自禁地想自己会不会被小恶魔的精液授孕。
+					#ENDIF
+					你很快被迫吞下嘴里咸咸的粘稠液体，抬头看着[npc.she]最后一次对你咧嘴一笑，和团伙一起消失在屈城区幽暗的隧道里。
+				#ELSE
+				</p>
+				<p>
+					你根本来不及反应，[npc.name]就向前将涂满精液的手指擦在你脸上：[npc.speech(别动，贱人！我不想让这东西留在我手上。)]
+				</p>
+				<p>
+					你别无选择，只能按照命令一动不动，感受着[npc.name]的手指在你脸上擦拭。
+					#IF !pc.isVisiblyPregnant()
+					#THEN 当你感觉到粘糊糊的精液黏在你的脸颊上时，你情不自禁地怀疑小恶魔的精液是否让你怀孕了。
+					#ENDIF
+					[npc.name]完事儿了。你抬起头，看着[npc.she]最后一次对你咧嘴一笑，然后带着[npc.her]的团伙消失在屈城区幽暗的隧道里。
+			#ENDIF
+		#ELSE
+			[npc.name]完事儿了，最后一次嘲笑着俯视着你疲惫不堪的身躯，和团伙一起消失在屈城区漆黑的隧道中。
+		#ENDIF
+	</p>
+	<p>
+		你独自一人整理行装。你恢复了一些体力，继续前行，密切留意着可能隐藏在附近拐角处的小恶魔……
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[分趾袜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[分趾袜]]></namePlural>
+		<description><![CDATA[一双日本传统的棉袜，非常适合和木屐一起穿。袜子后面有固定扣方便固定袜子。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>SOCK</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>RONIN</clothingSet> 
+		<imageName>tabi.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_BLUE_NAVY</colour>
+		</primaryColours>
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_GREY"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>REINDEER_GIFT</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚塞进分趾袜中。
+]]></self>
+    <other><![CDATA[
+[npc.Name]给[npc2.namePos]的[npc2.feet]套上分趾袜。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进分趾袜中。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下了[npc.her]的分趾袜。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的分趾袜脱下。
+]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的分趾袜并粗暴地扯下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

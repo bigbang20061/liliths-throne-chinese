@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- AFTER_COMBAT_VICTORY -->
+	
+	<htmlContent tag="IMP_ATTACK_COMBAT_VICTORY_ALL_ENSLAVED"><![CDATA[
+	<p>
+		在奴役了所有的小恶魔之后，你除了继续穿过隧道，没有什么可做的了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_ENSLAVED"><![CDATA[
+	<p>
+		[npc.speech(你在干什么？！)][npc.name]发出惊叫，[npc.speech(你不能奴役我们！快停下！)]
+	</p>
+	<p>
+		看着眼前剩下的小恶魔，你歪嘴一笑，不知道是该继续奴役这些家伙，还是任其自生自灭……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_ENSLAVED_ONE"><![CDATA[
+	<p>
+		[npc.speech(别这样！)][npc.name]尖叫起来，[npc.speech(不要！我不想当奴隶！)]
+	</p>
+	<p>
+		看着这最后一个被打败的小恶魔，你咧开嘴笑了，你在想，是应该把[npc.herHim]也奴役了，还是干脆放[npc.herHim]走……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_ATTACK_COMBAT_VICTORY"><![CDATA[
+	<p>
+		最后一个对手倒在你脚下，你发现自己低头看着一群被打败的小恶魔，脸上带着宽慰的微笑。尽管他们人数众多，但事实证明他们绝非你的对手，现在你已然在战斗中证明了自己，你想知道你应该如何对待这些麻烦制造者。
+	</p>
+	<p>
+		考虑到小恶魔在这些隧道中出没的几率，你知道再次遇到这些特殊敌人的机会微乎其微，所以如果你想对它们做点什么，那么现在就是时候了。也许你可以借用一下这些小恶魔打算用在你身上的转化药水？
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_ATTACK_COMBAT_VICTORY_CONTINUE"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你对最后被打败的[npc.race]没有任何兴趣，于是站在一边命令道，[pc.speech(走吧，离开这里，别再回来了！)]
+		</p>
+		<p>
+			[npc.race]呻吟着，勉强挪动双脚，照你说的那样，踉踉跄跄地走进屈城区的更深处。你目送[npc.herHim]离开，准备继续前进……
+		</p>
+	#ELSE
+		<p>
+			你对这些小恶魔不感兴趣，于是站到一边，命令道，[pc.speech(所有家伙都给我滚开！别再回来了！)]
+		</p>
+		<p>
+			这些小恶魔呻吟着，勉强挪动双脚，照你说的做，踉踉跄跄地走进屈城区的更深处。你目送他们离开，准备继续前进……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_ATTACK_COMBAT_VICTORY_SEX"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你看着最后一名被你打败的[npc.race]，突然意识到已经没有什么能阻止你和[npc.herHim]做爱了。你告诉自己，如果你战败了，[npc.she]也会对你做同样的事情，于是就这样正当化了自己的所作所为。你将[npc.name]摆好位置，迫使[npc.herHim]在你面前四肢着地。
+		</p>
+		<p>
+			[pc.speech(快点，给我全都露出来！)]你急切地想快点开始，让这个[npc.race]认清[npc.her]自己的位置。
+		</p>
+		<p>
+			[npc.speech(你这个[pc.insult]……)][npc.name]叹气，声音里暴露了现在[npc.she]有多么饥渴。你向前快速给了[npc.her]的[npc.ass]一巴掌，[npc.she]发出狂乱、颤抖的[npc.moan]。[npc.she]撅起[npc.hips]，回头看着你恳求道：[npc.speech(来吧，快点操我！)]
+		</p>
+		<p>
+			[npc.Name]顺从地向你展示[npc.herself]自己，开始前后摇摆[npc.her][npc.hips+]想要引诱你去干[npc.herHim]……
+		</p>
+	#ELSE
+		<p>
+			你看着最后一名被你打败的小恶魔，突然意识到已经没有什么能阻止你和他们做爱了。你告诉自己，如果你战败了，他们也会对你做同样的事情，于是就这样正当化了自己的所作所为。你将小恶魔们摆好位置，迫使他们每一个都在你面前四肢着地。
+		</p>
+		<p>
+			[pc.speech(快点，给我全都露出来！)]你急切地想快点开始，让这些小恶魔认清自己的位置。
+		</p>
+		<p>
+			[npc.speech(你这个[pc.insult]……)][npc.name]叹气，声音里暴露了现在[npc.she]有多么饥渴。你向前快速给了[npc.her]的[npc.ass]一巴掌，[npc.she]发出狂乱、颤抖的[npc.moan]。[npc.she]撅起[npc.hips]，回头看着你恳求道：[npc.speech(来吧，我是头儿，所以你得先上我！)]
+		</p>
+		<p>
+			#IF(game.getNonCompanionCharactersPresent().size()==2)
+				另一个小恶魔发出抗议的呻吟声，和[npc2.her]的头儿一起顺从地向你展示自己。[npc2.she]把屁股抬到空中，开始前后摇摆[npc.hips+]，试图引诱你先操[npc2.herHim]……
+			#ELSE
+				其他小恶魔发出抗议的呻吟声，在你面前顺从地展示自己。他们开始把屁股翘到空中互相竞争，看谁会第一个被你干……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_ATTACK_COMBAT_VICTORY_SEX_GENTLE"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你看着最后一名被你打败的[npc.race]，突然意识到已经没有什么能阻止你和[npc.herHim]做爱了。你告诉自己，如果你战败了，[npc.she]也会对你做同样的事情，于是就这样正当化了自己的所作所为。你将[npc.name]轻柔地摆好位置，迫使[npc.herHim]在你面前四肢着地。
+		</p>
+		<p>
+			[pc.speech(来吧，如果你现在好好表现，我保证让你达到高潮。)]你轻轻地咕哝着，迫不及待地想快点开始，看看这个[npc.race]会做些什么。
+		</p>
+		<p>
+			[npc.speech(你这个[pc.insult]……)][npc.name]叹气，声音里暴露了现在[npc.she]有多么饥渴。你向前轻轻给了[npc.her][npc.ass]一巴掌，[npc.she]发出狂乱、颤抖的[npc.moan]。[npc.her]撅起[npc.hips]，回头看着你恳求道：[npc.speech(来吧，快点操我！)]
+		</p>
+		<p>
+			[npc.Name]顺从地向你展示[npc.herself]自己，开始前后摇摆[npc.her][npc.hips+]想要引诱你去干[npc.herHim]……
+		</p>
+	#ELSE
+		<p>
+			你看着最后一名被你打败的小恶魔，突然意识到已经没有什么能阻止你和他们做爱了。你告诉自己，如果你战败了，他们也会对你做同样的事情，于是就这样正当化了自己的所作所为。你轻轻地将小恶魔们摆好位置，迫使他们每一个都在你面前四肢着地。
+		</p>
+		<p>
+			[pc.speech(来吧，如果你现在好好表现，我保证让你达到高潮。)]你轻轻地咕哝着，迫不及待地想快点开始，看看这些小恶魔会做些什么。
+		</p>
+		<p>
+			[npc.speech(你这个[pc.insult]……)][npc.name]叹气，声音里暴露了现在[npc.she]有多么饥渴。你向前轻轻给了[npc.her]的[npc.ass]一巴掌，[npc.she]发出狂乱、颤抖的[npc.moan]。[npc.she]撅起[npc.hips]，回头看着你恳求道：[npc.speech(来吧，我是头儿，所以你得先上我！)]
+		</p>
+		<p>
+			#IF(game.getNonCompanionCharactersPresent().size()==2)
+				另一个小恶魔发出抗议的呻吟声，和[npc2.her]的头儿一起顺从地向你展示自己。[npc2.she]把屁股抬到空中，开始前后摇摆[npc.hips+]，试图引诱你先操[npc2.herHim]……
+			#ELSE
+				其他小恶魔发出抗议的呻吟声，在你面前顺从地展示自己。他们开始把屁股翘到空中互相竞争，看谁会第一个被你干……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_ATTACK_COMBAT_VICTORY_SEX_ROUGH"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你看着最后一名被你打败的[npc.race]，突然意识到已经没有什么能阻止你和[npc.herHim]做爱了。你告诉自己，如果你战败了，[npc.she]也会对你做同样的事情，于是就这样正当化了自己的所作所为。你粗鲁地将[npc.name]摆好位置，强迫[npc.herHim]在你面前四肢着地。
+		</p>
+		<p>
+			[pc.speech(快给我全都露出来！该死的贱货！)]你用最凶狠的语气咆哮着，迫不及待地要开始狠狠地操这个[npc.race]。
+		</p>
+		<p>
+			[npc.speech(你这个[pc.insult]……)][npc.name]叹气，声音里暴露了现在[npc.she]有多么饥渴。你向前重重给了[npc.her]的[npc.ass]一巴掌，[npc.she]发出狂乱、颤抖的[npc.moan]。[npc.she]撅起[npc.hips]，回头看着你恳求道：[npc.speech(来吧，快点操我！)]
+		</p>
+		<p>
+			[npc.Name]顺从地向你展示[npc.herself]自己，开始前后摇摆[npc.her][npc.hips+]想要引诱你去干[npc.herHim]……
+		</p>
+	#ELSE
+		<p>
+			你看着最后一名被你打败的小恶魔，突然意识到已经没有什么能阻止你和他们做爱了。你告诉自己，如果你战败了，他们也会对你做同样的事情，于是就这样正当化了自己的所作所为。你粗鲁地将他们推倒，强迫每一只小恶魔都在你面前四肢着地。
+		</p>
+		<p>
+			[pc.speech(快给我全都露出来！该死的贱货！)]你用最凶狠的语气咆哮着，迫不及待地要开始狠狠地操这些小恶魔。
+		</p>
+		<p>
+			[npc.speech(你这个[pc.insult]……)][npc.name]叹气，声音里暴露了现在[npc.she]有多么饥渴。你向前重重给了[npc.her]的[npc.ass]一巴掌，[npc.she]发出狂乱、颤抖的[npc.moan]。[npc.she]撅起[npc.hips]，回头看着你恳求道：[npc.speech(来吧，我是头儿，所以你得先上我！)]
+		</p>
+		<p>
+			#IF(game.getNonCompanionCharactersPresent().size()==2)
+				另一个小恶魔发出抗议的呻吟声，和[npc2.her]的头儿一起顺从地向你展示自己。[npc2.she]把屁股抬到空中，开始前后摇摆[npc.hips+]，试图引诱你先操[npc2.herHim]……
+			#ELSE
+				其他小恶魔发出抗议的呻吟声，在你面前顺从地展示自己。他们开始把屁股翘到空中互相竞争，看谁会第一个被你干……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_ATTACK_COMBAT_VICTORY_SEX_SUBMIT"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			最后一个被打败的小恶魔在你面前畏缩着，真是悲哀之景。当你看向[npc.her]的眼睛时，你觉得[npc.sheIs]看上去几乎要哭了。你感到极度负疚，并希望让事情回到正轨。你在[npc.herHim]前跪下，并问道，[pc.speech(你还好吗？我不是有意做得这么过分的……)]
+		</p>
+		<p>
+			[npc.speech(你以为这如何，[pc.insult]？！)][npc.name]的情绪崩溃了，[npc.speech(我当然一点儿也不好！)]
+		</p>
+		<p>
+			[pc.speech(呃，那我能做点什么让你好一点吗？)]你问道。你现在愿意做任何事，只要能获取[npc.race]们的原谅。
+		</p>
+		<p>
+			[npc.name]察觉到了你暂时的软弱，[npc.her]站起来打了个响指，指着地面说：[npc.speech(首先，你应该先趴下来好好道歉！)]
+		</p>
+		<p>
+			你内在的顺从本能喜欢被支配、被命令，那道命令对你来说有着无上诱惑。于是，你毫不犹豫地在[npc.name]面前趴下。你低下头开始啜泣：[pc.speech(我真的、真的很抱歉！请原谅，我真的不是故意这么粗暴的！)]
+		</p>
+		<p>
+			你继续保持低头，听到[npc.name]移动到你身后的动静，她突然开始用[npc.her]的小恶魔手揉捏你的屁股。你本能般撅高你的[pc.hips]来方便[npc.herHim]继续动作，但当你献身时，[npc.she]却松了手，麻溜地给了你的屁股爽利的一巴掌。你听见[npc.name]在你背后发出嘲讽的笑声，
+			#IF(npc.hasPenis())
+				[npc.speech(哈！你不过是个馋小恶魔屌的荡妇罢了，对噻？！)]
+			#ELSEIF(npc.hasVagina())
+				[npc.speech(哈！你不过是个淫荡的小恶魔爱好者，对噻？！你一想到我湿答答小穴穴的味道就兴奋起来噜，是吧？)]
+			#ELSE
+				[npc.speech(哈！你不过是个淫荡的小恶魔爱好者，对噻？！你一想到被我支配就兴奋起来噜，是吧？)]
+			#ENDIF
+		</p>
+		<p>
+			驯服如你根本无法反驳。你感觉[npc2.name]开始对着你的屁股又摸又捏时，不禁喃喃：[pc.speech(没错……就这样……)]
+		</p>
+		<p>
+			#IF(npc.hasPenis())
+				[npc.speech(大点声！)][npc.name]命令道，又重重地在你屁股上打了一巴掌用来强调，[npc.speech(告诉我，你想被我的脏脏小恶魔屌猛猛干噻！)]
+			#ELSEIF(npc.hasVagina())
+				[npc.speech(告诉我，你想被我的脏脏小恶魔穴猛猛榨噻！)][npc.name]命令道，又重重地在你屁股上打了一巴掌用来强调，[npc.speech(告诉我，你想要喝我下面的甜汁嘞！)]
+			#ELSE
+				[npc.speech(告诉我，你想被我支配哩！)][npc.name]命令道，又重重地在你屁股上打了一巴掌用来强调，[npc.speech(告诉我，除了做一个温驯的荡妇外你一文不值！)]
+			#ENDIF
+		</p>
+		<p>
+			#IF(npc.hasPenis())
+				[pc.speech(我想被你的小恶魔屌猛灌！)]你不顾一切地叫喊道，知道你话里的欲望就要兑现。
+			#ELSEIF(npc.hasVagina())
+				[pc.speech(我是渴望你脏脏小恶魔穴的荡妇！求你了，让我尝尝吧！)]你不顾一切地叫喊道，知道你话里的欲望就要兑现。
+			#ELSE
+				[pc.speech(我想让你支配我！求你了，我是你温驯的荡妇！)]你不顾一切地叫喊道，知道你话里的欲望就要兑现。
+			#ENDIF
+		</p>
+		<p>
+			[npc.speech(这才是我想听到的！)][npc.name]大笑。在[npc.she]准备好操你时，你不禁小小地[pc.moan]起来……
+		</p>
+	#ELSE
+		<p>
+			眼前这堆被打败的小恶魔真是令人悲哀，当你看向[npc.name]的眼睛时，你觉得[npc.sheIs]看上去几乎要哭了。你感到极度内疚，希望让事情回到正轨。你在[npc.herHim]前跪下，并问道：[pc.speech(你还好吗？我不是有意做得这么过分的……)]
+		</p>
+		<p>
+			[npc.speech(还能怎样，[pc.insult]？！)][npc.name]骂道，[npc.speech(我们当然不好受了！)]
+		</p>
+		<p>
+			[pc.speech(呃，那我能做点什么让你好一点吗？)]你问道。你现在愿意做任何事，只要能获取这伙小恶魔的原谅。
+		</p>
+		<p>
+			[npc.name]察觉到了你暂时的软弱，[npc.her]站起来打了个响指，指着地面说：[npc.speech(首先，你应该先趴下来好好道歉！)]
+		</p>
+		<p>
+			你内在的顺从本能喜欢被支配、被命令，那道命令对你来说有着无上诱惑。于是，你毫不犹豫地在[npc.name]面前趴下。你低下头开始啜泣：[pc.speech(我真的、真的很抱歉！请原谅，我真的不是故意这么粗暴的！)]
+		</p>
+		<p>
+			当你继续匍匐在[npc.name]跟前，你听到身后有动静，并有一双小恶魔手突然开始揉捏你的屁股。你本能般撅高你的[pc.hips]来方便[npc.herHim]继续动作，但当你献身时，[npc.she]却松了手，麻溜地给了你的屁股爽利的一巴掌。你听见[npc.name]在你背后发出嘲讽的笑声，
+			#IF(npc2.hasPenis())
+				[npc2.speech(哈！看样子我们又搞到一个馋小恶魔屌的荡妇啰！)]
+			#ELSEIF(npc2.hasVagina())
+				[npc2.speech(哈！看样子我们又搞到一个淫荡的小恶魔爱好者啰！你一想到我们湿答答小穴穴的味道就兴奋起来噜，是吧，[pc.insult]？！)]
+			#ELSE
+				[npc2.speech(哈！看样子我们又搞到一个淫荡的小恶魔爱好者啰！你一想到被我们支配就兴奋起来噜，是吧，[pc.insult]？！)]
+			#ENDIF
+		</p>
+		<p>
+			#IF(npc.hasPenis())
+				你抬起头，试图回头看。[npc.name]向前一步抓住你的下巴强迫你仰头，下体压到你脸上，说：[npc.speech(你喜欢这样？被我的小恶魔屌在脸上乱戳？！)]
+			#ELSEIF(npc.hasVagina())
+				你抬起头，试图回头看。[npc.name]向前一步抓住你的下巴强迫你仰头，下体压到你脸上，说：[npc.speech(你喜欢这样？被我的小恶魔穴在脸上乱蹭？！)]
+			#ELSE
+				你抬起头，试图回头看。[npc.name]向前一步抓住你的下巴强迫你仰头，讥笑道：[npc.speech(就这？你最喜欢#IF(pc.hasLegs())冲路过的所有小恶魔岔开腿吧#ELSE被随便哪个路过的小恶魔搞得乱七八糟吧#ENDIF？！)]
+			#ENDIF
+		</p>
+		<p>
+			驯服如你根本无法反驳。你感觉[npc2.name]开始对着你的屁股又摸又捏时，不禁喃喃：[pc.speech(没错……就这样……)]
+		</p>
+		#IF(game.getNonCompanionCharactersPresent().size()>=3)
+			#IF(npc3.hasPenis())
+				<p>
+					[npc3.speech(说啊！说出你的真心话！)][npc3.name]命令着，走到[npc.name]旁边激烈地在你脸上摩擦[npc3.her]的胯下：[npc3.speech(告诉我，你是个渴望着我肮脏小恶魔屌的淫乱荡妇！)]
+				</p>
+				<p>
+					[pc.speech(我是渴望你脏脏小恶魔屌的荡妇！)]你不顾一切地大喊，知道你话里的欲望就要兑现。
+				</p>
+			#ELSEIF(npc3.hasVagina())
+				<p>
+					[npc3.speech(继续，说啊！)][npc3.name]命令着，走到[npc.name]旁边激烈地在你脸上摩擦[npc3.her]的胯下：[npc3.speech(告诉我，你是个渴望着我肮脏小恶魔穴的淫乱荡妇！)]
+				</p>
+				<p>
+					[pc.speech(我是渴望你脏脏小恶魔穴的荡妇！)]你不顾一切地大喊，知道你话里的欲望就要兑现。
+				</p>
+			#ELSE
+				<p>
+					[npc3.speech(继续，说啊！)][npc3.name]命令，走到[npc.name]旁边对着你曲意逢迎的样儿讥笑嘲弄道：[npc3.speech(告诉我们，你除了是个服从的荡妇外一文不值！)]
+				</p>
+				<p>
+					[pc.speech(我是你温驯的荡妇！)]你不顾一切地叫喊道，知道你话里的欲望就要兑现。
+				</p>
+			#ENDIF
+		#ELSE
+			#IF(npc.hasPenis())
+				<p>
+					[npc.speech(说啊！说出你的真心话！)][npc.name]命令道，用[npc.her]两腿间的凸起在你的脸上蹭来蹭去：[npc3.speech(告诉我，你是个渴望着我肮脏小恶魔屌的淫乱荡妇！)]
+				</p>
+				<p>
+					[pc.speech(我是渴望你脏脏小恶魔屌的荡妇！)]你不顾一切地大喊，知道你话里的欲望就要兑现。
+				</p>
+			#ELSEIF(npc.hasVagina())
+				<p>
+					[npc.speech(说啊！说出你的真心话！)][npc.name]命令道，继续用[npc.her]的胯部在你的脸上乱蹭：[npc.speech(告诉我，你是个渴望着我肮脏小恶魔穴的淫乱荡妇！)]
+				</p>
+				<p>
+					[pc.speech(我是渴望你脏脏小恶魔穴的荡妇！)]你不顾一切地大喊，知道你话里的欲望就要兑现。
+				</p>
+			#ELSE
+				<p>
+					[npc.speech(说啊！说出你的真心话！)][npc.name]命令道。[npc.her]居高临下地看着你顺从的样子，脸上挂着邪恶的笑容：[npc3.speech(告诉我，你是个渴望着我肮脏小恶魔屌的淫乱荡妇！)]
+				</p>
+				<p>
+					[pc.speech(我是你温驯的荡妇！)]你不顾一切地叫喊道，知道你话里的欲望就要兑现。
+				</p>
+			#ENDIF
+		#ENDIF
+		<p>
+			#IF(game.getNonCompanionCharactersPresent().size()>=4)
+				小恶魔们在听到你说的话后放声嘲笑你，而当你感觉到[npc4.name]来到你身后加入了[npc2.name]时，你因为激烈的屁股掌掴难以自抑地发出[pc.a_moan+]。伴随着新一轮的嘲笑，小恶魔们开始调整姿势，做好准备好来真刀真枪地操你……
+			#ELSE
+				小恶魔们在听到你说的话后放声嘲笑你，而当你感觉到[npc2.name]开始又一次激烈地掌掴你的屁股时，你难以自抑地发出[pc.a_moan+]。伴随着新一轮的嘲笑，小恶魔们开始调整姿势，做好准备好来真刀真枪地操你……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_SEX_VICTORY -->
+	
+	<htmlContent tag="AFTER_VICTORY_SEX"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		#IF(npc.isSatisfiedFromLastSex())
+			<p>
+				[npc.speech(啊……你完事了……)][npc.name]观察着，发出深深满意的叹息。
+			</p>
+			<p>
+				你玩得尽兴，对自己让[npc.name]享受了一段舒爽时光也很满足，于是开始收拾东西。一会儿后，你瞥到仍在喘气的[npc.race]，又觉得应该再看看[npc.her]背包里的东西。然而这毕竟会给你带来其他麻烦，最好的办法还是别管[npc.herHim]，向隧道继续前进……
+			</p>
+		#ELSE
+			<p>
+				[npc.speech(不够啊，我还没满足呢！)][npc.name]沮丧地呻吟着，[npc.she]意识到你已经完事儿了。
+			</p>
+			<p>
+				你玩得尽兴，直接无视了[npc.name]小小的抱怨，于是开始整理物品。一会儿后，你瞥到仍在喘气的[npc.race]，又觉得应该再看看[npc.her]背包里的东西。但这毕竟可能会给你带来其他麻烦，最好的办法还是别管[npc.herHim]，向隧道继续前进……
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(npc.isSatisfiedFromLastSex())
+			<p>
+				[npc.speech(啊……你完事了……)][npc.name]观察着，发出深深满意的叹息。
+			</p>
+			<p>
+				你玩得尽兴，对自己让小恶魔们享受了一段舒爽时光也很满足，于是开始收拾东西。一会儿后，你瞥到仍在喘气的[npc.race]，又觉得应该再看看他们背包里的东西。然而这毕竟会给你带来其他麻烦，最好的办法还是别管他们了，向隧道继续前进……
+			</p>
+		#ELSE
+			<p>
+				[npc.speech(不够啊，我还没满足呢！)][npc.name]沮丧地呻吟着，[npc.she]意识到你已经完事儿了。
+			</p>
+			<p>
+				你玩得尽兴，直接无视了小恶魔们悲惨的抱怨，于是开始整理物品。一会儿后，你瞥到仍在喘气的[npc.race]，又觉得应该再看看他们背包里的东西。然而这毕竟会给你带来其他麻烦，最好的办法还是别管他们了，向隧道继续前进……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[杯子底下刻着细小的字迹，写着“DSG食品有限公司包装”。]]></authorTag>
+		
+		<value>20</value> 
+		<determiner><![CDATA[一杯]]></determiner>
+		<name><![CDATA[双色冰沙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[混合饮料]]></namePlural>
+		<description><![CDATA[一杯奇异果和草莓口味的双色冰沙。标签上描绘着一只穿着围裙的狮鹫女，她正在递送一个类似这个杯子的冰沙给一位虚构的顾客。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">gryphon_two_tone_slushie.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_ARCANE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_ARCANE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_FIRE.getFormattedValue(1)]到“药剂效果” ]]></line>
+			<line><![CDATA[[#ATTRIBUTE_RESISTANCE_FIRE.getFormattedValue(1)]到“药剂效果” ]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementMana(npc.getAttributeValue(ATTRIBUTE_MANA_MAXIMUM) * 0.15)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股强大的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_RESISTANCE_FIRE, 1)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]将双色冰沙杯提到[npc.her]的[npc.mouth]边。奇异果和草莓的香味从吸管上升起，当[npc.she]将嘴唇包裹在吸管上并吸入冷半固体时，[npc.she]感到更加清爽。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]将双色冰沙杯提到[npc2.namePos]等待[npc2.lips]边。奇异果和草莓的香味从吸管上升起，当[npc2.she]将嘴唇包裹在吸管上并吸入冷半固体时，[npc.she]感到更加清爽。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<race>
+	<racialBody>NoStepOnSnek_octopus</racialBody>
+	<applyRaceChanges/>
+	<name><![CDATA[章鱼化形]]></name>
+	<namePlural><![CDATA[章鱼化形]]></namePlural>
+	<nameFeral>
+		<name legConfiguration="CEPHALOPOD"><![CDATA[章鱼]]></name>
+	</nameFeral>
+	<nameFeralPlural>
+		<name legConfiguration="CEPHALOPOD"><![CDATA[章鱼]]></name>
+	</nameFeralPlural>
+	<defaultTransformName><![CDATA[章鱼]]></defaultTransformName>
+	<colour>NoStepOnSnek_octopus</colour>
+	<disposition>UNPREDICTABLE</disposition>
+	<racialClass>FISH</racialClass>
+	<feralPartsAvailable>true</feralPartsAvailable>
+	<ableToSelfTransform>false</ableToSelfTransform>
+	<flyingRace>false</flyingRace>
+	<combatBehaviour>ATTACK</combatBehaviour>
+	<chanceForMaleOffspring>0.5</chanceForMaleOffspring>
+	<numberOfOffspringLow>2</numberOfOffspringLow>
+	<numberOfOffspringHigh>5</numberOfOffspringHigh>
+	<defaultFemininePreference>NORMAL</defaultFemininePreference>
+	<defaultMasculinePreference>NORMAL</defaultMasculinePreference>
+	<affectedByFurryPreference>true</affectedByFurryPreference>
+	<racialFetishModifiers>
+		<fetish love="3" like="3">FETISH_BONDAGE_APPLIER</fetish>
+	</racialFetishModifiers>
+</race>

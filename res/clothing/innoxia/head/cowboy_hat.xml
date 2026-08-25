@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>750</value>
+		<determiner><![CDATA[一顶]]></determiner>
+		<name><![CDATA[牛仔帽]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[牛仔帽]]></namePlural>
+		<description><![CDATA[一顶高顶宽檐帽。高顶有助于保持佩戴者的头部保温，而宽檐则可以遮挡阳光，保护他们的脸部和颈部。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>cowboy_hat.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="LEATHER"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将牛仔帽戴在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将牛仔帽戴在[npc2.namePos]的头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将牛仔帽戴到[npc2.namePos]的头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的牛仔帽脱下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的牛仔帽脱下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地夺走[npc2.namePos]的牛仔帽。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

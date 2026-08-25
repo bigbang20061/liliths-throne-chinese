@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>25</value> 
+		<determiner><![CDATA[一块]]></determiner>
+		<name><![CDATA[巧克力布朗尼]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[巧克力布朗尼]]></namePlural>
+		<description><![CDATA[一个小纸盒里装着美味的巧克力布朗尼蛋糕和一个小瓷盘。虽然这是一种广受欢迎的点心，但却与水豚有着千丝万缕的联系，不过似乎没有人知道是怎么回事。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="90" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/NoStepOnSnek/capybara/subspecies/capybara.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">capybara_brownie.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>NoStepOnSnek_capybara</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[水豚]]></potionDescriptor>
+		<associatedRace>NoStepOnSnek_capybara</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(2)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到更加强壮……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 2)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]拿出布朗尼并狼吞虎咽地吃掉，使[npc.herHim]的口中充满了美味的巧克力味。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]从防护盒中取出布朗尼，然后将它拿到[npc2.namePos][npc2.lips]前，让[npc2.herHim]吃掉。迅速吃掉它后，[npc2.name]嘴里充满了美味的巧克力味。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<authorTag><![CDATA[“DSG织厂编制”被印在布匹的一端。]]></authorTag>
+		
+		<value>20</value> 
+		<determiner><![CDATA[一]]></determiner>
+		<name><![CDATA[匹绿布]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[匹绿布]]></namePlural>
+		<description><![CDATA[一块深绿色的织物，包裹在硬纸板上，便于携带。你基于艾瑟克的喜好选择了这种颜色。]]></description> 
+		
+		<useDescriptor><![CDATA[检查]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>QUEST</rarity> 
+		
+		<imageName>fabricbolt.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_GREEN_DARK</colourPrimary>
+		<colourSecondary>CLOTHING_DESATURATED_BROWN</colourSecondary>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.colourGood(三)]个你需要来修理艾瑟克的摊位的物品中的其中一个。]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p>
+			这块棉质织物非常简单，染成了绿色，有点粗糙，但与目前装点艾瑟克摊位的麻布相比，看起来相当豪华。
+		</p>
+	]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]展开这块布来仔细看看……
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]展开这块布，向[npc2.name]展示，[npc2.name]则凑近来仔细看这块布……
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

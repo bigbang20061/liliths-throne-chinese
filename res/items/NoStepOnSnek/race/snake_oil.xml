@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>200</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[蛇油]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[蛇油]]></namePlural>
+		<description><![CDATA[一个透明的玻璃瓶，里面装着一种亮蓝色的液体。这种 "真正的蛇油 "的标签上对其作为灵丹妙药的功效做出了令人发指的承诺，并宣称它适合 "内服和外用"。]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">snake_oil.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+			<line><![CDATA[[style.boldMinorBad(增加)]40%[style.boldAlcohol(醉酒度)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股强大的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]
+			[#npc.incrementAlcoholLevel(0.4)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]拧开了蛇油瓶的盖子，然后仰起头将瓶端到[npc.her]等待[npc.lips]前。一股薄荷和其他各种草药的香气从瓶口升腾而起，然后大口喝下了液体。发现它的味道与气味所期望的差不多。虽然确实有些提神，但[npc.name]对广告的承诺产生了一些失望。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]拧开了蛇油瓶的盖子，然后将它端到[npc2.her]等待[npc2.lips]前。一股薄荷和其他各种草药的香气从瓶口升腾而起，然后大口喝下了液体。发现它的味道与气味所期望的差不多。虽然确实有些提神，但[npc2.name]对广告的承诺产生了一些失望。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

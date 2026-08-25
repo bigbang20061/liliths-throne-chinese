@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+
+	<buttonPriority>0</buttonPriority>
+	<actionConditional><![CDATA[true]]></actionConditional>
+	<type>ORGASM</type>
+	<pace/>
+	<endsSex><![CDATA[true]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes>
+		<performer>
+			<fetish>FETISH_CUM_STUD</fetish>
+		</performer>
+		<target>
+			<fetish>FETISH_CUM_ADDICT</fetish>
+		</target>
+	</associatedFetishes>
+	<performingArea>PENETRATION_PENIS</performingArea>
+	<targetedArea>ORIFICE_MOUTH</targetedArea>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		[##sex.applyCummedOnEffects(CA_MOUTH, jules, pc)]
+		[##sex.applyCummedOnEffects(CA_MOUTH, jules, angelixx)]
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+		[#pc.ingestFluid(jules, jules.getCum(), ORIFICE_MOUTH, 10)]
+		[#angelixx.ingestFluid(jules, jules.getCum(), ORIFICE_MOUTH, 10)]
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	
+	<!-- Information displayed to the player: -->
+	
+	<title><![CDATA[
+		在他们的脸上完事
+	]]></title>
+	<tooltip><![CDATA[把爱液喷得这些荡妇满脸都是。]]></tooltip>
+	
+	<descriptions>
+		<description>
+			<text><![CDATA[
+				朱尔斯把臀部向后一收，让你和安吉莉克丝无物可吸，他低头看着你们俩，哼道，[jules.speechNoEffects(张大点，荡妇！)]
+				
+				<br/><br/>你们两个遵从斑马男孩的命令，二人脸颊紧贴，张开嘴巴，同时抬头看着他。朱尔斯对自己所见感到满意，他狂热地抚摸着自己跳动的乌黑阴茎，随着他的哼声越来越深、越来越响，他把宽大的马屌对准了你们的脸。
+				
+				<br/><br/>没有任何警告，斑马男的阴茎中喷射出大量又热又粘的精液，溅得你满脸都是。你楞了一下，眨了眨眼睛，还是张着嘴巴，但尝了尝他落在你舌头上的咸精。
+				
+				<br/><br/>[jules.speechNoEffects(就是这样，)]斑马男咕哝道，[jules.speechNoEffects(接好了，贱货！)]
+				
+				<br/><br/>又喷了几次后，朱尔斯的睾丸空了，他最后哼了一声，把软下来的阴茎从你们的脸上抽了出来。转过身来看着安吉莉克丝，你看到她的脸上涂了一层黏糊糊的斑马精液，吞下嘴里的东西后，你向前倾身，亲吻她沾满精液的嘴唇。她咯咯地笑着回吻你，你们两个互相舔、吸、啜去对方脸上的精液。
+				
+				<br/><br/>[jules.speechNoEffects(该死，你们这两个荡妇好饥渴，)]朱勒斯咕哝着，宣告结束你们的亲热，[jules.speechNoEffects(我得回去工作了。来吧，跟我走。)]
+			]]></text>
+		</description>
+	</descriptions>
+	
+</sexAction>

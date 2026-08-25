@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<mouth>
+	<race>innoxia_raptor</race>
+	
+	<coveringType>MOUTH</coveringType>
+	
+	<tongueType>innoxia_raptor_tongue</tongueType>
+	
+	<names>
+		<name><![CDATA[喙]]></name>
+	</names>
+	<namesPlural>
+		<name><![CDATA[喙]]></name>
+	</namesPlural>
+	
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	
+	<lipNames>
+		<name><![CDATA[喙唇]]></name>
+	</lipNames>
+	<lipNamesPlural>
+		<name><![CDATA[喙唇]]></name>
+	</lipNamesPlural>
+	
+	<lipDescriptorsMasculine allowSizeDescriptors="false"/>
+	
+	<lipDescriptorsFeminine allowSizeDescriptors="false"/>
+	
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull]有着[npc.lipSize]的[npc.mouthColourPrimary(true)]
+		#IF(npc.isWearingLipstick())
+			#IF(npc.isPiercedLip())
+				的穿孔[npc.lips]，且
+			#ELSE
+				[npc.lips]，
+			#ENDIF
+			目前[npc.materialCompositionDescriptor]
+			#IF(npc.isHeavyMakeup(BODY_COVERING_TYPE_MAKEUP_LIPSTICK) && game.isLipstickMarkingEnabled())
+				[style.colourPinkDeep(厚厚一层)]
+			#ENDIF
+			[#npc.getLipstick().getFullDescription(npc, true)]。
+		#ELSE
+			#IF(npc.isPiercedLip())
+				的穿孔[npc.lips]。
+			#ELSE
+				[npc.lips]。
+			#ENDIF
+		#ENDIF
+		[npc.Her]喉咙内壁呈[npc.mouthColourSecondary(true)]。
+]]></bodyDescription>
+	
+	<defaultOrificeModifiers/>
+</mouth>

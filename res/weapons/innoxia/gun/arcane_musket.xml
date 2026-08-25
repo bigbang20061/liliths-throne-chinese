@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>15000</value>
+		<melee>false</melee>
+		<twoHanded>true</twoHanded>
+		<determiner><![CDATA[一把]]></determiner>
+		<name><![CDATA[奥术滑膛枪]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[奥术滑膛枪]]></namePlural>
+		<description><![CDATA[在你和梅拉克西丝的努力下，伊利斯镇正在尽可能多地生产这种奥术滑膛枪。这些滑膛长枪发射的不是子弹而是奥术能量，即使是最缺乏经验的民兵也有机会与露内特的恶魔半人马一战。]]></description>
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[将你的火枪对准[npc.Name]并开火！]]></attackTooltipDescription>
+		<rarity>LEGENDARY</rarity>
+		<weaponSet/>
+		<equipText><![CDATA[[npc.Name]装填[npc.her]的奥术滑膛枪。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]放下[npc.her]的奥术滑膛枪。]]></unequipText>
+		<imageName>arcane_musket.svg</imageName>
+		<imageEquippedName/>
+		<damage>150</damage>
+		<arcaneCost>10</arcaneCost> 
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		<effects/>
+		
+		<primaryColours/> 
+		<primaryColoursDye/>
+		<secondaryColours/> 
+		<secondaryColoursDye/>
+		
+		<itemTags>
+			<tag>CONTRABAND_MEDIUM</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]瞄准并用奥术滑膛枪射击，[npc.Name]成功用威力强大的奥术子弹击中了[npc2.name]！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.name]用奥术滑膛枪瞄准[npc2.name]并扣下扳机，释放出一股强大的奥术能量击中[npc2.namePos]的躯干！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用[npc.her]的奥术滑膛枪瞄准[npc2.name]并扣动扳机，[npc.she]成功命中[npc2.herHim]的胸部！
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]瞄准并用奥术滑膛枪射击，[npc.Name]未命中[npc2.name]！
+]]></missText>
+		<missText><![CDATA[
+		[npc.name]用奥术滑膛枪瞄准[npc2.name]并扣下扳机，在[npc.she]射偏了[npc.her]目标时发出了沮丧的声音！
+]]></missText>
+		<missText><![CDATA[
+		[npc.Name]用[npc.her]的奥术滑膛枪瞄准[npc2.name]并扣动扳机，但是[npc.she]最终还是没有击中目标！
+]]></missText>
+	</missDescriptions>
+	
+</weapon>

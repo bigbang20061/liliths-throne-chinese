@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<combatMove>
+	
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[缠绕之触]]></name>
+	
+	<description><![CDATA[
+		用[npc.her]的触手缠绕目标。
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		2
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>tentacle_restrain.svg</imageName>
+	
+	<colourPrimary>BASE_ORANGE</colourPrimary> 
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	
+	<!-- Effect logic -->
+	
+	<availabilityCondition><![CDATA[
+		[#npc.hasTentacle()]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		仅适用于有触手的角色。
+	]]></availabilityDescription>
+	
+	<!-- Once started to constrict a target, the AI will become more and more interested in finishing the process off. -->
+	<weighting><![CDATA[
+		#IF(npc2.hasStatusEffect(SE_TENTACLE_RESTRAIN_3))
+			10.0
+		#ELSEIF(npc2.hasStatusEffect(SE_TENTACLE_RESTRAIN_2))
+			5.0
+		#ELSEIF(npc2.hasStatusEffect(SE_TENTACLE_RESTRAIN_1))
+			2.5
+		#ELSE
+			1.0
+		#ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		无法暴击。
+	]]></criticalDescription>
+	
+	<movePredictionDescriptionWithTarget><![CDATA[
+		用[npc.her]强壮的触手缠绕住[npc2.name].
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		用[npc.her]用强壮的触手缠绕目标
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><![CDATA[
+			[npc.Name]向前猛冲并用触手缠住[npc2.name]！
+			#IF(npc2.hasStatusEffect(SE_TENTACLE_RESTRAIN_3))
+				[##npc2.setHealth(0)]
+				<br/>[style.italicsTerrible([npc2.NameIsFull]被[npc.namePos]的触手完全束缚，[npc2.her]被完全打败了！)]
+			#ELSEIF(npc2.hasStatusEffect(SE_TENTACLE_RESTRAIN_2))
+				[##npc2.removeStatusEffectCombat(SE_TENTACLE_RESTRAIN_2)]
+				[##npc2.addStatusEffect(SE_TENTACLE_RESTRAIN_3, 10)]
+				<br/>[style.italicsTerrible([npc2.NameIsFull]几乎完全被[npc.namePos]的触手束缚，[npc2.her]马上要被击败了！)]
+				<br/>[style.italicsTerrible(如果[npc2.name]再继续被触手束缚，[npc2.she]将立刻被击败！)]
+			#ELSEIF(npc2.hasStatusEffect(SE_TENTACLE_RESTRAIN_1))
+				[##npc2.removeStatusEffectCombat(SE_TENTACLE_RESTRAIN_1)]
+				[##npc2.addStatusEffect(SE_TENTACLE_RESTRAIN_2, 10)]
+				<br/>[style.italicsBad([npc2.NameIsFull]被[npc.namePos]的触手束缚牢固，[npc2.her]正在奋力反抗！)]
+				<br/>[style.italicsTerrible(如果[npc2.name]再继续被触手束缚，束缚会更加严重！)]
+			#ELSE
+				[##npc2.addStatusEffect(SE_TENTACLE_RESTRAIN_1, 10)]
+				<br/>[style.italicsBad([npc2.NameIsFull]被被[npc.namePos]的触手缠住，[npc2.her]的反抗能力受限！)]
+				<br/>[style.italicsTerrible(如果[npc2.name]再继续被触手束缚，束缚会更加严重！)]
+			#ENDIF
+		]]></execute>
+		<critDescription><![CDATA[
+			N/A
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			N/A
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

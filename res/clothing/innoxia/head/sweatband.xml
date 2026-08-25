@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>50</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[汗带]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[汗带]]></namePlural>
+		<description><![CDATA[一条普通的汗带，设计成戴在前额周围，既可以将佩戴者的头发掀起，又可以吸收汗水，防止汗水滴入眼睛。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>sweatband.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+	
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将汗带戴在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将汗带戴在[npc2.namePos]的头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将汗带戴到[npc2.namePos]的头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+			[npc.Name]摘下[npc.her]的汗带。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的汗带脱下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地夺走[npc2.namePos]的汗带。
+]]></otherRough>
+  </displacementText>
+  
+</clothing>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[条形码]]></name>
+		
+		<description><![CDATA[一系列宽度交替的垂直线条，用机器可读取的视觉形式来表示数据。]]></description> 
+		<bodyOverviewDescription><![CDATA[一道看起来像是可用条形码的纹身]]></bodyOverviewDescription> 
+		
+		<imageName>barcode.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_BLACK"/> 
+		<secondaryColours/> 
+		<tertiaryColours/> 
+		
+	</coreAttributes>
+	
+</tattoo>

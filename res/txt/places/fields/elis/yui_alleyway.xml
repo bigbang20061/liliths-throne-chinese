@@ -1,0 +1,538 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+	
+	<htmlContent tag="MEETING"><![CDATA[
+	<p>
+		虽然你知道自己来得正是时候、地点也没错，但庭院里却不见你主人唯的踪影。你抬头张望，试图在附近的屋顶上看到那位[yui.race]，希望她正准备从高处垂降下来突袭你，但你依旧没能找到恶魔蜘蛛女的身影。突然，两只几丁质手搭上了你的肩膀，另两只手扣住了你的手腕，最后一双手则探向你的腰间，肆意搓揉你的下体。唯贴在你背上，戏谑道：[yui.speech(你也太容易被偷袭了……)]
+	</p>
+	#IF(flags.hasFlag(FLAG_innoxia_yui_public_toy_completed))
+		<p>
+			你想转身面对狡猾的[yui.race]，但她的六条手臂牢牢将你锁在原地。她贴近你[pc.ear+(true)]调笑：[yui.speech(你就喜欢给一帮粗暴恶棍当鸡巴套，对吧，小玩具？)]
+		</p>
+		<p>
+			你顺从地呜咽一声，乖乖答道：[pc.speech(是，主人。)]
+		</p>
+		<p>
+			[yui.speech(真是个好玩具。)]她赞许地说。她用其中一只手轻抚你的脸颊，继续说道，[yui.speech(和上次一样，你要当个饥渴发骚的小肉便器，被狠狠地凌虐操干一整晚……这就是你想要的吧？)]
+		</p>
+		<p>
+			这话正合你意，你温顺地轻哼，[pc.speech(是，主人……)]
+		</p>
+	#ELSE
+		<p>
+			你想转身面对狡猾的[yui.race]，但她的六条手臂牢牢将你锁在原地。她对着你[pc.ear+(true)]轻啧，嘶声道：[yui.speech(别动，小玩具，只许用‘是，主人’和‘不，主人’回答我的问题。现在告诉我，你想不想给一帮粗暴恶棍当鸡巴套？)]
+		</p>
+		<p>
+			你正是为此而来，连忙答道：[pc.speech(是，主人。)]
+		</p>
+		<p>
+			[yui.speech(真是个好玩具。)]她赞许地说。她用其中一只手轻抚你的脸颊，继续说道，[yui.speech(这个帮派花了大价钱，雇我给他们送些温顺听话又爱受虐的小荡货。他们希望你是个饥渴发骚的小肉便器，喜欢被狠狠地凌虐操干。还有兴趣吗？)]
+		</p>
+		<p>
+			这话正合你意，你温顺地轻哼，[pc.speech(是，主人……)]
+		</p>
+	#ENDIF
+	<p>
+		[yui.speech(我要把你裹进乳胶衣，绑在那边的小巷里，露出你的
+		#IF(pc.hasVagina())
+			小穴
+		#ELSE
+			肛门
+		#ENDIF
+		让人随便观赏。)]她透露道。
+
+[yui.race]的声音明显透出欲望，她忍不住轻声呻吟，[yui.speech(在帮派找到你之前，八成会先被陌生路人发现吧。你肯定巴不得被饥渴的陌生人操一顿，对不对？等定了温顺鸡巴套的帮派成员来了，还会无情地猛干你一整晚。怎么样，很不错吧？)]
+	</p>
+	<p>
+		你的受虐本性占了上风，想到自己将被一群暴徒绑起来当成肉便器肆意玩弄，你兴奋得[pc.moan]，[pc.speech(是，主人！)]
+	</p>
+	<p>
+		[yui.speech(很好。那么，你准备好接受了吗？你愿意被一群卑劣的罪犯操弄凌辱，就因为我要求你这样？)]你还没来得及回答，她一只几丁质的手就紧紧捂住了你的嘴。封住你的声音后，她严肃地说：[yui.speech(别急着决定，小玩具。就算你不想做，我也完全可以理解。如果你之后改变主意，我的提议依然有效。我非常重视我玩具的同意权，所以，除非你真心渴望置身于那种境地，否则别答应。)]
+	</p>
+	<p>
+		唯主人松开捂住你嘴的手，等待你的回答……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MEETING_REFUSE"><![CDATA[
+	<p>
+		你真的不确定自己是否愿意被绑起来，任由一群恶棍摆布。你虽然很想讨好唯主人，但最终还是不情愿地叹了口气，告诉她你不想这么做。
+	</p>
+	<p>
+		[yui.speech(我理解，这种事不是谁都能接受的，)]她说，[yui.speech(你能坦白告诉我，已经是个乖玩具了。要是改了主意，下周五这一时间我还在这里。)]
+	</p>
+	<p>
+		[yui.race]松开你，退开一步。你转身面对她，她露出一抹笑：[yui.speech(周一晚上塔楼见？我希望如此。我的顾客们可都迫不及待，想再和你在地下室好好玩一玩呢。)]
+	</p>
+	<p>
+		你回答说会尽量去，但还有其他事要忙。那恶魔蜘蛛女只是点点头表示了解，随后便从你身边大步走过，很快消失在附近昏暗小巷的阴影中。你独自站在“十字利刃”门外，在犹豫是进去酒馆还是去别处……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="START"><![CDATA[
+	<p>
+		[pc.speech(是，主人！)]你连忙喊道。想到即将被陌生人粗暴地捆绑侵犯，受虐的欲望让你[pc.moan]出声，[pc.speech(求您了主人，我想当鸡巴套！)]
+	</p>
+	<p>
+			[yui.speech(你会当上的，)]她俯到你的[pc.ear(true)]便，嬉笑道。松开你后，她昂首阔步地从你身边走过，朝附近阴暗的小巷走去，边走边回头喊，[yui.speech(跟上我，玩具！)]
+		</p>
+	<p>
+		你赶忙照做，跟着主人唯走进小巷。在她身后默默走了几分钟，拐过无数个弯后，你很快就在伊利斯北部迷宫般的狭窄巷道中迷失了方向。最终，经过最后一个拐角，[yui.race]突然停下脚步，让你一头撞上了她那蜘蛛般巨大的下身。
+	</p>
+	<p>
+		[yui.speech(小心点，玩具，)]你的主人调笑了一句，然后指着前方的小巷说道，[yui.speech(这就是你今晚过夜的地方。)]
+	</p>
+	<p>
+		你越过那个恶魔蜘蛛女，看到了一条
+		#IF(game.isDayTime())
+			昏暗的通道
+		#ELSE
+			漆黑的通道
+		#ENDIF
+		，被高挂在长满苔藓的破败砖墙上的孤灯照亮。借着这昏暗的灯光，你只看到一个掉了轮子、褪色变形的垃圾箱，旁边是用十几个托盘和蜘蛛网粘在一起制成的简陋床垫。上方，同样的白色粘性纤维将一个纸板告示固定在墙上，当你读到上面的字时，一阵兴奋感涌遍全身：<i>“由主人唯提供。好好蹂躏这个骚婊子吧！”</i>
+	</p>
+	<p>
+		主人唯从垃圾桶后面拿出一个又大又扁的纸箱，从里面取出一套亮粉色的乳胶衣。她转向你咧嘴一笑，命令道：[yui.speech(脱光，玩具！我们要让你在情人面前光彩夺目，来穿上新衣服吧！)] 
+</p>
+	<p>
+		你顺从地脱光所有衣物，将随身物品交给主人唯。她向你保证会妥善保管并在明早归还，随后将物品放到一旁，拿起第一件要你穿上的衣物。那是一件亮粉色、完全由光滑弹性乳胶制成的紧身衣，唯迅速将它套在你身上。你听话地将四肢滑入这件情趣服装后，低头发现下体的开口让你的私处#IF(game.isAnalContentEnabled())和肛门#ENDIF完全暴露在外。接着，唯用她的六条手臂快速将乳胶头罩拉下罩住你的头部，同时扶着你的手戴上乳胶手套。最后，她在你脖子上系好项圈，问道：[yui.speech(准备好当个下流的小肉便器了吗，骚货？)]
+	</p>
+	<p>
+		[pc.speech(是，主人！)]你连忙回应。现在你穿着亮粉色的情趣装扮，活像个性玩具，当主人唯用六只手抚摸你被乳胶包裹的身体时，你忍不住发出[pc.a_moan+]。
+	</p>
+	<p>
+		#IF(pc.hasPenis())
+			[yui.speech(今晚你就不需要这个了，)]她笑着将手滑向你的股间。突然一枚贞操笼锁住了你[pc.cock+]，你惊呼了一声。[yui.race]开心地笑了起来，宣布道，[yui.speech(现在该把你绑起来了！)]
+		#ELSE
+			[yui.race]开心地笑了起来，宣布道，[yui.speech(现在该把你绑起来了！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="TIED_UP"><![CDATA[
+	<p>
+		你一下子被推倒在垃圾桶旁的临时床垫上，[yui.race]用绳索和从蜘蛛腹部新分泌的粘性蛛网熟练地固定住了你的手臂和躯干。
+		#IF(pc.hasPerkAnywhereInTree(PERK_HYPERMOBILITY))
+			主人唯拉开你的双腿，很快就发现你柔韧性惊人。她的脸上露出愉悦的笑容，随后便将你的四肢向后弯曲过头顶并牢牢绑住。
+		#ELSE
+			主人唯抓住你的脚踝，将你的双腿大大分开并固定住。
+		#ENDIF
+		#IF(pc.hasVagina())
+			她低头看向你的下体，对着你暴露的小穴轻拍了一下，
+			#IF(game.isAnalContentEnabled())
+				手指绕着你的菊花打转，
+			#ENDIF
+			戏谑道：
+		#ELSE
+			她低头看着你暴露在外的屁股，手指绕着你的肛门打转，戏谑道：
+		#ENDIF
+		[yui.speech(看你跑不跑得掉啊，玩具！)]
+	</p>
+	<p>
+		你竭尽全力想要挣脱束缚，但主人唯高超的捆绑技巧让你无计可施。无论怎样挣扎扭动，都动弹不得，最终只能认命地叹息放弃。主人发出了一阵愉悦的笑声，[yui.speech(现在就来准备好挨操吧！)]
+	</p>
+	<p>
+		恶魔蜘蛛女随即拿出几瓶「魅魔之吻」和一个你一眼就认出的润滑药丸。你吞下药丸，又喝光了两瓶催情液体后，主人唯举起一条亮粉色眼罩和口球，低头对你露出得意的坏笑，解释道，[yui.speech(重申一次，我的客户们很重视隐私，我们也不想让你问来问去破坏气氛，所以你得保持安静！)]
+	</p>
+	<p>
+		你兴奋地呻吟起来，听话地张开嘴让主人唯给你戴上口球，接着眼前一黑——她为你系上了眼罩。当视觉被剥夺时，你突然意识到自己原本一直是靠着观察主人嘴唇的动作来理解她的话语的。乳胶头套已经遮住了你的耳朵，几乎听不清她在说什么。你必须保持绝对安静才能集中注意力聆听她居高临下的训话，[yui.speech(你现在才算真正准备好享受今晚的狂欢了。)]
+	</p>
+	<p>
+		当主人用手指按住你暴露的
+		#IF(pc.hasVagina())
+			小穴时，
+		#ELSE
+			肛门时，
+		#ENDIF
+		你突然发出模糊的呻吟。她的手指在你饥渴的肉穴上来回滑动时带来的湿润触感令人难以置信，然后突然意识到是被迫吞下的药丸让你
+		#IF(pc.hasVagina())
+			已经这么湿了，随时准备好被插入。
+		#ELSE
+			的肛门分泌出天然润滑液。
+		#ENDIF
+		接着你开始感受到魅魔之吻的效果，虽然[yui.race]只是在挑逗你，你却感觉自己立马就要高潮了。你努力挺腰向主人的手蹭去，但束缚太紧，你只能可怜地扭动身体，任她继续玩弄。
+	</p>
+	<p>
+		[yui.speech(帮派应该快到了，我可不想在这种地方跟他们碰面，先走啦，)]唯的声音再次变得模糊不清。她突然停止了抚摸，最后调皮地在你被乳胶包裹的身体上摸了一把，咯咯笑道，[yui.speech(今晚玩得开心点，玩具！明早我会回来放了你的。)]
+	</p>
+	<p>
+		就这样，你再也感受不到主人唯的存在，自己被固定在原地，眼前一片漆黑，独自一人留在这阴暗的小巷中……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="CORE"><![CDATA[
+	<p>
+		你饥渴地呻吟着，可悲地扭动着身体，疯狂地渴望着自己的
+		#IF(pc.hasVagina())
+			小穴
+		#ELSE
+			菊穴
+		#ENDIF
+		被狠狠操弄。你想象着粗大跳动的肉棒深深插入这饥渴的肉穴会有多么美妙，欲望的洪流几乎要将你逼疯，你拼命扭动腰臀想要得到满足。
+	</p>
+	<p>
+		[client.speech(这是什么？想挨操的婊子吗？)]一个陌生人的声音突然打断了你的思绪。由于[pc.ears]被乳胶罩住，你根本没听见这人靠近的动静，也几乎听不清[client.sheIs]在说什么。那人停下来读了读你脖子上挂着的牌子，[client.speech(噢……原来是个需要被好好调教的小母狗啊？)]
+	</p>
+	<p>
+		你感受到陌生人双手在你乳胶包裹的身体上游走，想要发出的呻吟被口球闷在口中。[client.her]的手指很快滑向敏感地带，挑逗着你湿漉漉的
+		#IF(pc.hasVagina())
+			小穴，
+		#ELSE
+			屁穴，
+		#ENDIF
+		让你的身体因期待而不住颤抖。这陌生人肯定只是路过的，而非你等待的帮派成员。但无论是因为告示牌的指示还是[client.her]的个人喜好，其粗暴程度丝毫不亚于那些花钱把你弄到这的暴徒。
+	</p>
+	<p>
+		[client.speech(你真是个下流的婊子啊？！)]陌生人嘲弄着，接着对着你暴露在外的
+		#IF(pc.hasVagina())
+			小穴
+		#ELSE
+			屁股
+		#ENDIF
+		狠狠抽了几巴掌。受到虐待后，你扭动着身体发出愉悦的呻吟。随后突然感觉到[client.herHim]好像跪到了你腿间，准备干你，你又发出了朦胧的喘息声……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SEX_START_VAGINAL"><![CDATA[
+	<p>
+		陌生人[client.cockHead+]突然抵住了你湿漉漉的穴口，但你被完全固定住、无法出声也看不见，只能无力地扭动身体，发出含糊的呻吟声邀请[client.herHim]插入。陌生人继续挑逗着你，用勃起的肉棒在你[pc.labia+]上来回磨蹭，最后顽皮地揉弄起你[pc.clit+]。
+	</p>
+	<p>
+		#IF(client.hasFetish(FETISH_IMPREGNATION))
+			[client.speech(我要干大你的肚子，贱货！)]
+		#ELSE
+			[client.speech(我要狠狠干你，贱货！)]
+		#ENDIF
+		[client.her]低声说道。话音未落，[client.she]便猛地向前挺进，你终于得偿所愿，发出一声狂乱而颤抖的尖叫。[client.Her][client.cock+]深深撞进你饥渴的小穴，自己也发出一声迷乱的[client.moan]。
+	</p>
+	<p>
+		#IF(client.hasFetish(FETISH_FOOT_RECEIVING))
+			[client.name]显然是个恋足癖，[client.her]抓住你的脚踝，随后你便感觉到[client.her][client.tongue+]碰到了你裸露的[pc.feet]，同时[client.she]也开始粗暴地抽插你湿漉漉的淫穴……
+		#ELSEIF(flags.hasFlag(FLAG_innoxia_yui_alleyway_gang_present))
+			[client.herHim]把你当成给自己和同伴使用的性玩具，这名帮派成员亢奋地压在你身上，开始粗暴地抽插你湿漉漉的淫穴……
+		#ELSE
+			这个陌生人显然很是因为在公共场所发现性玩具格外高兴，亢奋地压在你身上，开始粗暴地抽插你湿漉漉的淫穴……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SEX_START_ANAL"><![CDATA[
+	<p>
+		陌生人[client.cockHead+]突然抵住你自然润滑的屁穴入口，但你被完全固定住、无法出声也看不见，只能无力地扭动身体，发出含糊的呻吟声邀请[client.herHim]插入。陌生人继续挑逗着你，用勃起的肉棒在你在你[pc.ass+]上来回磨蹭，随后顽皮地
+		#IF(pc.hasPenis())
+			拍了一下你被贞操笼禁锢的阴茎。
+		#ELSEIF(pc.hasVagina())
+			拍了一下你[pc.pussy+]。
+		#ELSE
+			拍了一下你空无一物的下体。
+		#ENDIF
+	</p>
+	<p>
+		[client.speech(我要狠狠干死你，贱货！)][client.her]低沉的声音传来。话音未落，[client.she]便猛地向前挺进，你终于得偿所愿，发出一声狂乱而颤抖的尖叫。[client.Her][client.cock+]深深撞进你饥渴的屁眼，[client.she]自己也不禁发出一声迷乱的[client.moan]。
+	</p>
+	<p>
+		#IF(client.hasFetish(FETISH_FOOT_RECEIVING))
+			显然是个恋足癖，[client.name]抓住你的脚踝，你感觉到[client.her][client.tongue+]正在粗暴地舔舐你裸露的[pc.feet]，同时[client.she]开始粗暴地抽插你[pc.asshole+]……
+		#ELSEIF(flags.hasFlag(FLAG_innoxia_yui_alleyway_gang_present))
+			这个帮派成员把你当成[client.herHim]和同伴共用的肉便器，亢奋地压在你身上，开始粗暴地抽插你[pc.asshole+]……
+		#ELSE
+			这个陌生人显然很高兴能撞见一个公共肉便器，亢奋地压在你身上，开始粗暴地抽插你[pc.asshole+]……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SEX_START_CUNNILINGUS"><![CDATA[
+	<p>
+		虽然[client.she]可能没你这么享受，但这个帮派受害者似乎还挺乐意为你舔阴，慢慢地将[client.tongue+]滑过你那刚被操得湿漉漉的骚穴。她舔舐着你小穴里新鲜的精液，[client.speech(喜欢这样吗，玩具？让我把你舔干净……)]
+	</p>
+	<p>
+		在帮派的围观和大声怂恿下，受害者被迫舔舐着你[pc.pussy+]上的精液，你戴着口球发出呻吟，享受着[client.tongue+]深入你发情小穴的快感……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="SEX_START_ANILINGUS"><![CDATA[
+	<p>
+		虽然[client.she]可能不像你这么享受，但这个帮派受害者似乎很乐意为你舔肛，慢慢将[client.tongue+]滑过你刚被操开的屁眼。[client.she]一边舔舐你湿漉漉后庭里新鲜的精液，一边呻吟道，[client.speech(喜欢这样吗，玩具？让我帮你清理干净……)]
+	</p>
+	<p>
+		在帮派的围观和大声怂恿下，受害者被迫舔舐着你[pc.asshole+]上的精液，你戴着口球发出呻吟，享受着[client.tongue+]深入你发情后穴的快感……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="CORE_REPEAT"><![CDATA[
+	#IF(flags.hasFlag(FLAG_innoxia_yui_alleyway_gang_present))
+		#IF(client.hasFetish(FETISH_ORAL_GIVING))
+			<p>
+				你正喘着气，帮派成员们突然停止了争吵，周围陷入一片寂静。其中一个走到你跟前，但他并没有说要操你，而是狠狠踢了你一脚，厉声喝道：[style.speechMasculineHeavy(闭嘴别叫了，蠢婊子！)]
+			</p>
+			<p>
+				你刚想再发出几声闷哼，却被一记猛踢制止了。虽然你沉迷于被虐待，但还是更想当个被帮派占有的乖婊子。于是你僵在原地，不再发出任何声响。
+			</p>
+			<p>
+				帮派行为大变的原因很快揭晓，你听到他们伏击了一名无辜的旅人，并叫嚷着：[style.speechMasculineHeavy(站住！把火币交出来，贱人！)]
+</p>
+			<p>
+				[client.speech(喂！等等！我、我真的没钱！)]被盯上的家伙哭喊着。那群暴徒并不相信，你听见他们扑向那个陌生人，但经过一阵明显是在搜刮财物的动静后，那家伙好像确实说了实话。
+			</p>
+			#IF(game.isNonConEnabled())
+				<p>
+					#IF(client.isFeminine())
+						[style.speechMasculineHeavy(如果[client.she]付不起钱，那就让[client.she]来清理我们的玩具吧！)]
+					#ELSE
+						[style.speechFeminine(如果[client.she]付不起钱，那就让[client.she]来清理我们的玩具吧！)]
+					#ENDIF
+					其中一个帮派成员笑道。其他暴徒都大声附和，于是片刻后这个受害者就被按倒在你的双腿之间。
+				</p>
+				<p>
+					[client.speech(妈的……一定要我做这个吗？)]受害者呜咽道，但很快就意识到[client.sheHas]别无选择，只得认命地叹息一声，磨蹭着向前按吩咐行事。当你感受到[client.her]灼热的鼻息喷在
+					#IF(client.hasFetish(FETISH_VAGINAL_GIVING))
+						[pc.pussy+]上时，
+					#ELSE
+						[pc.asshole+]上时，
+					#ENDIF
+					你饥渴地扭动起腰肢。
+				</p>
+			#ELSE
+				<p>
+					[client.speech(我、我可以换种方式！)]被抢劫的家伙喊道，[client.speech(不如我帮你们清理一下玩具？)]
+				</p>
+				<p>
+					那群暴徒大笑着附和这个提议，片刻后那家伙就被按倒在你双腿之间。[client.she]显然并没有抗拒，反而发出了兴奋的[client.moan]。当你感觉到[client.her]炙热的呼吸喷在你暴露的
+					#IF(client.hasFetish(FETISH_VAGINAL_GIVING))
+						[pc.pussy]上时……
+					#ELSE
+						[pc.asshole]上时……
+					#ENDIF
+					同时饥渴地扭动起屁股。
+				</p>
+			#ENDIF
+		#ELSE
+			#IF(client.hasFetish(FETISH_VAGINAL_GIVING))
+				<p>
+				没多久，其中一个帮派成员便动用暴力，打破了争论。在一阵愤怒的叫骂和短暂的打斗声后，有人跪到了你的双腿之间。你裸露的小穴立刻被狠狠扇了一巴掌，这个暴徒粗暴地揉捏着你[pc.breasts+]，掐住你[pc.nipples+]，你在受虐的快感中尖叫起来。
+				</p>
+				<p>
+					[client.speech(就是这样，贱货，给我叫！)]帮派成员哼了一声。[client.she]拨弄掐捏着你[pc.clit+]，得意地看着你扭动挣扎，笑道，[client.speech(看我不把你干得死去活来！)]
+				</p>
+			#ELSE
+				<p>
+					没多久，其中一个帮派成员便动用暴力，打破了争论。在一阵愤怒的叫骂和短暂的打斗声后，有人跪到了你的双腿之间。你裸露的肛门立即被狠狠扇了一巴掌，，这个暴徒粗暴地揉捏着你[pc.breasts+]，掐住你[pc.nipples+]，你在受虐的快感中尖叫起来。
+				</p>
+				<p>
+					[client.speech(就是这样，贱货，给我叫大声点！)]帮派成员粗声喝道。[client.she]
+					#IF(pc.hasPenis())
+						拍打着你那被笼子禁锢的肉棒，
+					#ELSEIF(pc.hasVagina())
+						用手指拨弄掐捏着你的[pc.clit+]，
+					#ELSE
+						用手指拨弄掐捏着你空无一物的下体，
+					#ENDIF
+					得意地看着你扭动挣扎，笑道，[client.speech(我要狠狠操烂你的屁股！)]
+				</p>
+			#ENDIF
+		#ENDIF
+	#ELSE
+		<p>
+		你如今又孤身一人身处小巷，终于能喘口气，从今晚的第一场性爱中恢复过来。可你仍旧欲火焚身、沉溺于这堕落处境，热切期待着再次被人发现并支配。所幸无需久候，仅仅几分钟后便听到嘈杂人声由远及近而来。
+		</p>
+		<p>
+			#IF(client.getFemininity()==FEMININITY_MASCULINE_STRONG)
+				[style.speechMasculine(嘿，看这个！)]一个鼻音很重的男性声音喊道，[style.speechMasculine(是我们点的那个婊子！)]
+			#ELSE
+				[style.speechMasculineHeavy(嘿，看这个！)]一个低沉沙哑的声音喊道，[style.speechMasculineHeavy(有人给我们留了份礼物！)]
+			#ENDIF
+		</p>
+		<p>
+			#IF(client.getFemininity()==FEMININITY_FEMININE_STRONG)
+				[style.speechFeminine(墙上写的什么？)]
+			#ELSE
+				[style.speechFeminineStrong(墙上写的什么？)]
+			#ENDIF
+			一个略带嘲弄的女声问道。这个陌生人上前一步，用沉重的靴跟踩住你的肚子，邪恶地咯咯笑着，同时用力下压，让你痛苦地扭动喘息。她读着墙上的告示，对同伴们念道：
+			#IF(client.getFemininity()==FEMININITY_FEMININE_STRONG)
+				[style.speechFeminine(<i>“由主人唯提供……好好蹂躏这个骚婊子吧！”</i>)]
+			#ELSE
+				[style.speechFeminineStrong(<i>“由主人唯提供……好好蹂躏这个骚婊子吧！”</i>)]
+			#ENDIF
+		</p>
+		<p>
+			[client.speech(那个变态婊子蜘蛛真是从来没让我们失望过。她调教的这些骚货绝对值回每一枚火币，)]第三个声音插话道。靴子从你的腹部移开了，紧接着你感觉到这第三名陌生人跪到了你双腿之间。[client.She]立刻抓住你紧绷的粉红乳胶衣下[pc.breasts+]，隔着胶衣狠狠掐住[pc.nipples+]。听着你被口球闷住的尖叫，施虐者冷笑着看向你双腿之间，粗声一哼，[client.speech(早就被人操过的烂货！我就说咱们来晚了！算了，二手洞总比没洞强……)]
+		</p>
+		<p>
+			你在受虐的快感下呻吟着，这个帮派成员狠狠扇了你[pc.breasts+]几下，接着你感觉到[client.herHim]在你双腿间挪动，准备要操你了……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="POST_SEX"><![CDATA[
+	#IF(flags.hasFlag(FLAG_innoxia_yui_alleyway_gang_present))
+		#IF(client.hasFetish(FETISH_ORAL_GIVING))
+			<p>
+				#IF(client.isFeminine())
+					[style.speechMasculineHeavy(这婊子看着够干净了！)]
+				#ELSE
+					[style.speechFeminine(这婊子看着够干净了！)]
+				#ENDIF
+				其中一个帮派成员说道，随即将受害者从你胯下踢开。清理环节结束，你发出一声饥渴的呜咽，同时听到帮派成员对那家伙咆哮道，
+				#IF(client.isFeminine())
+					[style.speechMasculineHeavy(滚吧贱人！要是敢向执法者举报，我们就抓到你把你变成跟这个婊子一样的肉便器！)]
+				#ELSE
+					[style.speechFeminine(滚吧贱人！要是敢向执法者举报，我们就抓到你把你变成跟这个婊子一样的肉便器！)]
+				#ENDIF
+			</p>
+			<p>
+				[client.speech(我不会的，我保证！)]受害者发完誓，就跑进了小巷。
+			</p>
+			<p>
+				#IF(client.hasFetish(FETISH_VAGINAL_GIVING))
+					#IF(pc.getTotalFluidInArea(ORIFICE_VAGINA)>0)
+						尽管你的小穴还在渗出精液，
+					#ELSE
+						现在你的小穴已经被清理干净了，
+					#ENDIF
+					帮派成员们都迫不及待地想要操你，又开始争论接下来该轮到谁把肉棒插进你的蜜穴。
+				#ELSE
+					#IF(pc.getTotalFluidInArea(ORIFICE_ANUS)>0)
+						尽管你的肛门还在渗出精液，
+					#ELSE
+						现在你的后庭已经被清理干净了，
+					#ENDIF
+					帮派成员们都迫不及待地想要操你，又开始争论接下来该轮到谁把肉棒插进你[pc.ass+]。
+				#ENDIF
+				趁着金主争吵的间隙，你得以稍作准备迎接下一轮交合……
+			</p>
+		#ELSE
+			<p>
+				这名帮派成员狠狠扇了你一耳光，为这场粗暴的性爱画上句号。你享受着这种虐待，在受虐的狂喜中开心地尖叫着，而那暴徒则站起身后退了一步。
+			</p>
+			<p>
+				朝你
+				#IF(client.hasFetish(FETISH_VAGINAL_GIVING))
+					[pc.pussy+]上
+				#ELSE
+					[pc.asshole+]上
+				#ENDIF
+				吐了口唾沫，嘲笑道，[client.speech(这个肉便器还没玩够呢！现在轮到谁了？)]
+			</p>
+			<p>
+				虽然乳胶头套让你难以看清周围聚集了多少帮派成员，但肯定不止个位数。他们激烈争吵着，争相要成为下一个玩弄你的人。在他们内斗时，你得到了片刻喘息的机会。
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			陌生人玩够了，把[client.her][client.cock+]从你那被操得
+			#IF(client.hasFetish(FETISH_VAGINAL_GIVING))
+				湿透的小穴里抽了出来。
+			#ELSE
+				湿透的屁穴里抽了出来。
+			#ENDIF
+			为了让给你留下一点印象，[client.she]挥手狠狠地朝你
+			#IF(pc.hasVagina())
+				湿淋淋的骚穴来了一巴掌。
+			#ELSE
+				湿淋淋的后门来了一巴掌。
+			#ENDIF
+			你那被口球闷住的尖叫显得格外惊恐，那陌生人站起来哈哈大笑，你却只能可怜地扭动着身子，[client.speech(蠢货！)]
+		</p>
+		<p>
+			就这样，[client.she]转身离去，留下你在这阴暗肮脏的小巷里，蜷缩在临时床铺上低声啜泣……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="NIGHT_OF_SEX"><![CDATA[
+	<p>
+这伙帮派宣布要拥有你一整夜，很快你就记不清有多少陌生暴徒粗暴地在你胯间操弄你那早已湿透、装满精液的
+		#IF(pc.hasVagina())
+			#IF(game.isAnalContentEnabled())
+				嫩穴和后庭。
+			#ELSE
+				小骚穴。
+			#ENDIF
+		#ELSE
+			屁眼。
+		#ENDIF
+		他们朝你吐口水、扇耳光、掐皮肉、用脚踹，完全把你当作你渴望成为的下贱肉便器。在这施虐的羞辱中你扭动着呻吟，享受每分每秒被当作帮派共享的鸡巴套肆意玩弄的快感。
+</p>
+	<p>
+最终，随着夜空渐渐亮起，帮派决定离开了。在临别前狠狠抽了你几巴掌又咒骂一番后，这群人就头也不回地丢下了你。浑身依然动弹不得的此刻，你既看不见也说不出话，唯一能做的便是等待你的主人唯来解救你。
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GANG_LEAVES"><![CDATA[
+	<p>
+虽然看不见，但夜空已逐渐泛白，简短交谈后，帮派成员决定离开。他们临走前赏了你几记耳光又用污言秽语淹没你，转眼就把你像垃圾般丢在原地。你全身仍然无法动弹，双眼被蒙，嘴巴被封，只能静静等待唯主人来解救你。
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="NIGHT_OF_SEX_END"><![CDATA[
+	<p>
+	不过在此之前，最后一位过路人跌跌撞撞地发现了你，对方低头打量着你，
+	#IF(pc.hasVagina())  
+		#IF(game.isAnalContentEnabled())  
+			看着混合的先走液从你的小穴和肛门不断涌出，在地上汇成一大滩黏滑的浊流，  
+		#ELSE  
+			看着内射的白浊从小穴里汩汩溢出，在地面形成了黏腻的精液水洼，  
+		#ENDIF  
+	#ELSE  
+			浓稠的精液自你菊穴不断滴落，在地上积成一滩黏稠的浆液，  
+	#ENDIF  
+	立即嫌恶地啐了一声骂道：[style.speechFeminineStrong(噫……好恶心的骚货……别想让我碰你……)]__NEWLINE__
+	</p>
+	<p>
+		这个陌生人对你的拒绝反而激起最后一波受虐快感，你在球型口塞中发出轻柔的呻吟，听着对方的脚步声渐渐消失在巷子里。不到一分钟，随着熟悉的脚步声接近身边，你听到了唯主人透着玩味的评语：[yui.speech(呵，看来玩具今晚玩得很开心嘛。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<htmlContent tag="END"><![CDATA[
+	<p>
+		在历经数小时后，唯主人终于俯身摘下了你的眼罩，视线重获自由的瞬间突然袭来。接着束缚口球的皮带也被解开，当低头看到粉红乳胶衣上溅满的爱液时，你不由得发出绵长的情欲呻吟。
+	</p>
+	<p>
+[yui.speech(玩具表现得真不错，我整晚都在屋顶上看着呢，)]这名[yui.race]揭露道。她用六只纤细手掌的其中一只滑过你的腹部，深深插入你那盛满
+		#IF(pc.hasVagina())
+			小穴，
+#ELSE
+			肛门，
+		#ENDIF
+随后指尖沾满滑腻的浆汁，抬起手将指头塞进你嘴里。你顺从地呜咽着，抬头凝视主人发光的赤红眼部，乖巧地吮吸着她手指上的咸腥白浆，认真聆听她的褒奖：[yui.speech(你证明了自己是个完美的小受虐狂。会再回来为我这么做的，对吧？)]
+</p>
+	<p>
+		强大的性欲浪潮使你彻底昏眩，当主人把手指从你口中抽出时，你饥渴地呻吟着，[pc.speech(遵命，主人！)]
+	</p>
+	<p>
+[yui.race]的指尖在绳索上翩然起舞，转眼间便将你从束缚中解放。长时间保持固定姿势让你的四肢如同果冻般绵软，你只能勉强用膝盖支撑起颤抖的身体。当你望向唯主人的足边时，发现自己的物品正整齐地码放在那里。随着她清脆的响指声，命令随之落下：[yui.speech(脱光，玩具。)]
+</p>
+	<p>
+		你乖乖照做，脱下乳胶装交给主人唯，然后取回自己的衣服穿上。恶魔蜘蛛女朝你得意地坏笑道，[yui.speech(要是想再扮演我的顺从小淫娃，每周一或周三就来高塔找我，周五也可以到这里来。我相信很快就能再见到你……)]
+	</p>
+	<p>
+	随后你的主人径直走入小巷，独留你一人在原地穿戴衣物……
+</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DRESSED"><![CDATA[
+	<p>
+		你迅速穿好衣服，沿着那条阴暗狭窄的小巷出发了。出发时，你唯一的念头就是下一次为唯主人效劳会是什么时候……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

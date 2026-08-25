@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[心形]]></name>
+		
+		<description><![CDATA[一系列心形和盘旋的线条。]]></description> 
+		
+		<bodyOverviewDescription><![CDATA[一个纹身，画着一系列心形和盘旋的线条]]></bodyOverviewDescription> 
+		
+		<imageName>hearts.svg</imageName> 
+		
+		<slotAvailability/> 
+		<primaryColours values="ALL" defaultColour="CLOTHING_PINK_LIGHT"/> 
+		<secondaryColours values="ALL" defaultColour="CLOTHING_PINK"/>
+		<tertiaryColours/>
+	</coreAttributes>
+	
+</tattoo>

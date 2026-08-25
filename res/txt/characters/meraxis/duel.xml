@@ -1,0 +1,1302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- These are linked to the dialogue nodes defined in the file: 'res/dialogue/innoxia/characters/meraxis/duel.xml' -->
+	
+	<htmlContent tag="START"><![CDATA[
+	<p>
+		#IF(pc.hasTraitActivated(PERK_CHUUNI))
+			无法拒绝梅拉克西丝的挑战，你很快回复道：[pc.speech(你不是我终极力量的对手！准备好承受失败吧！)]
+		#ELSEIF(flags.hasFlag(FLAG_innoxia_meraxis_duel_place_elis))
+			你决定放纵一下梅拉克西丝，并认为你有机会打败她，让她就范，于是你接受了她的挑战。
+		#ELSE
+			你决定放任梅拉克西丝，并认为决斗可以让你对即将在这片田野上遇到的情况有所了解，因此你接受了她的挑战。
+		#ENDIF
+	</p>
+	<p>
+		[meraxis.speech(哇哈哈！不愧是我的克星！)]这个中二病的[meraxis.race]大笑起来。梅拉克西丝摆出英雄的姿势，脸上露出阴险的笑容，
+		#IF(flags.hasSavedLong('meraxis_duel_player_losses'))
+			[meraxis.speech(我还有另一种药剂要测试你！如果我赢了，你必须再喝一次，好吗？！我想看到你再次转化……)]
+		#ELSEIF(flags.hasSavedLong('meraxis_duel_player_wins'))
+			[meraxis.speech(你以前可能赢过，但这次没有！等我赢了，你就得喝下我为你调制的药水，好吗？)]
+		#ELSE
+			[meraxis.speech(你可能不知道，就像莉莱雅一样，我的超能力也涵盖了奥术研究领域。我的实验得到了许多药剂，我需要在某人身上进行试验。如果我赢了，你就得喝下我的转化药水，好吗？)]
+		#ENDIF
+	</p>
+	<p>
+		你还没有同意梅拉克西丝的要求，你问如果你赢了会得到什么。梅拉克西丝在回答你的问题时又发出了戏剧性的笑声，
+		#IF(flags.hasSavedLong('meraxis_duel_player_wins'))
+			[meraxis.speech(哇哈哈！这次你没有获胜的机会！自从上次失败以来，我一直在训练，一定会毁掉你的！然而，为了让事情变得有趣，如果你在战斗中以某种方式击败我，你可以决定你想要的奖励。所以继续吧，选择你想要的方式！)]
+		#ELSE
+			[meraxis.speech(哇哈哈！你没有获胜的机会！然而，为了让事情变得有趣，如果你在战斗中以某种方式击败我，你可以决定奖励。所以继续吧，选择你想要的方式！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BACK_OUT"><![CDATA[
+	<p>
+		如果你在决斗中输了，你可不希望被转化，你随即告诉梅拉克西丝你已经改变了主意，根本不想和她打架。
+	</p>
+	<p>
+		[meraxis.speech(啊……好吧……)]梅拉克西丝叹了口气，然后对你咬牙切齿，问道，[meraxis.speech(如果你不想打架，你为什么要打断我向随从们讲述的故事？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REWARD_NONE"><![CDATA[
+	<p>
+		你对任何形式的奖励都不感兴趣，你告诉梅拉克西丝，打败她就足够了。又发出一阵狂躁的笑声，那中二[meraxis.race]宣布，[meraxis.speech(哇哈哈！所以，你根本不想得到奖励？别以为那会让我对你宽容！我会迅速摧毁你，然后笑着转化你！Mhahaha！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REWARD_MONEY"><![CDATA[
+	<p>
+		感觉你可以多拿一点钱，你告诉梅拉克西丝，如果你赢了，她必须把身上所有的钱都给你。当她听到你这么说时，脸上很快闪过一种震惊的惊讶，她脱口而出，[meraxis.speech(但那是妈咪给我的零花钱！我的意思是，你竟敢表现得像个小偷一样？！我会迅速摧毁你，然后大笑着转化你！哇哈哈！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REWARD_TRANSFORM"><![CDATA[
+	<p>
+		你对梅拉克西丝的回应是，当她计划转化你时，她必须做好同样的准备。你说，如果你赢了，那么她必须以你认为合适的方式永久转化自己。
+	</p>
+	<p>
+		[meraxis.speech(你敢问我这个？！我绝对不会同意的！)]她愤怒地喊道，然后嘟着嘴做出妥协，[meraxis.speech(如果你赢了，你可以选择我的一个方面来改变。我不会做任何太极端的事情，而且我不会长出阴茎或变成淫梦魔，所以不要提出这些要求！)]
+	</p>
+	<p>
+		知道她肯定同意了之后，你接受了梅拉克西丝的提议，她笑着说，[meraxis.speech(哇哈哈！不管怎样，这根本不重要；我会迅速摧毁你，然后笑着转化你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REWARD_SEX"><![CDATA[
+	<p>
+		你想和可爱的中二[meraxis.race]来点更亲密的事情，所以你告诉梅拉克西丝，如果你赢了，她就必须和你做爱。她缓了一下才完全理解了你的请求，看起来困惑了好一会儿之后，梅拉克西丝的脸颊涨红了，结结巴巴地说，[meraxis.speech(你，你想让我做什，什么？！做，做爱？你……啊……为什么？！)]
+	</p>
+	<p>
+		重复你的要求，你告诉梅拉克西丝她不需要表现得那么害羞；毕竟
+		#IF(meraxis.getSexCount(pc).getTotalTimesHadSex()>0 && flags.hasSavedLong('meraxis_duel_player_wins'))
+			你们两个已经一起做了一些淫荡的事情。
+			[style.random(
+			#IF(meraxis.hasFetish(FETISH_ANAL_RECEIVING))
+				你指着她的屁股，提醒害羞的[meraxis.race]她是多么喜欢受到对肛门的“关照”。
+			#ENDIF
+			|
+			#IF(meraxis.hasFetish(FETISH_VAGINAL_RECEIVING))
+				你指着她的腹股沟，让害羞的[meraxis.race]想起她是多么喜欢用她的阴部。
+			#ENDIF
+			|
+			#IF(meraxis.hasFetish(FETISH_BREASTS_SELF))
+				你指着她的胸部，让害羞的[meraxis.race]想起她是多么喜欢使用自己的乳房。
+			#ENDIF
+			)]
+		#ELSE
+			她是[meraxis.a_race]，所以肯定会很乐意提供性服务。
+		#ENDIF
+		你的话只会让梅拉克西丝脸红得更厉害，她结结巴巴，[meraxis.speech(闭，闭嘴！好吧，如果你赢了，我会帮你做一次小小的性服务，别让我尴尬了！我的意思是，这根本不重要；我会迅速摧毁你，然后笑着转化你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DUEL_START_ELIS"><![CDATA[
+	<p>
+		你们目前的位置并不适合决斗，你向梅拉克西丝建议你们两个可以在伊利斯城墙外解决这个问题。中二[meraxis.race]同意了你的提议，与你一起走出东门，在[pc.walking]走到附近的落叶林后，你们就可以开始了。
+	</p>
+	<p>
+		[meraxis.speech(准备被打败吧！)]梅拉克西丝宣告。你还没回复，她就施展了某种物质操纵法术，似乎从半空中拔出了她的大镰刀。她用以奥术为刃的武器指着你，发出疯狂的笑声，喊道：[meraxis.speech(哇哈哈！我会向你展示暗夜塞壬的庞大力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DUEL_START_DOMINION"><![CDATA[
+	<p>
+		由于周围没有人，你确定你目前的位置是进行决斗的合适地点。为战斗做准备，你问梅拉克西丝是否准备好了。
+	</p>
+	<p>
+		[meraxis.speech(我随时准备着！)]梅拉克西丝说着，然后举起镰刀，狂笑起来，[meraxis.speech(哇哈哈！我将向你展示暗夜塞壬的庞大力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Losing the duel: -->
+	
+	<htmlContent tag="LOST"><![CDATA[
+	<p>
+		由于无法继续战斗，你示意梅拉克西丝停止战斗，然后倒在地上喘着粗气。在胜利的喜悦中，中二[meraxis.race]发出了自鸣得意的笑声，然后向你走来，宣布：[meraxis.speech(你根本没有机会！我的终极力量无人能及！哇哈哈！)]
+	</p>
+	<p>
+		抬头一看，你看到梅拉克西丝拿着一瓶转化用的液体，摘下帽子后，她调侃道，[meraxis.speech(你准备好了吗？记住，在我们开始决斗之前，你同意喝它的！)]
+	</p>
+	<p>
+		#IF(!pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			虽然你的嘴被密封的衣服堵住了，但这对梅拉克西丝来说没有任何障碍，她迅速引导精华去除它的密封。现在你的嘴露出来了，
+		#ELSE
+			身体前倾，
+		#ENDIF
+		[meraxis.race]不耐烦地把瓶颈推过你[pc.lips+]，在你把头向后仰后，转化液开始流入你的嘴里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_DRINK"><![CDATA[
+	<p>
+		随着梅拉克西丝继续迫使瓶子进入你的嘴里，你别无选择，只能吞下流入你嘴里的转化液体。当你大口吞咽这种令人恶心的甜味混合物时，梅拉克西丝借此机会幸灾乐祸，[meraxis.speech(感觉如何，我的宿敌？要知道，我，暗夜塞壬，不仅打败了你，而且正在让你转化！Mhahaha！)]
+	</p>
+	<p>
+		吞下最后一滴，你向后退，深呼吸，但在你对梅拉克西丝的嘲讽做出回应之前，你发现自己发出了震惊的喘息声，一股不自然的温暖开始在你的全身蔓延。胜利的[meraxis.race]对你喝下液体的反应感到恼火，站起来宣布，[meraxis.speech(你的身体不过是我实验的容器！现在，服从你的转化！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_SPIT"><![CDATA[
+	<p>
+		不想被梅拉克西丝改变，你把头扭到一边，吐出改变的液体。当剩下的混合物撒得满地都是时，中二[meraxis.race]发出了一声愤怒的叫声，[meraxis.speech(嘿！当你接受我的决斗提议时，你同意要这样做的！什么鬼东西？！)]
+	</p>
+	<p>
+		梅拉克西丝似乎对你拒绝喝她的药水感到非常愤怒，她站起来后退了一步，然后皱着眉头对你喊道，[meraxis.speech(你真的让我失望了，[pc.name]！如果你同意做某事，你就应该去做！我真不敢相信你竟然那样浪费了我的实验药剂！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_END_SPIT"><![CDATA[
+	<p>
+	在继续以这种方式对你大喊大叫几分钟后，梅拉克西丝后退了一步，把手放在臀部，然后叹了口气，[meraxis.speech(我对你很失望，我的宿敌！)]
+	</p>
+	<p>
+		中二[meraxis.race]在原地旋转，摆出了一个戏剧性的姿势，大声喊道，[meraxis.speech(我现在应该回酒馆去！我们之间没有因为这场决斗而产生任何不愉快的感觉，对吧？好，现在，见证我的力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_TF_BREASTS"><![CDATA[
+	<p>
+		流经你全身的奇怪的温暖突然上升到你的胸部，在发出另一声震惊的喘息声后，你低头看到你的乳房肿胀并变大。尽管是制造这种药剂的人，但当梅拉克西丝看着你的乳房膨胀并喃喃自语时，她开始有点慌乱，[meraxis.speech(我不喜欢大胸部或其他什么……这只是一个实验……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_TF_BREASTS_END"><![CDATA[
+	<p>
+		随着转化的突然结束，你抬头看到脸红的梅拉克西丝贪婪地盯着你的胸部。在你说她似乎对你的转化比你更尴尬之前，她清了清嗓子，说，[meraxis.speech(我的实验结束了，你也知道自己的地位了，我的宿敌！现在你必须要忍受陌生人盯着你的大胸部看！Mhahaha！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_TF_COCK"><![CDATA[
+	<p>
+		流经你全身的奇怪的温暖突然降临到你的腹股沟，在再次发出震惊的喘息声后，你会感觉到你的[pc.cock]肿胀并且变大。尽管是制造这种药剂的人，但当梅拉克西丝看到这一幕时，她开始变得有点慌乱
+		#IF(pc.isCoverableAreaVisible(CA_PENIS))
+			你裸露的阴茎膨胀了
+		#ELSE
+			你的凸起膨胀了
+		#ENDIF
+		并喃喃自语，[meraxis.speech(我不喜欢大阴茎什么的……这只是一个实验……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_TF_COCK_END"><![CDATA[
+	<p>
+		随着转化的突然结束，你抬头看到脸红的梅拉克西丝正精力充沛地盯着你的腹股沟。在你说她似乎对你的转化比你更尴尬之前，她清了清嗓子，说，[meraxis.speech(我的实验结束了，你也知道自己的地位了，我的宿敌！现在你一定要忍受陌生人盯着你的大阴茎看！Mhahaha！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_TF_FEMINISE"><![CDATA[
+	<p>
+		流经你全身的奇怪的温暖突然增加了强度，特别明显的是，你的注意力集中在胸部。在再次发出震惊的喘息声后，你会感觉到你的身体正在发生变化，看起来更加女性化，然后低头看到你的乳房肿胀并变大。尽管是制造这种药剂的人，但当梅拉克西丝看着你的乳房膨胀并喃喃自语时，她开始有点慌乱，[meraxis.speech(我不喜欢大胸部或其他什么……这只是一个实验……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_TF_FEMINISE_END"><![CDATA[
+	<p>
+		随着转化的突然结束，你抬头看到脸红的梅拉克西丝贪婪地盯着你的胸部。在你说她似乎对你的转化比你更尴尬之前，她清了清嗓子，说，[meraxis.speech(我的实验结束了，你也知道自己的地位了，我的宿敌！现在你必须要忍受陌生人盯着你的大胸部看！Mhahaha！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LOST_END"><![CDATA[
+	<p>
+		在继续以这种方式幸灾乐祸地呆了一会儿之后，梅拉克西丝后退了一步，[meraxis.speech(我甚至不需要通过赢得那场决斗来证明自己；我知道我是最强大的！Mhahaha！)] 
+	</p>
+	<p>
+		Meraxis在现场旋转，摆出一个戏剧性的姿势，大声喊道，[meraxis.speech(我现在就回酒馆去！我们之间没有因为这场决斗而产生任何不愉快的感觉，对吧？好，现在，见证我的力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MERAXIS_END"><![CDATA[
+	<p>
+		感觉到梅拉克西丝即将展示她如何传送的知识，你赶快和她说了再见。你的告别打断了她盛大的退场，梅拉克西丝嘟着嘴尴尬地回答，[meraxis.speech(哦，是的，好吧，也和你再见，[pc.name]。我的意思是，再见，我的宿敌！我们将在红龙酒馆再次见面！)]
+	</p>
+	<p>
+		说完，梅拉克西丝施展了她的传送法术，在一道紫色的闪光中，她从视线中消失了，除了继续前行，你几乎没有其他事情可做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Winning the duel: -->
+	
+	<htmlContent tag="WON"><![CDATA[
+	<p>
+		梅拉克西丝被打得落花流水，踉踉跄跄地后退，她气喘吁吁地说道：[meraxis.speech(不要再继续了……今、今天算你赢了……)]
+	</p>
+	<p>
+		事先说过，你不想因为赢得决斗而得到任何奖励，你满足于简单地享受你能够击败Meraxis的事实。然而，击败如此强大的对手，你的自豪感和成就感不会持续太久，因为梅拉克西丝似乎真的在努力恢复力量。你担心你可能做得太过分了，你问疲惫的[meraxis.race]是否还好。
+	</p>
+	<p>
+		[meraxis.speech(当，当然。我很好。)]她回答道，然后在接下来的几分钟里做了一系列深呼吸。谢天谢地，在进行了这次呼吸后，她似乎恢复了一些精神，并大声说道，[meraxis.speech(你今天可能取得了胜利，我的宿敌，但下次你肯定会输！现在听我说……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_NO_TF"><![CDATA[
+	<p>
+		按照你的要求做，你听着梅拉克西丝把手放在臀部，并说，[meraxis.speech(虽然你可能赢了那场决斗，但我知道我一定是最强大的！下次我们再战的时候，我一定要消灭你！Mhahaha！)] 
+	</p>
+	<p>
+		梅拉克西丝在现场旋转，摆出一个戏剧性的姿势，大声喊道，[meraxis.speech(我现在就回酒馆去！我们之间没有因为这场决斗而产生任何不愉快的感觉，对吧？好，现在，见证我的力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Money -->
+	
+	<htmlContent tag="WON_MONEY"><![CDATA[
+	<p>
+		梅拉克西丝被打得落花流水，踉踉跄跄地后退，她气喘吁吁地说道：[meraxis.speech(不要再继续了……今、今天算你赢了……)]
+	</p>
+	<p>
+		你不想给她任何时间来编造为什么她不能付款的借口，你很快提醒梅拉克西丝，如果你赢得决斗，她同意交出她的钱。疲惫的[meraxis.race]发出了一声尖锐的呜呜声，以M字坐跪在地上，露出她所能表现出的最天真的表情。她可怜兮兮地对你嘟着嘴，抱怨道，[meraxis.speech(但是妈咪说我可以用这笔钱给自己买点好东西……你不会那样对待我的，是吗？)]
+	</p>
+	<p>
+		尽管你几乎可以肯定，梅拉克西丝的这种展示是为了让她继续保管她的钱，但她看起来是如此悲伤和无辜，以至于你发现自己在想，你是否应该忘记这笔奖励。但同时，你总是需要花费一些额外的火币，你确信如果莉西丝的女儿真的需要的话，她会很乐意给梅拉克西丝更多的钱……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_MONEY_TAKE"><![CDATA[
+	<p>
+		你毫不同情地要求梅拉克西丝交出她答应给你的报酬。梅拉克西丝又发出了一声可悲的、尖锐的呜呜声，她站起来，掸掸自己身上的灰，然后不情愿地把所有的火币都交给了你。她对你十分生气，叹了口气，[meraxis.speech(我不敢相信你真的从我这里拿走了……不管怎样，听听我要说什么……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_MONEY_LEAVE"><![CDATA[
+	<p>
+		你不能强迫自己从她那里拿走梅拉克西丝的钱，所以你叹了一口气，告诉她她可以保留这笔钱。正如你所怀疑的那样，梅拉克西丝似乎一直在表演，因为她一听到你不会拿走她的钱，就立刻改变了表情，跳了起来，然后迅速把自己身上的灰尘掸了下去。她微笑着对你喊道，[meraxis.speech(谢谢，[pc.name]！你是最好的宿敌！不管怎样，听我说！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MONEY_END"><![CDATA[
+	<p>
+		按照你的要求做，你听着梅拉克西丝把手放在臀部，并说，[meraxis.speech(虽然你可能赢了那场决斗，但我知道我一定是最强大的！下次我们再战的时候，我一定要消灭你！Mhahaha！)] 
+	</p>
+	<p>
+		梅拉克西丝在现场旋转，摆出一个戏剧性的姿势，大声喊道，[meraxis.speech(我现在就回酒馆去！我们之间没有因为这场决斗而产生任何不愉快的感觉，对吧？好，现在，见证我的力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Transform -->
+	
+	<htmlContent tag="WON_TRANSFORM"><![CDATA[
+	<p>
+		梅拉克西丝被打得落花流水，踉踉跄跄地后退，她气喘吁吁地说道：[meraxis.speech(不要再继续了……今、今天算你赢了……)]
+	</p>
+	<p>
+		你[pc.Stepping]向前，提醒梅拉克西丝你们的约定，并问她是否准备好接受你的转化。被击败的[meraxis.race]愤愤不平地抱怨道，[meraxis.speech(这不公平……你作弊了……我不应该转化自己……)]
+	</p>
+	<p>
+		你决定不对此发表任何回应，你只是在等待，当梅拉克西丝交叉双臂并撅起嘴时，你不以为然地看她一眼。沉默了几秒钟后，她裂开了嘴，长长地叹了一口气，然后软化了态度，说，[meraxis.speech(好把，我想我<i>确实</i>同意了……但我只是同意你可以让我转化身体的一部分，记得吗？不要与阴茎相关，也不要把我变成一个淫梦魔！)]
+	</p>
+	<p>
+		中二[meraxis.race]站在原地，等着听你想改变她的哪一部分……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_NOTHING"><![CDATA[
+	<p>
+		当你看到梅拉克西丝是多么不愿意被改造时，你改变了主意，叹了一口气，告诉她她根本不需要改造自己。中二[meraxis.race]对你的决定感到惊讶和高兴，会心一笑，并说，[meraxis.speech(真的吗？谢谢，[pc.name]！我的意思是……Mhahaha！你这么仁慈真是愚蠢，我的宿敌！现在在我面前颤抖，听听我要说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TF Ass: -->
+	
+	<htmlContent tag="WON_TRANSFORM_ASS"><![CDATA[
+	<p>
+		为了让她把注意力集中在屁股上，你告诉梅拉克西丝转过身来，掀起她的斗篷，这样你就能很好地看到她的屁股。尴尬的[meraxis.race]脸红了，发出了一些无力的抗议，但还是照你说的做了。她转过身来，掀起斗篷，让你看到她的小屁股和少女般的臀部。
+	</p>
+	<p>
+		你认为梅拉克西丝的屁股太小了，便告诉她你已经决定好让她转化的部位了。当你告诉她你想让她把屁股和臀部转化得更大之后，她回头喊道，[meraxis.speech(我不想把它们转化得那么大，好吗？！真不敢相信我的宿敌竟然是个变态……)]
+	</p>
+	<p>
+		梅拉克西丝的脸颊仍然烧得通红，她开始将恶魔般的自我改造力量集中在屁股上，当你看着她的屁股和臀部开始变大时，你会忍不住露出欣赏的微笑……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_ASS_DONE"><![CDATA[
+	<p>
+		梅拉克西丝背对你，放开她的斗篷，伸手去摸她的屁股。她把手放在现在变成[meraxis.hipSize][meraxis.hips]，发出一点呻吟，她结实地挤了她一下[meraxis.assSize][meraxis.ass]，然后转头盯着你，尴尬地结结巴巴，[meraxis.speech(你会后悔的，我的宿敌！下次我们决斗时，我一定会击败你，因为你把我变成这样！)]
+	</p>
+	<p>
+		说着，梅拉克西丝原地转圈，试图摆出她一贯的英雄姿势。然而，由于她还不习惯屁股的额外尺寸和重量，她最终被脚绊倒，跌跌撞撞地撞到了你身上——屁股先撞到。在她摔倒在地之前抓住了不平衡的[meraxis.race]，你最终看到她丰满的屁股直接撞到
+		#IF(pc.isTaur())
+			你。
+		#ELSE
+			你的腹股沟。
+		#ENDIF
+	</p>
+	<p>
+		[meraxis.speech(你，你这个变态！)]梅拉克西丝在匆忙离开你时惊呼道。然而，尽管她说了这些话，你还是能从她的声音中察觉到更多的兴奋，但在你对此发表评论之前，她用手指指着你喊道，[meraxis.speech(你应该保持沉默！在我面前颤抖吧，聆听我要说的话！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_ASS_REVERSE"><![CDATA[
+	<p>
+		低头看着梅拉克西丝的屁股，你会觉得你让她增加臀部和臀部的尺寸太过分了。想在做出最后决定之前检查一下她，你告诉梅拉克西丝转过身来，把她的斗篷掀起，这样你就可以很好地看到她的屁股。尴尬的[meraxis.race]脸红了，发出了一些无力的抗议，但还是照你说的做了。转过身来，掀起她的斗篷，她让你看着她的[meraxis.assSize][meraxis.ass]和[meraxis.chipSize][eraxis.hips]。
+	</p>
+	<p>
+		你向自己证实，你更喜欢梅拉克西丝更小的屁股，你告诉她，你已经决定了她的转变。当你告诉她你想让她把屁股和臀部缩小到原来的尺寸后，她转过头来，哀嚎道，[meraxis.speech(我已经习惯了我的屁股是这样的……但好吧，不管怎样……)]
+	</p>
+	<p>
+		梅拉克西丝的脸颊仍然烧得通红，她开始将恶魔般的自我改造力量集中在屁股上，当你看着她的屁股和臀部开始缩小时，你会忍不住露出欣赏的微笑……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_ASS_REVERSE_DONE"><![CDATA[
+	<p>
+		梅拉克西丝背对你，放开她的斗篷，伸手去摸她的屁股。当她把手放在自己身上[meraxis.hipSize][meraxis.hips]时，她发出了一声呻吟，用力挤压了一下[meraxis.cassSize][meraxs.ass]，然后转身面对你喊道，[meraxis.speech(你会后悔这样玩弄我的！下次我们决斗时，我一定会击败你！)]
+	</p>
+	<p>
+		梅拉克西丝她后退了一步，她有点摇晃，看起来好像要绊倒了。她在最后一秒控制住了自己，用手指指着你喊道，[meraxis.speech(我，我这样感到不平衡是你的错！现在听听我要说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TF Breasts: -->
+	
+	<htmlContent tag="WON_TRANSFORM_BREASTS"><![CDATA[
+	<p>
+		你向下看梅拉克西丝的AA罩杯小乳房，你认为这是你想让她转化的地方。告诉她恶魔的胸部这么平是不对的，你要求她把胸部长得更大。当她听到你这么说时，尴尬的[meraxis.race]愤怒地脸红了，她用手指指着你，结结巴巴地说：[meraxis.speech(你，你怎么敢！我要让你知道，我的小胸部让我在战斗中四处走动变得容易多了！你，你只是想让我更难赢得下一场决斗！)]
+	</p>
+	<p>
+		你提醒梅拉克西丝，她同意改变你选择的自己的任何部分，你告诉她你选择胸部。她愤怒地对你怒目而视，叹了一口气，迅速将她恶魔般的自我改造力量集中在她的乳房上。在你眼前，你看到她平坦的胸部有点隆起，然后突然停在你猜测的B罩杯上。你摇摇头，告诉Meraxis这还不够好，对此她喊道：[Meraxis.speech(好吧！你想让我看起来像头牛，那这个怎么样？！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_BREASTS_DONE"><![CDATA[
+	<p>
+		梅拉克西丝低头看着她膨胀的[meraxis.cupSize]罩杯状乳房，实验性地伸出手来挤压它们，脸颊仍然烧得通红，她看着你，结结巴巴地说，[meraxis.speech(你，你会后悔的，我的宿敌！下次我们决斗时，我一定会因为你让我看起来像头牛而毁掉你！)]
+	</p>
+	<p>
+		在原地旋转时，中二[meraxis.race]摆出了一个英雄的姿势，但当她这样做时，她的手臂撞到了她的大胸部，再加上她的身体比以前重得多，导致她摔倒在你的怀里。你在她摔倒在地之前抓住不平衡的[meraxis.race]，最终她的[meraxis.breastSize]胸部压在你的胸部。
+	</p>
+	<p>
+		[meraxis.speech(你，你这个变态！)]梅拉克西丝在匆忙离开你时惊呼道。然而，尽管她说了这些话，你还是能从她的声音中察觉到一丝兴奋，但在你对此发表评论之前，她用手指指着你，喊道，[meraxis.speech(你，你应该保持沉默！在我面前颤抖，听我要说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_BREASTS_REVERSE"><![CDATA[
+	<p>
+		看着梅拉克西丝的[Meraxis.cupSize]罩杯乳房，你会忍不住认为你把它们做得太大了。你告诉她平胸更好看，并要求她把胸部缩小到以前的AA罩杯里。当她听到你这么说时，尴尬的[meraxis.race]愤怒地脸红了，用手指指着你，结结巴巴地说，[meraxis.speech(明，明明是你一开始说要这么大的！如此随意地玩弄我的身体，你，你会为此付出代价的！)]
+	</p>
+	<p>
+		Meraxis的脸颊仍然烧得通红，她开始将恶魔般的自我改造力量集中在胸部，当你看着它们缩小时，你会忍不住露出欣赏的微笑……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_BREASTS_REVERSE_DONE"><![CDATA[
+	<p>
+		梅拉克西丝用手抚摸着她的小乳房，脸颊仍然烧得通红，她喃喃自语，[Meraxis.speech(我有点习惯了大乳房……)]
+	</p>
+	<p>
+		在你对此做出回应之前，脸红的[meraxis.race]清了清喉咙，宣布，[meraxis.speech(无论如何，我感觉好多了！现在在我面前颤抖，听听我要说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TF Lactation: -->
+	
+	<htmlContent tag="WON_TRANSFORM_LACTATION"><![CDATA[
+	<p>
+		你喜欢梅拉克西丝必须定期给自己挤奶的想法，你告诉她你希望她开始泌乳。由于无法处理你刚才问的内容，她难以置信地摇摇头，结结巴巴地说，[meraxis.speech(你，你想让我做<i>什么</i>？)]
+	</p>
+	<p>
+		你重复你的要求，你告诉震惊的[meraxis.race]，你希望她的乳头在被挤压时喷出奶。当她开始脸红时，你继续你的要求，告诉她脱下裙子，向你炫耀她的胸部，这样你就可以确认她已经完成了转化。尽管她试图提出一些抗议，但你沉默以对，提醒梅拉克西丝你们之间的协定。她愤怒地自言自语，不情愿地照你说的做，脱下裙子后，她解开胸罩，露出她[meraxis.breastSize]的[meraxis.cupSize]罩杯胸部。
+	</p>
+	<p>
+		[meraxis.speech(继，继续，盯着你想看的一切吧，)]她结结巴巴地挑衅，然后将自我改造的力量集中在胸部……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_LACTATION_DONE"><![CDATA[
+	<p>
+		[meraxis.speech(好吧，我已经做完了，)]中二[meraxis.race]宣称。由于没有迹象表明她已经按照你的要求做了，你要求梅拉克西丝挤压她的乳头，对此她愤怒地回答，[Meraxis.speech(好吧，如果这是你最后一个要求，我会做的。你这个变态……)]
+	</p>
+	<p>
+		她把手伸到胸部，用力挤压[meraxis.nipples+]，奶水迅速在乳头上凝聚成珠，滴落下来流过[meraxis.breastSize]的[meraxis.breastShape]乳房。她慌乱地瞪了你一眼，迅速穿上胸罩和连衣裙，指着你宣称：[meraxis.speech(你，你要为此付出代价！在我面前颤抖吧，听听我的话！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_LACTATION_REVERSE"><![CDATA[
+	<p>
+		感觉你已经通过让Meraxis泌乳获得了一段时间的乐趣，你告诉她自我改造，这样她就不再生产牛奶了。她红着脸，喃喃自语，[meraxis.speech(很好……我不喜欢挤自己的奶……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_LACTATION_REVERSE_DONE"><![CDATA[
+	<p>
+		由于她的转化真的没有什么可看的，当梅拉克西丝告诉你她按照你的要求做了时，你只是点头表示同意。她向你噘嘴，然后用手指指向你的方向，说，[meraxis.speech(你，你要为玩弄我的身体而付出代价！现在在我面前颤抖，听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TF Lips: -->
+	
+	<htmlContent tag="WON_TRANSFORM_LIPS"><![CDATA[
+	<p>
+		让你的目光停留在梅拉克西丝的脸上，你发现自己在想，她的嘴可以看起来更淫荡。当你告诉她你的欲望时，中二[meraxis.race]脸红了，问道，[meraxis.speech(你说的‘淫荡’是什么意思？我的嘴看起来怎么了？)]
+	</p>
+	<p>
+		对着梅拉克西丝微笑，你告诉她，她的嘴唇需要更大、更蓬松，她不仅应该有一个长舌头，而且她的喉咙应该总是沾满黏糊糊的唾液。尴尬的[meraxis.race]听到你这么说时，脸颊变成了深深的猩红色，并表示反对，[meraxis.speech(你真的要让我变成那样吗？我会看起来很可笑的！)]
+	</p>
+	<p>
+		告诉她继续做下去，当梅拉克西丝终于答应并开始将她的自我改造能力集中到她的嘴里时，你微笑着……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_LIPS_DONE"><![CDATA[
+	<p>
+		梅拉克西丝伸出她又长又黏的舌头，舔着她那又大又肿的嘴唇，在嘴唇上撒下大量的唾液，让嘴唇看起来非常多汁和淫荡。当她看到你脸上赞许的表情时，她勃然大怒地脸红了，在吞下嘴里积聚的大量唾液后，她宣称：[meraxis.speech(你，你会为让我变成这样付出代价的！下次我们决斗时，我会毁了你！)]
+	</p>
+	<p>
+		中二[meraxis.race]还不习惯现在充满口腔的大量唾液，她兴奋的说话方式让她从嘴角流下口水。意识到发生了什么，她脸红得更厉害了，赶紧用袖子擦掉多余的唾液，然后尴尬地结结巴巴地说：[meraxis.speech(我这样流口水都是你的错！现，现在在我面前发抖，听听我要说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_LIPS_REVERSE"><![CDATA[
+	<p>
+		看着梅拉克西丝蓬松多汁的嘴唇，你会忍不住觉得你让她把嘴唇变成那种状态太过分了。告诉她，她用正常大小的嘴唇看起来更好，你命令梅拉克西丝把她的嘴改回原来的样子。当她听到你这么说时，她脸红了，[Meraxis.race]喃喃自语，[meraaxs.speech(就在我习惯的时候……)]
+	</p>
+	<p>
+		梅拉克西丝将她恶魔般的自我改造能力集中到嘴里，然后按照你告诉她的去做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_LIPS_REVERSE_DONE"><![CDATA[
+	<p>
+		梅拉克西丝试探性地舔着嘴唇，叹了一口气说：[Meraxis.speech(感觉好多了。总是流口水太烦人了……)]
+	</p>
+	<p>
+		在你对此做出反应之前，梅拉克西丝转过身来，摆出了一个英雄的姿势，然后用手指指着你，说，[Meraxis.speech(你要为玩弄我的身体而付出代价！现在在我面前颤抖，听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TF Pussy: -->
+	
+	<htmlContent tag="WON_TRANSFORM_PUSSY"><![CDATA[
+	<p>
+		你想让梅拉克西丝有一个淫荡的阴部，就告诉她，她必须把她的阴部变成一个看起来总是迫切需要被操的阴部。听到你对她提出这样的要求，她非常震惊，她只是沉默了一会儿，然后愤怒地脸红结结巴巴地说：[meraxis.speech(什，什么？你是什么意思？就，就像它想被……操？！)]
+	</p>
+	<p>
+		为了澄清你的要求，你告诉尴尬的[meraxis.race]，她的阴唇应该很大，应该总是湿漉漉的，而且应该有点松，看起来总是需要用什么东西来填充。梅拉克西丝的脸颊烧得通红，她对你嘟着嘴抱怨道，[Meraxis.speech(我不敢相信你想让我这么做……你，你太变态了……)]
+	</p>
+	<p>
+		你还告诉梅拉克西丝，你想看到她按照你说的做，所以她需要抬起裙子，放下内裤。尽管她一开始拒绝服从，但你几次提醒她她是如何保证按照你的要求做的，最终让她服从了，在拉起裙子后，她滑下内裤，向你展示她可爱的小猫正在变形……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_PUSSY_DONE"><![CDATA[
+	<p>
+		当你看到它的变化时，你很高兴梅拉克西丝已经把她曾经可爱的小穴转化成了现在夹在两腿之间的淫荡、湿漉漉的小穴。在没有任何外部刺激的情况下，你会看到她[meraxis.lipa+]开始闪闪发光，并随着她的天然汁液变得光滑，这导致梅拉克西丝喘息，[meraxis.speech(我已经湿透了……该死的，[pc.name]！)]
+	</p>
+	<p>
+		说完，她迅速拉起内裤，放下裙子，脸颊仍泛着鲜红色，用手指指着你说：[meraxis.speech(我要让你为这样让我尴尬而付出代价！现，现在在我面前颤抖，听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_PUSSY_REVERSE"><![CDATA[
+	<p>
+		你后悔你之前让梅拉克西丝拥有了一个淫荡、潮湿的小穴，你告诉她扭转这种转变，重新找回她那曾经可爱的小穴。她红着脸，结结巴巴地说：[meraxis.speech(我，我猜你想再看我转化一次吗？)]
+	</p>
+	<p>
+		在你得到肯定的回答后，中二[meraxis.race]喃喃自语，[meraxis.speech(你，你太变态了……)]
+	</p>
+	<p>
+		与最初的转变相比，梅拉克西丝更愿意扭转这种转化，她迅速脱下裙子，拉下内裤，向你展示她在转变过程中淫荡、湿漉漉的小穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_PUSSY_REVERSE_DONE"><![CDATA[
+	<p>
+		当你看到它的转变时，你很高兴知道梅拉克西丝已经把她那淫荡、湿漉漉的小穴变成了她那曾经可爱的小穴。不耐烦的[meraxis.race]愤怒地脸红了，问道：[meraxis.speech(你现在高兴吗？！)]
+	</p>
+	<p>
+		在你让她知道你对她的转化感到满意后，梅拉克西丝迅速拉起内裤，放下裙子，脸颊仍然泛着鲜红色，她用手指指着你说：[meraxis.speech(我会让你为这样让我难堪而付出代价的！现，现在在我面前颤抖，听听我要说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- TF Squirter: -->
+	
+	<htmlContent tag="WON_TRANSFORM_SQUIRTER"><![CDATA[
+	<p>
+		你喜欢让梅拉克西丝在高潮时潮吹的想法，你告诉她转化她的阴部来让你的想法成为现实。当她听到你这么说时脸红了，尴尬的[meraxis.race]喃喃自语，[meraxis.speech(你真变态……)]
+	</p>
+	<p>
+		尽管她这样说，梅拉克西丝还是开始照你说的做，并将她恶魔般的自我改造力量集中在她的小穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_SQUIRTER_DONE"><![CDATA[
+	<p>
+		虽然目前还没有办法验证，但你可以肯定梅拉克西丝已经按照你的要求完成了。她没有给你任何时间让她进一步难堪，她很快把手指指向你，并宣称：[meraxis.speech(我会让你为这样改变我而付出代价！现，现在在我面前颤抖，听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_SQUIRTER_REVERSE"><![CDATA[
+	<p>
+		你不再喜欢让梅拉克西丝达到高潮时让她潮吹的想法，你告诉她改变她的小穴，这样她就不再是一个潮吹者了。当她听到你这么说时脸红了，尴尬的[meraxis.race]喃喃自语，[meraxis.speech(你太变态了……)]
+	</p>
+	<p>
+		Meraxis开始照你说的做，并将她恶魔般的自我转化力量集中在她的小穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_TRANSFORM_SQUIRTER_REVERSE_DONE"><![CDATA[
+	<p>
+		虽然目前还没有办法验证，但你可以肯定梅拉克西丝已经按照你的要求完成了。她没有给你任何时间让她进一步难堪，她很快用手指指着你说：[meraxis.speech(我会让你为这样玩弄我的身体而付出代价！现，现在在我面前颤抖，听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="TRANSFORMATION_END"><![CDATA[
+	<p>
+		按照你的要求做，你听着梅拉克西丝把手放在臀部，并说，[meraxis.speech(虽然你可能赢了那场决斗，但我知道我一定是最强大的！下次我们再战的时候，我一定要消灭你！Mhahaha！)] 
+	</p>
+	<p>
+                 中二[meraxis.race]以一种过于戏剧性的姿态披上斗篷，大声喊道：[meraxis.speech(在你面前，我再也忍受不了一时一刻了！现在，见证我的力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Sex -->
+	
+	<htmlContent tag="WON_SEX"><![CDATA[
+	<p>
+		梅拉克西丝被打得落花流水，踉踉跄跄地后退，她气喘吁吁地说道：[meraxis.speech(不要再继续了……今、今天算你赢了……)]
+	</p>
+	<p>
+			你[pc.Stepping]向前，提醒梅拉克西丝你们的约定，并问她是否准备好做爱。被击败的[meraxis.race]愤愤不平地抱怨道，[meraxis.speech(这不公平……你，你作弊了……但好吧，不管怎样，我会让你选择一个做爱方式……但，但我之所以同意，只是因为我也想这么做，绝对不要以为你能强迫我做任何事情！)]
+	</p>
+	#IF(flags.hasFlag(FLAG_innoxia_meraxis_any_sex_unlocked))
+		<p>
+			意识到她刚刚说的话，中二[meraxis.race]的脸颊涨红了，她尴尬地结结巴巴，[meraxis.speech(那，那就来吧，你想拥抱、牵手还是什么？！我的意思是，然后我们可以像以前一样做一些其他的事情……)]
+		</p>
+	#ELSE
+		<p>
+			意识到她刚刚说的话，中二[meraxis.race]的脸颊涨红了，她尴尬地结结巴巴，[meraxis.speech(那，那就来吧，你想拥抱、牵手还是什么？！)]
+		</p>
+		<p>
+			尽管她表现得很慌乱，但当梅拉克西丝瞥你一眼时，你会忍不住注意到她眼中的淫荡表情。当你想知道该问她什么时，你认为你可以强迫她做一些非常淫荡的事情……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_NOTHING"><![CDATA[
+	<p>
+		你决定不想对梅拉克西丝做任何猥亵的事，告诉她你改变了主意，她可以自由离开，而不必向你提供性服务。
+	</p>
+	<p>
+		[meraxis.speech(所以你这样引导我，然后说你不感兴趣？)]她气喘吁吁，然后突然原地打转，摆出了一个英雄的姿势。她指着你，像往常一样的中二个性，她说，[meraxis.speech(现在，我的宿敌，我有重要的话要说，所以听好了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Hold hands/masturbation: -->
+	
+	<htmlContent tag="WON_SEX_HOLD_HANDS"><![CDATA[
+	<p>
+		你不想要求梅拉克西丝做任何会让她产生敌对反应的事情，你告诉她你只想握住她的手。她挪了挪脚，向你伸出手臂，嘴里嘟囔着，[meraxis.speech(那，那就继续吧，你可以握一会儿……)]
+	</p>
+	<p>
+		你握着她柔软而女性化的手，建议你们两个去散步。梅拉克西丝脸红了，低头看着地面，问道，[meraxis.speech(牵着手的时候？当然，我想……)]
+	</p>
+	<p>
+		你牵着脸红的[meraxis.race]的手，你们两个开始散步。还没走多远，你就注意到梅拉克西丝正轻轻地喘着，她[meraxis.fingers+]还突然沿着你的[pc.hand(true)]滑动，发出轻微的呻吟。你将此看作更进一步的标志，向梅拉克西丝靠近，梅拉克西丝随即把你拉到附近的一棵树后面，把你的[pc.hand(true)]拉进她的腿间，喘息说：
+		#IF(flags.hasFlag(FLAG_innoxia_meraxis_handjobs_unlocked))
+			[meraxis.speech(来，来吧……我的小穴都湿透了……用手指帮帮我……)]
+		#ELSE
+			[meraxis.speech(来，来吧……让我们做一些坏坏的事……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_HOLD_HANDS_FINISHED"><![CDATA[
+	<p>
+		你决定不想对梅拉克西丝做任何猥亵的事情，你轻轻地把你的[pc.hand(true)]从她的腹股沟移开。你打断了她失望的呻吟，对可爱的[meraxis.race]的外表表示赞扬，并说只要花点时间牵她的手就足够了。
+	</p>
+	<p>
+		[meraxis.speech(你，你为什么说这些尴尬的话？！)]梅拉克西丝松开你的手时喊道。脸颊泛红，她低头看着地面，拖着脚，忍不住笑了。在你还没来得及说什么的时候，她似乎突然意识到了自己在做什么，并摆出了一个英雄的姿势，说：[meraxis.speech(你，你不要这么容易骗我，我的宿敌！我对一切形式的心理攻击都免疫；你的努力都白费在我身上了！Mhahaha！现，现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_HOLD_HANDS_GROPE"><![CDATA[
+	<p>
+		你任凭梅拉克西丝拉着你的[pc.hands]抚上她的下体，便用另一只手挤揉玩弄着她[meraxis.breasts+]。她被你恣意的动作搞出一声嘤咛。[pc.fingers+]滑到她腿间，按住薄薄的裙子，描摹起藏在后面的蜜穴。随着你的动作，梅拉克西丝的呜咽很快转为淫乱的惊叫。她呼吸紊乱，急促起来，[meraxis.speech(嗯唔……~呃啊~！~我的小穴湿湿的……我们要不要……)]
+	</p>
+	<p>
+		就在梅拉克西丝似乎要一路走来，让你开始用手指抚摸她时，她突然把你推开，然后跳了回去。她的脸颊涨得通红，指着你结结巴巴，[meraxis.speech(你几乎打败了我的心理防御！正如我的敌人所期望的那样，但你今天不会胜利！现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_FINGERING"><![CDATA[
+	<p>
+		你任凭梅拉克西丝拉着你的[pc.hands]抚上她的下体，便用另一只手挤揉玩弄着她[meraxis.breasts+]，她被你恣意的动作搞出一声嘤咛。你拉起她的裙边，[pc.fingers+]滑上她的内裤。随着你的动作，梅拉克西丝的呜咽很快转为淫乱的惊叫。她呼吸紊乱，急促起来：[meraxis.speech(嗯唔……~呃啊~！~我的小穴湿湿的……来吧，用手指帮我，我需要它……)]
+	</p>
+	#IF(meraxis.isPussyChanged())
+		<p>
+			梅拉克西丝被性欲征服了，匆忙地把内裤移到一边，把她的小穴完全暴露在你面前。之前你曾指示她把小穴变成淫乱的，你往下看，梅拉克西丝的阴唇很大，她略显宽松的入口是一团黏糊糊的爱液。为了害羞地避开你的目光，她把头转向一边，[meraxis.speech(是你想让它看起来像这样的……所，所以继续，继续做吧……)]
+		</p>
+		<p>
+			再次向前伸，你把你的手指滑过梅拉克西丝流着爱液的小穴，这让她发出一声极度饥渴的呻吟。你挑逗尴尬的[meraxis.race]，告诉她她那黏糊糊的小穴有多性感和淫荡，就在她开口回应的时候，你把你[pc.fingers+]滑进去，开始急切地用手指抚摸她。梅拉克西丝被你的突然举动吓了一跳，大口喘气，尖叫起来，[meraxis.speech(~啊！~哦，操！嗯~嗯！~继续……舒服，再来！)]
+		</p>
+	#ELSE
+		<p>
+			梅拉克西丝被她的欲望征服了，匆忙地把内裤移到一边，把她的小穴完全暴露在你面前。往下看，你会发现Meraxis可爱的阴唇很小，刚开始因为兴奋而淋湿。为了害羞地避开你的目光，她把头转向一边，[meraxis.speech(你不必那么盯着……继，继续，继续做吧……)]
+		</p>
+		<p>
+			再次向前伸出手，你把你的手指滑过梅拉克西丝的火辣小穴，这让她发出了一声极度饥渴的呻吟。你逗弄尴尬的[meraxis.race]，你告诉她她那紧身可爱的小穴有多性感，就在她张开嘴回应的时候，你把你[pc.fingers+]滑到里面，开始急切地用手指抚摸她。梅拉克西丝被你的突然举动吓了一跳，大口喘气，尖叫起来，[meraxis.speech(啊！~哦，操！嗯~嗯！~继续……舒服，再来！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_FINGERED"><![CDATA[
+	<p>
+		想要与梅拉克西丝追求的相反，你告诉她，你希望是被动的那一方。
+		#IF(pc.isTaur())
+			露出你[pc.pussy+]，你转身向梅拉克西丝展示你的屁股，然后回头问她是否喜欢你[pc.legRace]小穴的样子。中二[meraxis.race]贪婪地盯着你[pc.pussy+]，向前伸出手来，在你[pc.labia+]上滑动她[meraxis.fingers+]，她回答道，[meraxis.speech(对~嗯！~我就这样做吧……)]
+		#ELSE
+			暴露你[pc.pussy+]，你向梅拉克西丝展示自己，并问她是否准备好开始。中二[meraxis.race]贪婪地盯着你[pc.pussy+]，向前伸出手来，在你[pc.labia+]上滑动她[meraxis.fingers+]，她回答道，[meraxis.speech(对~嗯！~我就这样做吧……)]
+		#ENDIF
+	</p>
+	<p>
+		对她的触摸，你发出了一声愉悦的[pc.moan]，你把腹股沟推到了梅拉克西丝的手上。在你热情的鼓励下，她把她女性化的手指伸进你[pc.pussy+]，开始热切地抚摸你。你被她的突然举动吓了一跳，气喘吁吁，[pc.speech(~啊！~哦，操！对~嗯！~继续……舒服，再来！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_HANDJOB"><![CDATA[
+	<p>
+		你想要的与梅拉克西丝追求的恰恰相反，你告诉她，你希望是被动的那一方。
+		#IF(pc.isTaur())
+			你露出你[pc.cock+]，转身向梅拉克西丝展示你的屁股，然后回头问她是否喜欢你[pc.legRace]阴茎的样子。中二[meraxis.race]贪婪地盯着你[pc.cock+]，中二[meraxis.race]跪下，然后向前伸，将她[meraxis.fingers+]滑过你抽动的阴茎。咬着嘴唇，她喘气呻吟，回答道，[meraxis.speech(对~嗯！~我就这样做吧……)]
+		#ELSE
+			你暴露你[pc.cock+]，向梅拉克西丝展示自己，并问她是否准备好开始。中二[meraxis.race]贪婪地盯着你[pc.cock+]，中二[meraxis.race]向前伸出手，在你抽动的阴茎上滑动她的[meraxis.fingers+]，她回答道，[meraxis.speech(对~嗯！~我就这样做吧……)]
+		#ENDIF
+	</p>
+	<p>
+		对她的触摸，你发出了一声愉悦的[pc.moan]，你把腹股沟推到了梅拉克西丝的手上。在你热情的鼓励下，她用她女性化的手指握着你[pc.cock+]，开始急切地撸动。被她的突然举动吓了一跳，你喘着粗气，发出[pc.moan]，[pc.speech(~啊！~哦，操！对~嗯！~继续……舒服，再来！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_FINGERING"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，低头看着淋湿她小穴和大腿根的爱液。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_FINGERED"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，最后一次用她女性化的手指抚摸你[pc.labia+]，然后退后一步，给你一点时间来清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_HANDJOB"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，最后一次用她女性化的手指抚摸你[pc.labia+]，然后退后一步，给你一点时间来清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_END"><![CDATA[
+	<p>
+		[meraxis.speech(你知道……为此输掉那场决斗是值得的……)]她说，然后给你一个快速的微笑，然后突然在原地转圈。她摆出一个英雄的姿势，指着你，展现出她一贯的中二个性，她宣称：[meraxis.speech(现在，我的宿敌，因为我欺骗了你，让你给了我想要的东西，我有重要的话要说，所以听好了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Hugging/anal: -->
+	
+	<htmlContent tag="WON_SEX_HUG"><![CDATA[
+	<p>
+		你不想要求梅拉克西丝做任何会让她产生敌意的事情，你告诉她你只想给她一个拥抱。她挪了挪脚，把胳膊伸向你，嘴里嘟囔着，[meraxis.speech(那，那就来吧……你可以拥抱我……)]
+	</p>
+	<p>
+		你伸手拉住梅拉克西丝伸出的手臂，将她紧紧地抱在怀里。虽然你从这个位置看不到她的脸，但你知道她喃喃自语时一定脸红了，[meraxis.speech(如果你喜欢这种东西……)]
+	</p>
+	<p>
+		在你做出回应之前，你突然注意到梅拉克西丝开始轻轻地向你靠近，伴随着一点呻吟，她紧紧地把她[meraxis.breasts+]压在你的躯干上。随后，你把梅拉克西丝拉到你身上，这导致她抬起屁股和裤子，
+		#IF(flags.hasFlag(FLAG_innoxia_meraxis_anal_unlocked))
+			#IF(game.isAnalContentEnabled())
+				[meraxis.speech(我知道你想再做肛门相关的事情……而且，嗯，我也有点想要它……)]
+			#ELSE
+				[meraxis.speech(那，那就继续……我知道你想再摸我的屁股，继续这样做吧……)]
+			#ENDIF
+		#ELSE
+			[meraxis.speech(那，那就继续……我知道你想摸我的屁股，继续这样做吧……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_HUG_FINISHED"><![CDATA[
+	<p>
+		你决定不想对梅拉克西丝做任何淫乱的事情，你继续拥抱她几分钟，然后后退，结束你的身体接触。你打断了她失望的呻吟，对可爱的[meraxis.race]的外表表示赞扬，并说只要能在她的怀抱里呆上一段时间就足够了。
+	</p>
+	<p>
+		[meraxis.speech(你为什么说这些令人尴尬的话？！)]梅拉克西丝大叫回应你的赞美。脸颊泛红，她低头看着地面，拖着脚，忍不住笑了。你还没来得及说什么，她似乎突然意识到自己在做什么，并摆出英雄的姿势，宣称，[meraxis.speech(你不能那么轻易地欺骗我，我的宿敌！我不受任何形式的心理攻击；你的努力在我身上白费了！Mhahaha！现在听我说！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_HUG_ASS_GRAB"><![CDATA[
+	<p>
+		不想错过这个机会，你伸手用[pc.hands]抓住梅拉克西丝的屁股。
+		#IF(meraxis.isAssChanged())
+			你之前曾让她改造过屁股，你会喜欢它有多大的感觉，在用手滑过中二[meraxis.race]非常宽的臀部后，她呼吸急促，并淫乱地将屁股朝你的方向推。
+		#ELSE
+			梅拉克西丝有一个小而平的屁股，但尽管它的尺寸不起眼，但你仍然喜欢它的感觉，在用手滑过中二[Meraxis.race]少女般的臀部后，她呼吸急促，并淫乱地将屁股朝你的方向推。
+		#ENDIF
+		#IF(game.isAnalContentEnabled())
+			你抓住她的屁股，轻轻地把它拉开，然后把你[pc.fingers+]滑到她裙子上来挑逗她的肛门。
+		#ENDIF
+	</p>
+	<p>
+		[meraxis.speech(就是这样……~嗯！~也许我们甚至可以……)]梅拉克西丝开始说，然后突然把你从她身边推开，跳了回来。她的脸颊涨得通红，指着你结结巴巴，[meraxis.speech(你几乎打败了我的心理防御！正如我的敌人所期望的那样，但你今天不会胜利！现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_ANILINGUS"><![CDATA[
+	<p>
+		你生出了贴贴梅拉克西丝屁股的念头，告诉她你要给她吻肛。[meraxis.race]又喜又羞，脸颊烧得通红。她浪荡地握住你的[pc.hand]，将你引到旁边的树后。你甚至还没做什么，她就扭身撩起裙子，折了折裙摆，拔弄开内裤，冲你露出[meraxis.asshole+]。
+	</p>
+	<p>
+		[meraxis.speech(这就是你想要的，对吧？)]她问道，回头看看你的反应。你迅速向前，把她扑倒在地，然后向前倾身，在她[meraxis.asshole+]上亲了一个大大的湿吻。
+	</p>
+	<p>
+		[meraxis.speech(~啊！~哦，对……来吧，[pc.name]……把它给我……)]梅拉克西丝气喘吁吁。你非常乐意按照她说的去做，抓住她[meraxis.hips+]向前拖，然后把脸埋在她[meraxis.asshole+]里，开始急切地舔、吻，用鼻子蹭她[meraxis.asshole+]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_HOTDOGGING"><![CDATA[
+	<p>
+		你生出了贴贴梅拉克西丝屁股的念头，告诉她你要跟她臀交。[meraxis.race]又喜又羞，脸颊烧得通红。她浪荡地握住你的[pc.hand]，将你引到旁边的树后。你甚至还没做什么，她就扭身撩起裙子，折了折裙摆，拔弄开内裤，冲你露出[meraxis.asshole+]。
+	</p>
+	<p>
+		[meraxis.speech(你也想要吧？)]她问，回头期待着你的反应。
+		#IF(pc.isTaur())
+			你欣然应允，命令梅拉克西丝四肢跪地。她顺从地趴下。你用[pc.cock+]磨蹭着她赤裸的后背。
+		#ELSE
+			你迅速向前，用[pc.cock+]磨蹭着她赤裸的后背。
+		#ENDIF
+	</p>
+	<p>
+		[meraxis.speech(~啊！~哦，对……来吧，[pc.name]……把它给我……)]梅拉克西丝气喘吁吁。你向前，在她[meraxis.assSize]的屁股之间滑动你[pc.cock+]。她随即发出淫乱的呻吟，你捅进又抽回，在她[meraxis.asshole+]上来回磨蹭你[pc.cock+]，开始给她尻交……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_ANAL"><![CDATA[
+	<p>
+		你生出了贴贴梅拉克西丝屁股的念头，告诉她你要操她的屁眼。[meraxis.race]又喜又羞，脸颊烧得通红。她浪荡地握住你的[pc.hand]，将你引到旁边的树后。你甚至还没做什么，她就扭身撩起裙子，折了折裙摆，拔弄开内裤，冲你露出[meraxis.asshole+]。
+	</p>
+	<p>
+		[meraxis.speech(你也想要吧？)]她问，回头期待着你的反应。
+		#IF(pc.isTaur())
+			你欣然应允，命令梅拉克西丝四肢跪地。她顺从地趴下。你[pc.step]过去罩住她，[pc.cock+]磨蹭着她赤裸的后背。
+		#ELSE
+			你欣然应允，命令梅拉克西丝四肢跪地。她顺从地趴下。你半跪在她身后，[pc.cock+]磨蹭着她赤裸的后背。
+		#ENDIF
+	</p>
+	<p>
+		#IF(meraxis.isAnalVirgin())
+			[meraxis.speech(啊呜~唔，求求你，[pc.name]……给我吧……但，但是我还没被开发过，轻点好吗？)]梅拉克西丝呼吸紊乱，大口喘气。
+		#ELSE
+			[meraxis.speech(啊~现在，现在就要，求求你，[pc.name]……给我吧……)]梅拉克西丝呼吸紊乱，大口喘气。
+		#ENDIF
+		你听了她的话，喜出望外。你拱了拱身子，[pc.cock+]搭在她[meraxis.asshole+]上，即将挺进。你缓慢而坚定地将悸动的柱身顶部[pc.cockHead+]塞进[meraxis.race][meraxis.asshole+]，她连声淫叫，[meraxis.speech(~呃呃啊~好舒服……操我的屁眼~啊~……)]
+	</p>
+	<p>
+		你心已了然，猛地挺身，[pc.cock+]尽根没入梅拉克西丝的肠道，放肆地操起[meraxis.asshole+]，在内里顶弄打转。她欲拒还迎，浑身打颤，呜咽呻吟……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_ANILINGUS"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，伸手去摸她那沾满唾液的肛门。当你把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_HOTDOGGING"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，伸手揉她的屁股。当你把自己的东西整理好时，她拿出纸巾开始清理自己.
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_ANAL"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，伸手去摸她那被操好了的肛门。当你把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Kissing/oral: -->
+	
+	<htmlContent tag="WON_SEX_KISS"><![CDATA[
+	<p>
+		你想要的不仅仅是拥抱或牵手，你告诉梅拉克西丝你想吻她。她拖着脚，脸红了，喃喃自语，[meraxis.speech(好，好吧……你可以吻我……)]
+	</p>
+	<p>
+		你接近梅拉克西丝，身体前倾，将你[pc.lips+]贴在她的嘴唇上。
+	</p>
+	<p>
+		#IF(meraxis.isMouthChanged())
+			在之前指导梅拉克西丝转化她的嘴后，你喜欢她湿漉漉、丰满的嘴唇紧贴你的嘴时的感觉。
+		#ELSE
+			当你开始亲吻梅拉克西丝时，她发出了一声低沉的呻吟，当你们两个继续把嘴唇紧贴在一起时，梅拉克西丝向你倾身。
+		#ENDIF
+	</p>
+	<p>
+		在甚至还没有用舌头接吻了几分钟之后，梅拉克西丝就开始发出一系列令人难以置信的淫乱声音。你还没来得及决定如何应对她的好色行为，她突然后退，气喘吁吁地喘息，
+		#IF(flags.hasFlag(FLAG_innoxia_meraxis_oral_unlocked))
+			[meraxis.speech(来吧，[pc.name]。你想来点口交，不是吗？)]
+		#ELSE
+			[meraxis.speech(给我更多，[pc.name]！来吧，我真的想和你亲热……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_KISS_FINISHED"><![CDATA[
+	<p>
+		决定你不想对梅拉克西丝做任何太淫乱的事，你只在她的嘴唇上再做一个湿吻，然后后退，结束你的身体接触。你打断了她失望的呻吟，对可爱的[meraxis.race]的外表大加赞扬，并说只要能吻她就足够了。
+	</p>
+	<p>
+			[meraxis.speech(你为什么说这些令人尴尬的话？！)]梅拉克西丝大叫回应你的赞美。脸颊泛红，她低头看着地面，拖着脚，忍不住笑了。你还没来得及说什么，她似乎突然意识到自己在做什么，并摆出英雄的姿势，宣称，[meraxis.speech(你不能那么轻易地欺骗我，我的宿敌！我不受任何形式的心理攻击；你的努力在我身上白费了！Mhahaha！现在听我说！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_KISS_MAKE_OUT"><![CDATA[
+	<p>
+		抓住梅拉克西丝，你把她拉进你的怀抱，然后把你[pc.lips+]放在她的身上，开始热情地和她亲热。
+		#IF(meraxis.isMouthChanged())
+			作为回应，性感的[meraxis.race]分开她巨大松软的嘴唇，淫荡地把她又长又湿的舌头伸进你的嘴里，然后开始猛烈地与你纠缠。
+		#ELSE
+			作为回应，性感的[meraxis.race]张开嘴唇，淫乱地把舌头伸进你的嘴里，猛烈地与你纠缠。
+		#ENDIF
+	</p>
+	<p>
+		在接下来的几分钟里，你们两个继续亲热。把舌头伸进对方的嘴里，你们的嘴唇很快就被大量的唾液覆盖。梅拉克西丝呻吟着打断你的吻，[meraxis.speech(就是这样……~嗯！~也许我们甚至可以……)]
+	</p>
+	<p>
+		在那一刻，好色的[meraxis.race]突然把你从她身边推开，然后跳了回去。她的脸颊涨得通红，指着你结结巴巴，[meraxis.speech(你几乎打败了我的心理防御！正如我的宿敌所期望的那样，但你今天不会胜利！现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_CUNNILINGUS"><![CDATA[
+	<p>
+		你想和梅拉克西丝的小穴亲密接触，告诉她你想要对她舔阴。尴尬的[meraxis.race]脸颊上燃烧着明亮的红色，她抓住你的[pc.hand]，把你带到附近的一棵树后面，揭示了她是多么的饥渴。在不需要任何鼓励的情况下，她提起裙子，把内裤移到一边，向你展示她的
+		#IF(meraxis.isPussyChanged())
+			小穴。在之前指导她改造阴部后，你可以看到梅拉克西丝有[Meraxis.lipaSize]阴唇，一股黏糊糊的少女爱液几乎从她略显松弛的腔穴流出来。
+		#ELSE
+			[meraxis.pussyCapacity]，可爱的小穴
+		#ENDIF
+	</p>
+	<p>
+		[meraxis.speech(这就是你想要的，对吧？)]她问道。你很快向前走，将她扑倒在地，然后身体前倾，在她[meraxis.pussy+]亲了一个大大的湿吻。
+	</p>
+	<p>
+		[meraxis.speech(~啊！~哦，对……来吧，[pc.name]……把它给我……)]梅拉克西丝气喘吁吁地喘息。你非常乐意按照她说的去做，抓住她[meraxis.hips+]，然后把脸埋在她的大腿之间，开始急切地舔、吻和用鼻子蹭她[meraxis.pussy+]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_CUNNILINGUS_RECEIVE"><![CDATA[
+	<p>
+		你想让梅拉克西丝用舌头为你的小穴服务，就告诉她你想让她尝试舔阴。
+		#IF(pc.isTaur())
+			露出你[pc.pussy+]，你转身向梅拉克西丝展示你的屁股，然后回头问她是否喜欢你[pc.legRace]小穴的样子。
+		#ELSE
+			你暴露你[pc.pussy+]，向Meraxis展示自己，并问她是否准备好开始。
+		#ENDIF
+		饥饿地盯着你[pc.pussy+]，中二病[meraxis.race]弯下身，在你[pc.labia+]上快速接吻，然后回答，[meraxis.speech(对~嗯！~让我就这样做吧……)]
+	</p>
+	<p>
+		为了回应她的口交，你发出了一声高兴的[pc.moan]，你把腹股沟推到了梅拉克西丝的脸上。在你热情的鼓励下，她把她的[meraxis.tongue+]滑过你[pc.labia+]，然后向前倾，把它陷进你[pc.pussy+]。被她的突然动作吓到，你喘着粗气呻吟，[pc.speech(~啊！~哦，操！对~嗯！~继续……舒服，再来！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_BLOWJOB"><![CDATA[
+	<p>
+		你想让梅拉克西丝用嘴给你的阴茎服务，告诉她你想让她试着给你口交。
+		#IF(pc.isTaur())
+			你露出你[pc.cock+]，转向一边，把它呈现给梅拉克西丝，然后把头转向她，问她是否喜欢你[pc.legRace]阴茎的外观。
+		#ELSE
+			你暴出你[pc.cock+]，你向梅拉克西丝展示自己，并问她是否准备好开始。
+		#ENDIF
+		中二病[meraxis.race]饿着眼睛盯着你[pc.cock+]，跪下，然后向前伸手，在你颤抖的阴茎上快速亲吻。在发出一声饥渴的呻吟后，她喘息不断，[meraxis.speech(对~嗯！~让我就这样做吧……)]
+	</p>
+	<p>
+		为了回应她的口交，你发出了一声高兴的[pc.moan]，你把腹股沟推到了梅拉克西丝的脸上。在你的热情鼓励下，她把她的[meraxis.lip+]分开，把你已经直立阴茎的[pc.cockHead+]放进嘴里，然后向前倾，开始急切地给你口交。被她的突然举动吓了一跳，你[pc.moan]，[pc.speech(~啊！~哦，操！对~嗯！~继续……舒服，再来！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_CUNNILINGUS"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，伸手去摸她那沾满唾液的小穴。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_CUNNILINGUS_RECEIVE"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，舔了舔她的[Meraxis.lips+]。当你开始收拾自己的东西时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_BLOWJOB"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，舔了舔她的[Meraxis.lips+]。当你开始收拾自己的东西时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Breasts: -->
+	
+	<htmlContent tag="WON_SEX_FLASH_BREASTS"><![CDATA[
+	<p>
+		你知道梅拉克西丝真的很喜欢你，你认为可以问她一些要求很高的问题。低头看着她的
+		#IF(meraxis.getBreastRawSizeValue()>5)
+			巨大的胸部，
+		#ELSE
+			平坦的胸部，
+		#ENDIF
+		你告诉梅拉克西丝你想看看她赤裸的乳房。当她听到你对她的要求时，梅拉克西丝的脸颊泛出了明亮的红色，她喘息，[meraxis.speech(我，我裸露的乳房？你太淫荡了，[pc.name]……)]
+	</p>
+	<p>
+		尴尬的[meraxis.race]脸颊继续燃烧着明亮的红色，她抓住你的[pc.hand]，把你带到附近的一棵树后面，揭示了她是多么的饥渴。在不需要任何鼓励的情况下，她转过身来，迅速脱下连衣裙和斗篷，然后脱下胸罩，露出乳头。
+	</p>
+	<p>
+		#IF(meraxis.getBreastRawSizeValue()>5)
+			虽然梅拉克西丝曾经有一个几乎完全平坦的胸部，但你会发现自己看到的是一对圆形的[Meraxis.cupSize]罩杯胸部。她的大乳头和乳晕让她的乳房看起来很淫荡，你发现自己一看到它们就兴奋了起来。
+		#ELSE
+			胸部几乎完全平坦，你会发现自己正看着一对圆形的[meraxis.cupSize]罩杯胸部。尽管体型很小，但梅拉克西丝的大乳头和乳晕让她的乳房看起来很淫荡，你会发现自己一看到它们就兴奋不已。
+		#ENDIF
+		淫乱的[meraxis.race]咬着嘴唇，继续脸红，问道，[meraxis.speech(那么，这就是你想要的吗？我的意思是，如果你想的话，你可以要求更多……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_FLASH_BREASTS_FINISHED"><![CDATA[
+	<p>
+		决定你不想对Meraxis做任何太猥亵的事，你只需花点时间盯着她[Meraxis.boobs+]，然后告诉她你不想再进一步了。你打断了她失望的呻吟，对可爱的[meraxis.race]的胸部外观表示赞扬，并说只要能够欣赏它们就足够了。
+	</p>
+	<p>
+			[meraxis.speech(你，你为什么说这些尴尬的话？！)]梅拉克西丝松开你的手时喊道。脸颊泛红，她低头看着地面，拖着脚，忍不住笑了。在你还没来得及说什么的时候，她似乎突然意识到了自己在做什么，并摆出了一个英雄的姿势，说：[meraxis.speech(你，你不要这么容易骗我，我的宿敌！我对一切形式的心理攻击都免疫；你的努力都白费在我身上了！Mhahaha！现，现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_FLASH_BREASTS_PLAY"><![CDATA[
+	<p>
+		你想让梅拉克西丝表演自己，你告诉她玩弄她自己的乳房。尽管她脸红了，嘴里嘟囔着你有多淫荡，但她很快就照你说的做了。
+		#IF(meraxis.getBreastRawSizeValue()>5)
+			她把手伸到她那巨大的[meraxis.cupSize]罩杯胸部，双手将其托起，然后将其挤压在一起，开始玩弄乳头。
+		#ELSE
+			她把手伸到她那小小的[meraxis.cupSize]罩杯胸部，尽最大努力把它们握在手里，徒劳地试图把它们挤在一起后，她继续玩弄她的乳头。
+		#ENDIF
+	</p>
+	<p>
+		在接下来的几分钟里，你观看着梅拉克西丝继续玩她[meraxis.breasts+]。她撕拽着乳头，调皮地捏着乳头呻吟，[meraxis.speech(所以你喜欢这种~嗯！~也许你可以……)]
+	</p>
+	<p>
+		就在那一刻，好色的[meraxis.race]突然停止了对胸部的玩弄，跳了回去。她的脸颊涨得通红，她开始匆忙地把衣服穿回去，结结巴巴地说，[meraxis.speech(你几乎打败了我的心理防御！正如我的宿敌所期望的那样，但你今天不会胜利！现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_PLAY_BREASTS_MASTURBATE"><![CDATA[
+	<p>
+		你想让梅拉克西丝展示自己，你就告诉她开始玩她的乳房，这样你就可以用它手淫了。听到这句话，[meraxis.race]的脸颊立刻红了起来，结结巴巴地说，[meraxis.speech(你想做什么？你太淫荡了，[pc.name]……我想我是不介意的，因为是你……)]
+	</p>
+	<p>
+		#IF(meraxis.getBreastRawSizeValue()>5)
+			她把手伸到她那巨大的[meraxis.cupSize]罩杯胸部，双手将其托起，然后将其挤压在一起，然后开始玩弄乳头。
+		#ELSE
+			她把手伸到她那小小的[meraxis.cupSize]罩杯胸部，尽最大努力把它们托在手里，在徒劳地试图把它们挤在一起后，她继续玩她的乳头。
+		#ENDIF
+		#IF(pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				你露出你[pc.cock+]和[pc.pussy+]，当你看着梅拉克西丝为你展示这一切时，你开始触摸自己……
+			#ELSE
+				你暴出你[pc.cock+]，当你看着梅拉克西丝为你展示这一切时，你开始触摸自己……
+			#ENDIF
+		#ELSEIF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			暴露你[pc.pussy+]，当你看着梅拉克西丝为你展示这一切时，你开始触摸自己……
+		#ELSE
+			当你看着梅拉克西丝为你展示这一切时，
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_PLAY_BREASTS_KISSING"><![CDATA[
+	<p>
+		你想玩弄梅拉克西丝[meraxis.breasts+]，你向前走，告诉她你会给它们应得的爱抚。当她意识到你想做什么时，尴尬的[meraxis.race]脸红了，露出了她的胸部，喘息道，[meraxis.speech(那就继续吧……你可以做你想做的事……)]
+	</p>
+	<p>
+		不需要任何进一步的鼓励，你把嘴贴向梅拉克西丝的胸部，给她的每个[meraxis.breasts+]一个大大的吻。
+		#IF(meraxis.getBreastRawSizeValue()>5)
+			她发出一声性感的呻吟，把她的庞大胸部向你推去，当你开始亲吻和吮吸她的大乳头时，她伸手抓住你的头顶。
+		#ELSE
+			她发出一声性感的呻吟，把她平坦的胸部向你推去，当你开始亲吻和吮吸她的大乳头时，她伸手抓住你的头顶。
+		#ENDIF
+		#IF(meraxis.isLactating())
+			当几滴牛奶从她的乳头里渗出，进入你的嘴里时，
+		#ELSE
+			当你继续吮吸她的乳头时，
+		#ENDIF
+		梅拉克西丝兴奋地呻吟着，[meraxis.speech(~哦！~就是这样！不要停下！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_PLAY_BREASTS_FUCK"><![CDATA[
+	<p>
+		你想玩弄梅拉克西丝[meraxis.breasts+]，你露出了你[pc.cock+]，告诉她你想让她给你乳交。她听到你这么说时脸红了，尴尬的[meraxis.race]喘息道，[meraxis.speech(哦，好的……我能做到……)]
+	</p>
+	<p>
+		#IF(pc.isTaur())
+			梅拉克西丝在你的[pc.legRace]身体下移动并跪下，
+		#ELSE
+			梅拉克西丝跪在你面前，
+		#ENDIF
+		#IF(meraxis.isBreastFuckablePaizuri())
+			梅拉克西丝移动自己，使她的乳房与你的阴茎大致处于同一水平面。梅拉克西丝把它们压在一起，形成一个相当大的乳沟，引导你[pc.cock+]进入乳沟。她发出一声淫乱的呻吟，然后开始上下移动，开始给你乳交，喘息道，[meraxis.speech(你的阴茎让我感觉很好……就是这样，变得更硬吧……)]
+		#ELSE
+			梅拉克西丝移动自己，使她平坦的胸部与你的阴茎大致处于同一水平。她尽最大努力将它们压在一起，但没有形成任何乳沟，只能简单地在裸露的胸部摩擦你[pc.cock+]。她发出一声饥渴的呻吟，然后开始上下移动，以便给你乳交，她喘息道，[meraxis.speech(你的阴茎让我感觉很好……就是这样，变得更硬吧……)]
+		#ENDIF
+	</p>
+	<p>
+		发出你自己的[pc.a_moan]，你专注于梅拉克西丝[meraxis.breasts+]摩擦你[pc.cock+]的快感……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_MASTURBATION_BREASTS"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，露出下流的笑容。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_BREASTS_KISSING"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，露出下流的笑容。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_BREAST_FUCK"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，露出下流的笑容。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Pussy: -->
+	
+	<htmlContent tag="WON_SEX_FLASH_PUSSY"><![CDATA[
+	<p>
+		你知道梅拉克西丝真的很喜欢你，你认为你可以提一些要求很高的事情。你指着她的腹股沟，告诉她把裙子抬起来，放下内裤，这样你就可以好好看看她的小穴了。尴尬的[meraxis.race]脸颊上燃烧着明亮的红色，她抓住你的[pc.hand]，把你带到附近的一棵树后面，揭示了她是多么的饥渴。在不需要任何鼓励的情况下，她按照你的指示褪下衣服，向你展示她的
+		#IF(meraxis.isPussyChanged())
+			小穴。在之前指导她转化小穴后，你可以看到Meraxis有[Meraxis.lipaSize]阴唇，一股黏糊糊的少女爱液几乎从她略显松弛的腔穴流出来。
+		#ELSE
+			[meraxis.pussyCapacity]，可爱的小穴。
+		#ENDIF
+	</p>
+	<p>
+		[meraxis.speech(这就是你想要的，对吧？)]她问道。在肯定的回答中，你低头看着她暴露在外的小穴，告诉她看到它会让你兴奋。当你这么说的时候，梅拉克西丝发出了一点呻吟，[meraxis.speech(我，我想我可以做的不仅仅是给你看……)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_FLASH_PUSSY_FINISHED"><![CDATA[
+	<p>
+		决定你不想对Meraxis做任何太猥亵的事，你只需花点时间盯着她[meraxis.pussy+]，然后告诉她你不想再进一步了。你打断了她失望的呻吟，对可爱的[meraxis.race]的小穴外观表示赞扬，并说只要能够欣赏它们就足够了。
+	</p>
+	<p>
+			[meraxis.speech(你，你为什么说这些尴尬的话？！)]梅拉克西丝松开你的手时喊道。脸颊泛红，她低头看着地面，拖着脚，忍不住笑了。在你还没来得及说什么的时候，她似乎突然意识到了自己在做什么，并摆出了一个英雄的姿势，说：[meraxis.speech(你，你不要这么容易骗我，我的宿敌！我对一切形式的心理攻击都免疫；你的努力都白费在我身上了！Mhahaha！现，现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_FLASH_PUSSY_PLAY"><![CDATA[
+	<p>
+		你想让梅拉克西丝表演自己，便让她玩弄她自己的小穴。尽管她脸红了，嘴里嘟囔着你有多淫荡，但她很快就照你说的做了。
+		#IF(meraxis.isPussyChanged())
+			她把手伸下来，慢慢地用手指滑过她的肥大阴唇，在她张开她的阴唇展示她的[meraxis.pussyCapacity]小穴之后，你看到她流下了大量的黏糊糊的爱液。当她自己玩弄的时候，这种自然的润滑液流到梅拉克西丝纤细的手指上，让她可以很容易地将其涂抹在阴蒂上。
+		#ELSE
+			她把手伸下来，慢慢地用手指在她的小阴唇上滑动，在她张开她的阴唇展示她的[meraxis.pussyCapacity]小穴之后，你看到她流下了少量的黏糊糊的爱液。当她自己玩弄的时候，这种自然的润滑油覆盖在梅拉克西丝纤细的手指上，让她可以把它涂抹在她的阴蒂上。
+		#ENDIF
+	</p>
+	<p>
+		在接下来的几分钟里，当你观看时，梅拉克西丝继续玩弄她[meraxis.pussy+]。她戏弄她[meraxis.clit+]，调皮地捏着它呻吟，[meraxis.speech(所以你喜欢这种东西~嗯！~也许你可以……)]
+	</p>
+	<p>
+		就在那一刻，好色的[meraxis.race]突然停止了对胸部的玩弄，跳了回去。她的脸颊涨得通红，她开始匆忙地把衣服穿回去，结结巴巴地说，[meraxis.speech(你，你几乎打败了我的心理防御！正如我的宿敌所期望的那样，但你今天不会胜利！现在听我说什么！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_INTERCRURAL"><![CDATA[
+	<p>
+		你想玩弄梅拉克西丝的[Meraxis.legs+]，你把你[pc.cock+]露出来，告诉她你想操她性感的大腿。她听到你这么说时脸红了，尴尬的[meraxis.race]喘息道，[meraxis.speech(哦，好的……如果你愿意，你可以这样做……)]
+	</p>
+	<p>
+		#IF(pc.isTaur())
+			你很高兴听到她愿意按照你的要求做，你告诉梅拉克西丝四肢着地，在她顺从地这样做之后，你趴在她身上，用你[pc.cock+]拍打她赤裸的小穴。
+		#ELSE
+			很高兴听到她愿意按照你的要求去做，你告诉梅拉克西丝把她的腿挤在一起，在她顺从地这样做之后，你走向前，用你[pc.cock+]拍打她赤裸的小穴。
+		#ENDIF
+		梅拉克西丝发出一声惊讶的尖叫，[meraxis.race]咬着嘴唇问道，[meraxis.speech(我这样做对吗？)]
+	</p>
+	<p>
+		如果回答是肯定的，你向前推进，在梅拉克西丝的[Meraxis.legs+]之间推进你[pc.cock+]。她的大腿在你抽动的阴茎上感觉多么柔软光滑，你取笑梅拉克西丝说你随时都可能去操她的[meraaxs.pussy+]……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_FUCK"><![CDATA[
+	<p>
+		你想直接进入正戏，你把你的阴茎露出来，然后告诉梅拉克西丝你想操她[Meraxis.pussy+]。当她听到你这么说时，她迅速脸红了，尴尬的[meraxis.race]开始喘息，
+		#IF(meraxis.isVaginaVirgin())
+			[meraxis.speech(哦，好的……但我……好吧，我还是处女，所以放松点，好吗？)]
+		#ELSE
+			[meraxis.speech(哦，好的……我真的希望你会想操我的小穴……)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(meraxis.isVaginaVirgin())
+			你告诉她你会让她的第一次很难忘的，
+		#ELSE
+			你很高兴听到她愿意按照你的要求去做，
+		#ENDIF
+		#IF(pc.isTaur())
+			你告诉梅拉克西丝四肢着地，在她顺从地这样做之后，你趴在她身上，用你[pc.cock+]拍打她赤裸的小穴。
+		#ELSE
+			你告诉梅拉克西丝四肢着地，在她顺从地这样做之后，你弯下身，用你[pc.cock+]拍打她赤裸的小穴。
+		#ENDIF
+		你越过肩膀看她的背后，[meraxis.race]提起了她的臀部和内裤，
+		#IF(meraxis.isVaginaVirgin())
+			[meraxis.speech(那就来吧……夺走我的处女！)]
+		#ELSE
+			[meraxis.speech(那就来吧……把它给我！)]
+		#ENDIF
+	</p>
+	<p>
+		你非常乐意按照她的要求做，你把你[pc.cock+]的[pc.CockHead+]在梅拉克西丝[meraxis.labia+]来回磨蹭，然后向前推，把你的阴茎插入她[meraxis.pussy+]中，[meraxis.speech(哦，操~啊！~对！操我！操我！[pc.name]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_SCISSOR"><![CDATA[
+	<p>
+		你想直接说出来，先暴露你[pc.pussy+]，然后告诉梅拉克西丝你想和她磨豆腐。她听到你这么说时脸红了，尴尬的[meraxis.race]喘息，[meraxis.speech(好，好的……听起来很有趣……)]
+	</p>
+	<p>
+		你很高兴听到她愿意按照你的要求去做，你告诉梅拉克西丝躺下，把她[meraxis.pussy+]展示给你。在她顺从地这样做之后，你向前，然后把你[pc.pussy+]压在她的小穴上。梅拉克西丝发出一声惊讶的尖叫，[meraxis.race]咬着嘴唇问道，[meraxis.speech(我这样做对吗？)]
+	</p>
+	<p>
+		你抓住梅拉克西丝的腿，然后向前推，开始在梅拉克西丝[meraxis.pussy+]来回磨蹭你[pc.clit+]。注意到她[meraxis.labia+]对你[pc.pussy+]有多湿，你开始热情地和她磨豆腐……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_INTERCRURAL"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，露出下流的笑容。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_FUCK"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，低头看着溅满她的阴部和大腿根的凌乱的爱液。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WON_SEX_POST_SCISSOR"><![CDATA[
+	<p>
+		梅拉克西丝喘着粗气，后退一步，低头看着淋湿她小穴和大腿根的爱液。当你开始把自己的东西整理好时，她拿出纸巾开始清理自己。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="POST_SEX_END"><![CDATA[
+	<p>
+		梅拉克西丝仍然红着脸，双手放在臀部，宣布，[meraxis.speech(虽然你可能赢了那场决斗，但我知道我是最强大的！下次我们再战的时候，我一定要消灭你！Mhahaha！)] 
+	</p>
+	<p>
+		梅拉克西丝在原地旋转，摆出一个戏剧性的姿势，大声喊道，[meraxis.speech(我现在就回旅店去！我们之间没有因为这场决斗而产生任何不愉快的感觉，对吧？好的，现在，见证我的力量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

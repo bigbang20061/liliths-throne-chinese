@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#sex.getCurrentSexPreference(npc, pc).getTargetedSexArea()==ORIFICE_ANUS && sex.getOngoingSexAreas(npc, PENETRATION_PENIS, pc).contains(ORIFICE_VAGINA)]
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>ZERO_NONE</arousalPerformer>
+	<arousalTarget>ZERO_NONE</arousalTarget>
+	<associatedCorruption>ZERO_PURE</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+		[##sex.stopOngoingAction(npc, PENETRATION_PENIS, pc, ORIFICE_VAGINA)]
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+		#IF(!pc.isAbleToAccessCoverableArea(CA_ANUS, false))
+			[##sex.manageClothingToAccessCoverableArea(npc, pc, CA_ANUS)]
+		#ENDIF
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[停止操干]]></title>
+	<tooltip><![CDATA[将你的阴茎从[pc.namePos][pc.pussy+]中抽出。]]></tooltip>
+	<descriptions>
+		<description>
+			<text><![CDATA[
+				[npc.name]玩够了你[pc.pussyCapacity]的小穴，[npc.she]将[npc.cock+]从你被操得很爽的小穴中抽出，然后用[npc.fingers+]滑过你[pc.ass+]，挑逗道，[npc.speechNoEffects(这个洞我还没操过呢……)]
+				
+				#IF(!pc.isAbleToAccessCoverableArea(CA_ANUS, false) && pc.getClothingInSlot(IS_ANUS)!=null)
+					</p>
+					<p>
+						#IF(pc.getClothingInSlot(IS_ANUS).getClothingType()==CLOTHING_norin_anal_beads_anal_beads)
+							[npc.name]抓住你肛珠链的末端，粗暴地将第一颗珠子从你[pc.asshole+]中拔出。你感受到珠子从你菊穴中滑出，不禁发出一声[pc.a_moan+]，随着[npc.she]拔出另外五颗珠子，你像个荡妇一样不断[pc.moan]着。现在你的菊穴已经准备好接受[npc.namePos][npc.cock+]了，你淫荡地尖叫着，感受着[npc.she]的拇指在你诱人的腔穴上按动……
+						#ELSE
+							[npc.name]抓住你的肛塞，粗暴地将其从你[pc.asshole+]中拔出，然后饥渴地用[npc.her]的拇指在你诱人的腔穴上按动……
+						#ENDIF
+				#ENDIF
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

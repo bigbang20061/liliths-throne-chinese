@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Place type id: innoxia_fields_elis_shops_convenience -->
+	<scene id="exterior">
+		<content folderPath="txt/places/fields/elis/shops/convenience">CONVENIENCE</content>
+		<secondsPassed><![CDATA[30]]></secondsPassed>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[进入]]></responseTitle>
+				<responseTooltip><![CDATA[进入便利店。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_shops_convenience_enter]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="enter">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/convenience', 'ENTER'))]
+			[#ceridwen.setPlayerKnowsName(true)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- First meeting: -->
+				<response>
+					<availabilityConditional><![CDATA[[#!flags.hasFlag(FLAG_innoxia_elis_convenience_visited)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[介绍]]></responseTitle>
+					<responseTooltip><![CDATA[
+						告诉凯丽德温你是谁。
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[innoxia_places_fields_elis_shops_convenience_introduction]]></nextDialogue>
+				</response>
+			<!-- Repeat meeting: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_elis_convenience_visited)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[1]]></index>
+					<responseTitle><![CDATA[交易]]></responseTitle>
+					<responseTooltip><![CDATA[看看凯丽德温的商店有什么出售的……]]></responseTooltip>
+					<nextDialogue/>
+					<tradingVariables enabled="true">
+						<tradePartner><![CDATA[ceridwen]]></tradePartner>
+					</tradingVariables>
+				</response>
+				<!-- Talk: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_elis_convenience_visited)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[2]]></index>
+					<responseTitle><![CDATA[随时粮仓]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_ceridwen_talk_name))
+							你今天已经问过凯丽德温便利店名字背后的故事了……
+						#ELSE
+							问问凯丽德温便利店名字“随时粮仓”背后的故事。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_ceridwen_talk_name))
+							null
+						#ELSE
+							innoxia_places_fields_elis_shops_convenience_talk
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/convenience', 'TALK_NAME'))]
+						[#flags.setFlag(FLAG_innoxia_ceridwen_talk_name, true)]
+						#IF(ceridwen.getAffection(pc)<40)
+							[#game.appendToTextStartStringBuilder(ceridwen.incrementAffection(pc, 5))]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_elis_convenience_visited)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[3]]></index>
+					<responseTitle><![CDATA[供应商]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_ceridwen_talk_sources))
+							你今天已经问过凯丽德温她是如何采购所有物品的了……
+						#ELSE
+							问问凯丽德温卖的商品的来源。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_ceridwen_talk_sources))
+							null
+						#ELSE
+							innoxia_places_fields_elis_shops_convenience_talk
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/convenience', 'TALK_SOURCES'))]
+						[#flags.setFlag(FLAG_innoxia_ceridwen_talk_sources, true)]
+						#IF(ceridwen.getAffection(pc)<40)
+							[#game.appendToTextStartStringBuilder(ceridwen.incrementAffection(pc, 5))]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_elis_convenience_visited)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[4]]></index>
+					<responseTitle><![CDATA[鼷鼠化形]]></responseTitle>
+					<responseTooltip><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_ceridwen_talk_mice))
+							你今天已经问过凯丽德温为什么她只雇鼷鼠化形了……
+						#ELSE
+							问问凯丽德温为什么只雇佣鼷鼠化形。
+						#ENDIF
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[
+						#IF(flags.hasFlag(FLAG_innoxia_ceridwen_talk_mice))
+							null
+						#ELSE
+							innoxia_places_fields_elis_shops_convenience_talk
+						#ENDIF
+					]]></nextDialogue>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/convenience', 'TALK_MICE'))]
+						[#flags.setFlag(FLAG_innoxia_ceridwen_talk_mice, true)]
+						[#flags.setFlag(FLAG_innoxia_ceridwen_side_quest_available, true)]
+						#IF(ceridwen.getAffection(pc)<40)
+							[#game.appendToTextStartStringBuilder(ceridwen.incrementAffection(pc, 5))]
+						#ENDIF
+					]]></effects>
+				</response>
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_elis_convenience_visited) && flags.hasFlag(FLAG_innoxia_ceridwen_side_quest_available)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[5]]></index>
+					<responseTitle><![CDATA[提供帮助]]></responseTitle>
+					<responseTooltip><![CDATA[
+						告诉凯丽德温你想帮她，询问她是否有什么你能做的事能她回家休息。
+						<br/>[style.italicsMinorBad(不久后会添加！)]
+					]]></responseTooltip>
+					<nextDialogue><![CDATA[null]]></nextDialogue>
+					<effects/>
+				</response>
+				<!-- Leave: -->
+				<response>
+					<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_elis_convenience_visited)]]]></availabilityConditional>
+					<responseTabIndex><![CDATA[0]]></responseTabIndex>
+					<index><![CDATA[0]]></index>
+					<responseTitle><![CDATA[离开]]></responseTitle>
+					<responseTooltip><![CDATA[和凯丽德温告别，离开便利店。]]></responseTooltip>
+					<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_shops_street"/>
+					<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+					<effects><![CDATA[
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/shops/convenience', 'LEAVE'))]
+						[#pc.setNearestLocation(WORLD_TYPE_innoxia_fields_elis_shops, PLACE_TYPE_innoxia_fields_elis_shops_street)]
+					]]></effects>
+				</response>
+		</responses>
+	</scene>
+	
+	<scene id="introduction">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_elis_convenience_visited, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/shops/convenience">INTRODUCTION</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_shops_convenience_enter"/>
+	</scene>
+	
+	<scene id="talk">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_shops_convenience_enter"/>
+	</scene>
+	
+</dialogueNodes>

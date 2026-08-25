@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1000</value> 
+		
+		<determiner><![CDATA[一顶]]></determiner>
+		
+		<name><![CDATA[宽边魔女帽]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[宽边魔女帽]]></namePlural> 
+		
+		<description><![CDATA[一个魔女帽，顶部尖尖的，帽檐特别宽。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>FEMININE</femininity> 
+		
+		<slot>HEAD</slot>
+		
+		<rarity>RARE</rarity> 
+		
+		<clothingSet>WITCH</clothingSet> 
+		
+		<imageName>witch_hat_wide.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects> 
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_SPELLS" timer="0"/>
+		</effects>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				
+				<blockedBodyParts/>
+				
+				<clothingAccessBlocked/>
+				
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="BLACK_OR_WHITE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_GOLD"/>
+		<secondaryColoursDye values="ALL_METAL"/>
+		<tertiaryColours values="BLACK_OR_WHITE"/>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags/>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]戴上了[npc.her]的魔女帽。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将魔女帽戴在[npc2.namePos]的头上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将魔女帽戴到[npc2.namePos]的头上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的魔女帽脱下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的魔女帽脱下。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的魔女帽并粗暴地扯下来。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

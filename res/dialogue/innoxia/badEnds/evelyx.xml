@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+	
+	<!--
+		Start at locked door
+		Taken to slave barn
+		Work for several hours alongside other cows who have accepted the promotion
+			They wonder between themselves who your owner will be
+		Evelyx returns, takes you to auction room
+		Lunette centauresses arrive
+		Bid on player, winner strongarms Evelyx into allowing her to transform you
+		Winner fucks player
+		Locked into slave barn
+		Ending:
+			Centauress comes to fuck you now and again
+			Choose:
+				Vaginal/anal/oral slut
+			You make her lots of money
+			Choose:
+				Exotic flavours/huge breasts/multi breasts
+			After many months, it becomes clear that nobody's coming to save you, and after asking one too many questions about the outside world, your owner decides to silence you
+			Choose:
+				Bondage/Bimbo+/Feral cow
+			End
+	-->
+	
+	<scene id="start">
+		<title><![CDATA[[style.boldBadEnd(坏结局：艾弗利克斯的奴隶)]]]></title>
+		<content folderPath="txt/badEnds/evelyx">START</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[新家]]></responseTitle>
+				<responseTooltip><![CDATA[跟着艾弗利克斯的妹妹，她会带你进入奴隶谷仓，那里将成为你的新家。]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_slave_barn</nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[
+					#IF(pc.isPregnant())
+						180
+					#ELSE
+						10
+					#ENDIF
+				]]></secondsPassed>
+				<effects><![CDATA[
+					[#pc.setRandomLocation(WORLD_TYPE_innoxia_fields_dairyFarm, PLACE_TYPE_innoxia_fields_dairyFarm_barn4, true)]
+					[#evelyx.returnToHome()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="slave_barn">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'SLAVE_BARN'))]
+			#IF(pc.isPregnant())
+				[#pc.endPregnancy(true)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[产奶]]></responseTitle>
+				<responseTooltip><![CDATA[你被关起来，挤奶机吸吮着你的乳头……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_slave_barn_end</nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.setLocation(pc)]
+					[#pc.applyWash(true, true, null, 0)]
+					#IF(pc.isPregnant())
+						[#pc.endPregnancy(true)]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="slave_barn_end">
+		<content folderPath="txt/badEnds/evelyx">SLAVE_BARN_END</content>
+		<secondsPassed minutes="true"><![CDATA[480]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[服从你的主人，跟着她去“拍卖会”……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_auction</nextDialogue>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_dairyFarm_auction)]
+					[#evelyx.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="auction">
+		<content folderPath="txt/badEnds/evelyx">AUCTION</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[竞拍]]></responseTitle>
+				<responseTooltip><![CDATA[恶魔半人马们开始争相竞价，都想拍下你……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_auction_end</nextDialogue>
+				<effects><![CDATA[
+					[#game.addNPC('LunetteMelee', 'owner')]
+					[#evelyx.badEndInitPrincess(owner)]
+					[#owner.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="auction_end">
+		<content folderPath="txt/badEnds/evelyx">AUCTION_END</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被骑]]></responseTitle>
+				<responseTooltip><![CDATA[你的新主人为了庆祝中标，骑在你身上，当着她姐妹的面粗暴地蹂躏你的阴部……]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_dairyFarm_centauress_mounted]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>owner</id>
+							<slot><![CDATA[ALL_FOURS_BEHIND]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_badEnds_evelyx_mounted_end]]></postSexDialogue>
+					<sexStartContent folderPath="txt/badEnds/evelyx">MOUNTED</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition/>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[owner]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="mounted_end">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[公主对你的小穴非常满意，尽管她还没好……]]></tooltip>
+		<content folderPath="txt/badEnds/evelyx">MOUNTED_END</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[回家]]></responseTitle>
+				<responseTooltip><![CDATA[艾弗利克斯带领你和公主回到你们的新家……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_back_home</nextDialogue>
+				<effects><![CDATA[
+					[#pc.returnToHome()]
+					[#evelyx.setLocation(pc)]
+					[#owner.setLocation(pc)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'BACK_HOME'))]
+					[#evelyx.applyCowTattoo(pc, true)]
+					[#pc.setName('奶牛 #'+~~flags.getSavedLong('evelyx_player_number'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="back_home">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[新生活……]]></responseTitle>
+				<responseTooltip><![CDATA[公主再次骑上了你，你知道这就是你的新生活……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_1</nextDialogue>
+				<effects><![CDATA[
+					[#evelyx.returnToHome()]
+					[#flags.setFlag(FLAG_knowsDate, false)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="new_life_1">
+		<title><![CDATA[[style.boldBadEnd(坏结局：艾弗利克斯的奴隶)]]]></title>
+		<content folderPath="txt/badEnds/evelyx">NEW_LIFE_1</content>
+		<secondsPassed minutes="true"><![CDATA[
+			[#~~(game.getMinutesUntilTimeInMinutes(780))]
+		]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[鸡巴套]]></responseTitle>
+				<responseTooltip><![CDATA[告诉公主，你很想让你的阴部变成她完美的鸡巴套……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_1_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_1_PUSSY'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_pussy, true)]
+					[#evelyx.applyBadEndPussy()]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[口交爱宠]]></responseTitle>
+				<responseTooltip><![CDATA[告诉公主，你很想改造一下嘴巴，让她每天都能享受到颜面骑乘的乐趣……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_1_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_1_MOUTH'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_oral, true)]
+					[#evelyx.applyBadEndMouth()]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isAnalContentEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[屁穴荡妇]]></responseTitle>
+				<responseTooltip><![CDATA[告诉公主，你想让她改造你的屁眼，成为她的飞机杯……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_1_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_1_ANUS'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_anal, true)]
+					[#evelyx.applyBadEndAnus()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="new_life_1_tf">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[挨操……]]></responseTitle>
+				<responseTooltip><![CDATA[在接下来的几个月里，公主每天都会造访，不知疲倦地操你刚被改造过的小嘴……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_2</nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_knowsDate, false)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="new_life_2">
+		<title><![CDATA[[style.boldBadEnd(坏结局：艾弗利克斯的奴隶)]]]></title>
+		<content folderPath="txt/badEnds/evelyx">NEW_LIFE_2</content>
+		<secondsPassed minutes="true"><![CDATA[
+			[#~~(game.getMinutesUntilTimeInMinutes(420))]
+		]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[风味]]></responseTitle>
+				<responseTooltip><![CDATA[公主打算试试你乳汁和爱液的味道……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_2_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_2_FLAVOUR'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_flavours, true)]
+					[#evelyx.applyBadEndFlavours()]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[豪乳]]></responseTitle>
+				<responseTooltip><![CDATA[公主打算让你的乳房#IF(pc.hasBreastsCrotch())和腹乳#ENDIF 变成终极产奶器……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_2_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_2_HYPER'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_hyper, true)]
+					[#evelyx.applyBadEndHyper()]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[多乳]]></responseTitle>
+				<responseTooltip><![CDATA[公主决定在你躯干承受极限下加上尽可能多的乳房……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_2_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_2_MULTI'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_multi, true)]
+					[#evelyx.applyBadEndMulti()]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="new_life_2_tf">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[奶水传说……]]></responseTitle>
+				<responseTooltip><![CDATA[公主对你的身体进行了改良，你的乳汁最终让她变得非常富有……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_3</nextDialogue>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="new_life_3">
+		<title><![CDATA[[style.boldBadEnd(坏结局：艾弗利克斯的奴隶)]]]></title>
+		<content folderPath="txt/badEnds/evelyx">NEW_LIFE_3</content>
+		<secondsPassed minutes="true"><![CDATA[
+			[#~~(game.getMinutesUntilTimeInMinutes(1140))]
+		]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[拘束]]></responseTitle>
+				<responseTooltip><![CDATA[公主决定把你锁在乳胶束缚装置中让你闭嘴……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_3_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_3_BONDAGE'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_bondage, true)]
+					[#evelyx.applyBadEndBondage()]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[骚脑·威力加强版]]></responseTitle>
+				<responseTooltip><![CDATA[公主决定用实验性药水“极限芭比”让你闭嘴……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_3_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_3_BIMBO'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_bimbo, true)]
+					[#evelyx.applyBadEndBimbo()]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isFeralContentEnabled() && pc.isAbleToHaveRaceTransformed()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[野牛]]></responseTitle>
+				<responseTooltip><![CDATA[公主决定让你闭嘴并把你变成一头野牛……]]></responseTooltip>
+				<nextDialogue>innoxia_badEnds_evelyx_new_life_3_tf</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/badEnds/evelyx', 'NEW_LIFE_3_FERAL'))]
+					[#flags.setFlag(FLAG_innoxia_evelyx_bad_end_feral, true)]
+					[#evelyx.applyBadEndFeral(owner)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="new_life_3_tf">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[60]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[结局……]]></responseTitle>
+				<responseTooltip><![CDATA[[style.italicsBadEnd(你的旅程就此结束，预言之线也被斩断。是恢复已保存的游戏来重塑命运的编织，还是继续留在你所创造的注定失败的世界中？)]]]></responseTooltip>
+				<nextDialogue>null</nextDialogue>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

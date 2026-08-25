@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>180</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[运动文胸]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[运动文胸]]></namePlural>
+		<description><![CDATA[一条弹性极佳的运动内衣，设计用于在运动中牢牢支撑穿着者的胸部。]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>CHEST</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>sports_bra.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>BREASTS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_BREASTS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="LINGERIE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将运动文胸拉下[npc.her]的头，并使得背心很好的包裹了[npc.her]的胸。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将运动文胸从[npc2.namePos]的头上套下来，并使得背心能够很好的包裹住[npc2.her]的胸部。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将运动文胸套在[npc2.namePos]的头上并使得背心包在[npc2.her]的胸部。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将运动文胸拉到[npc.her]的头上并脱了下来。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的运动文胸拉过[npc2.her]的头顶并把它脱了下来。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的运动文胸拉到头顶并将其拽了下来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

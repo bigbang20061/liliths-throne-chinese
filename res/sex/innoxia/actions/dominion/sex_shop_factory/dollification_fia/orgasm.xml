@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+
+	<buttonPriority>0</buttonPriority>
+	<actionConditional><![CDATA[
+		[#!npc.isPlayer()]
+	]]></actionConditional>
+	<type>ORGASM</type>
+	<pace/>
+	<endsSex><![CDATA[
+		true
+	]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>ZERO_PURE</associatedCorruption>	
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>	
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>	
+	<applyEffects><![CDATA[
+		[##saellatrix.completeDollBodySiliconeDollification(fia)]
+		
+		[##sex.incrementNumberOfOrgasms(pc, 1)]
+		[##pc.setArousal(0)]
+		[##fia.ingestFluid(pc, pc.getCum(), ORIFICE_VAGINA, pc.getPenisRawOrgasmCumQuantity())]
+		
+		[##fia.setName('Doll')]
+		[##fia.setSurname(fia.getTattooInSlot(IS_EYES).getWriting().getText())]
+	]]></applyEffects>	
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>	
+	<areasCummedIn/>
+	<areasCummedOn/>
+	
+	<!-- Information displayed to the player: -->
+	
+	<title><![CDATA[
+		高潮
+	]]></title>
+	
+	<tooltip><![CDATA[
+		你无法阻止自己高潮！
+	]]></tooltip>
+	
+	<descriptions>
+		<description>
+			<descriptionConditional><![CDATA[
+				true
+			]]></descriptionConditional>
+			<text><![CDATA[
+				安吉莉克丝注意到你身下的玩偶即将高潮，她蹦跳向前，拿出贴在胸前的注射器。她咯咯笑着，用甜腻的声音问道，[angelixx.speech(准备好变成玩偶了吗？)]
+				
+				<br/><br/>
+				
+				你巨大的马屌继续深深地撞进玩偶的硅胶小穴，玩偶再也无法控制她的快感。尽管她此前曾激烈抗议，但如今她还是屈服于新身体的欲望，饥渴地尖叫着，[fia.speechNoEffects(是的！~啊！~操！~哦！~给我！)]
+				
+				<br/><br/>
+				
+				玩偶顺从的话语引起了她的高潮，你感觉到玩偶的小穴紧紧地包裹着你粗壮的阴茎，片刻之后，她痉挛的小穴在你的阴茎周围喷射出一股清澈的液体。玩偶仰起头，在桌子上扭动着，发出一声狂喜的尖叫，而你继续无情地操干她的小穴，让她达到更加强烈的高潮。
+				
+				<br/><br/>
+				
+				[angelixx.speech(就是这样，给我高潮吧，你这个愚蠢的玩偶！)]安吉莉克丝得意洋洋地说道，然后按下注射器，将漆黑的精华强行注入玩偶体内。随着腐化的精华被强行注入玩偶的体内，玩偶的尖叫声越来越强烈，她本能地挺起胸膛，而安吉莉克丝粗暴地捏着她又大又黑的乳头，残忍地挑逗道，[angelixx.speech(和你的自由意志说再见吧，你这个愚蠢的荡妇！是时候开始你作为玩偶的新生活了！)]
+				
+				<br/><br/>
+				
+				随着腐化精华到达玩偶的核心，她硅胶眼睛里的生命之光暗淡了下来，她的尖叫声失去了激情，听起来更像机器人。你的主人走到你身后，狠狠地拍了拍你的屁股，命令道，[angelixx.speech(让这个新玩偶体会一下她的初次内射！)]
+				
+				<br/><br/>
+				
+				你早已处于高潮边缘，而主人的命令将你推向了高潮，你把巨大的马屌深深地插进了玩偶的阴道。片刻之后，你把大量[pc.cum+]射进了她饥渴的小穴。随着她色情的尖叫声和你自己淫荡的呻吟声，你们两个一起达到了高潮，而你的主人则在一旁欣赏着你们为她表演的节目，咯咯地笑着。
+				
+				<br/><br/>
+				
+				[angelixx.speech(差不多了，退后，给我留点空，)]安吉莉克丝命令道，你把粘稠的精液都射给了玩偶后，立即服从主人的命令，把软下来的马屌从玩偶体内拔了出来，结束了性爱……
+			]]></text>
+		</description>
+	</descriptions>
+	
+</sexAction>

@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<scene id="meeting">
+		<preParsingEffects><![CDATA[
+			[#yui.setLocation(pc)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/yui_alleyway">MEETING</content>
+		<secondsPassed minutes="true"><![CDATA[10]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[顺从]]></responseTitle>
+				<responseTooltip><![CDATA[
+					屈服于唯，让她把你绑起来，这样你就可以整晚被陌生人玩弄……
+					<br/>[style.italicsSex(这将涉及与众多陌生人进行的服从、受虐式性行为！)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_start]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[拒绝]]></responseTitle>
+				<responseTooltip><![CDATA[告诉唯，你对她的提议不感兴趣。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_refused]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="refused">
+		<preParsingEffects><![CDATA[
+			[#yui.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+			[#flags.setFlag(FLAG_innoxia_yui_public_toy_unavailable_today, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/yui_alleyway">MEETING_REFUSE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[你在思索接下来该去哪里……]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="start">
+		<preParsingEffects><![CDATA[
+			[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_town_alley)]
+			[#yui.setLocation(pc)]
+			[#yui.equipGearAlleyway(pc, 1)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/yui_alleyway">START</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被捆绑]]></responseTitle>
+				<responseTooltip><![CDATA[唯把你绑在了小巷里……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_tied_up]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="tied_up">
+		<preParsingEffects><![CDATA[
+			[#yui.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+			[#game.appendToTextEndStringBuilder(itemGen.generateItem('innoxia_pills_lubrication').applyEffect(yui, pc))]
+			[#game.appendToTextEndStringBuilder(itemGen.generateItem('FETISH_UNREFINED').applyEffect(yui, pc))]
+			[#game.appendToTextEndStringBuilder(itemGen.generateItem('FETISH_UNREFINED').applyEffect(yui, pc))]
+			[#yui.equipGearAlleyway(pc, 2)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/yui_alleyway">TIED_UP</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[等待]]></responseTitle>
+				<responseTooltip><![CDATA[你完全无法动弹，也无法交流，所能做的只是等待……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_core]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="core">
+		<preParsingEffects><![CDATA[
+			[#yui.spawnAlleywayClient(false)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/yui_alleyway">CORE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Vaginal: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!client.hasFetish(FETISH_ORAL_GIVING) && client.hasFetish(FETISH_VAGINAL_GIVING)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[[client.Name]要操你的小穴……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#client.setExtraBlockedParts(null)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_yui_alleyway_vaginal]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>client</id>
+							<slot><![CDATA[LYING_DOWN_MATING_PRESS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/yui_alleyway">SEX_START_VAGINAL</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[client]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#client.hasFetish(FETISH_FOOT_RECEIVING)]]]></condition>
+							<id><![CDATA[FootMouth_FOOT_ORAL_GIVING_START]]></id>
+							<performer><![CDATA[client]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Anal: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!client.hasFetish(FETISH_ORAL_GIVING) && client.hasFetish(FETISH_ANAL_GIVING)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[肛交]]></responseTitle>
+				<responseTooltip><![CDATA[[client.Name]准备操你的屁眼……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#client.setExtraBlockedParts(null)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_yui_alleyway_anal]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>client</id>
+							<slot><![CDATA[LYING_DOWN_MATING_PRESS]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/yui_alleyway">SEX_START_ANAL</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[client]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#client.hasFetish(FETISH_FOOT_RECEIVING)]]]></condition>
+							<id><![CDATA[FootMouth_FOOT_ORAL_GIVING_START]]></id>
+							<performer><![CDATA[client]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Cunnilingus: -->
+			<response>
+				<availabilityConditional><![CDATA[[#client.hasFetish(FETISH_ORAL_GIVING) && !client.hasFetish(FETISH_ANAL_GIVING)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被舔小穴]]></responseTitle>
+				<responseTooltip><![CDATA[[client.Name]被迫舔干净你的小穴……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#client.setExtraBlockedParts(null)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_yui_alleyway_cunnilingus]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>client</id>
+							<slot><![CDATA[LYING_DOWN_MISSIONARY_ORAL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/yui_alleyway">SEX_START_CUNNILINGUS</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[client]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Anilingus: -->
+			<response>
+				<availabilityConditional><![CDATA[[#client.hasFetish(FETISH_ORAL_GIVING) && client.hasFetish(FETISH_ANAL_GIVING)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被舔后穴]]></responseTitle>
+				<responseTooltip><![CDATA[[client.Name]被迫给你舔肛……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#client.setExtraBlockedParts(null)]
+				]]></effects>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_elis_yui_alleyway_anilingus]]></id>
+					<startingPosition><![CDATA[LYING_DOWN]]></startingPosition>
+					<dominants>
+						<character>
+							<id>client</id>
+							<slot><![CDATA[LYING_DOWN_MISSIONARY_ORAL]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[LYING_DOWN_LYING_DOWN]]></slot>
+						</character>
+					</submissives>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_post_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/elis/yui_alleyway">SEX_START_ANILINGUS</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueAnus_ANILINGUS_START]]></id>
+							<performer><![CDATA[client]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="core_repeat">
+		<preParsingEffects><![CDATA[
+			[#yui.spawnAlleywayClient(true)]
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/yui_alleyway', 'CORE_REPEAT'))]
+			[#flags.setFlag(FLAG_innoxia_yui_alleyway_gang_present, true)]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_elis_yui_alleyway_core"/>
+	</scene>
+	
+	<scene id="post_sex">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/yui_alleyway', 'POST_SEX'))]
+			[#game.banishNPC(client)]
+		]]></preParsingEffects>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[[client.name]已经爽够了……]]></tooltip>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Night ended: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(5, 12)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[帮派离开]]></responseTitle>
+				<responseTooltip><![CDATA[帮派成员已经享受够了，头也不回地离开了……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_gang_leaves]]></nextDialogue>
+			</response>
+			<!-- More sex scenes -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isHourBetween(12, 5)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[恢复]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你只有片刻喘息时间，很快又会有陌生人找上来……
+					#IF(flags.hasFlag(FLAG_innoxia_yui_alleyway_gang_present))
+						<br/>[style.italicsSex(继续体验被帮派成员轮番侵犯的性爱场景。)]
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_core_repeat]]></nextDialogue>
+			</response>
+			<!-- Skip scenes -->
+			<response>
+				<availabilityConditional><![CDATA[[#flags.hasFlag(FLAG_innoxia_yui_alleyway_gang_present) && flags.hasFlag(FLAG_innoxia_yui_alleyway_gang_victim_cleaned) && game.isHourBetween(12, 5)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[帮派的鸡巴套]]></responseTitle>
+				<responseTooltip><![CDATA[
+					整晚你都在被帮派成员们轮番玩弄……
+					<br/>[style.italicsMinorBad(这将跳过当晚剩余时间，直到唯来释放你。)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_night_of_sex]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="night_of_sex">
+		<preParsingEffects><![CDATA[
+			#IF(game.isHourBetween(12, 5))
+				[#game.endTurn(~~game.getMinutesUntilTimeInMinutes(5 * 60) * 60)]
+			#ENDIF
+			[#yui.applyNightOfSex(pc, 1)]
+			[#flags.setFlag(FLAG_innoxia_yui_alleyway_gang_present, false)]
+			[#yui.setLocation(pc)]
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/yui_alleyway', 'NIGHT_OF_SEX'))]
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/yui_alleyway', 'NIGHT_OF_SEX_END'))]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被释放]]></responseTitle>
+				<responseTooltip><![CDATA[唯回来将你释放了……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="gang_leaves">
+		<preParsingEffects><![CDATA[
+			[#flags.setFlag(FLAG_innoxia_yui_alleyway_gang_present, false)]
+			[#yui.setLocation(pc)]
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/yui_alleyway', 'GANG_LEAVES'))]
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/yui_alleyway', 'NIGHT_OF_SEX_END'))]
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[被释放]]></responseTitle>
+				<responseTooltip><![CDATA[唯回来将你释放了……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_elis_yui_alleyway_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="end">
+		<preParsingEffects><![CDATA[
+			[#yui.restoreInventory(pc)]
+			[#yui.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_HOLDING_CELL)]
+			[#flags.setFlag(FLAG_innoxia_yui_public_toy_completed, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/elis/yui_alleyway">END</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[穿好衣服，继续旅程……]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/elis/yui_alleyway', 'DRESSED'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

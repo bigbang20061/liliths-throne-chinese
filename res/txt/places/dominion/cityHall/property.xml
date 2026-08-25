@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="CITY_HALL_PROPERTY_ENTRANCE"><![CDATA[
+	<p>
+		虽然你面前的门上挂着<i>“财产和商业局；向公众开放”</i>的招牌，但有人在下面贴了一张纸，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		<i>
+			产权转让已暂停，直至另行通知。恢复服务的时间暂时未知。<br/>
+			造成您的不便，我们深表歉意。
+		</i>
+	</p>
+	<p>
+		当你意识到暂时还无法在御城区购买房产时，你叹了一口气，转身决定前往别处……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+</dialogue>

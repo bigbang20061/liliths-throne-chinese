@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>450</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[女仆长袜]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[女仆长袜]]></namePlural>
+		<description><![CDATA[一双袜口带有小蝴蝶结的过膝棉袜。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>SOCK</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_maid</clothingSet>
+		<imageName>stockings.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>CALVES</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="MAID"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的脚塞进女仆长袜中，然后将它们拉到大腿根部。
+]]></self>
+    <other><![CDATA[
+[npc.Name]給[npc2.namePos]的[npc2.feet]套上女仆长袜，然后将它们拉到[npc2.her]的大腿根部。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进女仆长袜中，然后用力将它们拉到[npc2.her]的大腿根部。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]脱下了[npc.her]的女仆长袜。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的女仆长袜脱下。
+]]></other>
+    <otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的女仆长袜并粗暴地扯下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

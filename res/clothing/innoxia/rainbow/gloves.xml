@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value> 
+		<determiner><![CDATA[一双]]></determiner>
+		<name appendColourName="false"><![CDATA[彩虹手套]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[彩虹手套]]></namePlural> 
+		<description><![CDATA[一双明亮的彩虹色无指手套，长度延伸至佩戴者的前臂中部。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>HAND</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>RAINBOW</clothingSet>
+		<imageName>gloves.svg</imageName> 
+		<imageEquippedName/> 
+		
+		<effects> 
+            <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_MAJOR_ATTRIBUTE" secondaryModifier="STRENGTH" timer="0"/>
+		</effects>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>FINGERS</clothingAccess>
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<customColours>
+			<customColour c0="#ee3b2f" c1="#ee3b3a" c2="#ee3b3b" c3="#ee3b3c" c4="#ee3b3d">
+				<defaultColours>
+					<colour>CLOTHING_RED</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#f38235" c1="#f38236" c2="#f38237" c3="#f38238" c4="#f38239">
+				<defaultColours>
+					<colour>CLOTHING_ORANGE_BRIGHT</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#efca38" c1="#efca39" c2="#efca3a" c3="#efca3b" c4="#efca3c">
+				<defaultColours>
+					<colour>CLOTHING_YELLOW</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#5fd35d" c1="#5fd35e" c2="#5fd35f" c3="#5fd360" c4="#5fd361">
+				<defaultColours>
+					<colour>CLOTHING_GREEN</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#5fd6f3" c1="#5fd6f4" c2="#5fd6f5" c3="#5fd6f6" c4="#5fd6f7">
+				<defaultColours>
+					<colour>CLOTHING_BLUE_LIGHT</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#6e29d4" c1="#6e29d5" c2="#6e29d6" c3="#6e29d7" c4="#6e29d8">
+				<defaultColours>
+					<colour>CLOTHING_PURPLE_LIGHT</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+			<customColour c0="#afafe7" c1="#afafe8" c2="#afafe9" c3="#afafea" c4="#afafeb">
+				<defaultColours>
+					<colour>CLOTHING_PURPLE_DARK</colour>
+				</defaultColours> 
+				<extraColours values="ALL"/>
+			</customColour>
+		</customColours>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的[npc.hands]穿进手套，然后将它们拉到[npc.her]的手臂中间。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将手套穿进[npc2.namePos]的[npc2.hands]，然后将它们拉到[npc2.her]的前臂中间。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将手套强行戴在[npc2.namePos]的[npc2.hands]上，然后猛力将它们拉到[npc2.her]的前臂中间。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]顺着[npc.her]的前臂滑下彩虹手套，然后将它们从[npc.her]的[npc.hands]上取下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将手套从[npc2.namePos]的前臂脱下，然后将它们从[npc2.her]的[npc2.hands]上取下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]猛地将手套从[npc2.namePos]的前臂拽下，然后粗暴地将它们从[npc2.her]的[npc2.hands]上拽走。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

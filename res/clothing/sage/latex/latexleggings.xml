@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[乳胶紧身裤]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[乳胶紧身裤]]></namePlural>
+		<description><![CDATA[一条乳胶紧身裤，外观闪亮，触感丝滑。设计上即使没有奥术，它也能让任何人穿上都紧紧贴合。]]></description> 
+		<physicalResistance>1</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>LEG</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet>
+		<imageName>latexleggings.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		<effects/>
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_ANKLES_FROM_TROUSERS"/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED</colour>
+			<colour>CLOTHING_PURPLE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]穿进乳胶紧身裤，然后拉起它并拉上腰部的拉链。
+]]></self>
+    <other><![CDATA[
+[npc.Name]让[npc2.name]穿进乳胶紧身裤，然后拉起它并拉上[npc2.her]腰部的拉链。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]强迫[npc2.name]穿进乳胶紧身裤，然后拉起它并拉上[npc2.her]腰部的拉链。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]拉开乳胶紧身裤上的拉链，然后脱下它。
+]]></self>
+    <other><![CDATA[
+[npc.Name]拉开[npc2.namePos]乳胶紧身裤上的拉链，然后脱下它。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]拉开[npc2.namePos]乳胶紧身裤上的拉链，然后扯下它。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

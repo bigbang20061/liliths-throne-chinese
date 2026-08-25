@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<scene id="start">				
+		<author><![CDATA[DSG]]></author>			
+		<title><![CDATA[聚集在一起的暴徒]]></title>			
+		<content folderPath="txt/dsg/encounters/fields/elis/market/eisek_initial">ENCOUNTER_START</content>		
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>		
+		<responses>			
+			<response>					
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[接近]]></responseTitle>
+				<responseTooltip><![CDATA[走近摊位，看看暴徒们在做什么。]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[dsg_encounters_fields_elis_market_eisek_initial_approach]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_dsg_elis_eisek_introduced, true)]
+				]]></effects>				
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[放弃]]></responseTitle>
+				<responseTooltip><![CDATA[人们避开这一区域是有原因的。]]></responseTooltip>
+				<nextDialogue><![CDATA[dsg_encounters_fields_elis_market_eisek_initial_back_off]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#pc.setNearestLocation(PLACE_TYPE_innoxia_fields_elis_market_path)]
+				]]></effects>
+			</response>			
+		</responses>
+	</scene>
+	
+	<scene id="back_off">				
+		<author><![CDATA[DSG]]></author>			
+		<title><![CDATA[后退……]]></title>		
+		<content folderPath="txt/dsg/encounters/fields/elis/market/eisek_initial">ENCOUNTER_BACK_OFF</content>		
+		<secondsPassed minutes="false"><![CDATA[30]]></secondsPassed>				
+		<continuesDialogue><![CDATA[true]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responses>			
+			<response>				
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[从摊位离开，你可以继续前进了……]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[default]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="approach">				
+		<author><![CDATA[DSG]]></author>			
+		<title><![CDATA[靠近暴徒]]></title>		
+		<content folderPath="txt/dsg/encounters/fields/elis/market/eisek_initial">ENCOUNTER_APPROACH</content>		
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>				
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>	
+		<responses>			
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.getRace().equals(RACE_dsg_dragon)]]]></availabilityConditional>	
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[假意合作]]></responseTitle>
+				<responseTooltip><![CDATA[假意合作，假装你知道这张[eisek.race]]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[dsg_encounters_fields_elis_market_eisek_initial_play_along]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(500))]
+					[#eisek.setPlayerKnowsName(true)]
+					[#flags.setFlag(FLAG_dsg_elis_eisek_introduced, true)]
+					[#game.appendToTextEndStringBuilder(eisek.incrementAffection(pc, 3))]
+				]]></effects>				
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#pc.getRace().equals(RACE_dsg_dragon)]]]></availabilityConditional>	
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[嗯……这肯定是什么……]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue stripContent="false"><![CDATA[dsg_encounters_fields_elis_market_eisek_initial_play_along]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.incrementMoney(500))]
+					[#eisek.setPlayerKnowsName(true)]
+					[#flags.setFlag(FLAG_dsg_elis_eisek_introduced, true)]
+					[#flags.setFlag(FLAG_dsg_elis_eisek_introduced_as_dragon, true)]
+					[#game.appendToTextEndStringBuilder(eisek.incrementAffection(pc, 3))]
+				]]></effects>				
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.getRace().equals(RACE_dsg_dragon)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[站在暴徒一边]]></responseTitle>
+				<responseTooltip><![CDATA[你不可能让一个你根本不认识的人占你便宜。]]></responseTooltip>
+				<nextDialogue><![CDATA[dsg_encounters_fields_elis_market_eisek_initial_side_with_mob]]></nextDialogue>
+				<secondsPassed/>
+				<effects><![CDATA[					
+					[#game.getPlayerCell().getPlace().setPlaceType(PLACE_TYPE_dsg_fields_elis_market_produce_banished)]
+					[#eisek.setLocation(WORLD_TYPE_EMPTY, PLACE_TYPE_GENERIC_EMPTY_TILE)]
+					[#game.banishNPC(eisek)]
+					[#flags.setFlag(FLAG_dsg_elis_eisek_banished, true)]
+					[#flags.setSavedLong("elis_eisek_banished_date", game.getDayNumber())]
+				]]></effects>
+			</response>			
+		</responses>
+	</scene>
+	
+	<scene id="side_with_mob">				
+		<author><![CDATA[DSG]]></author>			
+		<title><![CDATA[站在暴徒一边]]></title>	
+		<content folderPath="txt/dsg/encounters/fields/elis/market/eisek_initial">ENCOUNTER_SIDE_WITH_MOB</content>		
+		<secondsPassed minutes="true"><![CDATA[30]]></secondsPassed>				
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>		
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[没什么可看的了，还是走吧。]]></responseTooltip>
+				<colour><![CDATA[TEXT]]></colour>
+				<nextDialogue><![CDATA[dsg_places_fields_elis_market_produce_banished_stall]]></nextDialogue>
+				<secondsPassed/>
+				<effects/>
+			</response>			
+		</responses>
+	</scene>
+	
+	<scene id="play_along">				
+		<author><![CDATA[DSG]]></author>			
+		<title><![CDATA[假意合作]]></title>
+		<content folderPath="txt/dsg/encounters/fields/elis/market/eisek_initial">ENCOUNTER_PLAY_ALONG</content>		
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>		
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>	
+		<travelDisabled><![CDATA[true]]></travelDisabled>	
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>	
+		<regenerationDisabled><![CDATA[false]]></regenerationDisabled>
+		<responses copyFromDialogueId="dsg_characters_eisek_stall_talk_menu"/>
+	</scene>
+	
+</dialogueNodes>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[每只靴子的鞋舌里面都有一个小标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>700</value> 
+
+		<determiner><![CDATA[一双]]></determiner>
+
+		<name><![CDATA[战术作战靴]]></name>
+
+		<namePlural pluralByDefault="true"><![CDATA[战术作战靴]]></namePlural> 
+
+		<description><![CDATA[一双结实的作战靴。与传统的作战靴不同，这双鞋采用了运动鞋的元素，以牺牲一些耐用性为代价，提高穿着者的速度和灵活性。]]></description> 
+
+		<physicalResistance>3</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>FOOT</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/>
+
+		<imageName>cboots.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts/> 
+
+				<clothingAccessBlocked>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked> 
+
+				<concealedSlots/> 
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_STEEL"/>
+		
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿上靴子，调整鞋带，直到它们舒服为止。然后将鞋带绕在鞋面上几圈，打一个结实的结，并将多余的部分整齐地塞在鞋带和鞋舌之间。]]></self>
+		<other><![CDATA[
+[npc.Name]帮助[npc2.namePos]穿上靴子，调整鞋带，直到它们舒服为止。然后将鞋带绕在鞋面上几圈，打一个结实的结，并将多余的部分整齐地塞在鞋带和鞋舌之间。]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]将[npc2.namePos]的[npc2.feet]塞进靴子，在给鞋带匆忙打结前尽可能地将其拉紧。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]解开鞋带，然后把靴子从[npc.her][npc.feet]脱下。]]></self>
+		<other><![CDATA[
+			[npc.Name]解开鞋带，然后把靴子从[npc2.namePos][npc2.feet]脱下。]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]把鞋带扯开，并猛地将靴子从[npc2.namePos]的[npc2.feet]拽下来。]]></otherRough>
+	</displacementText>
+	
+</clothing>

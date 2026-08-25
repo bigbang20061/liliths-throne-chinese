@@ -1,0 +1,1553 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- Journey from Elis to Themiscyra -->
+	
+	<scene id="journey_start">
+		<content folderPath="txt/places/fields/themiscyra">JOURNEY_START</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[传送]]></responseTitle>
+				<responseTooltip><![CDATA[让梅拉克西丝把你俩传送到特弥斯库拉。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_journey_teleported]]></nextDialogue>
+				<effects><![CDATA[
+					#IF(game.getWorlds().get(WORLD_TYPE_WORLD_MAP).getCell(PLACE_TYPE_innoxia_fields_themiscyra)==null)
+						[#game.getWorlds().get(WORLD_TYPE_WORLD_MAP).getCell(11, 32).getPlace().setPlaceType(PLACE_TYPE_innoxia_fields_themiscyra)]
+					#ENDIF
+					[#pc.setLocation(WORLD_TYPE_WORLD_MAP, PLACE_TYPE_innoxia_fields_themiscyra)]
+					[#meraxis.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="journey_teleported">
+		<content folderPath="txt/places/fields/themiscyra">JOURNEY_TELEPORTED</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[特弥斯库拉]]></responseTitle>
+				<responseTooltip><![CDATA[跟随梅拉克西丝去往滚滚浓烟的地方——这些烟雾一定来自特弥斯库拉镇。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_journey_hurry]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="journey_hurry">
+		<content folderPath="txt/places/fields/themiscyra">JOURNEY_HURRY</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[快点]]></responseTitle>
+				<responseTooltip><![CDATA[快步走向小镇入口处的凯旋门。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_journey_centaurs]]></nextDialogue>
+				<effects><![CDATA[
+					[#lunexis.initThemiscyra()]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_arch)]
+					[#meraxis.setLocation(pc)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="journey_centaurs">
+		<content folderPath="txt/places/fields/themiscyra">JOURNEY_CENTAURS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[躲避]]></responseTitle>
+				<responseTooltip><![CDATA[躲避倒塌的拱门！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_journey_separated]]></nextDialogue>
+				<effects><![CDATA[
+					[#meraxis.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_plaza)]
+					[#aurokaris.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_arch)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="journey_separated">
+		<content folderPath="txt/places/fields/themiscyra">JOURNEY_SEPARATED</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[解释]]></responseTitle>
+				<responseTooltip><![CDATA[告诉奥罗卡利斯，你来特弥斯库拉是为了确认这里是否受到露内特的恶魔半人马大军的威胁。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_journey_aurokaris]]></nextDialogue>
+				<effects><![CDATA[
+					[#aurokaris.setPlayerKnowsName(true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="journey_aurokaris">
+		<content folderPath="txt/places/fields/themiscyra">JOURNEY_AUROCHSIA</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[赞同]]></responseTitle>
+				<responseTooltip><![CDATA[没有理由不和奥罗卡利斯一起，告诉她你们可以一起前往王宫。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_journey_aurokaris_end]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_MAIN, QUEST_MAIN_3_E_THEMISCYRA_ATTACK))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="journey_aurokaris_end">
+		<content folderPath="txt/places/fields/themiscyra">JOURNEY_AUROCHSIA_END</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[在奥罗卡利斯的陪伴下，你出发前往特弥斯库拉……]]></responseTooltip>
+				<nextDialogue>default</nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	
+	<!-- Exterior dialogue for world map tile -->
+	
+	<scene id="exterior">
+		<content folderPath="txt/places/fields/themiscyra">EXTERIOR</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	
+	<!-- Aurokaris dialogues -->
+	
+	<scene id="aurokaris">
+		<content folderPath="txt/places/fields/themiscyra">AUROCHSIA</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[告诉奥罗卡利斯，你俩应该继续穿过特弥斯库拉。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_CONTINUE'))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_town, false)]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_amazons, false)]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_ursa, false)]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_raiders, false)]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_location, false)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[特弥斯库拉]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_town))
+						你已经向奥罗卡利斯打听过这个小镇了，她现在可没耐心再重复一遍。
+					#ELSE
+						向奥罗卡利斯打听打听这个小镇。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_town))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_aurokaris_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_town, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_TOWN'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[亚马逊人]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_amazons))
+						你已经向奥罗卡利斯打听过住在这里的亚马逊人，她现在可没耐心再重复一遍。
+					#ELSE
+						向奥罗卡利斯打听打听住在这里的亚马逊人。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_amazons))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_aurokaris_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_amazons, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_AMAZONS'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[乌萨]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_ursa))
+						你已经问过奥罗卡利斯关于乌萨的事了，她现在可没耐心再重复一遍。
+					#ELSE
+						向奥罗卡利斯打听打听乌萨是什么样的人。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_ursa))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_aurokaris_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_ursa, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_URSA'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[露内特的袭击]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_raiders))
+						你已经向奥罗卡利斯打听过特弥斯库拉的现状了，她现在可没耐心再重复一遍。
+					#ELSE
+						向奥罗卡利斯打听打听过特弥斯库拉的现状。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_raiders))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_aurokaris_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_raiders, true)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_RAIDERS'))]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[
+					#IF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_arch)
+						拱门
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_barricade)
+						路障
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_raiders_cleared)
+						洗劫
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_smithies)
+						铁匠铺
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_wine)
+						葡萄酒商
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_jewellery)
+						珠宝商
+					#ELSE
+						街道
+					#ENDIF
+				]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_location))
+						你已经向奥罗卡利斯打听过你所在的位置了，她现在可没耐心再重复一遍。
+					#ELSE
+						向奥罗卡利斯打听打听你所在的位置。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_aurokaris_talk_location))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_aurokaris_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_themiscyra_aurokaris_talk_location, true)]
+					
+					#IF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_arch)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_LOCATION_ARCH'))]
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_barricade)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_LOCATION_BARRICADE'))]
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_raiders_cleared)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_LOCATION_LOOTING'))]
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_smithies)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_LOCATION_SMITHIES'))]
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_wine)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_LOCATION_WINE'))]
+					#ELSEIF(pc.getLocationPlaceType()==PLACE_TYPE_innoxia_fields_themiscyra_jewellery)
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_LOCATION_JEWELLERS'))]
+					#ELSE
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'AUROCHSIA_TALK_LOCATION_STREETS'))]
+					#ENDIF
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="aurokaris_talk">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_aurokaris"/>
+	</scene>
+	
+	
+	<!-- Place dialogues -->
+	
+	<scene id="arch">
+		<content folderPath="txt/places/fields/themiscyra">ARCH</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses>  <!-- These responses are copied throughout the file, so if any arch-specific responses are added then changes will be needed -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[奥罗卡利斯]]></responseTitle>
+				<responseTooltip><![CDATA[停下和奥罗卡利斯聊聊。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_aurokaris]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="street">
+		<content folderPath="txt/places/fields/themiscyra">STREET</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_arch"/> <!-- For Aurokaris dialogues -->
+	</scene>
+	
+	<scene id="smithies">
+		<content folderPath="txt/places/fields/themiscyra">SMITHIES</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_arch"> <!-- For Aurokaris dialogues -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[搜寻]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_smithies_looted))
+						你已经在铁匠铺的废墟中找过了，这里没有其他东西了……
+					#ELSE
+						在铁匠铺的废墟中找找有没有有用的东西……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_smithies_looted))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_looting
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'SMITHIES_LOOTING'))]
+					[#game.appendToTextStartStringBuilder(pc.addWeapon(itemGen.generateWeapon(WEAPON_innoxia_europeanSwords_xiphos, DAMAGE_TYPE_PHYSICAL), 1, false, true))]
+					[#game.appendToTextStartStringBuilder(pc.addWeapon(itemGen.generateWeapon(WEAPON_innoxia_europeanSwords_xiphos, DAMAGE_TYPE_FIRE), 1, false, true))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_smithies_looted, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="wine">
+		<content folderPath="txt/places/fields/themiscyra">WINE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_arch"> <!-- For Aurokaris dialogues -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[搜寻]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_wine_looted))
+						你已经在废墟中找过了，这里没有其他东西了……
+					#ELSE
+						在仓库废墟中找找有没有有用的东西……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_wine_looted))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_looting
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'WINE_LOOTING'))]
+                    [#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_race_fox_vulpines_vineyard), 3, false, true))]
+                    [#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_potions_amazons_secret), 2, false, true))]
+                    [#game.appendToTextStartStringBuilder(pc.addItem(itemGen.generateItem(ITEM_innoxia_potions_amazonian_ambrosia), 4, false, true))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_wine_looted, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="jewellery">
+		<content folderPath="txt/places/fields/themiscyra">JEWELLERY</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_arch"> <!-- For Aurokaris dialogues -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[搜寻]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_jewellers_looted))
+						你已经在车间里找过了，这里没有其他东西了……
+					#ELSE
+						在车间中找找有没有有用的东西……
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_jewellers_looted))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_looting
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'JEWELLERY_LOOTING'))]
+					[#game.appendToTextStartStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_finger_meander_ring', COLOUR_CLOTHING_SILVER, false), 2, false, true))]
+					[#game.appendToTextStartStringBuilder(pc.addClothing(itemGen.generateClothing('innoxia_finger_meander_ring', COLOUR_CLOTHING_GOLD, false), 1, false, true))]
+					[#flags.setFlag(FLAG_innoxia_themiscyra_jewellers_looted, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="looting">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[完成搜索后，是时候继续赶路了……]]></responseTooltip>
+				<nextDialogue>default</nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'LOOTING_FINISHED'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="barricade">
+		<content folderPath="txt/places/fields/themiscyra">BARRICADE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_arch"> <!-- For Aurokaris dialogues -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[因为无法越过燃烧的路障，你只能后退另寻出路……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_themiscyra_street"/>
+				<effects><![CDATA[
+					[#pc.setLocation(pc.getLastCell())]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'BARRICADE_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="palace">
+		<content folderPath="txt/places/fields/themiscyra">PALACE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses/>
+	</scene>
+	
+	
+	<!-- Plaza confrontation with Lunexis: -->
+	
+	<scene id="plaza">
+		<preParsingEffects><![CDATA[
+			[#ursa.setHealthPercentage(0.25)]
+			[#ursa.setPlayerKnowsName(true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">PLAZA</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[跟随]]></responseTitle>
+				<responseTooltip><![CDATA[跟着奥罗卡利斯，她会带你绕过广场，这样你就可以找到乌萨和梅拉克西丝，而不会遭遇半人马恶魔大军。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_follow]]></nextDialogue>
+				<effects><![CDATA[
+					[#lunexis.setLocation(WORLD_TYPE_innoxia_fields_themiscyra, PLACE_TYPE_innoxia_fields_themiscyra_plaza)]
+					[#lunexis.setPlayerKnowsName(true)]
+					[#lunexis.setAffection(pc, -100)]
+					[#lunexis.setAffection(meraxis, -100)]
+					[#lunexis.setAffection(aurokaris, -100)]
+					[#lunexis.setAffection(ursa, -100)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[还不行]]></responseTitle>
+				<responseTooltip><![CDATA[告诉奥罗卡利斯，你俩在特弥斯库拉还有事情要做，但你们很快就会回来帮助乌萨。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_themiscyra_street"/>
+				<effects><![CDATA[
+					[#pc.setLocation(pc.getLastCell())]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'PLAZA_BACK'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="plaza_follow">
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_FOLLOW</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[准备]]></responseTitle>
+				<responseTooltip><![CDATA[准备好面对接下来遇到的人！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_lunexis_entry]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="plaza_lunexis_entry">
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_LUNEXIS_ENTRY</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[战斗]]></responseTitle>
+				<responseTooltip><![CDATA[
+					趁梅拉克西丝和奥罗卡利斯挡住恶魔半人马，与乌萨一起对抗露内克西丝。
+					#IF(game.isBadEndsEnabled())
+						<br/>[style.boldBadEnd(坏结局：)]如果输了这场战斗，露内克西丝就不会让你逃脱！
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_fields_themiscyra_plaza_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_fields_themiscyra_plaza_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies companionsAreAllies="true">
+						<ally><![CDATA[ursa]]></ally>
+					</allies>
+					<enemies>
+						<enemy leader="true"><![CDATA[lunexis]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[在亚马逊女王乌萨的陪伴下，你准备与露内克西丝一战。]]></combatant>
+						<combatant id="ursa"><![CDATA[[ursa.speech(我已经没有多少力气了，)]乌萨喘息着，[ursa.speech(靠你了，[pc.name]……)]]]></combatant>
+						<combatant id="lunexis"><![CDATA[[lunexis.speech(我要把你们两个变成我的奴隶！)]露内克西丝一边欢快地叫着，一边毫不费力地将她的四颗晨星旋转起来。]]></combatant>
+					</openingDescriptions>
+					<escapeBlocked><![CDATA[true]]></escapeBlocked>
+				</combatVariables>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[护盾]]></responseTitle>
+				<responseTooltip><![CDATA[用尽你所有的力量，召唤出一个奥术防护罩，掩护梅拉克西丝、奥罗卡利斯和乌萨。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_non_combatant]]></nextDialogue>
+				<requiredPerks>
+					<perk><![CDATA[SACRIFICIAL_SHIELDING]]></perk>
+				</requiredPerks>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'PLAZA_SHIELDING'))]
+					[#game.appendToTextEndStringBuilder(aurokaris.incrementAffection(pc, 10))]
+					[#game.appendToTextEndStringBuilder(ursa.incrementAffection(pc, 10))]
+					[#game.appendToTextEndStringBuilder(meraxis.incrementAffection(pc, 10))]
+					[#lunexis.unequipAllWeaponsIntoVoid(true)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[旁观]]></responseTitle>
+				<responseTooltip><![CDATA[在后面观看梅拉克西丝、乌萨和奥罗卡利斯三人对阵露内克西丝及其恶魔半人马扈从。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_non_combatant]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'PLAZA_WATCH'))]
+					[#game.appendToTextEndStringBuilder(aurokaris.incrementAffection(pc, -10))]
+					[#game.appendToTextEndStringBuilder(ursa.incrementAffection(pc, -10))]
+					[#game.appendToTextEndStringBuilder(meraxis.incrementAffection(pc, -10))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="plaza_non_combatant">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[传送]]></responseTitle>
+				<responseTooltip><![CDATA[梅拉克西丝耗尽所有奥能，将所有人都传送到了安全的地方！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_teleported]]></nextDialogue>
+				<effects><![CDATA[
+					[#lunexis.unequipAllWeaponsIntoVoid(true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Defeated Lunexis -->
+	
+	<scene id="plaza_combat_won">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(aurokaris.incrementAffection(pc, 10))]
+			[#game.appendToTextEndStringBuilder(ursa.incrementAffection(pc, 10))]
+			[#game.appendToTextEndStringBuilder(meraxis.incrementAffection(pc, 10))]
+			[#lunexis.unequipAllWeaponsIntoVoid(true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_COMBAT_WON</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[准备]]></responseTitle>
+				<responseTooltip><![CDATA[观战的数百个恶魔半人马冲上前去攻击！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_combat_won_prepare]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="plaza_combat_won_prepare">
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_COMBAT_WON_PREPARE</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[传送]]></responseTitle>
+				<responseTooltip><![CDATA[梅拉克西丝耗尽所有奥能，将所有人都传送到了安全的地方！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_teleported]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Lost to Lunexis -->
+	
+	<scene id="plaza_combat_lost">
+		<preParsingEffects><![CDATA[
+			#IF(game.isBadEndsEnabled())
+				[#game.setBadEnd("露内克西丝的鸡巴套")]
+				
+				[#pc.resetInventory(true)]
+				[#meraxis.unequipAllClothingIntoVoid(true, true)]
+				[#ursa.unequipAllClothingIntoVoid(true, true)]
+				[#aurokaris.unequipAllClothingIntoVoid(true, true)]
+				
+				[#lunexis.applyCollar(pc)]
+				[#lunexis.applyCollar(meraxis)]
+				[#lunexis.applyCollar(ursa)]
+				[#lunexis.applyCollar(aurokaris)]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_COMBAT_LOST</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Non-con fucked: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isNonConEnabled() || game.isBadEnd()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[
+					#IF(game.isBadEnd())
+						GENERIC_BAD_END
+					#ENDIF
+				]]></colour>
+				<responseTitle><![CDATA[被宣称所有权]]></responseTitle>
+				<responseTooltip><![CDATA[露内克西丝通过操你宣布对你身体的主权……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_themiscyra_lunexis_sex]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>lunexis</id>
+							<slot><![CDATA[
+								#IF(pc.hasVagina() || game.isAnalContentEnabled())
+									ALL_FOURS_BEHIND
+								#ELSE
+									ALL_FOURS_IN_FRONT
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_combat_lost_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/themiscyra">PLAZA_COMBAT_LOST_RAPE_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></condition>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></condition>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></condition>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Non-con turned off: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled() && !game.isBadEnd()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[争取时间]]></responseTitle>
+				<responseTooltip><![CDATA[在梅拉克西丝为施放传送法术恢复能量时，尽量争取时间。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_combat_lost_buy_time]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled() && !game.isBadEnd() && (!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true)) && !pc.isAbleToAccessCoverableArea(CA_MOUTH, true)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[顺从]]></responseTitle>
+				<responseTooltip><![CDATA[你的腔穴被限制，无法屈服于露内克西丝并让她在众人面前操你……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled() && !game.isBadEnd() && ((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)) || pc.isAbleToAccessCoverableArea(CA_MOUTH, true))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[顺从]]></responseTitle>
+				<responseTooltip><![CDATA[臣服于露内克西丝，让她在众人面前操你……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_themiscyra_lunexis_sex_sub]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>lunexis</id>
+							<slot><![CDATA[
+								#IF((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true)))
+									ALL_FOURS_BEHIND
+								#ELSE
+									ALL_FOURS_IN_FRONT
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[ALL_FOURS_ALL_FOURS]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_combat_lost_after_sex]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/themiscyra">PLAZA_COMBAT_LOST_SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<condition><![CDATA[[#pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)]]]></condition>
+							<id><![CDATA[PenisVagina_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></condition>
+							<id><![CDATA[PenisAnus_PENIS_FUCKING_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+						<action>
+							<condition><![CDATA[[#(!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) && (!game.isAnalContentEnabled() || !pc.isAbleToAccessCoverableArea(CA_ANUS, true))]]]></condition>
+							<id><![CDATA[PenisMouth_BLOWJOB_START]]></id>
+							<performer><![CDATA[lunexis]]></performer>
+							<target><![CDATA[pc]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="plaza_combat_lost_after_sex">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[半人马已经玩腻了，她残忍地一笑，一脚把你踢开……]]></tooltip>
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_COMBAT_LOST_AFTER_SEX</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Non-bad end: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isBadEnd()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[传送]]></responseTitle>
+				<responseTooltip><![CDATA[梅拉克西丝耗尽所有奥能，将所有人都传送到了安全的地方！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_teleported]]></nextDialogue>
+			</response>
+			<!-- Bad end: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isBadEnd()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[鸡巴套]]></responseTitle>
+				<responseTooltip><![CDATA[露内克西丝将你收藏为她的鸡巴套，而梅拉克西丝、乌萨和奥罗卡利斯则归于打败他们的半人马。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_badEnds_lunexis_plaza_bad_end]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="plaza_combat_lost_buy_time">
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_COMBAT_LOST_BUY_TIME</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[传送]]></responseTitle>
+				<responseTooltip><![CDATA[梅拉克西丝耗尽所有奥能，将所有人都传送到了安全的地方！]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_plaza_teleported]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Teleported end dialogue for Lunexis encounter -->
+	
+	<scene id="plaza_teleported">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town_hall_f1, PLACE_TYPE_innoxia_fields_elis_town_hall_f1_minotallys_office)]
+			[#meraxis.setLocation(pc)]
+			[#aurokaris.setLocation(pc)]
+			[#ursa.setLocation(pc)]
+			[#lunexis.setLocation(pc)]
+			
+			[#minotallys.setLocation(pc)]
+			[#arion.setLocation(pc)]
+			
+			[#lunexis.clearThemiscyra()]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">PLAZA_TELEPORTED</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[旁观]]></responseTitle>
+				<responseTooltip><![CDATA[照米诺塔莉丝说的做，不插手她和露内克西丝的战斗。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_elis_fight]]></nextDialogue> <!-- Dialogue found at the end of this file -->
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Demonic centaures raiders: -->
+	
+	<scene id="raiders">
+		<preParsingEffects><![CDATA[
+			[#game.setParserTarget('attacker', game.getNonCompanionCharactersPresent(false).get(0))]
+			[#game.setParserTarget('attacker2', game.getNonCompanionCharactersPresent(false).get(1))]
+			[#attacker2.setSpeechColour(COLOUR_BASE_PURPLE_LIGHT)]
+			[#flags.setFlag(FLAG_innoxia_themiscyra_centauresses_question, false)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">RAIDERS</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[返回]]></responseTitle>
+				<responseTooltip><![CDATA[你决定不与半人马对峙，小心翼翼地原路返回……]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_themiscyra_street"/>
+				<effects><![CDATA[
+					[#pc.setLocation(pc.getLastCell())]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_BACK'))]
+	]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[对峙]]></responseTitle>
+				<responseTooltip><![CDATA[与半人马对峙，这无疑会导致与他们战斗……]]></responseTooltip>
+				<nextDialogue/>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<combatVariables enabled="true">
+					<nextDialoguePlayerVictory><![CDATA[innoxia_places_fields_themiscyra_raiders_combat_won]]></nextDialoguePlayerVictory>
+					<nextDialoguePlayerDefeat><![CDATA[innoxia_places_fields_themiscyra_raiders_combat_lost]]></nextDialoguePlayerDefeat>
+					<allies companionsAreAllies="true">
+						<ally><![CDATA[aurokaris]]></ally>
+					</allies>
+					<enemies>
+						<enemy leader="true"><![CDATA[attacker]]></enemy>
+						<enemy leader="false"><![CDATA[attacker2]]></enemy>
+					</enemies>
+					<openingDescriptions>
+						<combatant id="pc"><![CDATA[[pc.Walking]到半人马三人面前，命令他们停止抢劫，与他们对峙。]]></combatant>
+						<combatant id="aurokaris"><![CDATA[[aurokaris.speech(你要为你对我家乡所做的一切付出代价！)]奥罗卡利斯喊道。]]></combatant>
+						<combatant id="attacker"><![CDATA[看似老大的半人马把一只巨大的蹄子踩在地上，然后愤怒地喊道， [attacker.speech(你会为你的无礼付出代价的 ，[pc.insult]！)]]]></combatant>
+						<combatant id="attacker2"><![CDATA[第二个半人马嘲弄道，[attacker2.speech(我会很高兴和你们俩一起玩的！)]]]></combatant>
+					</openingDescriptions>
+				</combatVariables>
+			</response>
+		</responses>
+	</scene>
+	
+	<!-- Won combat: -->
+	
+	<scene id="raiders_combat_won">
+		<preParsingEffects><![CDATA[
+			[#game.getPlayerCell().getPlace().setPlaceType(PLACE_TYPE_innoxia_fields_themiscyra_raiders_cleared)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">RAIDERS_COMBAT_WON</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Continue: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_NPC_REMOVAL]]></colour>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					决定不对半人马采取任何进一步行动，继续前进……
+					<br/>[style.italicsBad(该半人马将永远从游戏中移除。)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getWorlds().get(WORLD_TYPE_innoxia_fields_themiscyra).getCells(PLACE_TYPE_innoxia_fields_themiscyra_raiders).size()==0 && !pc.hasPerkAnywhereInTree(PERK_HERO_OF_THEMISCYRA))
+						innoxia_places_fields_themiscyra_raiders_perk_application
+					#ELSE
+						innoxia_places_fields_themiscyra_raiders_encounter_end
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					#IF(game.getWorlds().get(WORLD_TYPE_innoxia_fields_themiscyra).getCells(PLACE_TYPE_innoxia_fields_themiscyra_raiders).size()>0 || pc.hasPerkAnywhereInTree(PERK_HERO_OF_THEMISCYRA))
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_COMBAT_WON_END'))]
+						[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_CLEARED_PERK_PROGRESS'))]
+					#ENDIF
+					[#game.banishNPC(attacker)]
+					[#game.banishNPC(attacker2)]
+				]]></effects>
+			</response>
+			
+			<!-- Sex (no pace, gentle, rough): -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[做爱]]></responseTitle>
+				<responseTooltip><![CDATA[乘胜追击，和半人马来一场支配型性爱。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariables enabled="true">
+					<consensual><![CDATA[true]]></consensual>
+					<subHasEqualControl><![CDATA[false]]></subHasEqualControl>
+					<dominants>
+						<character><![CDATA[pc]]></character>
+					</dominants>
+					<submissives>
+						<character><![CDATA[attacker]]></character>
+						<character><![CDATA[attacker2]]></character>
+					</submissives>
+					<dominantSpectators/>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_places_fields_themiscyra_raiders_after_sex_dom]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/themiscyra">RAIDERS_COMBAT_WON_SEX</sexStartContent>
+					<tags/>
+					<ongoingActionsAtStart/>
+				</sexVariables>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[做爱(温柔)]]></responseTitle>
+				<responseTooltip><![CDATA[乘胜追击，和半人马来一场温柔的支配型性爱。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariables enabled="true">
+					<consensual><![CDATA[true]]></consensual>
+					<subHasEqualControl><![CDATA[false]]></subHasEqualControl>
+					<dominants>
+						<character><![CDATA[pc]]></character>
+					</dominants>
+					<submissives>
+						<character><![CDATA[attacker]]></character>
+						<character><![CDATA[attacker2]]></character>
+					</submissives>
+					<dominantSpectators/>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_places_fields_themiscyra_raiders_after_sex_dom]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/themiscyra">RAIDERS_COMBAT_WON_SEX</sexStartContent>
+					<tags>
+						<tag>START_PACE_PLAYER_DOM_GENTLE</tag>
+					</tags>
+					<ongoingActionsAtStart/>
+				</sexVariables>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[做爱(粗暴)]]></responseTitle>
+				<responseTooltip><![CDATA[乘胜追击，和半人马来一场粗暴的支配型性爱。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariables enabled="true">
+					<consensual><![CDATA[true]]></consensual>
+					<subHasEqualControl><![CDATA[false]]></subHasEqualControl>
+					<dominants>
+						<character><![CDATA[pc]]></character>
+					</dominants>
+					<submissives>
+						<character><![CDATA[attacker]]></character>
+						<character><![CDATA[attacker2]]></character>
+					</submissives>
+					<dominantSpectators/>
+					<submissiveSpectators/>
+					<postSexDialogue><![CDATA[innoxia_places_fields_themiscyra_raiders_after_sex_dom]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/themiscyra">RAIDERS_COMBAT_WON_SEX</sexStartContent>
+					<tags>
+						<tag>START_PACE_PLAYER_DOM_ROUGH</tag>
+					</tags>
+					<ongoingActionsAtStart/>
+				</sexVariables>
+			</response>
+			
+			<!-- Open inventory: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[[attacker.name]的物品栏]]></responseTitle>
+				<responseTooltip><![CDATA[现在你已经打败了半人马，没什么能够阻止你向[attacker.namePos]的衣服和道具伸出手……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.openInventoryDialogue(attacker, INVENTORY_INTERACTION_FULL_MANAGEMENT)]
+]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[[attacker2.name]的物品栏]]></responseTitle>
+				<responseTooltip><![CDATA[你打败了半人马，此时再也没什么能阻挡你把手伸向[attacker2.namePos]的衣服和道具……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.openInventoryDialogue(attacker2, INVENTORY_INTERACTION_FULL_MANAGEMENT)]
+]]></effects>
+			</response>
+			
+			<!-- Talk: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[11]]></index>
+				<responseTitle><![CDATA[询问]]></responseTitle>
+				<responseTooltip><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_centauresses_question))
+						你已经审讯了半人马，他们给你的信息不是很有用……
+					#ELSE
+						问问半人马为什么要攻击特弥斯库拉，他们有什么计划。
+					#ENDIF
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(flags.hasFlag(FLAG_innoxia_themiscyra_centauresses_question))
+						null
+					#ELSE
+						innoxia_places_fields_themiscyra_raiders_combat_won_talk
+					#ENDIF
+				]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setFlag(FLAG_innoxia_themiscyra_centauresses_question, true)]
+				]]></effects>
+			</response>
+			
+		</responses>
+	</scene>
+	
+	<scene id="raiders_after_sex_dom">
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[你已经和半人马爽够了……]]></tooltip>
+		<content folderPath="txt/places/fields/themiscyra">RAIDERS_AFTER_SEX_DOM</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<colour><![CDATA[GENERIC_NPC_REMOVAL]]></colour>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					你爽过了，决定离开半人马，继续上路……
+					<br/>[style.italicsBad(该半人马将永远从游戏中移除。)]
+				]]></responseTooltip>
+				<nextDialogue><![CDATA[
+					#IF(game.getWorlds().get(WORLD_TYPE_innoxia_fields_themiscyra).getCells(PLACE_TYPE_innoxia_fields_themiscyra_raiders).size()==0 && !pc.hasPerkAnywhereInTree(PERK_HERO_OF_THEMISCYRA))
+						innoxia_places_fields_themiscyra_raiders_perk_application
+					#ELSE
+						innoxia_places_fields_themiscyra_raiders_encounter_end
+					#ENDIF
+				]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					#IF(game.getWorlds().get(WORLD_TYPE_innoxia_fields_themiscyra).getCells(PLACE_TYPE_innoxia_fields_themiscyra_raiders).size()>0 || pc.hasPerkAnywhereInTree(PERK_HERO_OF_THEMISCYRA))
+						[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_AFTER_SEX_DOM_END'))]
+						[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_CLEARED_PERK_PROGRESS'))]
+					#ENDIF
+					[#game.banishNPC(attacker)]
+					[#game.banishNPC(attacker2)]
+				]]></effects>
+			</response>
+			
+			<!-- Open inventory: -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[[attacker.name]的物品栏]]></responseTitle>
+				<responseTooltip><![CDATA[你打败了半人马，此时再也没什么能阻挡你把手伸向[attacker.namePos]的衣服和道具……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.openInventoryDialogue(attacker, INVENTORY_INTERACTION_FULL_MANAGEMENT)]
+]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[[attacker2.name]的物品栏]]></responseTitle>
+				<responseTooltip><![CDATA[你打败了半人马，此时再也没什么能阻挡你把手伸向[attacker2.namePos]的衣服和道具……]]></responseTooltip>
+				<nextDialogue/>
+				<effects><![CDATA[
+					[#game.openInventoryDialogue(attacker2, INVENTORY_INTERACTION_FULL_MANAGEMENT)]
+]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="raiders_combat_won_talk">
+		<content folderPath="txt/places/fields/themiscyra">RAIDERS_COMBAT_WON_TALK</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_raiders_combat_won"/>
+	</scene>
+	
+	<!-- Lost combat: -->
+	
+	<scene id="raiders_combat_lost">
+		<preParsingEffects><![CDATA[
+			#IF(RND.nextInt(100)<50)
+				[#flags.setFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader, true)]
+			#ELSE
+				[#flags.setFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader, false)]
+			#ENDIF
+			
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_COMBAT_LOST'))]
+			
+			#IF(!attacker.hasPenis())
+				[#attacker.growPenis()]
+			#ENDIF
+			#IF(!attacker2.hasPenis())
+				[#attacker2.growPenis()]
+			#ENDIF
+		]]></preParsingEffects>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Non-con fucked: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[挨操]]></responseTitle>
+				<responseTooltip><![CDATA[[attacker.name]和[attacker2.name]来操你和奥罗卡利斯……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_themiscyra_submissive_sex]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[
+								#IF(!flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader) || ((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))))
+									ALL_FOURS_BEHIND
+								#ELSE
+									ALL_FOURS_IN_FRONT
+								#ENDIF
+							]]></slot>
+						</character>
+						<character>
+							<id>attacker2</id>
+							<slot><![CDATA[
+								#IF(flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader) || ((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))))
+									ALL_FOURS_BEHIND_TWO
+								#ELSE
+									ALL_FOURS_IN_FRONT_TWO
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[
+								#IF(flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader))
+									ALL_FOURS_ALL_FOURS
+								#ELSE
+									ALL_FOURS_ALL_FOURS_TWO
+								#ENDIF
+							]]></slot>
+						</character>
+						<character>
+							<id>aurokaris</id>
+							<slot><![CDATA[
+								#IF(flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader))
+									ALL_FOURS_ALL_FOURS_TWO
+								#ELSE
+									ALL_FOURS_ALL_FOURS
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_themiscyra_raiders_after_sex_sub]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/themiscyra">RAIDERS_COMBAT_LOST_RAPE_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+			<!-- Non-con turned off: -->
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[逃跑]]></responseTitle>
+				<responseTooltip><![CDATA[
+					在半人马们争吵时逃离……
+				]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_themiscyra_street"/>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_COMBAT_LOST_ESCAPE'))]
+					[#pc.setLocation(pc.getLastCell())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.isNonConEnabled()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[服从]]></responseTitle>
+				<responseTooltip><![CDATA[按照半人马说的做，在他们决定谁来操你，谁来带走奥罗卡利斯时保持不动……]]></responseTooltip>
+				<nextDialogue/>
+				<effects/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_fields_themiscyra_submissive_sex]]></id>
+					<startingPosition><![CDATA[ALL_FOURS]]></startingPosition>
+					<dominants>
+						<character>
+							<id>attacker</id>
+							<slot><![CDATA[
+								#IF(!flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader) || ((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))))
+									ALL_FOURS_BEHIND
+								#ELSE
+									ALL_FOURS_IN_FRONT
+								#ENDIF
+							]]></slot>
+						</character>
+						<character>
+							<id>attacker2</id>
+							<slot><![CDATA[
+								#IF(flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader) || ((pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)) || (game.isAnalContentEnabled() && pc.isAbleToAccessCoverableArea(CA_ANUS, true))))
+									ALL_FOURS_BEHIND_TWO
+								#ELSE
+									ALL_FOURS_IN_FRONT_TWO
+								#ENDIF
+							]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[
+								#IF(flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader))
+									ALL_FOURS_ALL_FOURS
+								#ELSE
+									ALL_FOURS_ALL_FOURS_TWO
+								#ENDIF
+							]]></slot>
+						</character>
+						<character>
+							<id>aurokaris</id>
+							<slot><![CDATA[
+								#IF(flags.hasFlag(FLAG_innoxia_themiscyra_raider_sex_player_targeted_by_leader))
+									ALL_FOURS_ALL_FOURS_TWO
+								#ELSE
+									ALL_FOURS_ALL_FOURS
+								#ENDIF
+							]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_places_fields_themiscyra_raiders_after_sex_sub]]></postSexDialogue>
+					<sexStartContent folderPath="txt/places/fields/themiscyra">RAIDERS_COMBAT_LOST_SEX_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="raiders_after_sex_sub">
+		<preParsingEffects><![CDATA[
+			[#pc.setLocation(pc.getLastCell())]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[半人马已经玩腻了，她残忍地一笑，一脚把你踢开……]]></tooltip>
+		<content folderPath="txt/places/fields/themiscyra">RAIDERS_AFTER_SEX_SUB</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[
+					在与两个半人马发生桃色遭遇后，你想知道接下来该去哪里……
+				]]></responseTooltip>
+				<nextDialogue defaultPlaceType="innoxia_fields_themiscyra_street"/>
+				<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="raiders_perk_application">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.addSpecialPerk(PERK_HERO_OF_THEMISCYRA))]
+			[#game.appendToTextEndStringBuilder(aurokaris.incrementAffection(pc, 50))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">RAIDERS_PERK_APPLICATION</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[清理了特弥斯库拉的所有掠夺恶魔后，现在该去寻找亚马逊女王乌萨了……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'RAIDERS_PERK_APPLICATION_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="raiders_encounter_end">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_raiders_cleared"/> <!-- For Aurokaris dialogues -->
+	</scene>
+	
+	
+	<!-- Raiders cleared: -->
+	
+	<scene id="raiders_cleared">
+		<content folderPath="txt/places/fields/themiscyra">RAIDERS_CLEARED</content>
+		<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>false</travelDisabled>
+		<responses copyFromDialogueId="innoxia_places_fields_themiscyra_arch"/> <!-- For Aurokaris dialogues -->
+	</scene>
+	
+	
+	<!-- Teleported back to Elis: -->
+	
+	<scene id="elis_fight">
+		<content folderPath="txt/places/fields/themiscyra">ELIS_FIGHT</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[听]]></responseTitle>
+				<responseTooltip><![CDATA[听听露内克西丝如何愚蠢地揭露她母亲的计划。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_elis_listen]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="elis_listen">
+		<content folderPath="txt/places/fields/themiscyra">ELIS_LISTEN</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[安抚]]></responseTitle>
+				<responseTooltip><![CDATA[试着想一些话来安慰米诺塔莉丝，让她从沮丧中振作起来。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_elis_reassure]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="elis_reassure">
+		<content folderPath="txt/places/fields/themiscyra">ELIS_REASSURE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[帮忙]]></responseTitle>
+				<responseTooltip><![CDATA[这将帮助你实现打败露内特的目标，因此你提议帮助伊利斯为即将到来的战斗做好准备。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_elis_help]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="elis_help">
+		<preParsingEffects><![CDATA[
+			#IF(game.getWorlds().get(WORLD_TYPE_innoxia_fields_elis_town).getCell(PLACE_TYPE_innoxia_fields_elis_town_amazon_camp)==null)
+				[#game.getWorlds().get(WORLD_TYPE_innoxia_fields_elis_town).getCell(1, 11).getPlace().setPlaceType(PLACE_TYPE_innoxia_fields_elis_town_amazon_camp)]
+			#ENDIF
+			[#ursa.setLocation(WORLD_TYPE_innoxia_fields_elis_amazon_camp, PLACE_TYPE_innoxia_fields_elis_amazon_camp_queen, true)]
+			[#aurokaris.setLocation(WORLD_TYPE_innoxia_fields_elis_amazon_camp, PLACE_TYPE_innoxia_fields_elis_amazon_camp_aurokaris, true)]
+			[#lunexis.setLocation(WORLD_TYPE_innoxia_fields_elis_amazon_camp, PLACE_TYPE_innoxia_fields_elis_amazon_camp_lunexis, true)]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">ELIS_HELP</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[准备]]></responseTitle>
+				<responseTooltip><![CDATA[问米诺塔莉丝可以为露内特做哪些准备。]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_places_fields_themiscyra_elis_preparations]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="elis_preparations">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextEndStringBuilder(pc.setQuestProgress(QUEST_LINE_MAIN, QUEST_MAIN_3_F_PREPARING_ELIS))]
+		]]></preParsingEffects>
+		<content folderPath="txt/places/fields/themiscyra">ELIS_PREPARATIONS</content>
+		<secondsPassed minutes="true"><![CDATA[15]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你的下一个任务是寻求伊利斯执法者的帮助，于是你离开米诺塔莉丝的办公室，开始上路。]]></responseTooltip>
+				<nextDialogue stripContent="true" defaultPlaceType="innoxia_fields_elis_town_town_hall"/>
+				<effects><![CDATA[
+					[#meraxis.setLocation(WORLD_TYPE_innoxia_fields_elis_tavern_f1, PLACE_TYPE_innoxia_fields_elis_tavern_f1_room_meraxis)]
+					[#pc.setLocation(WORLD_TYPE_innoxia_fields_elis_town, PLACE_TYPE_innoxia_fields_elis_town_town_hall)]
+					[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/fields/themiscyra', 'ELIS_PREPARATIONS_END'))]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

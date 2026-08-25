@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<authorTag><![CDATA[腰部缝了个小标签印着“Sage”。]]></authorTag>
+		<value>200</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[乳胶拉链胸罩]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[乳胶拉链胸罩]]></namePlural>
+		<description><![CDATA[一条低胸胸罩，能露出穿戴者的乳沟。正面有一条拉链可以拉开，以便快速接触穿戴者的胸部。]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>CHEST</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet> 
+		<imageName>bra.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>UNZIPS</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_BREASTS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED</colour>
+			<colour>CLOTHING_PURPLE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]将乳胶胸罩放在[npc.her]的胸部上，并拉好[npc.her]背后的拉链。]]></self>
+		<other><![CDATA[
+[npc.Name]将乳胶胸罩放在[npc2.namePos]的胸部上，并把[npc2.her]背后的拉链拉好。]]></other>
+		<otherRough><![CDATA[[npc.Name]将乳胶胸罩放在[npc2.her]的胸部上，并粗暴地拉上[npc2.her]背后的拉链。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]拉开[npc.her]的乳胶胸罩的拉链并将其摘下。]]></self>
+		<other><![CDATA[
+[npc.Name]拉开[npc2.namePos]的乳胶胸罩的拉链并将其摘下。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拉下[npc2.namePos]乳胶胸罩的拉链并将其扯下。]]></otherRough>
+	</displacementText>
+	
+</clothing>

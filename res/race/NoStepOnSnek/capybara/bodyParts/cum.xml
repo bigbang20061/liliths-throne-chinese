@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<fluid>
+	<race>NoStepOnSnek_capybara</race>
+	<transformationName><![CDATA[水豚]]></transformationName>
+	<baseFluidType>CUM</baseFluidType>
+	<flavour>CUM</flavour>
+	<namesMasculine>
+		<name><![CDATA[水豚]]></name>
+	</namesMasculine>
+	<namesFeminine>
+		<name><![CDATA[水豚]]></name>
+	</namesFeminine>
+	<descriptorsMasculine/>
+	<descriptorsFeminine/>
+	<defaultFluidModifiers>
+		<modifier>STICKY</modifier>
+		<modifier>SLIMY</modifier>
+	</defaultFluidModifiers>
+</fluid>

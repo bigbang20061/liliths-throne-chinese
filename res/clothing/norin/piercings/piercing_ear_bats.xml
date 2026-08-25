@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+    <clothingAuthorTag><![CDATA[小小的刻字告诉你这些穿孔是由'Norin'制作的。]]></clothingAuthorTag>
+		<value>800</value>
+		<determiner><![CDATA[一对]]></determiner>
+		<name><![CDATA[蝙蝠耳坠]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[蝙蝠耳坠]]></namePlural>
+		<description><![CDATA[一对可爱蝙蝠耳坠。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>PIERCING_EAR</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>piercing_ear_bats.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+
+    <primaryColours>
+      <colour>CLOTHING_BLACK_STEEL</colour>
+    </primaryColours> 
+		<primaryColoursDye values="ALL_METAL"/>
+    <secondaryColours>
+      <colour>CLOTHING_RED_DARK</colour>
+    </secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+    <tertiaryColours>
+      <colour>CLOTHING_RED_DARK</colour>
+    </tertiaryColours>
+    <tertiaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将蝙蝠耳坠戴在[npc.her]的[npc.ears]上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将蝙蝠耳坠戴在[npc2.namePos]的[npc2.ears]上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将蝙蝠耳坠穿在[npc2.namePos]的[npc2.ears]上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的蝙蝠耳坠摘了下来。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的蝙蝠耳坠摘了下来。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的蝙蝠耳坠扯了下来。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

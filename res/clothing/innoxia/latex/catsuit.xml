@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>2400</value> 
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[乳胶连体紧身衣]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[乳胶连体紧身衣]]></namePlural>
+		<description><![CDATA[这件性癖服装几乎覆盖了穿戴者的整个身体。只有手部、足部和头部是裸露的，以及得益于腹股沟部位的开口，穿戴者的生殖器和肛门也能裸露在外。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_UNDER</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet> 
+		<imageName>catsuit.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots>
+					<slot>STOMACH</slot>
+					<slot>CHEST</slot>
+					<slot>NIPPLE</slot>
+					<slot>PIERCING_NIPPLE</slot>
+					<slot>PIERCING_STOMACH</slot>
+					<slot>PIERCING_STOMACH</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots>
+			<slot>CHEST</slot>
+		</incompatibleSlots>
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_FINCH</tag>
+			<tag>FITS_BIPEDS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+	<self><![CDATA[
+		经过一番努力以及对乳胶的剧烈拉伸，[npc.name]成功挤进了连体紧身衣中。
+	]]></self>
+	<other><![CDATA[
+		经过一番努力以及对乳胶的剧烈拉伸，[npc.name]成功将[npc2.name]挤进了连体紧身衣中。
+	]]></other>
+	<otherRough><![CDATA[
+		经过一番努力以及对乳胶的剧烈拉伸，[npc.name]粗暴地将[npc2.name]强行塞进了连体紧身衣中。
+	]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+	<self><![CDATA[
+		尽管需要相当程度的努力，[npc.name]还是设法脱下了[npc.her]的乳胶连体紧身衣。
+	]]></self>
+	<other><![CDATA[
+		尽管需要相当程度的努力，[npc.name]还是设法脱下了[npc2.namePos]的乳胶连体紧身衣。
+	]]></other>
+	<otherRough><![CDATA[
+		尽管需要相当程度的努力和力量，[npc.name]还是设法脱下了[npc2.namePos]的乳胶连体紧身衣。
+	]]></otherRough>
+	</displacementText>
+  
+</clothing>

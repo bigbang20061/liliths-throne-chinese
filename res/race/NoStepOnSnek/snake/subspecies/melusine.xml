@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<subspecies>
+	<race>NoStepOnSnek_snake</race>
+	<colour>NoStepOnSnek_snake</colour>
+	<secondaryColour>NoStepOnSnek_snake</secondaryColour>
+	<tertiaryColour>NoStepOnSnek_snake</tertiaryColour>
+	<mainSubspecies>false</mainSubspecies>
+	<baseSlaveValue>10000</baseSlaveValue>
+	<attributeItemId>NoStepOnSnek_race_snake_oil</attributeItemId>
+	<transformativeItemId>NoStepOnSnek_race_snake_eggs</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<nocturnality>CATHEMERAL</nocturnality>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>false</bipedalSubspecies>
+	<winged>true</winged>
+	<applySubspeciesChanges><![CDATA[
+		[#targetedBody.applyLegConfigurationTransformation(LEG_TYPE_NoStepOnSnek_snake_leg, LEG_CONFIGURATION_TAIL_LONG, true)]
+		#IF(!targetedBody.hasWings())
+			[#targetedBody.setWingType(WING_TYPE_LEATHERY)]
+			[#targetedBody.setWingSize(WING_SIZE_ONE_SMALL)]
+		#ENDIF
+	]]></applySubspeciesChanges>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_NoStepOnSnek_snake && targetedBody.getLegConfiguration()==LEG_CONFIGURATION_TAIL_LONG && targetedBody.hasWings())
+			300
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="60">snake</iconName>
+	<backgroundName>background_wing</backgroundName>
+	<bookIconName>snake</bookIconName>
+	<bookName><![CDATA[缠紧盘绕]]></bookName>
+	<basicDescriptionId>SNAKE_BASIC</basicDescriptionId>
+	<advancedDescriptionId>SNAKE_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<nameAnthro>
+		<namesDefault>
+			<name><![CDATA[美露莘]]></name>
+			<namePlural><![CDATA[美露莘]]></namePlural>
+			<singularMaleName><![CDATA[美露莘男]]></singularMaleName>
+			<singularFemaleName><![CDATA[美露莘女]]></singularFemaleName>
+			<pluralMaleName><![CDATA[美露莘男]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[美露莘女]]></pluralFemaleName>
+		</namesDefault>
+	</nameAnthro>
+	<description><![CDATA[一种人形的蛇，下半身是典型的超大蛇身并长着一对翅膀，被称为 “美露莘” 。]]></description>
+	<nameHalfDemon>
+		<namesDefault>
+			<name><![CDATA[恶魔美露莘]]></name>
+			<namePlural><![CDATA[恶魔美露莘]]></namePlural>
+			<singularMaleName><![CDATA[恶魔美露莘]]></singularMaleName>
+			<singularFemaleName><![CDATA[恶魔美露莘]]></singularFemaleName>
+			<pluralMaleName><![CDATA[恶魔美露莘]]></pluralMaleName>
+			<pluralFemaleName><![CDATA[恶魔美露莘]]></pluralFemaleName>
+		</namesDefault>
+	</nameHalfDemon>
+	<feralAttributes>
+		<feralName><![CDATA[蛇]]></feralName>
+		<feralNamePlural><![CDATA[蛇]]></feralNamePlural>
+		<feralSingularMaleName><![CDATA[蛇]]></feralSingularMaleName>
+		<feralSingularFemaleName><![CDATA[蛇]]></feralSingularFemaleName>
+		<feralPluralMaleName><![CDATA[蛇]]></feralPluralMaleName>
+		<feralPluralFemaleName><![CDATA[蛇]]></feralPluralFemaleName>
+		<legConfiguration>TAIL_LONG</legConfiguration>
+		<sizeHeight>false</sizeHeight>
+		<size>160</size>
+		<serpentTailLength>0.1</serpentTailLength>
+		<breastRowCount>0</breastRowCount>
+		<nipplesPerBreastCount>1</nipplesPerBreastCount>
+		<crotchBreastRowCount>0</crotchBreastRowCount>
+		<nipplesPerCrotchBreastCount>1</nipplesPerCrotchBreastCount>
+		<armsOrWingsPresent>false</armsOrWingsPresent>
+		<fingerActionsAvailable>false</fingerActionsAvailable>
+		<hairPresent>false</hairPresent>
+	</feralAttributes>
+	<statusEffectDescription><![CDATA[
+		虽然[npc.namePos]蛇一样的身体非常敏捷且强壮，但[npc.she]并不能很好地调节[npc.her]的体温，因此[npc.sheIs]对奥术火焰和奥术冰霜的抗性很弱。但也有好的方面，[npc.she]对奥术毒素有很高的亲和力。
+]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="10">MAJOR_PHYSIQUE</attribute>
+		<attribute value="0">MAJOR_ARCANE</attribute> 
+		<attribute value="0">MAJOR_CORRUPTION</attribute>
+		<attribute value="15">CRITICAL_DAMAGE</attribute>
+		<attribute value="25">DAMAGE_POISON</attribute>
+		<attribute value="-5">RESISTANCE_ICE</attribute>
+		<attribute value="-5">RESISTANCE_FIRE</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="10" feminineWeighting="5">PHYSICAL</category>
+		<category masculineWeighting="1" feminineWeighting="1">LUST</category>
+		<category masculineWeighting="0" feminineWeighting="0">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="TWO_RARE">DOMINION</region>
+		<region rarity="THREE_UNCOMMON">FIELD_CITY</region>
+		<region rarity="FOUR_COMMON">DESERT_CITY</region>
+		<region rarity="FOUR_COMMON">JUNGLE_CITY</region>
+		<region rarity="THREE_UNCOMMON">FIELDS</region>
+		<region rarity="THREE_UNCOMMON">WOODLAND</region>
+		<region rarity="TWO_RARE">SAVANNAH</region>
+		<region rarity="FOUR_COMMON">DESERT</region>
+		<region rarity="FOUR_COMMON">JUNGLE</region>
+	</regionLocations>
+	<worldLocations>
+		<world rarity="ONE_VERY_RARE">NIGHTLIFE_CLUB</world>
+	</worldLocations>
+	<flags/>
+</subspecies>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>350</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[男式木屐]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[男式木屐]]></namePlural>
+		<description><![CDATA[这种凉鞋的木质鞋底略微隆起，通过布制的鞋带固定在脚上。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>MASCULINE</femininity>
+		<slot>FOOT</slot> 
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_ronin</clothingSet>
+		<imageName>mens_geta.svg</imageName>
+		<imageEquippedName/>
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_PHYSICAL" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_GREY</colour>
+			<colour>CLOTHING_BLUE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>REINDEER_GIFT</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[[npc.Name]将[npc.her]双脚穿入木屐中。
+]]></self>
+		<other><![CDATA[[npc.Name]让[npc2.namePos]将[npc2.feet]穿入木屐中。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进木屐中。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]脱下了[npc.her][npc.feet]上的木屐。]]></self>
+		<other><![CDATA[[npc.Name]帮[npc2.namePos]脱下木屐。
+]]></other>
+		<otherRough><![CDATA[[npc.Name]粗暴地将[npc2.namePos]的木屐猛力拽下。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

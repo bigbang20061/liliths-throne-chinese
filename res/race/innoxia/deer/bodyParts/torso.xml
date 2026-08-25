@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<torso>
+	<race>innoxia_deer</race>
+	
+	<transformationName><![CDATA[鹿]]></transformationName>
+	
+	<coveringType>innoxia_deer_fur</coveringType>
+	
+	<descriptorsMasculine/>
+	
+	<descriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[
+		片刻后，转化步入尾声，[npc.she]身上的瘙痒终于褪去，发出了解脱的叹息。[npc.her]躯干上充斥着小鹿毛。腹部和[npc.breasts]毛发比较紧密平滑，但躯干其他部位却比较厚实。
+		<br/>[npc.Name]现在拥有[style.boldGoat(鹿般)][npc.skinFullDescription]。
+	]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[ 
+                 [npc.her]躯干具有[npc.a_femininity(true)]外观，并且是[npc.materialCompositionDescriptor][npc.skinFullDescription(true)]。
+]]></bodyDescription>
+</torso>

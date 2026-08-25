@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>5000</value> 
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[埃勒的承包许可证]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[埃勒的承包许可证]]></namePlural>
+		<description><![CDATA[这张通行证带有坚固的织物挂绳，由御城区的执法总监艾拉西斯·露内特马尔图本人签名，授予持有者访问御城区执法者总部军需处的权限。它还可以向执法巡逻队出示，以防止非法物品被没收。]]></description> 
+		
+		<useDescriptor><![CDATA[检查]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>QUEST</rarity> 
+		
+		<imageName>special_pass_elle.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_PURPLE_LIGHT</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.colourGood(授予访问权限)]到执法者总部的军需处]]></line>
+			<line><![CDATA[[style.colourExcellent(免疫)]对[style.colourBlueDark(非法)]物品的没收]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p>
+			由执法总监艾拉西斯·露内特马尔图签名，附在坚固的织物挂绳上，这张“承包许可证”授予持有者访问御城区执法者总部军需处的权限。它还可以向执法巡逻队出示，以防止非法物品被没收。
+		</p>
+		]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]仔细观察这份通行证……
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]向[npc2.name]炫耀着她的通行证，而[npc2.name]对[npc.her]的证件感到印象深刻……
+	]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

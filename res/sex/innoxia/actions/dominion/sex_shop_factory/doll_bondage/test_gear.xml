@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#!npc.isPlayer() && sex.getLastUsedSexAction(doll).getId()!='innoxia_dominion_sex_shop_factory_doll_bondage_test_gear']
+	]]></actionConditional>
+	<type>ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>ZERO_NONE</arousalPerformer>
+	<arousalTarget>FIVE_EXTREME</arousalTarget>
+	<associatedCorruption>TWO_HORNY</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea/>
+	<targetedArea/>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[
+		测试装置
+	]]></title>
+	<tooltip><![CDATA[
+		利用这个机会来测试束缚装置的耐久性。
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<text><![CDATA[
+				[style.random(
+					玩偶打算利用这个机会来测试你的束缚装置的耐用性，
+					|
+					玩偶想要测试束缚装置的极限，
+					|
+					玩偶认为现在是时候测试一下你的束缚装置了，
+					|
+					玩偶决定花点时间测试一下束缚装置的耐用性，
+				)]
+				她
+				[style.random(
+					把假阳具深深地插进你的阴道里，
+					|
+					伸出手，
+					|
+					将穿戴式假阳具深深地撞进你的阴道里，
+					|
+					暂时停止操你，
+				)]
+				然后
+				[style.random(
+					粗暴地拉扯着你的乳头夹。你的硅胶乳头被痛苦地夹住并拉扯着，你的呻吟声因为口球而变得模糊不清。玩偶继续拉扯着夹子，你只能在束缚装置中不停地扭动着。
+					|
+					抓住你的皮革项圈。她猛拉项圈，让你感到一阵窒息。你不由自主地喘息着，但这丝毫不影响她紧紧地勒住你的脖子。
+					|
+					抓住你的一字杆脚铐。她用力地从后面向上拉，强行将你的脚踝拉到头后面。由于你的硅胶身体很柔软，所以这不会给你带来任何不适。
+					|
+					开始拉扯你龟甲缚的绳索。她用力将绳索勒紧你[pc.cupSize]罩杯的乳房底部，迫使你的乳房痛苦地变形并向外凸起。
+				)]
+				
+				<br/><br/>
+				
+				她对束缚装置的承受效果感到满意，然后重新集中注意力，继续用穿戴式假阳具粗暴地操你。
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

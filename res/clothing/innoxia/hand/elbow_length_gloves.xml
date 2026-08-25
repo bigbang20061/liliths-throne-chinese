@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>200</value> 
+		<determiner><![CDATA[一副]]></determiner>
+		<name><![CDATA[及肘手套]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[及肘手套]]></namePlural>
+		<description><![CDATA[一双优雅的手肘长度手套。由薄而柔软的面料制成，触感丝滑。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>HAND</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>elbow_length_gloves.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired>
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/> <!--I decided against having these conceal finger slots.-->
+			</blockedParts>
+		</blockedPartsList>
+		<incompatibleSlots/> 
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_WHITE</colour>
+			<colour>CLOTHING_RED_VERY_DARK</colour>
+			<colour>CLOTHING_PURPLE_VERY_DARK</colour>
+			<colour>CLOTHING_GREEN_DRAB</colour>
+			<colour>CLOTHING_OLIVE</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把[npc.her]的[npc.hands]套进及肘手套，然后将它们拉到[npc.her]的[npc.arms]附近。
+]]></self>
+		<other><![CDATA[
+[npc.Name]顺着[npc2.namePos][npc2.hands]套进及肘手套，将它们沿着[npc2.her][npc2.arms]拉起。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地强行将及肘手套套在[npc2.namePos]的[npc2.hands]上，然后猛地拉上[npc2.her]的[npc2.arms]。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]顺着[npc.her]的[npc.arms]滑下及肘手套，然后将它们从[npc.her]的[npc.hands]上取下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]顺着[npc2.namePos][npc2.arms]滑下及肘手套，然后将它们从[npc2.her][npc2.hands]上取下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地把及肘手套从[npc2.namePos]的[npc2.arms]上扯下，然后粗暴地将它们从[npc2.her]的[npc2.hands]上拽开。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

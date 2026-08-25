@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- 吞入确认：展示猎物信息，确认后调用 addContainedCharacter。 -->
+	<scene id="swallow_confirm">
+		<title><![CDATA[吞入]]></title>
+		<tooltip><![CDATA[将眼前的人纳入你的体内。]]></tooltip>
+		<preParsingEffects><![CDATA[
+			[#game.setParserTarget('prey', npc)]
+		]]></preParsingEffects>
+		<content folderPath="mods/unbirth/content">SWALLOW_CONFIRM</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.canBeSwallowed(prey)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[确认吞入]]></responseTitle>
+				<responseTooltip><![CDATA[将[prey.name]整个人吞进你的子宫里。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'SWALLOW_SUCCESS'))]
+					[#game.addContainedCharacter(prey, 'WOMB')]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.canBeSwallowed(prey)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[确认吞入]]></responseTitle>
+				<responseTooltip><![CDATA[[#game.getSwallowBlockReason(prey)]]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[取消]]></responseTitle>
+				<responseTooltip><![CDATA[还是先不把[prey.name]吞进去了。]]></responseTooltip>
+				<nextDialogue><![CDATA[HC_encounter_alleyway_victory]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+
+	<!-- 体内持续：列出猎物并提供逐人释放。 -->
+	<scene id="carrying">
+		<title><![CDATA[体内]]></title>
+		<tooltip><![CDATA[感受被你容纳在体内的人。]]></tooltip>
+		<preParsingEffects><![CDATA[
+			#IF(game.getContainedCharacterCount(pc)>=1)
+				[#game.setParserTarget('prey', game.getContainedCharacter(pc, 0))]
+			#ENDIF
+			#IF(game.getContainedCharacterCount(pc)>=2)
+				[#game.setParserTarget('prey2', game.getContainedCharacter(pc, 1))]
+			#ENDIF
+			#IF(game.getContainedCharacterCount(pc)>=3)
+				[#game.setParserTarget('prey3', game.getContainedCharacter(pc, 2))]
+			#ENDIF
+			#IF(game.getContainedCharacterCount(pc)>=4)
+				[#game.setParserTarget('prey4', game.getContainedCharacter(pc, 3))]
+			#ENDIF
+		]]></preParsingEffects>
+		<content folderPath="mods/unbirth/content">CARRYING</content>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=1]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[释放 [prey.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[收缩子宫，将[prey.name]从你的体内释放出来。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setString('unbirth_release_type', game.getContainedCharacterType(pc, 0))]
+					[#flags.setString('unbirth_release_prey_id', prey.getId())]
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 0))]
+					[#game.releaseContainedCharacter(prey.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=2]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[释放 [prey2.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[收缩子宫，将[prey2.name]从你的体内释放出来。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setString('unbirth_release_type', game.getContainedCharacterType(pc, 1))]
+					[#flags.setString('unbirth_release_prey_id', prey2.getId())]
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 1))]
+					[#game.releaseContainedCharacter(prey2.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=3]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[释放 [prey3.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[收缩子宫，将[prey3.name]从你的体内释放出来。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setString('unbirth_release_type', game.getContainedCharacterType(pc, 2))]
+					[#flags.setString('unbirth_release_prey_id', prey3.getId())]
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 2))]
+					[#game.releaseContainedCharacter(prey3.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=4]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[释放 [prey4.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[收缩子宫，将[prey4.name]从你的体内释放出来。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
+				<effects><![CDATA[
+					[#flags.setString('unbirth_release_type', game.getContainedCharacterType(pc, 3))]
+					[#flags.setString('unbirth_release_prey_id', prey4.getId())]
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 3))]
+					[#game.releaseContainedCharacter(prey4.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isVoreDigestionContentEnabled() && game.getContainedCharacterCount(pc)>=1 && game.getContainedCharacterType(pc, 0)=='STOMACH' && game.canDigestContainedCharacter(game.getContainedCharacter(pc, 0))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[消化 [prey.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[让胃袋收缩，彻底消化[prey.name]。[prey.She]将从游戏中永久消失。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_BAD]]></colour>
+				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 0))]
+					[#game.digestContainedCharacter(prey.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isVoreDigestionContentEnabled() && game.getContainedCharacterCount(pc)>=1 && game.getContainedCharacterType(pc, 0)=='STOMACH' && !game.canDigestContainedCharacter(game.getContainedCharacter(pc, 0))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[消化 [prey.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[[prey.Name]不能被消化（独特角色或仍被游戏保护）。]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=1 && game.canShrinkContainedCharacter(game.getContainedCharacter(pc, 0))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[缩小 [prey.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[让体内的压力把[prey.name]再压缩一截。]]></responseTooltip>
+				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'SHRINK'))]
+					[#game.appendToTextStartStringBuilder(game.shrinkContainedCharacter(prey.getId()))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=1 && !game.canShrinkContainedCharacter(game.getContainedCharacter(pc, 0))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[缩小 [prey.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[[prey.Name]已经不能再缩小了。]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=1 && game.canRebirthContainedAsOffspring(game.getContainedCharacter(pc, 0))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[转化为后代]]></responseTitle>
+				<responseTooltip><![CDATA[让[prey.name]在子宫里融化重组，成为你的后代种子。[prey.She]将从世界中消失。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'REBIRTH'))]
+					[#game.appendToTextStartStringBuilder(game.rebirthContainedAsOffspring(prey.getId()))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=1 && !game.canRebirthContainedAsOffspring(game.getContainedCharacter(pc, 0))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[转化为后代]]></responseTitle>
+				<responseTooltip><![CDATA[只有子宫中、且不受保护的猎物才能被转化为后代。]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+
+
+
+			<response>
+				<availabilityConditional><![CDATA[[#game.isVoreDigestionContentEnabled() && game.getContainedCharacterCount(pc)>=2 && game.getContainedCharacterType(pc, 1)=='STOMACH' && game.canDigestContainedCharacter(game.getContainedCharacter(pc, 1))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[消化 [prey2.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[彻底消化[prey2.name]。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_BAD]]></colour>
+				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 1))]
+					[#game.digestContainedCharacter(prey.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isVoreDigestionContentEnabled() && game.getContainedCharacterCount(pc)>=3 && game.getContainedCharacterType(pc, 2)=='STOMACH' && game.canDigestContainedCharacter(game.getContainedCharacter(pc, 2))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[2]]></index>
+				<responseTitle><![CDATA[消化 [prey3.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[彻底消化[prey3.name]。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_BAD]]></colour>
+				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 2))]
+					[#game.digestContainedCharacter(prey.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.isVoreDigestionContentEnabled() && game.getContainedCharacterCount(pc)>=4 && game.getContainedCharacterType(pc, 3)=='STOMACH' && game.canDigestContainedCharacter(game.getContainedCharacter(pc, 3))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[消化 [prey4.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[彻底消化[prey4.name]。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_BAD]]></colour>
+				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 3))]
+					[#game.digestContainedCharacter(prey.getId())]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=2 && game.canShrinkContainedCharacter(game.getContainedCharacter(pc, 1))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[缩小 [prey2.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[把[prey2.name]再压缩一截。]]></responseTooltip>
+				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 1))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'SHRINK'))]
+					[#game.appendToTextStartStringBuilder(game.shrinkContainedCharacter(prey.getId()))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=3 && game.canShrinkContainedCharacter(game.getContainedCharacter(pc, 2))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[6]]></index>
+				<responseTitle><![CDATA[缩小 [prey3.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[把[prey3.name]再压缩一截。]]></responseTooltip>
+				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 2))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'SHRINK'))]
+					[#game.appendToTextStartStringBuilder(game.shrinkContainedCharacter(prey.getId()))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=4 && game.canShrinkContainedCharacter(game.getContainedCharacter(pc, 3))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[7]]></index>
+				<responseTitle><![CDATA[缩小 [prey4.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[把[prey4.name]再压缩一截。]]></responseTooltip>
+				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 3))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'SHRINK'))]
+					[#game.appendToTextStartStringBuilder(game.shrinkContainedCharacter(prey.getId()))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=2 && game.canRebirthContainedAsOffspring(game.getContainedCharacter(pc, 1))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[9]]></index>
+				<responseTitle><![CDATA[转化 [prey2.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[将[prey2.name]转化为后代种子。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 1))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'REBIRTH'))]
+					[#game.appendToTextStartStringBuilder(game.rebirthContainedAsOffspring(prey.getId()))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=3 && game.canRebirthContainedAsOffspring(game.getContainedCharacter(pc, 2))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[10]]></index>
+				<responseTitle><![CDATA[转化 [prey3.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[将[prey3.name]转化为后代种子。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 2))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'REBIRTH'))]
+					[#game.appendToTextStartStringBuilder(game.rebirthContainedAsOffspring(prey.getId()))]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>=4 && game.canRebirthContainedAsOffspring(game.getContainedCharacter(pc, 3))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[1]]></responseTabIndex>
+				<index><![CDATA[11]]></index>
+				<responseTitle><![CDATA[转化 [prey4.Name]]]></responseTitle>
+				<responseTooltip><![CDATA[将[prey4.name]转化为后代种子。]]></responseTooltip>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', game.getContainedCharacter(pc, 3))]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'REBIRTH'))]
+					[#game.appendToTextStartStringBuilder(game.rebirthContainedAsOffspring(prey.getId()))]
+				]]></effects>
+			</response>
+
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[让他们继续待在你的体内，先去做别的事。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+
+	<!-- 释放结果：effects 已在上一响应中调用 releaseContainedCharacter。 -->
+	<scene id="release">
+		<title><![CDATA[释放]]></title>
+		<tooltip><![CDATA[将体内的人释放出来。]]></tooltip>
+		<preParsingEffects><![CDATA[
+		]]></preParsingEffects>
+		<content folderPath="mods/unbirth/content">RELEASE</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue><![CDATA[false]]></continuesDialogue>
+		<travelDisabled><![CDATA[true]]></travelDisabled>
+		<inventoryDisabled><![CDATA[true]]></inventoryDisabled>
+		<responses>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)>0]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[体内]]></responseTitle>
+				<responseTooltip><![CDATA[你的体内还有其他人。再检查一下他们的状态。]]></responseTooltip>
+				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#game.getContainedCharacterCount(pc)<=0]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[体内已经空了。继续赶路吧。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[离开这里，继续你的旅程。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+			</response>
+		</responses>
+	</scene>
+
+</dialogueNodes>

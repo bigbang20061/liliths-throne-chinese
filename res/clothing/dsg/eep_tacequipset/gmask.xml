@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[面具底部有微微凸起的字母，上面写着：“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>1000</value> 
+
+		<determiner><![CDATA[一具]]></determiner>
+
+		<name><![CDATA[执法者防毒面具]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者防毒面具]]></namePlural> 
+
+		<description><![CDATA[一具由坚韧的合成橡胶制成的防毒面具。圆顶形状的聚碳酸酯面罩提供了广阔的视野，而不会被面罩周围遮蔽视线。]]></description> 
+
+		<physicalResistance>2</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>MOUTH</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet/>
+
+		<imageName>gmask_nofilter.svg</imageName> 
+
+		<imageEquippedName>gmask.svg</imageEquippedName>
+
+		<effects>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+			<effect limit="0" mod1="CLOTHING_ATTRIBUTE" mod2="RESISTANCE_POISON" potency="MAJOR_BOOST" timer="397" type="CLOTHING"/>
+		</effects> 
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>MOUTH</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts>
+					<bodyPart>MOUTH</bodyPart>
+				</blockedBodyParts> 
+
+				<clothingAccessBlocked> 
+				</clothingAccessBlocked>
+
+				<concealedSlots/> 
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots>
+			<slot>EYES</slot>
+		</incompatibleSlots> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_GREEN_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_SILVER"/>
+		
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+
+		<itemTags> 	
+			<tag>RIGID_MATERIAL</tag>
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]戴上防毒面具并拧了一个新的滤芯上去。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将防毒面具戴在[npc2.namePos][npc2.face]并拧了一个新的滤芯上去。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强行将防毒面具戴在[npc2.namePos]的[npc2.face]上并草草的拧了一个滤芯上去。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的防毒面具摘下。]]></self>
+		<other><![CDATA[
+			[npc.Name]把[npc2.namePos]防毒面具从[npc2.her][npc2.face]摘下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将防毒面具从[npc2.namePos]的[npc2.face]上拽了下来。]]></otherRough>
+	</displacementText>
+	
+</clothing>

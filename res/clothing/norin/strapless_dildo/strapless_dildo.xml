@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>800</value>
+		<determiner><![CDATA[一根]]></determiner>
+		<name><![CDATA[无绑带穿戴式假阳具]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[无绑带穿戴式假阳具]]></namePlural>
+		<description><![CDATA[一根由自清洁硅胶制成的长度为[unit.size(25)]的假阴茎。是专为用阴道穿戴而设计的。它有一个纹理清晰的阴蒂垫，还有一个针对穿戴者G点的短柄。]]></description>
+
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>VAGINA</slot>
+		<rarity>COMMON</rarity>
+
+		<imageName>strapless_dildo.svg</imageName>
+
+		<clothingSet/>
+		<imageEquippedName/>
+		<effects/>
+
+		<blockedPartsList>
+		  <blockedParts>
+			<displacementType>REMOVE_OR_EQUIP</displacementType>
+			<clothingAccessRequired>
+			  <clothingAccess>VAGINA</clothingAccess>
+			</clothingAccessRequired>
+			<blockedBodyParts>
+			  <bodyPart>VAGINA</bodyPart>
+			</blockedBodyParts>
+			<clothingAccessBlocked/>
+			<concealedSlots/>
+
+		  </blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/>
+
+		<primaryColours values="ALL"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+
+		<itemTags>
+		  <tag>SOLD_BY_FINCH</tag>
+		  <tag>REQUIRES_VAGINA</tag>
+		  <tag>PLUGS_VAGINA</tag>
+		  <tag>REQUIRES_NO_PENIS</tag>
+		  <tag>ENABLE_SEX_EQUIP</tag>
+		  <tag>TRANSPARENT</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<sexAttributesSelf>
+		<penetration>
+			<length>15</length>
+			<girth>4</girth>
+			<modifiers/>
+		</penetration>
+		<orifice/>
+	</sexAttributesSelf>
+	
+	<sexAttributesOther>
+		<penetration>
+			<length>25</length>
+			<girth>3</girth>
+			<modifiers/>
+		</penetration>
+		<orifice/>
+	</sexAttributesOther>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将假阳具塞进[npc.her][npc.pussy+]。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把假阳具插进[npc2.namePos][npc2.pussy+]。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]牢牢抓住[npc2.name]并且粗暴地把假阳具插进[npc2.her][npc2.pussy+]。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]把假阳具从[npc.her][npc.pussy+]拔出。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]把假阳具从[npc2.namePos][npc2.pussy+]拔出。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]紧紧抓住[npc2.namePos]的假阳具并从[npc2.her][npc2.pussy+]里扯出来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

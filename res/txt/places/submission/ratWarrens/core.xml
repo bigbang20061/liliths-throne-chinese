@@ -1,0 +1,4286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+	
+	<!-- RAT_WARREN_INITIAL_ENTRY -->
+	
+	<htmlContent tag="ENTRANCE_WHORE"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你告诉守卫想再进去一次，耐心等着他们激活机器把身后的门关上，再打开前门让你进入鼠窟。迈步进去时，老鼠从你和[npc.name]的两侧涌过，[npc2.name]问，[npc2.speech(所以，你俩又来这找文加挨操了，嗯？)]
+		</p>
+		<p>
+			#IF(pc.isLewd())
+				#IF(pc.hasVagina())
+					#IF(npc.hasVagina())
+						[pc.speech(是啊，我们的小穴<i>正</i>渴求着你老大的狠狠捣干呢，)]你下流地挑逗，[pc.speech(关你什么事？)]
+					#ELSE
+						[pc.speech(是啊，我的小穴<i>正</i>渴求着你老大的狠狠捣干呢，)]你下流地挑逗， [pc.speech(关你什么事？)]
+					#ENDIF
+				#ELSE
+					[pc.speech(是啊，我俩不介意尝尝你老大的肥屌，)]你下流地挑逗，[pc.speech(关你什么事？)]
+				#ENDIF
+			#ELSE
+				[pc.speech(也许吧，)]你羞怯地挑逗， [pc.speech(关你什么事？)]
+			#ENDIF
+		</p>
+		<p>
+			这对老鼠无法控制双手，走近摸索你和[npc.namePos]的屁股。[npc3.name]倾身靠上你的[npc.companion]， 咆哮道，[npc3.speech(我们很馋你的蜜臀！需要在你见文加之前帮忙热热身吗？)]
+		</p>
+	#ELSE
+		<p>
+			你告诉守卫想再进去一次，耐心等着他们激活机器把身后的门关上，再打开前门让你进入鼠窟。迈步进去时，老鼠从你的两侧涌过，[npc.name]问， [npc.speech(所以，你又来这找文加挨操了？)]
+		</p>
+		<p>
+			#IF(pc.isLewd())
+				#IF(pc.hasVagina())
+					[pc.speech(是啊，我的小穴<i>正</i>渴求着你老大的狠狠捣干呢，)]你下流地挑逗， [pc.speech(关你什么事？)]
+				#ELSE
+					[pc.speech(是啊，我不介意尝尝你老大的肥屌，)]你下流地挑逗，[pc.speech(关你什么事？)]
+				#ENDIF
+			#ELSE
+				[pc.speech(也许吧，)]你羞怯地挑逗， [pc.speech(关你什么事？)]
+			#ENDIF
+		</p>
+		<p>
+			这对老鼠无法控制双手，走近摸索你[pc.ass+]。[npc2.name]倾身靠着你，向下捏了一把你的胯，在你[pc.ear]边咆哮，[npc2.speech(我们很馋你的蜜臀！需要在你见文加之前帮忙热热身吗？)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_REPEAT"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你告诉守卫确实有更多交易要和文加做，耐心等着他们激活机器把身后的门关上，并打开前门让你和你的[npc.companion]进入鼠窟。
+		</p>
+		<p>
+			迈步走入时，老鼠在你和[npc.name]面前飞蹿，挡住了去路。[npc2.name]眯起眼睛，带着狐疑的讥笑发问，[npc2.speech(所以，你和文加做的是什么交易？)]
+		</p>
+	#ELSE
+		<p>
+			你告诉守卫确实有更多交易要和文加做，耐心等着他们激活机器把身后的门关上，并打开前门让你进入鼠窟。
+		</p>
+		<p>
+			你迈步走入时，老鼠在面前飞蹿，挡住了去路。[npc.name]眯起眼睛，带着狐疑的讥笑发问，[npc.speech(所以，你和文加做的是什么交易？)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_INITIAL"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你告诉守卫和文加有生意要谈，耐心等着他们退离入口，彼此窃窃私语起来。
+		</p>
+		<p>
+			[npc2.speech(老大确实说过他在等客人，)][npc2.name]嘶嘶低语，完全没控制住[npc2.her]的音量，[npc2.speech(就算这些家伙不是，我们也能轻松处理掉。)]
+		</p>
+		<p>
+			[npc3.speech(没错，我可不想因为拦下老大在等的人而触怒他，)][npc3.name]回应，[npc3.speech(让这些家伙进来吧。)]
+		</p>
+		<p>
+			[npc2.name]重新出现在入口，放声高喊，[npc2.speech(好吧，我们要让你进来了。待那儿别动；外门得先关上内门才能打开，再安全不过了。其中的原理你不会懂的，所以别问东问西。)]
+		</p>
+		<p>
+			你确信这两个守卫还没聪明到能想出把人困在走道里的主意，放任他们激活机器关闭身后的门，不出所料，门一合上，前门就缓缓打开，给你和你的[npc.companion]让出了进鼠窟的路。
+		</p>
+		<p>
+			你和[npc.name]抬腿进去，老鼠在面前飞蹿，挡住了去路。[npc2.name]眯起眼睛，带着狐疑的讥笑发问，[npc2.speech(所以，除非你说清楚到底要和文加谈什么生意，否则我不会让你们再前进一步的。)]
+		</p>
+	#ELSE
+		<p>
+			你告诉守卫和文加有生意要谈，耐心等着他们退离入口，彼此窃窃私语起来。
+		</p>
+		<p>
+			[npc.speech(老大确实说过他在等一位客人，)][npc.name]嘶嘶低语，完全没控制住[npc.her]的音量，[npc.speech(就算[pc.she]不是，我们也能轻松处理掉。)]
+		</p>
+		<p>
+			[npc2.speech(没错，我可不想因为拦下老大在等的人而触怒他，)][npc2.name]回应，[npc2.speech(让[pc.herHim]进来吧。)]
+		</p>
+		<p>
+			[npc.name]重新出现在入口，放声高喊，[npc.speech(好吧，我们要让你进来了。待那儿别动；外门得先关上内门才能打开，再安全不过了。其中的原理你不会懂的，所以别问东问西。)]
+		</p>
+		<p>
+			你确信这两个守卫还没聪明到能想出把人困在走道里的主意，放任他们激活机器关上身后的门，不出所料，门一合上，前门就缓缓打开，给你让出了进入鼠窟的路。
+		</p>
+		<p>
+			你抬腿进去，老鼠在你面前飞蹿，挡住了去路。[npc.name]眯起眼睛，带着狐疑的讥笑发问，[npc.speech(所以，除非你说清楚到底要和文加谈什么生意，否则我不会让你再前进一步的。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_REPEAT_ACCESSED"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			[pc.speech(这是机密。)]你回答，[pc.speech(你难道想让老大知道你乱打听他的私事吗？)]
+		</p>
+		<p>
+			[npc2.speech(你最好说的是实话，)][npc2.name]冷笑着后退一步，挥手示意你们进去，[npc2.speech(我会盯着你俩的，最好给我小心点儿……)]
+		</p>
+		<p>
+			[npc3.name]遵从上级的指示，让开路，让你和[npc.name]自由进入鼠窟……
+		</p>
+	#ELSE
+		<p>
+			[pc.speech(这是机密。)]你回答，[pc.speech(你难道想让老大知道你乱打听他的私事吗？)]
+		</p>
+		<p>
+			[npc.speech(你最好说的是实话，)][npc.name]冷笑着后退一步，挥手示意你进去，[npc.speech(我会盯着你的，最好给我小心点儿……)]
+		</p>
+		<p>
+			[npc2.name]遵从上级的指示，让开路，让你自由进入鼠窟……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_INTITIAL_ENTRY_AXEL"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你抬出“阿克塞尔”这个名字，告诉守卫是来讨论保护费处理问题的。
+		</p>
+		<p>
+			[npc2.speech(阿克塞尔，哼……你最好说的是实话，)][npc2.name]冷笑着后退一步，挥手示意你们进去，[npc2.speech(我会盯着你俩的，最好给我小心点儿……)]
+		</p>
+		<p>
+			[npc3.name]遵从上级的指示，让开路，让你和[npc.name]自由进入鼠窟……
+		</p>
+	#ELSE
+		<p>
+			你抬出“阿克塞尔”这个名字，告诉守卫是来讨论保护费处理问题的。
+		</p>
+		<p>
+			[npc.speech(阿克塞尔，哼……你最好说的是实话，)][npc.name]冷笑着后退一步，挥手示意你进去，[npc.speech(我会盯着你的，最好给我小心点儿……)]
+		</p>
+		<p>
+			[npc2.name]遵从上级的指示，让出路，让你自由进入鼠窟……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE_INTITIAL_ENTRY_FIGHT"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			#IF(pc.isBrave())
+				你对战斗力充满自信，告诉老鼠你是来终结他们罪行的，并做好战斗准备。[npc.Name]遵从你的指示，同样做好准备加入战斗。
+			#ELSE
+				你不想拐弯抹角，告诉老鼠你是来终结他们罪行的，并做好战斗准备。[npc.Name]遵从你的指示，同样做好准备加入战斗。
+			#ENDIF
+		</p>
+		<p>
+			[npc2.speech(你们干什么？！)][npc2.name]惊叫，竭尽全力回头朝隧道大喊，[npc2.speech(所有人！过来帮忙！)]
+		</p>
+		<p>
+			几秒之后，就有六个老鼠化形冲进来帮忙，但看到这里正在打架，其中几个抛下同伴转身就跑。清点四周，你发现有四名帮派成员拦在你和[npc.name]面前，包括让你进来的两个守卫。
+		</p>
+		<p>
+			战意上头，[npc2.name]猛拉附近的杠杆，由于用力过猛，它甚至断在了[npc2.her]手上。你听见背后的锁重重落下，封住大门，粉碎了任何你逃脱的可能。带着癫狂的笑容，[npc2.name]兴奋高喊，[npc2.speech(你们无路可逃！来吧！)]
+		</p>
+	#ELSE
+		<p>
+			#IF(pc.isBrave())
+				你对战斗力充满自信，告诉老鼠你是来终结他们罪行的，并做好战斗准备。
+			#ELSE
+				你不想拐弯抹角，告诉老鼠你是来终结他们罪行的，并做好战斗准备。
+			#ENDIF
+		</p>
+		<p>
+			[npc.speech(你要干什么？！)][npc.name]惊叫，竭尽全力回头朝隧道大喊，[npc.speech(所有人！过来帮忙！)]
+		</p>
+		<p>
+			几秒之后，就有六个老鼠化形冲进来帮忙，但看到这里正在打架，其中几个抛下同伴转身就跑。清点四周，你发现有四名帮派成员拦在你面前，包括让你进来的两个守卫。
+		</p>
+		<p>
+			战意上头，[npc.name]猛拉附近的杠杆，由于用力过猛，它甚至断在了[npc.her]手上。你听见背后的锁重重落下，封住大门，粉碎了任何你逃脱的可能。带着癫狂的笑容，[npc.name]兴奋高喊，[npc.speech(你无路可逃！来吧！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- RAT_WARREN_INITIAL_ENTRY_WHORE -->
+	
+	<htmlContent tag="RAT_WARREN_INITIAL_ENTRY_WHORE"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			#IF(pc.isLewd())
+				#IF(pc.hasVagina() && npc.hasVagina())
+					思及假装成来见文加的妓女是最简单的，你们决定照做，你下流地挑逗，[pc.speech(我们之间的交易，就是让我俩火热的小穴被文加的大鸡巴狠狠捣干一番。)]
+				#ELSE
+					思及假装成来见文加的妓女是最简单的，你们决定照做，你下流地挑逗，[pc.speech(我们之间的交易，就是让我俩被他的大鸡巴好好干上一炮。)]
+				#ENDIF
+			#ELSE
+				思及假装成来见文加的妓女是最简单的，你们决定照做，你羞怯地挑逗，[pc.speech(我们之间的交易，你可以理解成非常<i>亲密</i>的那种……)]
+			#ENDIF
+		</p>
+		<p>
+			这对老鼠彼此对视一眼，脸上露出奸诈的笑容，走近摸索你和[npc.namePos]的屁股。倾身靠上你的[npc.companion]，[npc3.name]咆哮，[npc3.speech(老大真是幸运，能干到这么诱人的屁股！需要在你们见文加之前帮忙热热身吗？)]
+		</p>
+	#ELSE
+		<p>
+			#IF(pc.isLewd())
+				#IF(pc.hasVagina())
+					思及假装成来见文加的妓女是最简单的，你决定照做，你下流地挑逗，[pc.speech(我们之间的交易，就是让我火热的小穴被文加的大鸡巴狠狠捣干一番。)]
+				#ELSE
+					思及假装成来见文加的妓女是最简单的，你决定照做，你下流地挑逗，[pc.speech(我们之间的交易，就是让我被他的大鸡巴好好干上一炮。)]
+				#ENDIF
+			#ELSE
+				思及假装成来见文加的妓女是最简单的，你决定照做，你羞怯地挑逗，[pc.speech(我们之间的交易，你可以理解成非常<i>亲密</i>的那种……)]
+			#ENDIF
+		</p>
+		<p>
+			这对老鼠彼此对视一眼，脸上露出奸诈的笑容，走近摸索你[pc.ass+]。倾身靠着你，[npc2.name]咆哮， [npc2.speech(老大真是幸运，能干到这么诱人的屁股！需要在你见文加之前帮忙热热身吗？)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="RAT_WARREN_INITIAL_ENTRY_WHORE_NO_SEX"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你不想和这些守卫上床，从他们手中挣脱出来，嘟着嘴转身解释，[pc.speech(对不起，但我们已经被买下了，你们老大恐怕不会喜欢礼物在运输途中被擅自拆开吧……)]
+		</p>
+		<p>
+			[npc2.speech(好吧，)][npc2.name]哼了一声，退后重重靠在墙上，[npc2.speech(但如果在老大玩过之后你还不满足，那就回来好吗？我俩会让你爽个够的。)]
+		</p>
+		<p>
+			你朝老鼠们笑笑，转身准备和[npc.name]一起进入隧道，意识到自己的诡计成功，你暗自松了口气……
+		</p>
+	#ELSE
+		<p>
+			你不想和这些守卫上床，从他们手中挣脱出来，嘟着嘴转身解释，[pc.speech(对不起，但我已经被买下了，你们老大恐怕不会喜欢礼物在运输途中被擅自拆开吧……)]
+		</p>
+		<p>
+			[npc.speech(好吧，)][npc.name]哼了一声，退后重重靠在墙上，[npc.speech(但如果在老大玩过之后你还不满足，那就回来好吗？我俩会让你爽个够的。)]
+		</p>
+		<p>
+			你朝老鼠们笑笑，转身准备进入隧道，意识到自己的诡计成功，你暗自松了口气……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="RAT_WARREN_INITIAL_ENTRY_WHORE_SOLO"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你觉得被守卫操一顿也不错，咬咬唇解释，[pc.speech(听起来不错，但我们里头总得有一个保持纯洁来应付文加……[npc.Name]，你就站后面看着，好吗？)]
+		</p>
+		<p>
+			[npc.speech(没问题，)]你的[npc.companion]回应，迈步穿过两只老鼠，回身观看。
+		</p>
+		<p>
+			[npc2.speech(真是个骚货，)][npc2.name]在你[pc.ear]边呻吟，[npc2.speech(你会爱上我肉棒的感觉的！)]
+		</p>
+		<p>
+			[npc3.speech(这一定会很棒的！)][npc3.name][npc3.moans]，[npc3.she]边在你身上磨蹭，边摸索你[pc.ass+]。
+		</p>
+		<p>
+			你喘出声淫荡的[pc.moan]，告诉两名守卫可以对你为所欲为……
+		</p>
+	#ELSE
+		<p>
+			你觉得被守卫操一顿也不错，咬着唇挑逗道， [pc.speech(听起来不错……相信文加不会介意和你们两个分享我的……)]
+		</p>
+		<p>
+			[npc.speech(真是个骚货，)][npc.name]在你[pc.ear]边呻吟，[npc.speech(你会爱上我肉棒的感觉的！)]
+		</p>
+		<p>
+			[npc2.speech(这一定会很棒的！)][npc2.name][npc2.moans]，[npc2.she]边在你身上磨蹭，边摸索你[pc.ass+]。
+		</p>
+		<p>
+			你喘出声淫荡的[pc.moan]，告诉两名守卫可以对你为所欲为……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="RAT_WARREN_INITIAL_ENTRY_WHORE_BOTH"><![CDATA[
+	<p>
+		你觉得被守卫操一顿也不错，咬着唇挑逗道，[pc.speech(听起来不错……相信文加不会介意和他勤劳的守卫分享我们的……)]
+	</p>
+	<p>
+		#IF(!npc.isAttractedTo(npc2))
+			[npc.speech(呼……如果你想让我这么做的话……)][npc.name]叹了口气，不太情愿地让[npc3.name]去抚摸[npc.herHim]。
+		#ELSE
+			[npc.speech(唔，好吧，没什么好害羞的，)][npc.name]性感地吐息，鼓励[npc3.name]去抚摸[npc.herHim]。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(真是个骚货，)][npc2.name]在你[pc.ear]边呻吟，[npc2.speech(你会爱上我肉棒的感觉的！)]
+	</p>
+	<p>
+		[npc3.speech(这一定会很棒的！)][npc3.name][npc3.moans]，边摸索你的[npc.companion][npc.ass+]边磨蹭[npc.herHim]。
+	</p>
+	<p>
+		你喘出声淫荡的[pc.moan]，告诉两名守卫可以对你们为所欲为……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="RAT_WARREN_INITIAL_ENTRY_WHORE_COMPANION"><![CDATA[
+	<p>
+		你觉得看着你的[npc.companion]被守卫操一顿也挺不错，咬着唇说，[pc.speech(听起来不错，但我们里头总得有一个保持纯洁来应付加文……[npc.Name]，你不介意和这两个人玩玩吧？)]
+	</p>
+	<p>
+		#IF(!npc.isAttractedTo(npc2))
+			[npc.speech(呼……如果你想让我这么做的话……)][npc.name]叹了口气，不太情愿地让[npc2.name]去抚摸[npc.herHim]。
+		#ELSE
+			[npc.speech(唔，好吧，没什么好害羞的。)][npc.name]性感地吐息，鼓励[npc2.name]去抚摸[npc.herHim]。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(你个小骚货，)][npc2.name]在你的[npc.companion][npc.ear]边呻吟，[npc2.speech(你会喜欢我肉棒的感觉的！)]
+	</p>
+	<p>
+		[npc3.speech(这一定超棒的！)][npc3.name][npc3.moans]，边摸索[npc.namePos][npc.ass+]边磨蹭[npc3.she][npc.herHim]。
+	</p>
+	<p>
+		你喘出声淫荡的[pc.moan]，告诉守卫可以对[npc.name]为所欲为，退后打算观看一场好戏……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_ENTRANCE_SEX -->
+	
+	<htmlContent tag="AFTER_ENTRANCE_SEX_COMPANION_WATCHING"><![CDATA[
+	<p>
+		两名守卫餍足退后，留下你气喘吁吁地[pc.moaning]，试图尽快平复呼吸。
+	</p>
+	<p>
+		[npc2.speech(很好，)][npc2.name]咆哮，在整理[npc2.her]衣服时对你咧嘴一笑。
+	</p>
+	<p>
+		[npc3.speech(欢迎随时回来，我们会让你再好好爽一把的！)][npc3.name]笑了，明显对刚刚发生的事很满意。
+	</p>
+	<p>
+		你效仿两只老鼠整理好衣服，走到你的[npc.companion]面前。[npc.name]看着你，问道，[npc.speech(怎么样，满足了吗？)]
+	</p>
+	<p>
+		#IF(pc.isSatisfiedFromLastSex())
+			[pc.speech(暂时算是吧……)]你回答，准备出发进入隧道……
+		#ELSE
+			[pc.speech(还没呢，)]你抱怨着，准备出发进入隧道……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_ENTRANCE_SEX_PLAYER_WATCHING"><![CDATA[
+	<p>
+		两名守卫餍足退后，留下[npc.name]气喘吁吁地[npc.moaning]，试图尽快平复[npc.her]呼吸。
+	</p>
+	<p>
+		[npc2.speech(很好，)][npc2.name]咆哮，在整理衣服时对你的[npc.companion]咧嘴一笑。
+	</p>
+	<p>
+		[npc3.speech(欢迎随时回来，我们会让你再好好爽一把的！)][npc3.name]笑了，显然对刚刚发生的事很满意。
+	</p>
+	<p>
+		[npc.name]效仿两只老鼠整理好衣服，走到你面前。你看着你的[npc.companion]，问道，[pc.speech(怎么样，满足了吗？)]
+	</p>
+	<p>
+		#IF(npc.isSatisfiedFromLastSex())
+			[npc.speech(是的……)][npc.she]长出一口气，准备跟着你进入隧道……
+		#ELSE
+			[npc.speech(并没有，)][npc.she]抱怨着，准备跟着你进入隧道……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_ENTRANCE_SEX_BOTH"><![CDATA[
+	<p>
+		两名守卫餍足退后，留你和[npc.name]气喘吁吁的[pc.moaning]，试图尽快平复呼吸。
+	</p>
+	<p>
+		[npc2.speech(不错，)][npc2.name]咆哮，在整理[npc2.her]衣服时对你们俩咧嘴一笑。
+	</p>
+	<p>
+		[npc3.speech(是啊，欢迎随时回来，我们会让你再好好爽一把的！)][npc3.name]笑了，显然对刚刚发生的事很满意。
+	</p>
+	<p>
+		你和[npc.name]效仿两只老鼠理好衣服，准备出发进入隧道……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_ENTRANCE_SEX_SOLO"><![CDATA[
+	<p>
+		两名守卫餍足退后，留你气喘吁吁的[pc.moaning]，试图尽快平复呼吸。
+	</p>
+	<p>
+		[npc.speech(很好，)][npc.name]咆哮，在整理[npc.her]衣服时对你咧嘴一笑。
+	</p>
+	<p>
+		[npc2.speech(是啊，欢迎随时回来，我们会让你再好好爽一把的！)][npc2.name]笑了，显然对刚刚发生的事很满意。
+	</p>
+	<p>
+		你效仿两只老鼠理好衣服，准备出发进入隧道……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- GUARD_COMBAT_VICTORY -->
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_ENSLAVED_ONE"><![CDATA[
+	<p>
+		[npc.speech(哇！你想干啥？！)][npc.name]震惊地说，[npc.speech(你不会是想把我们都变成奴隶吧？)]
+	</p>
+	<p>
+		你俯视面前剩下的老鼠，咧嘴一笑，思考着是否要奴役更多。毕竟，他们<i>的确</i>试图揍你一顿，而且看看这帮家伙的罪行，他们毫无疑问是罪有应得……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_ENSLAVED_ONE_REMAINING"><![CDATA[
+	<p>
+		[npc.speech(等等，求你了，我不会是那种好奴隶的！)][npc.name]惊叫，从你身边慌慌张张地逃开，[npc.speech(别抓我做奴隶！)]
+	</p>
+	<p>
+		你笑看眼前最后一只老鼠，犹豫是否应该完成任务并奴役[npc.herHim]。毕竟，[npc.she]<i>的确</i>曾试图攻击你，而且看看这帮家伙的罪行，[npc.she]无疑是罪有应得……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_ENSLAVED_ALL"><![CDATA[
+	<p>
+		你看着最后一只老鼠在眼前传送走，不禁发出胜利的笑声。你思索着如何处理你的新奴隶，准备继续前行……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			你和[npc.name]看着最后一只老鼠摇摇晃晃倒下，和其他老鼠躺在一起。你意识到有两只手下败鼠趁乱逃走了，仅剩下四只躺在面前。确认没有其他敌人设下埋伏，你和你的[npc.companion]解除戒备，走向被你们征服的对手。
+		#ELSE
+			你看着最后一只老鼠摇摇晃晃倒下，和其他老鼠躺在一起。你意识到有两只手下败鼠趁乱逃走了，仅剩下四只躺在面前。确认没有其他敌人设下埋伏，你解除戒备，走向被你征服的对手。
+		#ENDIF
+	</p>
+	<p>
+		[npc2.speech(呜……)][npc2.name]呻吟着，翘起[npc2.her]的[npc2.ass]，抱怨道，[npc2.speech(还愣着干什么，来操我吧！)]
+	</p>
+	<p>
+		你暂时忽略[npc2.her]的呻吟，估摸着周围的隧道里已经没有敌人了，但你确信鼠窟深处一定戒备森严，并随时准备迎击。不过，在处理那些情况之前，你需要决定如何解决这些欲求不满的落败帮派成员……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_ALL_ENSLAVED"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			你已经奴役了所有胆敢阻拦的老鼠，可以继续前进了。告诉[npc.name]做好战斗准备，你打算继续深入鼠窟……
+		#ELSE
+			你已经奴役了所有胆敢阻拦的老鼠，可以继续前进了。为又一场战斗做好准备，你打算继续深入鼠窟……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SCARE_OFF"><![CDATA[
+	<p>
+		#IF(game.getNonCompanionCharactersPresent().size()==1)
+			你不想给最后一只老鼠恢复勇气卷土重来的机会，就用自己最威严的语气告诉[npc.herHim]，如果[npc.she]胆敢再回来挑战，就会步[npc.her]朋友的后尘成为你的奴隶。[npc.race]清楚地认识到你比[npc.she]强壮得多，立刻拔腿跑向鼠窟深处，无疑是向文加通风报信去了。
+		#ELSE
+			你不想给这些老鼠恢复勇气卷土重来的机会，就用自己最威严的语气告诉他们，如果胆敢再回来挑战，就把他们都抓做奴隶。这些老鼠清楚地认识到你比他们强壮得多，立刻拔腿跑向鼠窟深处，无疑是向文加通风报信去了。
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			你和[com.name]为又一场战斗做好准备，打算继续深入鼠窟……
+		#ELSE
+			你为又一场战斗做好准备，打算继续深入鼠窟……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		#IF(pc.hasCompanions())
+			<p>
+				你看着眼前最后一只被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀揣下流想法向[npc.herHim]逼近。你回头看向[com.companion]，命令道，[pc.speech(你就站在那儿警戒，[com.name]。我可不想被意外搅了兴致！)]
+			</p>
+			<p>
+				[com.name]点头示意明白，退后警戒。你接近[npc.name]，[pc.moan]着说，[pc.speech(想被上？我来帮忙好了……)]
+			</p>
+			<p>
+				战败的[npc.race]溢出声兴奋的[npc.moan]，顺从靠近你祈求交媾……
+			</p>
+		#ELSE
+			<p>
+				你看着眼前最后一只被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀揣下流想法向[npc.herHim]逼近。你接近[npc.name]，[pc.moan]着说，[pc.speech(想被上？我来帮忙好了……)]
+			</p>
+			<p>
+				战败的[npc.race]溢出声兴奋的[npc.moan]，顺从靠近你祈求交媾……
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(pc.hasCompanions())
+			<p>
+				你看着眼前被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀着下流想法向他们逼近。你回头看向[com.companion]，命令道，[pc.speech(你就站在那儿警戒，[com.name]。我可不想被意外搅了兴致！)]
+			</p>
+			<p>
+				[com.name]点头示意明白，退后警戒。你接近[npc.name]，[pc.moan]着说，[pc.speech(想被上？我来帮忙好了……)]
+			</p>
+			<p>
+				战败的帮派成员溢出兴奋[npc.moan]，顺从靠近你，祈求着第一个被干……
+			</p>
+		#ELSE
+			<p>
+				你看着眼前被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀揣下流想法向他们逼近。你接近[npc.name]，[pc.moan]着说，[pc.speech(想被上？我来帮忙好了……)]
+			</p>
+			<p>
+				战败的帮派成员溢出兴奋[npc.moan]，顺从靠近你，祈求着第一个被干……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX_GENTLE"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		#IF(pc.hasCompanions())
+			<p>
+				你看着眼前最后一只被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀揣下流想法向[npc.herHim]逼近。你回头看向[com.companion]，命令道，[pc.speech(你就站在那儿警戒，[com.name]。我可不想被意外搅了兴致！)]
+			</p>
+			<p>
+				[com.name]点头示意明白，退后警戒。你接近[npc.name]，[pc.moan]着说，[pc.speech(想找点温柔的乐子？我来帮忙吧……)]
+			</p>
+			<p>
+				战败的[npc.race]溢出声兴奋[npc.moan]，顺从地靠近你祈求交媾……
+			</p>
+		#ELSE
+			<p>
+				你看着眼前最后一只被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀揣下流想法向[npc.herHim]逼近。你接近[npc.name]，[pc.moan]着说，[pc.speech(想找点温柔的乐子？我来帮忙吧……)]
+			</p>
+			<p>
+				战败的[npc.race]溢出声兴奋[npc.moan]，顺从地靠近你祈求交媾……
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(pc.hasCompanions())
+			<p>
+				你看着眼前被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀着下流想法向他们逼近。你回头看向[com.companion]，命令道，[pc.speech(你就站在那儿警戒，[com.name]。我可不想被意外搅了兴致！)]
+			</p>
+			<p>
+				[com.name]点头示意明白，退后警戒。你接近[npc.name]，[pc.moan]着说，[pc.speech(想找点温柔的乐子？我来帮忙吧……)]
+			</p>
+			<p>
+				战败的帮派成员溢出声兴奋的[npc.moan]，顺从地靠近你，祈求着第一个被上……
+			</p>
+		#ELSE
+			<p>
+				你看着眼前被击败的老鼠，因兴奋而无法抑制地漏出声淫荡[pc.moan]，怀揣下流想法向他们逼近。你接近[npc.name]，[pc.moan]着说，[pc.speech(想找点温柔的乐子？我来帮忙吧……)]
+			</p>
+			<p>
+				战败的帮派成员溢出声兴奋的[npc.moan]，顺从地靠近你，祈求着第一个被上……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX_ROUGH"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		#IF(pc.hasCompanions())
+			<p>
+				你兴奋地看着眼前落败的最后一只老鼠，不禁充满侵略性地咆哮一声，怀揣下流想法向[npc.herHim]逼近。你回头看向[com.companion]，命令道，[pc.speech(你就站在那儿警戒，[com.name]。我可不想被意外搅了兴致！)]
+			</p>
+			<p>
+				[com.name]点头示意明白，退后警戒。你接近[npc.name]，咆哮道，[pc.speech(想像个婊子一样被干？那我满足你，荡妇！)]
+			</p>
+			<p>
+				战败的[npc.race]溢出声兴奋[npc.moan]，顺从地接近你祈求交媾……
+			</p>
+		#ELSE
+			<p>
+				你兴奋地看着眼前落败的最后一只老鼠，不禁充满侵略性地咆哮一声，怀揣下流想法向[npc.herHim]逼近。你接近[npc.name]，咆哮道，[pc.speech(想像个婊子一样被干？那我满足你，荡妇！)]
+			</p>
+			<p>
+				战败的[npc.race]溢出声兴奋[npc.moan]，顺从地接近你祈求交媾……
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(pc.hasCompanions())
+			<p>
+				你兴奋地看着眼前落败的老鼠，不禁充满侵略性地咆哮一声，怀揣下流想法向他们逼近。你回头看向[com.companion]，命令道，[pc.speech(你就站在那儿警戒，[com.name]。我可不想被意外搅了兴致！)]
+			</p>
+			<p>
+				[com.name]点头示意明白，退后警戒。你接近[npc.name]，咆哮道，[pc.speech(想像个婊子一样被干？那我满足你，荡妇！)]
+			</p>
+			<p>
+				落败的帮派成员兴奋呻吟着，顺从地接近你，祈求者第一个被干……
+			</p>
+		#ELSE
+			<p>
+				你兴奋地看着眼前落败的老鼠，不禁充满侵略性地咆哮一声，怀揣下流想法向他们逼近。你接近[npc.name]，咆哮道，[pc.speech(想像个婊子一样被干？那我满足你，荡妇！)]
+			</p>
+			<p>
+				落败的帮派成员兴奋呻吟着，顺从地接近你，祈求者第一个被干……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX_SUBMIT"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		#IF(pc.hasCompanions())
+			<p>
+				你看着这个被打败的帮派成员躺在地上，心中升起一股迫切的欲望，想与[npc.herHim]调换处境，让[npc.her]用[npc.her]想要的方式对待你。你不想让你的[com.companion]参与你的计划，转身面对[com.herHim]说，[pc.speech(我要和这家伙找点乐子，所以你退后看着直到[npc.sheIs]结束就行了……)]
+			</p>
+			<p>
+				[com.speech(如果你确定的话……)][com.name]答道，然后按照[com.sheIs]说的退后。
+			</p>
+			<p>
+				你走上前跪在[npc.race]旁，然后问[npc.herHim]，[pc.speech(我敢打赌，你被这样打败后一定很沮丧，对吧？如果能让你感觉好点，你想怎么用我都可以……)] 
+			</p>
+		#ELSE
+			<p>
+				你看着这个被打败的帮派成员躺在地上，升起一股迫切的欲望，想与[npc.herHim]调换处境，让[npc.her]用[npc.her]想要的方式对待你。你走上前，跪在[npc.race]旁，然后问[npc.herHim]，[pc.speech(我敢打赌，你被这样打败后一定很沮丧，对吧？如果能让你感觉好点，你想怎么用我都可以……)]
+			</p>
+		#ENDIF
+		<p>
+			[npc.name]很快采纳你的建议，撑起身后问，[npc.speech(你说真的吗？在打败了我们，奴役了我所有的朋友之后，你让我操你吗？！)]
+		</p>
+		<p>
+			你让自己看起来娇小顺从，向[npc.name]证实[npc.she]可以用任何[npc.she]想要的方式操你。[npc.race]发出一声饥渴的[npc.moan]，立即靠近你，在把你拉起来后，[npc.she]开始摸索你的身体，准备给你你想要的……
+		</p>
+	#ELSE
+		#IF(pc.hasCompanions())
+			<p>
+				你看着这群被打败的帮派成员躺在地上，心中升起一股迫切的欲望，想与他们对调处境，让他们用他们想要的方式对待你。你不想让你的[com.companion]参与你的计划，转身面对[com.herHim]说，[pc.speech(我要和这群老鼠找点乐子，所以你退后看着直到他们结束就行了……)]
+			</p>
+			<p>
+				[com.speech(如果你确定的话……)][com.name]答道，然后按照[com.sheIs]说的退后。
+			</p>
+			<p>
+				你走上前，跪在这群老鼠旁，然后问[npc.name]，[pc.speech(我敢打赌，你被这样打败后一定很沮丧，对吧？如果能让你感觉好点，你们想怎么用我都可以……)] 
+			</p>
+		#ELSE
+			<p>
+				你看着这群被打败的帮派成员躺在地上，心中升起一股迫切的欲望，想与他们对调处境，让他们用他们想要的方式对待你。你走上前，跪在这群老鼠旁，然后问[npc.name]，[pc.speech(我敢打赌，你被这样打败后一定很沮丧，对吧？如果能让你感觉好点，你们想怎么用我都可以……)]
+			</p>
+		#ENDIF
+		<p>
+			[npc.name]很快采纳你的建议，撑起身后问，[npc.speech(你说真的吗？在那样打败我们之后，你让我们操你吗？！)]
+		</p>
+		<p>
+			你让自己看起来娇小顺从，向[npc.name]证实[npc.she]和其余这些老鼠可以用任何他们想要的方式操你。这群老鼠说了一系列下流的话，立即靠近你，在把你拉起来后，他们开始摸索你的身体，准备给你你想要的……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX_GROUP"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你兴奋地看着眼前落败的[npc.race]，不禁溢出淫荡的[pc.moan]。你怀揣着下流想法靠近[npc.herHim]，回头看向[com.companion]，让[com.herHim]和你一起与[npc.name]来场支配型性爱。
+		</p>
+		<p>
+			#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+				[com.name]气呼呼地叹口气，嘀咕着，[com.speech(我别无选择，不是吗……)]
+			#ELSE
+				[com.name]发出急促且[com.moan]，热情回答，[com.speech(这一定会很棒的！)]
+			#ENDIF
+		</p>
+		<p>
+			你和你的[com.companion]走到落败的帮派成员面前，笑着看[npc.she]顺从地接近，祈求交媾……
+		</p>
+	#ELSE
+		<p>
+			你兴奋地看着眼前落败的老鼠，不禁溢出淫荡且[pc.moan]，怀揣着下流想法接近他们。你回头看[com.companion]，让[com.herHim]和你一起与他们来场支配型性爱。
+		</p>
+		<p>
+			#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+				[com.name]气呼呼地叹口气，嘀咕着，[com.speech(我别无选择，不是吗……)]
+			#ELSE
+				[com.name]发出急促且[com.moan]，热情回答，[com.speech(这一定会很棒的！)]
+			#ENDIF
+		</p>
+		<p>
+			你和[com.companion]走到落败的帮派成员面前，笑着看他们顺从地接近，祈求着最先被操……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX_GROUP_SUBMIT"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你看着这个被打败的[npc.race]躺在地上，心中升起一股迫切的欲望，想与[npc.herHim]调换处境，让[npc.her]用[npc.her]想要的方式对待你和你的[com.companion]。你转身面对[com.name]，说出你的计划，让[com.herHim]和你一起服从他们。
+		</p>
+		<p>
+			#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+				[com.name]发出一声烦恼的叹息，嘀咕着，[com.speech(我也没得选，不是吗……)]
+			#ELSE
+				[com.name]发出一声渴求的[com.moan]，热情地回复道，[com.speech(这会很棒的！)]
+			#ENDIF
+		</p>
+		<p>
+			在你的[com.companion]加入后，你走上前跪在[npc.race]旁，问[npc.herHim]，[pc.speech(我敢打赌，你被这样打败后一定很沮丧，对吧？如果能让你感觉好点，你想怎么用我们俩都可以……)] 
+		</p>
+		<p>
+			[npc.name]很快采纳你的建议，撑起身后问，[npc.speech(你说真的吗？在打败了我们，奴役了我所有的朋友之后，你让我操你们吗？！)]
+		</p>
+		<p>
+			你让自己看起来娇小顺从，向[npc.name]证实[npc.she]可以用任何[npc.she]想要的方式操你和[com.name]。[npc.race]发出一声饥渴的[npc.moan]，立即靠近你们俩，在把你和[com.name]拉起来后，[npc.she]开始摸索你的身体，准备给你你想要的……
+		</p>
+	#ELSE
+		<p>
+			你看着这群被打败的帮派成员躺在地上，心中升起一股迫切的欲望，想与他们调换处境，让他们用他们想要的方式对待你和你的[com.companion]。你转身面对[com.name]，说出你的计划，让[com.herHim]和你一起服从他们。
+		</p>
+		<p>
+			#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+				[com.name]发出一声烦恼的叹息，嘀咕着，[com.speech(我也没得选，不是吗……)]
+			#ELSE
+				[com.name]发出一声渴求的[com.moan]，热情地回复道，[com.speech(这会很棒的！)]
+			#ENDIF
+		</p>
+		<p>
+			在你的[com.companion]加入后，你走上前跪在这群老鼠旁，问[npc.name]，[pc.speech(我敢打赌，你被这样打败后一定很沮丧，对吧？如果能让你感觉好点，你想怎么用我们俩都可以……)]
+		</p>
+		<p>
+			[npc.name]很快采纳你的建议，撑起身后问，[npc.speech(你说真的吗？在那样打败我们之后，你让我们操你俩吗？！)]
+		</p>
+		<p>
+			你让自己看起来娇小顺从，向[npc.name]证实[npc.she]和剩下这些老鼠可以用任何他们想要的方式操你和[com.name]。这群老鼠说了一系列下流的话，立即靠近你们俩，在把你和[com.name]拉起来后，他们开始摸索你的身体，准备给你你想要的……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX_GIVE_TO_COMPANION"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你兴奋地看着最后一个落败的[npc.race]躺在地上，不禁溢出声淫荡的[pc.moan]，一个下流想法闯入脑海。你转身面对[com.companion]，对[com.herHim]说，[pc.speech(去吧，[com.name]，我帮你警戒，跟[npc.herHim]做一场……)]
+		</p>
+		<p>
+			#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+				[com.name]气呼呼地叹口气，嘀咕着，[com.speech(我别无选择，不是吗……)]
+			#ELSE
+				[com.name]发出声急促[com.moan]，热情回答，[com.speech(这会很棒的！)]
+			#ENDIF
+		</p>
+		<p>
+			[com.companion]上前，笑着看[npc.name]顺从地接近，祈求交媾。你退后给他们让出点空间，忍不住[pc.moan]一声，准备看[com.name]狠操[npc.race]一顿……
+		</p>
+	#ELSE
+		<p>
+			你兴奋地看着落败的老鼠躺在地上，不禁溢出声淫荡的[pc.moan]，一个下流想法闯入脑海。你转身面对[com.companion]，对[com.herHim]说，[pc.speech(去吧，[com.name]，我帮你警戒，跟他们做一场……)]
+		</p>
+		<p>
+			#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+				[com.name]气呼呼地叹口气，嘀咕着，[com.speech(我别无选择，不是吗……)]
+			#ELSE
+				[com.name]发出声急促[com.moan]，热情回答，[com.speech(这会很棒的！)]
+			#ENDIF
+		</p>
+		<p>
+			[com.companion]上前，笑着看他们顺从地接近，祈求最先被上。你退后给他们让出点空间，忍不住[pc.moan]一声，准备看[com.name]狠操他们一顿……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_SEX_OFFER_COMPANION"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你兴奋地看着最后一个落败的[npc.race]躺在地上，不禁溢出声淫荡的[pc.moan]，一个下流想法闯入脑海。你转身面对[com.companion]，对[com.herHim]说，[pc.speech(去吧，[com.name]，让我看着你服从[npc.race]，被[npc.herHim]操一顿……)]
+		</p>
+		#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+			<p>
+				[com.name]气呼呼叹口气，嘀咕着，[com.speech(我别无选择，不是吗……)]
+			</p>
+			<p>
+				你的[com.companion]走到落败的帮派成员面前，不情愿地告诉[npc.herHim]，[npc.she]可以对[com.herHim]为所欲为。[npc.race]发出声饥渴的[npc.moan]，立刻冲向[com.name]，你不禁笑起来，准备欣赏你的[com.companion]挨操……
+			</p>
+		#ELSE
+			<p>
+				[com.name]发出声急促[com.moan]，热情回答，[com.speech(这会很棒的！)]
+			</p>
+			<p>
+				你的[com.companion]顺从地呜咽一声，走到落败的帮派成员面前，告诉[npc.herHim][npc.she]可以对[com.herHim]为所欲为。[npc.race]发出声饥渴的[npc.moan]，立刻冲向[com.name]，你不禁笑起来，准备欣赏你的[com.companion]挨操……
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你兴奋地看着面前落败的老鼠，不禁溢出声淫荡的[pc.moan]，一个下流的想法闯入脑海。你转身面对[com.companion]，对[com.herHim]说，[pc.speech(去吧，[com.name]，让我看着你服从他们，被操一顿……)]
+		</p>
+		#IF(!com.isAttractedToGroup(game.getNonCompanionCharactersPresent()))
+			<p>
+				[com.name]气呼呼叹口气，嘀咕着，[com.speech(我别无选择，不是吗……)]
+			</p>
+			<p>
+				你的[com.companion]走到落败的帮派成员面前，不情愿地告诉他们，可以对[com.herHim]为所欲为。这群家伙下流地评论一阵，立刻冲向[com.name]，你不禁[pc.moan]一声，准备欣赏你的[com.companion]被他们同时操干……
+			</p>
+		#ELSE
+			<p>
+				[com.name]发出声急促[com.moan]，热情回答，[com.speech(这会很棒的！)]
+			</p>
+			<p>
+				你的[com.companion]顺从地呜咽一声，走到落败的帮派成员面前，告诉他们可以对[com.herHim]为所欲为。这群家伙下流地评论一阵，立刻冲向[com.name]，你不禁[pc.moan]一声，准备欣赏你的[com.companion]被他们同时操干……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- GUARD_COMBAT_VICTORY_AFTER_SEX -->
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_AFTER_SEX_BOTH"><![CDATA[
+	<p>
+		你和[npc.name]爽够了，退后摆脱鼠群理好衣服。片刻之后， 你们俩打算继续深入鼠窟，不过在那之前，你需要先决定如何处理这些在地上喘息的老鼠……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_AFTER_SEX_SOLO"><![CDATA[
+	<p>
+		你爽够了，退后摆脱鼠群理好衣服。片刻之后， 你打算继续深入鼠窟，不过在那之前，你需要先决定如何处理这些在地上喘息的老鼠……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_VICTORY_AFTER_SEX_COMPANION"><![CDATA[
+	<p>
+		[npc.name]爽够了，退后摆脱鼠群理好衣服。片刻之后， 你打算继续深入鼠窟，不过在那之前，你需要先决定如何处理这些在地上喘息的老鼠……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- GUARD_COMBAT_DEFEAT -->
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_NO_NON_CON"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你和[npc.name]再也无力战斗，瘫倒在地，彻底被击败了。一阵嘲弄的笑声引你疲惫抬头，只见四只老鼠正狞笑着向你走来。
+		</p>
+		<p>
+			[npc2.speech(你惹错帮派了！)][npc2.name]嗤笑，[npc2.speech(像你们这么可悲的一对是不可能打败我们的！)]
+		</p>
+		<p>
+			伴随着这番话，又是一阵笑声，在你想清楚下一步该怎么办之前，[npc2.name]回身对下属命令道，[npc2.speech(把他们扔到隧道里去！我不想再在这帮废物身上浪费时间！)]
+		</p>
+	#ELSE
+		<p>
+			你再也无力战斗，瘫倒在地，彻底被击败了。一阵嘲弄的笑声引你疲惫抬头，只见四只老鼠正狞笑着向你走来。
+		</p>
+		<p>
+			[npc.speech(你惹错帮派了！)][npc.name]嗤笑，[npc.speech(像你这种可怜虫是不可能战胜我们的！)]
+		</p>
+		<p>
+			伴随着这番话，又是一阵笑声，在你想清楚下一步该怎么办之前，[npc.name]回身对下属命令道，[npc.speech(把这垃圾扔到隧道里去！我不想再在废物身上浪费时间！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你和[npc.name]再也无力战斗，瘫倒在地，彻底被击败了。一阵嘲弄的笑声引你疲惫抬头，只见四只老鼠正狞笑着向你走来。
+		</p>
+		<p>
+			[npc2.speech(你惹错帮派了！)][npc2.name]嗤笑，[npc2.speech(像你们这么可悲的一对是不可能打败我们的，而且你们没有重来的机会了！)]
+		</p>
+		<p>
+			伴随着这番话，又是一阵笑声，在你想清楚下一步该怎么办之前，[npc2.name]回身对下属命令道，[npc2.speech(你们四个，去告诉其他人麻烦摆平了！还有你，给我把这两个人拖到默克那去！我要用他们抵消我的债务。)]
+		</p>
+		#IF(!game.isInvoluntaryNTREnabled())
+			<p>
+				<i>你觉得自己似乎可以唤起足够的能量来击退老鼠，为[npc.name]逃跑争取时间。[style.italicsSex(这是阻止你的[npc.companion]在未经你允许的情况下被使用的唯一机会！)]</i>
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你再也无力战斗，瘫倒在地，彻底被击败了。一阵嘲弄的笑声引你疲惫抬头，只见四只老鼠正狞笑着向你走来。
+		</p>
+		<p>
+			[npc.speech(你惹错帮派了！)][npc.name]嗤笑，[npc.speech(像你这样的可怜虫是不可能战胜我们的，而且你不会有重来的机会了！)]
+		</p>
+		<p>
+			伴随着这番话，又是一阵笑声，在你想清楚下一步该怎么办之前，[npc.name]回身对[npc.her]命令道，[npc2.speech(你们几个，去告诉其他人麻烦摆平了！我来把这家伙拖去默克那，拿[pc.herHim]交易来抵消我的债务。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_THROWN_OUT"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			帮派成员连忙遵从[npc2.namePos]的命令，粗鲁地抓起你和[npc.name]。过了一会儿，门的释放装置修好了，你们又被拖回屈城区的隧道。老鼠们全然不顾恶劣的环境，把你们扔到了硬邦邦的地上，警告你们如果还敢露面，就再狠狠揍一顿。
+		</p>
+		<p>
+			确保[npc.name]没有受伤后，你们两个花了点时间平整呼吸，擦了擦身子打算继续上路……
+		</p>
+	#ELSE
+		<p>
+			帮派成员连忙遵从[npc2.namePos]的命令，粗鲁地抓起你，过了一会儿，门的释放装置修好了，你又被拖回屈城区的隧道。老鼠们全然不顾恶劣的环境，把你扔到了硬邦邦的地上，警告你如果还敢露面，就再狠狠揍一顿。
+		</p>
+		<p>
+			通往鼠窟的大门在你身后吱嘎嘎关闭，你花了点时间平整呼吸，擦了擦身子准备继续上路……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS_COMPANION_ESCAPE"><![CDATA[
+	<p>
+		你迫切希望你的[npc.companion]免遭不幸的命运，鼓起最后的力气逼退老鼠，转向[npc.name]大喊道，[pc.speech(快走！)]
+	</p>
+	<p>
+		[npc.name]意识到你们俩都身陷绝境，遵从你的指令，在你拖住老鼠时设法冲到了安全的地方。当你意识到已经为[npc.companion]争取了足够的逃跑时间后，你放任自己被疲惫冲垮，再一次倒下，很快被老鼠抓住抵在了地上。
+	</p>
+	<p>
+		[npc2.name]愤怒地朝你大喊，[npc2.speech(你会为此付出代价！)]再次转身对[npc2.her]下属命令道，[npc2.speech(你们几个，去告诉其他人事情真的被摆平了！我要把这家伙拖到默克那去！我们或许没抓住[pc.her]的朋友，但用这家伙和默克交易，抵债也绰绰有余了。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS"><![CDATA[
+	<p>
+		其他老鼠赶紧听话地跑进隧道，告诉其他人你已经被摆平了，留下他们的头儿粗暴抓着你，向另一个方向拖去。[npc.name]发出邪恶的大笑，冷笑着说，[npc.speech(你会喜欢默克当你的主人的！我见过很多次了，他会把你变成淫荡的产乳母狗，让你对他的鸡巴顶礼膜拜！而一旦你成了听话的荡妇，他会把你租出去，这样帮派里的所有人就能来操你了！)]
+	</p>
+	#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+		<p>
+			当[npc.she]把你拖向落入默克之手的命运时，[npc.race]的嘲弄笑声和残忍奚落在扭曲通道的粗糙墙壁间回荡。你太了解他是怎样的卑鄙小人了，很清楚他所说的都会成真，但还没来得及为未来考虑太多，[npc.she]突然停下并把你扔在了坚硬的地上。
+		</p>
+		<p>
+			你抬头一看，发现自己又来到了默克牛奶储藏室的大洞穴里。在你面前，几十个金属奶桶堆放在货架上，而它们的前面的一扇破旧的木门旁则摆放着一些奇特的破旧家具。一堆堆腐烂的桌子和破烂的椅子看起来尘封已久，但也有几个板条箱和柜子看起来保存得相对较好。而这堆家具中最引人注目的是一张褪色的红色沙发，不仅因为它色彩斑斓，还因为默克又一次坐在这沙发中间。
+		</p>
+		<p>
+			[murk.speechNoEffects(好久不见呢！)]这只棕色毛皮的鼠男用懒散的语气嘲笑道。他伸手抓着自己圆滚滚的肚子，向你狡猾地笑了笑，突然发出一声响亮而肮脏的打嗝。他饥渴的目光从你身上移开，转向把你拖到这个地方的那个[npc.race]，咆哮道，[murk.speechNoEffects(终于把[pc.herHim]制服了！那么，你是来把[pc.herHim]交给我的吗？)]
+		</p>
+		<p>
+			[npc.speech(如果你把我的债务勾销，那当然可以。)][npc.name]回答道，[npc.speech(否则我就把[pc.herHim]扔到屈城区去，你就别想得到新玩具了。)]
+		</p>
+		<p>
+			从沙发上滑落下来，这只矮小的鼠男迈步向前，让你看到他巨大的、被遮蔽的阴茎和沉重的巨大睾丸仍然完全暴露在外。他粗鲁地吐了口唾沫在地上，抬头看着仍然站在你身边的[npc.race]，嘲笑道：[murk.speechNoEffects(我们先把[pc.herHim]脱光，然后我会考虑用[pc.herHim]清债。你知道我是专门训练来移除任何封印衣物的，但你得补偿我使用精华的成本！)]
+		</p>
+	#ELSE
+		<p>
+			[npc.race]嘲笑的笑声和残酷的嘲讽在弯曲通道粗糙的墙壁上回荡，随着[npc.she]继续把你拖向在这个名叫默克的人手中的命运。你不确定你的掳者是不是编造这些话只是为了吓唬你，但你没有太多时间去考虑，因为[npc.she]突然停下来，把你扔到坚硬的地面上。
+		</p>
+		<p>
+			你抬头仰望，发现自己身处一个天然大洞窟。粗糙的墙壁和满覆钟乳石的天花板都未经破坏，但地面却被人为压平了。一堆火把散乱地插在各处，其闪烁的淡橙色火光笼罩了整个洞穴。
+		</p>
+		<p>
+			你继续环顾四周，发现这里最引人注目的是靠墙的货架上堆放的几十个金属牛奶桶。在这些货架前，一扇破旧的木门旁摆放着一些奇特的破旧家具。一堆堆腐烂的桌子和破烂的椅子看起来尘封已久，但也有几个板条箱和柜子看起来保存得相对较好。而这堆家具中最引人注目的是一张褪色的红色沙发，不仅因为它色彩斑斓，还因为一个纯鼠男坐在这沙发中间。
+		</p>
+		<p>
+			你猜这个帮派成员一定就是“默克”，他狡猾的[murk.eyeColour]眼睛正邪恶地盯着你。他伸手挠了挠黑褐色的啤酒肚，发出邪恶的奸笑，然后滑下沙发，向你走来。现在他站得笔直，但看起来也只有[murk.heightValue]左右高。和你所见过的其他帮派成员一样，他的上臂也有一个白色的老鼠骷髅十字骨纹身。你的注意力很快被他的帮派纹身和矮小身材吸引过去，实际上，当他大摇大摆地向你走来时，你就发现他的黑色开裆短裤把生殖器完全暴露在外面。
+		</p>
+		<p>
+			尽管鼠男把鸡巴缩回了鞘里，导致你无法知道它勃起时的全长，但你能看到那黝黑鸡巴绝对粗得不行。腿间垂下的巨大而沉重的睾丸也与身高不成比例，它们随着鼠男短小的步伐左右摇摆，你情不自禁地瞥上一眼。
+		</p>
+		<p>
+			[murk.speechNoEffects(对我的大鸡巴不爽，是吗？)]当他发现你盯着他庞大的生殖器看时，默克用一种邋遢的语气讥笑你。他抬手挠了挠自己胖乎乎的肚子，露出邪恶的笑容，突然发出一声响亮而恶臭的打嗝。他饥渴的目光从你身上移开，转向那个把你带到这里的[npc.race]，默克咆哮道：[murk.speechNoEffects(我听说有个捣蛋鬼在这里跑来跑去，你花了很长时间才把他制服，是不是？所以，你要把[pc.herHim]交给我，是吗？)]
+		</p>
+		<p>
+			[npc.speech(如果你把我的债务勾销，那当然可以。)][npc.name]回答道，[npc.speech(否则我就把[pc.herHim]扔到屈城区去，你就别想得到新玩具了。)]
+		</p>
+		<p>
+			默克再次不屑地吐了口唾沫，嘴角挤出一丝冷笑，[murk.speechNoEffects(先把[pc.herHim]给我脱了衣服，然后我再考虑用[pc.herHim]勾销恁嘞债务。你知道我是专门被训练来移除任何封印服装的，但是你得赔偿我花费的精华！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- GUARD_COMBAT_DEFEAT_STOCKS_STRIPPED -->
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS_STRIPPED"><![CDATA[
+	<p>
+		你筋疲力尽，根本无力反抗，只能眼睁睁看着默克和[npc.Name]把你一层层脱光。这个好色的鼠男兴致勃勃地开始了他的工作，把握机会摸索揉捏你胴体的每一寸肌肤。[npc.name]一边摸索，一边嘟哝着污言秽语，不过默克偶尔会出言提醒打断他。你的东西现在全部归默克了，该放进他特意为此打开的储物箱里了。
+	</p>
+	<p>
+		你被彻底剥夺了所有的火币、衣物和其他物品，默克把它们放进的板条箱牢牢锁好，然后转向[npc.name]，咆哮道：[murk.speechNoEffects(别以为我们拿走的东西会用来偿还你的债务！在我和文加之间没商量好之前，我可不会动它们，而我们现在的关系也不是太好，这可得等一阵子了。总之，你就看着[pc.herHim]，等我给[pc.her]找新的‘装备’来。嘿嘿嘿……)]
+	</p>
+	<p>
+		默克暗自发笑，一摇一晃着走向洞穴角落的一堆箱子，打开其中一个翻找起来。你被迫跪在[npc.Name]身边等待，只见默克终于找到目标，合上盖子向你走来。他的手上赫然拿着一个沉重的淡粉色金属项圈。
+	</p>
+	<p>
+		胖乎乎的鼠男逼近你，伸手把这个沉重的项圈粗暴地锁在你的脖子上。就在锁上的那一刻，你便感觉到一股强大的附魔效果。你想尽办法都无法解封，你可能拥有的任何自身转化能力也无法让你从里面溜出来。
+	</p>
+	<p>
+		[murk.speechNoEffects(是啊，我觉得这个会很合适。)]默克自言自语道，然后他抬头看着[npc.name]继续说道：[murk.speechNoEffects(如果你让我留着[pc.herHim]，我就把恁嘞债务一笔勾销。我这是在帮你啊；我相信我不需要提醒你你欠我多少了！)]
+	</p>
+	<p>
+		[npc.speech([pc.SheIs]值得的远比我欠你的要多，)][npc.name]怒视着，然后建议道，[npc.speech(如果你让我操[pc.herHim]，我们就扯平了。同意吗？)]
+	</p>
+	<p>
+		[murk.speechNoEffects(你当然可以用[pc.her]的嘴。)]默克回应道，[murk.speechNoEffects(但[pc.her]的其他洞只能为俺嘞肥屌服务。)]
+	</p>
+	<p>
+		[npc.speech(成交，)][npc.name]说道，然后朝自己的手上吐了口唾沫，伸出来给默克。这只胖胖的鼠男也照做了，朝手掌上吐了口唾沫，然后握住了[npc.namePos]伸出的手，达成了协议。
+	</p>
+	<p>
+		[murk.speechNoEffects(把[pc.herHim]带到挤奶间来，)]最后默克说道，[murk.speechNoEffects(在你让[pc.herHim]接近你腿间的东西前，我要把[pc.herHim]锁链上，并锁进[pc.her]嘞新家。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- GUARD_COMBAT_DEFEAT_STOCKS_STRIPPED_END -->
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS_STRIPPED_END"><![CDATA[
+	<p>
+		[npc.Name]最后一次抓住你，把你拖到靠近墙壁的旧木门前。默克站在你面前，扭动门把手，推开门，然后带领你们两个走进门后的房间。
+	</p>
+	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		<p>
+			重回这个充当默克挤奶室的光线充足的小洞穴，映入眼帘的是一排平行的金属框架挤奶台。[npc.Name]拉着你淌过贯穿洞穴冰冷浅溪，然后停下来等待默克的安排，这让你可以仔细观察你面前用螺栓固定在地面上的六个坚固的金属框架。
+		</p>
+		<p>
+			每个框架都由一个加厚的、腰部高度的长凳组成，长凳上设有坚固的皮革绑带，位于占据者的手臂和腿部自然休息的位置。在每个框架下方，放置着一台奥术挤奶机，最吸引你注意的是，其中四台机器已经启动，忙碌地给框架上被束缚的人进行挤奶。
+		</p>
+	#ELSE
+		<p>
+			抬头望去，你发现自己进入了另一个自然形成的洞穴，虽然比默克的居住区大得多，但却相对较小。一系列明亮的奥术灯光被悬挂在粗糙的墙壁上，它们极好地照亮了洞穴中引人注目的内容。
+		</p>
+		<p>
+			在把你拖过横穿洞穴地面的冷的浅流后，[npc.name]停下来等待默克的指示，这让你有机会仔细观察眼前固定在地面上的六个坚固金属框架。每个框架由一个加厚的、腰部高度的长凳组成，长凳上设有坚固的皮革绑带，位于占据者的手臂和腿部自然休息的位置。在每个框架下方，放置着一台奥术挤奶机，最吸引你注意的是，其中四台机器已经启动，忙碌地给框架上被束缚的人进行挤奶。
+		</p>
+	#ENDIF
+	<p>
+		尽管她们露出的后背朝向你，这四位丰满的人类女性肯定是听到了你的进入声，因为她们突然都开始饥渴地呼喊着要默克来与她们交欢。你看着的时候，最左边的那位大声哀求道，[npc2.speech(主人！请，填满我的小穴！)]
+	</p>
+	<p>
+		[npc3.speech(求你了，主人！我想要你的大鸡巴！)]在她旁边的那个女人也发出了淫叫。
+	</p>
+	<p>
+		[murk.speechNoEffects(恁们这些挤奶嘞荡妇们，如果恁们不闭嘴，就别想碰我鸡巴！)]默克愤怒地喊道，立刻让四名挤奶者的绝望要求停止了下来。然而，她们并未完全停止发出声音，因为挤奶机持续的有规律的运转足以从她们张开的嘴唇间挤出一串被压抑的、充满情欲的呻吟声。
+	</p>
+	<p>
+		当你审视面前的人类奶工时，你会看到她们每个人丰满、滴着奶的乳头被挤奶机的压力杯包裹着，而一个振动的阴道泵也在她们颤动的小穴上忙碌地工作着。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+			[murk.speechNoEffects(我打赌恁们从没想过会落到奶工这个位置，是吧？)]
+		#ELSE
+			[murk.speechNoEffects(喜欢恁新家嘞样子么？)]
+		#ENDIF
+		默克嘲讽地问道。他并未等待答复，便示意[npc.name]把你推倒在空着的框架长凳上，接着用皮带紧紧束缚住你的[pc.arms]和[pc.legs]。你被固定的姿势使得你的嘴和裸露的后部完全暴露在房间里，默克走到你身后，狠狠地拍了一记你[pc.ass+]。
+	</p>
+	<p>
+		无视你因此发出的尖叫声，胖胖的鼠男退后一步，对[npc.name]咕哝道： [murk.speechNoEffects(快点，开始用[pc.her]嘞嘴吧。你越快完成对[pc.herHim]的事情，我就越早能开始[pc.her]嘞训练！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS_SEX"><![CDATA[
+	#IF(npc.hasPenis())
+		<p>
+			看到在当前情况下反抗的徒劳无功，你保持静止，[npc.name]走到你面前，开始摆弄[npc.her]的衣服，露出[npc.her]的腹股沟。片刻之后，你发现自己正盯着[npc.her]的[npc.cockSize]、[npc.cockGirth]的[npc.cock]，它正在你面前迅速变硬。
+		</p>
+		<p>
+		[vengar.speech(嘴张大点，婊子。)][npc.Name]发出命令，你顺从地照做，没有半点要违抗的意愿，并准备好将[npc.her][npc.cock+]吞进喉咙的更深处。
+	</p>
+		<p>
+			[npc.speech(你根本不需要费什么劲就能搞定她！[pc.SheIs]对老鼠鸡巴已经迫不及待了！)][npc.name]欢快地对着默克喊道，说完，她向前推动臀部，将跳动的鸡巴滑过你等待的嘴唇……
+		</p>
+	#ELSEIF(npc.hasVagina())
+		<p>
+			看到在目前情况下抵抗的徒劳，你保持不动，任由[npc.name]走到你面前，开始摆弄她的衣服，露出她的腹股沟。片刻之后，你发现自己正盯着她[npc.fingers+]上下挑逗她[npc.pussy+]。
+		</p>
+		<p>
+			[npc.speech(张开嘴，贱人，准备好用你的舌头！)][npc.name]命令道，你觉得没有必要违抗，于是顺从地张开嘴，准备为你的捕手进行舔阴。
+		</p>
+		<p>
+			[npc.speech(你根本不需要费什么劲就能搞定她！[pc.SheIs]已经迫不及待想尝尝老鼠穴了！)][npc.name]欢快地对着默克喊道，说完，她向前推动臀部，将她[npc.pussy+]按在你等待的嘴唇上……
+		</p>
+	#ELSE
+		<p>
+			看到在目前情况下抵抗的徒劳，你保持不动，任由[npc.name]走到你面前，开始摆弄她的衣服，露出她的腹股沟。片刻之后，你发现自己正盯着她[npc.fingers+]上下挑逗她光滑如娃娃一般的腹股沟。
+		</p>
+		<p>
+			[npc.speech(张开嘴，贱人，准备好用你的舌头！)][npc.name]命令道，你觉得没有必要违抗，于是顺从地张开嘴，准备为你的捕手进行口交。
+		</p>
+		<p>
+			[npc.speech(你根本不需要费多少劲就能把这货弄服！)][npc.name]欢快地对默克大声喊道，然后向前推动臀部，把[npc.her]光滑的下体压在你等待的嘴唇上……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS_SEX_EAGER"><![CDATA[
+	#IF(npc.hasPenis())
+		<p>
+			你目前的状况让你极度兴奋，当[npc.name]走到你面前并开始摆弄[npc.her]衣物时，你忍不住发出了一声急切的[pc.moan]。片刻之后，你发现自己饥渴地盯着[npc.her]正在你面前迅速变硬的[npc.cockSize]、[npc.cockGirth]的[npc.cock]。渴望品尝一番，你张开嘴，发出恳求的呜咽声。
+		</p>
+		<p>
+			[npc.speech(你不需要做太多就能征服这个家伙！[pc.SheIs]已经渴望着那些臭鼠的鸡巴！)][npc.name]欢快地对着默克大声喊道，然后向前推动臀部，用[npc.her]的硬生生的鸡巴头摩擦你等待的嘴唇。[npc.she]嘲笑道，[npc.speech(继续，乞求吧，荡妇！)]
+		</p>
+		<p>
+			[pc.speech(求求你，让我吸你的肉棒吧！)]你急切地呜咽着，脖子努力向前够去，试图将[npc.namePos][npc.cock+]放入口中。
+		</p>
+		<p>
+			[npc.speech(不错的婊子。)][npc.name]说着向前一步，用[npc.her]那颤动的肉棒顶开你那等候多时的双唇……
+		</p>
+	#ELSEIF(npc.hasVagina())
+		<p>
+			你现在的处境让你异常兴奋，忍不住发出急切的[pc.moan]，这时[npc.name]走到你面前，开始摆弄[npc.her]的衣物。片刻之后，你发现自己饥渴地盯着[npc.her][npc.fingers+]在[npc.her][npc.pussy+]来回磨蹭地挑逗。渴望尝到一丝滋味，你张开嘴，发出乞求的呜咽声。
+		</p>
+		<p>
+			[npc.speech(你根本不需要费多少劲就能把这货弄服！[pc.SheIs]已经渴望大鼠鸡巴的味道了！)][npc.name]欢快地对默克大声喊道，然后向前推动臀部，把[npc.her][npc.pussy+]带得更接近你等待的嘴唇。[npc.she]嘲笑道，[npc.speech(继续，乞求吧，荡妇！)]
+		</p>
+		<p>
+		[pc.speech(求求你，让我舔你的小穴吧！)]你急切地呜咽着，脖子努力向前够去，试图去舔[npc.namePos][npc.pussy+]。
+	</p>
+		<p>
+			[npc.speech(不错的婊子。)][npc.name]说着向前一步，让你将舌头伸进[npc.her]的[npc.pussy]……
+		</p>
+	#ELSE
+		<p>
+			你现在的处境让你异常兴奋，忍不住发出急切的[pc.moan]，这时[npc.name]走到你面前，开始摆弄[npc.her]的衣物。片刻之后，你发现自己饥渴地盯着[npc.her][npc.fingers+]在[npc.her]光滑如娃娃般的腹股沟上上下下地挑逗。为了取悦[npc.herHim]，你张开嘴，发出乞求的呜咽声。
+		</p>
+		<p>
+			[npc.speech(张开嘴，贱人，准备好用你的舌头！)][npc.name]命令道，你觉得没有必要违抗，于是顺从地张开嘴，准备为你的捕手进行口交。
+		</p>
+		<p>
+			[npc.speech(你根本不需要费多少劲就能把这货弄服！)][npc.name]欢快地对默克大声喊道，然后向前推动臀部，把[npc.her]光滑的下体压在你等待的嘴唇上……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS_SEX_RESIST"><![CDATA[
+	<p>
+		你终于恢复了足够的体力来反抗，于是你开始尝试挣脱束缚，大喊道，[pc.speech(停下！放我走！)]
+	</p>
+	#IF(npc.hasPenis())
+		<p>
+			[npc.Name]嘲笑了一声，完全无视你的抗议，走到你面前开始调整衣服。片刻之后，你发现自己试图向后蠕动，因为[npc.name]的[npc.cockSize]、[npc.cockGirth][npc.cock]在你面前晃动着。
+		</p>
+		<p>
+			[npc.speech(‘挣扎是没有用的’，荡妇！你马上就会被我的大鸡巴噎死！而且你什么也做不了！)][npc.Name]一边讥笑着一边伸手抚摸自己的鸡巴，好使其完全变硬。当你继续扭动身体试图反抗束缚时，[npc.Name]一顶腰，用[npc.her]那跳动的龟头用力摩擦你的嘴唇并嘲笑道：[npc.speech(如果你求我的话，我可能会考虑放了你！)]
+		</p>
+		<p>
+			无奈之下，你决定冒险照做[npc.name]要求的事情。你张口想说请，但就在那一刻，[npc.name]向前一挺，将[npc.her][npc.cock+]猛地插进你的嘴里。随着[npc.her]搏动的鸡巴深深进入你的喉咙，[npc.name]冷笑道：[npc.speech(好样的，蠢贱人！你很快就会学会爱上这个了！)]
+		</p>
+	#ELSEIF(npc.hasVagina())
+		<p>
+			[npc.Name]嘲笑了一声，完全无视你的抗议，走到你面前开始调整衣服。片刻之后，你试图向后蠕动，因为[npc.her][npc.pussy+]就在你的面前悬浮着。
+		</p>
+		<p>
+			[npc.speech(‘挣扎是没有用的’，荡妇！你马上就会吃我的逼！而且你什么也做不了！)][npc.Name]一边讥笑着一边伸手抚摸[npc.her][npc.labia+]。当你继续扭动身体试图反抗束缚时，[npc.Name]向前顶腰，阴蒂用力摩擦你的嘴唇嘲笑道：[npc.speech(如果你求我的话，我可能会考虑放了你！)]
+		</p>
+		<p>
+			抱着别无选择的心态，你张开嘴想说请，但在你开口的瞬间，[npc.name]向前推进，坚定地将[npc.her][npc.pussy+]压在你的嘴上。在你脸上磨擦[npc.her]的[npc.labia]，[npc.name]冷笑着说道：[npc.speech(这才对，乖乖的淫娃！你很快就会学会爱上老鼠逼的！)]
+		</p>
+	#ELSE
+		<p>
+			[npc.Name]发出一声嘲弄的笑声，但对你的抗议置若罔闻，走到你面前，开始摆弄[npc.her]的衣服。片刻之后，当[npc.her]光滑如娃娃般的腹股沟悬在你面前时，你发现自己在努力向后扭动。
+		</p>
+		<p>
+			[npc.speech(‘挣扎是没有用的，荡妇！你什么也做不了！)][npc.Name]讥讽地看着你。当你继续扭动身体试图反抗束缚时，[npc.Name]顶起腰，用[npc.her]那空无一物地胯部用力摩擦你的嘴唇并嘲笑道：[npc.speech(如果你求我的话，我可能会考虑放了你！)]
+		</p>
+		<p>
+			抱着别无选择的心态，你张开嘴想说请，但在你开口的瞬间，[npc.name]向前推进，坚定地将[npc.her]的下体压在你的嘴上。在你脸上上下磨擦，[npc.she]冷笑道：[npc.speech(这才对，乖乖的蠢货！你很快就会学会爱上这个的！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- GUARD_COMBAT_DEFEAT_STOCKS_AFTER_SEX -->
+	
+	<htmlContent tag="GUARD_COMBAT_DEFEAT_STOCKS_AFTER_SEX"><![CDATA[
+	<p>
+		[npc.name]享受完之后，退后一步，示意口交结束。然而，俘虏你的人在离开之前，还是抽出时间最后一次嘲笑你道：[npc.speech(这是你挣扎试图对抗我们嘞下场！默克会让你很快变成一只听话地乞求他那肥屌嘞母狗！)]
+	</p>
+	<p>
+		[npc.name]邪恶地哈哈笑着，离开挤奶室，留你与默克独处……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- ENTRANCE -->
+	
+	<htmlContent tag="ENTRANCE"><![CDATA[
+	<p>
+		鼠窟的入口由两扇坚固的木门保护，它们之间隔着一个小型内厅。这两扇门的开闭都由两个简陋的杠杆控制，就在你现在站立的地方附近。内部门对面的两侧各有小窗口，供驻守在此的守卫射击内厅内的目标。
+	</p>
+	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensClearedCentre))
+		<p>
+			在击败了守卫入口的老鼠之后，这个区域现在没有任何帮派成员。而且，控制门操作的杠杆似乎已经损坏，困住
+			#IF(pc.hasCompanions())
+				如果你想要离开这里，你和[npc.name]必须继续深入帮派的巢穴，并面对文加……
+			#ELSE
+				如果你想离开这里，你必须继续深入帮派的巢穴，并面对文加……
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			#IF(pc.hasCompanions())
+				#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensEntryWhore))
+					在被告知你和[npc.name]是妓女后，当你进入这个区域时，这两只老鼠用淫荡的眼神看着你。[npc2.name]贪婪地舔了舔她的嘴唇，问道：[npc2.speech(你可不会打算走了吧，不和我们俩快活一下？)]
+				#ELSE
+					当你们进入这个区域时，两只站岗的老鼠怀疑地盯着你和[npc.name]。[npc2.name]随意地吐了口口水，问道：[npc2.speech(你们是想走？还是就呆在这儿找乐子？)]
+				#ENDIF
+			#ELSE
+				#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensEntryWhore))
+					在被告知你是个妓女后，这两只老鼠看着你时露出淫荡的表情。[npc2.name]贪婪地舔了舔她的嘴唇，问道：[npc2.speech(你可不会打算走了吧，不和我们俩快活一下？)]
+				#ELSE
+					当你进入这个区域时，两只站岗的老鼠怀疑地盯着你。[npc.name]随意地吐了口口水，问道：[npc.speech(你是想走？还是就呆在这儿找乐子？)]
+				#ENDIF
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- CORRIDOR -->
+	
+	<htmlContent tag="CHECKPOINT_FIGHT"><![CDATA[
+	<p>
+		你知道鼠窟的居民现在一定已经察觉到了你的敌意，所以你在曲折的通道中行进时一直保持着警惕。正如你所料，当你转过下一个弯道时，你看到四只鼠化形正等着与你对峙。
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			在你看到老鼠们的同时，他们也看到了你和[npc.Name]。他们发出了一声喊叫，准备和你搏斗。领队在向你逼近时喊道：[npc2.speech(尼萌会为此付出代价的！我希望尼萌准备好挨揍了！)]
+		#ELSE
+			在你看到老鼠们的同时，他们也看到了你。他们发出了一声喊叫，准备和你搏斗。领队在向你逼近时喊道：[npc.speech(尼会为此付出代价的！我希望尼准备好挨揍了！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="CORRIDOR_CLEARED"><![CDATA[
+	<p>
+		正如你现在走过的这条通道，鼠窟的绝大部分都是曲折且光线不足的通道。这些通道有的是由天然洞穴打通，有的则是在坚硬的岩石上凿出的狭窄洞口，但都很粗糙，两个人并排走都很费力。到处都有老旧的木柱和木板支撑着墙壁和天花板，而堆满泥土的地面边缘则堆放着碎石和各种垃圾。
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			鼠窟居民因你们的敌意而戒备，你和[npc.name]穿越隧道时没有遇到任何帮派成员，整个地方没有任何生命迹象，气氛异常阴森。你始终感觉有人在暗处窥视你们……
+		#ELSE
+			鼠窟居民因你的敌意而戒备，你穿越隧道时没有遇到任何帮派成员，整个地方没有任何生命迹象，气氛异常阴森。你始终感觉有人在暗处窥视……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="CORRIDOR"><![CDATA[
+	<p>
+		正如你现在走过的这条通道，鼠窟的绝大部分都是曲折且光线不足的通道。这些通道有的是由天然洞穴打通，有的则是在坚硬的岩石上凿出的狭窄洞口，但都很粗糙，两个人并排走都很费力。到处都有老旧的木柱和木板支撑着墙壁和天花板，而堆满泥土的地面边缘则堆放着碎石和各种垃圾。
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			虽然很少见，但有时你和[npc.Name]也会遇到一两个鼠化形，他们或是朝相反的方向行进，或是在光线昏暗的空地上互相亲昵。虽然有些不太忙的鼠化形会花点时间询问你是谁，但看起来又不怎么在意你的答案，而是很快就忙着自己的事情去了。
+		#ELSE
+			虽然很少见，但有时你也会遇到一两个鼠化形，他们或是朝相反的方向行进，或是在光线昏暗的空地上互相亲昵。虽然有些不太忙的鼠化形会花点时间询问你是谁，但看起来又不怎么在意你的答案，而是很快就忙着自己的事情去了。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="CORRIDOR_HOSTILE_WARNING"><![CDATA[
+	<p>
+		[style.italicsBad(鼠窟的居民已经注意到了你的敌意，他们会在隧道里伏击你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DORMITORY -->
+	
+	<htmlContent tag="DORMITORY"><![CDATA[
+	<p>
+		在一条长长而曲折的隧道尽头，有一间相对宽敞、明亮的房间，是由坚硬的岩石雕刻而成的。这个房间内并没有任何门将其与鼠窟的阴暗通道隔开，因此你可以直接走进这个看来是某种帮派成员宿舍的地方。四周是几张木制的铺位，每张上方都悬挂着破烂的布帘，可以为居住者提供少许隐私。每张铺位旁边都摆放着几个木制储物箱，除此之外，房间中央零散地摆放着几张桌子和椅子，这似乎是房间内唯一的家具了。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DORMITORY_OCCUPIED"><![CDATA[
+	<p>
+		#IF(game.isExtendedWorkTime())
+			因为现在不是帮派成员使用这些睡眠区的时间，所有的双层床都是空的。然而，这个地方并不完全荒废，几只老鼠正围着一张桌子玩着骰子赌博。虽然他们转过头看见进来的人，但没有人打算询问你是谁，他们只是怀疑地瞪了你一眼，然后迅速转回去继续他们的游戏。
+		#ELSE
+			眼下是夜晚时分，几张双层床上已经躺着睡着的帮派成员，他们的鼾声充斥着这个除此之外荒凉的房间。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DORMITORY_CLEARED"><![CDATA[
+	<p>
+		既然你已经清理了这个鼠窟的这一部分，宿舍区完全空无一人。虽然这里没有人阻止你翻看每张双层床旁边的木箱，但你可以看出里面根本没有任何值得一看的东西。因此，在这里除了转身回到隧道外，你别无他法。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DORMITORY_FIGHT"><![CDATA[
+	#IF(pc.hasCompanions())
+		#IF(game.isExtendedWorkTime())
+			<p>
+				你决定现在是清理鼠窟的合适时机，走向那张有老鼠在赌博的桌子，告诉他们你来是为了结束他们的犯罪活动。随着帮派成员跳起来，你和[npc.name]准备好迎战。
+			</p>
+			<p>
+				[npc2.speech(你来是要干什么？！)][npc2.name]惊叫道，随后以最高的声音吼道，[npc2.speech(所有人！快过来！我们需要帮助！)]
+			</p>
+			<p>
+				几秒钟内，超过六个鼠化形冲进宿舍作为增援，但当他们看到有打斗发生时，有几只转身逃跑，抛弃了他们的同伙。最终，你和[npc.name]面前只剩下四个帮派成员。
+			</p>
+		#ELSE
+			<p>
+				你决定现在是开始清理鼠窟的时候，大声喊道你是来结束所有老鼠的犯罪活动的。帮派成员被从睡梦中惊醒，他们迅速从双层床上跳下来，而你和[npc.name]则准备好迎接战斗。
+			</p>
+			<p>
+				[npc2.speech(你们干什么？！)]最近的帮派成员大喊，[npc2.speech(来人啊！帮我揍这两个家伙一顿！)]
+			</p>
+			<p>
+				虽然他们的人数远远超过你们，但有几只老鼠似乎对胜算不大感到不满意，迅速从你们身边冲过去，跑进隧道中，抛弃了他们的同伴。他们离开后，你数了数，你和[npc.name]面前还剩下四名帮派成员。
+			</p>
+		#ENDIF
+		<p>
+			随着一声狂野的咆哮，[npc2.name]对剩下的老鼠们大喊道，[npc2.speech(我们以后再对付那些懦弱的废物！现在，让我们好好教训这两个人！)]
+		</p>
+	#ELSE
+		#IF(game.isExtendedWorkTime())
+			<p>
+				你决定现在是时候开始清理鼠窟，走到那张被占据的桌子前，告诉赌博的老鼠们你要终止他们的犯罪活动。当帮派成员们跳起来时，你准备好迎接战斗。
+			</p>
+			<p>
+				[npc.speech(你们来这里干什么？！)][npc.name]大声喊道，然后尽情地咆哮着，[npc.speech(快来！大家都过来！我们需要帮助！)]
+			</p>
+			<p>
+				在几秒钟内，超过半打鼠化形冲进宿舍作为后备力量，但当他们看到有战斗正在进行时，有几个人转身逃走，抛弃了他们的同伴。最后，你数了数，你面前还剩下四名帮派成员。
+			</p>
+		#ELSE
+			<p>
+				你决定这是开始清理鼠窟的最佳时机，大喊你是来结束所有老鼠的犯罪活动的。被从睡梦中惊醒的帮派成员们迅速从双层床上跳了下来，而你则准备好迎接战斗。
+			</p>
+			<p>
+				[npc.speech(你们到底想干什么？！快来帮我揍扁这个家伙！)]最近的帮派成员大声喊道。
+			</p>
+			<p>
+				虽然他们的人数远超你，但有几只老鼠似乎对他们的胜算不太有信心，迅速从你身边冲过，跑进了隧道，抛弃了他们的同伙。一旦他们离开，你数了一下，发现还有四个帮派成员站在你面前。
+			</p>
+		#ENDIF
+		<p>
+			发出野兽般的咆哮，[npc.name]向剩下的老鼠们喊道：[npc.speech(懦夫们我们以后再处理！现在先把这家伙揍个痛快！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- DICE_DEN -->
+	
+	<htmlContent tag="DICE_DEN"><![CDATA[
+	<p>
+		在蜿蜒穿越鼠窟的众多隧道尽头，有一个巨大的天然洞穴，就是在这个地下空洞里，你此刻站立着。高高的天花板上有几个小小的铁栅栏孔，让自然光线和一股稳定的水流进入这个区域，使洞穴充满了低语般的回响和溅水声。
+	</p>
+	<p>
+		地面中央沿着一个浅浅的水沟，一部分是被挖掘出来，一部分是被固体岩石侵蚀，将水分流到一个金属管道中，毫无疑问地通往了屈城区的主要水道。这个洞穴的其余部分四周布满了大约二十多张旧木桌，每张桌子周围都摆放着四把或者更多的椅子。左侧墙壁沿着部分区域有一处开放的酒吧，长柜台前面摆放着许多摆满酒瓶的架子和橱柜。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DICE_DEN_ENTRY"><![CDATA[
+	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensHostile))
+		<p>
+			这一片的帮派成员已被清除干净，整个地方已经完全荒废了……
+		</p>
+	#ELSE
+		<p>
+			#IF(pc.hasCompanions())
+				#IF(game.isExtendedWorkTime())
+					你看到几只老鼠正围坐在几张桌子旁，有的在聊天，有的在玩某种骰子游戏。站在吧台后面的是[npc2.a_race]，[npc2.she]微微俯身在吧台上，向你和[npc.name]叫道：[npc2.speech(恁想买杯酒不？或者想玩骰子扑克不？想的话就过来告诉俺。)]
+				#ELSE
+					尽管时间很不合适，你还是看到几只老鼠正围坐在几张桌子旁，有的在聊天，有的在玩某种骰子游戏。站在吧台后面的是[npc2.a_race]，[npc2.she]倾身靠在吧台，向你和[npc.name]叫道：[npc2.speech(你也睡不着啊？反正你还醒着，不如来弄杯酒喝怎么样？或者恁想玩骰子扑克？想的话就过来告诉俺。)]
+				#ENDIF
+			#ELSE
+				#IF(game.isExtendedWorkTime())
+					你看到几只老鼠正坐在几张桌子旁，有的互相聊天，有的在玩某种骰子游戏。站在吧台后面的是[npc.a_race]，[npc.she]微微俯身在吧台上，对你喊道：[npc.speech(你想买杯酒不？或者想玩骰子扑克不？想的话就过来告诉俺。)]
+				#ELSE
+					尽管时间很不合适，你还是看到几只老鼠正围坐在几张桌子旁，有的互相聊天，有的在玩某种骰子游戏。站在吧台后面的是[npc.a_race]，[npc.she]微微俯身在吧台上，对你喊道：[npc.speech(你也睡不着啊？反正你还醒着，不如来弄杯酒喝怎么样？或者想玩骰子扑克？想的话就过来告诉俺。)]
+				#ENDIF
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DICE_DEN_CHALLENGE"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你决定现在是开始清剿鼠窟的好时机，于是走上前去，向赌博的老鼠们喊话，说你是来制止他们的犯罪活动的。当团伙成员跳起来时，你和[npc.name]做好了战斗准备。
+		</p>
+		<p>
+			[npc5.speech(你们干什么？！)][npc5.name]惊叫，接着从吧台后冲出，一边喊道，[npc5.speech(所有人快过来！让这些家伙看看我们是怎么对付捣蛋鬼的！)]
+		</p>
+		<p>
+			尽管许多帮派成员跟随[npc5.name]准备与你战斗，但更多的人从你身边冲过去，逃入隧道，抛弃了他们的同伴。总共，你算了一下，包括[npc5.name]在内，前面还剩下四名帮派成员，与你和[npc.name]对峙。
+		</p>
+		<p>
+			随着一声狂野的咆哮，[npc2.name]以领袖的姿态出现，对剩下的帮派成员大喊：[npc2.speech(我们稍后再对付他们这些懦夫败类！现在，让我们狠狠揍他们一顿吧！)]。
+		</p>
+	#ELSE
+		<p>
+			你决定现在是时候开始清理老鼠地道，迈步向前，高声呼喊对赌博老鼠们说你要结束他们的犯罪活动。帮派成员们纷纷站了起来，你也准备好迎接战斗。
+		</p>
+		<p>
+			[npc4.name]惊呼道：[npc4.speech(你在这里做什么？！)]随后从吧台后面冲出来，喊道：[npc4.speech(来吧伙计们！让他们看看我们是怎么对付捣蛋鬼的！)]
+		</p>
+		<p>
+			尽管许多帮派成员和[npc4.name]一起准备对抗你，但更多的成员从你身边冲过去，逃进了隧道，抛弃了他们的同伴。总共，你看到眼前还剩下包括[npc4.name]在内的四名帮派成员。
+		</p>
+		<p>
+			[npc.name]发出一声野蛮的咆哮，宣称自己是这群人的领袖，大声对剩下的人喊道：[npc.speech(我们稍后再对付他们这些懦弱的人渣！现在，让我们狠狠揍他一顿吧！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- DICE_DEN_LOOT -->
+	
+	<htmlContent tag="DICE_DEN_LOOT"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			在清理了鼠窟的这一区域后，没有人能阻止你去吧台后面搜寻值得带走的东西了。你让[npc.name]继续观察，以防有人出现，然后开始搜刮吧台长柜后面的货架和柜子。虽然大多数酒瓶要么是半空的，要么是如此肮脏以至于不值得带走，但你仍然能够找到一定数量的酒精……
+		#ELSE
+			清理了这部分鼠窟后，再无人能阻止你走向吧台后面，搜索是否有值得拿走的东西。你环顾一眼洞穴四周，确保没有人在等着埋伏你，然后开始搜刮长柜后面的货架和柜子。虽然大多数酒瓶要么是半空的，要么是如此污秽以至不值得带走，但你仍然成功获取了相当数量的酒精……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DICE_DEN_RULES -->
+	
+	<htmlContent tag="DICE_DEN_RULES"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			你想在开始游戏前了解骰子扑克的规则，于是走到吧台，请[npc2.name]为你解释规则。[npc2.she]发出一阵奸诈的笑声，伸手到柜台下面拿了些东西，又直起身子，把一个略微生锈的金属牌子放在你面前的台面上。[npc2.she]调皮地笑着说道：[npc2.speech(这是我的一个伙伴几个月前从赌场偷来的。你可以阅读上面的规则，要是你想玩一局，就告诉我，我会给你找个对手。)]
+		#ELSE
+			你想在开始游戏前了解骰子扑克的规则，于是走到吧台，请[npc.name]为你解释规则。[npc.she]发出一阵奸诈的笑声，伸手到柜台下面拿了些东西，又直起身子，把一个略微生锈的金属牌子放在你面前的台面上。[npc.she]调皮地笑着说道：[npc.speech(这是我的一个伙伴几个月前从赌场偷来的。你可以阅读上面的规则，要是你想玩一局，就告诉我，我会给你找个对手。)]
+		#ENDIF
+	</p>
+	<p>
+		你低头看了看牌子，这显然是从阿克塞尔的赌场偷来的，上面写着：
+	</p>
+	<p style='text-align:center;'>
+		<b><strike>[axel.name]的</strike>骰子扑克规则</b><br/>
+		1.两位玩家都投入买入费开始游戏。<br/><i>蚀刻下的文字到此为止，取而代之的是粗糙的文字：</i><br/>你要是想玩，得先付[style.moneyFormat(500, span)]。概不退款，输赢不接受争论。<br/>
+		2.两位玩家各掷五个骰子。<br/>
+		3.玩家可以选择增加赌注(称为“加注”)，或者保持买入金额不变(称为“跟注”)。<br/>
+		4.下注完成后，每个玩家选择他们想要重新掷骰子的数量。<br/>
+		5.玩家重掷所选骰子。<br/>
+		6.比较每个玩家骰子的等级，找出赢家，赢家就能拿走底池中的所有钱。
+	</p>
+	<p style='text-align:center;'>
+		<b>结果排名(从赢到输)</b><br/>
+		1. 五条：五个相同数值的骰子。(例如33333)<br/>
+		2. 四条：四个相同数值的骰子。(例如55551)<br/>
+		3. 大顺子：从2开始的连续数字。(例如23456)<br/>
+		4. 葫芦：两个相同数值的骰子，加上另外三个相同数值的骰子。(例如22666)<br/>
+		5. 三条：三个相同数值的骰子。(例如44415)<br/>
+		6. 小顺子：从1开始的连续数字。(例如12345)<br/>
+		7. 两对：两个相同数值的骰子，加上另外两个相同数值的骰子。(例如55331)<br/>
+		8. 一对：两个相同数值的骰子。(例如22415)<br/>
+		9. 烂手：所有骰子的数值都不同。(例如13456)<br/><br/>
+		
+		如果两个玩家的排名相同，则比较组成他们排名的骰子的合计数值。例如：<br/>
+		玩家A：33661<br/>
+		玩家B：22115<br/>
+		虽然两个玩家都有“两对”，但玩家A赢了，因为A骰子排名的合计数值是18(3+3+6+6)，而玩家B是6(2+2+1+1)。<br/><br/>
+		
+		如果两个玩家的排名相同，并且合计数值相同，则该游戏为平局，底池中的钱返回到每个玩家手中。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DICE_DEN_POST_GAMBLING -->
+	
+	<htmlContent tag="DICE_DEN_POST_GAMBLING"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			完成游戏后，你离开桌子，走回吧台。看到你和[npc.name]走过来，[npc2.name]喊道：[npc2.speech(要找新对手玩吗？或者想喝点解渴的饮料，我这儿有你尝过最好的朗姆酒！)]
+		#ELSE
+			完成了你的游戏，你离开桌子走向吧台。看到你走过来，[npc.name]喊道：[npc2.speech(要找新对手玩吗？或者想喝点解渴的饮料，我这儿有你尝过的最棒的朗姆酒！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- DICE_DEN_RUM -->
+	
+	<htmlContent tag="DICE_DEN_RUM_DRINK"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你感到口渴，而眼前正好有酒吧引诱着你，你向[npc2.name]要了一杯朗姆酒，然后递给[npc2.she]要求的火币。那位[npc2.race]咧嘴一笑，把火币放在柜台上，然后从柜台下拿出一个玻璃杯。转身拿起一瓶半满的朗姆酒，[npc2.she]为你倒了酒，然后退后一步，依旧把钱留在柜台上没有动。
+		</p>
+		<p>
+			拿起玻璃杯，你迅速喝下朗姆酒，然后把空杯放回柜台，准备离开。然而，在你走之前，[npc2.name]叫住了你，说道：[npc2.speech(嘿，为什么不多呆一会儿？我打赌你会想要赚回你的钱，对吧？)]
+		</p>
+	#ELSE
+		<p>
+			你感到口渴，眼前的酒吧引诱着你，于是向[npc.name]要了一杯朗姆酒，然后递给[npc.she]要求的火币。[npc.race]对你咧嘴一笑，把钱放在柜台上，然后从柜台下拿出一个玻璃杯。转身拿起一瓶半满的朗姆酒，[npc.she]为你倒了酒，然后退后一步，依旧把钱留在柜台上没有动。
+		</p>
+		<p>
+			拿起玻璃杯，你迅速喝下朗姆酒，然后把空杯放回柜台，准备离开。然而，在你走之前，[npc.name]叫住了你，说道：[npc2.speech(嘿，为什么不多呆一会儿？我打赌你会想要赚回你的钱，对吧？)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DICE_DEN_RUM_DRINK_COMPANION"><![CDATA[
+	<p>
+		想到你的[com.companion]可能会渴，而且眼前正好有个方便的酒吧，你向[npc2.name]要了一杯朗姆酒，然后递给[npc2.she]要求的火币。那位[npc2.race]咧嘴一笑，把火币放在柜台上，然后从柜台下拿出一个玻璃杯。转身拿起一瓶半满的朗姆酒，[npc2.she]为你倒了酒，然后退后一步，钱依旧留在柜台上没有动。
+	</p>
+	<p>
+		将玻璃杯推给[com.name]，你告诉[com.herHim]你为[npc.herHim]买了这杯酒。在稍作感谢后，你的[com.companion]一口气喝下了朗姆酒，然后把空杯放回柜台上。在你来得及说什么或准备离开之前，[npc2.name]问道，[npc2.speech(嘿，为什么不多呆一会儿？我打赌你会想要赚回！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DICE_DEN_RUM_OFFER"><![CDATA[
+	#IF(pc.hasCompanions())
+		#IF(npc2.hasPenis())
+			<p>
+				低头看着仍然放在柜台上的钱，你问[npc2.name]你需要做什么。她向前倾身，对你咧嘴一笑，说道：[npc2.speech(唔，我整天得在这个酒吧后面忙活，没多少时间弄湿我的那个。如果你想要拿回你的钱，你只需要过来跪下，然后用你漂亮的小嘴吞下我的鸡巴。让我在你喉咙里射一泡，或者喷在你脸上，然后你就可以拿回你的钱了。)]
+			</p>
+			#IF(game.isVoluntaryNTREnabled())
+				<p>
+					当你在思考如何回应这个提议时，[npc2.name]继续说道：[npc2.speech(我甚至会让你的朋友在旁边看着我干你的喉咙！或者也许[npc.she]会想要来吸我的家伙，然后你可以看我们！)]
+				</p>
+			#ENDIF
+		#ELSE
+			<p>
+				你低头看着仍然放在柜台上的钱，问[npc2.name]你需要做什么。她向前倾身，对你咧嘴一笑，说道：[npc2.speech(唔，我整天得在这个酒吧后面忙活，我的下面都没怎么得到关照。如果你想要拿回你的钱，你只需要过来跪下，然后张开嘴好好舔我。一旦我玩够了你的舌头，你就可以拿回你的钱了。)]
+			</p>
+			#IF(game.isVoluntaryNTREnabled())
+				<p>
+					当你在思考如何回应这个提议时，[npc2.name]继续说道：[npc2.speech(我甚至会让你的朋友在旁边看着！或者也许[npc.she]想要来给我服务，你可以看着我们！)]
+				</p>
+			#ENDIF
+		#ENDIF
+	#ELSE
+		#IF(npc.hasPenis())
+			<p>
+				低头看着仍然放在柜台上的钱，你问[npc.name]你需要做什么。她向前倾身，对你咧嘴一笑，说道：[npc.speech(唔，整天得在这个酒吧后面忙活，我都没多少时间让自己放松。如果你想要拿回你的钱，只需要过来跪下，然后用你那漂亮的小嘴含住我的鸡巴，好好给我口。让我射在你的喉咙里或者脸上，你就可以拿回你的钱了。)]
+			</p>
+		#ELSE
+			<p>
+				抬头看着柜台上仍然放着的钱，你问[npc.name]你需要做什么。她向前倾身，对你咧嘴一笑，说道：[npc.speech(唔，整天得在这个酒吧后面忙活，我那个地方可没多少享受。如果你想要拿回你的钱，只需要过来跪下，然后张开嘴好好舔我一番。等我享受够了你的舌头，你就可以拿回你的钱了。)]
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DICE_DEN_RUM_ORAL"><![CDATA[
+	#IF(pc.hasCompanions())
+		#IF(npc2.hasPenis())
+			<p>
+				你决定为了找回自己的火币，愿意为嗦[npc2.namePos]鸡巴，于是你同意按照[npc2.she]的要求去做。[npc2.she]得意地笑着说道，[npc2.speech(那就过来，跪下。你的朋友也可以过来看！)]
+			</p>
+			<p>
+				你绕到吧台的尽头，与[npc.name]一起走到后面，来到[npc2.name]面前。按照指示，你跪在[npc2.herHim]面前，而[npc.name]保持距离，静静地观看。
+			</p>
+			<p>
+				[npc.speech(把它弄出来，贱人)][npc2.name]命令道，你顺从地移开[npc2.her]的衣物，让[npc2.her][npc2.cock+]在你面前自由地弹出。[npc2.name]不耐烦地稍微向前推了推臀部，继续说道：[npc.speech(用你的舌头让我硬起来，荡妇，然后你可以把我的鸡巴吞下去。)]
+			</p>
+			<p>
+				你倚身靠近[npc2.her]的腹部，开始舔着[npc2.namePos]的鸡巴，随着你的努力，它迅速变得坚挺且完全勃起。张开嘴巴，你将[pc.lips+]紧贴其顶部，然后将[npc2.her]跳动的长度吞入口中深至喉咙。当你开始给[npc2.name]口交时，[npc2.she][npc2.moans]着，说道：[npc.speech(乖荡妇。继续这样下去，我马上就要在你喉咙里射了！)]
+			</p>
+		#ELSE
+			<p>
+				为了取回你的火币，你决定愿意为[npc2.name]舔阴，因此同意按照[npc2.she]的要求去做。[npc2.she]发出得意的笑声，说道：[npc2.speech(那就过来，跪下吧。你这位朋友也可以过来看！)]
+			</p>
+			<p>
+				你绕到吧台的尽头，与[npc.name]一起走到后面，来到[npc2.name]面前。按照指示，你跪在[npc2.herHim]面前，而[npc.name]保持距离，静静地观看。
+			</p>
+			<p>
+				[npc2.speech(那就开始吧，荡妇)][npc2.name]命令道，你顺从地撩开[npc2.her]的衣物，露出[npc2.her][npc2.pussy+]。[npc2.name]不耐烦地向前挺了挺胯部，继续说道：[npc2.speech(先用你的舌头，贱人，然后你可以尽情地好好口我。)]
+			</p>
+			<p>
+				你靠近[npc2.her]的腹股沟，按照指示开始舔[npc2.namePos][npc2.labia+]，然后用舌尖挑逗[npc2.her]的阴蒂。[npc2.name]很快渴望得到更多，突然抓住你的后脑勺，将你拉向[npc2.her]的腹股沟。你的嘴唇紧贴着[npc2.namePos][npc2.pussy+]，你开始热情地舔弄[npc2.herHim]，使[npc2.herHim]在上方发出呻吟，[npc2.speech(就是这样，贱人！继续这样，我很快就会在你脸上喷了！)]
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(npc.hasPenis())
+			<p>
+				你决定为了拿回自己的火币，愿意为嗦[npc.namePos]的鸡巴，于是你同意按照[npc.she]的要求去做。[npc.she]得意地笑着说道，[npc.speech(那就过来，跪下吧！)]
+			</p>
+			<p>
+				你绕到吧台的尽头，走到后面，来到[npc.name]面前。按照指示，你跪在[npc.herHim]面前。
+			</p>
+			<p>
+				[npc.speech(把它拿出来，淫妇，)][npc.name]命令道，你顺从地移开[npc.her]的衣物，让[npc.her][npc.cock+]在你面前自由晃动。不耐烦地稍稍向前推动[npc.her]的臀部，[npc.name]继续说道：[npc.speech(用舌头让我硬起来，荡妇，然后你就可以把我的鸡巴塞进你的喉咙里。)]
+			</p>
+			<p>
+				你俯身到[npc.her]腹股沟，开始舔舐[npc.namePos]的鸡巴，你的努力很快得到了回报，因为它迅速变得硬挺。张开嘴巴，你把[npc.namePos]的龟头包裹在口中，然后将[npc.her]跳动的鸡巴吞入喉咙。当你开始给[npc.name]口交时，[npc.she]发出呻吟，说道，[npc.speech(乖荡妇。继续这样下去，我马上就要在你喉咙里射精了！)]
+			</p>
+		#ELSE
+			<p>
+				你决定为了拿回自己的火币，愿意为[npc.name]口交，于是你同意按照[npc.she]的要求去做。[npc.she]得意地笑着说道，[npc.speech(那就过来，跪下吧！)]
+			</p>
+			<p>
+				你绕到吧台的尽头，走到后面，来到[npc.name]面前。按照指示，你跪在[npc.herHim]面前。
+			</p>
+			<p>
+				[npc.speech(开始吧，荡妇，)][npc.name]命令道，你顺从地移开[npc.her]的衣物，以便能接触到[npc.her][npc.pussy+]。[npc.Name]不耐烦地稍稍向前推动[npc.her]的臀部，继续说道，[npc.speech(先用舌头舔一下，荡妇，然后你就可以开始认真地口我。)]
+			</p>
+			<p>
+				你依照指示靠近[npc.her]的腹部，开始舔舐[npc.name][npc.labia+]，然后用舌尖挑逗[npc.her]的阴蒂。很快，[npc.name]想要比你给予的更多，突然抓住你后脑勺，将你拉向[npc.her]的腹部。感受到你的嘴唇贴在[npc.name][npc.pussy+]上，你开始热情地舔弄[npc.herHim]，引得[npc.herHim]在上方发出[npc.moanVerb]，同时说道：[npc.speech(就是这样，荡妇！继续这样下去，我马上就会喷满你的脸！)]
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DICE_DEN_RUM_ORAL_COMPANION"><![CDATA[
+	#IF(npc2.hasPenis())
+		<p>
+			你认为让[npc.name]帮助你取回火币是个好主意，转向你的同伴，并说道：[pc.speech(去吧，[npc.name]。帮[npc2.her]吸一吸屌，这样我就能取回那些火币了。)]
+		</p>
+		<p>
+			#IF(!npc.isAttractedTo(npc2))
+				[npc.speech(呃……我真的不想做这个，)][npc.name]抗议道，[npc.speech(但我想我没有选择，是吧？)]
+			#ELSE
+				[npc.speech(嗯，听起来很有趣啊，)][npc.name]回答道，[npc.speech(我很好奇[npc2.she]有多大呢……)]
+			#ENDIF
+		</p>
+		<p>
+			[npc2.name]发出得意的笑声，听到你们两人的话语，看着[npc.name]并命令道：[npc2.speech(过来这边，跪下。你的朋友也可以过来看看！)]
+		</p>
+		<p>
+			你走到酒吧的尽头，和[npc.name]绕过它，来到[npc2.name]身后。按照指示，你的同伴跪在[npc2.race]面前，而你则保持距离，静观其变。
+		</p>
+		<p>
+			[npc2.speech(掏出来吧，贱人，)][npc2.name]命令道。按照指示，[npc.name]迅速解开[npc2.namePos]衣物，片刻后，[npc2.name]的[npc2.cock+]在你的[npc.companion]面前自由摆动着。有些不耐烦地向前推动臀部，[npc2.name]继续说道，[npc2.speech(用舌头让我硬起来，贱人，然后你就可以把我的鸡巴放进你的嘴里。)]
+		</p>
+		<p>
+			[npc.name]俯身靠近[npc2.namePos]腹股沟，开始舔弄[npc2.namePos]的鸡巴，[npc.she]的努力很快得到了回报，它迅速变得完全勃起。然后，[npc.she]张大嘴巴，将[npc.her]嘴唇包裹在龟头上，接着将[npc2.race]跳动的鸡巴整个含进嘴里并深入喉咙。随着你的同伴开始为[npc2.name]口交，[npc2.race]呻吟道，[npc2.speech(好贱人。继续这样做，不久我就会在你喉咙里射精了！)]
+		</p>
+	#ELSE
+		<p>
+			考虑到让[npc.name]帮助你拿回火币是个好主意，你转向你的[npc.companion]说道：[pc.speech(继续，[npc.name]。让[npc2.herHim]享受一番，好让我能够拿回火币。)]
+		</p>
+		<p>
+			#IF(!npc.isAttractedTo(npc2))
+				[npc.speech(呃…… 我真的不想这样做，)][npc.name]抗议道，[npc.speech(但我想我别无选择了，对吧？)]
+			#ELSE
+				[npc.speech(嗯，听起来很有趣，)][npc.name]回答道，[npc.speech(我迫不及待想尝尝[npc2.her]的小穴呢……)]
+			#ENDIF
+		</p>
+		<p>
+			[npc2.name]发出得意的笑声，听到你们两人的话语，看着[npc.name]并命令道：[npc2.speech(过来这边，跪下。你的朋友也可以过来看看！)]
+		</p>
+		<p>
+			你走到酒吧的尽头，和[npc.name]绕过它，来到[npc2.name]身后。按照指示，你的同伴跪在[npc2.race]面前，而你则保持距离，静观其变。
+		</p>
+		<p>
+			[npc2.speech(那就逃出来吧，贱人，)][npc2.name]命令道。按她说的做，[npc.name]迅速掀开[npc2.name]的衣物，以便接触到她的[npc2.pussy+]。急切地向前挺了挺腰，[npc2.name]继续说道：[npc2.speech(先用你的舌头舔一舔，贱人，然后再好好地舔我。)]
+		</p>
+		<p>
+			[npc.name]靠近[npc2.race]的胯部，按照指示开始舔[npc2.name]的[npc2.labia+]，然后用舌尖逗弄她的阴蒂。很快地想要比你的[npc.companion]给予的更多，[npc2.name]突然抓住[npc.name]的后脑，将她拉向自己的胯部。感觉到嘴唇紧贴着[npc2.name]的[npc2.pussy+]，[npc.name]开始认真地舔弄她，让[npc2.race]在上方发出呻吟声，[npc2.speech(就是这样，贱人！继续这样，我很快就要在你脸上喷了！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_DICE_DEN_ORAL -->
+	
+	<htmlContent tag="AFTER_DICE_DEN_ORAL_COMPANION"><![CDATA[
+	#IF(npc2.hasPenis())
+		<p>
+			[npc2.name]满意地长出口气，最后一次让你的[npc.companion]舔了舔[npc2.her][npc2.cock+]，冷笑着推开[npc.herHim]，[npc2.speech(我得说，在讨好老鼠鸡巴这方面，你很擅长！)]
+		</p>
+	#ELSE
+		<p>
+			[npc2.name]满意地长出口气，最后一次让你的[npc.companion]舔了舔[npc2.her]湿漉漉的小穴，冷笑着推开[npc.herHim]，[npc2.speech(我得说，在讨好老鼠小穴这方面，你很擅长！)]
+		</p>
+	#ENDIF
+	<p>
+		在[npc.name]收拾自己的时候，你走到吧台另一边，收起付给那杯朗姆酒的钱。过了一会，你的[npc.companion]走了一圈回到你身边，[npc2.name]向[npc.herHim]抛了个淫荡的笑容，转身对你说，[npc2.speech(随时欢迎你再买一杯！也许下一次跪下的就是你了，嗯？)]
+	</p>
+	<p>
+		伴随着[npc2.race]咯咯的笑声在台上回响，你思考着下一步该做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_DICE_DEN_ORAL"><![CDATA[
+	#IF(pc.hasCompanions())
+		#IF(npc2.hasPenis())
+			<p>
+				[npc2.name]满意地长出口气，最后一次让你舔了舔[npc2.her][npc2.cock+]，冷笑着推开你，[npc2.speech(我得说，在讨好老鼠鸡巴这方面，你很擅长！)]
+			</p>
+		#ELSE
+			<p>
+				[npc2.name]满意地长出口气，最后一次让你舔了舔[npc2.her]湿漉漉的小穴，冷笑着推开你，[npc2.speech(我得说，在讨好老鼠小穴这方面，你很擅长！)]
+			</p>
+		#ENDIF
+		<p>
+			你稍微收拾了下自己，和[npc.name]一起走到吧台另一边，拿起付给那杯朗姆酒的钱。在你做这些的时候，[npc2.name]向你抛了个淫荡的笑容，说，[npc2.speech(随时欢迎你再买一杯！)]
+		</p>
+		<p>
+			伴随着[npc2.race]咯咯的笑声在台上回响，你思考着下一步该做什么……
+		</p>
+	#ELSE
+		#IF(npc.hasPenis())
+			<p>
+				[npc.name]满意地长出口气，最后一次让你舔了舔[npc.her][npc.cock+]，冷笑着推开你，[npc.speech(我得说，在讨好老鼠鸡巴这方面，你很擅长！)]
+			</p>
+		#ELSE
+			<p>
+				[npc.name]满意地长出口气，最后一次让你舔了舔[npc.her]湿漉漉的小穴，冷笑着推开你，[npc.speech(我得说，在讨好老鼠小穴这方面，你很擅长！)]
+			</p>
+		#ENDIF
+		<p>
+			你稍微收拾了下自己，走到吧台另一边，拿起付给那杯朗姆酒的钱。在你做这些的时候，[npc.name]向你抛了个淫荡的笑容，说，[npc.speech(随时欢迎你再买一杯！)]
+		</p>
+		<p>
+			伴随着[npc2.race]咯咯的笑声在台上回响，你思考着下一步该做什么……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- MILKING_STORAGE -->
+	
+	<htmlContent tag="MILKING_STORAGE_QUEST_COMPLETE"><![CDATA[
+	<p>
+		一个狭窄而蜿蜒的小通道从鼠窟特别潮湿肮脏的区域分支出来，沿着这条路走了一分钟后，你终于进入一个大型的天然形成的洞穴。虽然粗糙的墙壁和布满钟乳石的天花板没有被破坏，但地面被人为地弄平了，并且随意地散布了一些独立的火炬，使整个洞穴笼罩在摇曳的淡橙色光线中。
+	</p>
+	<p>
+		细细观察周围环境，你发现这个区域最引人注目的特征是堆放在洞穴远墙上架单元上的数十只金属挤奶桶。在这些架单前面，摆放着一组古老而破旧的家具，旁边是一扇破损的木门。虽然腐烂的桌子和破损的椅子看起来已经多年未被使用，但有几个箱子和橱柜似乎保存得相对良好。家具堆中最引人注目的是一张褪色的红色沙发，就像整个房间一样，没有任何生命的迹象存在。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+			默克已经被带走，这是文加与执法者达成协议的一部分，现在这里没有人会阻止你打开那扇古老的木门，走进门后的房间……
+		#ELSE
+			由于这个区域没有人，所以没有任何阻止你打开那扇古老的木门，进入更远处房间的事情……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_STORAGE_CLEARED"><![CDATA[
+	<p>
+		一个狭窄而蜿蜒的小通道从鼠窟特别潮湿肮脏的区域分支出来，沿着这条路走了一分钟后，你终于进入一个大型的天然形成的洞穴。虽然粗糙的墙壁和布满钟乳石的天花板没有被破坏，但地面被人为地弄平了，并且随意地散布了一些独立的火炬，使整个洞穴笼罩在摇曳的淡橙色光线中。
+	</p>
+	<p>
+		细细观察周围环境，你发现这个区域最引人注目的特征是堆放在洞穴远墙上架单元上的数十只金属挤奶桶。在这些架单前面，摆放着一组古老而破旧的家具，旁边是一扇破损的木门。虽然腐烂的桌子和破损的椅子看起来已经多年未被使用，但有几个箱子和橱柜似乎保存得相对良好。家具堆中最引人注目的是一张褪色的红色沙发，就像整个房间一样，没有任何生命的迹象存在。
+	</p>
+	<p>
+		既然你已经清理了鼠窟这一区域的匪徒，没有什么能阻止你打开那扇古老的木门，走进门后的房间……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_STORAGE"><![CDATA[
+	#IF(!game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+		<p>
+			在鼠窟的隧道中，有一条曲折狭窄的通道从特别潮湿阴暗的地段分支出来。你沿着这条路走了一分钟后，最终发现自己[pc.stepping]进了一个天然形成的大洞穴。虽然粗糙的墙壁和钟乳石覆盖的天花板没有受到任何破坏，但地面却被人为地铺平了，一连串独立的火把杂乱无章地散布在周围，使整个洞穴都笼罩在闪烁的淡橙色光线中。其中一个火把上挂着一个拼写不清的牌子，上面写着：
+		</p>
+		<p style='text-align:center;'><i>
+			挤奶工租赁
+			#IF(game.isHourBetween(14, 22))
+				[style.italicsMinorGood(从下午2点到晚上10点)]。
+			#ELSE
+				[style.italicsMinorBad(从下午2点到晚上10点)]。
+			#ENDIF
+			<br/>500火币来一发。
+			<br/>不退款。
+		</i></p>
+		<p>
+			仔细观察周围的环境，你会发现这个区域最引人注目的是洞穴远处墙壁上的货架上堆放的几十个金属牛奶桶。在这些架子前面，有一组奇特的旧家具，看上去破破烂烂的，摆放在一扇破旧的木门旁边。一堆堆腐烂的桌子和破烂的椅子看起来好像已经很多年没有使用过了，但也有几个板条箱和柜子看起来保存得相对较好。这堆家具中最引人注目的是一张褪色的红色沙发，
+			#IF(game.isHourBetween(23, 7))
+				躺着一只纯种鼠男，睡的很香。
+			#ELSE
+				坐着一只纯种鼠男，百无聊赖。
+			#ENDIF
+		</p>
+		#IF(game.getHourOfDay()>=23 || game.getHourOfDay()<=7)
+			<p>
+				当你看到这个帮派成员的时候，突然听到他睡觉的附近传来一阵高亢的铃声。被铃声惊醒的鼠男猛地站了起来，拽了拽附近的电线，让叮当作响的铃铛安静下来，然后疯狂地四处张望，寻找惊醒他的原因。
+			</p>
+			<p>
+				看到你，他眨了眨[murk.eyeColour]的眼睛，伸手挠了挠露在外面的黑褐色皮毛，打了一个响亮的哈欠，从沙发上滑下，走了过来。站直后，你目测他有[murk.heightValue]左右高，他的上臂和其他帮派成员一样，有一个白色的老鼠骷髅十字骨纹身。不过，比帮派标记和矮小的身材更令人印象深刻的是，他大摇大摆走过来时，让他的生殖器暴露在外的黑色开裆短裤。
+			</p>
+		#ELSE
+			<p>
+				当你审视着这位帮派成员时，他也朝你看了过来。他眨了眨[murk.eyeColour]的眼睛，伸手挠了挠露在外面的黑褐色皮毛，打了一个响亮的哈欠，从沙发上滑下，走了过来。站直后，你目测他有[murk.heightValue]左右高，他的上臂和其他帮派成员一样，有一个白色的老鼠骷髅十字骨纹身。不过，比帮派标记和矮小的身材更令人印象深刻的是，他大摇大摆走过来时，让他的生殖器暴露在外的黑色开裆短裤。
+			</p>
+		#ENDIF
+		<p>
+			虽然他的阴茎收在鞘中，你无法预估准确长度，但也能很容易看出茎身粗的夸张。他两腿之间垂下的一对硕大无比的睾丸也与他的身高完全不成比例，随着他短小的步伐左右摇摆，令你情不自禁地瞥上一眼。
+		</p>
+		<p>
+			[murk.speechNoEffects(你为我嘞肥大鸡巴感到渴望吗？)]那只鼠男用一种懒散的口吻嘲笑你。他上上下下地打量着你，发出一声叱责的声音，然后继续说道，[murk.speechNoEffects(我得让你失望了；我嘞鸡巴是留给我嘞奶工的，所以无论你多么恳求，我都不会操你。)]
+			#IF(game.getHourOfDay()>=23 || game.getHourOfDay()<=7)
+				你怎么跑到这里来了？还触发了我的警报？我想好好休息一下！
+			#ENDIF
+			)]
+		</p>
+		<p>
+			[pc.speech(你的‘奶畜’？)]你问道，无视了这个举止下流的鼠男其他的评论。
+		</p>
+		<p>
+			[murk.speechNoEffects(嗯，你还没听说过我的奶工吗？那我猜你也不知道我的名字叫做默克，对吧？)]默克回答道，但在你回答之前，他接着说道，[murk.speechNoEffects(噢，你不知道我是谁倒也没关系；这样就没人给你误解我了。)]
+		</p>
+		<p>
+			怀疑有人能够比默克现实中更糟糕的印象，你继续听着，他转身走回沙发边，大声喊道，[murk.speechNoEffects(在这里，人们都知道我是那个当你想找个快速搞一炮却找不到合适对象的家伙。我有一群人类愿意听从我嘞吩咐，我称他们为奶工。老鼠们来这里，付给我钱，我就让他们和我嘞奶工之一做爱。)]
+		</p>
+		<p>
+			默克走到沙发边，吐了一口唾沫在地上，然后转身指向靠墙堆放的挤奶桶。他说道，[murk.speechNoEffects(我嘞奶工们提供了不错的收入；在城里，卖嘞不仅是他们的奶，还有他们嘞爱液！他们也擅长自己挤奶；把我嘞蛋蛋挤进他们嘞屄里！嘿嘿嘿！)]
+		</p>
+		<p>
+			#IF(game.getHourOfDay()>=23 || game.getHourOfDay()<=7)
+				默克背对着你，跳回沙发上，抓了抓他肥胖的肚子，打了个大大的哈欠，咕哝着说道，[murk.speechNoEffects(和我的奶工做爱要五百火币，但只在两点到十点之间提供服务。要是你想找快速嘞干一炮，明天下午再来。现在的话，你可以滚开，让我安心睡个好觉。)]
+			#ELSEIF(game.getHourOfDay()<14 || game.getHourOfDay()>=22)
+				对你背过身去，那只鼠男从一个破旧的橱柜里拿起一罐某种甜味饮料，喝了一口后跳回沙发上，抓了抓他肥胖的肚子，发出一声恶心的打嗝，然后嘲笑道，[murk.speechNoEffects(搞一个我挤奶工要五百火币，不过只在下午两点到十点之间提供服务。
+				#IF(game.getHourOfDay()<14)
+					今天下午晚些时候再来吧，如果你想爽一把的话。
+				#ELSE
+					如果你想爽一把，明天下午再来吧
+				#ENDIF)]
+			#ELSE
+				他背过身去，鼠男从一个破旧的橱柜里拿起一罐某种甜味饮料，喝了一口后跳回沙发上，抓了抓他肥胖的肚子，发出一声难闻的打嗝，然后嘲笑道，[murk.speechNoEffects(奶工要五百火币。它们在我身后的那扇门后面，你得先付钱才能看到它们。我会让你选择想要搞哪个，但如果你不喜欢任何一个，是不会退钱的。那么，你准备付款了吗？还是说你准备原路返回？)]
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			在鼠窟的隧道中，有一条曲折狭窄的通道从特别潮湿阴暗的地段分支出来。你沿着这条路走了一分钟后，最终发现自己[pc.stepping]进了一个天然形成的大洞穴，默克声称这是他的地盘。虽然粗糙的墙壁和钟乳石覆盖的天花板没有受到任何破坏，但地面却被人为地铺平了，一连串独立的火把杂乱无章地散布在周围，使整个洞穴都笼罩在闪烁的淡橙色光线中。其中一个火把上挂着一个拼写不清的牌子，上面写着：
+		</p>
+		<p style='text-align:center;'><i>
+			挤奶工租赁
+			#IF(game.isHourBetween(14, 22))
+				[style.italicsMinorGood(从下午2点到晚上10点)]。
+			#ELSE
+				[style.italicsMinorBad(从下午2点到晚上10点)]。
+			#ENDIF
+			<br/>500火币来一发。
+			<br/>不退款。
+		</i></p>
+		<p>
+			在你四处张望的同时，你发现这个区域最引人注目的特征是沿着洞穴远端墙壁的货架上堆放着几十个金属挤奶桶。在这些货架前面，是一组古怪的旧家具，摆放在一个破旧的木门旁边。尽管这些烂掉的桌子和破损的椅子看起来多年来都没有使用过，但有几个箱子和柜子似乎保持得相对良好。这个家具堆的最显著特征是一张褪色的红色沙发，它不仅因为其色彩斑斓而引人注目，还因
+			#IF(game.isHourBetween(23, 7))
+				默克躺在上面，很快就睡着了。
+			#ELSE
+				默克就坐在中间。
+			#ENDIF
+		</p>
+		#IF(game.getHourOfDay()>=23 || game.getHourOfDay()<=7)
+			<p>
+				当你看到这个帮派成员的时候，突然听到他睡觉的附近传来一阵高亢的铃声。被铃声惊醒的鼠男猛地站了起来，拽了拽附近的电线，让叮当作响的铃铛安静下来，然后疯狂地四处张望，寻找惊醒他的原因。
+			</p>
+			<p>
+				他阴晴不定的[murk.eyeColour]眼睛很快就看到了你，伸手挠了挠裸露在外、胖乎乎的肚皮上的黑褐色皮毛，然后打了个响亮的哈欠，大声喊道，[murk.speechNoEffects(我他妈想睡会儿！下午两点后再来吧，如果你想和我嘞奶工做爱的话！现在滚几把蛋！)]
+			</p>
+		#ELSE
+			<p>
+				当你看到这个粗鲁的帮派成员时，你会发现他正盯着你看，阴晴不定的[murk.eyeColour]眼睛里闪烁着投机的光芒。他伸手挠了挠露在外面的胖肚子上的黑褐色皮毛，打了一个响亮的饱嗝，然后张开双腿，再次露出黑色的开裆裤，将他那不成比例的巨大睾丸和黝黑的阴茎完全暴露在外面。
+			</p>
+			<p>
+				#IF(game.getHourOfDay()<14 || game.getHourOfDay()>=22)
+					在你来得及说什么之前，鼠男喊道，[murk.speechNoEffects(操我其中之一奶工需要五百火币，但只在两点到十点之间。
+					#IF(game.getHourOfDay()<14)
+						今天下午晚些时候再来吧，如果你想爽一把的话。
+					#ELSE
+						如果你想爽一把，明天下午再来吧
+					#ENDIF)]
+				#ELSE
+					你还没来得及说什么，鼠男就叫了起来，
+					#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+						[murk.speechNoEffects(如果你还想操我的奶工，就得花五百块钱。和以前一样，你得先付钱才能看到她们，我让你选择你想上的那个，但如果你不喜欢她们中的任何一个，就不能退款了！你是要付钱，还是要原路返回？)]
+					#ELSE
+						[murk.speechNoEffects(和我的奶工干一次还是要花五百火币，她们就在我身后的那扇门里，你得在看到她们之前付钱。我让你选你想上的那个，但如果你不喜欢她们中的任何一个，就不能退款了！你是要付钱，还是要原路返回？)]
+					#ENDIF
+				#ENDIF
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_STORAGE_CAPTIVE"><![CDATA[
+	<p>
+		由于你的寝具最靠近通向挤奶储藏室的门，你发现在铁链牢牢地将你的项圈束缚在挤奶台前，你能够靠得相当近。然而，由于实际上无法触及门，现在你唯一能做的就是返回到你的寝具中。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_STORAGE_CHALLENGE"><![CDATA[
+	<p>
+		你一刻也不愿意忍受默克的冒犯，于是走上前告诉他，你是来制止他的恶行的。
+	</p>
+	<p>
+		当鼠男意识到你打算和他打一架时，脸上的笑意立刻消失了，他惊恐地瞪大眼睛，从沙发上跳下来，飞快地跑向靠墙摆放的一个大柜子。你没想到这个胖乎乎的鼠男竟然有如此高爆发的速度，有点措手不及。你来不及阻止他，就看到他抓住柜子的一边，把柜子拉倒在地。默克出其不意的举动暴露了一个隐蔽通道的入口，而他正是疯狂地冲进了这条狭窄黑暗的通道。
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			你和[npc.name]也向前冲去，不愿让默克溜远。你们迅速穿过房间，准备亲自进入隧道。
+		#ELSE
+			你也向前冲去，不愿让默克溜远。你迅速穿过房间，准备亲自进入隧道。
+		#ENDIF
+		然而，就在你刚追到那里时，身后突然传来一声金属撞击声。你转过身来，看到几个牛奶桶在地上滚动，默克匆忙地从另一个隐蔽的入口离开了他的逃生通道。
+	</p>
+	<p>
+		默克冲进鼠窟，半嘶吼半尖叫地大声喊道：[murk.speechNoEffects(救命！救命！来人啊，救我！)] 
+	</p>
+	#IF(pc.hasCompanions())
+		<p>
+			虽然你和[npc.Name]很快就追上了默克，但他的叫声还是吸引了无数老鼠的注意，幸运的是，这胖胖的鼠男一定就在附近游荡。你与[npc.Name]在通道中停下，并准备自卫，此时默克大叫起来：[murk.speechNoEffects(你们这些人！这两个混蛋想袭击我！打倒他们，我的挤奶工就分你们免费干一炮！)]
+		</p>
+		<p>
+			默克的提议显然很受用，老鼠们迅速向你和[npc.Name]逼进。默克再次显露了他的懦弱本性，他溜进了隧道，只留下他的同伙在对付你们两个……
+		</p>
+	#ELSE
+		<p>
+			虽然你很快就追上了默克，但他的叫声还是吸引了无数老鼠的注意，幸运的是，这胖胖的鼠男一定就在附近游荡。你在通道中停下，并准备自卫，此时默克大叫起来：[murk.speechNoEffects(你们这些人！这个混蛋想袭击我！打倒这家伙，我的挤奶工就分你们免费干一炮！)]
+		</p>
+		<p>
+			默克的提议显然很受用，老鼠们迅速向你逼进。默克再次显露了他的懦弱本性，他溜进了隧道，只留下他的同伙在对付你……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- MILKING_ROOM -->
+	
+	<htmlContent tag="MILKING_ROOM"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+			希望再次进入挤奶房间，你告诉默克你想和他的奶工们玩一玩。默克听到你说这话，脸上露出了一丝坏笑，然后粗鲁地朝地上吐了口口水，嘴角露出讥讽的笑容，[murk.speechNoEffects(那你有五百火币了啊？想玩我奶工嘞小骚屄，先交钱再说！)]
+		#ELSE
+			想要了解一下这些“奶工”是谁，你告诉默克你想见见她们。鼠男听到你这样说，脸上露出坏笑，然后粗鲁地朝地上吐了口口水，嘴角露出讥讽的笑容，[murk.speechNoEffects(那你有五百火币了啊？想要我奶工嘞小骚屄，先交钱再说！)]
+		#ENDIF
+	</p>
+	<p>
+		你拿出默克要求的钱，递给他五百火币。鼠男抓过硬币，急忙跑去附近的一个箱子里收好，然后走向旁边的木门，推开门走了进去。他一边走，一边扭头喊道，[murk.speechNoEffects(快过来啊！我没整天时间等你！)]
+	</p>
+	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		<p>
+			跟随胖胖的鼠男进入深处的小型、明亮的洞穴后，你看到了熟悉的景象：一排排的金属框架挤奶厅沿着远墙平行排列。在跟随默克的带领后，你跳过了洞穴地面上的浅浅的冒泡溪流，停下来仔细观察眼前固定在地面上的六个坚固金属框架。
+		</p>
+		<p>
+			每个框架都由一个加厚的、腰部高度的长凳组成，长凳上设有坚固的皮革绑带，位于占据者的手臂和腿部自然休息的位置。在每个框架下方，放置着一台奥术挤奶机，最吸引你注意的是，其中四台机器已经启动，忙碌地给框架上被束缚的人进行挤奶。
+		</p>
+	#ELSE
+		<p>
+			跟随着那只鼠男穿过门口，你发现自己踏入了另一个自然形成的洞穴，虽然比作为默克居住区的那个洞穴要小得多。一系列明亮的奥术光源被挂在粗糙的墙壁上，它们很好地照亮了洞穴中引人注目的内容。
+		</p>
+		<p>
+			跟随着默克，他跳过贯穿洞穴地面的浅浅小溪，你不由得停下来凝视。眼前有六个牢固的金属框架紧紧固定在地面上。每个框架由一个有垫子的腰高长凳组成，上面固定着坚固的皮革绑带，绑带的位置正好是让占据者的手臂和腿自然休息的地方。在每个框架下面，有一个奥术挤奶机，而最吸引你注意的是，其中四台机器已经启动，忙碌地在挤奶架上的被束缚者身上操作着。
+		</p>
+	#ENDIF
+	<p>
+		尽管她们露出的圆润屁股对着你，这四位丰满的人类女性必定听见了你的进入声，突然间她们都开始拼命呼唤着默克过来干她们。你注视着，最左边的那位大声哀求道，[npc.speech(主人！请，填满我的小穴！)]
+	</p>
+	<p>
+		[npc2.speech(求你了，主人！用您的精液填满我的骚逼！)]在她旁边的那个家伙也发出了淫叫。
+	</p>
+	<p>
+		[murk.speechNoEffects(闭嘴，你们这些奶牛荡妇！午饭时间过了，这意味着你们的洞穴整天都要出租了！)]默克愤怒地喊道，立刻让那四个奶工的拼命要求停止了下来。然而，她们并没有完全停止发出声音，因为挤奶机稳定的泵动足以从她们张开的嘴唇间挤出一串低沉而充满欲望的呻吟声。
+	</p>
+	<p>
+		当你审视面前的人类奶工们时，你会看到她们每个人肿胀的、滴着乳汁的乳头被挤奶机的压力杯所包裹着，同时一款震动的阴道泵正在不停地工作着，刺激她们颤动的阴户。
+		#IF(game.isGapeContentEnabled())
+			他穿过人群，默克粗暴地拆下这些吸奶器，将它们扔到地板上。这一举动显露出每个使用这些吸奶器的女人的阴唇不仅滴水成沟，而且已经永久性地撑开，形成了张大的、流口水的洞。
+		#ELSE
+			默克一路走来，粗暴地拆下这些阴道泵，并将它们扔到地板上，显露出每一个这些乳汁者深色阴唇的湿润，已经准备好接受插入。
+		#ENDIF
+		#IF(game.isAnalContentEnabled())
+			默克快速完成任务，粗暴地拉开每个乳汁者丰满的臀部，揭示出她们的肛门
+			#IF(game.isGapeContentEnabled())
+				类似于她们的穴，每一个蓬松的后入口不仅滴溜溜地自然润滑，而且永久性地扩张，形成了毁坏的、张开的洞口。
+			#ELSE
+				类似于她们的穴，每一个蓬松的后入口不仅滴溜溜地自然润滑。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF(game.isGapeContentEnabled())
+			把手狡猾地伸向你，肥胖的鼠男用一只手把最近的奶工的屁股扯到一边，不仅展示了她松弛的洞穴，还让她发出急切而渴望的呻吟。鼠男在她巨大而深色的阴唇上摩擦着油腻的手指，然后狠狠地拍了一下她流淌着口水的肥胖淫穴，然后嘲笑道：[murk.speech(当初我找到她的时候，她嘞小逼逼真是又紧又漂亮！当然，我得把她嘞嫩逼扩张开来才能塞进我的大鸡巴，真正击垮她嘞意志，让她成为我嘞人，把她可爱的小穴变成这个丑陋嘞破洞！嘿嘿嘿！)]
+		#ELSE
+			转过身来向你狡诈地露出邪恶的笑容，这个胖胖的鼠男用一只手把最近的奶工的屁股扯到一边，不仅展示了她湿漉漉的洞穴，还让她发出一声绝望而渴望的呻吟。鼠男在她巨大而深色的阴唇上摩擦着油腻的手指，然后狠狠地拍了一下她肥硕的淫穴，接着嘿嘿嘿地笑着说道：[murk.speech(当初我找到她的时候，她嘞小逼逼真是又紧又漂亮！当然，我得把她嘞嫩逼扩张开来才能塞进我的大鸡巴，真正击垮她嘞意志，让她成为我嘞人，把她可爱的小穴变成这个丑陋嘞破洞！嘿嘿嘿！)]
+		#ENDIF
+	</p>
+	<p>
+		臭鼠男放开产奶工，在她的后臀上狠狠地扇了一巴掌，接着指着其他三个人冷笑道：[murk.speechNoEffects(我希望你不会介意知道，我操过这些人的次数多得数不清！你想操哪个荡妇？哦，如果你改变主意，或者觉得这些洞不合你心意，那你就记住，我是不会退款的！嘿嘿嘿！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_CLEARED"><![CDATA[
+	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		<p>
+			穿过挤奶室老旧的木门，你又一次看到了熟悉的景象：一排排金属框架的挤奶台与远处的墙壁平行。你跳过贯穿洞穴、汩汩流淌的浅浅溪流，停下脚步，仔细观察了一下前面用螺栓固定在地面上的六个坚固的金属框架。
+		</p>
+		<p>
+			每一个挤奶架都由一个高及腰部的软垫长凳组成，长凳上有结实的皮带，而长凳上的手脚自然会放在这些皮带上。每个框架下面都有一台奥术挤奶机，最吸引人眼球的是其中四台挤奶机已经打开，正忙着给框架上被束缚的人挤奶。
+		</p>
+	#ELSE
+		<p>
+			你很想看看默克的家具附近的木门后面到底有什么，于是走过去推开了木门。走进房间后，你发现自己进入了另一个天然形成的洞穴，尽管这个洞穴比默克的住处要小得多。其中一面粗糙的墙壁上挂着一串明亮的奥术灯，这些灯很好地照亮了洞穴里引人注目的东西。
+		</p>
+		<p>
+			你跳过横穿洞穴地面、汩汩流淌的浅浅溪流后，情不自禁地停下脚步，注视着眼前用螺栓固定在地面上的六个坚固的金属框架。每一个金属架都有一个高及腰部的软垫长凳，长凳上有结实的皮绳，长凳上的手脚可以自然地放在长凳上。每个框架下面都有一台奥术挤奶机，而最吸引你注意的是，其中四台挤奶机已经打开，正忙着给框架上被束缚的人挤奶。
+		</p>
+	#ENDIF
+	<p>
+		虽然她们裸露的臀部正对着你，但这四位身材丰满的女人一定听到了你的入场声，因为她们突然都开始急切地呼喊着
+		#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+			默克
+		#ELSE
+			她们的“主人”
+		#ENDIF
+		来操她们。在你的注视下，你左边最远的那个人大声哀鸣着：[npc.speech(是你吗，主人？！求求你填满我的小穴吧！)]
+	</p>
+	<p>
+		[npc2.speech(求你了，主人！我想要你的大鸡巴！)]在她旁边的那个也发出了淫叫。
+	</p>
+	<p>
+		四个“挤奶工”伸长脖子想看看主人为什么没有回应她们的呼喊，但一看到#IF(pc.hasCompanions())你和[npc.name]#ELSE你#ENDIF站在那里时，她们开始安静下来。不过，她们并没有完全停止发出声音，因为挤奶机持续不断的挤奶声足以从她们张开的嘴唇间引出一阵阵低沉而淫荡的呻吟。
+	</p>
+	<p>
+		当你仔细观察面前的挤奶工时，你会发现她们的乳头都被挤奶机的吸奶器吸住了，乳头个个浮肿，还滴着奶。而一个振动阴道泵也在她们颤抖的小穴里工作着。由于这里没有人阻止你，#IF(pc.hasCompanions())你和[npc.name]#ELSE你#ENDIF可以很轻松地和这些挤奶工中的一个或多个玩玩。
+		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensMilkersFreeAttempt))
+			你已经试图释放她们，却发现她们不愿意逃跑，你唯一的选择就是转身离开……
+		#ELSE
+			不过，你也可以转身离开，甚至试着释放她们……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_QUEST_COMPLETE"><![CDATA[
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+			进入“挤奶室”的旧木门，你再次看到那一排沿着左边墙壁的金属框架牛栏，这个区域里没有任何人。这让你不禁思考，这个房间是否将来会被用于更多的用途，而不只是临时存放……
+		#ELSE
+			好奇心驱使你走向房间另一头的木门，推开它想看看里面究竟有什么。穿过门后，你立刻注意到，这个房间的比例更像是一条宽敞的走廊，而不是传统的方形或矩形形状。接下来你注意到的是，沿着左手边的墙壁有一排金属框架的小隔间，每个隔间都有一个带垫的长凳，周围支撑着可以用来束缚人的腿或手的装置。这个区域里没有人，让你不禁怀疑这个房间是否只会被用作临时存放。
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_SEX"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你决定要干[npc2.name]，于是走到[npc2.herHim]身后，捏了一下[npc2.her][npc2.ass+]，让[npc2.herHim]发出[npc2.a_moan+]。默克看到你选好了挤奶工，便退后一步，说道：[murk.speechNoEffects(你会喜欢操这家伙的，当我用我的大鸡巴填满她的时候，她总是叫得最大声！)]
+		</p>
+		<p>
+			你叫[npc.name]站一旁观看，希望[npc2.name]能让你觉得物有所值……
+		</p>
+	#ELSE
+		<p>
+			你决定要干[npc.name]，于是走到[npc.herHim]身后，捏了一下[npc.her][npc.ass+]，让[npc.herHim]发出[npc.a_moan+]。默克看到你选好了挤奶工，便退后一步，说道：[murk.speechNoEffects(你会喜欢操这家伙的，当我用我的大鸡巴填满她的时候，她总是像个害羞的处女一样尖叫呻吟！)]
+		</p>
+		<p>
+			你不理会默克的评论，希望[npc.name]能让你觉得物有所值……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_SEX_AFTER_CLEARED"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你决定想要操[npc2.name]，你走到[npc2.herHim]身后，轻轻捏了一下[npc2.her]的屁股，引起[npc2.herHim]发出一声呻吟。告诉[npc.name]站在一旁观看，你准备开始……
+		</p>
+	#ELSE
+		<p>
+			你决定想要与[npc.name]做爱，你走到[npc.herHim]身后，轻轻捏了一下[npc.her]的屁股，引起[npc.herHim]发出一声呻吟。既然没有人在这里阻止你，你准备开始与[npc.herHim]快了一下……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_SEX_COMPANION"><![CDATA[
+	<p>
+		决定想看[npc.name]操[npc2.name]，你移动到一个可以看到一切的位置，然后告诉你的[npc.companion]开始吧。
+		#IF(!npc.isAttractedTo(npc2))
+			发出不满的叹息，[npc.name]不情愿地向前走了几步，嘟囔着说道：[npc.speech(我想我别无选择了……)]
+		#ELSE
+			发出兴奋的呻吟声，[npc.name]迅速向前移动，喊道：[npc.speech(哦，这会很有趣！)]
+		#ENDIF
+	</p>
+	<p>
+		默克看着[npc.name]即将要操的那个奶工，退后一步说道：[murk.speechNoEffects(你会喜欢玩弄她的；每次我用我的肥硕大屌塞进她身体时，她总是尖叫得最厉害！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_SEX_COMPANION_AFTER_CLEARED"><![CDATA[
+	<p>
+		决定想看[npc.name]操[npc2.name]，你移动到一个可以看到一切的位置，然后告诉你的[npc.companion]开始吧。
+		#IF(!npc.isAttractedTo(npc2))
+			发出不满的叹息，[npc.name]不情愿地向前走了几步，嘟囔着说道：[npc.speech(我想我别无选择了……)]
+		#ELSE
+			发出兴奋的呻吟声，[npc.name]迅速向前移动，喊道：[npc.speech(哦，这会很有趣！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_SEX_BOTH_AFTER_CLEARED"><![CDATA[
+	<p>
+		决定让[npc.name]加入你和[npc2.name]的性爱活动，你移动到喘息的奶工身后，然后告诉你的[npc.companion]绕到[npc2.her]的前面。
+		#IF(!npc.isAttractedTo(npc2))
+			发出不满的叹息，[npc.name]不情愿地向前走了几步，嘟囔着说道：[npc.speech(我想我别无选择了……)]
+		#ELSE
+			发出兴奋的呻吟声，[npc.name]迅速向前移动，喊道：[npc.speech(哦，这会很有趣！)]
+		#ENDIF
+	</p>
+	<p>
+		伸手轻轻握住[npc2.name]的屁股，你微笑着，看着[npc2.she]发出一声低吟作为回应。一旦[npc.name]就位，你便开始使用这个兴奋的奶工……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_CHALLENGE"><![CDATA[
+	<p>
+		你一刻也不愿意忍受默克的冒犯，你走上前告诉他，你是来制止他的恶行的。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_CHALLENGE_CORE"><![CDATA[
+	<p>
+		当鼠男意识到你打算与他对抗时，他脸上的笑容立刻消失，眼睛中满是恐惧，他从你身边飞奔而过，冲向你进入的那扇门。没料到这个胖乎乎的鼠男竟能如此迅速，你略感措手不及，未能及时阻止他，他成功逃回到挤奶间。
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			你急忙追赶，试图在他逃得太远之前抓住他，你和[npc.name]穿过破旧的红色沙发，横越房间，进入了鼠窟的隧道。
+		#ELSE
+			你急忙追赶，试图在他逃得太远之前抓住他，穿过他那破旧的红色沙发，横越房间，进入鼠窟的隧道。
+		#ENDIF
+		尽管他一开始冲得很快，但默克的速度远不如你，当他意识到你即将追上他时，他半喊半叫地尖声大叫道：[murk.speechNoEffects(救！救！过来帮我！)]
+	</p>
+	#IF(pc.hasCompanions())
+		<p>
+			默克的呼喊引来了许多老鼠的注意，这对于这位胖胖的鼠男来说无疑是一件幸运的事情，这些老鼠们显然是在附近游荡。当你和你的同伴停在走廊中准备自卫时，默克大声喊道：[murk.speechNoEffects(你们这些人！这两个混蛋想袭击我！打倒他们，我就用我的奶工给你们免费做个爱！)]
+		</p>
+		<p>
+			显然，老鼠们对默克的提议很感兴趣，迅速向你和你的同伴靠近。面对这个新的威胁，默克再次展现出他的懦弱本性，溜过你们，逃进隧道里，留下他的同伴们不带他的帮助来对付你们两个……
+		</p>
+	#ELSE
+		<p>
+			默克的叫声吸引了许多老鼠的注意，幸运的是，这些胖胖的鼠男一定是在附近游荡着。当你停下来站在通道中准备自卫时，默克大喊道：[murk.speechNoEffects(你们这些家伙！这个混蛋想要攻击我！把[pc.herHim]打倒，我就给你们全部人免费提供我奶工嘞服务！)]
+		</p>
+		<p>
+			显然喜欢默克的提议，老鼠们迅速向你逼近。面对这个新的威胁，你不得不全神贯注地应对。默克再次展现出他懦弱的本性，溜过你，匆忙逃进隧道深处，将他的同伴留下来单独面对你……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="MILKING_ROOM_BACK_OUT"><![CDATA[
+	<p>
+		决定你真的不想和任何奶工发生性关系后，你转身朝门口走去。默克看到你要退出安排，笑着提醒道，
+		#IF(game.isGapeContentEnabled())
+			[murk.speechNoEffects(不会因为没和我一块挤丑嘞裂屄就不能退钱！走吧，出去！我得把这些屄泵塞回她们流水嘞屄里！)]
+		#ELSE
+			[murk.speechNoEffects(不会因为不喜欢我挤奶了丑样就不能退钱！走吧，出去！我得把这些屄泵塞回她们流水嘞屄里！)]
+		#ENDIF
+	</p>
+	<p>
+		把默克留下来将阴道泵推回每个奶工的暴露阴道后，你回到挤奶间。在你能四处看看之前，默克迅速跟了上来，跳到他的沙发上，随即朝地板吐了口唾沫，嘴角露出了一丝冷笑。
+		#IF(game.getHourOfDay()>=22)
+			[murk.speech(时间已晚，我打算关闭挤奶间了。滚蛋吧，如果你改变主意想要跟她们其中一个搞，明天两点以后再来！)]
+		#ELSE
+			[murk.speech(那么，你还有什么事吗？还是打算滚蛋，让我安安静静地？)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_MILKER_SEX -->
+	
+	<htmlContent tag="AFTER_MILKER_SEX"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			#IF(sex.getDominantParticipants(false).containsKey(npc))
+				你和[npc.name]跟[npc2.name]完事之后，离开她，转身朝出口走去。
+			#ELSE
+				你跟[npc.name2]完事之后，离开她，转身朝出口走去。
+			#ENDIF
+		#ELSE
+			你跟[npc.name]完事之后，离开她，转身朝出口走去。
+		#ENDIF
+		默克一直等在旁边确保你没耍花招，他走过来，朝地上啐了一口，冷笑道，
+		#IF(game.isGapeContentEnabled())
+			[murk.speechNoEffects(希望你和我这些淫荡奶牛们的丑屄玩得还算开心！总之，你可以走了！我要先把这些屄泵塞回她们流水的小穴里再出去！)]
+		#ELSE
+			[murk.speechNoEffects(希望你和我这些淫荡奶牛们的丑屄玩得还算开心！总之，你可以走了！我要先把这些屄泵塞回她们流水的小穴里再出去！)]
+		#ENDIF
+	</p>
+	<p>
+		你留默克在那把屄泵塞回每只奶牛裸露的阴道里，回到牛奶储藏室。默克在你东张西望之前快速跟出来，跳上沙发，朝地上啐了一口，冷笑道，
+		#IF(game.getHourOfDay()>=22)
+			[murk.speech(很晚了，挤奶室要关门了。你要还想操哪只奶牛，明天下午两点之后再来吧！)]
+		#ELSE
+			[murk.speech(所以你还想要什么？要不然就滚开让我清静会儿？)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_MILKER_SEX_LEAVE"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			你和[npc.name]让默克去处理他和奶牛的事，返回牛奶储藏室，继续深入鼠窟隧道……
+		#ELSE
+			你让默克去处理他和奶牛的事，返回牛奶储藏室，继续深入鼠窟隧道……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_MILKER_SEX_CLEARED"><![CDATA[
+	<p>
+		#IF(pc.hasCompanions())
+			你和[npc.name]跟[npc2.name]完事之后，离开她，开始整理自己的东西。
+		#ELSE
+			你跟[npc.name]完事之后，离开她，开始整理自己的东西。
+		#ENDIF
+		你已经清空了鼠窟的这片区域，不会有人再来阻止你上另一只奶牛了。不过话说回来，或许你已经满足了，想继续干点别的……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_MILKER_SEX_CHALLENGE"><![CDATA[
+	<p>
+		你不喜欢默克上你刚用过的奶牛，于是走上前告诉他，他的奶牛现在是你的了，并准备和他决斗。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- MILKING_ROOM_BACKGROUND -->
+	
+	<htmlContent tag="MILKING_ROOM_BACKGROUND"><![CDATA[
+	<p>
+		你想更多地了解挤奶工，就问默克是如何拥有她们的，以及鼠窟的其他帮派成员是否也像他一样拥有奴隶。
+	</p>
+	<p>
+		[murk.speechNoeffects(奴隶？)]默克反问道，接着不耐烦地哼了一声，[murk.speechNoeffects(这些妓女可不是什么奴隶。我不明白为什么我要告诉你关于她们嘞任何事情，但既然你要是不说我拥有奴隶嘞胡说八道，那我就告诉你我是怎么得到这些奶工嘞。)]
+	</p>
+	<p>
+		默克走到挨着你的一个被束缚的女人身边，猛地拍了一下她的屁股。你的好奇心因此被勾了起来，屏气慑息了一霎。突如其来的关注让产奶工发出了绵长的浪叫，她大叫道，[npc.speechNoeffects(~啊哈！~求求你，主人！来操我！我好想你进来！)]
+	</p>
+	<p>
+		[murk.speechNoeffects(闭嘴荡妇！晚些时候我就来狠狠捅你一顿！)]默克喝道，又朝你嘲讽道，[murk.speechNoeffects(你看到了吗？这些荡妇有多渴望我的鸡巴，会顺从成这样。当然这可不是她们的常态，我可是好好调教了她们一番，让她们觉得到除了当我这个挤奶工的鸡巴套之外一无是处。这家伙是第一个。这婊子在赌场附近烂醉如泥，毕竟我不久前刚捡了六个产奶工，我觉得让她躺在那儿太浪费了，所以我把她拖了回来，把她绑得严严实实的！她刚醒来时可不安分，但现在再看看她！嘿嘿嘿！)]
+	</p>
+	<p>
+		为了证明自己的观点，默克
+		#IF(game.isGapeContentEnabled())
+			把他那四根胖胖的手指塞进奶工那张敞开的、滴水的湿润小穴里，引发了她的绝望呻吟和恳求，[npc.speechNoeffects(嗯！主人！请让我的小穴把你的蛋蛋挤干！)]
+		#ELSE
+			把他两根手指滑入挤奶机那湿漉漉的小穴里，她因此发出绝望的呻吟并恳求道，[npc.speechNoeffects(嗯！主人！请让我的小穴把你的蛋蛋挤干！)]
+		#ENDIF
+	</p>
+	<p>
+		抽出手指，轻轻拍打那名女子丰满的穴，默克出乎意料地解开了固定她的约束，然后问道，[murk.speech(你确定你不想让我放了你吗？你只需说出一句话，我现在就释放你！)]
+	</p>
+	<p>
+		[npc.speechNoeffects(不，主人~求你了，操我吧！~我是你的好鸡巴套荡妇！)]她哭着拒绝走出摊位，而是把她[npc.ass+]推向默克。
+	</p>
+	<p>
+		忽略了挤奶工的绝望请求，默克转向你，露出邪恶的笑容，然后继续说道：[murk.speechNoeffects(正如你所见，我已经把她调教得很乖了。我花了一些时间才弄清楚，强迫她喝下一种神秘嘞改造药剂，确实让她接受了作为我嘞挤奶荡妇的身份！之后，她像个妓女一样呻吟着，我把她嘞乳房变成了那些巨大的产奶机！)]
+	</p>
+	<p>
+		#IF(game.isGapeContentEnabled())
+			默克用双手抚摸着挤奶工的阴部，将她巨大而垂悬的阴唇撑开，展示出她的阴道有多么松弛和撕裂。他再次转身冷笑着看着你，鼠男说道：[murk.speechNoeffects(当然，她直到我把她可爱嘞嫩屄变成这么丑陋嘞臭屄，并且用我嘞肥硕肉棒把它撑得开开之前，还有点抵抗。嘿嘿嘿！)]
+		#ELSE
+			默克再次伸手到挤奶工的阴部，摩擦她的阴唇并挑弄她的阴蒂，然后再次转身冷笑着看着你，说道：[murk.speechNoeffects(当然，她直到我把她可爱嘞嫩屄变成了这么丑陋嘞臭屄，并且让它第一次尝到我嘞肥硕大鸡巴之前，还有点抵抗。嘿嘿嘿！)]
+		#ENDIF
+	</p>
+	<p>
+		[pc.speech(所以你违背她们的意愿，绑架了这四个女孩并对她们进行了洗脑？)]你问责这个胖乎乎的鼠男。
+	</p>
+	<p>
+		[murk.speech(恁这话说的也太轻巧了吧！训练和改造她们到这个状态可是一项艰苦的工作！)]默克笑了笑，把产奶工重新绑回了挤奶台，嘴角露出一丝冷笑道，[murk.speechNoeffects(至于他们所谓的‘绑架’，执法者们根本就不会为这些卑贱的人类费心，就算他们真的在找，俺也绝不会被逮着！那么，恁想挑一个来操不？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- MILKING_ROOM_FREE_ATTEMPT -->
+	
+	<htmlContent tag="MILKING_ROOM_FREE_ATTEMPT"><![CDATA[
+	<p>
+		在清理了鼠窟的这一部分后，这里已经没有人能阻止你试图解救被囚禁的奶工们了。走到最近的一个牢笼旁，你开始解开被囚者项圈上的链条，但就在你这么做的时候，[npc.name]大声喊道：[npc.speech(等等，你在干什么？！走开，我不想被释放！默克！帮帮我！)]
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+			面对所有奶工们都加入呼救，请求他们的主人的情况，你意识到要说服它们想要逃跑将需要大量的时间和努力。
+		#ELSE
+			面对所有奶工都加入第一个奶牛的呼救声，你意识到要说服它们想要逃跑将需要大量的时间和努力。
+		#ENDIF
+		由于鼠窟还没有完全清理出来，你现在无法承担风险尝试拯救这些不愿逃跑的奶工。你将不得不稍后再处理它们。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL -->
+	
+	<htmlContent tag="VENGARS_HALL"><![CDATA[
+	<p>
+		文加所在的大厅有一扇巨大的铁艺木门，与鼠窟的曲折隧道相连。这里与帮派其他藏身之处天差地别，大厅的墙壁是由半雕半建的巨大石块砌成的，地面光滑平整，比你在其他地方看到的都要好得多。高高的天花板上悬挂着十几盏吊灯，与无数舞动的火焰交相辉映，将整个区域笼罩在温暖的淡橙色光芒中。
+	</p>
+	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensHostile))
+		<p>
+			宽敞的大厅两侧各摆放着十几张长木桌，从敞开的大门到靠墙的高台之间留出了一条畅通无阻的道路。你一踏进门就立马注意到这些桌子旁至少站着五十多名帮派成员，你继续向前走时，宽敞的大厅里很快就充满了他们震耳欲聋的嘲笑声和叫喊声。
+		</p>
+		<p>
+			尽管老鼠们咄咄逼人地嘲弄和讥笑，但似乎没有一只老鼠愿意主动攻击。毫无疑问，你战斗大捷的消息已经传到了这个大厅，让这些胆小的老鼠不敢直接向你挑战。你知道自己现在没有退路，于是大步走向高台，目光紧紧盯着坐在冰冷铁座上慵懒的棕毛老鼠。
+		</p>
+		<p>
+			看到你走近，这只老鼠——你知道他一定就是文加本人举起一只手，让他的部下噤声，随后站起来，用低沉的声音叫道：
+			#IF(game.isSillyModeEnabled())
+				[vengar.speechNoEffects(哦？你居然在接近我？没有逃跑，反而向我走过来了吗？)]
+			#ELSE
+				[vengar.speechNoEffects(尼还真有信心啊，是不是？来吧，到这儿来，让我们看看尼有什么能耐！)]
+			#ENDIF
+		</p>
+	#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarIntroduced))
+		<p>
+			宽敞的大厅两侧各摆放着十几张长木桌，从敞开的大门到靠墙的高台之间留出了一条畅通无阻的道路。就像你上次来的时候一样，这些桌子旁至少坐着五十名帮派成员。整个大厅充斥着他们大声的聊天声、打嗝声和笑声，空气中弥漫着烤肉和烈酒的味道。
+		</p>
+		<p>
+			帮派成员们都知道你见过文加，而且还与他达成了协议，所以注意到你的老鼠们很快就把目光移开，不再理会你。既然来了，你思考是该去找那个还懒洋洋地躺在冰冷的铁王座上的文加，还是转身回到隧道里。
+		</p>
+	#ELSE
+		<p>
+			宽敞的大厅两侧各摆放着十几张长木桌，从敞开的大门到靠墙的高台之间留出了一条畅通无阻的道路。你环顾四周，这些桌子旁至少坐着五十名帮派成员。整个大厅充斥着他们大声的聊天声、打嗝声和笑声，空气中弥漫着烤肉和烈酒的味道。
+		</p>
+		<p>
+			随着你的进入，一只接一只的老鼠开始注意到你的存在，不一会儿，老鼠们欢快的叫喊声就被沉重的寂静所取代。你知道自己现在没有退路，于是大步走向高台，目光紧盯着坐在冰冷铁座上的棕毛老鼠。
+		</p>
+		<p>
+			看到你走近，这只老鼠——你知道他一定就是文加本人站了起来，用低沉的声音喊道：
+			#IF(game.isSillyModeEnabled())
+				[vengar.speechNoEffects(哦？你居然在接近我？没有逃跑，反而向我走过来了吗？)]
+			#ELSE
+				[vengar.speechNoEffects(这是什么？一个陌生人？不请自来？过来解释一下！)]
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH"><![CDATA[
+	#IF(game.getDialogueFlags().hasFlag(FLAG_vengarIntroduced))
+		#IF(!pc.isQuestCompleted(QUEST_LINE_SIDE_VENGAR))
+			<p>
+				你决定再找文加谈谈，于是径直走到大厅中间，直奔他的宝座。然而，还没等你走到那里，他的贴身保镖影似乎凭空出现在你身后。她闪到你身边，用尾巴蹭着你的[pc.legs]，同时附耳轻声说道：[shadow.speechNoEffects(又见面了，我的小可爱。我相信你不打算做什么，但还是提醒你一句，如果你想攻击文加，我一定会让你后悔出生在这个世界上。)]
+			</p>
+			<p>
+				影来去如风，退到文加宝座的不远处，很快就和她的同伴默会合了。黑毛鼠女密切关注着你的一举一动，对你龇牙咧嘴，而她的白化伙伴则蹭了蹭她，在她脖子上留下了几个吻。
+				#IF(game.getDialogueFlags().hasFlag(FLAG_vengarSeduced))
+					你把注意力重新集中到文加身上，走到他的宝座前，挑逗地向他打招呼。
+				#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarPersuaded))
+					你把注意力重新集中到文加身上，走到他的宝座前，顺从地向他问候。
+				#ELSE
+					你把注意力重新集中到文加身上，走到他的宝座前，草草地向他问候。
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				你决定再与文加交谈，于是径直走到大厅中间，直奔他的宝座。因为那两个鼠女保镖不再是他的手下，没人能阻止你直接走到帮派头目的宝座前，
+				#IF(game.getDialogueFlags().hasFlag(FLAG_vengarSeduced))
+					用轻佻的问候语挑逗他。
+				#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarPersuaded))
+					顺从地向他问候。
+				#ELSE
+					简短地向他问候。
+				#ENDIF
+			</p>
+		#ENDIF
+		#IF(game.getDialogueFlags().hasFlag(FLAG_vengarSeduced))
+			<p>
+				#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
+					[vengar.speechNoEffects(呦呦呦，这不是我性感的小[pc.race]吗！回来求我用鼠屌塞满尼吗？)]文加一边说着，一边饥渴地盯着你的身体，[vengar.speechNoEffects(我随时准备好给尼来一炮，所以只要你说一声，我们就可以去卧室！还是说我们一起去见见‘[axel.name]’，嗯？组队操鳄鱼听起来不错吧？)]
+				#ELSE
+					[vengar.speechNoEffects(呦呦呦，这不是我性感的小[pc.race]吗！回来求我用鼠屌塞满尼吗？)]文加一边说着，一边饥渴地盯着你的身体，[vengar.speechNoEffects(我随时准备好给尼来一炮，所以只要你说一声，我们就可以去卧室！)]
+				#ENDIF
+			</p>
+		#ELSEIF(game.getDialogueFlags().hasFlag(FLAG_vengarPersuaded))
+			<p>
+				#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
+					[vengar.speechNoEffects(呦呦呦，这不是我乖巧的小[pc.race]吗！)]文加一边嘲弄地叫着，一边饥渴地盯着你的身体，[vengar.speechNoEffects(你是要来这大干一场吗？那你只要说一声，我们就可以去卧室！还是说我们一起去见见‘[axel.name]’，嗯？组队操鳄鱼听起来不错吧？)]
+				#ELSE
+					[vengar.speechNoEffects(呦呦呦，这不是我乖巧的小[pc.race]吗！)]文加一边嘲弄地叫着，一边饥渴地盯着你的身体，[vengar.speechNoEffects(你是要来这大干一场吗？那你只要说一声，我们就可以去卧室！)]
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				#IF(game.getDialogueFlags().hasFlag(FLAG_axelSissified))
+					[vengar.speechNoEffects(呦呦呦，这不是唯一敢在帮派里威胁我的[pc.race]吗！尼这次回来要什么啊，嗯？)]文加怀疑地问道，同时毫不掩饰他饥渴的视线，[vengar.speechNoEffects(如果你不是来找麻烦的，那我们就来大干一场吧？只要你说一声，我们就可以去卧室！还是说我们一起去见见‘[axel.name]’，嗯？组队操鳄鱼听起来不错吧？)]
+				#ELSE
+					[vengar.speechNoEffects(呦呦呦，这不是唯一敢在帮派里威胁我的[pc.race]吗！尼这次回来要什么啊，嗯？)]文加怀疑地问道，同时毫不掩饰他饥渴的视线，[vengar.speechNoEffects(如果你不是来找麻烦的，那我们就来大干一场吧？只要你说一声，我们就可以去卧室！)]
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensHostile))
+			<p>
+				你继续接近文加所站立的台子，随着距离的拉近，你可以更清楚地观察这个帮派的老大。大个子鼠男身高[vengar.heightValue]，全身覆盖着深棕色的皮毛，他自信满满地站在高处俯视你，显得威风凛凛。他的短袖衬衫扣子没扣，露出一对肌肉发达的胸肌和轮廓分明的六块腹肌。他的手臂也十分粗壮，还紧握着指虎，一看就知道他的拳头威力很大。
+			</p>
+			<p>
+				[vengar.speechNoEffects(你以为你闯进来惹麻烦还没有惩罚吗？！)]文加咆哮着，走到一边，让一个白毛鼠女向你走来，[vengar.speechNoEffects(这是默，我可不想浪费时间对付你，她对付你就足够了！)]
+			</p>
+			<p>
+				你抬头看向你的对手，这鼠女不仅毛发洁白无瑕，爪垫、鼻子和尾巴上的皮肤也呈现出鬼魅般的苍白色。然而，最引人注目的是她散发着荧光的粉色眼睛。此外，她脖子上挂着一块粉红色的魔石碎片，紧握的拳头周围散发着不祥的绿光，这一切都暗示着这个鼠女是一个奥术使用者。
+			</p>
+			<p>
+				#IF(pc.hasCompanions())
+					人如其名，“默”一言不发地朝你逼近，使文加的嘲弄声分外明显：[vengar.speechNoEffects(等你们两个家伙见识完她的厉害，我就让#IF(pc.isAbleToHaveRaceTransformed())你们变成放荡的鼠女，还要#ENDIF让你们做帮派的公共鸡巴套！哈！)]
+				#ELSE
+					人如其名，“默”一言不发地朝你逼近，使文加的嘲弄声分外明显：[vengar.speechNoEffects(等你见识完她的厉害，我就让#IF(pc.isAbleToHaveRaceTransformed())你变成放荡的鼠女，还要#ENDIF让你做帮派的公共鸡巴套！哈！)]
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				你继续接近文加所站立的台子，随着距离的拉近，你可以更清楚地观察这个帮派的老大。大个子鼠男身高[vengar.heightValue]，全身覆盖着深棕色的皮毛，他自信满满地站在高处俯视你，显得威风凛凛。他的短袖衬衫扣子没扣，露出一对肌肉发达的胸肌和轮廓分明的六块腹肌。他的手臂也十分粗壮，还紧握着指虎，一看就知道他的拳头威力很大。
+			</p>
+			<p>
+				[vengar.speechNoEffects(你最好有充分的理由这样闯进来，否则我的姑娘们——默和影，会好好操你！)]他冷笑着，朝大厅的一边示意。
+			</p>
+			<p>
+				你顺着文加刚才点头的方向看去，发现只有一个鼠女在盯着你。你仔细观察这位保镖，发现她毛色洁白无瑕，爪垫、鼻子和尾巴上的皮肤都是幽暗的苍白色。然而，最引人注目的是她散发着荧光的粉色眼睛。此外，她脖子上挂着一块粉红色的魔石碎片，紧握的拳头周围散发着不祥的绿光，这一切都暗示着这个鼠女是一个奥术使用者。
+			</p>
+			<p>
+				你正想找找另一个保镖的位置，突然发现一个黑影在你周围迅速移动。你转过身来面对这个潜在的威胁，发现自己正在盯着一个与她的同伴外表完全相反的身影。站在你面前这个咧嘴狂笑的鼠女的皮毛像沥青一样黑，爪垫、鼻子和尾巴上都是乌黑的皮肤，通体没有一寸不像夜空一样漆黑。
+			</p>
+			<p>
+				[shadow.speechNoEffects(真是敏锐，注意到了影在周围确保你不会做出蠢事！)]“影”调侃道，语气不善。她的双手从胯部拔出一对爪刀，剧毒刀刃发出绿色的光芒，先照亮了影的黑色超短裙，然后是同色的抹胸。她举起武器，摆出攻击姿势，瞥了一眼对面的鼠女——你知道她一定是“默”，这个黑毛鼠女喊道：[shadow.speechNoEffects(准备好，亲爱的！如果这个人没有给文加一个充分理由出现在这里，我们就要采取行动了！)]
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_FIGHT_SURPRISED"><![CDATA[
+	<p>
+		当你准备与默战斗时，突然听到身后有动静，但太迟了！你刚转身，根本来不及找到暗处的袭击者，两道幽绿色的闪光就向下劈来，完全击中了你的后背。你瞬间感觉到奥术刀刃正在消耗你的力量，赶忙竭尽全力挣脱，这才扭身摆脱了攻击者的控制。
+	</p>
+	<p>
+		你发出喘息，转过身来面对这个新威胁，发现这是一个和默截然不同的身影：咧嘴狂笑的鼠女的皮毛像沥青一样黑，爪垫、鼻子和尾巴上都是乌黑的皮肤，通体没有一寸不像夜空一样漆黑。
+	</p>
+	<p>
+		[shadow.speechNoEffects(真是出色，居然能从影的爱吻中挣脱出来！不过我真希望你能再大声一点， 毕竟没有什么比听猎物倒下时的尖叫更棒的了！)]“影”调侃道，语气不善。她举起爪刀，摆出攻击姿势，剧毒刀刃发出绿色的光芒，先照亮了影的黑色超短裙，然后是同色的抹胸。黑毛鼠女瞥了一眼默，叫道：[shadow.speechNoEffects(别担心，亲爱的，我不会让尼受任何伤。让我们速战速决吧！)]
+	</p>
+	<p>
+		说罢，两个鼠女突然发动攻击。你别无选择，只能展开反击！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_FIGHT_SURPRISED_COMPANION"><![CDATA[
+	<p>
+		当你和[npc.Name]准备与默战斗时，突然听到身后有动静，但太迟了！你刚转身，根本来不及找到暗处的袭击者，两道幽绿色的闪光就向下划去，击中了你[npc.companion]的后背。[npc.Name]被这突然袭击打倒在地，好在被及时推了一把才勉强可以支撑下去。
+	</p>
+	<p>
+		你的[npc.companion]发出喘息，转过身来面对这个新威胁，发现这是一个和默截然不同的身影：咧嘴狂笑的鼠女的皮毛像沥青一样黑，爪垫、鼻子和尾巴上都是乌黑的皮肤，通体没有一寸不像夜空一样漆黑。
+	</p>
+	<p>
+		[shadow.speechNoEffects(真是出色，居然能把你的小伙伴从影的爱吻中解救出来！不过我真希望[npc.she]能再大声一点， 毕竟没有什么比听猎物倒下时的尖叫更棒的了！)]“影”调侃道，语气不善。她举起爪刀，摆出攻击姿势，剧毒刀刃发出绿色的光芒，先照亮了影的黑色超短裙，然后是同色的抹胸。黑毛鼠女瞥了一眼默，叫道：[shadow.speechNoEffects(别担心，亲爱的，我不会让尼受任何伤。让我们速战速决吧！)]
+	</p>
+	<p>
+		说罢，两个鼠女突然发动攻击。你和[npc.Name]别无选择，只能展开反击！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_FIGHT"><![CDATA[
+	#IF(pc.hasCompanions())
+		#IF(!pc.hasTraitActivated(PERK_OBSERVANT))
+			<p>
+				当你们准备与默战斗时，你的[npc.companion]余光瞥见了一个高速移动的黑影，立马转过身来面对这个新威胁。你也转过身来，发现这是一个和默截然不同的身影：咧嘴狂笑的鼠女的皮毛像沥青一样黑，爪垫、鼻子和尾巴都一片乌黑，通体没有一寸不像夜空一样漆黑。
+			</p>
+			<p>
+				[shadow.speechNoEffects(真是敏锐，居然注意到了影准备给你一个爱吻！)]“影”调侃道，语气不善。她的双手从胯部拔出一对爪刀，剧毒刀刃发出绿色的光芒，先照亮了影的黑色超短裙，然后是同色的抹胸。黑毛鼠女举起武器，摆出攻击姿势，瞥了一眼默，喊道：[shadow.speechNoEffects(别担心，亲爱的，我不会让尼受任何伤。让我们速战速决吧！)]
+			</p>
+			<p>
+				说罢，两个鼠女突然发动攻击。你和[npc.Name]别无选择，只能展开反击！
+			</p>
+		#ELSE
+			<p>
+				当你们准备与默战斗时，你的余光瞥见了一个高速移动的黑影，立马转过身来面对这个新威胁，发现这是一个和默截然不同的身影：咧嘴狂笑的鼠女的皮毛像沥青一样黑，爪垫、鼻子和尾巴都一片乌黑，通体没有一寸不像夜空一样漆黑。
+			</p>
+			<p>
+				[shadow.speechNoEffects(真是敏锐，居然注意到了影准备给你一个爱吻！)]“影”调侃道，语气不善。她的双手从胯部拔出一对爪刀，剧毒刀刃发出绿色的光芒，先照亮了影的黑色超短裙，然后是同色的抹胸。黑毛鼠女举起武器，摆出攻击姿势，瞥了一眼默，喊道：[shadow.speechNoEffects(别担心，亲爱的，我不会让尼受任何伤。让我们速战速决吧！)]
+			</p>
+			<p>
+				说罢，两个鼠女突然发动攻击。你和[npc.Name]别无选择，只能展开反击！
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			当你们准备与默战斗时，你的余光瞥见了一个高速移动的黑影，立马转过身来面对这个新威胁，发现这是一个和默截然不同的身影：咧嘴狂笑的鼠女的皮毛像沥青一样黑，爪垫、鼻子和尾巴都一片乌黑，通体没有一寸不像夜空一样漆黑。
+		</p>
+		<p>
+			[shadow.speechNoEffects(真是敏锐，居然注意到了影准备给你一个爱吻！)]“影”调侃道，语气不善。她的双手从胯部拔出一对爪刀，剧毒刀刃发出绿色的光芒，先照亮了影的黑色超短裙，然后是同色的抹胸。黑毛鼠女举起武器，摆出攻击姿势，瞥了一眼默，喊道：[shadow.speechNoEffects(别担心，亲爱的，我不会让尼受任何伤。让我们速战速决吧！)]
+		</p>
+		<p>
+			说罢，两个鼠女突然发动攻击。你别无选择，只能展开反击！
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_CHALLENGE"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你开门见山地告诉文加，你和[npc.name]是来打败他的，让他的犯罪活动就此终结。鼠男嗤之以鼻道：[vengar.speechNoEffects(你比看起来更蠢！影，默！把这些混蛋打趴下！解决之后，我会#IF(pc.isAbleToHaveRaceTransformed())把她们变成放荡的鼠女，还要#ENDIF让她们做帮派的公共鸡巴套！哈！)]
+		</p>
+		<p>
+			影和默服从头目的命令，一起向前逼近。白毛鼠女果然人如其名，一言不发，而她的黑毛同伴残忍地冷笑道：[shadow.speechNoEffects(我会很享受的！一定要为我尖叫哦，好吗？如果你们两个一声不吭就倒下就没意思了！)]
+		</p>
+		<p>
+			说罢，两个鼠女突然发动攻击。你和[npc.Name]别无选择，只能展开反击！
+		</p>
+	#ELSE
+		<p>
+			你开门见山地告诉文加，自己是来打败他的，让他的犯罪活动就此终结。鼠男发出一阵狂笑，嗤之以鼻道：[vengar.speechNoEffects(你比看起来更蠢！影，默！把这混蛋打趴下！解决之后，我会#IF(pc.isAbleToHaveRaceTransformed())把[pc.her]变成放荡的鼠女，还要#ENDIF让[pc.herHim]做帮派的公共鸡巴套！哈！)]
+		</p>
+		<p>
+			影和默服从头目的命令，一起向前逼近。白毛鼠女果然人如其名，一言不发，而她的黑毛同伴残忍地冷笑道：[shadow.speechNoEffects(我会很享受的！一定要为我尖叫哦，好吗？如果你一声不吭就倒下就没意思了！)]
+		</p>
+		<p>
+			说罢，两个鼠女突然发动攻击。你别无选择，只能展开反击！
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_PERSUADE -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE"><![CDATA[
+	<p>
+		你决定最好如实解释缘由，于是你说阿克塞尔正在努力偿还债务，要求他停止向屈城区的诚信企业勒索钱财。鼠男听你说完请求，坐回到他的铁王座上，冷笑道：[vengar.speechNoEffects(我为什么要听一个不敬之人的话？！是不是啊，大家？！)]
+	</p>
+	<p>
+		大厅里所有的老鼠，刚刚还安静着，但在回答文加的问题时却发出了喧闹的起哄声。文加站在高处对着你邪恶地笑着，允许他的追随者们又叫喊嘲笑了片刻，然后举起手，再次命令他们安静下来。文加发出悠长而低沉的嗡嗡声，说道：
+		#IF(pc.hasCompanions())
+			[vengar.speechNoEffects(我想了两种让你表示尊重的方法：如果你想保持尊严，那你就得给我[#SPECIAL_PARSE_0]火币。否则，你们两个都得向我屈服，说你们臣服于我！那么，你们选哪个？)]
+		#ELSE
+			[vengar.speechNoEffects(我想了两种让你表示尊重的方法：如果你想保持尊严，那你就得给我[#SPECIAL_PARSE_0]火币。否则，你就得向我低头，说你臣服于我！那么，你选哪个？)]
+		#ENDIF
+	</p>
+	<p>
+		大厅里的老鼠又大声奚落起来，你思索是应该选一个文加的选项，还是拒绝提议，准备抵御不可避免的敌意……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_REFUSE"><![CDATA[
+	<p>
+		你既不愿意给文加下跪，也不愿意支付他索要的钱财，所以你选择再次叫他停止敲诈屈城区的企业。鼠男意识到你不肯按照他的要求去做，立刻变了脸色，向他的保镖发出命令：
+		#IF(pc.hasCompanions())
+		[vengar.speechNoEffects(影，默！狠狠揍这些婊子一顿！解决之后，我会#IF(pc.isAbleToHaveRaceTransformed())把她们变成放荡的鼠女，还要#ENDIF让她们做帮派的公共鸡巴套！哈！)]
+		#ELSE
+		[vengar.speechNoEffects(影，默！狠狠揍这个[pc.bitch]一顿！解决之后，我会#IF(pc.isAbleToHaveRaceTransformed())把[pc.herHim]变成放荡的鼠女，还要#ENDIF让[pc.herHim]做帮派的公共鸡巴套！哈！)]
+		#ENDIF
+	</p>
+	<p>
+		两个鼠女走上前来，准备听从头目的命令。虽然默有些许不安，但你可以从影的狂笑中看出她显然很高兴有机会行动。黑毛鼠女拔出爪刀，摆出作战姿态，对她的同伴说：[shadow.speechNoEffects(别担心，亲爱的，我不会让尼受任何伤。让我们速战速决吧！)]
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			说罢，两个鼠女突然发动攻击。你和[npc.Name]别无选择，只能展开反击！
+		#ELSE
+			说罢，两个鼠女突然发动攻击。你别无选择，只能展开反击！
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_PERSUADE_PAY -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_PAY"><![CDATA[
+	<p>
+		你决心避免动手，但又不愿意向文加下跪，唯一的选择就是交出被索要的[#SPECIAL_PARSE_0]火币。你提醒自己别无选择，拿出钱并告诉鼠男，只有他愿意认真考虑你的请求，结束他的犯罪活动，你才会把钱交给他。
+	</p>
+	<p>
+		[vengar.speechNoEffects(你向我上贡，所以我会考虑你的请求。)]文加咆哮道，[vengar.speechNoEffects(现在过来，把钱交出来！)]
+	</p>
+	<p>
+		你听话走上台阶，登上高台，把火币交给文加。鼠男咧嘴一笑，示意你站到一旁，然后站起身来，对着大厅说道：[vengar.speechNoEffects(从现在开始，[pc.herHim]就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+	</p>
+	<p>
+		见打架和其它乐子都不可能有了，大厅里的老鼠们继续吃喝和闲聊起来。眼见他们的注意力散去，文加示意你跟他走到宝座后面一张靠墙摆放的木桌前。你与文加相对而坐，听他压低身体解释道：[vengar.speechNoEffects(我相信尼会理解，如果尼不当众表示服从，我的帮派是不会尊重我的。事实上，我已经考虑了很久要不要抽身了，也许有了尼的帮助，我终于可以做到了。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_QUITTING_TALK"><![CDATA[
+	<p>
+		[pc.speech(为什么要我帮忙？又为什么不能现在结束？)]你问。
+	</p>
+	<p>
+		[vengar.speechNoEffects(因为这要看我会不会失去帮派的尊重，还有我退出后会不会被执法者抓！)]文加沮丧地叹了口气，继续解释道，[vengar.speechNoEffects(听着，我刚买了一家正规的朗姆酒生产商的一大部分股权。可要是我站出来跟帮里的人说，他们都是我的员工，要守法，那我这帮人就要倒戈了，比你们说‘请不要在背后捅刀子’还要快！)]
+	</p>
+	<p>
+		[pc.speech(所以你要我帮这个？)]你再次发问，希望文加尽快切入正题。
+	</p>
+	<p>
+		[vengar.speechNoEffects(对，嗯，我一直在想一个计划，但你想啊，我需要一个能说服阿克塞尔入伙的人，所以我需要你。)]鼠男说，[vengar.speechNoEffects(他不可能听我或任何其他帮派成员的话，但如果你能说服鳄鱼过来公开臣服于我，我就可以另做打算。我不会再透露任何细节，但相信我，等我帮里的人看到阿克塞尔屈服，我就可以除掉那些准备挑战我的老鼠了。至于那些执法者，你得相信我，我说一旦这一切结束，他们就不会惹麻烦了。)]
+	</p>
+	<p>
+		[pc.speech(所以你想让我说服阿克塞尔来这里向你公开臣服，然后你就能解散你的帮派，把这里变成合法的朗姆酒酿造厂？)]你问。
+	</p>
+	<p>
+		[vengar.speechNoEffects(没错。)]文加回道，[vengar.speechNoEffects(这可是双赢：我不用再承受非法经营的压力，阿克塞尔和其他商家也不用再交勒索费。那么，你加入吗？)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_END_AND_LEAVE"><![CDATA[
+	<p>
+		由于你已经决定不与文加对抗，所以你同意了，告诉他你会说服阿克塞尔臣服。鼠男咧嘴笑着站起来说：[vengar.speechNoEffects(我欠尼一个人情。别到处跟我的小弟们说这个计划，否则尼会毁了我和阿克塞尔的一切！)]
+	</p>
+	<p>
+		你告诉文加不必担心，你会尽快和阿克塞尔一起回来。与帮派头目告别后，你走出他的大厅，去到鼠窟外面的扭曲隧道里，心想你是应该马上去见阿克塞尔，还是应该留到以后……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_PERSUADE_KNEEL -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_KNEEL"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你决心避免动手，但又不愿意给文加一分钱，唯一的选择就是跪下臣服。你提醒自己别无选择，并告诉鼠男，只有他愿意认真考虑你的请求，结束他的犯罪活动，你和[npc.Name]才会公开向他屈服。
+		</p>
+		<p>
+			[vengar.speechNoEffects(如果尼真诚地向我屈服，我当然会考虑尼的请求。)]文加冷哼一声，[vengar.speechNoEffects(尼们俩现在快点跪在我面前，我要听尼们亲口说臣服于我！)]
+		</p>
+		<p>
+			你看向[npc.companion]，叫[npc.herHim]像你一样做，然后跪在台下。[npc.Name]也按照你的指示，和你一起跪在鼠男面前，一起表示臣服于他。
+		</p>
+		<p>
+			[vengar.speechNoEffects(哈！都听到了吗？这两个家伙说要臣服于我！)]文加喊道，引得大厅里所有老鼠纷纷发出震耳欲聋的嘲笑与奚落。鼠男强迫你们跪在地上忍受这种屈辱一分钟后，再次举起手，让大厅安静下来，让他能够对你说话，[vengar.speechNoEffects(现在让我们看看你有多真心，爬上台阶来，让尼们当一会我的脚垫！)]
+		</p>
+		<p>
+			你抬头看着咧嘴大笑的帮派头目，思索自己是应该按他说的去做，充当他的脚垫，还是直接拒绝，准备抵御不可避免的敌意……
+		</p>
+	#ELSE
+		<p>
+			你决心避免动手，但又不愿意给文加一分钱，唯一的选择就是跪下臣服。你提醒自己别无选择，并告诉鼠男，只有他愿意认真考虑你的请求，结束他的犯罪活动，你才会公开向他屈服。
+		</p>
+		<p>
+			[vengar.speechNoEffects(如果尼真诚地向我屈服，我当然会考虑尼的请求。)]文加冷哼一声，[vengar.speechNoEffects(尼现在快点跪在我面前，我要听尼亲口说臣服于我！)]
+		</p>
+		<p>
+			你轻叹了口气，跪在台下，抬头向文加表示臣服。
+		</p>
+		<p>
+			[vengar.speechNoEffects(哈！都听到了吗？这个家伙说要臣服于我！)]文加喊道，引得大厅里所有老鼠纷纷发出震耳欲聋的嘲笑与奚落。鼠男强迫你跪在地上忍受这种屈辱一分钟后，再次举起手，让大厅安静下来，让他能够对你说话，[vengar.speechNoEffects(现在让我们看看你有多真心，爬上台阶来，让尼当一会我的脚垫！)]
+		</p>
+		<p>
+			你抬头看着咧嘴大笑的帮派头目，思索自己是应该按他说的去做，充当他的脚垫，还是直接拒绝，准备抵御不可避免的敌意……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_KNEEL_REFUSE"><![CDATA[
+	<p>
+		你可不想做这么丢脸的事，于是站起来说文加已经做得太过分了，然后叫他停止敲诈屈城区的企业。鼠男意识到你不肯按照他的要求去做，立刻变了脸色，向他的保镖发出命令：
+		#IF(pc.hasCompanions())
+		[vengar.speechNoEffects((影，默！狠狠揍这些婊子一顿！解决之后，我会#IF(pc.isAbleToHaveRaceTransformed())把她们变成放荡的鼠女，还要#ENDIF让她们做帮派的公共鸡巴套！哈！)]
+		#ELSE
+		[vengar.speechNoEffects(影，默！狠狠揍这个[pc.bitch]一顿！解决之后，我会#IF(pc.isAbleToHaveRaceTransformed())把[pc.herHim]变成放荡的鼠女，还要#ENDIF让[pc.herHim]做帮派的公共鸡巴套！哈！)]
+		#ENDIF
+	</p>
+	<p>
+		两个鼠女走上前来，准备听从头目的命令。虽然默有些许不安，但你可以从影的狂笑中看出她显然很高兴有机会行动。黑毛鼠女拔出爪刀，摆出作战姿态，对她的同伴说：[shadow.speechNoEffects(别担心，亲爱的，我不会让尼受任何伤。让我们速战速决吧！)]
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			说罢，两个鼠女突然发动攻击。你和[npc.Name]别无选择，只能展开反击！
+		#ELSE
+			说罢，两个鼠女突然发动攻击。你别无选择，只能展开反击！
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_PERSUADE_KNEEL_SUBMIT -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_KNEEL_SUBMIT_START"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你决心避免动手，接受了文加的要求，和[npc.Name]爬上了台阶，引来了身后鼠群的又一波嘲笑。靠近文加的宝座时，你抬头看到他咧着嘴盯着你笑，眼睛里闪烁着狂野的微光。为了盖过大厅里的喧闹，鼠男在大喊着命令道：[vengar.speechNoEffects(转过身来，当好我的脚垫，再让我好好看看你的屁股！)]
+		</p>
+		<p>
+			你和[npc.Name]听话照做，爬着转向面对着大厅。文加坐在宝座上，两只脚重重地分砸在你和[npc.namePos]的背上。你们的脸颊因尴尬和羞愧而泛红，但还是坚持着不动，竭尽全力地忍受无尽的奚落与嘲笑。
+		</p>
+	#ELSE
+		<p>
+			你决心避免动手，接受了文加的要求，爬上了台阶，引来了身后鼠群的又一波嘲笑。靠近文加的宝座时，你抬头看到他咧着嘴盯着你笑，眼睛里闪烁着狂野的微光。为了盖过大厅里的喧闹，鼠男在大喊着命令道：[vengar.speechNoEffects(转过身来，当好我的脚垫，再让我好好看看你的屁股！)]
+		</p>
+		<p>
+			你听话照做，爬着转向面对着大厅。文加坐在宝座上，抬起脚重重地砸在你的背上。你的脸颊因尴尬和羞愧而泛红，但还是坚持着不动，竭尽全力地忍受无尽的奚落与嘲笑。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH"><![CDATA[
+	<p>
+		就这样被羞辱了一会儿后，你感觉文加把脚从你的背上抬了起来，但他并没有告诉你可以重新站起来了，而是向前一倾，双手粗暴地抓住了你们俩的屁股。当你发出震惊的喘息声时，鼠男松开了他的手，并用拇指在你的#IF(pc.hasVagina())[pc.labia+]之间下压#ELSE屁眼微微下压#ENDIF，咆哮着，[vengar.speechNoEffects(我看得出你们对这一切都很兴奋！把你自己交给我！我就当着这里所有人的面，让你爽个够！)]
+	</p>
+	<p>
+		#IF(npc.isAttractedTo(vengar))
+			你朝[npc.name]望去，看到[npc.sheHas]脸上带着淫荡的表情，然后玩笑般地咬了咬文加，文加则玩弄着[npc.her]#IF(npc.hasVagina())[npc.pussy+]#ELSE[npc.asshole+]#ENDIF。显然，[npc.she]愿意让这只鼠男操[npc.herHim]，[npc.she][npc.moans]说道：[npc.speech(嗯！来，给我你的鸡巴！)]
+		#ELSE
+			你朝[npc.name]望去，看到[npc.sheHas]脸上带着厌恶的表情，然后转身瞪着文加，文加则玩弄着[npc.her]#IF(npc.hasVagina())[npc.pussy+]#ELSE[npc.asshole+]#ENDIF。显然[npc.she]毫不赞同这只鼠男操[npc.herHim]，[npc.she]咆哮着：[npc.speech(滚开！)]
+		#ENDIF
+	</p>
+	<p>
+		你已经做了足够多来证明你的服从，应该能合理拒绝文加的要求。但如果你愿意的话，也可以让他在大庭广众之下操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_COMPANION_WATCHING"><![CDATA[
+	<p>
+		在被这样羞辱了一段时间后，你感到文加把他的脚从你的背上抬起来，但他没有告诉你可以站起来，反而向前倾身，用双手粗鲁地抓住了你的屁股。当你惊讶地喘息时，这只鼠男松开了手指，沿着你的#IF(pc.hasVagina())小穴，在你[pc.labia+]间按压#ELSE屁穴，向下滑下按压#ENDIF，咆哮道：[vengar.speechNoEffects(我能感觉到你对这一切都感到兴奋！展示出你自己给我看，我会在你的朋友和这里所有人面前给你那场你渴望的交易！)]
+	</p>
+	<p>
+		#IF(game.isVoluntaryNTREnabled())
+			显然对你的[npc.companion]不感兴趣，文加继续粗暴地摸索和抚摸你的后背，然后抓住你的臀部稍微向他拉近。你已经做了足够多的事情来表明你对他的顺从，你觉得你可以合理地拒绝文加的要求。不过，另一方面，如果你真的愿意，你也可以允许他在大厅里众人面前与你做爱……
+		#ELSE
+			由于无法接触到你的[npc.companion]的#IF(npc.hasVagina())小穴#ELSE屁穴#ENDIF，文加无视[npc.name]，继续粗暴地摸索和抚摸你的后背，然后抓住你的臀部稍微向他拉近。你已经做了足够多的事情来表明你对他的顺从，你觉得你可以合理地拒绝文加的要求。不过，另一方面，如果你真的愿意，你也可以允许他在大厅里众人面前与你……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_SOLO"><![CDATA[
+	<p>
+		就这样被羞辱了一会儿后，你感觉文加把脚从你的背上抬了起来，但他并没有告诉你可以重新站起来了，而是向前一倾，双手粗暴地抓住了你的屁股。当你发出震惊的喘息声时，鼠男松开了他的手，并用拇指在你的#IF(pc.hasVagina())小穴，向下按压你[pc.labia+]之间#ELSE屁眼，然后再向下压一点#ENDIF，咆哮着，[vengar.speechNoEffects(我看得出你对这一切都很兴奋！把你自己交给我！我就当着这里所有人的面，让你爽个够！)]
+	</p>
+	<p>
+		你已经做了足够多来证明你的服从，应该能合理拒绝文加的要求。但如果你愿意的话，也可以让他在大庭广众之下操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_PLAYER_WATCHING"><![CDATA[
+	<p>
+		在被这样羞辱一段时间后，你感觉到文加把脚从你的背上抬起，但他并没有告诉你可以站起来，而是向前倾身，用双手粗鲁地抓住你的同伴的屁股。当[npc.name]发出震惊的喘息声时，这只鼠男放开了手，用拇指顺着[npc.her]#IF(npc.hasVagina())小穴，压在[npc.her][npc.labia+]之间#ELSE屁穴，稍微按了一下#ENDIF，咆哮道：[vengar.speechNoEffects(我能感觉到你对这一切都很兴奋！把自己展示给我，我会在你的朋友和这里所有人面前，给你你渴望的那种操！)]
+	</p>
+	<p>
+		#IF(npc.isAttractedTo(vengar))
+			你注视着[npc.name]，看到[npc.sheHas]脸上露出淫荡的表情，然后转过头去顽皮地咬了咬[npc.her]的[npc.lip]，当文加万能[npc.her]#IF(npc.hasVagina())[npc.pussy+]#ELSE[npc.asshole+]#ENDIF时。显然很乐意让这只鼠男干[npc.herHim]，[npc.she]转向你并[npc.moans]道：[npc.speech(嗯！来吧，[pc.name]，你可以看着他给我狠狠地干个够！)]
+		#ELSE
+			你注视着[npc.name]，看到[npc.sheHas]脸上露出厌恶的表情，然后转过头去怒视文加，当玩弄[npc.her]#IF(npc.hasVagina())[npc.pussy+]#ELSE[npc.asshole+]#ENDIF时。
+			#IF(!npc.isSlave() && !npc.isElemental())
+				显然，[npc.herHim]对让鼠男干[npc.herHim]的想法一点也不满意，[npc.she]转过身来对你咆哮，[npc.speech(让他离我远点！)]
+			#ELSE
+				显然，[npc.herHim]对让鼠男干[npc.herHim]的想法一点也不满意，[npc.she]转过身来对你咆哮，[npc.speech(我不会让他上我的！)]
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF(!npc.isAttractedTo(vengar) && npc.isAbleToRefuseSexAsCompanion())
+			既然你已经做得足够多来展示对他的顺从，你觉得你可以合理地拒绝文加的要求。由于[npc.name]显然不愿意与这个鼠男做爱，看来这也是你唯一的选择……
+		#ELSE
+			既然你已经做得足够多来展示对他的顺从，你觉得你可以合理地拒绝文加的要求。不过，如果你真的愿意的话，你也可以让他在大厅里所有人面前干你的[npc.companion]……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_NO_SEX"><![CDATA[
+	<p>
+		在经历了一段时间的羞辱之后，你感受到文加把脚从你的背上抬起，但他并没有命令你站起来，而是向前倾身，用双手粗暴地抓住你的屁股，令你发出震惊的喘息声。他随后松开了他的手给了你一记耳光，站起来对其他老鼠大叫，[vengar.speechNoEffects(如果你们往后看到这家伙在鼠窟里，就把[pc.herHim]当做我的客人吧！我们有事要私下讨论，你们该干嘛干嘛去！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_NO_SEX_FINISH"><![CDATA[
+	<p>
+		看到乐子结束了，大厅里的鼠人又回到了吃饭、喝酒和聊天上。眼见他们的注意力散去，文加示意你跟他走到宝座后面一张靠墙摆放的木制桌子和椅子前。你自己站了起来，跟随他的脚步，坐在桌子的另一边，听他向后倾身解释，[vengar.speechNoEffects(我相信你能明白，如果我不在帮派面前展示对你的支配，他们就不再尊重我。关于你要我停止勒索阿克塞尔的要求，我其实已经考虑一段时间了。也许有了你的帮助，我就可以做到这件事了。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_REFUSE_WATCH"><![CDATA[
+	<p>
+		#IF(!npc.isAttractedTo(vengar))
+			由于[npc.name]显然不愿意与文加做爱，你站起身来，告诉你的[npc.companion]也站起来，然后转身面对那个鼠男，说道：[pc.speech(我们已经照你要求做了，但这太过分了。)]
+		#ELSE
+			由于[npc.name]显然愿意与文加做爱，你站起身来，告诉你的[npc.companion]也站起来，然后转身面对那个鼠男，说道：[pc.speech(我们已经照你要求做了，但这太过分了。)]
+		#ENDIF
+	</p>
+	<p>
+		[vengar.speechNoEffects(是啊，尼做得够多了，我只是看看能把尼逼到什么程度！)]文加笑了笑，然后站起身来，对着大厅里的老鼠们喊道：[vengar.speechNoEffects(从现在开始，[pc.herHim]们就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_WATCH"><![CDATA[
+	#IF(!npc.isAttractedTo(vengar))
+		<p>
+			尽管[npc.name]显然不愿意与文加尔发生性关系，你觉得此刻拒绝这只鼠男是个坏主意。告诉你的[npc.companion]忍耐一下，你侧身退开，看着文加俯身在[npc.her]耳边低声咆哮道，[vengar.speechNoEffects(那你还等什么，荡妇？把自己摆上来，准备好感受我的粗阴茎操你的逼！)]
+		</p>
+		<p>
+			[npc.Name]只能顺从命令，不情愿地展示自己，[npc.she]挺起[npc.ass+]，将[npc.pussy+]挺向主导的鼠男。文加伸手到自己的下体，暴露出他的生殖器，他跪在[npc.name]身后，粗大、迅速勃起的阴茎自由地晃动着。默与影，之前一直潜藏在背景中，此时选择走上前来，但你并不确定这是为了更好地观看你的[npc.companion]被操，还是为了确保你不会干扰文加。
+		</p>
+	#ELSE
+		<p>
+		于[npc.name]显然急切地想要与文加做爱，你决定最好的方式是满足这只鼠男所需。告诉你的[npc.companion]去享受，你稍稍侧身，看着文加弯下腰，在[npc.her]耳边咆哮道：[vengar.speechNoEffects(你还等什么，荡妇？展示自己，准备好感受我的肥阴茎把你的穴操得舒坦！)]
+		</p>
+		<p>
+			[npc.Name]乐于听从命令，迅速地暴露出自己，抬起[npc.ass+]将[npc.pussy+]展示给这只主宰的鼠男。文加伸手到自己的裆部，同样露出自己的生殖器，他的厚实而迅速硬起的阴茎自由地摆动着，他跪在[npc.name]背后。此时潜伏在背景中的默与影选择了这个时刻向前走来，但究竟是想要更好地看着你的[npc.companion]被干，还是为了确保你不会有动作去打扰文加，你并不太确定。
+		</p>
+	#ENDIF
+	<p>
+		抱起他[vengar.cock+]，文加花了片刻时间把他的龟头在[npc.name][npc.labia+]之间挑逗上下，随着大厅里所有老鼠的欢呼声，他向前推进，用他的硬龟头填满了你的[npc.companion]的[npc.pussyCapacity]。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_WATCH_ANAL"><![CDATA[
+	#IF(!npc.isAttractedTo(vengar))
+		<p>
+			尽管[npc.name]显然不愿意与文加尔发生性关系，你觉得此刻拒绝这只鼠男是个坏主意。告诉你的[npc.companion]忍耐一下，你侧身退开，看着文加俯身在[npc.her]耳边低声咆哮道，[vengar.speechNoEffects(那你还等什么，荡妇？把自己摆上来，准备好感受我的粗阴茎操你的屁穴！)]
+		</p>
+		<p>
+			[npc.Name]只能顺从命令，不情愿地展示自己，将[npc.hips]挺向主导的鼠男。文加伸手到自己的下体，暴露出他的生殖器。他跪在[npc.name]身后，粗大、迅速勃起的阴茎自由地晃动着。默与影，之前一直潜藏在背景中，此时选择走上前来，但你并不确定这是为了更好地观看你的[npc.companion]被操，还是为了确保你不会干扰文加。
+		</p>
+	#ELSE
+		<p>
+		于[npc.name]显然急切地想要与文加做爱，你决定最好的方式是满足这只鼠男所需。告诉你的[npc.companion]去享受，你稍稍侧身，看着文加弯下腰，在[npc.her]耳边咆哮道：[vengar.speechNoEffects(你还等什么，荡妇？展示自己，准备好感受我的肥阴茎把你的屁穴操得舒坦！)]
+		</p>
+		<p>
+			[npc.Name]乐于听从命令，迅速地暴露出自己，抬起[npc.hips]将[npc.her][npc.ass+]展示给这只主宰的鼠男。文加伸手到自己的裆部，同样露出自己的生殖器，他的厚实而迅速硬起的阴茎自由地摆动着，他跪在[npc.name]背后。此时潜伏在背景中的默与影选择了这个时刻向前走来，但究竟是想要更好地看着你的[npc.companion]被干，还是为了确保你不会有动作去打扰文加，你并不太确定。
+		</p>
+	#ENDIF
+	<p>
+		文加伸手抓住他[vengar.cock+]，花了一会儿，把龟头在[npc.name][npc.asshole+]上上下抚弄，然后，在大厅里所有老鼠的喝彩声中，他猛地向前推进，用他坚硬的鸡巴填满了你的[npc.companion]的[npc.assCapacity]屁股……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_REFUSED"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你不愿意屈服于文加的无理要求，于是站了起来，也叫你的[npc.companion]站起来，然后转身面对鼠男说，[pc.speech(我们已经按你的要求做了，但那个太过分了。)]
+		</p>
+		<p>
+			[vengar.speechNoEffects(是啊，尼做得够多了，我只是看看能把尼逼到什么程度！)]文加笑了笑，然后站起身来，对着大厅里的老鼠们喊道：[vengar.speechNoEffects(从现在开始，[pc.herHim]们就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+		</p>
+	#ELSE
+		<p>
+			你不愿意屈服于文加的无理要求，于是站了起来，然后转身面对鼠男说：[pc.speech(我已经按你的要求做了，但那个太过分了。)]
+		</p>
+		<p>
+			[vengar.speechNoEffects(是啊，尼做得够多了，我只是看看能把尼逼到什么程度！)]文加笑了笑，然后站起身来，对着大厅里的老鼠们喊道：[vengar.speechNoEffects(从现在开始，[pc.herHim]们就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_SOLO_START"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			拒绝文加似乎不是个好的选择，你让暂且[npc.companion]退后，[npc.name]也走到一旁看着你们。文加俯身，在你的耳边小声叫道，[vengar.speechNoEffects(婊砸，恁在干嘛？准备好被俺的大鸡巴操嘞？)]
+		</p>
+		<p>
+			在你的[npc.companion]的注视下，你抬起[pc.ass+]，将你[pc.pussy+]呈现在这个霸道的鼠男面前。文加将手伸向腹股沟，也露出他粗大而迅速勃起的阴茎，而后跪在你身后。刚刚还潜伏在暗处的默和影也探了出来，但究竟是因为她们想更清楚地看到你被操的样子，还是为了确保你的[npc.companion]不会出手打扰文加，你也不太确定。
+		</p>
+	#ELSE
+		<p>
+			你觉得现在拒绝鼠男不是个好主意，于是顺从地呻吟说你会照做。文加听后弯下腰在你耳边咆哮：[vengar.speechNoEffects(那你还等什么，荡妇？准备好感受你的屄被我的大鸡巴操吧！)]
+		</p>
+		<p>
+			你听话地抬起[pc.ass+]，把[pc.pussy+]露给鼠男支配者看。文加将手伸向腹股沟，也露出他粗大而迅速勃起的阴茎，而后跪在你身后。刚刚还潜伏在暗处的默和影也探了出来，只为更好地观看你怎样被操。
+		</p>
+	#ENDIF
+	<p>
+		文加握着那[vengar.cock+]在你[pc.labia+]之间上下挑逗了一会儿，接着，在大厅里所有老鼠的起哄声中，他向前一挺，用他坚硬的肉棒填满了你[pc.pussyCapacity]的小穴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_SOLO_START_ANAL"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			你觉得现在拒绝鼠男不是个好主意，于是让你的[npc.companion]退后，等你完事。[npc.Name]走到一边准备观看，文加弯下腰在你耳边咆哮：[vengar.speechNoEffects(那你还等什么，荡妇？准备好感受你的屁眼被我的大鸡巴操吧！)]
+		</p>
+		<p>
+			在你的[npc.companion]的注视下，你抬起[pc.hips]，将你[pc.ass+]呈现在这个支配者鼠男面前。文加将手伸向腹股沟，也露出他粗大而迅速勃起的阴茎，而后跪在你身后。刚刚还潜伏在暗处的默和影也探了出来，但究竟是因为她们想更清楚地看到你被操的样子，还是为了确保你的[npc.companion]不会出手打扰文加，你也不太确定。
+		</p>
+	#ELSE
+		<p>
+			你觉得现在拒绝鼠男不是个好主意，于是顺从地呻吟说你会照做。文加听后弯下腰在你耳边咆哮：[vengar.speechNoEffects(那你还等什么，荡妇？准备好感受你的屁眼被我的大鸡巴操吧！)]
+		</p>
+		<p>
+			你听话地抬起[pc.hips]，把[pc.ass+]露给鼠男支配者。文加将手伸向腹股沟，也露出他粗大而迅速勃起的阴茎，而后跪在你身后。刚刚还潜伏在暗处的默和影也探了出来，只为更好地观看你怎样被操。
+		</p>
+	#ENDIF
+	<p>
+		文加抓着他[vengar.cock+]，不断在你[pc.asshole+]上摩擦着龟头，令你欲火难耐。终于，在大厅里其他老鼠的起哄声中，他用力一顶，把鸡巴插进了你[pc.assCapacity]的屁股。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_PERSUADE_SEX_DOUBLE_CHOICE -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_SEX_DOUBLE_CHOICE"><![CDATA[
+	#IF(!npc.isAttractedTo(vengar))
+		<p>
+			尽管从[npc.name]的脸上看出来不乐意和文加做爱，但你觉得这个时候拒绝文加的要求是个坏主意。你命令[npc.companion]乖乖忍耐，和你一起趴跪到[npc.herHim]旁边，听着文加叫喊着把[npc.herHim]推倒，[vengar.speechNoEffects(你在发什么呆，荡妇？摆好姿势老实享受我大鸡巴把你洞撑大的感觉！)]
+		</p>
+		<p>
+			[npc.name]没有选择，只能不情愿地和你一起匍匐着把[npc.her]的[npc.hips]翘起来，把下体暴露给文加。文加将手伸向腹股沟，也露出他粗大而迅速勃起的阴茎，而后跪在你身后。默和影此前一直隐藏着身影，而这一刻她们特地走上前以便更好地欣赏你和[npc.name]被操的样子。
+		</p>
+	#ELSE
+		<p>
+			既然[npc.name]非常渴望和文加做爱，你认为这样有助于你们的合作，你让[npc.companion]跟着你一起趴跪在[npc.herHim]身边，听文加弯下腰来对你们说，[vengar.speechNoEffects(你们还等什么，荡妇？准备好感受你的屁眼被我的大鸡巴操吧！)]
+		</p>
+		<p>
+			[npc.name]心情激动地跟你一起抬起[npc.her]的[npc.hips]把下体暴露给文加。文加把手伸进裤裆里，掏出他肥大、迅速变硬的肉棒，跪在你两的身后。默和影此前一直隐藏着身影，而这一刻她们特地走上前以便更好地欣赏你和[npc.name]被操的样子。
+		</p>
+	#ENDIF
+	<p>
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			文加握住他[vengar.cock+]，将龟头在[npc.namePos][npc.labia+]上拨弄了一会，
+		#ELSE
+			文加握住他[vengar.cock+]，将龟头在[npc.namePos][npc.asshole+]上拨弄了一会，
+		#ENDIF
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			然后把他抽动的鸡巴对准你[pc.pussy+]。
+		#ELSE
+			然后把他抽动的鸡巴对准你[pc.asshole+]。
+		#ENDIF
+		他发出一声低沉的咆哮，问道，[vengar.speechNoEffects(所以，你俩谁想成为第一个被我大鸡巴填满的婊子？也许一个先被操的人可以用舌头给另外一位服务一下，对吧？)]
+	</p>
+	<p>
+		你不知道是应该反推文加的鸡巴，率先被操，还是让[npc.name]先来享用他的鸡巴……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_PLAYER_FIRST"><![CDATA[
+	<p>
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			你感受到文加的龟头在你[pc.labia+]之间轻轻地挑逗着，忍不住发出了一声兴奋的[pc.moan]，并向他推了回去。鼠男非常乐意满足你的需求，立刻抓住你的臀部，将他粗大的阴茎狠狠地插入你饥渴的阴道，引发你再次发出[pc.moan+]。
+		#ELSE
+			你感受到文加的龟头在你[pc.asshole+]轻轻地挑逗着，忍不住发出了一声兴奋的[pc.moan]，并向他推了回去。鼠男非常乐意满足你的需求，立刻抓住你的臀部，将他粗大的阴茎狠狠地插入你饥渴的屁穴，引发你再次发出[pc.moan+]。
+		#ENDIF
+	</p>
+	#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			<p>
+				文加伸手掏向[npc.her]屁股，大声对[npc.name]喊道：[vengar.speechNoEffects(现在就让自己展示给你的朋友看！我希望你润滑得很好，这样我一准备好就能顺利地进入你的洞里！)]
+			</p>
+			<p>
+				[npc.companion]不得不服从，趴在你前面把自己[npc.pussy+]压在你脸上。而文加则在你身后开始有节奏地抽插着
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					你[pc.pussy+]。你配合着他的节奏，开始为[npc.companion]口交……
+				#ELSE
+					你[pc.asshole+]。你配合着他的节奏，开始为[npc.companion]口交……
+				#ENDIF
+			</p>
+		#ELSEIF(game.isAnalContentEnabled())
+			<p>
+				文加伸手掏向[npc.her]屁股，大声对[npc.name]喊道：[vengar.speechNoEffects(现在就让自己展示给你的朋友看！我希望你润滑得很好，这样我一准备好就能顺利地进入你的洞里！)]
+			</p>
+			<p>
+				[npc.companion]不得不服从，趴在你前面把自己[pc.ass+]压在你脸上。而文加则在你身后开始有节奏地抽插着
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					你[pc.pussy+]。你配合着他的节奏，开始为[npc.companion]吻肛……
+				#ELSE
+					你[pc.asshole+]。你配合着他的节奏，开始为[npc.companion]吻肛……
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				[npc.Name]除了等待轮到自己别无他法，只能眼睁睁地看着文加向后拉，并开始有节奏地插入
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					你[pc.pussy+]……
+				#ELSE
+					你[pc.asshole+]……
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			[npc.Name]除了等待轮到自己别无他法，只能眼睁睁地看着文加向后拉，并开始有节奏地插入
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				你[pc.pussy+]……
+			#ELSE
+				你[pc.asshole+]……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_COMPANION_FIRST"><![CDATA[
+	<p>
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			你不想当出头鸟，挪动着远离了文加的肉棒，让他去玩弄[npc.companion]。当你回头看到文加抓着[npc.namePos]的屁股野蛮地将肉棒深深插进[npc.her]饥渴的小穴时，你忍不住发出一声兴奋的[pc.moan]。
+		#ELSE
+			你不想当出头鸟，挪动着远离了文加的肉棒，让他去玩弄[npc.companion]。当你回头看到文加抓着[npc.namePos]的屁股野蛮地将肉棒深深插进[npc.her]饥渴的屁穴时，你忍不住发出一声兴奋的[pc.moan]。
+		#ENDIF
+	</p>
+	#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			<p>
+				文加伸手朝你[pc.ass+]拍了一掌，大喊，[vengar.speechNoEffects(摆好姿势让你朋友的嘴巴能够润滑你的小穴！当我把她的洞操完后就轮到你的了！)]
+			</p>
+			<p>
+				你服从地爬到[npc.name]前面，将自己[pc.pussy+]压到[npc.her]脸上，而文加开始有条不紊地插入
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					[npc.companion][npc.pussy+]。你感受到[npc.herHim]身体前倾，开始热切地舔舐你的小穴……
+				#ELSE
+					[npc.companion][npc.asshole+]。你感受到[npc.herHim]身体前倾，开始热切地舔舐你的小穴……
+				#ENDIF
+			</p>
+		#ELSEIF(game.isAnalContentEnabled())
+			<p>
+				文加伸手朝你[pc.ass+]拍了一掌，大喊，[vengar.speechNoEffects(摆好姿势让你朋友的嘴巴能够润滑你的小穴！当我把她的洞操完后就轮到你的了！)]
+			</p>
+			<p>
+				你服从地爬到[npc.name]面前，把你[pc.ass+]压到[npc.her]的脸上，而文加开始有条不紊地插入
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					[npc.companion][npc.pussy+]。你感受到[npc.herHim]身体前倾，开始热切地舔舐你的小穴……
+				#ELSE
+					[npc.companion][npc.asshole+]。你感受到[npc.herHim]身体前倾，开始热切地舔舐你的小穴……
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				除了等待你的回合，你无事可做。你看着文加开始有节奏地插入
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					[npc.companion][npc.pussy+]……
+				#ELSE
+					[npc.companion][npc.asshole+]……
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你除了等待轮到自己别无他法，只能眼睁睁地看着文加向后拉，并开始有节奏地插入
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				[npc.companion][npc.pussy+]……
+			#ELSE
+				[npc.companion][npc.asshole+]……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX_DOUBLE -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX_DOUBLE_PLAYER_NEXT"><![CDATA[
+	<p>
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			文加把他那粗壮的阴茎从你那被好好操了一通的泡芙里滑了出来，让[npc.Name]发出了一声深深的、满意的叹息。
+			#IF(pc.isVisiblyPregnant())
+				文加心满意足地看着自己的杰作，再次顺手狠狠地往[npc.companion]的屁股上抽了一下，对你说，[vengar.speechNoEffects(你的小穴简直就是给老鼠鸡巴长的！现在一边待着去，该轮到你的朋友了！)]
+			#ELSE
+				文加心满意足地看着自己的杰作，再次顺手狠狠地往[npc.companion]的屁股上抽了一下，对你说，[vengar.speechNoEffects(希望这么多精液足够喂饱你这个骚穴让你怀孕！现在一边待着去，该轮到你的朋友了！)]
+			#ENDIF
+		#ELSE
+			文加把他那粗壮的阴茎从你那被好好操了一通的泡芙里滑了出来，让[npc.Name]发出了一声深深的、满意的叹息。文加心满意足地看着自己的杰作，再次顺手狠狠地往[npc.companion]的屁股上抽了一下，对你说，[vengar.speechNoEffects(你这骚屁穴简直就是给老鼠鸡巴长的！现在一边待着去，该轮到你的朋友了！)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				在你沾满唾液的[pc.labia]上留下最后一个湿吻，[npc.name]顺从地爬到一边，让文加走到你身后。他伸手将两根手指滑入你[pc.pussy+]中，[pc.a_moan+]从你的双唇间哄出来。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗你湿润的小穴， 
+			#ELSE
+				在你沾满唾液的屁股上留下最后一个湿吻，[npc.name]顺从地爬到一边，让文加走到你身后。他伸手将两根手指滑入你[pc.ass+]中，[pc.a_moan+]从你的双唇间哄出来。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗你湿润的屁穴， 
+			#ENDIF
+		#ELSE
+			[npc.name]再次发出满意的叹息，顺从地爬到一边，让文加从你身后走过来。
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				他不紧不慢地将两根手指伸进你[pc.pussy+]深处，从你的双唇间哄出[pc.a_moan+]。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗你饥渴的小穴， 
+			#ELSE
+				他不紧不慢地将两根手指伸进你[pc.ass+]深处，从你的双唇间哄出[pc.a_moan+]。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗你饥渴的屁穴， 
+			#ENDIF
+		#ENDIF
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				一边向[npc.name]发出另一个命令，[vengar.speechNoEffects(过来，荡妇！你的朋友可以在我操你的时候用舌头把我的精液从你的逼里舔出来！)]
+			#ELSEIF(game.isAnalContentEnabled())
+				一边向[npc.name]发出另一个命令，[vengar.speechNoEffects(过来，荡妇！你的朋友可以在我操你的时候用舌头把我的精液从你的屁股里舔出来！)]
+			#ELSE
+				一边向你咆哮，[vengar.speechNoEffects(准备好被操了吗，荡妇？我还有很多精液等着你呢！)]
+			#ENDIF
+		#ELSE
+			一边向你咆哮，[vengar.speechNoEffects(准备好被操了吗，荡妇？我还有很多精液等着你呢！)]
+		#ENDIF
+	<p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX_DOUBLE_COMPANION_NEXT"><![CDATA[
+	<p>
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			文加把他那粗壮的阴茎从你那被好好操了一通的泡芙里滑了出来，让你发出了一声深深的、满意的叹息。
+			#IF(pc.isVisiblyPregnant())
+				文加心满意足地看着自己的杰作，再次顺手狠狠地往你的屁股上抽了一下，对你说，[vengar.speechNoEffects(你的小穴简直就是给老鼠鸡巴长的！现在一边待着去，该轮到你的朋友了！)]
+			#ELSE
+				文加心满意足地看着自己的杰作，再次顺手狠狠地往你的屁股上抽了一下，对你说，[vengar.speechNoEffects(希望这么多精液足够喂饱你这个骚穴让你怀孕！现在一边待着去，该轮到你的朋友了！)]
+			#ENDIF
+		#ELSE
+			文加把他那粗壮的阴茎从你那被好好操了一通的泡芙里滑了出来，让你发出了一声深深的、满意的叹息。文加心满意足地看着自己的杰作，再次顺手狠狠地往你的屁股上抽了一下，对你说，[vengar.speechNoEffects(你这骚屁穴简直就是给老鼠鸡巴长的！现在一边待着去，该轮到你的朋友了！)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				在[npc.namePos]沾满唾液的[npc.labia]上留下最后一个湿吻后，你顺从地爬到一边，让文加走到你的[npc.companion]身后。他不紧不慢地将两根手指伸进[npc.her][npc.pussy+]，从其的嘴唇间哄出[npc.a_moan+]。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗[npc.namePos]湿润的小穴， 
+			#ELSE
+				在[npc.namePos]沾满唾液的屁股上留下最后一个湿吻后，你顺从地爬到一边，让文加走到你的[npc.companion]身后。他不紧不慢地将两根手指伸进[npc.her][npc.ass+]，从其的嘴唇间哄出[npc.a_moan+]。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗[npc.namePos]湿润的屁穴， 
+			#ENDIF
+		#ELSE
+			你又发出了一声满足的叹息，顺从地爬到一边，让文加从你的[npc.companion]后面走过来。
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				他不紧不慢地将两根手指伸入[npc.her][npc.pussy+]深处，将[npc.a_moan+]从[npc.her]的嘴唇间哄出来。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗[npc.namePos]饥渴的小穴， 
+			#ELSE
+				他不紧不慢地将两根手指伸入[npc.her][npc.ass+]深处，将[npc.a_moan+]从[npc.her]的嘴唇间哄出来。他迅速抽出手指，向前移动，开始用沾满精液的鸡巴头挑逗[npc.namePos]饥渴的屁穴， 
+			#ENDIF
+		#ENDIF
+		#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				一边向你下达另一个命令，[vengar.speechNoEffects(过来，荡妇！你的朋友可以在我操[npc.herHim]的时候用舌头把我的精液从[npc.her]的逼里舔出来！)]
+			#ELSEIF(game.isAnalContentEnabled())
+				一边向你下达另一个命令，[vengar.speechNoEffects(过来，荡妇！你的朋友可以在我操[npc.herHim]的时候用舌头把我的精液从[npc.her]的屁穴里舔出来！)]
+			#ELSE
+				一边向[npc.herHim]咆哮，[vengar.speechNoEffects(准备好被操了吗，荡妇？我还有很多精液等着你呢！)]
+			#ENDIF
+		#ELSE
+			一边向[npc.herHim]咆哮，[vengar.speechNoEffects(准备好被操了吗，荡妇？我还有很多精液等着你呢！)]
+		#ENDIF
+	<p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_PLAYER_SECOND_START"><![CDATA[
+	#IF(pc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			<p>
+				受文加的命令，[npc.name]慢慢挪到你身前，将[npc.her]滴落着精液的小穴展示给你。那只鼠男在你背后大喊，[vengar.speechNoEffects(上啊，婊子，让我操你的时候欣赏一下你舔我精液的骚样！)]
+			</p>
+			<p>
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					你按照文加说的把头伸前，吮吸从[npc.namePos]还在微张的小穴里流淌的他热气腾腾的精液。文加低头看着你得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对你的赞许。这突然的一顶将你整个身子向前颠簸，让你的脸埋在你充满精液的小穴里，随着文加不断抽插你的[pc.pussyCapacity]的小穴发出一声一声的[pc.moan]。文加紧紧地抓住你的臀部，边插边说，[vengar.speechNoEffects(你很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的阴部涂成白色了！)]
+				#ELSE
+					你按照文加说的把头伸前，吮吸从[npc.namePos]还在微张的小穴里流淌的他热气腾腾的精液。文加低头看着你得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对你的赞许。这突然的一顶将你整个身子向前颠簸，让你的脸埋在你充满精液的小穴里，随着文加不断抽插你的[pc.assCapacity]的屁穴发出一声一声的[pc.moan]。文加紧紧地抓住你的臀部，边插边说，[vengar.speechNoEffects(你很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的肠子涂成白色了！)]
+				#ENDIF
+			</p>
+		#ELSEIF(game.isAnalContentEnabled())
+			<p>
+				受文加的命令，[npc.name]慢慢挪到你身前，将[npc.her]滴落着精液的屁穴展示给你。那只鼠男在你背后大喊，[vengar.speechNoEffects(上啊，婊子，让我操你的时候欣赏一下你舔我精液的骚样！)]
+			</p>
+			<p>
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					你按照文加说的把头伸前，吮吸从[npc.namePos]还在微张的屁穴里流淌的他热气腾腾的精液。文加低头看着你得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对你的赞许。这突然的一顶将你整个身子向前颠簸，让你的脸埋在你充满精液的屁穴里，随着文加不断抽插你的[pc.pussyCapacity]的小穴发出一声一声的[pc.moan]。文加紧紧地抓住你的臀部，边插边说，[vengar.speechNoEffects(你很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的阴部涂成白色了！)]
+				#ELSE
+					你按照文加说的把头伸前，吮吸从[npc.namePos]还在微张的屁穴里流淌的他热气腾腾的精液。文加低头看着你得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对你的赞许。这突然的一顶将你整个身子向前颠簸，让你的脸埋在你充满精液的屁穴里，随着文加不断抽插你的[pc.assCapacity]的屁穴发出一声一声的[pc.moan]。文加紧紧地抓住你的臀部，边插边说，[vengar.speechNoEffects(你很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的肠子涂成白色了！)]
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				[npc.name]无事可做，只好挪动到一边旁观你被文加肏。文加在你背后低头淫笑着说，[vengar.speechNoEffects(你准备好体会你朋友为什么这么呻吟了吗？你一定会喜欢我从后面用肥鸡巴反复抽撞的感觉！)]
+			</p>
+			<p>
+				#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					在你能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进你[pc.pussy+]，让你发出[pc.a_moan+]。文加紧紧抓住你的臀部，喊道，[vengar.speechNoEffects(你的小穴已经变成我的大鸡巴的形状啦！我很快就会用我大股大股的精液把你的肉壁涂成白色！)]
+				#ELSE
+					在你能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进你[pc.asshole+]，让你发出[pc.a_moan+]。文加紧紧抓住你的臀部，喊道，[vengar.speechNoEffects(你的直肠已经变成我的大鸡巴的形状啦！我很快就会用我大股大股的精液把你的肉壁涂成白色！)]
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			由于无事可做，[npc.name]只好挪动到一边旁观你被文加肏。文加在你背后低头淫笑着说，[vengar.speechNoEffects(你准备好体会你朋友为什么这么呻吟了吗？你一定会喜欢我从后面用肥鸡巴反复抽撞的感觉！)]
+		</p>
+		<p>
+			#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				在你能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进你[pc.pussy+]，让你发出[pc.a_moan+]。文加紧紧抓住你的臀部，喊道，[vengar.speechNoEffects(你的小穴已经变成我的大鸡巴的形状啦！我很快就会用我大股大股的精液把你的肉壁涂成白色！)]
+			#ELSE
+				在你能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进你[pc.asshole+]，让你发出[pc.a_moan+]。文加紧紧抓住你的臀部，喊道，[vengar.speechNoEffects(你的直肠已经变成我的大鸡巴的形状啦！我很快就会用我大股大股的精液把你的肉壁涂成白色！)]
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_SUB_SEX_BOTH_COMPANION_SECOND_START"><![CDATA[
+	#IF(npc.isAbleToAccessCoverableArea(CA_MOUTH, true))
+		#IF(pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+			<p>
+				你听从文加的命令，爬动到[npc.name]面前，将自己留着精液的小穴对准[npc.herHim]。文加低头看向你的[npc.companion]，咆哮着说，[vengar.speechNoEffects(给我舔，婊子！我要看到你一边吃我的精液一边被我从后面操你！)]
+			</p>
+			<p>
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					[npc.name]按照文加说的把头伸前，吮吸从你还在微张的小穴里流淌的他热气腾腾的精液。文加低头看着[npc.companion]得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对[npc.companion]的赞许。这突然的一顶将[npc.name]整个身子向前颠簸，让[npc.she]的脸埋在你充满精液的小穴里，随着文加不断抽插[npc.her]的[npc.pussyCapacity]的小穴发出一声一声的[npc.moan]。文加紧紧地抓住你的[npc.companion]臀部，边插边说，[vengar.speechNoEffects(你的朋友很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的阴部涂成白色了！)]
+				#ELSE
+					[npc.name]按照文加说的把头伸前，吮吸从你还在微张的小穴里流淌的他热气腾腾的精液。文加低头看着[npc.companion]得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对[npc.companion]的赞许。这突然的一顶将[npc.name]整个身子向前颠簸，让[npc.she]的脸埋在你充满精液的小穴里，随着文加不断抽插[npc.her]的[npc.assCapacity]的屁穴发出一声一声的[npc.moan]。文加紧紧地抓住你的[npc.companion]臀部，边插边说，[vengar.speechNoEffects(你的朋友很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的肠子涂成白色了！)]
+				#ENDIF
+			</p>
+		#ELSEIF(game.isAnalContentEnabled())
+			<p>
+				你听从文加的命令，爬动到[npc.name]面前，将自己留着精液的屁穴对准[npc.herHim]。文加低头看向你的[npc.companion]，咆哮着说，[vengar.speechNoEffects(给我舔，婊子！我要看到你一边吃我的精液一边被我从后面操你！)]
+			</p>
+			<p>
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					[npc.name]按照文加说的把头伸前，吮吸从你还在微张的屁穴里流淌的他热气腾腾的精液。文加低头看着[npc.companion]得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对[npc.companion]的赞许。这突然的一顶将[npc.name]整个身子向前颠簸，让[npc.she]的脸埋在你充满精液的屁穴里，随着文加不断抽插[npc.her]的[npc.pussyCapacity]的小穴发出一声一声的[npc.moan]。文加紧紧地抓住你的[npc.companion]臀部，边插边说，[vengar.speechNoEffects(你的朋友很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的阴部涂成白色了！)]
+				#ELSE
+					[npc.name]按照文加说的把头伸前，吮吸从你还在微张的屁穴里流淌的他热气腾腾的精液。文加低头看着[npc.companion]得意地笑了，伴随一声嚎叫，他快速地挺胯将肉棒粗鲁地插入以表示对[npc.companion]的赞许。这突然的一顶将[npc.name]整个身子向前颠簸，让[npc.she]的脸埋在你充满精液的屁穴里，随着文加不断抽插[npc.her]的[npc.assCapacity]的屁穴发出一声一声的[npc.moan]。文加紧紧地抓住你的[npc.companion]臀部，边插边说，[vengar.speechNoEffects(你的朋友很能干嘛！不用多久，我就可以用我厚厚的老鼠精液把你的肠子涂成白色了！)]
+				#ENDIF
+			</p>
+		#ELSE
+			<p>
+				你无事可做，只好挪动到一边旁观[npc.name]准备给文加肏。文加在[npc.companion]背后低头淫笑着说，[vengar.speechNoEffects(你准备好体会你朋友为什么这么呻吟了吗？你一定会喜欢我从后面用肥鸡巴反复抽撞的感觉！)]
+			</p>
+			<p>
+				#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+					在[npc.she]能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进[npc.her][npc.pussy+]，导致[npc.name]发出[npc.a_moan+]。文加紧紧抓住你的[npc.companion]的臀部，喊道，[vengar.speechNoEffects(你的小穴已经变成我的大鸡巴的形状啦！我很快就会用我的老鼠精液把你的肉壁涂成白色！)]
+				#ELSE
+					在[npc.she]能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进[npc.her][npc.asshole+]，导致[npc.name]发出[npc.a_moan+]。文加紧紧抓住你的[npc.companion]的臀部，喊道，[vengar.speechNoEffects(你的直肠已经变成我的大鸡巴的形状啦！我很快就会用我的老鼠精液把你的肠子涂成白色！)]
+				#ENDIF
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			在没有其他事情可做的情况下，你侧身看着[npc.name]准备被文加操。在你的[npc.companion]身后，鼠男低头看着，咆哮道，[vengar.speechNoEffects(准备好找出你的朋友为什么那么喘吁吁了吗？感受一下我从背后用粗大的鸡巴狠狠地操你的感觉！)]
+		</p>
+		<p>
+			#IF(npc.hasVagina() && npc.isAbleToAccessCoverableArea(CA_VAGINA, true))
+				在[npc.she]能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进[npc.her][npc.pussy+]，让[npc.name]发出[npc.a_moan+]。文加紧紧抓住你的[npc.companion]的臀部，喊道，[vengar.speechNoEffects(你的小穴已经变成我的大鸡巴的形状啦！我很快就会用我大股大股的老鼠精液把你的肉壁涂成白色！)]
+			#ELSE
+				在[npc.she]能够做出反应之前，文加突然挺胯前推，将他的肥肉棒深深地插进[npc.her][npc.asshole+]，让[npc.name]发出[npc.a_moan+]。文加紧紧抓住你的[npc.companion]的臀部，喊道，[vengar.speechNoEffects(你的屁穴已经变成我的大鸡巴的形状啦！我很快就会用我大股大股的老鼠精液把你的肠子涂成白色！)]
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX_COMPANION"><![CDATA[
+	<p>
+		#IF(sex.getDominantParticipants(false).containsKey(pc))
+			文加爽够后， 从你的[npc.companion]体内抽出鸡巴，然后将漏出的精液抹在[npc.her]的屁股上。你们试图从刚才的公开性爱中平复呼吸时，文加站起身来，对老鼠们喊道：[vengar.speechNoEffects(从现在开始，[pc.herHim]们就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+		#ELSE
+			文加爽够后， 从你的[npc.companion]体内抽出鸡巴，然后将漏出的精液抹在[npc.her]的屁股上。[npc.name]试图从刚才的公开性爱中平复呼吸时，文加站起身来，对老鼠们喊道：[vengar.speechNoEffects(从现在开始，[pc.herHim]就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+		#ENDIF
+	</p>
+	<p>
+		看到乐子结束了，大厅里的鼠人又回到了吃饭、喝酒和聊天上。文加低头看着你和[npc.name]，咧嘴一笑说，[vengar.speechNoEffects(这操得可真攒劲啊！现在如果你还想和阿克塞尔讨论那件事，就起身跟我来。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX"><![CDATA[
+	<p>
+		#IF(!pc.hasCompanions())
+			文加爽够后， 从你的体内抽出鸡巴，然后将漏出的精液抹在你的屁股上。你试图从刚才的公开性爱中平复呼吸时，文加站起身来，对老鼠们喊道：[vengar.speechNoEffects(从现在开始，[pc.herHim]们就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+		#ELSEIF(sex.getDominantParticipants(false).containsKey(npc))
+			文加爽够后， 从你的体内抽出鸡巴，然后将漏出的精液抹在你的屁股上。你和[npc.Name]试图从刚才的公开性爱中平复呼吸时，文加站起身来，对老鼠们喊道：[vengar.speechNoEffects(从现在开始，[pc.herHim]们就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+		#ELSE
+			文加爽够后， 从你的体内抽出鸡巴，然后将漏出的精液抹在你的屁股上。你试图从刚才的公开性爱中平复呼吸时，文加站起身来，对老鼠们喊道：[vengar.speechNoEffects(从现在开始，这家伙就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+		#ENDIF
+	</p>
+	<p>
+		大厅里的老鼠们眼见乐子已经没有了，于是又继续吃喝和闲聊起来。眼见他们的注意力散去，文加低头看了看你# IF( pc.hasCompanions())和[ npc.name]# ENDIF，咧开大嘴笑着说：[vengar.speechNoEffects(刚才干得真爽！如果你还想讨论有关阿克塞尔的事，那就起来跟我走吧。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_PERSUADE_AFTER_SEX_FINISH"><![CDATA[
+	<p>
+		文加没有回头看一眼，走到他宝座后面靠墙摆放的抛光木桌和椅子前，把你扶起来。你跟着他坐在桌子的另一边，听他倾身向你解释，[vengar.speechNoEffects(我相信你明白，如果我不在帮派面前展示对你的支配，他们就不再尊重我。关于你要我停止勒索阿克塞尔的要求，我其实已经考虑一段时间了。也许有了你的帮助，我就可以做到这件事了。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_THREATEN -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_CHUUNI"><![CDATA[
+	<p>
+		你意识到展现自己真正力量的时刻到了，于是摆出一副英雄的姿态，发出胜利的笑声：[pc.speech(~哇哈哈哈！~吾之降临，乃是汝等蝼蚁无法挽回之事！命运已然注定，文加，汝若不愿跪倒在吾之足下，便唯有直面宇宙之力的全部怒火！)]
+	</p>
+	#IF(pc.hasCompanions())
+		#IF(npc.hasTraitActivated(PERK_CHUUNI))
+			<p>
+				[npc.Name]走到你身边，也摆出一个释放力量的姿势，喊道：[npc.speech(若你胆敢与我们作对，你将亲眼目睹大地本身被我们的怒火撕裂，而等我们解决完你，上天也会为这纯粹的屠杀而落泪！)]
+			</p>
+			<p>
+				[pc.speech(说得好，吾之扈从！)]你感叹道，又发出一阵狂笑，下达了最后通牒：[pc.speech(你会怎么做，耗子？是认命跪在我面前，还是逼我冒着毁灭宇宙的风险释放黑暗力量？！)] 
+			</p>
+		#ELSE
+			<p>
+				[npc.name]倒吸一口凉气，对你俯身耳语道：[npc.speech([pc.Name]，拜托！现在不是幻想时间，我们会陷入困——)]
+			</p>
+			<p>
+				[pc.speech(安静，吾之扈从！)]你喊道，又发出一阵狂笑，下达了最后通牒：[pc.speech(你会怎么做，耗子？是认命跪在我面前，还是逼我冒着毁灭宇宙的风险释放黑暗力量？！)]
+			</p>
+		#ENDIF
+	#ENDIF
+	<p>
+		大厅里的老鼠们听到你向文加发出的挑战后，纷纷紧张地叽叽喳喳起来，就像凡人突然察觉到你的伟力一样。文加表情狰狞，你猜他一定是害怕与你对峙。鼠男向自己的部下大声喊道：[vengar.speechNoEffects(闭嘴，你们这群白痴！这些都是瞎编的，这家伙根本没有实力来挑战我！等我让[pc.herHim]瞧完我的厉害，我就#IF(pc.isAbleToHaveRaceTransformed())把[pc.herHim]变成放荡的鼠女，还要#ENDIF让[pc.herHim]做大家的公共鸡巴套！)]
+	</p>
+	<p>
+		文加自信满满地走下台阶，握紧了戴着指虎的拳头，抬拳摆出格斗的姿势。鼠男冲上前来，只给你片刻反应时间！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_DEMON"><![CDATA[
+	<p>
+		你意识到利用恶魔身份的时机已到，于是自信地喊道：[pc.speech(你敢威胁<i>我</i>？！你知道在和谁说话吗？！也许是你们这些耗子东躲西藏太久了，毕竟只有最无知的屈城区市民才不知道我是莉西丝的直系[pc.daughter]！)]
+	</p>
+	<p>
+		大厅里的老鼠们突然知道你的母亲是一位莉琳长老，纷纷紧张地叽叽喳喳起来。文加脸上带着几分忧虑，向他的部下大声喊道：[vengar.speechNoEffects(闭嘴，你们这群白痴！我们又不是没打过恶魔！这有什么好怕的！等我让[pc.herHim]瞧完我的厉害，我就让[pc.herHim]做大家的公共鸡巴套！)]
+	</p>
+	<p>
+		文加自信满满地走下台阶，握紧了戴着指虎的拳头，抬拳摆出格斗的姿势。鼠男冲上前来，只给你片刻反应时间！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN"><![CDATA[
+	<p>
+		你意识到自己比文加强大得多，便自信满满地叫道：[pc.speech(你这么弱还敢威胁<i>我</i>？你要是个聪明人的话，就赶快向我下跪道歉！好好斟酌一下你的话吧，耗子，毕竟这可能是你作为一个自由人说的最后一句话了！)]
+	</p>
+	<p>
+		大厅里的老鼠们纷纷紧张地叽叽喳喳起来，就像下层阶级的人看到自己的领袖面临巨大威胁时的反应一样。文加怒火中烧，向他的部下大声喊道：[vengar.speechNoEffects(闭嘴，你们这群白痴！我们连比这更强的人都打败过！等我让[pc.herHim]瞧完我的厉害，我就让[pc.herHim]做大家的公共鸡巴套！)]
+	</p>
+	<p>
+		文加自信满满地走下台阶，握紧了戴着指虎的拳头，抬拳摆出格斗的姿势。鼠男冲上前来，只给你片刻反应时间！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_SLAM"><![CDATA[
+	#IF(pc.hasTraitActivated(PERK_CHUUNI))
+		<p>
+			你微笑着看鼠男冲锋向前，为了确保附近的每个人都知道你即将释放出巨大的力量，你大声喊道：[pc.speech(于恐惧中颤抖吧，蝼蚁，汝等即将见证宇宙中最伟大的奥术使用者毁天灭地的力量！~哇哈哈哈！~)]
+		</p>
+		<p>
+			你猛地将高举的[pc.arm]向下用力一挥，施放了你完美版的“重击术”——大家是这么叫的。文加显然没有料到你会施放如此强大的法术，根本没有防御，结果，你向下释放的巨大冲击波瞬间将他摔得跪倒在地。鼠男一方面被打个措手不及，一方面又失去平衡，被惯性带向前方，砰的一声倒在了地上。
+		</p>
+		<p>
+			[pc.speech(终结技！双重裂地波！)]你大喊着亮出了这个超级秘密强化法术的大名。你向下挥动双[pc.arms]，连续施放了两次相同的法术。共振波不仅再次把文加摔倒在地，还把他仅剩的一点体力也消耗殆尽。鼠男发出一声呜咽，瘫倒在地，就在你面前昏了过去。
+		</p>
+	#ELSE
+		<p>
+			你微笑着看鼠男冲锋向前，猛地将高举的[pc.arm]向下用力一挥，施放了你完美版的“重击术”——大家是这么叫的。文加显然没有料到你会施放如此强大的法术，根本没有防御，结果，你向下释放的巨大冲击波瞬间将他摔得跪倒在地。鼠男一方面被打个措手不及，一方面又失去平衡，被惯性带向前方，砰的一声倒在了地上。
+		</p>
+		<p>
+			鼠男虽然受伤了，但还没有被打败，他很快就从地上爬起来。你向下挥动双[pc.arms]，抓住机会给他致命一击，连续施放了两次相同的法术。共振波不仅再次把文加摔倒在地，还把他仅剩的一点体力也消耗殆尽。鼠男发出一声呜咽，瘫倒在地，就在你面前昏了过去。
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT"><![CDATA[
+	<p>
+		你意识到文加的主要弱点是鲁莽和缺乏防御，于是摆好架势，只等他向前攻击你。果然，鼠男把你的静止视为弱点，愚蠢地向前冲去，试图给你一拳。你扭转身体，同时抓住文加伸出的手臂，利用惯性给他一个过肩摔，发出砰的一声巨响。
+	</p>
+	<p>
+		鼠男虽然受伤了，但还没有被打败，他很快就从地上挣扎着爬起来。你知道这是在战斗开始之前就结束战斗的大好机会，于是你全力击打文加，不仅再次把文加摔倒在地，还把他仅剩的一点体力也消耗殆尽。鼠男发出一声呜咽，瘫倒在地，就在你面前昏了过去。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_END"><![CDATA[
+	<p>
+		看到文加被迅速击败，大厅陷入沉寂。帮派成员们开始争论谁才是当之无愧的老大，声音从嗡嗡作响到震耳欲聋。不等你让他们闭嘴，一个酒瓶就掠过头顶砸碎在远处的墙壁上，一场骚乱就要开始了！
+	</p>
+	<p>
+		绝大多数帮派成员似乎更热衷于互相厮杀，而不是选择直接挑战刚刚毫不费力地打倒了他们老大的人，但当你转过身来仰望文加的宝座时，你看到他的两个鼠女保镖正目不转睛地盯着你。影在口袋里放好什么东西，伸手拔出了她那闪着绿光的爪刀，而默则伸手在她身后施了个法术，影猛然直扑你而来！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_CHAOS -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_CHAOS"><![CDATA[
+	<p>
+		几乎没时间反应，只得在黑毛鼠女冲过来前摆出防御架势，然而，影和她手中小刀上散发出的两道模糊的绿色奥术能量只是你身边一闪而过。你大吃一惊，原地转身，便见那身材魁梧、肌肉发达的鼠男正掂着把木凳，宛若拿着棒球棒般朝着你毫无保护的后背挥舞而来。影从这个膀大腰圆的流氓身上拔出小刀，灵活地跳到一旁，任凭他摔倒在地，然后转身向你咆哮，[shadow.speechNoEffects(要不你小心点，别围着我和默转！快，如果你想挺过去，就快爬到台阶上来！)]
+	</p>
+	#IF(pc.isBrave())
+		<p>
+			你可不会临阵脱逃，站在原地回答道：[pc.speech(我才不会因为区区老鼠逃跑！想战？那便战！)]
+		</p>
+		<p>
+			影咬牙切齿地走到你面前，嘶哑地说道：[shadow.speechNoEffects(尼要担心的不是这群乌合之众！快上台阶，否则尼会八面受敌！)]
+		</p>
+	#ENDIF
+	<p>
+		你不太清楚影为什么会帮你，但她真诚的语气让你相信她是为了你的利益着想。你仍然密切关注着这两个鼠女，箭步冲上台阶，和默一起注视着台下的混乱。白化鼠女眼神绝望，伸手拽住影的胳膊。黑毛鼠女转过身来面对她的同伴，咧嘴笑着说：
+		#IF(pc.hasCompanions())
+			[shadow.speechNoEffects(别担心，亲爱的，有这两个人帮忙，窝们能坨住人渣，直到他们来。)]
+		#ELSE
+			[shadow.speechNoEffects(别担心，亲爱的，有这个人帮忙，窝们能坨住人渣，直到他们来。)]
+		#ENDIF
+	</p>
+	<p>
+		你还没来得及问影“他们”是谁，一群至少十五个愤怒的帮派成员就走到了台前。其中最高大的是一个满身伤疤的灰毛鼠男，他指着你们这一小撮人喊道：[style.speechMasculine(尼们这两个鼠贱人，现在没有文加可以阻挡窝们了！一旦窝和手下把尼们都打趴下，窝就是老大，第一道命令就是让尼们当帮派的公共精厕！)]
+	</p>
+	<p>
+		[shadow.speechNoEffects(尼觉得文加是在保护窝和默？不如说塔是唯一能阻止窝们把尼打倒卖成奴隶的人！)]影啐了一口回敬道。就在这时，由于所有的老鼠都在互相厮杀，喧闹声大得令人难以置信，与其说你听到了，不如说你感觉到了从鼠窟深处的某处传来的微弱而低沉的轰鸣声。影显然也察觉到了这一异常，她解除战斗姿势站了起来，然后说：[shadow.speechNoEffects(好吧，尼们很快就会知道当奴隶是什么感觉了。窝很想停下来多聊几句，但聚会已经结束了。)]
+	</p>
+	<p>
+		就在这时，大厅里所有的奥术灯突然都熄灭了，大厅里只剩下壁炉昏暗闪烁的火光。紧接着，隧道深处传来一串更响的爆炸声。还没等你反应过来，影就抓住了你的[pc.arm]，猛地一拽，就把你
+		#IF(pc.hasCompanions())
+			，默还有[npc.Name]
+		#ELSE
+			和默
+		#ENDIF
+		拉到宽大的铁王座下，在你耳边嘘声说：[shadow.speech(趴着别动，等窝说可以动了再动！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_SWORD_RAID -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_SWORD_RAID"><![CDATA[
+	<p>
+		你不知道会发生什么，于是决定照影说的做，和#IF(pc.hasCompanions())[npc.Name]以及#ENDIF两个鼠女一起蹲在宝座后面。你们刚就位不久，大厅里就发出了一连串震耳欲聋的巨响和眩目的闪光，这让仍在战斗的帮派成员的叫喊声从愤怒变成了惊讶。
+	</p>
+	<p>
+		紧接着，大厅另一端传来几个低沉的声音：[style.speechMasculineStrong(趴在地上！这是SWORD，不要抵抗！他妈的给我趴下！)]
+	</p>
+	<p>
+		你从王座的边缘向四周眺望，看到至少有十几道奥数闪光从入口处照射进来，横扫整个大厅。SWORD的执法者们甚至不等这些老鼠听从指挥，就开始用胡椒弹步枪向没有倒在地上的人瞄准开火，洞窟里回荡着砰砰声。执法者们又部署好冷冻枪，向任何愚蠢到试图逃跑的老鼠发射淡蓝色的奥术激光。顷刻间，大厅里的所有帮派成员都被逼得趴倒在地。
+	</p>
+	<p>
+		[shadow.speechNoEffects(等我一会，亲爱的。)]影对默轻声耳语，站起来从口袋取出了一个深紫色小球，
+		#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_VENGAR, QUEST_VENGAR_OPTIONAL_CLAIRE))
+			你认出这和克莱尔给的东西一样，是一块回声石。
+		#ENDIF
+		她举着小球，向朝你逼近的执法者清了清嗓子喊道：[shadow.speech(你们真他妈花了不少时间，不是吗？再过一会儿，我和默就会有大麻烦了！这么多老鼠，可不是闹着玩的！)]
+	</p>
+	<p>
+		这时，大厅里的灯光恢复了，你看到一个肌肉发达的德牧男正带领着一小队SWORD执法者向你藏身的地方走来。其他执法者开始逮捕大厅里的所有老鼠，而这个威风凛凛的人物径直走到影面前，从她手中夺走了小球，然后向他的队伍吼道：[style.speechMasculineStrong(清除这些房间！我可不想有任何一只该死的老鼠漏网！)]
+	</p>
+	<p>
+		他的下属赶忙去执行他的命令，这个德牧把他的注意力完全转向了你们。他收好一直紧握的枪，指向
+		#IF(pc.hasCompanions())
+			你、默，还有[com.name]，对影低吼道：[style.speechMasculineStrong(你一启动那块石头，我们就开始突袭了，所以别抱怨我们不及时！我知道另一个鼠女和你是一伙的，但另外两个呢？！)]
+		#ELSE
+			你和默，对影低吼道：[style.speechMasculineStrong(你一启动那块石头，我们就开始突袭了，所以别抱怨我们不及时！我知道另一个鼠女和你是一伙的，但这个[pc.race]呢？！)]
+		#ENDIF
+		
+	</p>
+	<p>
+		影对执法者咧嘴一笑，回道：
+		#IF(pc.hasCompanions())
+			[shadow.speech(我他妈不知道，但他们和我们帮派不是一伙的。我想他们是为了某些该死的原因来打败文加的。)]
+		#ELSE
+			[shadow.speech(我他妈不知道，但[pc.she]和我们帮派不是一伙的。我想[pc.she]是为了某些该死的原因来打败文加的。)]
+		#ENDIF
+	</p>
+	<p>
+		[style.speechMasculineStrong(好吧，我们只是来抓帮派成员的，所以我们不想要[pc.sheIs]。我猜你是想离开这里，去领你帮我们抓到文加的奖励吧？)]执法者问影道。
+	</p>
+	<p>
+		[shadow.speech(太他妈对了！)]黑毛鼠女回答道，俯下身去把默拉了起来。她向执法者伸出空闲的手，继续说道：[shadow.speech(你有通行证之类的东西吗？如果我想大摇大摆地离开这里，你们这些该死的家伙就会把我抓起来！)]
+	</p>
+	<p>
+		执法者听后发出了一声咆哮，但他还是照做了，他伸手从口袋里掏出一张纸递过去，给两个鼠女让路。影突然想起你的存在，转过身来对你咧嘴一笑：[shadow.speech(再见！)]
+	</p>
+	<p>
+		黑毛鼠女牵着默的手，在执法者的陪同下离开了你，执法者转身朝你咆哮道：[style.speechMasculineStrong(既然你不是帮派成员，我可没兴趣拘捕你，不过前线巡逻队可能还是会想要审问你。在他们来之前，你就坐着别动。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_SWORD_RAID_CLAIRE -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_THREATEN_KNOCK_OUT_SWORD_RAID_CLAIRE"><![CDATA[
+	<p>
+		现在大厅里已经挤满了SWORD执法者，你别无选择，只能按照德牧男说的做，等待前线巡逻队的出现。值得庆幸的是，你并没有等太久，影和默还没走到大厅出口，你就看到克莱尔熟悉的身影和其他十几个执法者一起走进来。
+	</p>
+	<p>
+		你确信这个身材矮小的猫女一定对你的存在有什么直觉，因为她刚走进大厅，就立刻认出了你，朝你奔来。小执法者冲过大厅，她巨大的胸部也上下跳动着，引得几只老鼠转过头来盯着她看。她迅速拉近你们之间的距离，对着德牧男喘着气说道：
+		#IF(pc.hasCompanions())
+			[claire.speech(长官，我知道这个[pc.race]。可以允许我带[pc.herHim]和[pc.her]的同伴去问话吗？)]
+		#ELSE
+			[claire.speech(长官，我知道这个[pc.race]。可以允许我带[pc.herHim]去问话吗？)]
+		#ENDIF
+	</p>
+	<p>
+		[style.speechMasculineStrong(请。)]执法者说道，
+		#IF(pc.hasCompanions())
+			[style.speechMasculineStrong(但我熟悉的一名卧底探员已经证明他们不是帮派成员了，所以我觉得没什么好问的。)]
+		#ELSE
+			[style.speechMasculineStrong(但我熟悉的一名卧底探员已经证明[pc.herHim]不是帮派成员了，所以我觉得没什么好问的。)]
+		#ENDIF
+	</p>
+	<p>
+		谢过了SWORD执法者，克莱尔双手叉腰，叹气道：
+		#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_VENGAR, QUEST_VENGAR_OPTIONAL_CLAIRE))
+			#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensUsedResonanceStone))
+				[claire.speech(幸好我给了你回声石！多亏了它，你才能安全……总之，把它交给我，我们就能离开这里了。)]
+			#ELSE
+				[claire.speech(我不知道你为什么不用我给你的回声石，但至少你是安全的……总之，把它交给我，我们就能离开这里了。)]
+			#ENDIF
+		#ELSE
+			[claire.speech(我不知道你是怎么想的才会出现在这里，但至少你是安全的……总之，我们走吧。)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- SWORD_RAID_EXIT -->
+	
+	<htmlContent tag="SWORD_RAID_EXIT"><![CDATA[
+	<p>
+		你跟着克莱尔走出鼠窟，又遇到了几个执法者陪小猫女一起护送你到最近的执法者检查站。克莱尔带着你走进去，疲惫地叹了口气，到一张无人的办公桌前坐下，，然后从抽屉里拿出一大叠文件，放在你面前的桌面上。她伸展了一下手臂，说道：[claire.speech(这要花点时间……我对这整个流程都很生疏，但换别人来审问你，你估计就得在监狱里过夜了。)]
+	</p>
+	<p>
+		你感谢克莱尔没有让这一切发生，回答起一系列索然无味的问题——只有远离现实的官僚才能想出这样的问题。之后，你必须完整地叙述在鼠窟发生的事情，<i>再之后</i>，你又必须回答一系列旨在测试你对莉莉丝的忠诚度的问题。为了加快进程，克莱尔让你发誓保守秘密，直接亲自填写最后一大部分内容。到最后，所有的文件都填好了，还得让克莱尔的上司签字确认，你只能又等了一个小时。
+	</p>
+	<p>
+		六个小时后，你终于可以离开了，但克莱尔最后又说了一句：[claire.speech(我真的不想听到你在这里做更疯狂的事情，好吗？!下次你再有麻烦，我可不会去你身边帮你了！)]
+	</p>
+	<p>
+		你答应克莱尔以后会小心，朝着出口走去。路上你经过一群执法者正大声谈论对鼠窟的突袭，声音大得不可能听不到，你听到一个鳄女执法者对她的同事说：[style.speechFeminine(是啊，SWORD的那些家伙从来不想乖乖按文书工作。他们都没有遵循程序，直接奴役了那里的每个人，而且啊，他们把那个叫‘文加’的家伙和另一个老鼠给了这里的一个老板，当做被勒索的赔偿！你能相信吗？！)]
+	</p>
+	<p>
+		你不想让自己看起来像在窃听，便继续走向屈城区。你思索是应该直接去赌场向阿克塞尔汇报，还是先做点别的……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_SEDUCE -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_TELEPATHY"><![CDATA[
+	<p>
+		你意识到文加正是那种极易被引诱的人，于是你集中奥术力量将淫荡的心灵感应投射到他的脑海中。你的[pc.hand]沿着身体往上抚摸，一边与他意念沟通：[pc.thought(也许我们最好能去一个更私密的地方？)]
+	</p>
+	<p>
+		你再次集中精力，充分发挥心灵感应的能力，投射出一股幻象之力，让文加觉得你好像在抚摸他的腿，同时又在亲吻他的脖子和嘴唇。从他眼中闪烁的情欲之光可以看出，你的办法很有效，一言不发就能让文加向大厅宣布道：[vengar.speechNoEffects(从现在开始，[pc.herHim]就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE"><![CDATA[
+	<p>
+		你意识到文加正是那种极易被引诱的人，于是你的[pc.hand]在躯干上情意绵绵地游走，一边用最诱人的语气问道：[pc.speech(也许我们最好能去一个更私密的地方？)]
+	</p>
+	<p>
+		你盯着文加，对他眨了眨眼睛，还抛了一个飞吻。从他眼中闪烁的情欲之光可以看出，你的办法很有效，一言不发就能让文加向大厅宣布道：[vengar.speechNoEffects(从现在开始，[pc.herHim]就是窟里的客人！我们有些事情要私下讨论，尼们继续各干各的吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_END"><![CDATA[
+	<p>
+		见打架和其它乐子都不可能有了，大厅里的老鼠们继续吃喝和闲聊起来。眼见他们的注意力散去，文加示意你跟他走到台子远处的一个门口。你准备跟随着他的脚步，走进那扇鼠男为你打开的门，但在你走近门前，影悄悄地走到你身边，对你俯身耳语道：
+		#IF(pc.hasCompanions())
+			[shadow.speechNoEffects(不能把你的小伙伴带进去，[npc.sheIs]该和我还有默待在一起。还有别想在里面做傻事！)]
+		#ELSE
+			[shadow.speechNoEffects(别想在里面做傻事！)]
+		#ENDIF
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			你留[npc.name]和两个鼠女保镖在一起，
+		#ELSE
+			你把两个鼠女保镖留在身后，
+		#ENDIF
+		向前迈进下一个房间，却发现这是一条小走廊，两边各有几扇门。文加从你身边走过，打开了左边最近的一扇门，你走进去，发现自己身处一间宽敞且家具齐全的卧室。鼠男靠在你身上，把你带到房间里的四柱床上，一边在你耳边咆哮：
+		#IF(pc.hasVagina() && !pc.isVisiblyPregnant())
+		[vengar.speechNoEffects(你大老远跑来是想好好干一场吧？我要给你的屄来个痛快的，然后让你生个孩子！)]
+		#ELSE
+		[vengar.speechNoEffects(你大老远跑来是想好好干一场吧？让我给你好好捅一顿！)]
+		#ENDIF
+	</p>
+	<p>
+		虽然他明显很急切地想和你上床，但你知道你可以用你的魅惑技巧来摆脱这种局面。话又说回来，你也可以让这个鼠男如愿以偿，和他上床……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_SEX_SUBMISSIVE"><![CDATA[
+	<p>
+		你感到很兴奋，也非常乐意服从文加，便用鼓励的[pc.moan]声来回应他的摸索。他抚摸你[pc.breasts+]，咆哮道：
+		#IF(pc.hasVagina() && !pc.isVisiblyPregnant())
+		[vengar.speechNoEffects(看我用种子塞满你的逼！希望你准备好做个母亲！)]
+		#ELSE
+		[vengar.speechNoEffects(看我用种子塞满你！希望你准备好被大操一顿！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_SEX_DOMINANT"><![CDATA[
+	<p>
+		虽然你觉得很兴奋，也非常乐意和文加做爱，但你并不打算让他主导，便伸手抓住鼠男的臀部，把他摁倒在床上，靠近说道：[pc.speech(在外面，你可以是坐在宝座上的头目，但在这里，你要完全按我说的做，明白吗？)]
+	</p>
+	<p>
+		文加现在超渴望与你做，便点点头回答说：[vengar.speechNoEffects(快过来和我做爱吧！)]
+	</p>
+	<p>
+		你微笑着看着这个鼠男，准备让他看看和你上床会有什么后果……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_SEDUCE_NO_SEX -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_NO_SEX"><![CDATA[
+	<p>
+		在成功引诱文加独处后，你现在觉得事情已经发展得足够远了，便伸手抓住鼠男的臀部，把他摁倒在床上，靠近说道：[pc.speech(想操我吗，想吗？也许到时候你会如愿，但你得先为我做点什么。)]
+	</p>
+	<p>
+		文加仍然渴望与你做，便同意听你把话说完。你让鼠男一边坐在床上看你来回踱步，一边向他解释阿克塞尔是如何挣扎着偿还债务的，最后要求他停止向屈城区的诚信企业勒索钱财。
+	</p>
+	<p>
+		文加靠在床上，发出一声叹息，回答道：[vengar.speechNoEffects(事实上，我已经考虑了很久要不要抽身了，也许有了尼的帮助，我终于可以做到了。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_NO_SEX_LEAVE"><![CDATA[
+	<p>
+		由于你已经决定不与文加对抗，所以你同意了，告诉他你会说服阿克塞尔臣服。鼠男咧嘴笑着站起来说：[vengar.speechNoEffects(我欠尼一个人情。别到处跟我的小弟们说这个计划，否则尼会毁了我和阿克塞尔的一切！)]
+	</p>
+	<p>
+		你告诉文加不要担心，自己会尽快带阿克塞尔回来，一边还给了黑帮头目一个暗示：等整件事都解决了，就允许他操你。你和他在大厅门口告别，回到鼠窟曲折的隧道里。等你离开灯火通明又喧闹嘈杂的大厅，你思考自己要不要马上去见阿克塞尔，还是以后再去……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_APPROACH_SEDUCE_AFTER_SEX -->
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_AFTER_SEX"><![CDATA[
+	<p>
+		伴随着满足的长叹，你和文加紧挨着倒在床上，气喘吁吁。你率先恢复过来，翻了个身，俯身给他一个热情的吻，然后抽离开来说：[pc.speech(我已经让你如愿了，你也该回报我了吧。)]
+	</p>
+	<p>
+		文加显然想在来日与你重演这出好戏，于是同意听你说下去。你用手指在他毛茸茸的胸膛上撩了撩，接着向他解释了阿克塞尔是如何挣扎着偿还债务的，最后要求他停止向屈城区的诚信企业勒索钱财。
+	</p>
+	<p>
+		文加坐直身子，发出一声叹息，回答道：[vengar.speechNoEffects(事实上，我已经考虑了很久要不要抽身了，也许有了尼的帮助，我终于可以做到了。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_HALL_APPROACH_SEDUCE_AFTER_SEX_LEAVE"><![CDATA[
+	<p>
+		由于你已经决定不与文加对抗，所以你同意了，告诉他你会说服阿克塞尔臣服。鼠男咧嘴笑着站起来说：[vengar.speechNoEffects(我欠尼一个人情。别到处跟我的小弟们说这个计划，否则尼会毁了我和阿克塞尔的一切！)]
+	</p>
+	<p>
+		你告诉文加不要担心，自己会尽快带阿克塞尔回来。在收拾好东西，清理干净身体后，和他在大厅门口告别，回到鼠窟曲折的隧道里。等你离开灯火通明又喧闹嘈杂的大厅，你思考自己要不要马上去见阿克塞尔，还是以后再去……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_HALL_RESONANCE_STONE -->
+	
+	<htmlContent tag="VENGARS_HALL_RESONANCE_STONE"><![CDATA[
+	<p>
+		在确认文加在这里之后，你拿起克莱尔给你的回声石，按照指示将两半回声石以相反的方向扭转。好在这个装置只在激活时震动了一会儿，不容易被文加或周围的老鼠注意到。
+	</p>
+	<p>
+		你开始拖延时间等待执法者出现，突然发现黑毛保镖影正死死盯着你。她转过身对白化同伴耳语了几句，然后把手伸向臀部，抽出她那对闪着绿光的爪刀。像是突然反水，这个鼠女冲向文加，将奥术之刃刺入他的后背，打得所有人措手不及。文加猝不及防，不等反应就失去了生机，只是发出微弱的呻吟，倾倒在地。
+	</p>
+	<p>
+		看到文加被迅速击败，大厅陷入沉寂。帮派成员们开始争论谁才是当之无愧的老大，声音从嗡嗡作响到震耳欲聋。不等你让他们闭嘴，一个酒瓶就掠过头顶砸碎在远处的墙壁上，一场骚乱就要开始了！
+	</p>
+	<p>
+		绝大多数帮派成员似乎更热衷于互相厮杀，而不是选择向你挑战，但当你转过身来仰望文加的宝座时，你看到影和默都在满怀恶意地盯着你。默伸手准备施法，而影举起了爪刀，突然冲向你！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_SHADOW_DEFEATED -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_SHADOW_DEFEATED"><![CDATA[
+	<p>
+		影踉踉跄跄地后退，再也握不住手中的爪刀，摔在了地上，发出响亮的金属碰撞声。她气息已乱，双腿一跪沉了下去，倒在冰冷的地板上。
+	</p>
+	<p>
+		没有发动下一次袭击，也没有试图为她的同伴复仇，默踉跄着后退，看起来随时都会倒下。她悲伤地看着倒下的影，然后抬头怒视着你，抓住挂在脖子上的魔石碎片。在你做出反应之前，默的眼睛突然涌现出幻影般的紫色火焰，她的另一只手向上一挥，召唤出了一个非常强大的咒语。
+	</p>
+	<p>
+		起初，有一股不自然的阵风突然吹过整个大厅，这股奥术之风的力量迅速增强，导致大厅壁炉中的火焰开始摇曳不定，随后火焰突然变为明亮的绿紫色。默抬起空闲的手，突然握紧了拳头，就在你眼前，一只奥术形态的风属性恶魔元素体开始显现。默通过这只奥术造物，发出了令人不寒而栗、悲痛欲绝的嘶吼：[silence.thought(你要为你的所作所为付出代价！)]
+	</p>
+	<p>
+		闪烁的奥术火焰仍从默闪亮的粉红色眼睛中流淌出来，她与这个元素体一起再次向你发起攻击！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_SILENCE_DEFEATED -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_SILENCE_DEFEATED"><![CDATA[
+	<p>
+		默无法再继续战斗，踉踉跄跄地后退。伴随着微弱的呜咽声，她沉重地倒在了地上。
+	</p>
+	<p>
+		看到她日夜相处的同伴被你打倒，影发出愤怒的尖叫，将她的奥术爪刀指向你，眼里迸发出怒火，[shadow.speechNoEffects(你会付出代价的！没人能阻止我复仇！)]
+	</p>
+	<p>
+		影似乎恢复了活力，而且显然将自己的安全置之脑后，她直接向你冲来！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_VICTORY -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_VICTORY"><![CDATA[
+	<p>
+		影和默无法再继续战斗，瘫倒在地板上。然而，你们没有时间庆祝胜利了，因为文加 亲自上阵，他握紧戴着指虎的拳头，大喊道：[vengar.speechNoEffects(尼可能会打败我的姑娘们，但不可能打败我！)]
+	</p>
+	<p>
+		没时间修整了，你现在必须抵御鼠男的攻击！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_DEFEAT -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_NO_NON_CON"><![CDATA[
+	<p>
+		眼见你体力不支，再战不能，影冲向你发出最后一击，将你踢倒在地。只得眼睁睁看着这个鼠女向你逼近，从口袋掏出一个深紫色小球，往两边一扭。
+		#IF(pc.hasQuestInLine(QUEST_LINE_SIDE_VENGAR, QUEST_VENGAR_OPTIONAL_CLAIRE))
+			你认出这和克莱尔给的东西一样，是一块回声石。影俯下身嘶哑着说，
+		#ELSE
+			你意识到启动这个球体标志着有什么事发生，影俯下身嘶哑着说，
+		#ENDIF
+		[shadow.speechNoEffects(我只想知道我能打趴你，没别的意思。)]
+	</p>
+	<p>
+		[vengar.speechNoEffects(滚啦！我要和这个崽子好好玩玩！)]文加在影后面的某处大喊，她顺从地让开了路，鼠男和你之间畅通无阻了。
+	</p>
+	<p>
+		影走近默，在她的白化同伴耳边低语了几句，然后又抽出她那对闪着绿光的爪刀。像是突然反水，这个鼠女冲向文加，将奥术之刃刺入他的后背，打得所有人措手不及。文加猝不及防，不等反应就失去了生机，只是发出微弱的呻吟，倾倒在地。
+	</p>
+	<p>
+		看到文加被迅速击败，大厅陷入沉寂。帮派成员们开始争论谁才是当之无愧的老大，声音从嗡嗡作响到震耳欲聋。你疲惫地重新站起，只见他们开始拳脚相加。一个酒瓶掠过头顶砸碎在远处的墙壁上，一场骚乱就要开始了！你向鼠女保镖们看去，影还在挥舞爪刀，她突然露出癫狂的笑容，直接冲向你！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			看到你已经精疲力尽，无法继续战斗，影快速冲向前，最后用几下踢击将你和[npc.name]打倒在地。发出一声胜利的笑声，她嘲讽道，[shadow.speechNoEffects(这太简单了！现在你们俩得为敢于挑战我们而付出代价！)]
+		</p>
+		<p>
+			从那只黑毛鼠女身后，你看到文加大步向前，面露凶狠地吼出一条命令，[vengar.speechNoEffects(给我让开！我对这几个有点想法！)]
+		</p>
+		<p>
+			很明显，黑帮头目对你们两个有兴趣，他[vengar.eye+]朝你们投来胜者的淫威……
+		</p>
+	#ELSE
+		<p>
+			意识到你已是强弩之末，影箭步上前，一个飞踢将你击翻在地。她发出胜利者的笑声，[shadow.speechNoEffects(哈，就这？这不得让我好好惩罚你！)]
+		</p>
+		<p>
+			文加从影身后气势冲冲地走来，咆哮着向她发出命令：[vengar.speechNoEffects(滚开，怎么处理[pc.her]我说了算！)]
+		</p>
+		<p>
+			很明显，这个黑帮头目对你有兴趣，他[vengar.eye+]朝你投来胜者的淫威……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_COMPANION_ESCAPE"><![CDATA[
+	<p>
+		你迫切希望你的[com.companion]免遭不幸命运，鼓起最后的力气逼退鼠女，转向[com.name]大喊道，[pc.speech(快走！)]
+	</p>
+	<p>
+		[com.name]意识到你们都身陷绝境，遵从你的指令，在你拖住老鼠时设法冲到了安全的地方。当你意识到已经为[com.companion]争取了足够的逃跑时间后，你放任自己被疲惫冲垮，再次倒下后，你抬头看见满脸愤怒的文加正对你咆哮。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_DEFEAT_DRAGGED_OFF -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_DRAGGED_OFF"><![CDATA[
+	<p>
+		文加忽视大厅里帮派成员的胜利呼声，粗暴抓着把你拖回你来时的隧道。鼠男边踢开一个过度兴奋的手下，边发出低沉的咕噜声，对你咆哮道，[vengar.speech(我要用你来偿还默克的恩情。有他做主人，相信你会很开心的；他会把你变成淫荡的奶牛婊子，让你对他的鸡巴顶礼膜拜！我能操的鼠屄足够满足需求了，但帮派的其他成员会付钱给默克来干你的！)]
+	</p>
+	#IF(game.getDialogueFlags().hasFlag(FLAG_murkIntroduced))
+		<p>
+			文加低沉的声音在粗糙的墙壁间回荡，他继续将你拖向落入默克之手的命运。你对这只鼠男的卑劣再了解不过，知道他说的都是真的，但你还没来得及思考自己的未来，帮派老大就停下来，把你扔到了坚硬的地上。
+		</p>
+		<p>
+			你抬头一看，发现自己又来到了默克牛奶储藏室的大洞穴里。在你面前，几十个金属奶桶堆放在货架上，而它们的前面的一扇破旧的木门旁则摆放着一些奇特的破旧家具。一堆堆腐烂的桌子和破烂的椅子看起来尘封已久，但也有几个板条箱和柜子看起来保存得相对较好。而这堆家具中最引人注目的是一张褪色的红色沙发，不仅因为它色彩斑斓，还因为默克又一次坐在这沙发中间。
+		</p>
+		<p>
+			[murk.speechNoEffects(嘿，老大！你可不常跑大老远到这儿呀！)]棕毛鼠男发音模糊地打趣道。默克伸手挠了挠胖乎乎的肚子，向你露出一个邪恶的笑容，突然打了一个响亮的臭嗝。他不再饥渴地盯着你，转而看向他的头领，问道，[murk.speechNoEffects(你的伴儿可真漂亮，老大！你打算肿么对[pc.herHim]？)]
+		</p>
+		<p>
+			[vengar.speech(我正打算用[pc.herHim]来还欠你的人情，)]文加咕哝着，[vengar.speech(那么，你有兴趣把[pc.herHim]变成你的另一只乳畜吗？)]
+		</p>
+		<p>
+			矮个子鼠男滑下沙发往前走，让他那带鞘的巨大阴茎和摇晃的巨大睾丸一览无遗。他粗鲁地朝地上啐了口唾沫，然后抬头看向文加，笑道，[murk.speechNoEffects(听起来真不赖！你要是想在周围溜达溜达，可以先用[pc.her]的嘴巴子试哈！咱先给[pc.herHim]把衣裳扒拉掉……咱学过这手艺，啥密封的衣裳都能扒拉下来，很快就能让[pc.herHim]光溜溜啦！)]
+		</p>
+	#ELSE
+		<p>
+			文加低沉的嗓音在曲折通道粗糙的墙壁上回荡，他继续将你拖向落入默克之手的命运。你怀疑他只是编假话吓唬你，但你没能思考多久，他就突然停了下来，把你扔在坚硬的地上。
+		</p>
+		<p>
+			你抬头仰望，发现自己身处一个天然大洞窟。粗糙的墙壁和满覆钟乳石的天花板都未经破坏，但地面却被人为压平了。一堆火把散乱地插在各处，其闪烁的淡橙色火光笼罩了整个洞穴。
+		</p>
+		<p>
+			你继续环顾四周，发现这里最引人注目的是靠墙的货架上堆放的几十个金属牛奶桶。在这些货架前，一扇破旧的木门旁摆放着一些奇特的破旧家具。一堆堆腐烂的桌子和破烂的椅子看起来尘封已久，但也有几个板条箱和柜子看起来保存得相对较好。而这堆家具中最引人注目的是一张褪色的红色沙发，不仅因为它色彩斑斓，还因为一个纯鼠男坐在这沙发中间。
+		</p>
+		<p>
+			你猜这个帮派成员一定就是“默克”，他狡猾的[murk.eyeColour]眼睛正邪恶地盯着你。他伸手挠了挠黑褐色的啤酒肚，发出邪恶的奸笑，然后滑下沙发，向你走来。现在他站得笔直，但看起来也只有[murk.heightValue]左右高。和你所见过的其他帮派成员一样，他的上臂也有一个白色的老鼠骷髅十字骨纹身。你的注意力很快被他的帮派纹身和矮小身材吸引过去，实际上，当他大摇大摆地向你走来时，你就发现他的黑色开裆短裤把生殖器完全暴露在外面。
+		</p>
+		<p>
+			尽管鼠男把鸡巴缩回了鞘里，导致你无法知道它勃起时的全长，但你能看到那黝黑鸡巴绝对粗得不行。腿间垂下的巨大而沉重的睾丸也与身高不成比例，它们随着鼠男短小的步伐左右摇摆，你情不自禁地瞥上一眼。
+		</p>
+		<p>
+			[murk.speechNoEffects(很馋我的大鸡巴，嗯？)]默克发现你在打量他的鸡巴，便用油腻的语气讥讽你。默克伸手挠了挠自己胖乎乎的肚子，朝你露出邪恶的笑容，打了个响亮的臭嗝。默克把目光从你身上移向文加，向他的老大打招呼，[murk.speechNoEffects(你可不常来这儿啊，老大！你的伴儿可真漂亮……你打算用[pc.herHim]做什么？)]
+		</p>
+		<p>
+			[vengar.speech(我正打算用[pc.herHim]来还欠你的人情，)]文加咕哝着，[vengar.speech(那么，你有兴趣把[pc.herHim]变成你的另一只乳畜吗？)]
+		</p>
+		<p>
+			肥胖的鼠男邪恶一笑，开心回应，[murk.speechNoEffects(听起来不错！你如果在周围转转，就能第一个享用[pc.her]的嘴！让我先把衣服脱掉……我受过训练，可以脱掉任何被封印的衣服，我马上就能让[pc.herHim]一丝不挂！)]
+		</p>
+	#ENDIF
+	<p>
+		文加又发出低沉的咕噜声，后退一步，等待默克把你脱得一丝不挂……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_DEFEAT_STRIPPED -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_STRIPPED"><![CDATA[
+	<p>
+		你筋疲力尽，根本无力反抗，只能眼睁睁看着默克把你一层层脱光。这个好色的鼠男兴致勃勃地开始了他的工作，把握机会摸索揉捏你胴体的每一寸肌肤。他一边摸索，一边嘟哝着污言秽语，不过文加偶尔会出言提醒打断他。你的东西现在全部归文加了，该把它们放进储物箱里，稍后再整理整理。
+	</p>
+	<p>
+		默克把你身上的所有装备、衣服和其他物品脱下来，放进的板条箱锁好，然后转向文加说：[murk.speechNoEffects(帮我看住[pc.herHim]，我要给[pc.her]弄一套‘新服装’，呵呵呵呵……)]
+	</p>
+	<p>
+		默克暗自发笑，一摇一晃着走向洞穴角落的一堆箱子，打开其中一个翻找起来。你被迫跪在文加身边等待，只见默克终于找到目标，合上盖子向你走来。他的手上赫然拿着一个沉重的淡粉色金属项圈。
+	</p>
+	<p>
+		胖乎乎的鼠男逼近你，伸手把这个沉重的项圈粗暴地锁在你的脖子上。就在锁上的那一刻，你便感觉到一股强大的附魔效果。你想尽办法都无法解封，你可能拥有的任何自身转化能力也无法让你从里面溜出来。
+	</p>
+	<p>
+		[murk.speechNoEffects(很好，这套非常适合你……)]默克自言自语说。然后抬头看向他的首领，一边向他道谢一边说：[murk.speechNoEffects(老大你一定是个仗义的人！上次我走运跟你酒赌赢了一把，如果你不介意的话，希望你能把[pc.her]的洞留给我的肥屌，噢，如果你也想要的话可以去操[pc.her]的脸！)]
+	</p>
+	<p>
+		[vengar.speech(听起来不错。)]帮派头目咕哝了一声，然后说道，[vengar.speech(不知道这婊子吸屌的技术能不能比得上我那些骚货守卫，不过我现在可以陪这家伙玩玩，直到这个婊子把我的蛋吸干……)]
+	</p>
+	<p>
+		[murk.speechNoEffects(把[pc.herHim]带到挤奶间去，)]默克说，[murk.speechNoEffects(用锁链把[pc.herHim]锁到[pc.her]的新家后，你想怎么操[pc.her]的脸都行！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_DEFEAT_STRIPPED_END -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_STRIPPED_END"><![CDATA[
+	<p>
+		文加最后一次抓住你，将你拖到附近墙上的旧木门前。默克走到你前面，扭动门把手，推开门，然后带着你们两人进入了门后的房间。
+	</p>
+	#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+		<p>
+			重回这个充当默克挤奶室的光线充足的小洞穴，映入眼帘的是一排平行的金属框架挤奶台。文加拉着你淌过贯穿洞穴冰冷浅溪，然后停下来等待默克的安排，这让你可以仔细观察你面前用螺栓固定在地面上的六个坚固的金属框架。
+		</p>
+		<p>
+			每一个单间都由一个齐腰高的软垫长椅组成，在胳膊和腿的位置加装着结实的皮带，下方是一台神秘的挤奶机。最吸引你注意的是，有四个乘客被束缚在各自的单间里不停地挤奶。
+		</p>
+	#ELSE
+		<p>
+			抬头看，你发现自己正走进另一个天然形成的洞穴，尽管这个洞穴比作为默克的居住区的大洞窟要小得多。一系列明亮的奥术灯串挂在一面粗糙的墙上，非常有效地照亮了石窟中引人注目的内容。
+		</p>
+		<p>
+			在拖着你穿过穿过洞穴地面的冰冷浅水流后，文加停下来等待默克的指示，这让你可以好好看看栓在你面前地面上的六个坚固的金属框架单间。每一个单间都由一个齐腰高的软垫长椅组成，在胳膊和腿的位置加装着结实的皮带，下方是一台神秘的挤奶机。最吸引你注意的是，有四个乘客被束缚在各自的单间里不停地挤奶。
+		</p>
+	#ENDIF
+	<p>
+		虽然她们裸露的后臀正对着你们，但这四位身材丰满的女人一定听到了你们的声音，因为她们突然都开始拼命叫喊，希望默克来操她们。在你的注视下，离你左侧最远的那个大声呻吟着，[npc2.speech(主人！~啊！~求求你，我的小穴感觉好空虚！)]
+	</p>
+	<p>
+		[npc3.speech(求你了，主人！~嗯姆！~我想要你的大鸡巴！)]在她旁边的那个女人也发出了淫叫。
+	</p>
+	<p>
+		[murk.speechNoEffects(再不安静下来你们一个都别想被我操！)]默克生气地朝那四位奶牛呵斥，饥渴的奶牛们听到后果然安分下来，周围只剩下挤奶机的噪音和奶牛们低沉、欲壑难填的呻吟。
+	</p>
+	<p>
+		当你仔细观察排列在你面前的人类奶牛时，你会看到它们每一个蓬松、滴奶的乳头都被包裹在挤奶机的负压玻璃吸奶器中，它们颤抖的阴部也插着类似的挤奶器，在吮吸的同时还在不停振动。
+	</p>
+	<p>
+		#IF(game.getDialogueFlags().hasFlag(FLAG_ratWarrensSeenMilkers))
+			[murk.speechNoEffects(你也没想到你会变成这里的新奶牛，对吧？)]
+		#ELSE
+			[murk.speechNoEffects(喜欢你的新家吗？)]
+		#ENDIF
+		默克用嘲弄的语气问你。没等你回答，他就示意文加把你推到一个空单间的长椅上，用皮带紧紧地约束你的[pc.arms]和[pc.legs]，让你的嘴和下面完全向外暴露得让人一览无遗。默克走到你身后，狠狠地扇你[pc.ass+]。
+	</p>
+	<p>
+		这位胖乎的鼠男无视你的尖叫，后退一步，对文加说，[murk.speechNoEffects(好了老大，[pc.sheIs]准备好把[pc.her]的嘴巴给你操了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_STRIPPED_END_SEX"><![CDATA[
+	<p>
+		你在多次反抗尝试后决定静下来节省体力。你忍受文加在你面前摆弄他的衣服，以露出他的腹股沟。他[vengar.cockSize]且[vengar.cockGirth]的[vengar.cock]在你面前迅速变硬，你忍不住瞟了几眼。
+	</p>
+	<p>
+		[vengar.speech(嘴张大点，婊子。)]鼠男发出命令，你顺从地照做，没有半点要违抗的意愿，并准备好将他那[vengar.cock+]吞进喉咙的更深处。
+	</p>
+	<p>
+		[vengar.speech(连调教都不需要，[pc.SheIs]就已经对老鼠的鸡巴如饥似渴啦！)]文加高兴地朝默克说道，一边挺胯把肉棒在你饥渴的嘴唇上滑动……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_STRIPPED_END_SEX_EAGER"><![CDATA[
+	<p>
+		发生在你眼前的一切，使得你无比兴奋，当文加站在你面前脱下衣服时，你发出难以抑制的呻吟，暗示着你内心的饥渴难耐。片刻后，当文加那[vengar.cockSize]，[vengar.cockGirth][vengar.cock]迅速充血变硬，顶在你痴态毕露的脸上时，你的眼睛已然无法移向他处。你急于品尝他肉棒的味道，于是张开了嘴，发出乞求的呜呜声。
+	</p>
+	<p>
+		[vengar.speech(连调教都不需要，[pc.SheIs]就已经对老鼠的鸡巴如饥似渴啦！)]文加高兴地朝默克说道，一边挺胯把肉棒往你嘴巴戳。[vengar.speech(继续，求我喂你吃大鸡巴啊，小骚货！)]，文加高高在上地嘲弄着你。
+	</p>
+	<p>
+		[pc.speech(求求你，让我吃你的肉棒吧！)]你急切地呜咽着，脖子努力向前够去，试图将帮派老大那[vengar.cock+]放入口中。
+	</p>
+	<p>
+		[vengar.speech(不错的婊子。)]文加说着向前一步，用他那抽动的肉棒顶开你那等候多时的双唇……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_STRIPPED_END_SEX_RESIST"><![CDATA[
+	<p>
+		你终于恢复了足够的体力来反抗，于是你开始尝试挣脱束缚，大喊道，[pc.speech(停下！放我走！)]
+	</p>
+	<p>
+		文加发出嘲弄的笑声，无视你的反抗，走到你面前不紧不慢地脱下自己的裤子。当他[vengar.cockSize]，[vengar.cockGirth]的[vengar.cock]在你面前垂下时，你下意识地往后靠了点。
+	</p>
+	<p>
+		[vengar.speech(挣扎是没有用的，荡妇！你马上就会被我的大鸡巴噎死！而且你什么也做不了！)]鼠男一边讥笑着一边伸手抚摸自己的鸡巴，好使其完全变硬。当你继续扭动身体试图反抗束缚时，文加一顶腰，用他跳动的龟头用力摩擦你的嘴唇并嘲笑道：[vengar.speech(如果开口说 ‘请’的话，我也许会考虑让你一个人呆着！)]
+	</p>
+	<p>
+		你别无选择，只能冒险按文加说的去做，你张开嘴想说请，但就在你开口的刹那，鼠男猛地向前一挺，将他[vengar.cock+]塞进你嘴里。跳动的阴茎深深地插入你的喉咙，他冷笑道，[vengar.speech(这才是我的笨蛋荡妇！你很快就会爱上老鼠鸡巴了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- BODYGUARDS_COMBAT_DEFEAT_AFTER_MILKING_ROOM_SEX -->
+	
+	<htmlContent tag="BODYGUARDS_COMBAT_DEFEAT_AFTER_MILKING_ROOM_SEX"><![CDATA[
+	<p>
+		文加爽够了，后退示意你们的口交结束。这个帮派老大离开之前，又嘲笑了你一次，[vengar.speech(这就是你挑战我的报应！默克很快会把你变成只会乞求大鸡巴的听话婊子的！)]
+	</p>
+	<p>
+		你拼命喘气，想平复呼吸，恰好听见文加走到默克身边发问，[vengar.speech(你打算把[pc.herHim]变得和你那些奶牛一样吗？)]
+	</p>
+	<p>
+		[murk.speech(当然！)]默克咯咯笑着，[murk.speech(我会让[pc.herHim]在三四天之内崩溃，求着要我的鸡巴的！哈哈哈哈哈！)]
+	</p>
+	<p>
+		[vengar.speech(这样的话，我就继续干我的荡妇保镖们好了。我可不喜欢你给那些奶牛弄的丑屄，)]文加哼了声，迅速离开挤奶室，独留你和默克……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGAR_COMBAT_VICTORY -->
+	
+	<htmlContent tag="VENGAR_COMBAT_VICTORY"><![CDATA[
+	<p>
+		文加踉跄着向后退去，发出一声可怜的呻吟，然后跪在地上，虚弱地咆哮着：[vengar.speechNoEffects(尼、尼怎么会……打败……我……)]
+	</p>
+	<p>
+		老鼠们眼睁睁地看着自己的头目倒在地上，大厅陷入沉寂。帮派成员们开始争论谁才是当之无愧的老大，声音从嗡嗡作响到震耳欲聋。不等你让他们闭嘴，一个酒瓶就掠过头顶砸碎在远处的墙壁上，一场骚乱就要开始了！
+	</p>
+	<p>
+		绝大多数帮派成员似乎更热衷于互相厮杀，而不是选择直接挑战刚刚毫不费力地打倒了他们老大的人，但当你转过身来仰望文加的宝座时，你看到他的两个鼠女保镖不仅恢复了站立的体力，还正目不转睛地盯着你。影在口袋里放好什么东西，伸手拔出了她那闪着绿光的爪刀，而默则伸手在她身后施了个法术，影猛然直扑你而来！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGAR_COMBAT_DEFEAT -->
+	
+	<htmlContent tag="VENGAR_COMBAT_DEFEAT"><![CDATA[
+	#IF(pc.hasCompanions())
+		<p>
+			看到你体力不支，无法再继续战斗下去，文加向前冲去，最后几拳击倒了你和[com.name]。他发出胜利的笑声，嘲讽道，[vengar.speechNoEffects(这也太容易了！没人能够挑战我的力量！)]
+		</p>
+		<p>
+			文加转身对他的鼠女护卫说话，大声命令道，[vengar.speechNoEffects(你们俩最好在我回来的时候给我道歉！我可不需要这么容易被打败的护卫！)]
+		</p>
+		<p>
+			这位帮派头目得意洋洋的样子和从[vengar.eyes+]里露出淫邪的目光，都在暗示你们战败的下场……
+		</p>
+	#ELSE
+		<p>
+			由于你已经筋疲力尽，再也无法继续战斗，文加向前冲去，最后一击将你击倒在地。他发出胜利的笑声，嘲讽道，[shadow.speechNoEffects(这也太容易了！没人能够挑战我的力量！)]
+		</p>
+		<p>
+			文加转身对他的鼠女护卫说话，大声命令道，[vengar.speechNoEffects(你们俩最好在我回来的时候给我道歉！我可不需要这么容易被打败的护卫！)]
+		</p>
+		<p>
+			很明显，这个得胜的黑帮头目对你有兴趣，他[vengar.eye+]朝你投来胜者的淫威……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_BEDROOM -->
+	
+	<htmlContent tag="VENGARS_BEDROOM"><![CDATA[
+	<p>
+		你决定接受文加的提议，告诉他你想在他的卧室里再度过一些私密时光。听到你这么说，文加脸上露出了贪婪的笑容，[vengar.speechNoEffects(这么快就想念我我肥鸡巴的味道了是吗？行，你回来我就给你！)]
+	</p>
+	<p>
+		文加走到高台另一边的门口，示意你跟着他。
+		#IF(pc.hasCompanions())
+			你让[npc.name]留在大厅等你回来，
+		#ELSE
+			你听从他的指示，
+		#ENDIF
+		跟着他走到外面的小走廊。文加打开左边最近的门，那是一间宽敞、家具齐全的卧室。他拉着你走到房间里那张四柱的大床前，用身子压在你身上，把你推倒在床，在你耳边低声吼叫，
+		#IF(pc.hasVagina() && !pc.isVisiblyPregnant())
+		[vengar.speechNoEffects(我要给你的小穴操肿，一直中出你到怀孕为止！)]
+		#ELSE
+		[vengar.speechNoEffects(我要给你的小穴操肿！)]
+		#ENDIF
+	</p>
+	<p>
+		他显然非常渴望能够在性爱中支配你，但你知道只要你想，你就能反过来支配文加……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_BEDROOM_SEX_SUBMISSIVE"><![CDATA[
+	<p>
+		你感到很兴奋，也非常乐意服从文加，便用鼓励的[pc.moan]声来回应他的摸索。他抚摸你[pc.breasts+]，咆哮道：
+		#IF(pc.hasVagina() && !pc.isVisiblyPregnant())
+		[vengar.speechNoEffects(看我用种子塞满你的逼！希望你准备好做个母亲！)]
+		#ELSE
+		[vengar.speechNoEffects(看我用种子塞满你！希望你准备好被大操一顿！)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_BEDROOM_SEX_DOMINANT"><![CDATA[
+	<p>
+		虽然你觉得很兴奋，也非常乐意和文加做爱，但你并不打算让他主导，便伸手抓住鼠男的臀部，把他摁倒在床上，靠近说道：[pc.speech(在外面，你可以是坐在宝座上的头目，但在这里，你要完全按我说的做，明白吗？)]
+	</p>
+	<p>
+		文加现在超渴望与你做，便点点头回答说：[vengar.speechNoEffects(快过来和我做爱吧！)]
+	</p>
+	<p>
+		你微笑着看着这个鼠男，准备让他看看和你上床会有什么后果……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- VENGARS_BEDROOM_AFTER_SEX -->
+	
+	<htmlContent tag="VENGARS_BEDROOM_AFTER_SEX"><![CDATA[
+	<p>
+		你满足地叹息着，和文加倒在他的床上，肩并肩躺着，喘着气。作为先恢复过来的人，你转身靠近你的伴侣，俯身在他上方。热情地吻了他一下，你拉开，说道，[pc.speech(我们应该找机会再做。)]
+	</p>
+	<p>
+		文加脸上充满了和你再一次进行这场表演的憧憬。他叹了口气，对你说，[vengar.speechNoEffects(你以后什么时候想回来了，我都欢迎。)]
+	</p>
+	<p>
+		你们又相拥着躺了几分钟，终于决定是时候离开了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VENGARS_BEDROOM_AFTER_SEX_LEAVE"><![CDATA[
+	<p>
+		整理好自己的东西并清理干净后，你和文加走出他的大厅，在你继续穿过迷宫般的鼠窟之前，你们道别。当你离开大厅明亮的灯光和喧嚣声时，心中不禁思索接下来该去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- LEXA_VISIT -->
+	
+	<htmlContent tag="LEXA_VISIT"><![CDATA[
+	<p>
+		你喜欢文加的建议，告诉他你愿意接受他的提议一同去拜访[axel.name]。鼠男的脸上迅速泛起淫荡的笑容，从讲台上走下来，他示意你跟上他的步伐，朝出口方向走去。在你与他并肩走时，文加贪婪地咆哮道：[vengar.speechNoEffects(我等不及要让那只淫荡的鳄鱼咽下我的粗大阳具了！哈！)]
+	</p>
+	<p>
+		你们穿过鼠窟，最终走出到屈服区，然后前往赌场。路上，文加不停地发表淫秽的评论，谈论他打算如何对待[axel.name]，当你们步入她的房间时，你觉得自己听到了每一个用来形容鸡巴的下流词汇。
+	</p>
+	<p>
+		当你和文加走进赌场时，[axel.name]看到你们，快步走过来迎接你们，[axel.speech(哦，真是惊喜，你们两个一起来这里访问！今天有什么我能为你们提供的吗？)]
+	</p>
+	<p>
+		抬脚迈步前行，文加霸气地抓起一把[lexa.namePos]的屁股，然后贪婪地咆哮道：[vengar.speechNoEffects(是啊，你能给我们这个漂亮嘞屁股！你渴望尝一尝我肥大嘞老鼠鸡巴，是不是，你这鳄鱼荡妇？)]
+	</p>
+	<p>
+		在被如此霸道地处理后，[axel.namePos]无法掩饰自己被激起的情绪，她的脸颊泛起红晕，带着一声兴奋的低吟，她回答道：[axel.speech(嗯，如果你喜欢这样的事情，我们可以到我的办公室稍作停留……)]
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			告诉[npc.name]在外面等你们，你和文加跟随[lexa.name]走进她的办公室。
+		#ELSE
+			在[npc.name]引领下，你和文加跟随[lexa.name]进入她的办公室。
+		#ENDIF
+		#IF(!axel.getSexualOrientation().isAttractedToFeminine() && pc.isFeminine())
+			当那只鼠男关上门后，[axel.name]转过身来面对你，咕哝道：[axel.speech(呃……[pc.Name]……我很喜欢你，但我只对……嗯……有男子气概的人感兴趣。不过你可以看着，如果你愿意的话……)]
+			</p>
+			<p>
+				当文加上前开始摸索[axel.race]时，你开始犹豫是继续观看还是在他们开始做爱之前离开……
+			</p>
+		#ELSE
+			当鼠男关上你身后的门时，[axel.name]向前走了几步，在你身上磨蹭着，呻吟着，[axel.speech(来吧，你们两个！被我狠狠地操！)]
+			</p>
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LEXA_VISIT_THREESOME"><![CDATA[
+	<p>
+		抱着[axel.name]准备进行性交时，文加站在你旁边开始触摸她，[axel.name]发出了一声兴奋的呻吟……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LEXA_VISIT_WATCH"><![CDATA[
+	<p>
+		#IF(!axel.getSexualOrientation().isAttractedToFeminine() && pc.isFeminine())
+			尽管[axel.name]对与你做爱不感兴趣，但你决定仍然可以从这次访问中得到些许好处，因为你可以看着她被文加操。你走到房间的一侧，静观着鼠男准备主导她的情景……
+		#ELSE
+			你最终决定不与[axel.name]做爱，而是希望看她被文加操。你走到房间一侧，静静地观望着鼠男准备支配她的情景……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LEXA_VISIT_LEAVE"><![CDATA[
+	<p>
+		你决定毕竟不想和[axel.name]做爱，于是留下文加去操她，自己则走出了她的办公室。
+		#IF(pc.hasCompanions())
+			再次与[npc.name]会合后，你们俩继续离开赌场，一旦回到屈城区的隧道中，你开始思考接下来该去哪里……
+		#ELSE
+			离开赌场后，很快你又站在了屈城区的隧道中，不知道接下来该往哪里走了……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- LEXA_VISIT_AFTER_SEX -->
+	
+	<htmlContent tag="LEXA_VISIT_AFTER_SEX"><![CDATA[
+	<p>
+		[axel.name]倒在一旁的椅子上，喘息着平复呼吸，一边叹息道：[axel.speech(~喔噢！~真的好爽……)]
+	</p>
+	<p>
+		想要在离开前对[axel.race]彰显他的统治地位，文加走到莱克萨面前，将他正在变软的阴茎推到她的面前。他嘲笑着看着她，命令道：[vengar.speechNoEffects(给我亲一下我嘞鸡巴，告诉我恁是我嘞性感小鳄鱼荡妇。)]
+	</p>
+	<p>
+		伸长脖子向前探去，[lexa.name]照着[lexa.sheIs]的指示做了，她将嘴唇裹住文加的阴茎头部，轻轻吮吸了最后一口，然后吻了吻尖端，说道，[axel.speech(我是你的性感小鳄鱼荡妇！)]
+	</p>
+	<p>
+		抱着对她顺从表现的满意，文加稍作整理，穿好衣服，然后转向你说道，
+		#IF(sex.getDominantParticipants(false).containsKey(pc))
+			[vengar.speechNoEffects(一起玩弄这个淫荡的鳄鱼真是太有趣了！以后随时想再来我的洞穴里玩，就来找我吧！)]
+		#ELSE
+			[vengar.speechNoEffects(操这个淫荡的鳄鱼真是太有趣了！想再来我的洞穴里看我再做一次就随时来找我吧！)]
+		#ENDIF
+	</p>
+	<p>
+		随着此话落下，那只鼠男离开了[axel.namePos]的办公室，让你们俩有时间整理一下。片刻之后，你们俩都准备好了，[axel.name]在你的脸颊上落下一吻，然后带你走出赌场大厅的入口处。她咬着嘴唇看着你，说道，[axel.speech(如果你还想要什么，尽管开口！)]
+	</p>
+	<p>
+		#IF(pc.hasCompanions())
+			跳过去迎接赌场的新访客，[axel.name]让你再次与[npc.name]碰面，找到你的[npc.companion]后，你开始思考接下来要做什么……
+		#ELSE
+			跳过去迎接赌场的新访客后，[axel.name]让你开始思考接下来要做什么……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- POST_CAPTIVITY_SWORD_RAID -->
+	
+	<htmlContent tag="POST_CAPTIVITY_SWORD_RAID"><![CDATA[
+	<p>
+		你与[axel.name]、影和默一起靠边[pc.step]，让这群SWORD执法者通过，与亚当斯警员一起穿过隧道，前往最近的执法者岗哨。就在你们出发时，鼠窟的方向突然传来一串巨大的爆炸声，影冷冷地说：[shadow.speech(听起来文加就要知道操我和默的下场是什么了。)]
+	</p>
+	<p>
+		在隧道里又走了一段路后，你很快就来到了最近的执法者岗哨，在那里你被要求做一份笔录，并填写一份似乎永远也填不完的文件。幸好克莱尔在那里帮了你一把，但即使在她的帮助下，你也要花上近三个小时才能被宣布自由离开。影和默很久之前就领完奖励离开了，你发现自己成了孤家寡人，克莱尔走到你身边，叹息道：[claire.speech(我希望你已经吸取了教训，知道有些人是多么危险！你在外面要注意安全，好吗？)]
+	</p>
+	<p>
+		你告诉克莱尔自己会尽力而为，然后准备出发，向赌场的[axel.name]报告……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tail>
+	<race>charisma_spider</race>
+	<transformationName><![CDATA[蜘蛛]]></transformationName>
+	<coveringType>charisma_spider_chitinSmooth</coveringType>
+	<spinneret>true</spinneret>
+	<defaultGirth>6</defaultGirth>
+	<defaultLengthAsPercentageOfHeight>0.2</defaultLengthAsPercentageOfHeight>
+	<tags>
+		<tag>TAIL_TYPE_GENERIC</tag>
+		<tag>TAIL_TAPERING_BULBOUS</tag>
+	</tags>
+	<determiner><![CDATA[]]></determiner>
+	<determinerPlural><![CDATA[]]></determinerPlural> 
+	<name><![CDATA[腹部]]></name>
+	<namePlural><![CDATA[腹部]]></namePlural> 
+	<descriptorsMasculine>
+		<descriptor><![CDATA[蜘蛛般]]></descriptor>
+		<descriptor><![CDATA[光滑]]></descriptor>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+		<descriptor><![CDATA[蜘蛛般]]></descriptor>
+		<descriptor><![CDATA[光滑]]></descriptor>
+	</descriptorsFeminine>
+	<tipName><![CDATA[尖端]]></tipName>
+	<tipNamePlural><![CDATA[尖端]]></tipNamePlural>
+	<tipDescriptorsMasculine>
+		<descriptor><![CDATA[锐利]]></descriptor>
+	</tipDescriptorsMasculine>
+	<tipDescriptorsFeminine>
+		<descriptor><![CDATA[锐利]]></descriptor>
+	</tipDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		一个几丁质外表的囊状蜘蛛腹部，从尾椎处延伸而出，迅速生长至大概有[npc.tailLength]长，宽度大约是长度的一半。新生腹部尖端的刺痛感让[npc.She]意识到转化尚未完成，[npc.she]感受到内部形成了一条深深的通道，瞬间明白这条通道就是新生的丝囊。丝囊立刻就开始生产蛛丝了。
+		<br/>[npc.Name]现在拥有一个[style.boldSpider(蜘蛛般的腹部)]，[npc.materialDescriptor][npc.tailFullDescription(true)]。
+]]></transformationDescription>
+	<bodyDescription><![CDATA[
+		[npc.sheHasFull]的尾椎处延伸出一个#IF(npc.isTailFeral())[style.colourFeral(兽态的)]#ENDIF[npc.tailColour(true)]蜘蛛腹部，附带有丝囊。
+]]></bodyDescription>
+</tail>

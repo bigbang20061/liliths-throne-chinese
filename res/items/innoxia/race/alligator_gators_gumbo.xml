@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>100</value> 
+		<determiner><![CDATA[一碗]]></determiner>
+		<name><![CDATA[短吻鳄的秋葵浓汤]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[短吻鳄的秋葵浓汤]]></namePlural>
+		<description><![CDATA[一个新颖的、个人尺寸的铸铁碗，带有可重新封闭的盖子。里面装有一种美味的浓汤，包括肉、秋葵和各种神秘的蔬菜。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/alligator/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">alligator_gators_gumbo.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_ALLIGATOR_MORPH</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[鳄鱼]]></potionDescriptor>
+		<associatedRace>ALLIGATOR_MORPH</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]10%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(3)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/10)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感觉强壮了很多……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 3)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>SUBMISSION_TUNNEL_SPAWN</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]取下了短吻鳄的秋葵浓汤的碗上的盖子，开始享用其中的丰盛餐点。美味而略带辛辣的海鲜味瞬间充满了[npc.her]的口腔，但[npc.she]没有太多时间来品味这个味道，因为[npc.she]无法停下并贪婪地迎接下一口，直到[npc.sheHas]将所有的浓烈混合物都吞下。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]取下了短吻鳄的秋葵浓汤的碗上的盖子，并将其中的丰富餐点提供给[npc2.name]。开始享用时，美味而略带辛辣的海鲜味瞬间充满了[npc2.namePos]口腔，但[npc2.she]没有太多时间来品味这个味道，因为[npc2.she]无法停下贪婪地迎接下一口，直到[npc2.sheHas]将所有的浓烈混合物都吞下。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+    <scene id="voyeurism">
+        <author><![CDATA[AceXp]]></author>
+        <content folderPath="txt/acexp/dominion/lilaya_lab">INTRO</content>
+        <secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+        <continuesDialogue>false</continuesDialogue>
+        <travelDisabled>true</travelDisabled>
+        <responses>
+            <response>
+                <availabilityConditional><![CDATA[
+					[#flags.hasFlag(FLAG_acexp_lilaya_daily_voyeurism)]
+                ]]></availabilityConditional>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[偷窥]]></responseTitle>
+                <responseTooltip><![CDATA[
+					你今天已经偷窥过莉莱雅和萝丝，再来第二次恐怕你的好运就到头了。如果还想看她们做爱，最好还是明天再来。
+                ]]></responseTooltip>
+                <nextDialogue><![CDATA[null]]></nextDialogue>
+                <effects/>
+            </response>
+            <response>
+                <availabilityConditional><![CDATA[
+					[#!flags.hasFlag(FLAG_acexp_lilaya_daily_voyeurism)]
+                ]]></availabilityConditional>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[偷窥]]></responseTitle>
+                <responseTooltip><![CDATA[
+					偷窥你的[lilaya.relation(pc)]和她的女仆？这个主意让你性欲大发，不管天崩地裂，你必须得看上一看……
+                ]]></responseTooltip>
+                <colour><![CDATA[TEXT]]></colour>
+                <nextDialogue/>
+                <secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+                <effects><![CDATA[
+					[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/places/dominion/lilayasHome/lab', 'LAB_ENTRY_NAUGHTY_ROSE'))]
+					[#game.appendToTextEndStringBuilder(game.parseFromFile('txt/acexp/dominion/lilaya_lab', 'SEX_START_ENDING'))]
+					[#flags.setFlag(FLAG_acexp_lilaya_daily_voyeurism, true)]
+				]]></effects>
+                <requiredFetishes>
+                    <fetish><![CDATA[FETISH_VOYEURIST]]></fetish>
+                </requiredFetishes>
+                <corruptionLevel><![CDATA[THREE_DIRTY]]></corruptionLevel>
+                <requiredPerks/>
+                <requiredFemininity/>
+                <requiredSubspecies/>
+                <tradingVariables/>
+                <combatVariables/>
+                <sexVariablesWithManager enabled="true">
+                    <id><![CDATA[acexp_lilaya_lab]]></id>
+                    <startingPosition><![CDATA[SITTING]]></startingPosition>
+                    <dominants>
+                        <character>
+                            <id>rose</id>
+                            <slot><![CDATA[SITTING_SITTING]]></slot>
+                        </character>
+                    </dominants>
+                    <submissives>
+                        <character>
+                            <id>lilaya</id>
+                            <slot><![CDATA[SITTING_PERFORMING_ORAL]]></slot>
+                        </character>
+                    </submissives>
+                    <dominantSpectators/>
+                    <submissiveSpectators>
+                        <character>
+                            <id>pc</id>
+                        </character>
+                    </submissiveSpectators>
+                    <postSexDialogue><![CDATA[acexp_dominion_lilaya_lab_after_sex]]></postSexDialogue>
+                    <sexStartContent folderPath="txt/acexp/dominion/lilaya_lab">SEX_START</sexStartContent>
+					<ongoingActionsAtStart>
+						<action>
+							<id><![CDATA[TongueVagina_CUNNILINGUS_START]]></id>
+							<performer><![CDATA[lilaya]]></performer>
+							<target><![CDATA[rose]]></target>
+							<showDescription><![CDATA[false]]></showDescription>
+							<showEffects><![CDATA[true]]></showEffects>
+						</action>
+					</ongoingActionsAtStart>
+                </sexVariablesWithManager>
+            </response>
+        </responses>
+    </scene>
+
+    <scene id="after_sex">
+        <author><![CDATA[AceXp]]></author>
+        <title><![CDATA[结束]]></title>
+        <tooltip><![CDATA[真有趣，是时候速速离开了……]]></tooltip>
+        <preParsingEffects><![CDATA[
+			[#pc.setNearestLocation(PLACE_TYPE_LILAYA_HOME_CORRIDOR)]
+		]]></preParsingEffects>
+        <content folderPath="txt/acexp/dominion/lilaya_lab">AFTER_SEX</content>
+        <secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+        <continuesDialogue>false</continuesDialogue>
+        <travelDisabled>true</travelDisabled>
+        <responses>
+            <response>
+                <availabilityConditional><![CDATA[true]]></availabilityConditional>
+                <responseTabIndex><![CDATA[0]]></responseTabIndex>
+                <index><![CDATA[1]]></index>
+                <responseTitle><![CDATA[继续]]></responseTitle>
+                <responseTooltip><![CDATA[继续下去。]]></responseTooltip>
+                <nextDialogue stripContent="false"><![CDATA[default]]></nextDialogue>
+                <secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
+                <effects/>
+            </response>
+        </responses>
+    </scene>
+
+</dialogueNodes>

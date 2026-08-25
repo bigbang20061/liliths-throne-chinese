@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<combatMove>
+	
+	<category>SPECIAL</category>
+	
+	<type>ATTACK</type>
+	
+	<equipWeighting>10</equipWeighting>
+	
+	<name><![CDATA[蛇尾缠绕]]></name>
+	
+	<description><![CDATA[
+		用[npc.her]强壮的蛇形尾巴缠绕目标。
+	]]></description>
+	
+	<damageType><![CDATA[
+		PHYSICAL
+	]]></damageType>
+	
+	<baseDamage><![CDATA[
+		0
+	]]></baseDamage>
+	
+	<blockAmount><![CDATA[
+		0
+	]]></blockAmount>
+	
+	<cooldown><![CDATA[
+		2
+	]]></cooldown>
+	
+	<APcost><![CDATA[
+		2
+	]]></APcost>
+	
+	<canTargetEnemies>true</canTargetEnemies>
+	<canTargetAllies>false</canTargetAllies>
+	<canTargetSelf>false</canTargetSelf>
+	
+	<imageName>tail_constrict.svg</imageName>
+	
+	<colourPrimary>BASE_GREEN_DARK</colourPrimary> 
+	<colourSecondary/> 
+	<colourTertiary/>
+	
+	<statusEffects/>
+	
+	
+	<!-- Effect logic -->
+	
+	<availabilityCondition><![CDATA[
+		[#npc.getLegConfiguration()==LEG_CONFIGURATION_TAIL_LONG]
+	]]>
+	</availabilityCondition>
+	
+	<availabilityDescription><![CDATA[
+		仅适用于有'[#LEG_CONFIGURATION_TAIL_LONG.getName()]'腿部的角色。
+	]]></availabilityDescription>
+	
+	<!-- Once started to constrict a target, the AI will become more and more interested in finishing the process off. -->
+	<weighting><![CDATA[
+		#IF(npc2.hasStatusEffect(SE_TAIL_RESTRAIN_3))
+			10.0
+		#ELSEIF(npc2.hasStatusEffect(SE_TAIL_RESTRAIN_2))
+			5.0
+		#ELSEIF(npc2.hasStatusEffect(SE_TAIL_RESTRAIN_1))
+			2.5
+		#ELSE
+			1.0
+		#ENDIF
+	]]></weighting>
+	
+	<criticalCondition><![CDATA[
+		false
+	]]></criticalCondition>
+	
+	<criticalDescription><![CDATA[
+		无法暴击。
+	]]></criticalDescription>
+	
+	<movePredictionDescriptionWithTarget><![CDATA[
+		用[npc.her]强壮的蛇形尾巴缠绕[npc2.name]。
+	]]></movePredictionDescriptionWithTarget>
+	
+	<movePredictionDescriptionNoTarget><![CDATA[
+		用[npc.her]强壮的蛇形尾巴缠绕目标。
+	]]></movePredictionDescriptionNoTarget>
+	
+	<performMove>
+		<execute><![CDATA[
+			[npc.Name]向前猛冲并用蛇形尾巴缠住[npc2.name]！
+			#IF(npc2.hasStatusEffect(SE_TAIL_RESTRAIN_3))
+				[##npc2.setHealth(0)]
+				<br/>[style.italicsTerrible([npc2.NameIsFull]被[npc.namePos]的尾巴完全束缚，[npc2.her]被完全打败了！)]
+			#ELSEIF(npc2.hasStatusEffect(SE_TAIL_RESTRAIN_2))
+				[##npc2.removeStatusEffectCombat(SE_TAIL_RESTRAIN_2)]
+				[##npc2.addStatusEffect(SE_TAIL_RESTRAIN_3, 10)]
+				<br/>[style.italicsTerrible([npc2.NameIsFull]几乎完全被[npc.namePos]的尾巴束缚，[npc2.her]马上要被打败了！)]
+				<br/>[style.italicsTerrible(如果[npc2.name]再继续被尾巴束缚，[npc2.she]将立刻被击败！)]
+			#ELSEIF(npc2.hasStatusEffect(SE_TAIL_RESTRAIN_1))
+				[##npc2.removeStatusEffectCombat(SE_TAIL_RESTRAIN_1)]
+				[##npc2.addStatusEffect(SE_TAIL_RESTRAIN_2, 10)]
+				<br/>[style.italicsBad([npc2.NameIsFull]被[npc.namePos]的尾巴束缚牢固，[npc2.her]正在奋力反抗！)]
+				<br/>[style.italicsTerrible(如果[npc2.name]再继续被尾巴束缚，束缚会更加严重！)]
+			#ELSE
+				[##npc2.addStatusEffect(SE_TAIL_RESTRAIN_1, 10)]
+				<br/>[style.italicsBad([npc2.NameIsFull]被被[npc.namePos]的尾巴缠住，[npc2.her]的反抗能力受限！)]
+				<br/>[style.italicsTerrible(如果[npc2.name]再继续被尾巴束缚，束缚会更加严重！)]
+			#ENDIF
+		]]></execute>
+		<critDescription><![CDATA[
+			N/A
+		]]></critDescription>
+		<critEffectDescription><![CDATA[
+			N/A
+		]]></critEffectDescription>
+	</performMove>
+	
+</combatMove>

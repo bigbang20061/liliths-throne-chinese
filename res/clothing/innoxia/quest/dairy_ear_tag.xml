@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一块]]></determiner>
+		<name appendColourName="false"><![CDATA[艾弗利克斯乳业耳标]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[艾弗利克斯乳业耳标]]></namePlural>
+		<description><![CDATA[一种带有金属装饰的塑料标签，通常由家畜穿在耳朵上以进行身份识别。这种特殊的标签可以让持有者获得某种访问权限。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>PIERCING_EAR</slot>
+		<rarity>QUEST</rarity>
+		<clothingSet>CATTLE</clothingSet>
+		<imageName>dairy_ear_tag.svg</imageName>
+		<imageEquippedName/>
+		<effects>
+            <effect limit="20" mod1="TF_BREASTS" mod2="TF_MOD_SIZE" potency="BOOST" timer="0" type="CLOTHING"/>
+            <effect limit="80" mod1="TF_CORE" mod2="TF_MOD_FEMININITY" potency="BOOST" timer="0" type="CLOTHING"/>
+            <effect limit="5000" mod1="TF_BREASTS" mod2="TF_MOD_WETNESS" potency="BOOST" timer="0" type="CLOTHING"/>
+            <effect limit="50000" mod1="TF_BREASTS" mod2="TF_MOD_REGENERATION" potency="BOOST" timer="0" type="CLOTHING"/>
+            <effect limit="0" mod1="TF_BREASTS" mod2="TF_MOD_ORIFICE_PUFFY" potency="MINOR_BOOST" timer="0" type="CLOTHING"/>
+		</effects>
+		
+		<stickers>
+			<category id="level" priority="1">
+				<categoryName><![CDATA[Access Level]]></categoryName>
+				<sticker id="trainee" priority="0" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="BASE_YELLOW_LIGHT">
+					<stickerName><![CDATA[学徒]]></stickerName>
+					<namePrefix/>
+					<namePostfix priority="1"><![CDATA[(学徒)]]></namePostfix>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[艾弗利克斯乳业“培训”棚]]></descriptionModification>
+					<imageName zLayer="1" slot="PIERCING_EAR">dairy_ear_tag_level1.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[Access Level cannot be manually changed!]]></unavailabilityText> 
+					<availabilityText/>
+				</sticker>
+				<sticker id="heifer" priority="1" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="BASE_YELLOW">
+					<stickerName><![CDATA[小母牛]]></stickerName>
+					<namePrefix/>
+					<namePostfix priority="1"><![CDATA[(小母牛)]]></namePostfix>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[艾弗利克斯乳业“饲育”棚]]></descriptionModification>
+					<imageName zLayer="1" slot="PIERCING_EAR">dairy_ear_tag_level2.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[Access Level cannot be manually changed!]]></unavailabilityText> 
+					<availabilityText/>
+				</sticker>
+				<sticker id="cow" priority="2" defaultSticker="false" zLayer="1" colourDisabled="" colourSelected="BASE_GOLD">
+					<stickerName><![CDATA[母牛]]></stickerName>
+					<namePrefix/>
+					<namePostfix priority="1"><![CDATA[(母牛)]]></namePostfix>
+					<descriptionModification fullReplacement="false" priority="1"><![CDATA[艾弗利克斯乳业“挤奶”棚]]></descriptionModification>
+					<imageName zLayer="1" slot="PIERCING_EAR">dairy_ear_tag_level3.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText showDisabledButton="true"><![CDATA[Access Level cannot be manually changed!]]></unavailabilityText> 
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/> 
+		<secondaryColours recolouringAllowed="false">
+			<colour>CLOTHING_BRONZE</colour>
+		</secondaryColours>
+		<secondaryColoursDye>
+			<colour>CLOTHING_SILVER</colour>
+			<colour>CLOTHING_GOLD</colour>
+		</secondaryColoursDye>
+		<tertiaryColours/> 
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>UNIQUE_NO_NPC_EQUIP</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]把标签戴在[npc.her]的[npc.ear(true)]上。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]把标签戴在[npc2.namePos]的[npc2.ear(true)]上。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地把标签戴在[npc2.namePos]的[npc2.ear(true)]上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]解开[npc.her]的标签并从[npc.her]的[npc.ear(true)]穿孔中取出。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]解开[npc2.namePos]的标签并从[npc2.her]的[npc2.ear(true)]的穿孔中取出。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]解开[npc2.namePos]的标签并粗暴地从[npc2.her]的[npc2.ear(true)]穿孔中扯下来。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		
+		<authorTag><![CDATA[在枪托的底部，有几个微微凸起的字：“执法者官方分配，由DSG锻造厂生产。”]]></authorTag>
+	
+		<value>5700</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>true</twoHanded>
+		
+		<determiner><![CDATA[一个]]></determiner>
+		
+		<name><![CDATA[冷冻枪]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[冷冻枪]]></namePlural> 
+		
+		<description><![CDATA[冷冻枪在执法者的武器库中拥有最远的射程，它使用[style.colorIce(冷冻)][style.colorLegendary(透明魔石)]作为原本普通的四泵管固体激光器的活性介质。最终将一束稍许恼人的激光束转化成了威力强大、轨迹呈现完美平直的冰冻射线。]]></description> 
+		
+		<attackDescriptor><![CDATA[射击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[你用冷冻枪射击[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>EPIC</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]掏出冷冻枪，将开关调到发射档。内部的奥术能量源启动，发出了短暂且令人不安的嗡嗡声。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]将开关转回了安全档，放下了枪。]]></unequipText>
+		
+		<imageName>cryoprism_safe.svg</imageName> 
+		
+		<imageEquippedName>cryoprism.svg</imageEquippedName>
+		
+		<damage>50</damage> 
+		
+		<arcaneCost>5</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>ICE</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<extraEffects>
+			<effect><![CDATA[暴击附带[style.boldIce(“冻人寒雾”)]效果。]]></effect>
+		</extraEffects>
+		
+		<onHitEffect/>
+		
+		<onCriticalHitEffect><![CDATA[
+		#IF (!npc2.hasStatusEffect(SE_FREEZING_FOG))
+			[##npc2.addStatusEffect(SE_FREEZING_FOG, 4)]一团[style.boldIce(冻人寒雾)]出现在[npc2.name]身旁！
+		#ELSEIF (npc2.hasStatusEffect(SE_FREEZING_FOG) && !npc2.hasStatusEffect(SE_FROZEN))
+			[##npc2.addStatusEffect(SE_FROZEN, 2)]
+			[##npc2.removeStatusEffect(SE_FREEZING_FOG)]
+			[npc2.name]身旁的[style.colourIce(雾气)]迅速冻结成[style.boldIce(一层薄冰)]！
+		#ENDIF
+		]]></onCriticalHitEffect>
+		
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours>
+			<colour>CLOTHING_GREY_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours values="JUST_BLACK"/> 
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_HEAVY</tag>
+			<tag>WEAPON_FIREARM</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.name将[npc2.name]列入准心中央，扣动扳机。一道明亮的蓝色光束没入[npc2.her]的灵气中。随着光束的消散，一缕淡淡的雪花优美地在空中飘荡。
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.name将[npc2.name]列入准心中央，扣动扳机。射线偏离了方向！在远处，出现了一片无用的冰层。
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

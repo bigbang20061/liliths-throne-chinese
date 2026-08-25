@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[裙子里缝着的标签告诉你这是由"Phlarx"制作的。]]></clothingAuthorTag>
+		<value>1500</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[长舞裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[长舞裙]]></namePlural> 
+		<description><![CDATA[一条优雅的舞裙，适合公主穿着。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>ballgown.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"> 
+				</concealedSlots>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ASS</bodyPart>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>MOUND</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>TESTICLES</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+					<bodyPart>THIGHS</bodyPart>
+					<bodyPart>LEGS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>LEGS_UP_TO_GROIN_LOW_LEVEL</clothingAccess>
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+					<clothingAccess>CALVES</clothingAccess>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN">
+				    <concealedSlot>LEG</concealedSlot>
+				    <concealedSlot>FOOT</concealedSlot>
+				    <concealedSlot>SOCK</concealedSlot>
+				    <concealedSlot>ANKLE</concealedSlot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="ALL_METAL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours values="ALL_METAL"/>
+		<tertiaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>DRESS</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]拉下了[npc.her]的长舞裙拉链，让它滑落到[npc.her]的脚上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉下了[npc2.namePos]的长舞裙拉链，让它滑落到[npc2.her]的脚上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]拉下了[npc2.namePos]的长舞裙拉链，将它拽落到[npc2.her]的脚上。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将长舞裙拉到[npc.her]的胸部，然后拉上拉链。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将长舞裙拉到[npc2.namePos]的胸部，然后拉上拉链。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将长舞裙拉到[npc2.namePos]的胸部，然后拉上拉链。
+]]></otherRough>
+	</replacementText>
+
+	
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]提起[npc.her]长舞裙的裙子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉起[npc2.namePos]长舞裙的下摆。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拉起[npc2.namePos]长舞裙的下摆。]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]拉下[npc.her]长舞裙的裙子。]]></self>
+		<other><![CDATA[
+[npc.Name]放下[npc2.namePos]长舞裙的下摆。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地放下[npc2.namePos]的长舞裙的下摆。]]></otherRough>
+	</replacementText>
+</clothing>

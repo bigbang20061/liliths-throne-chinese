@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>0</value> 
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[安吉莉克丝的日记]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[安吉莉克丝的日记]]></namePlural>
+		<description><![CDATA[一本粉红色的小日记本，上面用流畅的白色字体写着名字“安吉莉克丝”。]]></description> 
+		
+		<useDescriptor><![CDATA[阅读]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>QUEST</rarity> 
+		
+		<imageName>angelixx_diary.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_PINK</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[揭开安吉莉克丝的秘密]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p style='text-align:center; margin-top:0; padding-top:0;'>
+			<i>
+				[#angelixx.getDiaryEntry()]
+			</i>
+		</p>
+		<p>
+			这本日记的外观与其内容大相径庭：安吉莉克丝用花花绿绿的中性笔在页面上留下了她那极具少女心的字迹。每一个字母“i”上的点都变成了小爱心，几乎每页空白处都绘满了爱心、花朵和其他充满童趣的图案。
+		</p>
+		]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+			[npc.Name]解开了日记的弹性带，使其能够打开。[npc.she]随便翻开一页，读了一段，发现这本日记的内容比外表上看到的要淫秽得多，有时还很邪恶：
+		]]></selfUse>
+		<otherUse><![CDATA[
+			[npc.Name]解开了日记的弹性带，使其能够打开，然后向[npc2.name]展示这本日记。[npc.she]随便翻开一页，读了一段，发现这本日记的内容比外表上看到的要淫秽得多，有时还很邪恶：
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

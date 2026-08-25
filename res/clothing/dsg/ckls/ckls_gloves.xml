@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	
+	<coreAttributes>
+		<authorTag><![CDATA[腕部内侧金属花边上纹刻着“DSG服装供应有限公司生产”。]]></authorTag>
+		<value>150</value>
+		<determiner><![CDATA[一副]]></determiner>
+		<name appendColourName="true"><![CDATA[猫爪手套]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[猫爪手套]]></namePlural>
+		<description><![CDATA[一副很有卡通猫爪形状毛绒手套。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+			<slot>HAND</slot>
+		</equipSlots>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_kitty</clothingSet>
+		<imageName>ckls_gloves.svg</imageName>
+		
+		<effects>
+              <effect itemEffectType="CLOTHING" limit="0" potency="BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<blockedPartsList slot="HAND">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>FINGERS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="HAND"/>
+		
+		<primaryColours values="BLACK_OR_WHITE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_PINK_LIGHT</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText slot="HAND" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将手套穿到[npc.her][npc.hands]上。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将手套穿到[npc2.namePos]的[npc2.hands]上。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]将手套粗暴地穿到[npc2.namePos]的[npc2.hands]上。
+		]]></otherRough>
+	</replacementText>
+	
+	<displacementText slot="HAND" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将手套从[npc.her][npc.hands]上脱下。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将手套从[npc2.namePos]的[npc2.hands]上脱下。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]将手套从[npc2.namePos]的[npc2.hands]上扯下。
+		]]></otherRough>
+	</displacementText>
+	
+</clothing>

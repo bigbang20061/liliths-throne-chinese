@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>25</value> 
+		<determiner><![CDATA[一瓶]]></determiner>
+		<name><![CDATA[捷特黑咖啡]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[捷特黑咖啡]]></namePlural>
+		<description><![CDATA[一瓶冷萃咖啡，宣传描述其中的咖啡因含量极高。瓶子标签的底部有一张蜘蛛女的照片，她醉醺醺地昏倒了，下面写着警告语：<i>“警告！会使蜘蛛陷入严重的醉酒状态！”</i>]]></description> 
+		
+		<useDescriptor><![CDATA[喝]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="-15" imageSize="80">spider_jet_black_coffee.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>ATTRIBUTE_PHYSIQUE</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<enchantmentItemTypeId>POTION</enchantmentItemTypeId>
+		<enchantmentEffectId>ATTRIBUTE_PHYSIQUE</enchantmentEffectId>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[style.boldGood(回复)]5%[style.boldHealth([#ATTRIBUTE_HEALTH_MAXIMUM.getName()])]]]></line>
+			<line><![CDATA[[#ATTRIBUTE_MAJOR_PHYSIQUE.getFormattedValue(1)]到“药剂效果”]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[[##npc.incrementHealth(npc.getAttributeValue(ATTRIBUTE_HEALTH_MAXIMUM)/20)]
+			
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				一股强大的奥术能量浪潮席卷了[npc.name]……
+			</p>
+			[#npc.addPotionEffect(ATTRIBUTE_MAJOR_PHYSIQUE, 1)]]]></applyEffects>
+		
+		<itemTags>
+			<tag>DRINK</tag>
+			<tag>ATTRIBUTE_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+			<tag>CAFFEINATED_025</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+拧下盖子后，[npc.name]把那瓶咖啡递到[npc.her]的[npc.mouth]边。一股强烈的浓咖啡味袭击了[npc.her]的鼻孔，当[npc.she]把头向后仰，开始喝这种凉爽的液体时，[npc.she]感到警觉起来。]]></selfUse>
+		<otherUse><![CDATA[
+拧下盖子后，[npc.name]把那瓶咖啡递到[npc2.namePos][npc2.lips]边。一股强烈的浓咖啡味袭击了[npc2.her]的鼻孔，当[npc2.she]把头向后仰，开始喝这种凉爽的液体时，[npc2.she]感到警觉起来。]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[线条]]></name>
+		
+		<description><![CDATA[流动盘旋的线条。]]></description> 
+		<bodyOverviewDescription><![CDATA[流动盘旋的线条纹身]]></bodyOverviewDescription> 
+		
+		<imageName>lines.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_BLACK"/> 
+		<secondaryColours/> 
+		<tertiaryColours/> 
+		
+	</coreAttributes>
+	
+</tattoo>

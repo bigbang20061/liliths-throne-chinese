@@ -1,0 +1,288 @@
+package com.lilithsthrone.game.character.npc.dominion;
+
+import java.time.Month;
+import java.util.List;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import com.lilithsthrone.game.Game;
+import com.lilithsthrone.game.character.CharacterImportSetting;
+import com.lilithsthrone.game.character.EquipClothingSetting;
+import com.lilithsthrone.game.character.GameCharacter;
+import com.lilithsthrone.game.character.body.valueEnums.BodySize;
+import com.lilithsthrone.game.character.body.valueEnums.Muscle;
+import com.lilithsthrone.game.character.fetishes.Fetish;
+import com.lilithsthrone.game.character.fetishes.FetishDesire;
+import com.lilithsthrone.game.character.gender.Gender;
+import com.lilithsthrone.game.character.npc.NPC;
+import com.lilithsthrone.game.character.persona.Name;
+import com.lilithsthrone.game.character.persona.Occupation;
+import com.lilithsthrone.game.character.persona.SexualOrientation;
+import com.lilithsthrone.game.character.race.Subspecies;
+import com.lilithsthrone.game.dialogue.DialogueNode;
+import com.lilithsthrone.game.dialogue.utils.UtilText;
+import com.lilithsthrone.game.inventory.CharacterInventory;
+import com.lilithsthrone.game.inventory.InventorySlot;
+import com.lilithsthrone.game.inventory.clothing.AbstractClothing;
+import com.lilithsthrone.game.inventory.clothing.AbstractClothingType;
+import com.lilithsthrone.game.inventory.clothing.ClothingType;
+import com.lilithsthrone.game.inventory.item.AbstractItem;
+import com.lilithsthrone.game.sex.SexAreaOrifice;
+import com.lilithsthrone.game.sex.SexAreaPenetration;
+import com.lilithsthrone.main.Main;
+import com.lilithsthrone.utils.Util;
+import com.lilithsthrone.utils.Util.Value;
+import com.lilithsthrone.utils.colours.Colour;
+import com.lilithsthrone.utils.colours.PresetColour;
+import com.lilithsthrone.world.WorldType;
+import com.lilithsthrone.world.places.PlaceType;
+
+/**
+ * @since 0.3.7.7
+ * @version 0.3.7.7
+ * @author Innoxia
+ */
+public class DominionExpressCentaur extends NPC {
+
+	public DominionExpressCentaur() {
+		this(Gender.getGenderFromUserPreferences(false, false), PresetColour.CLOTHING_STEEL, false);
+	}
+	
+	public DominionExpressCentaur(boolean isImported) {
+		this(Gender.F_V_B_FEMALE, PresetColour.CLOTHING_STEEL, isImported);
+	}
+	
+	public DominionExpressCentaur(Gender gender, Colour collarColour) {
+		this(gender, collarColour, false);
+	}
+	
+	public DominionExpressCentaur(Gender gender, Colour collarColour, boolean isImported) {
+		super(isImported,
+				null, null, "",
+				Util.random.nextInt(28)+18, Util.randomItemFrom(Month.values()), 1+Util.random.nextInt(25),
+				3,
+				null, null, null,
+				new CharacterInventory(false, 10), WorldType.DOMINION_EXPRESS, PlaceType.DOMINION_EXPRESS_STABLES, false);
+
+		if(!isImported) {
+			setLevel(8 + Util.random.nextInt(5)); // 8-12
+			
+			// RACE & NAME:
+			
+			this.setBodyFromSubspeciesPreference(gender, Util.newHashMapOfValues(new Value<>(Subspecies.CENTAUR, 1)), true, false);
+			
+			if(Math.random()<0.4f) {
+				setSexualOrientation(SexualOrientation.AMBIPHILIC);
+			} else {
+				setSexualOrientation(SexualOrientation.GYNEPHILIC);
+			}
+
+			List<String> names;
+			if(this.isFeminine()) {
+				names = Util.newArrayListOfValues("情欲高涨的女半人马", "欲望强烈的女半人马", "急切渴求的女半人马");
+			} else {
+				names = Util.newArrayListOfValues("情欲高涨的半人马", "欲望强烈的半人马", "急切渴求的半人马");
+			}
+			this.setGenericName(Util.randomItemFrom(names));
+			setName(Name.getRandomTriplet(this.getSubspecies()));
+			this.setPlayerKnowsName(false);
+			
+			// PERSONALITY & BACKGROUND:
+			
+			Main.game.getCharacterUtils().setHistoryAndPersonality(this, false);
+			
+			this.setHistory(Occupation.NPC_SLAVE);
+			
+			// ADDING FETISHES:
+
+			this.clearFetishes();
+			this.clearFetishDesires();
+
+			this.setAssVirgin(false);
+			this.setPenisVirgin(false);
+			this.setFaceVirgin(false);
+			
+			this.addFetish(Fetish.FETISH_ANAL_GIVING);
+			this.addFetish(Fetish.FETISH_ORAL_RECEIVING);
+
+			this.setFetishDesire(Fetish.FETISH_DOMINANT, FetishDesire.THREE_LIKE);
+			this.setFetishDesire(Fetish.FETISH_PENIS_GIVING, FetishDesire.THREE_LIKE);
+			this.setFetishDesire(Fetish.FETISH_CUM_STUD, FetishDesire.THREE_LIKE);
+			this.setFetishDesire(Fetish.FETISH_ANAL_RECEIVING, FetishDesire.THREE_LIKE);
+			this.setFetishDesire(Fetish.FETISH_BREASTS_OTHERS, FetishDesire.THREE_LIKE);
+			
+			this.setFetishDesire(Fetish.FETISH_VAGINAL_GIVING, FetishDesire.ZERO_HATE);
+			this.setFetishDesire(Fetish.FETISH_IMPREGNATION, FetishDesire.ZERO_HATE);
+			
+			double rnd = Math.random();
+			if(rnd<0.05f) {
+				this.addFetish(Fetish.FETISH_SUBMISSIVE);
+			} else if(rnd<0.15f) {
+				this.addFetish(Fetish.FETISH_SADIST);
+			}
+			
+			// BODY RANDOMISATION:
+
+			Main.game.getCharacterUtils().randomiseBody(this, true);
+
+			this.setMuscle(Muscle.FOUR_RIPPED.getMedianValue());
+			this.setBodySize(BodySize.THREE_LARGE.getMedianValue());
+			
+			this.setHeight(215+Util.random.nextInt(26));
+			
+			
+			// INVENTORY:
+			
+			resetInventory(true);
+			inventory.setMoney(10 + Util.random.nextInt(getLevel()*10) + 1);
+
+			this.equipClothing(EquipClothingSetting.getAllClothingSettings());
+			if(collarColour==null) {
+				collarColour = PresetColour.CLOTHING_GOLD;
+				rnd = Math.random();
+				if(rnd<0.3f) {
+					collarColour = PresetColour.CLOTHING_STEEL;
+				} else if(rnd<0.8f) {
+					collarColour = PresetColour.CLOTHING_BRONZE;
+				} else if(rnd<0.95f) {
+					collarColour = PresetColour.CLOTHING_SILVER;
+				}
+			}
+			this.equipClothingFromNowhere(Main.game.getItemGen().generateClothing(ClothingType.getClothingTypeFromId("innoxia_bdsm_metal_collar"), collarColour, false), true, this);
+			
+//			Main.game.getCharacterUtils().applyMakeup(this, true);
+			
+			// Set starting attributes based on the character's race
+			initPerkTreeAndBackgroundPerks();
+			this.setStartingCombatMoves();
+			loadImages();
+
+			initHealthAndManaToMax();
+		}
+	}
+	
+	@Override
+	public void loadFromXML(Element parentElement, Document doc, CharacterImportSetting... settings) {
+		loadNPCVariablesFromXML(this, null, parentElement, doc, settings);
+		if(Main.isVersionOlderThan(Game.loadingVersion, "0.3.8.2")) {
+			this.setHistory(Occupation.NPC_SLAVE);
+		}
+	}
+
+	@Override
+	public void setStartingBody(boolean setPersona) {
+		// Not needed
+	}
+	
+	@Override
+	public String getDescription() {
+		return UtilText.parse(this, "[npc.Name]是御城速递公司的奴隶，每天都努力工作，将货物运送到整个城市各处。");
+	}
+	
+	@Override
+	public void equipClothing(List<EquipClothingSetting> settings) {
+		this.unequipAllClothingIntoVoid(true, true);
+		
+		if(this.isFeminine()) {
+			if(Math.random()<0.5f) {
+				this.equipClothingFromNowhere(Main.game.getItemGen().generateClothing("innoxia_chest_tube_top", false), true, this);
+			} else {
+				this.equipClothingFromNowhere(Main.game.getItemGen().generateClothing("innoxia_chest_sports_bra", false), true, this);
+			}
+		}
+	}
+	
+	@Override
+	public boolean isUnique() {
+		return false;
+	}
+	
+	@Override
+	public boolean isAbleToBeImpregnated() {
+		return true;
+	}
+	
+	@Override
+	public void changeFurryLevel(){
+	}
+	
+	@Override
+	public DialogueNode getEncounterDialogue() {
+		return null;
+	}
+
+	@Override
+	public void hourlyUpdate(int hour) {
+		if((hour>=6 && hour<22) // extended work time
+				&& !Main.game.getCharactersPresent().contains(this)
+				&& Math.random()<0.8f) {
+			this.setLocation(WorldType.EMPTY, PlaceType.GENERIC_HOLDING_CELL);
+		} else {
+			this.returnToHome();
+		}
+	}
+	
+	@Override
+	public String getDirtyTalk() {
+		if(this.getLocationPlace().getPlaceType()==PlaceType.DOMINION_EXPRESS_OFFICE_STABLE) {
+			if(Main.sex.getForeplayPreference(this, Main.game.getPlayer()).getTargetedSexArea()==SexAreaOrifice.MOUTH) {
+				return UtilText.parseFromXMLFile("characters/dominion/dominionExpressCentaur", "OFFICE_DIRTY_TALK_ORAL", this);
+				
+			} else if(Main.sex.getForeplayPreference(this, Main.game.getPlayer()).getTargetedSexArea()==SexAreaPenetration.TONGUE) {
+				return UtilText.parseFromXMLFile("characters/dominion/dominionExpressCentaur", "OFFICE_DIRTY_TALK_ANILINGUS", this);
+				
+			} else if(Main.sex.getForeplayPreference(this, Main.game.getPlayer()).getTargetedSexArea()==SexAreaOrifice.ANUS) {
+				return UtilText.parseFromXMLFile("characters/dominion/dominionExpressCentaur", "OFFICE_DIRTY_TALK_ANAL", this);
+			}
+		}
+		
+		return super.getDirtyTalk();
+	}
+	
+	private boolean isSadistSlaveInNatalyaTrainingScene() {
+		try {
+			return this.id.equals(Main.game.getDialogueFlags().getSadistNatalyaSlave());
+		} catch(Exception ex) {
+			return false;
+		}
+	}
+
+	@Override
+	public Value<Boolean, String> getItemUseEffects(AbstractItem item, GameCharacter itemOwner, GameCharacter user, GameCharacter target) {
+		if(isSadistSlaveInNatalyaTrainingScene()) {
+			if(!user.equals(target)) { // Item is not being self-used:
+				String itemName = item.getName();
+				return new Value<>(false,
+						UtilText.parse(user, target,
+							"[npc.Name]从物品栏里拿出"+UtilText.generateSingularDeterminer(itemName)+itemName+"，准备递给[npc2.name]，"
+								+ "但[npc2.she]却怒吼一声将其推开，[npc2.speech(把那东西收起来，你这骚货是傻吗！)]"));
+			}
+		}
+		return super.getItemUseEffects(item, itemOwner, user, target);
+	}
+	
+	@Override
+	public String getCondomEquipEffects(AbstractClothingType condomClothingType, GameCharacter equipper, GameCharacter target, boolean rough) {
+		if(isSadistSlaveInNatalyaTrainingScene()) {
+			if(!target.equals(equipper) && equipper.isPlayer() && !target.isPlayer() && Main.game.isInSex()) {
+				AbstractClothing clothing = target.getClothingInSlot(InventorySlot.PENIS);
+				if(clothing!=null && clothing.isCondom()) {
+					target.unequipClothingIntoVoid(clothing, true, equipper);
+					target.getInventory().resetEquipDescription();
+				}
+				if(condomClothingType.equals(ClothingType.getClothingTypeFromId("innoxia_penis_condom_webbing"))) {
+					return UtilText.parse(equipper, target,
+							"[npc.Name]将[npc.her]的丝囊对准了[npc2.namePos]的[npc2.cock]，但当[npc2.name]意识到[npc.sheIs]的意图后，立刻将其拍开，低声吼叫着，"
+							+ "[npc2.speech(我可不会戴套的！)]");
+				}
+				return UtilText.parse(equipper, target,
+						"[npc.name]向[npc2.name]掏出一个安全套，但并没有像[npc.she]希望的那样，把避孕套捋到[npc2.her]的[npc2.cock]上，"
+								+ "[npc2.name]恼羞成怒地咆哮，将包裹撕成了两半！"
+						+ "[npc2.she]再次发出一声咆哮，"
+						+ "[npc2.speech(我可不会戴套的！)]");
+			}
+		}
+		return null;
+	}
+}

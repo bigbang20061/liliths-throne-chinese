@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="ATTACK_REPEAT_PREGNANCY_REACT"><![CDATA[
+	<p>
+		突然间，你的余光瞥见了一个身影，蹑手蹑脚地向你走来。你转身面向身后的人，做好了战斗的准备。不一会儿，熟悉的身影来到了你的面前，那是[npc.name]。
+	</p>
+	<p>
+		[npc.speech(好，好啊！)]，[npc.she]说着，一只手叉腰，另一只手轻抚着[npc.her]涨圆的腹部。[npc.speech(看看，这是谁？我怀着的是谁的孩子，你清楚吧？！)]
+	</p>
+	<p>
+		不等你说话，[npc.she]继续说，[npc.speech(我想，你该给我们的孩子留下一些买衣服，或是买其他东西的钱——没有讨价还价的余地，这都是你的错，因为你当时没有拔出去。现在，留下钱，要么，别怪我下手太重！)]
+	</p>
+	<p>
+		你清楚[npc.name]想和你打一架，或者从你这里搞点钱。你可以防御，也可以给点钱息事宁人……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ATTACK_REPEAT_PREGNANCY"><![CDATA[
+	<p>
+		突然间，你的余光瞥见了一个身影，蹑手蹑脚地向你走来。你转身面向身后的人，做好了战斗的准备。不一会儿，熟悉的身影来到了你的面前，那是[npc.name]。
+	</p>
+	<p>
+		[npc.speech(好，好啊！)]，[npc.she]说着，一只手叉腰，另一只手轻抚着[npc.her]涨圆的腹部。[npc.speech(看看你干的好事！你把我肚子搞大了！)]
+	</p>
+	<p>
+		不等你说话，[npc.she]继续说，[npc.speech(你该给我们的孩子留下一些买衣服，或是买其他东西的钱——不要讨价还价，这都是你的错，因为你当时没有射在外面。现在，留下钱，要么，就在这里收拾你一顿！)]
+	</p>
+	<p>
+		你清楚[npc.name]想和你打一架，或者从你这里搞点钱。你可以防御，也可以给点钱息事宁人……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ATTACK_REPEAT"><![CDATA[
+	<p>
+		突然间，你的余光瞥见了一个身影，蹑手蹑脚地向你走来。你转身面向身后的人，做好了战斗的准备。不一会儿，熟悉的身影来到了你的面前，那是[npc.name]。
+	</p>
+	<p>
+		[npc.speech(好，好，好！)]，[npc.she]说着，双手叉腰，摆出自信的姿势。[npc.speech(看看这是谁？是不是上次没被我满足的小婊子？嗯？)]
+	</p>
+	<p>
+		不等你说话，[npc.she]继续说，[npc.speech(在我的地盘里溜达，是要交过路费的。老规矩，现在，要么钱留下，要么你留下，没得商量！)]
+	</p>
+	<p>
+		你清楚[npc.name]想打你一顿，从你这里搞点钱。你可以防御，也可以给点钱把[npc.name]打发走……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ATTACK"><![CDATA[
+	<p>
+		突然间，你的余光瞥见了一个身影，蹑手蹑脚地向你走来。你转身面向身后的人，做好了战斗的准备。不一会儿，[npc.a_fullRace(true)]来到了你的面前。
+	</p>
+	<p>
+		[npc.speech(好，好，好！)]，[npc.she]说着，双手叉腰，摆出自信的姿势。[npc.speech(看看我们找到了什么？有人不经允许进了我的地盘！)]
+	</p>
+	<p>
+		不等你说话，[npc.she]继续说，[npc.speech(在我的地盘里溜达，可不是免费的。现在，要么钱留下，要么你留下，没得商量！)]
+	</p>
+	<p>
+		你清楚[npc.name]想打你一顿，从你这里搞点钱。你可以防御，也可以给点钱把[npc.name]打发走……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ATTRACTED_TO_PLAYER"><![CDATA[
+	<p>
+		从[npc.she]那打量你身体的饥渴眼神中，你看出来[npc.she]已经被你所吸引。要是你和[npc.herHim]打一架然后输掉，恐怕[npc.she]一定会把你吃干抹净……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="NOT_ATTRACTED_TO_PLAYER"><![CDATA[
+	<p>
+		你看得出来[npc.name]对你不感兴趣，如果和[npc.herHim]打一架然后输掉，恐怕[npc.she]只会对你的钱包感兴趣……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="ATTACK_PAID_OFF"><![CDATA[
+	<p>
+		你不想和[npc.name]挑起争端，后退一步，同意给[npc.herHim]想要的。[pc.speech(行，好，钱给你，有话好商量，不要暴力解决问题，好吗？)]
+	</p>
+	<p>
+		[npc.speech(那可太好了！)][npc.name]回答道，向前一步，伸出[npc.her][npc.hands]。[npc.speech(所以乖乖把钱交出来，好吗？我需要钱，要是从你这里拿不到钱，我可没脸回去见朋友了，是吧？给我，对，五百！)]
+	</p>
+	<p>
+		你不想再听[npc.race]那些喋喋不休的废话，迅速把钱给了[npc.herHim]。拿到钱后，[npc.she]咯咯一笑，然后迅速转身，沿[npc.herHim]来时的路跑掉了。
+	</p>
+	<p>
+		你看到[npc.herHim]离开，长舒一口气，为你避免了一场争端而高兴。你继续前进……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ATTACK_OFFER_BODY"><![CDATA[
+	<p>
+		你不想和[npc.name]发生冲突，同时又不想给钱。于是，你采取了你能想到的唯一可行的方案——你开始用迷人的微笑挑逗[npc.her]。
+		[pc.speech(没必要大动干戈，你如果想找些乐子的话，直说就好了嘛……)]
+	</p>
+	<p>
+		[npc.speech(真的？)]
+		[npc.name]靠近了你，带有一丝威胁的意味。
+		你站在原地，用最妩媚迷人的姿态去勾引[npc.name]，期待着[npc.her]用你的身体发泄积攒的欲望。
+	</p>
+	<p>
+		当来犯的人抓住你的胳膊，将你拉过去，紧紧地抱在[npc.her]怀里时，你欣喜若狂。
+		[npc.her]将[npc.lips]抵在你的唇上，将舌头伸入你的口腔里，激烈而主动地深吻着你。片刻后，[npc.her]放开了你，低吼着，
+		[npc.speech(你可真是个好[pc.girl]，或者说，叫你婊子会让你更开心？)]
+	</p>
+	<p>
+		你用含糊不清的呜咽声表示了同意，任由[npc.name]支配着你，玩弄着你。你要用你的身体作为经过此地的过路费，这件事没什么不妥的，你这样想……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENEMY_DEFEATED_WANTS_SEX"><![CDATA[
+	<p>
+		[npc.Name]倒在地上，[npc.she]抬起头看了看你，叹了口气。你低头和败者对视，却看到了[npc.she]眼中那极度饥渴的神情。你还没说什么，[npc.she]突然当着你的面把手伸向自己的下面，开始玩弄自己的下体。[npc.she]一边发出可怜的呜呜声，一边在地上扭动着。
+	</p>
+	<p>
+		[npc.speech(你，你还在等什么？上啊！上了我！)][npc.she]一边咬着唇祈求着你，一边继续自慰着。
+	</p>
+	<p>
+		你不知道该不该答应[npc.she]，毕竟你<i>本以为那个接受凌辱的人该是你</i>，可现在那个祈求凌辱的却是[npc.she]。又或者，最好还是离开这里……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENEMY_DEFEATED"><![CDATA[
+	<p>
+		[npc.Name]倒在地上，以非常后悔的眼神看着你，叹了一口气。你低头看着战败者，[npc.she]因为害怕着你的报复行为，发出了可怜的呜咽声，竭力想从你脚边溜走。
+	</p>
+	<p>
+		[npc.speech(要，要多少钱我都给，我全身上下的钱都给你，放我走，放我走吧！)][npc.she]祈求着，把几块钱丢在你的脚边。
+	</p>
+	<p>
+		你不知道是该放[npc.she]走，还是该用[npc.she]无力反抗的身体<i>找些乐子</i>……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENEMY_DEFEATED_SUBMIT"><![CDATA[
+	<p>
+		你手足无措地站在原地。回想起刚刚被击败的[npc.race]，你心里有些不舒服。你俯下身，第一时间开始向对方道歉。[pc.speech(抱歉……我刚刚只是想自卫来着，你应该明白吧……呃……我能怎么做来补偿你吗？)]
+	</p>
+	<p>
+		[npc.name]浮现出困惑的神情。[npc.she]看到了你似乎真的为所作所为感到愧疚，却露出邪恶的笑容。[npc.she]站了起来，粗暴地抓住你的[pc.arm]，想要把你拉进[npc.her]怀里，咆哮着，[npc.speech(你这妓女，好好向我道歉！)]
+	</p>
+	<p>
+		[npc.Name]有力地握着你的胳膊，你忍不住发出一声娇喘。你服从的本能压倒了理性，不断顺从着[npc.she]。[pc.speech(对不起，对不起！都是我的错！原谅我，我什么事都愿意做，不要生气，命令我吧！)]
+	</p>
+	<p>
+		[npc.Name]粗暴地把你拉进怀里，发出威胁的吼声，[npc.she]野蛮地将舌头伸进你的口腔。当眼前的人开始主导一切的时候，你忍不住叫出声来。而当你感到[npc.her][npc.hands]肆意蹂躏你的臀部时，你感到无比喜悦和期待……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+</dialogue>

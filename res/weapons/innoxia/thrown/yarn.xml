@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<value>25</value>
+		<melee>false</melee>
+		<twoHanded>false</twoHanded>
+		
+		<oneShotWeapon>true</oneShotWeapon>
+		<oneShotWeaponChanceToRecoverAfterTurn>75</oneShotWeaponChanceToRecoverAfterTurn>
+		<oneShotWeaponChanceToRecoverAfterCombat>100</oneShotWeaponChanceToRecoverAfterCombat>
+		
+		<determiner><![CDATA[一件]]></determiner>
+		<name appendDamageName="false"><![CDATA[毛线球]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[毛线球]]></namePlural>
+		<description><![CDATA[一长段连续交错的羊毛纤维，被紧紧包裹成团。]]></description>
+		<attackDescriptor><![CDATA[扔]]></attackDescriptor>
+		<attackDescriptionPrefix>throw ball of yarn at</attackDescriptionPrefix>
+		<attackTooltipDescription><![CDATA[向着[npc2.name]丢出毛线球。]]></attackTooltipDescription>
+		<rarity>COMMON</rarity>
+		
+		<equipText><![CDATA[[npc.Name]紧紧攥住毛线球，准备好丢出去了。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]收起了毛线球。]]></unequipText>
+		
+		<imageName>yarn.svg</imageName> 
+		<imageEquippedName/>
+		
+		<damage>1</damage> 
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<enchantmentLimit>5</enchantmentLimit>
+		
+		<effects/>
+		<extraEffects>
+			<effect><![CDATA[[style.colourExcellent(制服)][style.colourTfGreater(纯)][style.colourCat(猫化形)]]]></effect>
+		</extraEffects>
+		
+		<onHitEffect><![CDATA[
+		#IF(npc2.getRace()==RACE_CAT_MORPH && npc2.getRaceStage()==RACE_STAGE_GREATER)
+			[##npc2.setHealth(0)]
+			<i>[npc2.Name] immediately [npc2.verb(fix)] [npc2.her] gaze on the ball of yarn as it rolls across the floor. After lowering [npc2.herself] down into a stalking posture, [npc2.she] suddenly [npc2.verb(pounce)] on the yarn, and after letting out a happy meow, [npc2.she] [npc2.verb(start)] pawing and playing with it, leaving [npc2.herHim] completely vulnerable and [style.italicsExcellent(utterly defeated)]!</i>
+		#ENDIF
+		]]></onHitEffect>
+		
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED</colour>
+			<colour>CLOTHING_GREEN</colour>
+			<colour>CLOTHING_YELLOW</colour>
+			<colour>CLOTHING_BLUE</colour>
+			<colour>CLOTHING_PURPLE_DARK</colour>
+			<colour>CLOTHING_PINK_LIGHT</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_RALPH</tag>
+			<tag>SILLY_MODE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]向着[npc2.name]丢出了毛线球，击中了[npc2.herHim]的胸口正中！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]把毛线球向着[npc2.name]丢出去，击中了[npc2.herHim]的[npc.arm(true)]！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]快步上前，用毛线球投向[npc2.name]，成功击中了[npc2.herHim]！
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]向着[npc2.name]丢出了毛线球，但没能命中！
+		]]></missText>
+		<missText><![CDATA[
+		[npc.Name]把毛线球向着[npc2.name]丢出去，却没能命中目标，懊恼地叫了一声！
+		]]></missText>
+		<missText><![CDATA[
+		[npc.Name]快步上前，用毛线球投向[npc2.name]，但却丢歪了！
+		]]></missText>
+	</missDescriptions>
+	
+	<oneShotEndTurnRecoveryDescriptions>
+		<recoveryText><![CDATA[
+			The ball of yarn bounces back towards [npc.name], allowing [npc.herHim] to pick it up and reuse it!
+		]]></recoveryText>
+	</oneShotEndTurnRecoveryDescriptions>
+	
+</weapon>

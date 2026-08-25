@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>10</value> 
+		<determiner><![CDATA[一根]]></determiner>
+		<name><![CDATA[泡泡糖棒棒糖]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[泡泡糖棒棒糖]]></namePlural>
+		<description><![CDATA[一根亮粉色的棒棒糖，核心是一小颗泡泡糖。虽然它看起来没什么特别的，但却有一股令人难以置信的浓郁泡泡糖味。]]></description> 
+		
+		<useDescriptor><![CDATA[吃]]></useDescriptor>
+		
+		<sexUse>true</sexUse>
+		<combatUseAllies>true</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>true</consumedOnUse>
+		
+		<rarity>RARE</rarity> 
+		
+		<imageName zLayer="0" imageRotation="0" imageSize="100">background_bottom.svg</imageName>
+		<imageName zLayer="1" imageRotation="0" imageSize="70" target1="stroke=&quot;#000&quot;" replacement1="stroke=&quot;#ff5555&quot;" target2="#ff8080" replacement2="#ff5555">res/race/innoxia/harpy/icon.svg</imageName>
+		<imageName zLayer="2" imageRotation="0" imageSize="70">harpy_bubblegum_lollipop.svg</imageName>
+		<imageName zLayer="3" imageRotation="0" imageSize="100">background_top.svg</imageName>
+		
+		<colourPrimary>RACE_HARPY</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<potionDescriptor><![CDATA[哈比]]></potionDescriptor>
+		<associatedRace>HARPY</associatedRace>
+		<enchantmentItemTypeId>ELIXIR</enchantmentItemTypeId>
+		<enchantmentEffectId>RACE</enchantmentEffectId>
+		
+		<statusEffects>
+			<effect seconds="1200">LOLLIPOP_SUCKING</effect>
+		</statusEffects>
+		
+		<effectTooltipLines>
+			<line><![CDATA[[#ATTRIBUTE_DAMAGE_LUST.getFormattedValue(10)]到“药剂效果” ]]></line>
+			<line><![CDATA[[style.italicsSex(+3)][style.italicsFeminine(女性化程度)]]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+			<p style='margin-bottom:0; padding-bottom:0;'>
+				[npc.Name]开始感到变得更加女性化……
+			</p>
+			[#npc.incrementFemininity(3)]
+			[#npc.addPotionEffect(ATTRIBUTE_DAMAGE_LUST, 10)]
+		]]></applyEffects>
+		
+		<itemTags>
+			<tag>FOOD</tag>
+			<tag>RACIAL_TF_ITEM</tag>
+			<tag>SOLD_BY_RALPH</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]将亮粉色的棒棒糖推进[npc.her][npc.lips]里，使[npc.her]的味蕾被甜甜的、含糖的泡泡糖味道淹没。在[npc.she]意识到她在做什么之前，[npc.sheIs]发出了轻柔、妩媚的呻吟声，很快就变成了淫荡的呜咽声，因为[npc.she]发现[npc.herself]除了疯狂地吸吮[npc.her]嘴里的东西之外，什么都顾不上了。
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]将亮粉色棒棒糖推进[npc2.namePos][npc2.lips]，让[npc2.her]的味蕾被泡泡糖的甜美糖味淹没。在[npc2.she]知道[npc2.she]在做什么之前，[npc2.nameIs]发出了轻柔、妩媚的呻吟，很快就变成了淫荡的呜咽，因为[npc2.she]发现[npc2.herself]除了疯狂地吸吮[npc2.her]嘴里的东西之外，什么都顾不上了。
+		]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

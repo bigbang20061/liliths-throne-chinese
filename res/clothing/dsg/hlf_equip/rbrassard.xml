@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAtributes>
+		<authorTag><![CDATA[内侧缝着一个小标签写着“织厂制造。”]]></authorTag>
+		<value>150</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[帆布臂带]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[帆布臂带]]></namePlural>
+		<description><![CDATA[一条厚重的棉质织物带，设计用于手臂周围，在没有制服或不需要制服时便于识别身份。你以前从未见过缝在上面的徽章。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>WRIST</slot>
+		<rarity>RARE</rarity>
+		<clothingSet>dsg_hlf_insurgent</clothingSet>
+		<imageName>rbrassard.svg</imageName>
+		<clothingSet>dsg_hlf_insurgent</clothingSet>
+		<effects/> 
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>WRISTS</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/> 
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_KHAKI</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_RED_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_WHITE"/> 
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags>
+			<tag>CONTRABAND_LIGHT</tag>
+		</itemTags>
+	</coreAtributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将臂带戴在[npc.her]的手臂上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将臂带戴在[npc2.namePos]的胳膊上。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将臂带捆到[npc2.namePos]的手臂上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将臂带从[npc.her]的胳膊上摘下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将臂带从[npc2.namePos]的胳膊上摘下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]猛地将臂带从[npc2.namePos]的胳膊上拽下。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

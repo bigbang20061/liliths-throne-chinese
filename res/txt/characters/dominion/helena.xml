@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- Gifts -->
+	
+	<htmlContent tag="GIFT_CHOCOLATES"><![CDATA[
+	<p>
+		你认为这是把你为海伦娜买的礼物送给她的最佳时机，于是你把一盒巧克力和对她外表的赞美之词都送给了她。
+	</p>
+	<p>
+		#IF(!helena.isSlutty())
+			美丽的族长被这突如其来的举动弄得有些脸红，她优雅地接过你送给她的礼物，然后轻声说道：[helena.speech(你真好，[pc.name]。我等会一定会享用这些的。)]
+		#ELSE
+			这位美丽的族长咬着嘴唇，向你投来兴奋的一瞥，优雅地接过你送给她的礼物，然后暗示性地说到：[helena.speech(也许我们稍后可以在我的卧室里一起享用这些礼物……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GIFT_PERFUME"><![CDATA[
+	<p>
+		你认为这是把你为海伦娜买的礼物送给她的最佳时机，于是你把香水和对她外表的赞美之词都送给了她。
+	</p>
+	<p>
+		#IF(!helena.isSlutty())
+			面对突如其来的举动，这位美丽的族长不禁微微红了脸，她优雅地接过你赠送给她的礼物，然后轻声说道：[helena.speech(你真好，[pc.name]。我很乐意将这个加入我的收藏。)]
+		#ELSE
+			这位美丽的族长咬着嘴唇，向你投来兴奋的一瞥，优雅地接过你送给她的礼物，然后暗示性地说到：[helena.speech(下次约会时我一定会用上这个……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GIFT_SINGLE_ROSE"><![CDATA[
+	<p>
+		你认为这是送给海伦娜你为她买的礼物的最佳时机，于是你送了她一束完美的玫瑰花，并且对她的外表表达了赞美。
+	</p>
+	<p>
+		#IF(!helena.isSlutty())
+			面对突如其来的举动，这位美丽的族长不禁有些脸红，她优雅地接过你献给她的鲜花，然后轻声说道：[helena.speech(你真好，[pc.name]。我要把它插在我公寓的花瓶里。)]
+		#ELSE
+			美丽的族长咬着嘴唇，向你投来兴奋的一瞥，优雅地接过你献给她的鲜花，然后暗示性地说到：[helena.speech(今晚到家后，我会把这个放在卧室里……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GIFT_ROSES"><![CDATA[
+	<p>
+		你认为这是把你为海伦娜买的礼物送给她的最佳时机，于是你把玫瑰花束和对她外表的赞美之词都送给了她。
+	</p>
+	<p>
+		#IF(!helena.isSlutty())
+			面对突如其来的举动，这位美丽的族长不禁有些脸红，她优雅地接过你献给她的鲜花，然后轻声说道：[helena.speech(你真好，[pc.name]。我要把它插在我公寓的花瓶里。)]
+		#ELSE
+			美丽的族长咬着嘴唇，向你投来兴奋的一瞥，优雅地接过你献给她的鲜花，然后暗示性地说到：[helena.speech(今晚到家后，我会把这个放在卧室里……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GIFT_TEDDY_BEAR"><![CDATA[
+	<p>
+		你认为这是把你为海伦娜买的礼物送给她的最佳时机，于是你把泰迪熊送给了她，并对她的外表表达了赞美之情。
+	</p>
+	<p>
+		你给她的东西让她皱了一下眉头，美丽的族长尖锐地评论道：[helena.speech(这真的不是我的菜，[pc.name]。我很感谢你的好意，但请不要再给我这样的东西了。)]
+	</p>
+	
+	]]></htmlContent>
+
+</dialogue>

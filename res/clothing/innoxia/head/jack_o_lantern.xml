@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>1000</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[南瓜灯头套]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[南瓜灯头套]]></namePlural>
+		<description><![CDATA[一个雕刻了可怕面孔的南瓜灯头套，还被施加了附魔，使其内部发光。底部切开了一个洞，使人可以像头盔一样戴在头上。]]></description>
+		<physicalResistance>1</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>LEGENDARY</rarity>
+		<clothingSet/>
+		<imageName>jack_o_lantern.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<stickers>
+			<category id="Face" priority="1">
+				<sticker id="creepy" priority="1" defaultSticker="true" zLayer="1" colourDisabled="" colourSelected="">
+					<stickerName><![CDATA[毛骨悚然]]></stickerName>
+					<namePrefix priority="1"><![CDATA[毛骨悚然]]></namePrefix>
+					<descriptionModification/>
+					<imageName zLayer="1" slot="HEAD">jack_o_lantern_creepy.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="grin" priority="2" defaultSticker="false" zLayer="1">
+					<stickerName><![CDATA[咧嘴]]></stickerName>
+					<namePrefix priority="1"><![CDATA[咧嘴]]></namePrefix>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>jack_o_lantern_grin.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+		
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_ORANGE_DARK</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_GREEN_DRAB</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_YELLOW</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL"/>
+	
+		<itemTags/>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将南瓜灯头套戴在[npc.her]头上。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将南瓜灯头套戴在[npc2.namePos]的头上。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将南瓜灯头套戴到[npc2.namePos]的头上。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+			[npc.Name]摘下[npc.her]的南瓜灯头套。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的南瓜灯头套脱下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]猛地夺走[npc2.namePos]的南瓜灯头套。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

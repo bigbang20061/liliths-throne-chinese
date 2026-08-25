@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	
+	<coreAttributes>
+		<clothingAuthorTag><![CDATA[一个小标签的内侧印着“DSG服装供应有限公司生产”。]]></clothingAuthorTag>
+		<value>400</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[猫咪胸罩]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[猫咪胸罩]]></namePlural>
+		<description><![CDATA[一款露沟式胸罩，带有超细肩带和卡通猫咪形状的镂空。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>CHEST</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_kitty</clothingSet>
+		<imageName>ckls_bra.svg</imageName>
+		<imageEquippedName/>
+		
+		<effects>
+              <effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/> 
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				
+				<concealedSlots>
+					<slot>NIPPLE</slot>
+					<slot>PIERCING_NIPPLE</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="BLACK_OR_WHITE"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_PINK_LIGHT</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+      [npc.Name]将胸罩从头顶滑下覆盖到躯体上，随后[npc.her]将吊带拉到肩膀上。
+    ]]></self>
+    <other><![CDATA[
+	[npc.Name]将胸罩从[npc2.namePos]头顶滑下覆盖到躯体上，随后将吊带拉到[npc2.her]的肩膀上。
+    ]]></other>
+    <otherRough><![CDATA[
+	[npc.Name]将胸罩从[npc2.namePos]头顶套下覆盖到躯体上，随后将吊带匆忙地拉到[npc2.her]的肩膀上。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+	[npc.Name]移开肩膀上的吊带，随后将胸罩自头上脱下。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将[npc2.namePos]肩膀上的吊带移开，随后将胸罩自[npc2.her]头上脱下。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]将[npc2.namePos]的胸罩扯掉。
+    ]]></otherRough>
+  </displacementText>
+	
+  <replacementText type="PULLS_UP">
+    <self><![CDATA[
+      [npc.Name]将胸罩重新拉下遮住躯体。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将胸罩重新拉下遮住[npc2.namePos]的躯体。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地将胸罩猛拉下来遮住[npc2.namePos]的躯体。
+    ]]></otherRough>
+  </replacementText>
+
+  <displacementText type="PULLS_UP">
+    <self><![CDATA[
+      [npc.Name]将胸罩拉到[npc.her]下巴的下方，将[npc.her]的躯体完全露出。
+    ]]></self>
+    <other><![CDATA[
+      [npc.Name]将胸罩拉到[npc2.namePos]下巴的下方，将[npc2.her]的躯体完全露出。
+    ]]></other>
+    <otherRough><![CDATA[
+      [npc.Name]粗暴地将胸罩拉到[npc2.namePos]下巴的下方，将[npc2.her]的躯体完全露出。
+    ]]></otherRough>
+  </displacementText>
+	
+</clothing>

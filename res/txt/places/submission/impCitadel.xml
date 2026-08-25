@@ -1,0 +1,1449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+	
+	<!-- GENERIC -->
+	
+	<htmlContent tag="GENERIC_IMPS_DEFEATED"><![CDATA[
+	<p>
+		你打败了城堡里的所有小恶魔，所以现在这里已经荒废了。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="GENERIC_IMP_GUARDS"><![CDATA[
+	<p>
+		庭院里散布着至少二十只小恶魔和阿尔法小恶魔，其中有几只在闲逛，但大多数正忙于某些简单工作，如清洗和缝补衣物、互相切磋、备餐与进食。你还看到几只小恶魔在角落里公然做爱。
+	</p>
+	<p>
+		这些小恶魔似乎对你的突然到来不以为意，你猜测是因为只有符合预期的访客才能获得开启大门的三把钥匙。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- ENTRANCE -->
+	
+	<htmlContent tag="ENTRANCE_RUINS"><![CDATA[
+	<p>
+		尽管城堡大门属于少数没有遭到严重破坏的部分，但仍有相当数量的瓦砾碎石堆积于此。你避开这些障碍，小心翼翼地穿行，生怕引发进一步坍塌。
+	</p>
+	<p>
+		你环视裂痕遍布、满是瓦砾的庭院，目光落在主楼巨大而破败的拱门上。两扇大型木门中，一扇已化为齑粉，另一扇则在上方残砖碎石的重压下勉力挣扎。左侧，城堡水井看起来已被实验室崩塌的左侧外墙彻底掩埋。庭院另一侧，牢房的小门已被砖石完全压毁。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTRANCE"><![CDATA[
+	<p>
+		你站在入口处，足以近距离端详大门和墙壁的材质，你发现这巨大石块与洞穴的地面及墙面同出一辙，均由一种深黑色的岩石雕琢而成。而且你从内院望出去，远处的墙壁被开采出来许多，因此证明建筑材料确实是就地取材的。
+	</p>
+	<p>
+		那个缺口处有一个巨大的石拱，里面是一扇巨大的双开镶铁木门。庭院左侧的一角有一口井，井旁有一座不怎么高的石塔。庭院与塔正对面的墙壁向内弯曲，上面有一个小门。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LEAVE_FORTRESS"><![CDATA[
+	<p>
+		你想离开这里，改天再来，于是走到了黑石门前。它表面有三个洞，似乎与大门外部的洞一模一样。
+	</p>
+	<p>
+		你重复进入时的解锁过程，大门很快就被打开了，再度回到塞壬堡垒所在的巨大又昏暗的洞穴中。沉重的石门在你身后关上，你思索接下来该去哪里……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- CHALLENGE -->
+	
+	<htmlContent tag="IMP_CHALLENGE"><![CDATA[
+	<p>
+		#IF pc.hasFetish(FETISH_SADIST)
+		#THEN
+			看到这些小恶魔，他们无疑都参与过抢劫甚至更恶劣的行径，你感到怒火中烧。你大步走向离你最近的那个小恶魔，用尽全力朝他的侧身踢去，这一脚让他站立不稳，向后踉跄，最后瘫倒在附近的墙壁上。你怒气冲冲地对他们说：[pc.speech(我来这里是为了彻底清除你们这些败类！准备好落败吧，你们这些渣滓！)]
+		#ELSE
+			看到这些小恶魔，他们无疑都参与过抢劫甚至更恶劣的行径，你感到满腔怒火。你转身面对庭院，大声呼喊道：[pc.speech(我来这里是为了将你们一网打尽！准备好接受正义的审判吧！)]
+		#ENDIF
+	</p>
+	<p>
+		你做好战斗准备，六只小恶魔在你面前迅速集结成一队，马上就会冲上前来发动攻击！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_CHALLENGE_CONTINUE"><![CDATA[
+	<p>
+		六个小恶魔根本打不过你，纷纷瘫倒在地，彻底败下阵来，你不禁得意一笑。
+	</p>
+	<p>
+		然而，你还没来得及喘口气，又有一群小恶魔从堡垒各地赶来，跳上前为同伴报仇！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_CHALLENGE_CONTINUE_WAVE_2"><![CDATA[
+	<p>
+		[style.italicsBad(战斗远未结束！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_CHALLENGE_CONTINUE_WAVE_3"><![CDATA[
+	<p>
+		[style.italicsMinorBad(堡垒里还有很多小恶魔！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_CHALLENGE_CONTINUE_WAVE_4"><![CDATA[
+	<p>
+		[style.italicsMinorGood(看来你已经击败堡垒里一半的守军了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_CHALLENGE_CONTINUE_WAVE_5"><![CDATA[
+	<p>
+		[style.italicsGood(小恶魔援军所剩无几！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_CHALLENGE_CONTINUE_WAVE_6"><![CDATA[
+	<p>
+		[style.italicsExcellent(这些是堡垒最后的守卫！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- IMP_FIGHT_AFTER_COMBAT_VICTORY -->
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_ALL_ENSLAVED"><![CDATA[
+	<p>
+		在奴役了所有的小恶魔之后，你除了继续穿过堡垒，无事可做……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_ENSLAVED"><![CDATA[
+	<p>
+		[npc.speech(你在干什么？！)][npc.name]发出惊叫，[npc.speech(你不能奴役我们！快停下！)]
+	</p>
+	<p>
+		看着眼前剩下的小恶魔，你歪嘴一笑，不知道是该继续奴役这些家伙，还是任其自生自灭……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_ENSLAVED_ONE"><![CDATA[
+	<p>
+		[npc.speech(别这样！)][npc.name]尖叫起来，[npc.speech(不要！我不想当奴隶！)]
+	</p>
+	<p>
+		看着这最后一个被打败的小恶魔，你咧开嘴笑了，你在想，是应该把[npc.herHim]也奴役了，还是放[npc.herHim]一马……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY"><![CDATA[
+	<p>
+		你看到最后一个小恶魔瘫倒在地，忍不住兴高采烈地发出胜利的欢呼。
+	</p>
+	<p>
+		你扫视了一下四周，再三确认没有其他威胁后，注意到有些落败的小恶魔迅速抛弃同伴逃之夭夭，或爬或踉踉跄跄地离开了堡垒的大门。你对这抛弃同伴逃跑的举动发出不齿的啧啧声，然后将注意力重新集中到你[pc.feet]下的四只小恶魔身上，思索着该如何处置……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_VICTORY_ATTRIBUTE_BOOST"><![CDATA[
+	<p style='text-align:center;'>
+		[style.italicsExcellent(你已打倒堡垒里的所有守卫！你熟知如何打败小恶魔，实乃对抗小恶魔的高手！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_COMBAT_VICTORY_SCARE_OFF"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			你对最后被打败的[npc.race]没有任何兴趣，于是站在一边命令道，[pc.speech(走吧，离开这里，别再回来了！)]
+		</p>
+		<p>
+			[npc.race]呻吟着，勉强撑起身，照你说的那样，踉踉跄跄地走进屈城区的更深处。你回头望向雄伟的堡垒大门，思索是应该直接去挑战塞壬，还是先休息片刻……
+		</p>
+	#ELSE
+		<p>
+			你对这些小恶魔不感兴趣，于是站到一边，命令道，[pc.speech(所有家伙都给我滚开！别再回来了！)]
+		</p>
+		<p>
+			这些小恶魔呻吟着，勉强撑起身，照你说的那样，踉踉跄跄地走向屈城区的更深处。你回头望向雄伟的堡垒大门，思索是应该直接去挑战塞壬，还是先休息片刻……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_COMBAT_VICTORY_SEX"><![CDATA[
+	<p>
+		#IF(game.getNonCompanionCharactersPresent().size()==1)
+			你决定在最后这个[npc.imp]身上找点乐子，便向前一步，弯下腰，将[npc.herHim]摆好姿势，一边发出[pc.a_moan+]，一边准备干[npc.herHim]……
+		#ELSE
+			你决定和这些小恶魔找点乐子，便向前一步，弯下腰，将他们摆好姿势，一边发出[pc.a_moan+]，一边准备开操……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_COMBAT_VICTORY_SEX_GENTLE"><![CDATA[
+	<p>
+		#IF(game.getNonCompanionCharactersPresent().size()==1)
+			你决定在最后这个[npc.imp]身上找点乐子，便向前一步，弯下腰，轻轻地将[npc.herHim]摆好姿势，一边轻声[pc.moan]，一边准备干[npc.herHim]……
+		#ELSE
+			你决定和这些小恶魔找点乐子，便向前一步，弯下腰，轻轻地将他们摆好姿势，一边轻声[pc.moan]，一边准备开操……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_COMBAT_VICTORY_SEX_ROUGH"><![CDATA[
+	<p>
+		#IF(game.getNonCompanionCharactersPresent().size()==1)
+			你决定在最后这个[npc.imp]身上找点乐子，便向前一步，弯下腰，粗鲁地将[npc.herHim]摆好姿势，一边发出[pc.a_moan+]，一边准备干[npc.herHim]……
+		#ELSE
+			你决定和这些小恶魔找点乐子，便向前一步，弯下腰，粗暴地将他们摆好姿势，一边发出[pc.a_moan+]，一边准备开操……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_COMBAT_VICTORY_SEX_SUBMIT"><![CDATA[
+	#IF(game.getNonCompanionCharactersPresent().size()==1)
+		<p>
+			看着被打败的[npc.race]，你不禁为[npc.herHim]感到惋惜。毕竟，[npc.sheHas]不仅被城堡里的其他小恶魔抛弃了，而且还目睹了[npc.her]所有的同伴都被奴役。你跪在[npc.herHim]身边，道歉道：[pc.speech(你还好吗？抱歉，我好像做得太过分了……)]
+		</p>
+		<p>
+			[npc.speech(尼真是个[pc.insult]，不是吗？！我当然有事！)][npc.she]冷笑一声，站起身来怒视你，[npc.speech(尼打算怎么赔罪，嗯，[pc.insult]？！)]
+		</p>
+		<p>
+			[npc.namePos]命令的口吻让你兴奋地呜咽，你回答道：[pc.speech(你可以随意蹂躏我，怎么样？！)]
+		</p>
+		<p>
+			[npc.speech(尼想让我把尼干得毫无知觉吗？！)][npc.name]吐了口唾沫，向你逼近，把你推倒在地，[npc.speech(我不介意这么做，[pc.insult]！)]
+		</p>
+		<p>
+			[npc.race]嘎嘎笑着，准备操你……
+		</p>
+	#ELSE
+		<p>
+			看着被打败的小恶魔，你不禁为他们感到惋惜。毕竟，小恶魔们刚刚被同伴抛弃，即使彼此之间的关系并不友好，但这种背叛肯定会让他们难过。
+		</p>
+		<p>
+			你跪在[npc.name]身边道歉：[pc.speech(对不起，我想我做得有点过火了。你还好吗？)]
+		</p>
+		<p>
+			[npc.speech(尼真是个[pc.insult]，不是吗？！当然不好！)][npc.she]冷笑一声，站起身来怒视你，[npc.speech(尼打算怎么赔罪，嗯，[pc.insult]？！)]
+		</p>
+		<p>
+			[npc.namePos]命令的口吻让你兴奋地呜咽，你回答道：[pc.speech(好吧，你和你的朋友们可以随意蹂躏我，怎么样？！)]
+		</p>
+		<p>
+			[npc.speech(他们不是我的朋友，[pc.insult]，你也不是！)][npc.Name]啐了一口，把你推倒在地，[npc.speech(不过我不介意让他们一起教训你，毕竟你有很多洞可以捅！)]
+		</p>
+		<p>
+			剩下的小恶魔们嘎嘎狂笑，纷纷冲上前来加入其中……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!--Defeat elsewhere:-->
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_DEFEAT"><![CDATA[
+	<p>
+		事实证明，你对付不了这些小恶魔，随着一声精疲力竭的叹息，你瘫倒在地，败下阵来。
+	</p>
+	<p>
+		[npc.speech(哈！那是怎么回事？！)][npc.name]讥讽着走上前来，饥渴地盯着你咧嘴笑：[npc.speech(我打赌尼希望我会赢，为了被我一顿好操！)]
+	</p>
+	<p>
+		其他小恶魔也都纷纷附和，很快得出结论：你挑起战斗只是希望被打败，然后被操。你还没来得及反驳，他们就已经相信这一定是你的性癖，并相互商定，他们会非常乐意帮你沉迷于此。在你明白发生了什么之前，小恶魔们已经蜂拥而至，把你团团围住，摆好位置。[npc.name]喊道：[npc.speech(让我们如[pc.herHim]所愿吧，好好地、用力地爆操[pc.she]一顿！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_DEFEAT_NO_NON_CON"><![CDATA[
+	<p>
+		事实证明，你对付不了这些小恶魔，随着一声精疲力竭的叹息，你瘫倒在地，败下阵来。
+	</p>
+	<p>
+		[npc.speech(哈！那是怎么回事？！)][npc.name]大笑着讥讽道，走上前来，[npc2.speech(我猜尼在试探我们，对吧？！)]
+	</p>
+	<p>
+		小恶魔们把你低沉的呻吟认为是对他们假设的肯定，但他们仍然把你视为他们老大的客人，似乎不愿意更进一步。当其他小恶魔走开时，[npc.name]训斥道：[npc.speech(尼不要再试了，听到了吗？！我们没时间陪尼玩游戏！)]
+	</p>
+	<p>
+		[npc.name]转身和[npc.her]的同伴一起离开，留下你恢复体力。你重新站起来，思索现在要干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_AFTER_COMBAT_DEFEAT_SEX"><![CDATA[
+	<p>
+		你认为让小恶魔们爽爽也不是太糟，于是允许他们把你摆好姿势。你叹了口气，对着[npc.name]说道：[pc.speech(那就来吧，速战速决……)]
+	</p>
+	<p>
+		你这么一说，小恶魔们嘲弄地哈哈大笑，急切于付诸实践，准备操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_AFTER_COMBAT_DEFEAT_SEX_EAGER"><![CDATA[
+	<p>
+		怀着对即将与这些小恶魔共度的欢乐时光的热切期待，你顺从地摆好姿势，兴奋地笑着对[npc.name]说道：[pc.speech(快点！现在就干我！)]
+	</p>
+	<p>
+		你这么一说，小恶魔们嘲弄地哈哈大笑，而且他们明显乐于付诸实践，准备操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_AFTER_COMBAT_DEFEAT_SEX_RESIST"><![CDATA[
+	<p>
+		你想要让这些小恶魔明白他们犯了大错，于是对着[npc.name]大喊：[pc.speech(等等！不！我根本不想和你做！放开我！)]
+	</p>
+	<p>
+		当你这么说时，小恶魔们发出一阵嘲讽的笑声，无视你的挣扎，[npc.name]冷笑着回应道：[npc.speech(你在欲擒故纵！我敢打赌这是你另一个性癖，对吧？！)]
+	</p>
+	<p>
+		你立刻否定，一边继续挣扎着踢打小恶魔，但尽管如此，他们仍然拒绝放开你，你意识到除非他们玩够了，他们不会停下来……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_IMP_DEFEAT_SEX"><![CDATA[
+	<p>
+		小恶魔们爽够后纷纷退开，留下你疲惫不堪地倒在地上。你正气喘吁吁，[npc.name]走到你面前，冷笑道：[npc.speech(别再试了，听到了没有？虽然干你很爽，但我们还有事要做，所以别挡我们的路！)]
+	</p>
+	<p>
+		[npc.name]转身和[npc.her]的同伴一起离开，留下你恢复体力。你重新站起来，思索现在要干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_AFTER_SEX_VICTORY"><![CDATA[
+	<p>
+		你爽完后从小恶魔们身边退开，并且命令他们尽快离开：[pc.speech(行了，快离开这里！别再回来了！)]
+	</p>
+	<p>
+		这些小恶魔呻吟着，勉强撑起身，照你说的那样，踉踉跄跄地走向屈城区的更深处。你回头望向雄伟的堡垒大门，思索是应该直接去挑战塞壬，还是先休息片刻……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_DEFEAT_RECOVER"><![CDATA[
+	<p>
+		你花了点时间来平复呼吸，复盘一会战术后继续前行……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_SEX_DEFEAT_RECOVER"><![CDATA[
+	<p>
+		你花了点时间来平复呼吸，收拾好东西后继续旅程……
+	</p>
+	
+	]]></htmlContent>
+	
+	<!--Defeat in lab:-->
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_DEFEAT_IN_LAB"><![CDATA[
+	<p>
+		你踉踉跄跄地退到实验台边，一边虚弱地喘息，瘫倒在地，彻底败下阵来。
+	</p>
+	<p>
+		虽然是小恶魔们打败了你，但他们却立刻拉开距离，任由身形修长的[npc.name]走上前来嘲弄道：[npc.speech(呵呵呵！你不会真以为自己能赢吧？)]
+	</p>
+	<p>
+		你刚要回答，调皮的妖狐却微微侧身，扭动着三条尾巴，恶作剧般挠向你的脸庞：[npc.speech(嘘！这只是个反问句，笨蛋！)]
+	</p>
+	#IF pc.isFeminine()
+	#THEN 
+		<p>
+			当她收回三条黑尾巴时，你抬起头，看到[npc.name]正低头冲你坏笑，明亮的[npc.eyeColour]眼眸里闪烁着邪恶的光芒：[npc.speech(看到你被打成这样，我真的好兴奋哦。我想你该为此负责……)]
+		</p>
+		<p>
+			你继续看着[npc.name]解开了她的实验室外套，拉起了她那件童贞杀手，你发现她没有穿内衣。正如她所说，她似乎相当兴奋，因为她纤细的手指分开她[npc.vaginaCapacity]的小穴时，你可以看到里面已经湿透了。[npc.speech(你还在等什么？快用上舌头吧！)]
+		</p>
+	#ELSE
+		<p>
+				当她收回三条黑尾巴时，你抬起头，看到[npc.name]正低头冲你坏笑，明亮的[npc.eyeColour]眼眸里闪烁着邪恶的光芒：[npc.speech(我不是很想占你的便宜，但恐怕这些小恶魔就不一样了……)]
+			</p>
+		<p>
+			[npc.name]刚走开，打败你的小恶魔们就立刻冲上前来。在妖狐残忍的笑声中，他们将你推倒在地，准备与你做爱……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_FIGHT_AFTER_COMBAT_DEFEAT_IN_LAB_NO_NON_CON"><![CDATA[
+	<p>
+		你踉踉跄跄地退到实验台边，一边虚弱地喘息，瘫倒在地，彻底败下阵来。
+	</p>
+	<p>
+		虽然是小恶魔们打败了你，但他们却立刻拉开距离，任由身形修长的[npc.name]走上前来嘲弄道：[npc.speech(呵呵呵！你不会真以为自己能赢吧？)]
+	</p>
+	<p>
+		你刚要回答，调皮的妖狐却微微侧身，扭动着三条尾巴，恶作剧般挠向你的脸庞：[npc.speech(嘘！这只是个反问句，笨蛋！)]
+	</p>
+	<p>
+		当她收回三条黑尾巴时，你抬起头，看到[npc.name]正低头冲你坏笑，[npc2.eyeColour]的眼眸里闪烁着邪恶的光芒：[npc.speech(看到你带着那三把钥匙，我就知道你们是塞壬的客人了。既然如此，我想我只能放你们走了，真遗憾……)]
+	</p>
+	<p>
+		[npc.name]转身回到了她的工作岗位，留下你恢复体力。你重新站起来，思索现在要干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_AFTER_COMBAT_DEFEAT_SEX_ARCANIST"><![CDATA[
+	<p>
+		你顺从地按照[npc.name]的指示向前挪动，将你的嘴唇贴近她温暖湿润的蜜穴。然而，妖狐不等你开始，伸手抓住了你的头，阻止了你进一步的行动。
+	</p>
+	<p>
+		[npc.speech(别忘记谁才是主导者，我的小宠物。)]她调笑道，[npc.speech(哦，我真希望你不要指望我会让你达到高潮。这是<i>我</i>的欢愉，也是对<i>你</i>的惩罚，记住喽。)]
+	</p>
+	<p>
+		说罢，她松开你的头，准备让你舔她……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_AFTER_COMBAT_DEFEAT_SEX_ARCANIST_EAGER"><![CDATA[
+	<p>
+		你急切地按照[npc.name]的指示向前挪动，将你的嘴唇贴近她温暖湿润的蜜穴。然而，妖狐不等你开始，伸手抓住了你的头，阻止了你进一步的行动。
+	</p>
+	<p>
+		[npc.speech(别忘记谁才是主导者，我的小宠物。)]她调笑道，[npc.speech(哦，我真希望你不要指望我会让你达到高潮。这是<i>我</i>的欢愉，也是对<i>你</i>的惩罚，记住喽。)]
+	</p>
+	<p>
+		说罢，她松开你的头，准备让你舔她……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="IMP_AFTER_COMBAT_DEFEAT_SEX_ARCANIST_RESIST"><![CDATA[
+	<p>
+		你不喜欢[npc.name]所说的话，于是你拼命地试图从她身边挪开。讥笑声迅速传来，不等你逃跑，妖狐伸手抓住了你的头，迫使你将嘴唇贴向她那温暖湿润的蜜穴。
+	</p>
+	<p>
+		[npc.speech(别指望你能有发言权，我的小宠物。)]她调笑道，[npc.speech(哦，我真希望你不要指望我会让你达到高潮。这既是<i>我</i>的欢愉，也是对<i>你</i>的惩罚，记住喽。)]
+	</p>
+	<p>
+		无情的妖狐无视你的抗议与挣扎，强迫你去舔她……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="AFTER_IMP_DEFEAT_ARCANIST_SEX"><![CDATA[
+	<p>
+		[npc.name]爽完后退开了，留下你趴在地上欲求不满地呻吟。妖狐低头着看着你，嗤笑道：[npc2.speech(蠢货！你现在快跑去找些下流的小恶魔把你干到高潮吧。哦，别再在这里惹麻烦了，明白吗？)]
+	</p>
+	<p>
+		你再次发出绝望的呜咽声，[npc.name]把你打发走了，转身继续工作。你艰难地站了起来，思索现在要干什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- COURTYARD -->
+	
+	<htmlContent tag="COURTYARD_RUINS"><![CDATA[
+	<p>
+		你正置身于[siren.namePos]的堡垒废墟中，庭院瓦砾遍布，石板地面和天花板上的裂缝巨大而漆黑，你必须绕过倒下的巨石和砸碎的石坑才能继续前进。
+	</p>
+	<p>
+		你时不时听到卵石从不稳定瓦砾堆上滚落的特有声音，提醒你格外小心自己的一举一动，避免引发又一次坍塌。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="COURTYARD"><![CDATA[
+	<p>
+		城堡庭院的地面是已凿平的光滑石板，与洞窟坑坑洼洼的道路相比，这里更易于行走。
+	</p>
+	<p>
+		主楼巨大的石拱门俯瞰着这片区域，你在思考是该现在靠近那厚重的木门，还是之后再去。
+	</p>
+	
+	]]></htmlContent>
+	
+
+	
+	<!-- WELL -->
+	
+	<htmlContent tag="WELL_RUINS"><![CDATA[
+	<p>
+		塔楼左侧的整面墙壁已经完全坍塌，沉重的石块与碎砖将堡垒的水井掩埋。如果你不知道这里曾经有一口水井，你根本想不到在这残垣断壁下还有什么值得注意的东西。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="WELL"><![CDATA[
+	<p>
+		庭院一角砌了口小小的石井，并配了木桶和辘轳。石井看起来完好，井边地面被溅湿，残留水渍，你看得出它经常被使用。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	<!-- CELLS -->
+	
+	<htmlContent tag="CELLS_RUINS"><![CDATA[
+	<p>
+		你面前是凿出的入口，原本安装的木门如今支离破碎地躺在你脚边。你向里窥视监牢，看到入口几米内的结构已然全面塌陷。很幸运，坍塌时里面空无一人。
+	</p>
+	<p>
+		你在这里已无事可做，便转身向庭院走去。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="CELLS"><![CDATA[
+	<p>
+		在你前方的洞口有一道结实的木门。由于大门敞开，你无需进入就能窥视内部，你可以看到黑岩洞穴被凿出了四间牢房。每间牢房正面和侧面都有沉重的铁栅栏，内部都有一张稻草铺成的床铺，以及紧挨着墙的木桶。
+	</p>
+	<p>
+		这里既无狱卒，也无囚犯，你不禁好奇这些牢房到底有没有被使用过，还是只是当摆设……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- LABORATORY -->
+	
+	<htmlContent tag="LABORATORY_RUINS"><![CDATA[
+	<p>
+		曾经作为堡垒实验室的低矮塔楼如今已破败不堪，整个左侧的墙壁已经完全坍塌。尽管如此，入口部分似乎相对完好，使你能够进入一段距离，直到被堆积的瓦砾和碎片阻挡了去路。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_SEARCH"><![CDATA[
+	<p>
+		你决定花些时间在实验室的废墟中搜寻，便小心翼翼地避开摇摇晃晃的碎石堆，设法找到了一些有价值的东西……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY"><![CDATA[
+	<p>
+		一座低矮的单层塔楼倚靠在庭院的一侧而建。当你走近时，你不禁想到，它很可能曾是最初的堡垒，而后来的堡垒则是在现有洞穴的基础上进一步雕琢而成。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_IMPS_DEFEATED"><![CDATA[
+	<p>
+		塔门大开，你一踏入，便发现自己再次置身于一间宽敞的圆厅中，室内的布局颇有几分莉莱雅实验室的味道。四周摆放着长长的木桌，桌上的玻璃烧杯和试管里盛满了暗淡的变质液体。很显然，屈城区的小恶魔身上的转化药水就是从这里来的。不过你不知道在你关闭这里之前，到底生产了多少药剂。
+	</p>
+	<p>
+		你完全找不到[citadelArcanist.name]，也不见任何小恶魔的踪迹。虽然[citadelArcanist.name]已经被赶走了，但你还是不禁惋惜自己还没有见她最后一面……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_IMPS"><![CDATA[
+	<p>
+		塔门大开，你一踏入，便发现自己置身于一间宽敞的圆厅中。室内的布局颇有几分莉莱雅实验室的味道，虽然设施不多，但效率更高。周围摆放着长长的木桌，桌上的玻璃烧杯和试管里盛满了颜色各异的液体，正咕咕冒着气泡。很显然，屈城区的小恶魔身上的转化药水就是从这里来的。
+	</p>
+	<p>
+		一群小恶魔正忙碌着穿梭于各个仪器之间，确保设备正常运行。在房间的另一侧，你看到了一个亚狐女，她似乎正忙着给各种食物和饮料附魔。虽然你认为她一定注意到了你的到来，但她却毫不在意。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_IMPS_ARCANIST_MET"><![CDATA[
+	<p>
+		塔门大开，你一踏入，便发现自己置身于一间宽敞的圆厅中。室内的布局颇有几分莉莱雅实验室的味道，虽然设施不多，但效率更高。周围摆放着长长的木桌，桌上的玻璃烧杯和试管里盛满了颜色各异的液体，正咕咕冒着气泡。很显然，屈城区的小恶魔身上的转化药水就是从这里来的。
+	</p>
+	<p>
+		一群小恶魔正忙碌着穿梭于各个仪器之间，确保设备正常运行。在房间的另一侧，你再次看到了亚妖狐女[citadelArcanist.name]，她似乎正在忙着给各种食物和饮料附魔。虽然你认为她一定注意到了你的到来，但她却毫不在意。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- LABORATORY_ARCANIST -->
+	
+	<htmlContent tag="LABORATORY_ARCANIST"><![CDATA[
+	<p>
+		你想和这位狐女监督员谈谈，于是朝实验室的另一侧走去。从远处看，你可以看到她穿着实验室外套，戴着护目镜。一走近，你可以看得更清楚，她的狐耳和尾巴是黑色的，就像她那又长又直的头发一样。她皮肤苍白，身材苗条，胸部大小适中，有C罩杯。她注意到你的靠近，转过身来，你看到她的眼睛是美丽的淡紫色。
+	</p>
+	<p>
+		[citadelArcanist.speech(诶，我不曾见过<i>你</i>。)]她声音里带着一丝愉悦，[citadelArcanist.speech(你可以称我为[citadelArcanist.name]，那你是？)] 
+	</p>
+	#IF pc.hasTraitActivated(PERK_OBSERVANT)
+	#THEN
+		<p>
+			[pc.speech(我是[pc.name]。)]你回答，又瞥向[citadelArcanist.namePos]的尾巴，注意到她其实有三条尾巴，只是挤作一团，假装只有一条，[pc.speech(我没想到会在这里看到一个三尾狐女。)]
+		</p>
+		<p>
+			[citadelArcanist.speech(呵呵呵！)][citadelArcanist.name]她被你的假设逗得咯咯直笑，举起一只纤纤玉手捂住嘴巴，[citadelArcanist.speech(狐女？！傻瓜！)]
+		</p>
+		<p>
+			你还没来得及回答，[citadelArcanist.name]就不再假装自己只有一条尾巴了，她的三条尾巴都环绕在下半身，腼腆地问：[citadelArcanist.speech(怎么了？你以前从未见过妖狐？好吧，我不应该太惊讶，你看起来<i>确实</i>无知又愚蠢呢。)]
+		</p>
+	#ELSE
+		<p>
+			[pc.speech(我是[pc.name]。)]你回答，[pc.speech(我没想到会在这里看到一个狐女。)]
+		</p>
+		<p>
+			[citadelArcanist.speech(呵呵呵！)][citadelArcanist.name]她被你的假设逗得咯咯直笑，举起一只纤纤玉手捂住嘴巴，[citadelArcanist.speech(狐女？！傻瓜！)]
+		</p>
+		<p>
+			你还没来得及回答，[citadelArcanist.name]的尾巴突然化为三条，环绕在她的下半身，她腼腆地问：[citadelArcanist.speech(怎么了？你以前从未见过妖狐？好吧，我不应该太惊讶，你看起来<i>确实</i>无知又愚蠢呢。)]
+		</p>
+	#ENDIF
+	<p>
+		[pc.speech(你说什么？)]你对妖狐的粗鲁行为感到恼火。
+	</p>
+	<p>
+		[citadelArcanist.speech(哦，请安静。)][citadelArcanist.name]轻蔑地说着，还一边摆着手。
+		#IF pc.getRace()==RACE_FOX_MORPH
+		#THEN
+				[citadelArcanist.speech(你知道吗，你已经是一只狐狸了，这真的很可惜。我制作了一种药水，可以把你变成可爱的狐女，但我不想把它浪费在一个已经是狐狸的人身上……)]
+			<p>
+				#IF pc.isFeminine()
+				#THEN不等你回应，她就继续说道：[citadelArcanist.speech(不管怎么说，我承认我确实无法抗拒像你这样迷人的狐女……为什么不过来跪下呢？我会大发慈悲让你舔我的小穴的……)]
+				#ELSE不等你回应，她就继续说道：[citadelArcanist.speech(不管怎么说，我承认我确实不太喜欢阳刚的……如果你变女性化之后再来拜访，我会大发慈悲让你舔我的小穴的……)]
+				#ENDIF
+			</p>
+		#ELSE
+			[citadelArcanist.speech(你知道吗，你看起来就像那种顺从的小玩具，很乐意帮我测试我的作品。你看，我制作了一种药水，可以把人变成可爱的狐女。你想帮我测试一下，对吧？)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_ARCANIST_REPEAT"><![CDATA[
+	<p>
+		你想再与[citadelArcanist.name]交谈，于是向实验室的另一侧走去。当皮肤苍白的亚妖狐注意到你的靠近时，她转过身来，那双美丽的淡紫色眼睛紧紧地盯着你：[citadelArcanist.speech(哦，又是<i>你</i>，烦人的[pc.race]总是来扰我清净。)]
+	</p>
+	<p>
+		[pc.speech(没必要那么说吧。)]你被妖狐粗鲁的问候给惹恼了。
+	</p>
+	<p>
+		[citadelArcanist.speech(哦，安静点，小傻瓜。)][citadelArcanist.name]轻蔑地说着，还一边摆着手。
+		#IF pc.getRace()==RACE_FOX_MORPH
+		#THEN
+				[citadelArcanist.speech(唔，你都已经是狐狸了，我可不想浪费我的魔药……)]
+			<p>
+				#IF pc.isFeminine()
+				#THEN不等你回应，她就继续说道：[citadelArcanist.speech(不管怎么说，我承认我确实无法抗拒像你这样迷人的狐女……为什么不过来跪下呢？我会大发慈悲让你舔我的小穴的……)]
+				#ELSE不等你回应，她就继续说道：[citadelArcanist.speech(不管怎么说，我承认我确实不太喜欢阳刚的……如果你们变女性化之后再来拜访，我会大发慈悲让你们舔我的小穴的……)]
+				#ENDIF
+			</p>
+		#ELSE
+			[citadelArcanist.speech(你已经接受了你只是一个应该帮我测试我的作品的小玩具的事实吗？这个药水能把你变成可爱的狐女。你会喜欢的，不是吗？)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_ARCANIST_REPEAT_NO_TF"><![CDATA[
+	<p>
+		你想再与[citadelArcanist.name]交谈，于是向实验室的另一侧走去。当皮肤苍白的亚妖狐注意到你的靠近时，她转过身来，那双美丽的淡紫色眼睛紧紧地盯着你：[citadelArcanist.speech(哦，又是<i>你</i>，烦人的[pc.race]总是来扰我清净。)]
+	</p>
+	<p>
+		[pc.speech(没必要那么说吧。)]你被妖狐粗鲁的问候给惹恼了。
+	</p>
+	<p>
+		[citadelArcanist.speech(哦，安静点，小傻瓜。)][citadelArcanist.name]轻蔑地说着，还一边摆着手。
+		#IF pc.isFeminine()
+			#THEN不等你回应，她就继续说道：[citadelArcanist.speech(不管怎么说，我承认我确实无法抗拒像你这样迷人的狐女……为什么不过来跪下呢？我会大发慈悲让你舔我的小穴的……)]
+			#ELSE不等你回应，她就继续说道：[citadelArcanist.speech(不管怎么说，我承认我确实不太喜欢阳刚的……如果你变女性化之后再来拜访，我会大发慈悲让你舔我的小穴的……)]
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<!-- Responses: -->
+	
+	<htmlContent tag="LABORATORY_ARCANIST_DECLINE"><![CDATA[
+	<p>
+		[pc.speech(我不喜欢这样，)]你说，[pc.speech(谢谢，但不用了。)]
+	</p>
+	<p>
+		[citadelArcanist.speech(爱咋咋地。)][citadelArcanist.name]回敬你，[citadelArcanist.speech(哦嘘哦嘘！我要干活儿了！)]
+	</p>
+	<p>
+		妖狐粗鲁轻蔑的行径令你翻了翻白眼。从她身边走开后，你接下来要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ARCANIST_SOLO_START_SEX"><![CDATA[
+	<p>
+		[pc.speech(哦好，当然！)]你急切地在[citadelArcanist.name]身前跪下。
+	</p>
+	<p>
+		[citadelArcanist.speech(可爱的小玩具，)][citadelArcanist.name]坏笑着看着你说，[citadelArcanist.speech(现在记好了，享受的是<i>我</i>，不是你。只有我才能高潮，明白吗？)]
+	</p>
+	<p>
+		[pc.speech(等下，什——)]你刚开口，[citadelArcanist.name]的尾巴就蒙住你的嘴，硬生生打断你的话。
+	</p>
+	<p>
+		[citadelArcanist.speech(嘘，)]她咯咯地笑，[citadelArcanist.speech(只要乖乖照做就好了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ARCANIST_FIGHT_START"><![CDATA[
+	<p>
+		你不喜欢[citadelArcanist.name]与你说话的方式，也完全不愿意让她继续制造这些转化药水。你以一种咄咄逼人的姿态向前迈出一步，断然说道：[pc.speech(我看你需要被好好教训一番！)]
+	</p>
+	<p>
+		[citadelArcanist.speech(呵呵呵！)]她咯咯笑，[citadelArcanist.speech(真是个小傻瓜！)]
+	</p>
+	<p>
+		还没等你反应过来，只见妖狐身边火花迸溅，浓烟四起，虽然烟雾很快就消散了，但你却发现完全不见[citadelArcanist.name]的身影！这场骚乱惊动了实验室里的小恶魔，他们一边向你发起攻击，一边请求堡垒其他区域的增援……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- LABORATORY_ARCANIST_SOLO_TF -->
+	
+	<htmlContent tag="LABORATORY_ARCANIST_SOLO_TF"><![CDATA[
+	<p>
+		[pc.speech(行，我喝，)]你说，[pc.speech(变成狐女听起来好色哦……)]
+	</p>
+	<p>
+		[citadelArcanist.speech(我知道你喜欢，)][citadelArcanist.name]咯咯笑，[citadelArcanist.speech(现在，张大嘴巴！)]
+	</p>
+	<p>
+		妖狐拿出一瓶闪着粉光的液体，你乖乖张开嘴。[citadelArcanist.name]拔开瓶塞，把药水送到你嘴边，你稍微仰起头，顺从地喝下整瓶冰凉甜美的调配物。
+	</p>
+	<p>
+		一股暖流立刻袭来，你感到一股奇特的刺痛感传遍了全身，转化让你不由得倒吸了一口气……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_ARCANIST_SOLO_TF_OFFER_SEX"><![CDATA[
+	<p>
+		[citadelArcanist.speech(哦，一切都很完美！)][citadelArcanist.name]欣喜若狂，[citadelArcanist.speech(瞧你变成了多性感的小狐狸啊！)]
+	</p>
+	<p>
+		你喘着粗气，试图尽快平复呼吸，适应刚刚转变的身体，[pc.speech(我……感觉很……不一样……)]
+	</p>
+	<p>
+		[citadelArcanist.speech(废话，当然会喽！)][citadelArcanist.name]咯咯笑，[citadelArcanist.speech(嗯，你都比我想象中性感多了……嘿，你想用新身体找点乐子吧？跪下来，来舔我的小穴吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_ARCANIST_SOLO_TF_SEX_DECLINED"><![CDATA[
+	<p>
+		[pc.speech(哦……好吧，我不知道……)]你喘着粗气，[pc.speech(我不想这样。)]
+	</p>
+	<p>
+		[citadelArcanist.speech(呃，好吧，管他呢，)][citadelArcanist.name]回敬你，[citadelArcanist.speech(去去去，我还有事要干。)]
+	</p>
+	<p>
+		妖狐粗鲁轻蔑的行径令你翻了翻白眼，你从她身边走开，思索接下来要用新身体做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="LABORATORY_ARCANIST_SOLO_TF_SEX_ACCEPTED"><![CDATA[
+	<p>
+		你崭新的狐身让你一阵性奋，于是急切地同意了[citadelArcanist.namePos]的建议，跪在她面前。
+	</p>
+	<p>
+		[citadelArcanist.speech(可爱的小玩具，)][citadelArcanist.name]坏笑着看着你说，[citadelArcanist.speech(现在记好了，享受的是<i>我</i>，不是你。只有我才能高潮，明白吗？)]
+	</p>
+	<p>
+		[pc.speech(等下，什——)]你刚开口，[citadelArcanist.name]的尾巴就蒙住你的嘴，硬生生打断你的话。
+	</p>
+	<p>
+		[citadelArcanist.speech(嘘，)]她咯咯地笑，[citadelArcanist.speech(只要乖乖照做就好了！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- LABORATORY_ARCANIST_POST_SEX -->
+	
+	<htmlContent tag="LABORATORY_ARCANIST_POST_SEX_SOLO"><![CDATA[
+	<p>
+		[citadelArcanist.name]爽完后就把你推开，奚落道：[citadelArcanist.speech(呵呵，真有趣……对<i>我</i>来说是这样的。你就去外面找点肮脏的小恶魔来帮你完事吧！)]
+	</p>
+	<p>
+		你意识到残忍的妖狐根本不想让你达到高潮，不由得发出了沮丧的呜咽。她又咯咯笑起来，继续说道：[citadelArcanist.speech(现在走吧，去去去！我还有事要干。)]
+	</p>
+	<p>
+		妖狐粗鲁轻蔑的行径令你叹了口气。你从她身边走开，思索接下来要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- TREASURY -->
+	
+	<htmlContent tag="TREASURY_NOT_SEARCHED"><![CDATA[
+	<p>
+		在塞壬支离破碎碎的宝座后面，有一个小门，竟奇迹般地幸免于难。你穿过这个门洞，进入了一个大房间，正如堡垒的其他地方，这个房间也是在洞穴的岩壁上开凿出来的。
+	</p>
+	<p>
+		不同于门口，房间内部遭受了严重的破坏：巨大的瓦砾堆使得行动变得异常艰难，而拱形的天花板上明显有好几个坑。
+	</p>
+	<p>
+		这看起来是个储物间，尽管环境充满了潜在风险，但在碎石与尘埃之间仔细探寻，或许能发掘出一些有价值的东西……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="TREASURY_SEARCHED"><![CDATA[
+	<p>
+		你已经找完了所有隐藏在瓦砾中的值钱玩意，而且房间已经完全坍塌，你在这片区域已经无事可做了……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="TREASURY_SEARCH"><![CDATA[
+	<p>
+		你小心翼翼地在废墟中仔细搜寻了一段时间，确保不会惊动那些摇摇欲坠的残骸。没过多久，你就找到了一个小箱子，里面装着相当多的火币。
+	</p>
+	<p>
+		旗开得胜，你干劲满满地继续搜索，但又过了十分钟，你翻遍了整个房间却一无所获。你正欲放弃，却注意到倒塌的墙壁上有一个门形凹痕。你伸[pc.hand]按去，无意中触发了某种内部机制，石墙陷进了地板，露出了一个完好的巨大衣柜。
+	</p>
+	<p>
+		不幸的是，本就摇摇欲坠的建筑开始轻微震动，你赶忙抓起衣柜里的所有东西，接着以最快的速度冲出大门，回到宫殿，就在这时，身后的整个天花板坍塌了！
+	</p>
+	<p>
+		你长舒一口气，朝你取得的东西露齿一笑……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	<!-- KEEP -->
+	
+	<htmlContent tag="KEEP_DEFEATED"><![CDATA[
+	<p>
+		塞壬的宫殿几乎完全塌陷，刚刚大家都能安然无恙地逃出来真是个奇迹。宝座曾经矗立的台子现在已经埋藏在瓦砾和岩石堆下，尽管房间破败不堪，但你似乎可以绕过瓦砾堆到达远处。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP"><![CDATA[
+	<p>
+		你站在洞窟的一个巨大凹槽前，看来建造堡垒墙壁、正门和内塔所用的石块都是从这里开采出来的。地面一路被压平，直到远处高度不下20英尺的巨大石拱门，其中嵌着一扇巨大的铁加固木门。
+	</p>
+	<p>
+		这里就是暗夜塞壬的居所，你思考现在要不要推门进去，还是下次再来……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_BACK_OFF"><![CDATA[
+	<p>
+		你认为自己还没准备好与[siren.name]正面交锋，于是退后一步，继续在堡垒的石头庭院里闲逛……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	
+	
+	<!-- KEEP_ENTRY -->
+	
+	<htmlContent tag="KEEP_ENTRY"><![CDATA[
+	<p>
+		你认为现在是时候去面对“暗夜塞壬”了，于是，你做好了最坏的打算，迈步向前，推开了沉重的木门。
+		#IF pc.hasStatusEffect(SE_PHYSIQUE_PERK_0)
+		#THEN你的力气太小，费了不少时间才把门打开，向主楼迈进。
+		#ELSE幸运的是，门没锁，而且相当稳定，很容易就被推开了，你向主楼迈进。
+		#ENDIF
+	</p>
+	<p>
+		你进入了一个巨大的石厅，穹顶上悬挂着近百盏奥术灯笼，灯光将大厅照得通明。大厅四周的巨大石柱由深黑色的岩石雕刻而成，脚下同样是黑曜石精心打磨成的大石板，石板的边缘装饰着棱角分明的花纹。
+	</p>
+	<p>
+		不过，这些令人印象深刻的建筑并没有吸引你太长时间，因为三个恶魔手下正等在你面前。[impMalesLeader.Name]看起来是他们当中资历最老的一个，站在最前面，[impFemalesLeader.name]和[impAlphaLeader.name]分站在他左右两侧。你身后的巨大木门轰然关闭，他冷笑着问：[impMalesLeader.speech(什么？你不会以为我们会让你直接走到暗夜塞壬面前吧？)]
+	</p>
+	<p>
+		你看向恶魔身后的一座高台，一张黑石宝座独居高位，而端坐其中的便是堡垒的主人——暗夜塞壬本人。尽管奥术灯笼将大殿照得一片通明，但宝座上的身影却诡异地笼罩在阴影之中。
+		#IF pc.hasTraitActivated(PERK_CHUUNI)
+		#THEN你想让这位藏匿的小恶魔帮派首领现身，大喊着发起挑战：[pc.speech(原来你便是那位自诩为‘暗夜塞壬’的狂妄之徒吗？！准备迎接你的末日吧！)]
+		#ELSE你想让这位藏匿的小恶魔帮派首领现身，大喊道：[pc.speech(就是你指使小恶魔帮派在屈城区隧道里胡作非为吧！我是来结束这一切的，塞壬！)]
+		#ENDIF
+	</p>
+	<p>
+		[siren.speech(塞壬？)]出人意料的细小而高亢的声音从阴影中传出，[siren.speech(汝可知在对谁说话吗？竟敢对吾，命运的揭示者，世界的毁灭者，莉西丝之女出言不逊！吾之名足以令恶魔和人类闻风丧胆！颤抖吧，凡人！现在，就让我揭示我的真实身份，让你们见识一下真正的力量！)]
+	</p>
+	<p>
+		#IF pc.hasTraitActivated(PERK_CHUUNI)
+		#THEN你无意中发现塞壬令人印象深刻的开场白让[impAlphaLeader.name]退却了，但那又如何，她怎敌得过你的究极力量！
+		#ELSE你无意中发现塞壬令人脚趾扣地的开场白让[impAlphaLeader.name]退却了，在她自称是“世界毁灭者”时，你也被尬到绷不住了。
+		#ENDIF
+		你抬头仰望高台，眼看恶魔们的老大站了起来，待她走到光亮处，你不由得大吃一惊。
+	</p>
+	<p>
+		塞壬不仅和莉莱雅一样是半恶魔，她的身材也非常娇小。她面容青涩，看起来绝对不会超过十八九岁，身高也只有[units.sizes(152)]。跟别的魅魔不一样，她身上没有一丝女性特有的曲线，不但胸部近乎平坦，而且屁股也很小，就连臀部都只有一点点女人味。
+	</p>
+	<p>
+		塞壬除了身材矮小，穿衣品味也不尽如人意。她身着魔女裙与魔女靴，头戴宽边魔女帽，还披了一件黑色的紫边斗篷。她的脖子上挂着一个吸睛的五角星护身符，最奇怪的是，她右眼上还戴着一个方形的白色眼罩。
+	</p>
+	<p>
+		然而，更震憾的是她右手那把巨大的奥术镰刀。虽然这把镰刀比塞壬高了一个头，而且镰刀除了绿色的奥术刀刃外，通体由重金属制成，但这身材娇小的魅魔却能毫不费力地挥舞它。塞壬居高临下地看着你，嘴角勾起一抹笑，大叫道：[siren.speech(无知庸才！瞧好等下是谁会把你们打得落花流水！吾乃暗夜塞壬，次元粉碎者，莉西丝的宠儿，正是我[siren.name]！若你异想天开想与吾对决，先战胜吾之扈从吧！~哇哈哈！~)]
+	</p>
+	<p>
+		她如此说着，三个恶魔也逐渐逼近。你意识到在他们攻击前，你只有片刻的反应时间！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_RETURN"><![CDATA[
+	<p>
+		你再次决定与[siren.name]对战，于是，在做好迎战准备后，你迈步向前，推开了沉重的木门。
+		#IF pc.hasStatusEffect(SE_PHYSIQUE_PERK_0)
+		#THEN你的力气太小，费了不少时间才把门打开，向主楼迈进。
+		#ELSE幸运的是，门没锁，而且相当稳定，很容易就被推开了，你向主楼迈进。
+		#ENDIF
+	</p>
+	<p>
+		巨大的石厅看起来和你上次来时一模一样，穹顶上悬挂着近百盏奥术灯笼，依然灯火通明。大厅四周的巨大石柱由深黑色的岩石雕刻而成，脚下同样是黑曜石精心打磨成的大石板，石板的边缘装饰着棱角分明的花纹。
+	</p>
+	<p>
+		一如往常，三个恶魔手下在等着你。[impMalesLeader.Name]看起来是他们当中资历最老的一个，站在最前面，[impFemalesLeader.name]和[impAlphaLeader.name]分站在他左右两侧。你身后的巨大木门轰然关闭，他冷笑着问：[impMalesLeader.speech(又回来了，[pc.race]？还没吸取上次教训吗？)]
+	</p>
+	<p>
+		#IF pc.hasTraitActivated(PERK_CHUUNI)
+		#THEN不等你回答，[siren.name]从宝座上站了起来，再次作了一番激动人心的演说：
+		#ELSE不等你回答，[siren.name]从宝座上站了起来，再次作了一番令人脚趾扣地的演说：
+		#ENDIF
+		[siren.speech(汝岂敢再度踏足惊世骇俗的奥术使用者的殿堂？无知庸才！准备被击垮吧！)]
+	</p>
+	<p>
+		半魅魔如此说着，三个恶魔也逐渐逼近。你意识到在他们攻击你之前，你只有片刻的反应时间！
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_ENTRY_RING"><![CDATA[
+	<p>
+		<i>现在提起莉西丝的戒指无疑会引起塞壬的怀疑。等你解决了这些恶魔，也许可以找个机会骗她戴上戒指。</i>
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP_DEMONS_DEFEATED -->
+	
+	<htmlContent tag="KEEP_DEMONS_DEFEATED"><![CDATA[
+	<p>
+		[impMalesLeader.speech(主人，我、我们失败了！)][impMalesLeader.name]大叫道，与[impAlphaLeader.name]和[impFemalesLeader.name]倒在地上。
+	</p>
+	<p>
+		你望着塞壬的宝座，看[siren.name]从高台上走下来，她笑着说：[siren.speech(蠢货！现在你就要见识到我强大的奥术能量了！空间和时间都会随着我的意愿弯曲！)]
+	</p>
+	<p>
+		[siren.name]单脚向前一蹬，摆出英雄一般的姿势，单臂将巨大的镰刀举过头顶，毫不费力地旋转起来，展示出惊人的力量和技巧。随即她又伸出另一只手抓住镰刀柄，将镰刀转到准备的低位，接着又发出一阵#IFpc.hasTraitActivated(PERK_CHUUNI)#THEN勇猛的#ELSE可笑的#ENDIF笑声：[siren.speech(~哇哈哈！~准备好迎接你的毁灭了吗！)]
+	</p>
+	<p>
+		你还来不及从刚刚与恶魔的战斗中恢复过来，[siren.name]就准备立马与你单挑！
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP_CHALLENGE -->
+	
+	<htmlContent tag="KEEP_CHALLENGE"><![CDATA[
+	<p>
+		虽然[siren.namePos]的演说令人印象深刻，但你知道你百折不回的力量不是她能比的。赶走这些可悲的恶魔喽喽不过是在浪费你的宝贵时间，所以你冲着半魅魔嗤笑一声，嘲讽起来： [pc.speech(说这么多大话，还不是害怕跟我一对一单挑！老实说，我对所谓「暗夜塞壬」抱有更高的期望，但我看你好像只会装腔作势，躲在爪牙后面！)]
+	</p>
+	<p>
+		[siren.speech(你竟敢这样跟我讲话？！你对我的奥术之力一无所知吗？你不过是蝼蚁罢了！)][siren.name]回答，走下高台。虽然她这一举动只不过是为了吓唬你，但没有了高台的抬举，她只能躲在恶魔副手身后，为了解决问题慌张大喊，[siren.speech(站，站边上去，爪牙！)]
+	</p>
+	<p>
+		当恶魔们听命行事时，你对塞壬最后的威胁回应道：[pc.speech(你以为我，奥术的[pc.master]，恶魔的征服者，未来整个御城区的统治者，会把你这个蝼蚁放在眼里吗？愚蠢的魅魔！我大发慈悲，给你一次投降的机会！)]
+	</p>
+	<p>
+		[siren.Name]使出念力将披风向身后一甩，回答道：[siren.speech(愚蠢之辈！苍穹为证，吾将降下毁灭之力于汝等！)]
+	</p>
+	<p>
+		[pc.speech(浅薄的挑衅，可笑！宇宙之力皆为吾所用，只需冰山一角就足以令尔等灰飞烟灭！)]
+	</p>
+	<p>
+		随着你和[siren.name]的叫嚣越来越离谱，三个恶魔手下缩在一旁哼哼。你知道他们绝对不是在尴尬，肯定仅仅是因为你要释放真正的力量就感到恐惧。你不想让他们吃太多苦头，冷笑着对[siren.name]发出最后通牒：[pc.speech(那么，塞壬，汝是否有胆量与吾对决，让吾见识汝之实力？抑或汝只是在装腔作势，正如曾经被吾摧毁的无数蝼蚁一样？)]
+	</p>
+	<p>
+		[siren.speech(竟敢侮辱吾，其罪当诛！吾当然会接受汝的挑战！)][siren.name]大喊。[siren.speech(尔等退下，别插手我们的较量！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_CHALLENGE_RING"><![CDATA[
+	<p>
+		<i>现在是尝试诱骗[siren.name]戴上莉西丝的戒指的最佳时机！</i>
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP_CHALLENGE_RING_TRICK -->
+	
+	<htmlContent tag="KEEP_CHALLENGE_POST_FIGHT_RING_TRICK"><![CDATA[
+	<p>
+		[pc.speech(这比我想象的要轻松得多，)]你说，[pc.speech(想超越我是徒劳的。毕竟，我得到了莉西丝本人的祝福！没错，为了打败你，你母亲把她的力量借给了我！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_CHALLENGE_DUEL_RING_TRICK"><![CDATA[
+	<p>
+		[pc.speech(我就知道你不会退缩，)]你说，[pc.speech(但想超越我是徒劳的。毕竟，我得到了莉西丝本人的祝福！没错，为了打败你，你母亲把她的力量借给了我！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_CHALLENGE_RING_TRICK"><![CDATA[
+	<p>
+		你拿出莉西丝卫队长伊丽莎白给你的指环，对着光亮向[siren.name]展示。她一看到你手上的东西，脸上的蔑视骤变为崩溃，声音听起来快要哭了，她尖叫着：[siren.speech(还给我！妈、妈妈才不会把它给你这种人！是你、你偷了它！<i>还给我！</i>)]
+	</p>
+	<p>
+		你摇头拒绝，并摆出一副最像反派的坏笑脸，你的[pc.hand]继续举着戒指，以便让它能被轻松打落。你的挑衅让[siren.namePos]情绪失控，她迷迷糊糊就上了你的当。[npc.name]又尖叫着要你交出她母亲的戒指，突然施放了一个弱化版的“重击术”，你故意让它击中你伸长的[pc.arm]，把戒指打落到地上。
+	</p>
+	<p>
+		随即，[siren.name]使出念力，将戒指拉到她伸出的手掌中，她发出胜利的笑声，立马戴上了戒指。[siren.speech(~哇哈哈！~哦，你会为偷了妈妈的戒指付出<i>惨痛</i>代价的！怎么，我会……等、等等……这是什么？！)]
+	</p>
+	<p>
+		戒指上的奥术附魔突然生效，当鲜红的字母浮现在空中时，[siren.namePos]洋洋得意的表情戛然而止；
+	</p>
+	<p style='text-align:center;'>
+		<i>奴隶身份验证：[style.boldArcane([siren.name])]</i><br/>
+		<i>检测到主人莉琳：[style.boldArcane(莉西丝)]</i><br/>
+		<i>绕过奴隶行政管理——将奴隶传送转移到莉西丝宫殿</i>
+	</p>
+	<p>
+		[siren.speech(不要！)][siren.name]尖叫。就在她消失在视线之前，她把镰刀举过头顶，把柄狠狠地砸在石板地上。她掀开眼罩，这居然是异色虹膜，左眼是绿色的，而刚刚露出来的眼睛则是紫色的。她狂笑着喊道：[siren.speech(塞壬的呼唤，摧毁[pc.herHim]！我会回来报——)]
+	</p>
+	<p>
+		[siren.name]话音未落便已经消散，但她刚刚释放的奥术却生效了，震耳欲聋的尖叫响彻整个大殿。回荡的哀嚎声让震得大地都在颤抖，你和三个恶魔手下都捂着耳朵后退。好在这巨响声音来得快去得也快，但几乎是在它消散的瞬间，你脚下的巨大石板层层开裂、分崩离析，奥术毒素从这些裂缝中喷涌而出。你向出口退去时，这个强大法术产生的共鸣使得屋顶上的一大片石头突然碎裂，并轰然落下，正好砸在塞壬空荡荡的宝座上。
+	</p>
+	<p>
+		[impMalesLeader.speech(快离开这里！)][impMalesLeader.name]大喊，抓着[impAlphaLeader.name]和[impFemalesLeader.name]的手臂跑向出口。
+	</p>
+	<p>
+		塞壬的法术似乎无意中导致了整个地下堡垒的坍塌，当你匆忙跟着三个恶魔时，越来越多的天花板开始碎裂，掉落在地板上，发出响亮的撞击声。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_CHALLENGE_RING_TRICK_ESCAPE"><![CDATA[
+	<p>
+		你冲出宫殿的巨石拱门，发现塞壬的法术正在摧毁城堡。庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响。岩石和碎石散落在雕刻的石板上。
+	</p>
+	<p>
+		值得庆幸的是，看起来堡垒里的其他居民一有危险迹象就立即撤离了，在庭院的远处，最后一群小恶魔正冲出大门。你的心怦怦直跳，
+		#IF pc.isAbleToFly()
+		#THEN将自己的飞行技巧发挥到了极致，在空中快速穿梭，躲避着落下的巨石与砖块，跟随着三个恶魔穿过大门，进入屈城区洞窟。
+		#ELSE
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
+			#THEN将身体的灵活性发挥到了极致，躲避掉落的巨石和坍塌的砖石，冲过庭院，跟随三个恶魔来到屈城区洞窟。
+			#ELSE你不知怎么躲过了所有掉落的巨石和倒塌的砖石，冲过庭院，跟随三个恶魔来到屈城区洞窟。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		这简直就是个奇迹，你看到堡垒里的每个人都没有大碍地成功出逃。虽然这让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐守卫包围了大门，他们手持奥术滑膛枪，正忙着把所有逃跑的小恶魔抓起来。其中几人还在和[siren.namePos]的手下们谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+	</p>
+	<p>
+		看起来现在逃跑是没希望了，你思索接下来该怎么办，这时负责的半魅魔警官指着你命令道：[genericFemale.speech(站在那别动，[pc.race]，给我解释一下这是怎么回事，立刻、马上！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_CHALLENGE_RING_TRICK_ESCAPE_NO_IMPS"><![CDATA[
+	<p>
+		你冲出宫殿的巨石拱门，发现塞壬的法术正在摧毁城堡。庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响。岩石和碎石散落在雕刻的石板上。
+	</p>
+	<p>
+		值得庆幸的是，你先前已经把堡垒里的其他居民全都打跑了，所以除了你和恶魔手下之外，没有人有危险。你的心怦怦直跳，
+		#IF pc.isAbleToFly()
+		#THEN将自己的飞行技巧发挥到了极致，在空中快速穿梭，躲避着落下的巨石与砖块，跟随着三个恶魔穿过大门，进入屈城区洞窟。
+		#ELSE
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
+			#THEN将身体的灵活性发挥到了极致，躲避掉落的巨石和坍塌的砖石，冲过庭院，跟随三个恶魔来到屈城区洞窟。
+			#ELSE你不知怎么躲过了所有掉落的巨石和倒塌的砖石，冲过庭院，跟随三个恶魔来到屈城区洞窟。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		这简直就是个奇迹，你们四人都毫发无损地逃了出来。虽然这让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐卫兵包围了大门，他们手持奥术滑膛枪严阵以待。其中几人还在和[siren.namePos]的手下们谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+	</p>
+	<p>
+		看起来现在逃跑是没希望了，你思索接下来该怎么办，这时负责的半魅魔警官指着你命令道：[genericFemale.speech(站在那别动，[pc.race]，给我解释一下这是怎么回事，立刻、马上！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- KEEP_COLLAPSE_ESCAPE -->
+	
+	<!--Escape after enslaving dark siren with ring:-->
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_GUARDS_ENSLAVE"><![CDATA[
+	<p>
+		没办法，你只能老老实实向警官解释，是伊丽莎白指示你来逮捕[siren.name]。你讲述了如何诱骗她戴上奴役戒指，她又是如何在消失前施下最后一个咒语使城堡坍塌。
+	</p>
+	<p>
+		[genericFemale.speech(我了解了。)]警官说完，转向她的一名下属。[genericFemale.speech(埃尔里尼亚，伊丽莎白有没有跟你说过这些？)]
+	</p>
+	<p>
+		半魅魔警官简短地回复道：[style.speechFeminineStrong(是的长官，正如这[pc.race]所说的。队长确实请求[pc.herHim]协助抓捕[siren.name]，并安全护送回莉西丝殿下处。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<!--Escape with dark siren:-->
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_GUARDS_EXPLAIN"><![CDATA[
+	<p>
+		没办法，你只能老老实实向警官解释，是伊丽莎白指示你来逮捕[siren.name]。你讲述了如何在战斗中将她击败，她又是如何在被击败前使出咒语让城堡崩塌。
+	</p>
+	<p>
+		[genericFemale.speech(我了解了。)]警官说完，转向她的一名下属。[genericFemale.speech(埃尔里尼亚，伊丽莎白有没有跟你说过这些？)]
+	</p>
+	<p>
+		半魅魔警官简短地回复道：[style.speechFeminineStrong(是的长官，队长确实请求[pc.herHim]协助将[siren.name]缉拿归案。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_GUARDS_EXPLAIN_PRE_QUEST"><![CDATA[
+	<p>
+		没办法，你只能老老实实向警官解释，你试图铲除贼首[siren.name]来击溃小恶魔帮派。你讲述了如何在战斗中将她击败，她又是如何在被击败前使出咒语让城堡崩塌。
+	</p>
+	<p>
+		[genericFemale.speech(我了解了。)]警官说完，转向她的一名下属。[genericFemale.speech(埃尔里尼亚，伊丽莎白有没有跟你说过要如何处理协助我们的第三方？)]
+	</p>
+	<p>
+		半魅魔警官简短地回复道：[style.speechFeminineStrong(是的长官，队长已经考虑好一切。她说，我们应该感谢任何帮助我们执行任务的人。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_GUARDS_IMPS"><![CDATA[
+	<p>
+		[genericFemale.speech(好吧，这样的话，我们衷心感谢您的帮助，)]警官对你说，[genericFemale.speech(我已经记不清我们在堡垒门口蹲守几天了。莉西丝早就想管教她的女儿了，但[siren.name]显然知道这一点，所以不敢离开她的要塞。总之，多亏了你，这一切都结束了。这些小恶魔该为先前的无数抢劫和袭击事件负责，所以我们会把他们移交给执法者，我相信执法者会非常乐意把他们都变成奴隶。)]
+	</p>
+	<p>
+		说罢，警官转身命令下属围捕小恶魔。当他们正准备前往最近的执法者岗哨时，她转过身来喊道： [genericFemale.speech(再次感谢你的帮助！)]
+	</p>
+	<p>
+		当莉西丝的卫兵向屈城区的地道走去时，你回头看了看堡垒。看起来坍塌已经完全结束了，你思索要不要穿过大门，去探索废墟……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_GUARDS_NO_IMPS"><![CDATA[
+	<p>
+		[genericFemale.speech(好吧，这样的话，我们衷心感谢您的帮助，)]警官对你说，[genericFemale.speech(我已经记不清我们在堡垒门口蹲守几天了。莉西丝早就想管教她的女儿了，但[siren.name]显然知道这一点，所以不敢离开她的要塞。总之，多亏了你，这一切都结束了。我们这就走。)]
+	</p>
+	<p>
+		说罢，警官转身命令下属列队集结。当他们正准备返回莉西丝的宫殿时，她转过身来喊道： [genericFemale.speech(再次感谢你的帮助！)]
+	</p>
+	<p>
+		当莉西丝的卫兵向屈城区的地道走去时，你回头看了看堡垒。看起来坍塌已经完全结束了，你思索要不要穿过大门，去探索废墟一番……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP_AFTER_COMBAT_VICTORY -->
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_VICTORY"><![CDATA[
+	<p>
+		[siren.speech(不……不可能！)][siren.name]她虚弱地喊道，踉跄后退，气喘吁吁。她用尽最后的力气，将镰刀举过头顶，然后将镰刀的柄狠狠地砸在石板地上。她掀开眼罩，这居然是异色虹膜，左眼是绿色的，而刚刚露出来的眼睛则是紫色的。她狂笑着喊道：[siren.speech(塞壬的呼唤，摧毁[pc.herHim]！我会回来报仇的……)]
+	</p>
+	<p>
+		塞壬耗尽了最后一丝灵气释放出这个法术，随后便无力地瘫倒在地上。你还来不及采取任何行动，震耳欲聋的尖叫便响彻整个大殿。回荡的哀嚎声让震得大地都在颤抖，你和三个恶魔手下都捂着耳朵后退。好在这巨响声音来得快去得也快，但几乎是在它消散的瞬间，你脚下的巨大石板层层开裂、分崩离析，奥术毒素从这些裂缝中喷涌而出。你跳着躲避时，这个强大法术产生的共鸣使得屋顶上的一大片石头突然碎裂，并轰然落下，正好砸在塞壬空荡荡的宝座上。
+	</p>
+	<p>
+		[impMalesLeader.speech(我们得离开这里！)][impMalesLeader.name]大喊，扯着[impAlphaLeader.name]和[impFemalesLeader.name]的手臂推向出口。[impMalesLeader.speech(跑起来！)]
+	</p>
+	<p>
+		塞壬的法术似乎无意中导致了整个地下堡垒的坍塌，当三个恶魔准备逃跑时，越来越多的天花板开始碎裂，掉落在地板上，发出响亮的撞击声。
+	</p>
+	<p>
+		[npc.speech(救……救命！)][siren.name]有气无力地呼喊着，显然已经筋疲力尽，没有你的帮助，她无法逃脱这可怕的险境……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_COMBAT_HERO"><![CDATA[
+	#IF pc.getHeightValue()>siren.getHeightValue()
+	#THEN
+		<p>
+			即使[siren.name]刚才还是你的敌人，你也绝不可能丢下她不管！你躲开掉下来的大块天花板，冲到躺在地上的[siren.name]身边，用[pc.arms]将她撑起，转身冲出宫殿的巨石拱门。塞壬的法术正在摧毁城堡，庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响，岩石和碎石散落在雕刻的石板上。
+		</p>
+		<p>
+			值得庆幸的是，看起来堡垒里的其他居民一有危险迹象就立即撤离了，在庭院的远处，最后一群小恶魔正冲出大门。你的心怦怦直跳，小塞壬蜷缩在你怀里，你不知怎么躲过了所有掉落的巨石和倒塌的砖石，跟随三个恶魔来到屈城区洞窟。
+		</p>
+		<p>
+			这简直就是个奇迹，你看到堡垒里的每个人都没有大碍地成功出逃。虽然这让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐守卫包围了大门，他们手持奥术滑膛枪，正忙着把所有逃跑的小恶魔抓起来。其中几人还在和[siren.namePos]的手下们谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+			
+		</p>
+		<p>
+			看起来现在逃跑是没希望了，你思索接下来该怎么办，这时负责的半魅魔警官指着你命令道：[genericFemale.speech(站在那别动，[pc.race]！放开[siren.name]，立刻、马上！)]
+		</p>
+		<p>
+			[siren.name]意识到你刚刚做了什么，在被带走之际，她红着脸抬头与你对视：[siren.speech(你、你救了我……如果不是你，我……谢谢！)]
+		</p>
+	#ELSE
+		<p>
+			即使[siren.name]刚才还是你的敌人，你也绝不可能丢下她不管！你躲开掉下来的大块天花板，冲到躺在地上的[siren.name]身边，把她的一只胳膊环在你的肩膀上撑起来。你半扛半扶着精疲力竭的塞壬，以最快的速度冲出宫殿的巨石拱门。塞壬的法术正在摧毁城堡，庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响，岩石和碎石散落在雕刻的石板上。
+		</p>
+		<p>
+			值得庆幸的是，看起来堡垒里的其他居民一有危险迹象就立即撤离了，在庭院的远处，最后一群小恶魔正冲出大门。你的心怦怦直跳，小塞壬蜷缩在你胸前，你不知怎么躲过了所有掉落的巨石和倒塌的砖石，跟随三个恶魔来到屈城区洞窟。
+		</p>
+		<p>
+			这简直就是个奇迹，你看到堡垒里的每个人都没有大碍地成功出逃。虽然这让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐守卫包围了大门，他们手持奥术滑膛枪，正忙着把所有逃跑的小恶魔抓起来。其中几人正在和[siren.namePos]的手下们谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+		</p>
+		<p>
+			看起来现在逃跑是没希望了，你思索接下来该怎么办，这时负责的半魅魔警官指着你命令道：[genericFemale.speech(站在那别动，[pc.race]！放开[siren.name]，立刻、马上！)]
+		</p>
+		<p>
+			[siren.name]意识到你刚刚做了什么，在被带走之际，她红着脸抬头与你对视：[siren.speech(你、你救了我……如果不是你，我……谢谢！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_COMBAT_HERO_NO_IMPS"><![CDATA[
+	#IF pc.getHeightValue()>siren.getHeightValue()
+	#THEN
+		<p>
+			即使[siren.name]刚才还是你的敌人，你也绝不可能丢下她不管！你躲开掉下来的大块天花板，冲到躺在地上的[siren.name]身边，用[pc.arms]将她撑起，转身冲出宫殿的巨石拱门。塞壬的法术正在摧毁城堡，庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响，岩石和碎石散落在雕刻的石板上。
+		</p>
+		<p>
+			你先前已经把堡垒里的其他居民全都打跑了，所以除了你、[siren.name]和恶魔手下之外，没有人有危险。你的心怦怦直跳，小塞壬蜷缩在你的怀里，你不知怎么躲过了所有掉落的巨石和倒塌的砖石，跟随三个恶魔来到屈城区洞窟。
+		</p>
+		<p>
+			这简直就是个奇迹，你们五人都毫发无损地逃了出来。虽然这让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐卫兵包围了大门，他们手持奥术滑膛枪严阵以待。其中几人还在和[siren.namePos]的手下们谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+		</p>
+		<p>
+			看起来现在逃跑是没希望了，你思索接下来该怎么办，这时负责的半魅魔警官指着你命令道：[genericFemale.speech(站在那别动，[pc.race]！放开[siren.name]，立刻、马上！)]
+		</p>
+		<p>
+			[siren.name]意识到你刚刚做了什么，在被带走之际，她红着脸抬头与你对视。[siren.speech(你、你救了我……如果不是你，我……谢谢！)]
+		</p>
+	#ELSE
+		<p>
+			即使[siren.name]刚才还是你的敌人，你也绝不可能丢下她不管！你躲开掉下来的大块天花板，冲到躺在地上的[siren.name]身边，把她的一只胳膊环在你的肩膀上撑起来。你半扛半扶着精疲力竭的塞壬，以最快的速度冲出宫殿的巨石拱门。塞壬的法术正在摧毁城堡，庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响，岩石和碎石散落在雕刻的石板上。
+		</p>
+		<p>
+			你先前已经把堡垒里的其他居民全都打跑了，所以除了你、[siren.name]和恶魔手下之外，没有人有危险。你的心怦怦直跳，小塞壬蜷缩在你的怀里，你不知怎么躲过了所有掉落的巨石和倒塌的砖石，跟随三个恶魔来到屈城区洞窟。
+		</p>
+		<p>
+			这简直就是个奇迹，你们五人都毫发无损地逃了出来。虽然这让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐卫兵包围了大门，他们手持奥术滑膛枪严阵以待。其中几人还在和[siren.namePos]的手下们谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+		</p>
+		<p>
+			看起来现在逃跑是没希望了，你思索接下来该怎么办，这时负责的半魅魔警官指着你命令道：[genericFemale.speech(站在那别动，[pc.race]！放开[siren.name]，立刻、马上！)]
+		</p>
+		<p>
+			[siren.name]意识到你刚刚做了什么，在被带走之际，她红着脸抬头与你对视。[siren.speech(你、你救了我……如果不是你，我……谢谢！)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_COMBAT_HERO_END"><![CDATA[
+	<p>
+		你别无选择，只能按照警官说的去做，于是你小心翼翼地把[siren.name]放下站好。随即，四名莉西丝的卫兵走上前来，搀扶着[siren.namePos]向她母亲宫殿的方向走去。
+	</p>
+	<p>
+		[genericFemale.speech(现在给我们解释清楚这是怎么回事！)]这个警官说，不耐烦地跺着脚，等待你的回应。
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_COMBAT"><![CDATA[
+	<p>
+		你不可能冒着生命危险去救[siren.name]！你转身冲出宫殿的巨石拱门。塞壬的法术正在摧毁堡垒，庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响，岩石和碎石散落在雕刻的石板上。
+	</p>
+	<p>
+		[impMaleLeader.name]看到你和跑出大厅，却独独未见[siren.name]的身影。他朝你跑来，又擦肩而过，英勇地冲进了倒塌的主楼。
+	</p>
+	<p>
+		值得庆幸的是，看起来堡垒里的其他居民一有危险迹象就立即撤离了，在庭院的远处，最后一群小恶魔正冲出大门。你的心怦怦直跳，
+		#IF pc.isAbleToFly()
+		#THEN将自己的飞行技巧发挥到了极致，在空中快速穿梭，躲避着落下的巨石与砖块，跟随着两个恶魔穿过大门，进入屈城区洞窟。
+		#ELSE
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
+			#THEN将身体的灵活性发挥到了极致，躲避掉落的巨石和坍塌的砖石，冲过庭院，跟随两个恶魔来到屈城区洞窟。
+			#ELSE你不知怎么躲过了所有掉落的巨石和倒塌的砖石，冲过庭院，跟随两个恶魔来到屈城区洞窟。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		这简直就是个奇迹，你看到堡垒里的每个人都没有大碍地成功出逃。虽然这让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐守卫包围了大门，他们手持奥术滑膛枪，正忙着把所有逃跑的小恶魔抓起来。其中几人正在和[siren.namePos]的手下谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+	</p>
+	<p>
+		看起来现在逃跑是没希望了，你思索接下来该怎么办，这时负责的半魅魔警官指着你命令道：[genericFemale.speech(站在那别动，[pc.race]，给我解释一下这是怎么回事，立刻、马上！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_COMBAT_NO_IMPS"><![CDATA[
+	<p>
+		你不可能冒着生命危险去救[siren.name]！你转身冲出宫殿的巨石拱门。塞壬的法术正在摧毁堡垒，庞大的洞顶开始崩塌，崩落到地上，引起了大地的震颤，脚下隆隆作响，岩石和碎石散落在雕刻的石板上。
+	</p>
+	<p>
+		[impMaleLeader.name]看到你和跑出大厅，却独独未见[siren.name]的身影。他朝你跑来，又擦肩而过，英勇地冲进了倒塌的主楼。
+	</p>
+	<p>
+		值得庆幸的是，你先前已经把堡垒里的其他居民全都打跑了，所以除了你、[siren.name]和恶魔手下之外，没有人有危险。你的心怦怦直跳，
+		#IF pc.isAbleToFly()
+		#THEN将自己的飞行技巧发挥到了极致，在空中快速穿梭，躲避着落下的巨石与砖块，跟随着两个恶魔穿过大门，进入屈城区洞窟。
+		#ELSE
+			#IF pc.getRace()==RACE_SQUIRREL_MORPH || pc.getRace()==RACE_CAT_MORPH
+			#THEN将身体的灵活性发挥到了极致，躲避掉落的巨石和坍塌的砖石，冲过庭院，跟随两个恶魔来到屈城区洞窟。
+			#ELSE你不知怎么躲过了所有掉落的巨石和倒塌的砖石，冲过庭院，跟随两个恶魔来到屈城区洞窟。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		这简直就是个奇迹，你们三人都毫发无损地逃了出来。就在几秒钟后，[impMaleLeader.name]抱着[siren.name]踉踉跄跄地走了出来。虽然安全脱险让每个人都松了一口气，但你的麻烦还没有结束。至少有三十名莉西丝的精锐卫兵包围了大门，他们手持奥术滑膛枪严阵以待。其中几人把[siren.namePos]的手下们拉到一边谈话，但碍于他们的恶魔身份，他们可能一点事没有就会被释放了。
+	</p>
+	<p>
+		[siren.speech(我不敢相信你居然会把我丢在那里等死！)][siren.name]冲你喊道，这时四个卫兵正拖着她往她母亲宫殿的方向走去，[siren.speech(我讨厌你！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_COLLAPSE_ESCAPE_COMBAT_END"><![CDATA[
+	<p>
+		[genericFemale.speech(现在给我解释清楚这是怎么回事！)]负责的半魅魔警官说，不耐烦地跺着脚，等待你的回应。
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!-- KEEP_AFTER_COMBAT_DEFEAT -->
+	
+	<htmlContent tag="KEEP_CHALLENGE_LEADER_DEFEAT"><![CDATA[
+	<p>
+		你无力再与三个恶魔战斗，踉踉跄跄地退到墙边，瘫倒在地，彻底败下阵来。
+	</p>
+	<p>
+		[siren.speech(~哇哈哈！~)][siren.name]笑了，[siren.speech(你连我的手下都打不过！这下我不用向你释放我庞大的奥术力量了，算你走运！现在……你该受到惩罚啦！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_CHALLENGE_BOSS_DEFEAT"><![CDATA[
+	<p>
+		你无力再战，踉踉跄跄地后退，瘫倒在地，彻底败下阵来。
+	</p>
+	<p>
+		[siren.speech(~哇哈哈！~)][siren.name]大笑，[siren.speech(正如吾所料，汝根本无法与吾之伟力匹敌！吾选择克制，实属尔等万幸！若吾全力以赴，迎接汝的将是难以想象的噩梦！现在……接受吾赐予的惩罚吧！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SIREN_VOYEUR"><![CDATA[
+	<p>
+		你抬起头就看到塞壬露出欣喜的坏笑，在你发出沉重的悲鸣时，她向手下们下达了命令：[siren.speech(你们三个！控制住[pc.herHim]！我想看你们操[pc.herHim]！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_NO_NON_CON"><![CDATA[
+	<p>
+		你抬起头就看到塞壬露出欣喜的坏笑，在你发出沉重的悲鸣时，她向手下们下达了命令：[siren.speech(你们三个！把[pc.herHim]扔出我的堡垒！)]
+	</p>
+	<p>
+		三个恶魔扯着[pc.arms]把你抬起，[siren.name]喊道：[siren.speech(若胆敢归来，吾很乐意再摧毁汝！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX"><![CDATA[
+	<p>
+		你对此毫不在意。[siren.name]坐在她的宝座上观看，你让三个恶魔把你摆好位置，准备操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_EAGER"><![CDATA[
+	<p>
+		你很乐意听到这个。[siren.name]坐在她的宝座上观看，你急切地让三个恶魔把你摆好位置，准备好操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_SEX_RESIST"><![CDATA[
+	<p>
+		你不想听到这个。[siren.name]坐在她的宝座上观看，你绝望地反抗三个恶魔摆好你，准备操你……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!--KEEP_AFTER_COMBAT_DEFEAT_POST_SEX-->
+	
+	<htmlContent tag="KEEP_AFTER_COMBAT_DEFEAT_POST_SEX"><![CDATA[
+	<p>
+		三个恶魔纷纷退后，坏笑着看着瘫倒在地的你。在你发出沉重的悲鸣时，[siren.name]大喊道：[siren.speech(有趣的闹剧！现在把[pc.herHim]扔出我的堡垒吧！)]
+	</p>
+	<p>
+		三个恶魔扯着[pc.arms]把你抬起，[siren.name]喊道：[siren.speech(若胆敢归来，吾很乐意再摧毁汝！)]
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	
+	<!--KEEP_AFTER_COMBAT_DEFEAT_NO_NON_CON_THROWN_OUT-->
+	
+	<htmlContent tag="THROWN_OUT"><![CDATA[
+	<p>
+		三个恶魔将你拖出宫殿的拱门，带到了庭院中，途中所有的小恶魔都对你指指点点，哈哈大笑。你的脸颊因羞耻而火热，恶魔们毫不客气地将你从正门扔了出去，而[impMaleLeader.name]在你身后大喊：[impMaleLeader.speech(还有，别回来了！)]
+	</p>
+	<p>
+		你长吁一口气，这才站起来。你擦了擦身子，思索接下来要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="THROWN_OUT_NO_IMPS"><![CDATA[
+	<p>
+		三个恶魔将你拖出宫殿的拱门，带到了庭院中，途中[impAlphaLeader.name]还趁机侮辱你有多么可悲。你的脸颊因羞耻而火热，恶魔们毫不客气地将你从正门扔了出去，而[impMaleLeader.name]在你身后大喊：[impMaleLeader.speech(还有，别回来了！)]
+	</p>
+	<p>
+		你长吁一口气，这才站起来。你擦了擦身子，思索接下来要做什么……
+	</p>
+	
+	]]></htmlContent>
+	
+</dialogue>

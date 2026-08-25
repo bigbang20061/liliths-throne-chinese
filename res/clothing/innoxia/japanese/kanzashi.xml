@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>500</value>
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[簪花]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[簪花]]></namePlural>
+		<description><![CDATA[一个日本传统发饰，主要由折叠的布花组成。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>HAIR</slot>
+		<rarity>EPIC</rarity>
+		<clothingSet>innoxia_geisha</clothingSet>
+		<imageName>kanzashi.svg</imageName>
+		<imageEquippedName/>
+		<effects> 
+			<effect itemEffectType="CLOTHING" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="KIMONO"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="KIMONO"/>
+		<tertiaryColoursDye values="ALL"/>
+	
+		<itemTags>
+			<tag>REINDEER_GIFT</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]把[npc.her]的头发绑起来，然后别上了簪花。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的头发扎起来，然后别上了簪花。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拽起[npc2.namePos]的头发，然后将簪子固定在位。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]从[npc.her]的头发中取出了簪花。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的簪花从她的头发中取出。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地从[npc2.namePos]的头发中拔出簪花。]]></otherRough>
+	</displacementText>
+	
+</clothing>

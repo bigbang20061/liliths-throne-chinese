@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>100</value> 
+		
+		<name><![CDATA[自设文字]]></name>
+		
+		<description><![CDATA[这个纹身没有特定的图案，可以展示任意文字或计数指示。]]></description> 
+		<bodyOverviewDescription><![CDATA[没有图形纹样的纹身]]></bodyOverviewDescription> 
+		
+		<imageName>none.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours>
+			<colour>CLOTHING_GREY</colour>
+		</primaryColours>
+		<secondaryColours/> 
+		<tertiaryColours/> 
+		
+	</coreAttributes>
+	
+</tattoo>

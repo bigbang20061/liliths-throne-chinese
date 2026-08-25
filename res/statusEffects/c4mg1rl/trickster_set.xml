@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<statusEffect>
+	<renderingPriority>70</renderingPriority>
+	
+	<renderInEffectsPanel>true</renderInEffectsPanel>
+	
+	<category>INVENTORY</category>
+	
+	<beneficial>BENEFICIAL</beneficial>
+	
+	<combatEffect>false</combatEffect>
+	
+	<sexEffect>false</sexEffect>
+	
+	<tags/>
+	
+	<name><![CDATA[诡骗奖励]]></name>
+	
+	<description><![CDATA[
+		穿上诡术套装，[npc.nameIs]充满了恶作剧的喜悦感。各种狡猾的阴谋诡计跃入[npc.she]的脑海，[npc.name]感觉仿佛[npc.she]成为了诡术之神。
+	]]></description>
+	
+	<imageName>trickster_set.svg</imageName>
+	
+	<colourPrimary>CLOTHING_RED_DARK</colourPrimary>
+	<colourSecondary/>
+	<colourTertiary/>
+	
+	<attributeModifiers>
+		<modifier value="10.0">DAMAGE_LUST</modifier>
+		<modifier value="10.0">MAJOR_ARCANE</modifier>
+	</attributeModifiers>
+	
+	<combatMoves/>
+	
+	<spells/>
+	
+	<extraEffects/>
+	
+	
+	<!-- Effect logic -->
+	
+	<applicationCondition><![CDATA[
+		[#SET_BONUS_c4mg1rl_trickster.isCharacterWearingCompleteSet(npc)]
+	]]></applicationCondition>
+	
+	<applicationLength constantRefresh="false">-1</applicationLength>
+	
+	<applyEffect/>
+	
+	<applyRemovalEffect/>
+	
+	<applyPostRemovalEffect/>
+	
+</statusEffect>

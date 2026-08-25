@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[雌雄同体符号]]></name>
+		
+		<description><![CDATA[这个符号代表男性和女性生理性别与性别认同的结合。]]></description> 
+		<bodyOverviewDescription><![CDATA[雌雄同体符号的纹身]]></bodyOverviewDescription> 
+		
+		<imageName>gender_herm.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_PURPLE"/> 
+		<secondaryColours/> 
+		<tertiaryColours/> 
+		
+	</coreAttributes>
+	
+</tattoo>

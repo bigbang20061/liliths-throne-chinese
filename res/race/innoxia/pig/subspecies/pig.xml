@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<subspecies>
+	<race>innoxia_pig</race>
+	<colour>innoxia_pig</colour>
+	<secondaryColour>innoxia_pig</secondaryColour>
+	<tertiaryColour>innoxia_pig</tertiaryColour>
+	<mainSubspecies>true</mainSubspecies>
+	<baseSlaveValue>12000</baseSlaveValue>
+	<attributeItemId>innoxia_race_pig_porcine_pop</attributeItemId>
+	<transformativeItemId>innoxia_race_pig_oinkers_fries</transformativeItemId>
+	<subspeciesOverridePriority>0</subspeciesOverridePriority>
+	<nocturnality>DIURNAL</nocturnality>
+	<shortStature>false</shortStature>
+	<bipedalSubspecies>true</bipedalSubspecies>
+	<applySubspeciesChanges/>
+	<subspeciesWeighting><![CDATA[
+		#IF(targetedRace==RACE_innoxia_pig)
+			100
+		#ELSE
+			0
+		#ENDIF
+	]]></subspeciesWeighting>
+	<iconName displaySize="80">icon</iconName>
+	<backgroundName>background</backgroundName>
+	<bookIconName>icon</bookIconName>
+	<bookName><![CDATA[胖胖小猪]]></bookName>
+	<basicDescriptionId>PIG_BASIC</basicDescriptionId>
+	<advancedDescriptionId>PIG_ADVANCED</advancedDescriptionId>
+	<defaultPreference>TWO_AVERAGE</defaultPreference>
+	<name><![CDATA[猪化形]]></name>
+	<namePlural><![CDATA[猪化形]]></namePlural>
+	<singularMaleName><![CDATA[猪男]]></singularMaleName>
+	<singularFemaleName><![CDATA[猪女]]></singularFemaleName>
+	<pluralMaleName><![CDATA[猪男]]></pluralMaleName>
+	<pluralFemaleName><![CDATA[猪女]]></pluralFemaleName>
+	<description><![CDATA[一种人形的猪，当下肢为双足时称为“猪化形”，而下肢呈现出猪兽态时称为“半猪人”。]]></description>
+	<feralAttributes>
+		<feralName><![CDATA[猪]]></feralName>
+		<feralNamePlural><![CDATA[猪]]></feralNamePlural>
+		<feralSingularMaleName><![CDATA[野公猪]]></feralSingularMaleName>
+		<feralSingularFemaleName><![CDATA[野母猪]]></feralSingularFemaleName>
+		<feralPluralMaleName><![CDATA[野公猪]]></feralPluralMaleName>
+		<feralPluralFemaleName><![CDATA[野母猪]]></feralPluralFemaleName>
+		<legConfiguration>QUADRUPEDAL</legConfiguration>
+		<sizeHeight>true</sizeHeight>
+		<size>95</size>
+		<breastRowCount>0</breastRowCount>
+		<nipplesPerBreastCount>1</nipplesPerBreastCount>
+		<crotchBreastRowCount>6</crotchBreastRowCount>
+		<nipplesPerCrotchBreastCount>1</nipplesPerCrotchBreastCount>
+		<armsOrWingsPresent>false</armsOrWingsPresent>
+		<fingerActionsAvailable>false</fingerActionsAvailable>
+		<hairPresent>false</hairPresent>
+	</feralAttributes>
+	<statusEffectDescription><![CDATA[[npc.NamePos]的身体让[npc.herHim]总是渴望尝试各种新食物，因此[npc.she]对食物中毒有轻微的抵抗力。]]></statusEffectDescription>
+	<statusEffectAttributeModifiers>
+		<attribute value="5">MAJOR_PHYSIQUE</attribute>
+		<attribute value="0">MAJOR_ARCANE</attribute> 
+		<attribute value="0">MAJOR_CORRUPTION</attribute>
+		<attribute value="5">RESISTANCE_POISON</attribute>
+	</statusEffectAttributeModifiers>
+	<extraEffects/>
+	<perkWeightings>
+		<category masculineWeighting="5" feminineWeighting="5">PHYSICAL</category>
+		<category masculineWeighting="1" feminineWeighting="2">LUST</category>
+		<category masculineWeighting="0" feminineWeighting="0">ARCANE</category>
+	</perkWeightings>
+	<regionLocations>
+		<region rarity="THREE_UNCOMMON">DOMINION</region>
+		<region rarity="THREE_UNCOMMON">FIELDS</region>
+		<region rarity="THREE_UNCOMMON">WOODLAND</region>
+		<region rarity="THREE_UNCOMMON">FIELD_CITY</region>
+		<region rarity="THREE_UNCOMMON">JUNGLE_CITY</region>
+		<region rarity="THREE_UNCOMMON">DESERT_CITY</region>
+	</regionLocations>
+	<worldLocations>
+		<world rarity="TWO_RARE">NIGHTLIFE_CLUB</world>
+	</worldLocations>
+	<flags/>
+</subspecies>

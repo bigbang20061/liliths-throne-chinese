@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>750</value>
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[长筒靴]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[长筒靴]]></namePlural>
+		<description><![CDATA[一双长筒靴，鞋跟很高，旨在增加穿者的身高，同时远观拉长小腿肌肉和腿部的整体长度。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity>
+		<slot>FOOT</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>thigh_high_boots.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>FEET</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="LEATHER"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<secondaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_BLACK"/>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的[npc.feet]塞进靴子中，然后将它们拉到大腿中部。
+]]></self>
+    <other><![CDATA[
+[npc.Name]让[npc2.namePos]将[npc2.feet]塞进靴子中，然后将它们拉到[npc2.her]大腿中部。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的[npc2.feet]强行塞进靴子中，然后用力将它们拉到[npc2.her]大腿中部。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将长筒靴的上部拉下，然后用力将它们脱下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]长筒靴的上部拉下，然后用力将它们脱下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]长筒靴的上部猛力拉下，然后用力将它们脱下。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

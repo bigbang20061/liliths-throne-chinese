@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>400</value> 
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[滑冰裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[滑冰裙]]></namePlural>
+		<description><![CDATA[一款无袖滑冰裙，由两条细肩带承托，横跨穿着者的肩膀]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>skater_dress.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO_STOMACH_VISIBLE"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_ARM_WINGS</tag>
+			<tag>DRESS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]穿上滑冰裙，整理好裙子后，将带子移到肩膀上的舒适位置。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将滑冰裙从[npc2.namePos]头上套下，整理好裙摆后，再将肩带调整到[npc2.her]肩膀的舒适位置。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将滑冰裙拉过[npc2.namePos]的头顶并套在[npc2.her]的躯干上。
+	]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将滑冰裙从头上拉起，然后脱掉。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]的滑冰裙拉过头顶并脱了下来。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]的滑冰裙拉到头顶并将其拽了下来。
+		]]></otherRough>
+	</displacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+			[npc.Name]拉起了滑冰裙的裙摆。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]拉起[npc2.namePos]滑冰裙的下摆。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]滑冰裙的裙摆，粗暴地拉了起来。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+			[npc.Name]将滑冰裙的裙摆拉回到正确位置。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]的滑冰裙拉回原位。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]滑冰裙的下摆拉回到正确的位置。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[
+			[npc.Name]耸耸肩，脱掉滑冰裙的肩带，上半部分垂落到腰部。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]滑冰裙的肩带从[npc2.her]肩上滑下，然后将其拽到[npc.her]腰间。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地拽下[npc2.namePos]滑冰裙连衣裙的肩带，然后激烈地将其拽到[npc.her]的腰部。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+			[npc.Name]将滑冰裙的上半部分拉回原位。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]滑冰裙的上半部分重新拉回原位。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]的滑冰连衣裙上半部分猛力拉回原位。
+]]></otherRough>
+	</replacementText>
+
+	
+</clothing>

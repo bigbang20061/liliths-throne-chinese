@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<!-- AUNT_HOME_PLAYERS_ROOM_QUICK_SHOWER -->
+	
+	<htmlContent tag="START_SHOWER_SEX_AS_DOM"><![CDATA[
+	#IF([#SPECIAL_PARSE_0]==1)
+		<p>
+			你暂时还不想这么快冲完澡，于是将湿漉漉的身子紧紧贴住[npc.name]，告诉[npc.herHim]现在可正是干[npc.herHim]的绝佳时机。
+		</p>
+		<p>
+			#IF(npc.isAttractedTo(pc))
+				那[npc.race]显然也一样饥渴，只是发出几声[npc.a_moan+]便将身体靠过来，在你[pc.lips+]上留下了服从的一吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，你们二人相拥起来，准备好服从于欲望……
+			#ELSE
+				尽管那[npc.race]并没有怎么被你吸引，但[npc.sheIs]确实也别无他法，只得痛苦地叹一口气，让你附身在[npc.her][npc.lips+]上留下了一吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，你抱住奴隶的身子，准备好沉湎于欲望中……
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			你暂时还不想这么快冲完澡，于是将湿漉漉的身子紧紧贴在奴隶们身上，告诉他们现在可正是干他们的绝佳时机。
+		</p>
+		<p>
+			#IF(npc.isAttractedTo(pc) && npc2.isAttractedTo(pc) && ([#SPECIAL_PARSE_0]==2 || npc3.isAttractedTo(pc)) && ([#SPECIAL_PARSE_0]<4 || npc4.isAttractedTo(pc)))
+				你的奴隶显然也一样即可，顿时响起嘈杂而兴奋的呻吟声，他们全都将身体靠过来，在你[pc.lips+]和[pc.breasts+]上留下了一个又一个表示服从的吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，你们贴在一起，准备好服从于欲望……
+			#ELSEIF(!npc.isAttractedTo(pc) && !npc2.isAttractedTo(pc) && ([#SPECIAL_PARSE_0]==2 || !npc3.isAttractedTo(pc)) && ([#SPECIAL_PARSE_0]<4 || !npc4.isAttractedTo(pc)))
+				尽管你的奴隶没有一个受到你吸引，但也都别无他法，一声声痛苦的叹息在你耳边响起，你对着他们每个人的嘴唇都亲了一下。淋浴温暖的水流沿着裸露的身躯汩汩流下，你抱住这群不情愿的奴隶，准备好沉湎于欲望中……
+			#ELSE
+				尽管你能感到有些人稍显犹豫，但作为奴隶他们别无他法，你重新声明了他们的地位，便对着每一双嘴唇都留下了支配的一吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，你抱住这群奴隶，准备好沉湎于欲望中……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+
+	<htmlContent tag="START_SHOWER_SEX_AS_SUB"><![CDATA[
+	#IF([#SPECIAL_PARSE_0]==1)
+		<p>
+	你暂时还不想这么快冲完澡，于是将湿漉漉的身子紧紧贴住[npc.name]，告诉[npc.herHim]可以对你想做什么就做什么，这是绝佳的机会。
+</p>
+		<p>
+	那[npc.race]显然也跟你一样饥渴，只是发出几声[npc.a_moan+]便将身体靠过来，在你[pc.lips+]上留下了支配的一吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，你们二人相拥起来，准备好服从于欲望……
+</p>
+	#ELSEIF([#SPECIAL_PARSE_0]==2)
+		<p>
+	你暂时还不想这么快冲完澡，于是将湿漉漉的身子紧紧贴住[npc.name]和[npc2.name]，告诉他们可以对你想做什么就做什么，这是绝佳的机会。
+</p>
+		<p>
+	你的奴隶们显然也跟你一样饥渴，顿时响起嘈杂而兴奋的呻吟声，他们全都将身体靠过来，在你[pc.lips+]和[pc.breasts+]上留下了一个又一个表示支配的吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，两个奴隶将你夹在中间，期待着你完全服从在他们脚下……
+</p>
+	#ELSE
+		<p>
+	你暂时还不想这么快冲完澡，于是将湿漉漉的身子紧紧贴住你的奴隶们，告诉他们可以对你想做什么就做什么，这是绝佳的机会。
+</p>
+		<p>
+	你的奴隶们显然也跟你一样饥渴，顿时响起嘈杂而兴奋的呻吟声，他们全都将身体靠过来，在你[pc.lips+]和[pc.breasts+]上留下了一个又一个表示支配的吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，奴隶们将你夹在中间，期待着你完全服从在他们脚下……
+</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_SHOWER_SEX -->
+	
+	<htmlContent tag="AFTER_SHOWER_SEX"><![CDATA[
+	<p>
+	#IF(sex.getAllParticipants(false).size()==2)
+		爽过之后，你让[npc.name]赶紧帮你洗干净，结束后你关掉水龙头，又让奴隶帮忙擦干了身体。
+	#ELSE
+		爽过之后，你让奴隶们赶紧帮你洗干净，结束后你关掉水龙头，又让他们帮忙擦干了身体。
+	#ENDIF
+</p>
+	<p>
+	你在淋浴时能够如此享受一番，已经觉得非常满足，穿好衣服就准备回房间了……
+</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- AUNT_HOME_PLAYERS_ROOM_BATH -->
+	
+	<htmlContent tag="START_BATH_SEX_AS_DOM"><![CDATA[
+	#IF([#SPECIAL_PARSE_0]==1)
+		<p>
+			你暂时还不想这么快洗完澡，于是将湿漉漉的身子紧紧贴住[npc.name]，告诉[npc.herHim]现在可正是干[npc.herHim]的绝佳时机。
+		</p>
+		<p>
+			#IF(npc.isAttractedTo(pc))
+				那[npc.race]显然也一样饥渴，只是发出几声[npc.a_moan+]便将身体靠过来，在你[pc.lips+]上留下了服从的一吻。浴缸的温水浸没着你赤裸的身体，你们二人相拥起来，准备好服从于欲望……
+			#ELSE
+				尽管那[npc.race]并没有怎么被你吸引，但[npc.sheIs]确实也别无他法，只得痛苦地叹一口气，让你附身在[npc.her][npc.lips+]上留下了一吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，你抱住奴隶的身子，准备好沉湎于欲望中……
+			#ENDIF
+		</p>
+	#ELSE
+		<p>
+			你暂时还不想这么快洗完澡，于是将湿漉漉的身子紧紧贴在奴隶们身上，告诉他们现在可正是干他们的绝佳时机。
+		</p>
+		<p>
+			#IF(npc.isAttractedTo(pc) && npc2.isAttractedTo(pc) && ([#SPECIAL_PARSE_0]==2 || npc3.isAttractedTo(pc)) && ([#SPECIAL_PARSE_0]<4 || npc4.isAttractedTo(pc)))
+				你的奴隶显然也一样即可，顿时响起嘈杂而兴奋的呻吟声，他们全都将身体靠过来，在你[pc.lips+]和[pc.breasts+]上留下了一个又一个表示服从的吻。淋浴温暖的水流沿着裸露的身躯汩汩流下，你们贴在一起，准备好服从于欲望……
+			#ELSEIF(!npc.isAttractedTo(pc) && !npc2.isAttractedTo(pc) && ([#SPECIAL_PARSE_0]==2 || !npc3.isAttractedTo(pc)) && ([#SPECIAL_PARSE_0]<4 || !npc4.isAttractedTo(pc)))
+				尽管你的奴隶没有一个受到你吸引，但也都别无他法，一声声痛苦的叹息在你耳边响起，你对着他们每个人的嘴唇都亲了一下。浴缸的温水浸没着你赤裸的身体，你抱住这群不情愿的奴隶，准备好沉湎于欲望中……
+			#ELSE
+				尽管你能感到有些人稍显犹豫，但作为奴隶他们别无他法，你重新声明了他们的地位，便对着每一双嘴唇都留下了支配的一吻。浴缸的温水浸没着你赤裸的身体，你抱住这群奴隶，准备好沉湎于欲望中……
+			#ENDIF
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+
+	<htmlContent tag="START_BATH_SEX_AS_SUB"><![CDATA[
+	#IF([#SPECIAL_PARSE_0]==1)
+		<p>
+			你暂时还不想这么快洗完澡，于是将湿漉漉的身子紧紧贴住[npc.name]，告诉[npc.herHim]可以对你想做什么就做什么，这是绝佳的机会。
+		</p>
+		<p>
+			那[npc.race]显然也跟你一样饥渴，只是发出几声[npc.a_moan+]便将身体靠过来，在你[pc.lips+]上留下了支配的一吻。浴缸的温水浸没了你裸露的身躯，你们二人相拥起来，准备好服从于欲望……
+		</p>
+	#ELSEIF([#SPECIAL_PARSE_0]==2)
+		<p>
+			你暂时还不想这么快洗完澡，于是将湿漉漉的身子紧紧贴住[npc.name]和[npc2.name]，告诉他们可以对你想做什么就做什么，这是绝佳的机会。
+		</p>
+		<p>
+			你的奴隶们显然也跟你一样饥渴，顿时响起嘈杂而兴奋的呻吟声，他们全都将身体靠过来，在你[pc.lips+]和[pc.breasts+]上留下了一个又一个表示支配的吻。浴缸的温水浸没了你裸露的身躯，两个奴隶将你夹在中间，期待着你完全服从在他们脚下……
+		</p>
+	#ELSE
+		<p>
+			你暂时还不想这么快洗完澡，于是将湿漉漉的身子紧紧贴住你的奴隶们，告诉他们可以对你想做什么就做什么，这是绝佳的机会。
+		</p>
+		<p>
+			你的奴隶们显然也跟你一样饥渴，顿时响起嘈杂而兴奋的呻吟声，他们全都将身体靠过来，在你[pc.lips+]和[pc.breasts+]上留下了一个又一个表示支配的吻。浴缸的温水浸没了你裸露的身躯，奴隶们将你夹在中间，期待着你完全服从在他们脚下……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	
+	<!-- AFTER_BATH_SEX -->
+	
+	<htmlContent tag="AFTER_BATH_SEX"><![CDATA[
+	<p>
+		#IF(sex.getAllParticipants(false).size()==2)
+			爽过之后，你让[npc.name]赶紧帮你洗干净，结束后，你放掉浴缸的水，又让奴隶帮忙擦干了身体。
+		#ELSE
+			爽过之后，你让奴隶们赶紧帮你洗干净，结束后，你放掉浴缸的水，又让他们帮忙擦干了身体。
+		#ENDIF
+	</p>
+	<p>
+		你在沐浴时能够如此享受一番，已经觉得非常满足。穿好衣服后，你准备回房间了……
+	</p>
+	
+	]]></htmlContent>
+	
+	
+	<!-- Sex in player's room: -->
+	
+	<htmlContent tag="BED_SEX_START"><![CDATA[
+	#IF([#SPECIAL_PARSE_0])
+		<p>
+			还没等你反应过来，[npc.name]就倒在了你身的上，将[npc.her][npc.lips+]贴在你的嘴唇上，拉着你热烈地亲吻。片刻之后，[npc.her]的[npc.hands]开始向下游移，在你的淫荡奴隶[npc.moans]中摸索你的身体，[npc.speech(别担心，[pc.name]，我也会让你快活起来的……)]
+		</p>
+	#ELSE
+		<p>
+			显然，[#SPECIAL_PARSE_1]已经串通好了，要等你睡着后再把你按倒在地，然后大干你一场。还没等你反应过来，[npc.name]就压倒在了你的身上，把[npc.her][npc.lips+]贴在你的嘴唇上，拉着你热烈地亲吻。靠在你的一边，[npc2.name][npc2.moans]道，[npc2.speech(别担心，[pc.name]，我们会让你满意的……)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="BED_SEX_START_SLEEP"><![CDATA[
+	#IF([#SPECIAL_PARSE_0])
+		<p>
+			还没等你反应过来，[npc.name]就倒在了你身的上，将[npc.her][npc.lips+]贴在你的嘴唇上，拉着你热烈地亲吻。片刻之后，[npc.her]的[npc.hands]开始向下游移，在你的淫荡奴隶[npc.moans]中摸索你的身体，[npc.speech(别担心，[pc.name]，我也会让你快活起来的……)]
+		</p>
+	#ELSE
+		<p>
+			显然，[#SPECIAL_PARSE_1]已经串通好了，要等你睡着后再把你按倒在地，然后大干你一场。还没等你反应过来，[npc.name]就压倒在了你的身上，把[npc.her][npc.lips+]贴在你的嘴唇上，拉着你热烈地亲吻。靠在你的一边，[npc2.name][npc2.moans]道，[npc2.speech(别担心，[pc.name]，我们会让你满意的……)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="POST_WAKE_UP_SEX"><![CDATA[
+	#IF(pc.isAsleep())
+		#IF([#SPECIAL_PARSE_0])
+			<p>
+				[npc.name]和你玩得很开心，轻轻地往后一退，从你的床上滑了下来。发出一声非常满意的叹息，挑逗道，[npc.speech(我就知道你醒不过来……)]
+			</p>
+			<p>
+				你完全不知道发生了什么，依偎在枕头上，轻轻地发出轻柔的喘息。由于睡得很沉，你甚至还没有一点醒过来的迹象，当[npc.she]悄悄溜走时，你仍然完全没有意识到[npc.namePos]的存在。
+			</p>
+			<p>
+				……
+			</p>
+			<p>
+				过了一段时间，你自然而然地醒了过来，打了个哈欠，睡眼惺忪地睁开眼睛后，你意识到有些不对劲。你的身体仍然感觉疲惫，床单上还有新鲜的爱液，你意识到一定有人在你睡觉时操了你。
+			</p>
+			<p>
+				下床后，你在想是要对夜袭者做些什么，还是干脆不管[npc.herHim]了？
+			</p>
+		#ELSE
+			<p>
+				[npc.name]和你玩得很开心，[#SPECIAL_PARSE_1]轻轻地往后退，从你的床上滑下来。发出一声非常满意的叹息，调侃道，[npc.speech(我就知道[pc.she]不会醒过来……)]
+			</p>
+			<p>
+				你完全不知道发生了什么，依偎在枕头上，轻轻地喘息着。由于睡得很沉，你甚至完全没有醒过来的迹象，最后[#SPECIAL_PARSE_1]悄悄地溜走了也完全没有被你注意到。
+			</p>
+			<p>
+				……
+			</p>
+			<p>
+				过了一段时间，你自然而然地醒了过来，打了个哈欠，睡眼惺忪地睁开眼睛后，你意识到有些不对劲。你的身体仍然感觉疲惫，床单上还有新鲜的爱液，你意识到自己在睡觉的时候被人操了。
+			</p>
+			<p>
+				下床后，你不知道是该对夜袭者做些什么，还是说当什么都没发生……
+			</p>
+		#ENDIF
+	#ELSE
+		#IF([#SPECIAL_PARSE_0])
+			<p>
+				[npc.name]和你玩得很开心，[npc.her]让你躺回床上，并发出一声非常满足的叹息，[npc.speech(你看，这对我们俩来说都很有趣，不是吗？)]
+			</p>
+			<p>
+				[npc.name]把你沉重的喘息理解为一个积极的信号，微笑着问道，[npc.speech(话说回来，你是不是应该在这个时候醒来了？)]
+			</p>
+			<p>
+				你意识到[npc.sheIs]是对的，于是便决定最好还是下床，在躺下喘息了差不多一分钟后，你就下床了。你叹了口气，伸展了一下[pc.arms]，让[npc.name]帮你收拾东西，最后伸了个懒腰，准备再次出发……
+			</p>
+		#ELSE
+			<p>
+				和你玩够了之后，[#SPECIAL_PARSE_1]让你倒在床上。[npc.name]发出一声非常满足的叹息， [npc.moans]道，[npc.speech(看，这对我们所有人来说都很有趣，不是吗？)]
+			</p>
+			<p>
+				[npc2.name]把你沉重的喘息理解为一个积极的信号，微笑着问道，[npc2.speech(话说回来，你是不是应该在这个时候醒来了？)]
+			</p>
+			<p>
+				你意识到[npc2.sheIs]是对的，于是便决定最好还是下床，在躺下喘息了差不多一分钟后，你就下床了。你叹了口气，伸展了一下[pc.arms]，让[#SPECIAL_PARSE_1]帮你收拾东西，最后伸了个懒腰，准备再次出发……
+			</p>
+		#ENDIF
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="REFUSE_SLAVE_SEX"><![CDATA[
+	#IF([#SPECIAL_PARSE_0])
+		<p>
+			你现在真的没心情和[npc.Name]做爱，所以你言简意赅地让[npc.herHim]停下，迅速终止了[npc.her]的计划。
+		</p>
+		<p>
+			[npc.speech(好吧……)][npc.she]不情愿地
+			#IF(npc.isFeminine())
+				哀号道。
+			#ELSE
+				咕哝道。
+			#ENDIF
+		</p>
+		<p>
+			你不想再让你的奴隶有机会扑向你，于是你迅速下了床。你叹了口气，伸展一下[pc.arms]，让[#SPECIAL_PARSE_1]帮你收拾东西，你最后再伸展了一下，准备再次出发……
+		</p>
+	#ELSE
+		<p>
+			你现在真的没心情和[#SPECIAL_PARSE_0]做爱，所以你言简意赅地让它停下，迅速终止了这个计划。
+		</p>
+		<p>
+			[npc.speech(好吧……)][npc.Name]不情愿地
+			#IF(npc.isFeminine())
+				哀号道。
+			#ELSE
+				咕哝道。
+			#ENDIF
+		</p>
+		<p>
+			[npc2.speech(总会有下一次的……)][npc2.name]说道。
+		</p>
+		<p>
+			你不想再让你的奴隶有机会扑向你，于是你迅速下了床。你叹了口气，伸展一下[pc.arms]，让它帮你收拾东西，你最后再伸展了一下，准备再次出发……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+</dialogue>

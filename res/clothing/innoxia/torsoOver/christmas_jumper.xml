@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>350</value>
+		<determiner><![CDATA[一件]]></determiner>
+		<name><![CDATA[节日套头衫]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[节日套头衫]]></namePlural>
+		<description><![CDATA[一件节日用的毛衣，由一种羊毛面料制成，上面装饰有一系列非常有品味和精致的图案。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>TORSO_OVER</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>christmas_jumper.svg</imageName>
+		<imageEquippedName/>
+		<enchantmentLimit/>
+		<effects/>
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_FULL_TORSO"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours values="NOT_WHITE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>REINDEER_GIFT</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿上了节日套头衫。]]></self>
+		<other><![CDATA[
+[npc.Name]将节日套头衫套在[npc2.namePos]身上并引导[npc2.namePos]的[npc2.arms]穿过节日套头衫的袖子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将节日套头衫套在[npc2.namePos]身上并迫使[npc2.namePos]的[npc2.arms]穿过夹克的袖子。]]></otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将[npc.her]的节日套头衫脱下。
+		]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的节日套头衫脱下。]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]的节日套头衫并粗暴地扯下来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

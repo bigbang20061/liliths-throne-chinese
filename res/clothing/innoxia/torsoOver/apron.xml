@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>350</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[女式围裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[女式围裙]]></namePlural> 
+		<description><![CDATA[一条女式围裙，覆盖着穿戴者身体的前部，以保护他们的衣物和皮肤免受污渍和痕迹的影响。它不会遮挡穿戴者的背部，会使臀部完全暴露。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>TORSO_OVER</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>apron.svg</imageName> 
+		<imageEquippedName/> 
+		<effects/>
+		
+		<blockedPartsList> 	
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts> 
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked> 
+					<clothingAccess>WAIST</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"> 
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/>
+		
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour> 
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		
+		<defaultPatterns patternChance="1" colourNameDerivedFromPattern="false">
+			<pattern>polka_dots_small</pattern>
+		</defaultPatterns>
+		<patternPrimaryColours>
+			<colour>CLOTHING_RED</colour>
+		</patternPrimaryColours>
+		<patternPrimaryColoursDye values="ALL"/>
+		<patternSecondaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</patternSecondaryColours>
+		<patternSecondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将围裙从头上穿进，遮盖住[npc.her]的上半身，然后将腰间的带子牢牢地系住。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将围裙从[npc2.namePos]的头上穿进，遮盖住[npc2.her]的上半身，然后将腰间的带子牢牢地系住。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地将围裙从[npc2.namePos]的头上穿进，遮盖住[npc2.her]的上半身，然后将腰间的带子牢牢地系住。
+]]></otherRough>
+	</replacementText>
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开[npc.her]的围裙然后将其从[npc.her]的头上取下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.namePos]的围裙然后将其从[npc2.her]的头上取下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地扯开[npc2.namePos]的围裙然后将其从[npc2.her]的头上拽下。
+]]></otherRough>
+	</displacementText>
+</clothing>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<face>
+	<race>innoxia_panther</race>
+	
+	<transformationName><![CDATA[豹]]></transformationName>
+	
+	<coveringType>innoxia_panther_fur</coveringType>
+	
+	<mouthType>innoxia_panther_mouth</mouthType>
+	
+	<tags>
+		<tag>FACE_MUZZLE</tag>
+		<tag>FACE_FANGS</tag>
+		<tag>FACE_NATURAL_BALDNESS_FURRY</tag>
+	</tags>
+	
+	<names/>
+	<namesPlural/> 
+	
+	<descriptorsMasculine>
+		<descriptor><![CDATA[豹般拟人]]></descriptor>
+		<descriptor><![CDATA[豹般]]></descriptor>
+	</descriptorsMasculine>
+	
+	<descriptorsFeminine>
+		<descriptor><![CDATA[豹般拟人]]></descriptor>
+		<descriptor><![CDATA[豹般]]></descriptor>
+	</descriptorsFeminine>
+	
+	<noseName><![CDATA[吻]]></noseName>
+	<noseNamePlural><![CDATA[noses]]></noseNamePlural>
+	
+	<noseDescriptorsMasculine/>
+	<noseDescriptorsFeminine/>
+	
+	<transformationDescription><![CDATA[
+		[npc.Her]的鼻子和嘴微微抽动，随后便转化为了似人的豹吻部，舌头也变得扁平而宽大，与动物类似。
+	#IF(npc.getBodyMaterial()==BODY_MATERIAL_FLESH)
+		一层[npc.faceSkin+]细毛迅速长出并覆盖了[npc.her]的新脸，
+	#ELSE
+		就像[npc.her]身体的其它部位一样，[npc.her]的新脸[npc.materialDescriptor][npc.faceSkin+]，
+	#ENDIF
+	当转化彻底完成时，[npc.sheIs]试图喘口气，却发出了娇喘和呻吟。
+	<br/>[npc.Name]现在拥有一张似人的[style.boldPanther(类豹脸)]，[npc.materialDescriptor][npc.faceFullDescription]。在[npc.her]嘴中有一根[style.boldPanther(扁平的豹舌头)]。
+]]></transformationDescription>
+	
+	<bodyDescription><![CDATA[
+		[npc.SheHasFull]拥有[npc.a_feminineDescriptor(true)]的豹面庞，有人类特征，[npc.materialCompositionDescriptor][npc.faceFullDescription(true)]，且有完整的吻部。
+]]></bodyDescription>
+	
+	<!-- Feral variant of the above. -->
+	<bodyDescriptionFeral><![CDATA[
+		[npc.SheHasFull] the [npc.feminineDescriptor(true)] face of a feral [npc.legRace], which is [npc.materialDescriptor] [npc.faceFullDescription(true)] and complete with a powerful, toothy muzzle, big nose, and strong jawline.
+	]]></bodyDescriptionFeral>
+	
+</face>

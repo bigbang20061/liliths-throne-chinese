@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAtributes>
+		<authorTag><![CDATA[“DSG织厂定制”被粗糙地缝在左腿内部。]]></authorTag>
+		<value>100</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[粗纺长裤]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[粗纺长裤]]></namePlural>
+		<description><![CDATA[一条粗羊毛制成的长裤。它的结构非常简单，甚至没有弹性腰带，而是用抽绳代替。这种布料很破旧，膝盖周围薄得危险。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>MASCULINE</femininity>
+		<slot>LEG</slot>
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>rspntrousers.svg</imageName>
+		<imageEquippedName/> 
+
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+					<clothingAccess>FEET</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked> 
+					<clothingAccess>LEGS_UP_TO_GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_ANKLES_FROM_TROUSERS"/> 
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_DOWN</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots>
+					<slot>GROIN</slot>
+					<slot>VAGINA</slot>
+					<slot>ANUS</slot>
+					<slot>PENIS</slot>
+					<slot>PIERCING_PENIS</slot>
+					<slot>PIERCING_VAGINA</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_GREY_LIGHT</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_GREY</colour>
+		</secondaryColours>	
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>NOT_FOR_SALE</tag>
+			<tag>NO_RANDOM_SPAWN</tag>
+		</itemTags>
+	</coreAtributes>
+	
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的裤子拉下来并从[npc.her]的[npc.feet]上踢开。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的裤子拉下来并从[npc2.her]的[npc2.feet]上拿走。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]猛地将[npc2.namePos]的裤子拉下并甩到一边去。
+]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]穿进[npc.her]的长裤里并把它提到腰上。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的长裤拉到腰上并系好前面的绳子。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]迫使[npc2.namePos]的[npc2.legs]穿进裤子里然后将裤子拽到[npc2.her]的腰上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的长裤脱下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的裤子拉下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将[npc2.namePos]的裤子拽下。
+]]></otherRough>
+	</displacementText>
+	
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+[npc.Name]拉起[npc.her]的裤子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的裤子提起。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]用力将[npc2.namePos]的裤子拉起。
+]]></otherRough>
+	</replacementText>
+	
+</clothing>

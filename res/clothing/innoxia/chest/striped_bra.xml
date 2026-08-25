@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>150</value> 
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[条纹内衣]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[条纹内衣]]></namePlural>
+		<description><![CDATA[棉质比基尼风格的文胸，可以搭配条纹内裤。]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>CHEST</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>striped_bra.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_BREASTS"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="NOT_WHITE"/>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours values="JUST_WHITE"/>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将内衣放在[npc.her]的胸部上，并系好[npc.her]背后的绳子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将内衣放在[npc2.namePos]的胸部上，并把[npc2.her]背后的绳子系好。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将内衣放在[npc2.namePos]的胸部上，并草草地把[npc2.her]背后的绳子系好。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开[npc.her]的内衣的绳子并把它脱了下来。
+]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.namePos]的内衣的绳子并把它脱了下来。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地解开[npc2.namePos]的内衣的绳子并把它拽了下来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

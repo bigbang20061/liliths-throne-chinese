@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>100</value>
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[露脐短上衣]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[露脐短上衣]]></namePlural> 
+		<description><![CDATA[一种小而无袖的露脐上衣，穿着者的腹部完全暴露在外。]]></description> 
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity> 
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity> 
+		<clothingSet/> 
+		<imageName>short_croptop.svg</imageName>
+		<imageEquippedName/>
+		<stickers/>
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO_STOMACH_VISIBLE"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>FITS_ARM_WINGS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]将[npc.arms]穿过露脐短上衣的袖口，然后从脑袋上套了下去。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]引导[npc2.namePos]把[npc2.arms]穿过露脐短上衣的袖口，然后从[npc2.her]头上套了下去。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]的[npc2.arms]塞进露脐短上衣的袖口，同时用力将衣服套过[npc2.her]头顶。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]脱下了露脐短上衣。
+]]></self>
+		<other><![CDATA[
+			[npc.Name]脱下[npc2.namePos]的露脐短上衣。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地扯下[npc2.namePos]的露脐短上衣。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

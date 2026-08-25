@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>5</value> 
+		
+		<determiner><![CDATA[一条]]></determiner>
+		
+		<name><![CDATA[破布裙子]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[破布裙子]]></namePlural> 
+		
+		<description><![CDATA[一条特别粗糙和破烂的裙子。就算是御城区最贫困和不幸的居民也不会穿上它。]]></description> 
+		
+		<physicalResistance>0</physicalResistance> 
+		
+		<femininity>FEMININE</femininity> 
+		
+		<slot>LEG</slot> 
+		
+		<rarity>COMMON</rarity> 
+		
+		<clothingSet/> 
+		
+		<imageName>ragged_skirt.svg</imageName> 
+		
+		<imageEquippedName/> 
+		
+		<effects/>
+		
+		<blockedPartsList> 
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType> 
+				
+				<clothingAccessRequired/>
+				
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+				</clothingAccessBlocked>
+				
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_GREY_DARK</colour>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+			<colour>CLOTHING_DESATURATED_BROWN_DARK</colour>
+			<colour>CLOTHING_DESATURATED_BROWN_DESAT</colour>
+			<colour>CLOTHING_KHAKI</colour>
+			<colour>CLOTHING_KHAKI_DESAT</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>FITS_NON_BIPED_BODY_HUMANOID</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+      [npc.Name]穿上破布裙子，然后把裙子提到[npc.her]的腰部。
+    ]]></self>
+		<other><![CDATA[
+[npc.Name]让[npc2.name]踏入破布裙子，然后拉上以合适[npc2.her]的腰部。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]强迫[npc2.name]踩进破布裙子，然后猛地将它们拉上围上[npc2.her]的腰部。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开破布裙子，然后脱下它。
+]]></self>
+		<other><![CDATA[
+[npc.Name]拉下[npc2.namePos]破布裙子，然后脱下它。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]粗暴地拉下[npc2.namePos]的破布裙子，随后用力将它们拽掉。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

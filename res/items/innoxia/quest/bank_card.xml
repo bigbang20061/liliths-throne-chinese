@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<item>
+	<coreAttributes>
+		<value>10000</value> 
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[御城区白金银行卡]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[御城区白金银行卡]]></namePlural>
+		<description><![CDATA[一张能证明拥有者在御城区银行的白金账户的塑料卡，从而确定他们是莉琳长老的直系后裔。]]></description> 
+		
+		<useDescriptor><![CDATA[检查]]></useDescriptor>
+		
+		<sexUse>false</sexUse>
+		<combatUseAllies>false</combatUseAllies>
+		<combatUseEnemies>false</combatUseEnemies>
+		<consumedOnUse>false</consumedOnUse>
+		
+		<rarity>QUEST</rarity> 
+		
+		<imageName>bank_card.svg</imageName> 
+		
+		<colourPrimary>CLOTHING_PLATINUM</colourPrimary>
+		<colourSecondary/>
+		<colourTertiary/>
+		
+		<effectTooltipLines>
+			<line><![CDATA[给予银行的高级权限]]></line>
+		</effectTooltipLines>
+		
+		<applyEffects><![CDATA[
+		<p>
+			卡片正面用小字写着，白金账户只发给莉琳长老的直系后裔，因此该卡片已被施法来判断持有者是否拥有莉西丝的血统，如果确实拥有，卡面的三个奥术印记会发光。卡片正面的警告提醒市民，如果印记没有发光，应立即通知最近的执法者。
+		</p>
+]]></applyEffects>
+		
+		<itemTags/>
+		
+	</coreAttributes>
+
+	<useDescriptions>
+		<selfUse><![CDATA[
+		[npc.Name]拿起来看了一眼银行卡……
+		]]></selfUse>
+		<otherUse><![CDATA[
+		[npc.Name]向[npc2.name]展示了她的银行卡，后者看起来非常感兴趣……]]></otherUse>
+	</useDescriptions>
+
+	
+</item>

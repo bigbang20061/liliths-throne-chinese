@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<tattoo>
+	<coreAttributes>
+		<value>500</value> 
+		
+		<name><![CDATA[交叉军刀]]></name>
+		
+		<description><![CDATA[一种风格化的表现，描绘了一对军刀，交叉叠在一起形成一个“X”。]]></description> 
+		<bodyOverviewDescription><![CDATA[交叉的军刀的纹身]]></bodyOverviewDescription> 
+		
+		<imageName>crossed_blades.svg</imageName> 
+		
+		<slotAvailability/>
+		
+		<primaryColours values="ALL" defaultColour="CLOTHING_GREY"/> 
+		<secondaryColours values="ALL" defaultColour="CLOTHING_BLACK"/> 
+		<tertiaryColours values="ALL" defaultColour="CLOTHING_WHITE"/> 
+		
+	</coreAttributes>
+	
+</tattoo>

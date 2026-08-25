@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+	
+	<!-- STALL -->
+	
+	<htmlContent tag="STALL"><![CDATA[
+		#IF(game.getDayNumber() - flags.getSavedLong("elis_eisek_banished_date") >= 1)
+			<p>
+				之前那个[eisek.race]的摊位仍未找到新的主人，但至少废墟和一堆粉碎的农产品已经被清理干净了。
+			</p>
+		#ELSE
+			<p>
+				那个[eisek.race]的摊位的废墟仍然占据着这个地方。看来还没有人来清理这里。
+			</p>
+		#ENDIF
+	
+	]]></htmlContent>
+	
+</dialogue>

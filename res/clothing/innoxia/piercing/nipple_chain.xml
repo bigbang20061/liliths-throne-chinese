@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>250</value>
+		<determiner><![CDATA[一条]]></determiner>
+		<name><![CDATA[乳链]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[乳链]]></namePlural>
+		<description><![CDATA[一对乳链，旨在插入穿孔的乳头中，并通过装饰链条连接。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		  <slot>PIERCING_NIPPLE</slot>
+		</equipSlots>
+		<rarity>COMMON</rarity>
+		<clothingSet/> 
+		<imageName>nipple_chain.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<stickers>
+			<category id="second_chain" priority="1">
+				<categoryName><![CDATA[Second chain]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1">
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="add1" priority="1" defaultSticker="true" zLayer="2">
+					<stickerName><![CDATA[中号]]></stickerName>
+					<namePrefix/>
+					<descriptionModification/>
+					<imageName>nipple_chain_add_1.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+			<category id="third_chain" priority="2">
+				<categoryName><![CDATA[Third chain]]></categoryName>
+				<sticker id="none" priority="0" defaultSticker="true" zLayer="1">
+					<stickerName><![CDATA[无]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName/>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+				<sticker id="add2" priority="2" defaultSticker="true" zLayer="3">
+					<stickerName><![CDATA[小号]]></stickerName>
+					<namePrefix/>
+					<namePostfix/>
+					<descriptionModification/>
+					<imageName>nipple_chain_add_2.svg</imageName>
+					<itemTagsAdded/>
+					<itemTagsRemoved/>
+					<unavailabilityText/>
+					<availabilityText/>
+				</sticker>
+			</category>
+		</stickers>
+		
+		<blockedPartsList slot="PIERCING_NIPPLE">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="PIERCING_NIPPLE"/>
+		
+		<primaryColours values="ALL_METAL"/> 
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_KATE</tag>
+		</itemTags>
+	</coreAttributes>
+
+  <replacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将乳链穿进[npc.her]的乳头穿孔上，然后让连接的链子自然垂下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将乳链穿进[npc2.namePos]的乳头穿孔上，然后让连接的链子自然垂下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将乳链穿进[npc2.namePos]的乳头穿孔上，然后让连接的链子自然垂下。
+]]></otherRough>
+  </replacementText>
+
+  <displacementText slot="PIERCING_NIPPLE" type="REMOVE_OR_EQUIP">
+    <self><![CDATA[
+[npc.Name]将[npc.her]的乳链从[npc.her]的乳头穿孔上取下。
+]]></self>
+    <other><![CDATA[
+[npc.Name]将[npc2.namePos]的乳链从[npc2.her]的乳头穿孔上取下。
+]]></other>
+    <otherRough><![CDATA[
+[npc.Name]粗暴地将[npc2.namePos]的乳链从[npc2.her]的乳头穿孔上扯下。
+]]></otherRough>
+  </displacementText>
+	
+</clothing>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAtributes>
+		<authorTag><![CDATA[帽冠内侧缝着一个标签写着“MFD纺织厂生产。”]]></authorTag>
+		<value>150</value>
+		<determiner><![CDATA[一顶]]></determiner>
+		<name><![CDATA[奔尼帽]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[奔尼帽]]></namePlural>
+		<description><![CDATA[一顶棉质斜纹帽，帽檐坚硬向下倾斜，用来遮挡阳光和雨水。​ 帽身周围有一条尼龙织带，可以插入树叶以提高伪装效果。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<slot>HEAD</slot>
+		<rarity>UNCOMMON</rarity>
+		<clothingSet/>
+		<imageName>rbooniehat.svg</imageName>
+		<imageEquippedName/>
+		<effects/> 
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>HAIR</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked/>
+				<concealedSlots/> 
+			</blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours>
+			<colour>CLOTHING_OLIVE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BROWN</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags/>
+	</coreAtributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]戴上了[npc.her]的奔尼帽。
+]]></self>
+		<other><![CDATA[
+[npc.Name]为[npc2.namePos]戴上奔尼帽。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将奔尼帽摁在[npc2.namePos]的头上。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的奔尼帽脱下。
+]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]的奔尼帽脱下。
+]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将奔尼帽从[npc2.namePos]的头上拽了下来。
+]]></otherRough>
+	</displacementText>
+	
+</clothing>

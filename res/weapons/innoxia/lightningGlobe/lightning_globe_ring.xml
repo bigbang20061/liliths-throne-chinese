@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<value>250000</value> 
+		
+		<melee>false</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[​]]></determiner>
+		
+		<name><![CDATA[奥术闪电戒指]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[奥术闪电戒指]]></namePlural>
+		
+		<description><![CDATA[亚瑟将奥术闪电球的剩余能量提取到一个更小的水晶中，并将其安装在这枚戒指上。和之前的版本一样，这个小水晶球在装备后会迅速充满噼啪作响的奥术闪电漩涡。]]></description> 
+		
+		<attackDescriptor><![CDATA[闪电打击]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[向[npc2.name]发射一道奥术闪电。]]></attackTooltipDescription>
+		
+		<rarity>QUEST</rarity> 
+		
+		<weaponSet/> 
+		
+		<equipText><![CDATA[[npc.Name]聚焦[npc.her]的奥术闪电简戒指，随时准备释放它的威能。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]收起奥术闪电戒指。]]></unequipText>
+		
+		<imageName>lightning_globe_ring_inactive.svg</imageName> 
+		
+		<imageEquippedName>lightning_globe_ring.svg</imageEquippedName>
+		
+		<damage>25</damage> 
+		<aoe chance="50">10</aoe>
+		<aoe chance="25">5</aoe>
+		
+		<arcaneCost>1</arcaneCost> 
+		
+		<damageVariance>LOW</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>LUST</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects> 
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+              <effect itemEffectType="WEAPON" limit="0" potency="MAJOR_BOOST" primaryModifier="CLOTHING_ATTRIBUTE" secondaryModifier="DAMAGE_LUST" timer="0"/>
+		</effects>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK_JET</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		
+		<itemTags>
+			<tag>WEAPON_FERAL_EQUIPPABLE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		奥术闪电戒指威光闪耀，忽的迸发出一道明亮的粉色闪电，直奔[npc2.name]面门而去！
+		]]></hitText>
+		<hitText><![CDATA[
+		#IF(npc.isFeral())
+			[npc.name]借助奥术闪电戒指，释放出一道耀眼的奥术闪电直袭[npc2.name]！
+		#ELSE
+			[npc.name]借助奥术闪电戒指。忽的，冰晶法球迸发光芒，一道耀眼的奥术闪电袭向[npc2.name]！
+		#ENDIF
+		]]></hitText>
+		<hitText><![CDATA[
+		#IF(npc.isFeral())
+			一道亮粉色的奥术闪电从[npc.namePos]的戒指中迸射而出，直接命中了[npc2.name]的胸口！
+		#ELSE
+			一道亮粉色的奥术闪电从[npc.namePos]的[npc.hand]中迸射而出，直接命中了[npc2.name]的胸口！
+		#ENDIF
+		]]></hitText>
+	</hitDescriptions>
+
+	<!-- Descriptions that are used when missing an enemy. One of the missText values will be randomly selected each time the attacker misses their target. Follow the same guidelines as equipText. -->
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.name]借助奥术闪电戒指之威释放出一道亮粉色闪电，但却没能击中[npc2.name]。
+		]]></missText>
+		<missText><![CDATA[
+		[npc.name]对着[npc2.name]射出一道耀眼的奥术闪电，但却未能命中。[npc.she]不由得发出一声遗憾的叹息。
+		]]></missText>
+		<missText><![CDATA[
+		[npc.name]跨出一个箭步，对着[npc2.name]射出一道耀眼的奥术闪电，但可惜未能命中。
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

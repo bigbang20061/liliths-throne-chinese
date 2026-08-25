@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogueNodes>
+
+	<!-- To be used only for accessing the responses -->
+	<scene id="start">
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>true</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<!-- Using glory hole -->
+			<response>
+				<availabilityConditional><![CDATA[[#pc.isTaur()]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[寻欢洞(使用)]]></responseTitle>
+				<responseTooltip><![CDATA[由于你[pc.legRace]的身体形态，无法找到一个能够使用寻欢洞的合适位置……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.isTaur() && ((!pc.hasPenis() || !pc.isAbleToAccessCoverableArea(CA_PENIS, true)) && (!pc.hasVagina() || !pc.isAbleToAccessCoverableArea(CA_VAGINA, true)))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[寻欢洞(使用)]]></responseTitle>
+				<responseTooltip><![CDATA[你无法接触到下体，所以不能在寻欢洞接受服务……]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!pc.isTaur() && ((pc.hasPenis() && pc.isAbleToAccessCoverableArea(CA_PENIS, true)) || (pc.hasVagina() && pc.isAbleToAccessCoverableArea(CA_VAGINA, true)))]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[3]]></index>
+				<responseTitle><![CDATA[寻欢洞(使用)]]></responseTitle>
+				<responseTooltip><![CDATA[你进入了一个有寻欢洞的隔间，等待另一边有人来为你服务……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_misc_glory_hole_dom_start]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.spawnSubGloryHoleNPC('陌生人', 'glory')]
+				]]></effects>
+			</response>
+			<!-- Servicing glory hole -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[4]]></index>
+				<responseTitle><![CDATA[寻欢洞(服务)]]></responseTitle>
+				<responseTooltip><![CDATA[你进入了一个带有寻欢洞的隔间，等待着为另一边的人提供服务……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_misc_glory_hole_sub_start]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.spawnDomGloryHoleNPC('陌生人', 'glory')]
+					[#npc.setAreaKnownByCharacter(CA_PENIS, pc, true)]
+				]]></effects>
+			</response>
+			<!-- Servicing two glory holes -->
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[5]]></index>
+				<responseTitle><![CDATA[寻欢洞(双人服务)]]></responseTitle>
+				<responseTooltip><![CDATA[你进入了一个两边都有寻欢洞的隔间，等待着同时为两个人提供服务……]]></responseTooltip>
+				<nextDialogue><![CDATA[innoxia_misc_glory_hole_sub_threesome_start]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.spawnDomGloryHoleNPC('陌生人', 'glory')]
+					[#game.spawnDomGloryHoleNPC('陌生人', 'glory2')]
+					[#glory.setAreaKnownByCharacter(CA_PENIS, pc, true)]
+					[#glory2.setAreaKnownByCharacter(CA_PENIS, pc, true)]
+				]]></effects>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="dom_start">
+		<content folderPath="txt/misc/glory_hole">TOILETS_GLORY_HOLE_DOM</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你重新思考了一下，发现自己并不想让某个陌生人用你的私密部位来寻欢……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/misc/glory_hole', 'TOILETS_GLORY_HOLE_DOM_LEAVE'))]
+					[#game.banishNPC(glory)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[开始]]></responseTitle>
+				<responseTooltip><![CDATA[听从[npc.Name]的命令，[pc.step]上前靠近寻欢洞。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_misc_glory_hole_dom]]></id>
+					<startingPosition><![CDATA[GLORY_HOLE]]></startingPosition>
+					<dominants>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[UNIQUE_GLORY_HOLE_RECEIVING_ORAL_ONE]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>glory</id>
+							<slot><![CDATA[UNIQUE_GLORY_HOLE_KNEELING]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_misc_glory_hole_dom_end]]></postSexDialogue>
+					<sexStartContent folderPath="txt/misc/glory_hole">TOILETS_GLORY_HOLE_DOM_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="dom_end">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/misc/glory_hole', 'TOILETS_GLORY_HOLE_DOM_POST_SEX'))]
+			[#game.banishNPC(glory)]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[陌生人迅速退出了隔间，向着厕所外走去，你也该离开了……]]></tooltip>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]出隔间。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sub_start">
+		<content folderPath="txt/misc/glory_hole">TOILETS_GLORY_HOLE_SUB</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你重新思考了一下，发现自己并不想吸随便哪个陌生人的鸡巴……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/misc/glory_hole', 'TOILETS_GLORY_HOLE_SUB_LEAVE'))]
+					[#game.banishNPC(glory)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[开始]]></responseTitle>
+				<responseTooltip><![CDATA[听从[npc.Name]的命令，准备好对[npc.her]的寻欢洞服务。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_misc_glory_hole_sub]]></id>
+					<startingPosition><![CDATA[GLORY_HOLE]]></startingPosition>
+					<dominants>
+						<character>
+							<id>glory</id>
+							<slot><![CDATA[UNIQUE_GLORY_HOLE_RECEIVING_ORAL_ONE]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[UNIQUE_GLORY_HOLE_KNEELING]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_misc_glory_hole_sub_end]]></postSexDialogue>
+					<sexStartContent folderPath="txt/misc/glory_hole">TOILETS_GLORY_HOLE_SUB_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sub_end">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/misc/glory_hole', 'TOILETS_GLORY_HOLE_SUB_POST_SEX'))]
+			[#game.banishNPC(glory)]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[陌生人迅速退出了隔间，向着厕所外走去，你也该离开了……]]></tooltip>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]出隔间。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sub_threesome_start">
+		<content folderPath="txt/misc/glory_hole">TOILETS_GLORY_HOLE_THREESOME_SUB</content>
+		<secondsPassed minutes="true"><![CDATA[5]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[0]]></index>
+				<responseTitle><![CDATA[离开]]></responseTitle>
+				<responseTooltip><![CDATA[你重新思考了一下，发现自己并不想吸随便出现的两个陌生人的鸡巴……]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+				<effects><![CDATA[
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/misc/glory_hole', 'TOILETS_GLORY_HOLE_THREESOME_SUB_LEAVE'))]
+					[#game.banishNPC(glory)]
+					[#game.banishNPC(glory2)]
+				]]></effects>
+			</response>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[开始]]></responseTitle>
+				<responseTooltip><![CDATA[听从那两人的命令，准备好对他们的寻欢洞服务。]]></responseTooltip>
+				<nextDialogue/>
+				<sexVariablesWithManager enabled="true">
+					<id><![CDATA[innoxia_misc_glory_hole_threesome_sub]]></id>
+					<startingPosition><![CDATA[GLORY_HOLE]]></startingPosition>
+					<dominants>
+						<character>
+							<id>glory</id>
+							<slot><![CDATA[UNIQUE_GLORY_HOLE_RECEIVING_ORAL_ONE]]></slot>
+						</character>
+						<character>
+							<id>glory2</id>
+							<slot><![CDATA[UNIQUE_GLORY_HOLE_RECEIVING_ORAL_TWO]]></slot>
+						</character>
+					</dominants>
+					<submissives>
+						<character>
+							<id>pc</id>
+							<slot><![CDATA[UNIQUE_GLORY_HOLE_KNEELING]]></slot>
+						</character>
+					</submissives>
+					<postSexDialogue><![CDATA[innoxia_misc_glory_hole_sub_threesome_end]]></postSexDialogue>
+					<sexStartContent folderPath="txt/misc/glory_hole">TOILETS_GLORY_HOLE_THREESOME_SUB_START</sexStartContent>
+					<ongoingActionsAtStart/>
+				</sexVariablesWithManager>
+			</response>
+		</responses>
+	</scene>
+	
+	<scene id="sub_threesome_end">
+		<preParsingEffects><![CDATA[
+			[#game.appendToTextStartStringBuilder(game.parseFromFile('txt/misc/glory_hole', 'TOILETS_GLORY_HOLE_THREESOME_SUB_POST_SEX'))]
+			[#game.banishNPC(glory)]
+			[#game.banishNPC(glory2)]
+		]]></preParsingEffects>
+		<title><![CDATA[结束]]></title>
+		<tooltip><![CDATA[陌生人迅速退出了隔间，向着厕所外走去，你也该离开了……]]></tooltip>
+		<content/>
+		<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+		<continuesDialogue>false</continuesDialogue>
+		<travelDisabled>true</travelDisabled>
+		<responses>
+			<response>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[1]]></index>
+				<responseTitle><![CDATA[继续]]></responseTitle>
+				<responseTooltip><![CDATA[[pc.step]出隔间。]]></responseTooltip>
+				<nextDialogue><![CDATA[default]]></nextDialogue>
+				<secondsPassed minutes="true"><![CDATA[1]]></secondsPassed>
+			</response>
+		</responses>
+	</scene>
+	
+</dialogueNodes>

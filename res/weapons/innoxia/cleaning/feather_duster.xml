@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+	
+		<value>500</value> 
+		<melee>true</melee>
+		<twoHanded>false</twoHanded>
+		<determiner><![CDATA[]]></determiner>
+		<name><![CDATA[羽毛掸]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[羽毛掸]]></namePlural>
+		<description><![CDATA[
+		#IF(pc.getLocationPlace().getPlaceType().equals(PLACE_TYPE_SHOPPING_ARCADE_ASHLEYS_SHOP))
+			一根短柄的羽毛掸，家务必备良品，但在战斗中没什么用。[ashley.speech(羽毛掸：浪漫的缩影，至少对于那些对爱人一无所知的家伙来说是这样，除非他就是打扫房间的那个。)]
+		#ELSE
+			一根短柄的羽毛掸，家务必备良品，但在战斗中没什么用……
+		#ENDIF]]></description>
+		<attackDescriptor><![CDATA[掸子挠挠]]></attackDescriptor>
+		<attackTooltipDescription><![CDATA[用羽毛掸挠[npc.name]的痒痒！]]></attackTooltipDescription>
+		<rarity>EPIC</rarity>
+		<weaponSet>innoxia_maid</weaponSet>
+		<equipText><![CDATA[[npc.Name]拿出了羽毛掸。]]></equipText>
+		<unequipText><![CDATA[[npc.Name]放起了羽毛掸。]]></unequipText>
+		<imageName>feather_duster.svg</imageName> 
+		<imageEquippedName/> 
+		<damage>2</damage> 
+		<arcaneCost>0</arcaneCost> 
+		<damageVariance>LOW</damageVariance> 
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<primaryColours>
+			<colour>CLOTHING_DESATURATED_BROWN</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BROWN_VERY_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+			<colour>CLOTHING_STEEL</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>SOLD_BY_VICKY</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]用羽毛掸挠了挠[npc2.namePos]的[npc2.arm]！
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]用羽毛掸向[npc2.name]挥去，最后挠到了[npc2.her]的[npc2.face]。
+		]]></hitText>
+		<hitText><![CDATA[
+		[npc.Name]挥着羽毛掸向[npc2.name]而去，一边笑一边挠[npc2.her]的身体。
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]用羽毛掸向[npc2.name]挥去，但并没有击中！
+		]]></missText>
+		<missText><![CDATA[
+		[npc.Name]挥着羽毛掸向[npc2.name]而去，但却打偏了！
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

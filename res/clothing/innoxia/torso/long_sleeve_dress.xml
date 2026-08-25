@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- For a version without all of the comments, see "rental_daddy.xml". -->
+<clothing>
+	<coreAttributes>
+		<value>400</value> 
+		<determiner><![CDATA[一张]]></determiner>
+		<name><![CDATA[长袖连衣裙]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[长袖连衣裙]]></namePlural>
+		<description><![CDATA[一条长袖高领连衣裙，修饰出身体的线条。]]></description>
+		<physicalResistance>0</physicalResistance> 
+		<femininity>FEMININE</femininity>
+		<slot>TORSO_UNDER</slot> 
+		<rarity>COMMON</rarity>
+		<clothingSet/>
+		<imageName>long_sleeve_dress.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList>
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+					<clothingAccess>HEAD</clothingAccess>
+				</clothingAccessRequired>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_PARTIAL_TORSO"/>
+			</blockedParts>
+			
+			<blockedParts>
+				<displacementType>PULLS_UP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>ANUS</bodyPart>
+					<bodyPart>PENIS</bodyPart>
+					<bodyPart>VAGINA</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>GROIN</clothingAccess>
+					<clothingAccess>ANUS</clothingAccess>
+				</clothingAccessBlocked>
+				<concealedSlots values="CONCEALED_GROIN"/>
+			</blockedParts>
+			
+		</blockedPartsList>
+		
+		<incompatibleSlots/> 
+		
+		<primaryColours values="ALL"/>
+		<primaryColoursDye/>
+		<secondaryColours/>
+		<secondaryColoursDye/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags>
+			<tag>SOLD_BY_NYAN</tag>
+			<tag>DRESS</tag>
+		</itemTags>
+	</coreAttributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]踏入长袖高领连衣裙，将其拉到[npc.her]的腰部周围。等到穿好，[npc.she]伸手到背后，自己拉上拉链。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]引导[npc2.name]踏入长袖连衣裙，将其拉到[npc2.her]的腰部周围。等到穿好，[npc.she]又帮[npc2.name]拉上了拉链。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将长袖连衣裙套在[npc2.namePos]的[npc2.legs]上，拽到腰部周围。穿好后，[npc.she]又迅速地帮[npc2.name]拉上背后的拉链。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+			[npc.Name]解开[npc.her]长袖高领连衣裙的拉链，扭动身子让它滑到[npc.her][npc.feet]边。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]拉开[npc2.namePos]长袖连衣裙的拉链，将裙子从[npc2.her]身上褪下，从[npc2.her]的[npc2.feet]上穿过。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]匆忙拉开[npc2.namePos]长袖连衣裙的拉链，粗暴地将其从身上拽下，从[npc2.her]的[npc2.feet]上穿过。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_UP">
+		<self><![CDATA[
+			[npc.Name]将[npc.her]长袖连衣裙的下摆拉回正确的位置。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]长袖连衣裙的下摆拉回正确的位置。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]长袖连衣裙的下摆拉回正确位置。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="PULLS_UP">
+		<self><![CDATA[
+			[npc.Name]拉起[npc.her]长袖连衣裙的下摆。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]拉起[npc2.namePos]长袖连衣裙的下摆。
+]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]抓住[npc2.namePos]长袖连衣裙的下摆，粗暴地拉了起来。
+]]></otherRough>
+	</displacementText>
+
+	<displacementText type="PULLS_DOWN">
+		<self><![CDATA[
+			[npc.Name]耸耸肩，脱掉[npc.her]长袖连衣裙的肩带，上半部分垂落到腰部。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]长袖连衣裙的肩带从[npc2.her]肩膀上滑下，然后拽到了腰部。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地拽下[npc2.namePos]长袖连衣裙的肩带，然后激烈地将其拽到[npc.her]的腰部。
+]]></otherRough>
+	</displacementText>
+
+	<replacementText type="PULLS_DOWN">
+		<self><![CDATA[
+			[npc.Name]将[npc.her]长袖连衣裙的上半部分拉回正确位置。
+		]]></self>
+		<other><![CDATA[
+			[npc.Name]将[npc2.namePos]长袖连衣裙的上半部分拉回原位。
+		]]></other>
+		<otherRough><![CDATA[
+			[npc.Name]粗暴地将[npc2.namePos]长袖高领连衣裙的上半部分猛力拉回原位。
+		]]></otherRough>
+	</replacementText>
+	
+</clothing>

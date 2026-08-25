@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sexAction>
+	<buttonPriority>-1</buttonPriority>
+	<actionConditional><![CDATA[
+		[#flags.hasFlag(FLAG_innoxia_callie_natalya_decoration_finished)]
+	]]></actionConditional>
+	<category>MISCELLANEOUS</category>
+	<type>START_ONGOING</type>
+	<pace/>
+	<endsSex><![CDATA[false]]></endsSex>
+	<participantType>NORMAL</participantType>
+	<priority><![CDATA[UNIQUE_MAX]]></priority>
+	<arousalPerformer>THREE_NORMAL</arousalPerformer>
+	<arousalTarget>THREE_NORMAL</arousalTarget>
+	<associatedCorruption>ZERO_PURE</associatedCorruption>
+	<associatedFetishes/>
+	<performingArea>PENETRATION_TONGUE</performingArea>
+	<targetedArea>ORIFICE_ANUS</targetedArea>
+	<applyStartEffects><![CDATA[
+	]]></applyStartEffects>
+	<applyEffects><![CDATA[
+	]]></applyEffects>
+	<applyEndEffects><![CDATA[
+	]]></applyEndEffects>
+	<areasCummedIn/>
+	<areasCummedOn/>
+	<title><![CDATA[切换焦点]]></title>
+	<tooltip><![CDATA[
+		把注意力更多地放在[npc2.name]身上。
+	]]></tooltip>
+	<descriptions>
+		<description>
+			<text><![CDATA[
+				你决定给[npc2.name]更多关注，于是挪到她身后。
+				#IF(npc2==natalya)
+					现在你将大部分注意力都献给了主人，你见她回头看着你，忍不住发出愉悦的[pc.moan]，她说道，[natalya.speech(好[style.mule]……继续舔我的屁股！)]
+				#ELSE
+					现在你将大部分注意力都献给了卡丽，你见她回头看着你，忍不住发出愉悦的[pc.moan]，她喊道，[callie.speech(太舒服了！别停下来！)]
+				#ENDIF
+			]]></text>
+		</description>
+	</descriptions>
+</sexAction>

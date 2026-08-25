@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<dialogue>
+
+	<htmlContent tag="EXTERIOR"><![CDATA[
+	<p>
+		除了市镇议会，你面前的这座建筑可以自信地宣称是整个城里最大、最令人印象深刻的建筑。这座建筑用大块的浅色石头砌成，与周围木结构的中世纪美学形成鲜明对比。它的正面由巨大的圆柱支撑着尖顶，是新古典主义建筑的完美典范。你抬眼望去，石楣上刻有“伊利斯银行”的字样。
+	</p>
+	<p>
+		不知是出于法律规定，还是仅仅为了向公众展示他们的忠诚，银行入口两侧都悬挂着相同的旗帜，每面旗帜上都有莉莉丝的黑色五角星。在两旁的旗帜之间，
+		#IF(game.getDayOfWeek()==DOW_SUNDAY)
+			#IF((game.getHourOfDay()<10 || game.getHourOfDay()>15))
+				你看到银行的金属大门紧锁着，门上挂着一块牌子，写着这家银行的营业时间通常在[units.time(9)]-[units.time(17)]之间，周日营业时间则缩短为在[style.colourMinorBad([units.time(10)]-[units.time(16)])]之间。
+			#ELSE
+				你看到银行的金属大门敞开着，门上挂着一块牌子，写着这家银行的营业时间通常在[units.time(9)]-[units.time(17)]之间，周日营业时间则缩短为在[style.colourMinorBad([units.time(10)]-[units.time(16)])]之间。
+			#ENDIF
+		#ELSE
+			#IF(game.getHourOfDay()<9 || game.getHourOfDay()>16)
+				你看到银行的金属大门紧锁着，门上挂着一块牌子，写着这家银行的营业时间通常在[style.colourMinorBad([units.time(9)]-[units.time(17)])]之间，周日营业时间则缩短为在[units.time(10)]-[units.time(16)]之间。
+			#ELSE
+				你看到银行的金属大门敞开着，写着这家银行的营业时间通常在[style.colourMinorBad([units.time(9)]-[units.time(17)])]之间，周日营业时间则缩短为在[units.time(10)]-[units.time(16)]之间。
+			#ENDIF
+		#ENDIF
+	</p>
+	<p>
+		#IF((game.getDayOfWeek()==DOW_SUNDAY && (game.getHourOfDay()<10 || game.getHourOfDay()>15)) || (game.getDayOfWeek()!=DOW_SUNDAY && (game.getHourOfDay()<9 || game.getHourOfDay()>16)))
+			银行现在已[style.colourBad(关门)]，你在这里无事可做……
+		#ELSE
+			银行现在正在[style.colourGood(营业)]，你可以进去四处转转……
+		#ENDIF
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="ENTER"><![CDATA[
+	<p>
+		你决定进入银行，于是[pc.walking]向一扇作为银行入口的大型金属门，推开它并[pc.step]了进去……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="FOYER"><![CDATA[
+	<p>
+		#IF(pc.hasItemType(ITEM_innoxia_quest_bank_card))
+			这家银行虽然规模不如御城区银行大，但其宽敞大堂给你的感觉与之相似。石制穹顶高悬于上，足下洁净的大理石延展于前，垂挂着的奥术水晶吊灯使厅内溢满清冷明亮的光芒。
+		#ELSE
+			银行宽敞的大堂与其门厅一样宏伟壮观。石制穹顶高悬于上，足下洁净的大理石延展于前，垂挂着的奥术水晶吊灯使厅内溢满清冷明亮的光芒。
+		#ENDIF
+	</p>
+	<p>
+		你环顾四周，看到各种族客户在柜台前排队、走动或坐在银行提供的座位上等待。这儿也有一些银行职员穿梭往返，无一例外都是恶魔。几个保安守在这里，你注意到他们除了装备惯有的警棍和电击枪，还携带了胡椒弹步枪。
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="EXIT"><![CDATA[
+	<p>
+		#IF(pc.hasItemType(ITEM_innoxia_quest_bank_card))
+			这家银行虽然规模不如御城区银行大，但其门厅给你的感觉与之相似。石制穹顶高悬于上，足下洁净的大理石延展于前，垂挂着的奥术水晶吊灯使厅内溢满清冷明亮的光芒。
+		#ELSE
+			银行的门厅与其建筑外观所表现的一样宏伟壮观。石制穹顶高悬于上，足下洁净的大理石延展于前，垂挂着的奥术水晶吊灯使厅内溢满清冷明亮的光芒。
+		#ENDIF
+	</p>
+	<p>
+		你面前是银行大堂的宽阔空间，各种族客户在柜台前排队、走动或坐在银行提供的座位上等待。如果你想离开，通过身后的大型金属门便能回到伊利斯……
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="EXIT_LEAVE"><![CDATA[
+	<p>
+		在银行办理完业务后，你推开其中一扇大型金属门，[pc.step]回了伊利斯……
+	</p>
+	
+	]]></htmlContent>
+
+	<!-- Counter, opening account: -->
+	
+	<htmlContent tag="COUNTER"><![CDATA[
+	<p>
+		你来到银行宽敞大厅的另一端，发现自己站在一排排柜台旁，每个柜台都有一个恶魔银行柜员。与大堂一样，全副武装的保安从不离得太远，他们密切监视着这里的每个人。
+	</p>
+	#IF(pc.hasItemType(ITEM_innoxia_quest_bank_card))
+		<p>
+			你已经拥有了一个白金账户，没什么需要和柜员沟通的了。如果你有业务需求，只需前往VIP保管箱，直接管理你的财物。
+		</p>
+	#ELSE
+		<p>
+			每个柜台前都立着一根铜杆，杆上挂着相同的标牌，你看到上面写着：“[style.italicsMinorBad(开户业务暂停办理。不便之处，敬请谅解。)]”
+		</p>
+		<p>
+			一名银行职员注意到你在看标牌，走过来向你解释：[style.speechFeminineHeavy([pc.miss]，我很抱歉。总行告知我们，弗洛伊田野当前的局势导致账户持有人无法偿还贷款的感知风险过高，因此不能开设任何新账户。但您可以前往我们在御城区的主要分行，在那里开户。)]
+		</p>
+		<p>
+			你感谢这位魅魔提供信息，并思考要不要回御城区开户……
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<!-- Deposit boxes: -->
+	
+	<htmlContent tag="VIP_DOOR"><![CDATA[
+	#IF(pc.getLastCell().getPlace().getPlaceType()==PLACE_TYPE_innoxia_fields_elis_bank_foyer)
+		<p>
+			你眼前的门明确地标着“VIP保管箱”。一名魅魔职员站在门边，看到你靠近，她微笑着问：[style.speechFeminineHeavy([pc.miss]，我能看看您的白金账户卡吗？)]
+		</p>
+		#IF(pc.hasItemType(ITEM_innoxia_quest_bank_card))
+			<p>
+				你向这名职员出示白金账户卡，她看到卡面发光的印记后立即让到一旁，用手将你请到门前并介绍道：[style.speechFeminineHeavy(您只要出示这张卡，门便会自动打开。若您需要任何帮助，请随时联系我的同事，他们就在附近。)]
+			</p>
+			<p>
+				你向职员道谢，准备穿过那扇门进入VIP区……
+			</p>
+		#ELSE
+			<p>
+				你告诉魅魔你没有“白金账户卡”，她皱起眉头，语气坚决，[style.speechFeminineHeavy(我很抱歉，[pc.miss]，但只有白金客户才能进入保管箱区域。请您退后。)]
+			</p>
+			<p>
+				看起来你没法说服她让你通过，而且附近有许多保安，暴力闯入完全不可行。你别无选择，只能[pc.step]回大厅……
+			</p>
+		#ENDIF
+	#ELSE
+		<p>
+			你在保管箱区办完业务，穿过大门返回大厅。经过魅魔职员身边时，她微微鞠躬并说道：[style.speechFeminineHeavy([pc.miss]，感谢您今天的光临。)]
+		</p>
+	#ENDIF
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="VIP_DOOR_STEP_BACK"><![CDATA[
+	<p>
+		你别无选择，只得按柜员说的做，退后并[pc.step]回银行大厅……
+	</p>
+	
+	]]></htmlContent>
+
+	<htmlContent tag="DEPOSIT_BOX"><![CDATA[
+	<p>
+		你所处的圆形房间虽然大，但比银行大厅小得多。光洁大理石在地面铺开，雕塑和画作沿墙陈列，这里的气派丝毫不逊于银行其他区域。你向前[pc.walk]去，看到房间中央有一张大理石长桌，桌后站着两位魅魔职员。
+	</p>
+	<p>
+		[style.speechFeminineHeavy([pc.sir]，如果需要任何帮助，请随时告知我们。)]你走近时，她们异口同声地说。曲面墙上有许多凹室，她们将你引向其中之一，显然已经通过你白金账户卡上的某种侦测法术知道了你的身份。
+	</p>
+	<p>
+		你[pc.Stepping]入凹室，在身后拉上帘幕，然后将注意力转向眼前的大号保管箱。其中一个保管箱检测到了你的卡片并为你开启，让你可以使用存储物品和火币的私人贮藏室。奥术附魔在你的保管箱上方投射出一串紫色文字，提示你当前待收取的利息为
+		#IF(game.getDialogueFlags().getSavedLong('bank_interest')<=0)
+			[style.moneyFormatUncoloured(0, b)]
+		#ELSE
+			[style.moneyFormat([#game.getDialogueFlags().getSavedLong('bank_interest')], b)]
+		#ENDIF
+		。
+	</p>
+	<p style='text-align:center'>
+		[style.italicsMinorGood(存放在该区域的物品和火币可以在银行的任意分行取用。)]
+	</p>
+	
+	]]></htmlContent>
+	
+	<htmlContent tag="DEPOSIT_BOX_INTEREST_COLLECTED"><![CDATA[
+	<p>
+		你觉得现在是个收取利息的好时机。你取出火币，并思索是将这些钱存进保管箱还是暂时留着……
+	</p>
+	
+	]]></htmlContent>
+
+</dialogue>

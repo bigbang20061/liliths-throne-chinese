@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAtributes>
+		<value>1000</value> 
+		<determiner><![CDATA[一双]]></determiner>
+		<name><![CDATA[乳胶臂套]]></name>
+		<namePlural pluralByDefault="true"><![CDATA[乳胶臂套]]></namePlural>
+		<description><![CDATA[一双钩住中指的乳胶臂套。]]></description>
+		<physicalResistance>0</physicalResistance>
+		<femininity>ANDROGYNOUS</femininity>
+		<equipSlots>
+		<slot>HAND</slot>
+		<slot>WRIST</slot>
+		</equipSlots>
+		<rarity>EPIC</rarity>
+		<clothingSet>sage_ltxset</clothingSet>
+		<imageName>arm_warmers.svg</imageName>
+		<imageEquippedName/>
+		<effects/>
+		
+		<blockedPartsList slot="HAND">
+			<blockedParts>
+				<displacementType>REMOVE_OR_EQUIP</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts/>
+				<clothingAccessBlocked/>
+				<concealedSlots/>
+			</blockedParts>
+		</blockedPartsList>
+		<blockedPartsList slot="WRIST">
+		  <blockedParts>
+			<displacementType>REMOVE_OR_EQUIP</displacementType>
+			<clothingAccessRequired/>
+			<blockedBodyParts/>
+			<clothingAccessBlocked/>
+			<concealedSlots/>
+		  </blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots slot="HAND"/>
+		<incompatibleSlots slot="WRIST"/>
+		
+		<primaryColours>
+			<colour>CLOTHING_BLACK</colour>
+			<colour>CLOTHING_RED</colour>
+			<colour>CLOTHING_PURPLE</colour>
+		</primaryColours>
+		<primaryColoursDye values="ALL_WITH_METALS"/>
+		<secondaryColours values="JUST_STEEL"/>
+		<secondaryColoursDye values="ALL_WITH_METALS"/>
+		<tertiaryColours/>
+		<tertiaryColoursDye/>
+		
+		<itemTags> 
+			<tag>ENABLE_SEX_EQUIP</tag>
+			<tag>SOLD_BY_FINCH</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText slot="HAND" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将臂套在[npc.her]的胳膊上并拉紧带子。]]></self>
+		<other><![CDATA[
+[npc.Name]将臂套套在[npc2.namePos]的胳膊上并拉紧带子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将臂套穿过[npc2.namePos]的胳膊并仓促地拉紧带子。]]></otherRough>
+	</replacementText>
+	<displacementText slot="HAND" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]松开[npc.her]胳膊上的带子并把臂套脱下来。]]></self>
+		<other><![CDATA[
+[npc.Name]松开[npc2.namePos]胳膊上的带子并把臂套脱了下来。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]撕扯着[npc2.namePos]胳膊上的带子，在带子松动后将臂套一把扯下并扔到一边。]]></otherRough>
+	</displacementText>
+	<replacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将臂套在[npc.her]的胳膊上并拉紧带子。]]></self>
+		<other><![CDATA[
+[npc.Name]将臂套套在[npc2.namePos]的胳膊上并拉紧带子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]将臂套穿过[npc2.namePos]的胳膊并仓促地拉紧带子。]]></otherRough>
+	</replacementText>
+	<displacementText slot="WRIST" type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]松开[npc.her]胳膊上的带子并把臂套脱下来。]]></self>
+		<other><![CDATA[
+[npc.Name]松开[npc2.namePos]胳膊上的带子并把臂套脱了下来。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]撕扯着[npc2.namePos]胳膊上的带子，在带子松动后将臂套一把扯下并扔到一边。]]></otherRough>
+  </displacementText>
+	
+</clothing>

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<weapon>
+	<coreAttributes>
+		<authorTag><![CDATA[握把上印着“由 DSG管道 生产供应”的字样。]]></authorTag>
+		
+		<value>100</value> 
+		
+		<melee>true</melee>
+		
+		<twoHanded>false</twoHanded>
+		
+		<determiner><![CDATA[一把]]></determiner>
+		
+		<name><![CDATA[纸板剑]]></name>
+		
+		<namePlural pluralByDefault="false"><![CDATA[纸板剑]]></namePlural> 
+		
+		<description><![CDATA[这把剑轻便又平衡，使用多次折叠的硬纸板作为剑身并用PVC管作为剑柄和剑格。不过你很难用它造成伤害。]]></description> 
+		
+		<attackDescriptor><![CDATA[挥舞]]></attackDescriptor>
+		
+		<attackTooltipDescription><![CDATA[你用纸板剑砍向[npc2.name]。]]></attackTooltipDescription>
+		
+		<rarity>UNCOMMON</rarity> 
+		
+		<equipText><![CDATA[[npc.Name]拔出了[npc.her]的纸板剑。]]></equipText>
+		
+		<unequipText><![CDATA[[npc.Name]收起纸板剑。]]></unequipText>
+		
+		<imageName>cbsword.svg</imageName> 
+		
+		<imageEquippedName>cbsword.svg</imageEquippedName>
+		
+		<damage>1</damage> 
+		
+		<arcaneCost>0</arcaneCost> 
+		
+		<damageVariance>HIGH</damageVariance> 
+		
+		<availableDamageTypes>
+			<damageType>PHYSICAL</damageType>
+		</availableDamageTypes>
+		
+		<spells/>
+		
+		<effects/>
+		
+		<extraEffects>
+			<effect><![CDATA[这让持有者看起来像个傻子……]]></effect>
+		</extraEffects>
+		
+		<onHitEffect/>
+		
+		<onCriticalHitEffect/>
+		
+		<primaryColours>
+			<colour>CLOTHING_WHITE</colour>
+		</primaryColours> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_GREY</colour>
+		</secondaryColours> 
+		<secondaryColoursDye values="ALL"/>
+		
+		<itemTags> 
+			<tag>REMOVE_FROM_DRESSING_ROOM_OUTFITS</tag>
+		</itemTags>
+	</coreAttributes>
+	
+	<hitDescriptions>
+		<hitText><![CDATA[
+		[npc.Name]挥剑刺向[npc2.name]！巨大纸板剑的边缘与[npc2.namePos]的灵气发生碰撞，但只消磨掉了它微小的能量。
+		]]></hitText>
+	</hitDescriptions>
+
+	<missDescriptions>
+		<missText><![CDATA[
+		[npc.Name]向[npc2.name]挥出一剑，但一阵意外的气流使[npc.her]失手了……
+		]]></missText>
+	</missDescriptions>
+	
+</weapon>

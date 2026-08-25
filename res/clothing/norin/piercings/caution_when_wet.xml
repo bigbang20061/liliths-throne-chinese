@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+	<coreAttributes>
+		<value>750</value> <!--10 flames = £1 ~ $1.5-->
+		<determiner><![CDATA[一个]]></determiner>
+		<name><![CDATA[小心湿滑脐钉]]></name>
+		<namePlural pluralByDefault="false"><![CDATA[小心湿滑脐钉]]></namePlural>
+		<description><![CDATA[一个带有“小心湿滑”标签的脐钉，你觉得当你戴上这个脐钉后，你很快就会符合标签上的描述。]]></description>
+		
+		<physicalResistance>0</physicalResistance>
+		<femininity>FEMININE</femininity> <!-- FEMININE, MASCULINE ANDROGYNOUS -->
+		<slot>PIERCING_STOMACH</slot> <!-- slot values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/InventorySlot.java -->
+		<rarity>EPIC</rarity> <!-- rarity values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/Rarity.java -->
+		
+		<imageName>caution_when_wet.svg</imageName>
+		
+		<clothingSet/> <!-- No way to define custom sets yet -->
+		<imageEquippedName/> <!-- The file path for this clothing's image while equipped -->
+		<effects>
+		  <effect itemEffectType="CLOTHING" limit="0" potency="MINOR_BOOST" primaryModifier="CLOTHING_SPECIAL" secondaryModifier="CLOTHING_SEALING" timer="31"/>
+		  <effect itemEffectType="CLOTHING" limit="7" potency="MAJOR_BOOST" primaryModifier="TF_VAGINA" secondaryModifier="TF_MOD_WETNESS" timer="31"/>
+		  <effect itemEffectType="CLOTHING" limit="7" potency="MAJOR_BOOST" primaryModifier="TF_ASS" secondaryModifier="TF_MOD_WETNESS" timer="31"/>
+		</effects> <!-- Default enchantments -->
+
+		<blockedPartsList>
+		  <blockedParts>
+			
+			<displacementType>REMOVE_OR_EQUIP</displacementType> <!-- displacementType values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/DisplacementType.java -->
+			
+			<clothingAccessRequired> <!-- clothingAccess values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/clothing/ClothingAccess.java -->
+			  <clothingAccess>WAIST</clothingAccess>
+			</clothingAccessRequired>
+			
+			<blockedBodyParts/> <!--bodyPart values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/character/body/CoverableArea.java -->
+			<clothingAccessBlocked/> <!-- clothingAccess -->
+			<concealedSlots/> <!-- slot -->
+			
+		  </blockedParts>
+		</blockedPartsList>
+		
+		<incompatibleSlots/> <!-- slot(s) not compatible -->
+
+		<!-- colourList presets: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/utils/colours/ColourListPresets.java -->
+		<!-- Colour values: https://github.com/Innoxia/liliths-throne-public/blob/dev/src/com/lilithsthrone/utils/colours/PresetColour.java -->
+		<primaryColours values="ALL_METAL"/>
+		<primaryColoursDye values="ALL_METAL"/>
+		<secondaryColours>
+		  <colour>CLOTHING_ORANGE_BRIGHT</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours>
+		  <colour>CLOTHING_YELLOW</colour>
+		</tertiaryColours>
+		<tertiaryColoursDye values="ALL"/>
+		
+		<itemTags> <!-- tag values: https://github.com/Innoxia/liliths-throne-public/blob/master/src/com/lilithsthrone/game/inventory/ItemTag.java -->
+		  <tag>SOLD_BY_KATE</tag>
+		</itemTags>
+		
+	</coreAttributes>
+	
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+      [npc.Name]把小心湿滑脐钉戴在[npc.her]的肚脐。
+]]></self>
+		<other><![CDATA[
+      [npc.Name]把小心湿滑脐钉戴在[npc2.namePos]的肚脐。
+]]></other>
+		<otherRough><![CDATA[
+      [npc.Name]粗暴地把小心湿滑脐钉戴在[npc2.namePos]的肚脐。
+]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+      [npc.Name]把[npc.her]的小心湿滑脐钉从[npc.her]的肚脐上取下。
+]]></self>
+		<other><![CDATA[
+      [npc.Name]把[npc2.namePos]的小心湿滑脐钉从[npc2.her]的肚脐上取下。
+]]></other>
+		<otherRough><![CDATA[
+      [npc.Name]粗暴地把[npc2.namePos]的小心湿滑脐钉从[npc2.her]的肚脐上取下。
+]]></otherRough>
+	</displacementText>
+  
+</clothing>

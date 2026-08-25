@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<clothing>
+
+	<coreAtributes>
+	
+		<authorTag><![CDATA[侧缝上有个小标签印着“执法者官方分配，DSG织厂生产。”]]></authorTag>
+
+		<value>850</value> 
+
+		<determiner><![CDATA[一件]]></determiner>
+
+		<name><![CDATA[执法者大衣]]></name>
+
+		<namePlural pluralByDefault="false"><![CDATA[执法者大衣]]></namePlural> 
+
+		<description><![CDATA[一种加长大衣，通常作为恶劣天气下的制服发给执法者。它由厚重的羊毛制成，可保护穿着者免受雨水和寒冷的侵袭。]]></description> 
+
+		<physicalResistance>1</physicalResistance> 
+
+		<femininity>ANDROGYNOUS</femininity> 
+
+		<slot>TORSO_OVER</slot> 
+
+		<rarity>EPIC</rarity> 
+
+		<clothingSet>dsg_enforcer_service</clothingSet> 
+
+		<imageName>enfgreatcoat.svg</imageName> 
+
+		<imageEquippedName/> 
+
+		<effects/>
+
+		<blockedPartsList> 
+
+			<blockedParts>
+
+				<displacementType>REMOVE_OR_EQUIP</displacementType> 
+
+				<clothingAccessRequired> 
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessRequired>
+
+				<blockedBodyParts>
+					<bodyPart>BACK</bodyPart>
+					<bodyPart>ARMPITS</bodyPart>
+				</blockedBodyParts>
+				
+				<clothingAccessBlocked>
+					<clothingAccess>ARMS_UP_TO_SHOULDER</clothingAccess>
+				</clothingAccessBlocked> 
+
+				<concealedSlots/>
+			</blockedParts>
+
+			<blockedParts>
+				<displacementType>UNBUTTONS</displacementType>
+				<clothingAccessRequired/>
+				<blockedBodyParts>
+					<bodyPart>BREASTS</bodyPart>
+					<bodyPart>NIPPLES</bodyPart>
+					<bodyPart>STOMACH</bodyPart>
+				</blockedBodyParts>
+				<clothingAccessBlocked>
+					<clothingAccess>CHEST</clothingAccess>
+					<clothingAccess>WAIST</clothingAccess>
+				</clothingAccessBlocked>
+
+				<concealedSlots>
+					<slot>CHEST</slot>
+					<slot>NIPPLE</slot>
+					<slot>STOMACH</slot>
+					<slot>PIERCING_STOMACH</slot>
+					<slot>PIERCING_NIPPLE</slot>
+				</concealedSlots>
+			</blockedParts>
+		</blockedPartsList>
+
+		<incompatibleSlots/> 
+
+		<primaryColours values="JUST_BLACK"/> 
+		<primaryColoursDye values="ALL"/>
+		<secondaryColours>
+			<colour>CLOTHING_BLUE</colour>
+			<colour>CLOTHING_PINK</colour>
+			<colour>CLOTHING_GREY</colour>
+			<colour>CLOTHING_PURPLE_DARK</colour>
+		</secondaryColours>
+		<secondaryColoursDye values="ALL"/>
+		<tertiaryColours values="JUST_GOLD"/>
+		<tertiaryColoursDye values="ALL_METAL"/>
+
+		<itemTags> 
+			<tag>CONTRABAND_MEDIUM</tag>
+		</itemTags>
+	</coreAtributes>
+
+	<replacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]将[npc.her]的手臂伸进大衣的袖子并扣上前面的扣子。
+]]></self>
+		<other><![CDATA[
+[npc.Name]帮[npc2.name]将[npc2.her]的胳膊伸进大衣的袖子并扣好扣子。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]迫使[npc2.namePos]的手臂穿过大衣的袖子并匆忙的扣好扣子。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="REMOVE_OR_EQUIP">
+		<self><![CDATA[
+[npc.Name]解开了[npc.her]大衣的扣子并将[npc.her]的胳膊从袖子里拽了出来。]]></self>
+		<other><![CDATA[
+[npc.Name]解开[npc2.namePos]大衣前部的扣子，帮[npc2.her]将[npc2.her]的手臂从袖子中抽出。]]></other>
+		<otherRough><![CDATA[
+[npc2.Name]拽开[npc2.namePos]大衣正面的纽扣，粗暴地将[npc2.her]的手臂从袖子中拽出。]]></otherRough>
+	</displacementText>
+
+	<replacementText type="UNBUTTONS">
+		<self><![CDATA[
+[npc.Name]扣上[npc.namePos]大衣正面的扣子。]]></self>
+		<other><![CDATA[
+[npc.Name]将[npc2.namePos]前面的扣子扣了起来。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]匆忙扣上[npc2.namePos]大衣的正面的扣子。]]></otherRough>
+	</replacementText>
+
+	<displacementText type="UNBUTTONS">
+		<self><![CDATA[
+[npc.Name]解开[npc.her]的大衣。]]></self>
+		<other><![CDATA[
+[npc.Name]解开了[npc2.namePos]的大衣。]]></other>
+		<otherRough><![CDATA[
+[npc.Name]崩开了[npc2.namePos]大衣上的扣子。]]></otherRough>
+	</displacementText>
+	
+</clothing>

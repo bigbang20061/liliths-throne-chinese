@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<arm>
+	<race>NoStepOnSnek_octopus</race>
+	<transformationName><![CDATA[章鱼]]></transformationName>
+	<coveringType>OCTOPUS_SKIN</coveringType>
+	<allowsFlight>false</allowsFlight>
+	<tags>
+		<tag>ARM_STANDARD</tag>
+	</tags>
+	<name><![CDATA[腕足]]></name>
+	<namePlural><![CDATA[腕足]]></namePlural>
+	<descriptorsMasculine>
+	</descriptorsMasculine>
+	<descriptorsFeminine>
+	</descriptorsFeminine>
+	<handName><![CDATA[触腕]]></handName>
+	<handNamePlural><![CDATA[触腕]]></handNamePlural>
+	<handDescriptorsMasculine>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+		<descriptor><![CDATA[带蹼]]></descriptor>
+	</handDescriptorsMasculine>
+	<handDescriptorsFeminine>
+		<descriptor><![CDATA[柔软]]></descriptor>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+		<descriptor><![CDATA[带蹼]]></descriptor>
+	</handDescriptorsFeminine>
+	<fingerName><![CDATA[吸盘]]></fingerName>
+	<fingerNamePlural><![CDATA[吸盘]]></fingerNamePlural>
+	<fingerDescriptorsMasculine>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</fingerDescriptorsMasculine>
+	<fingerDescriptorsFeminine>
+		<descriptor><![CDATA[柔软]]></descriptor>
+		<descriptor><![CDATA[女性化]]></descriptor>
+		<descriptor><![CDATA[章鱼般]]></descriptor>
+	</fingerDescriptorsFeminine>
+	<transformationDescription><![CDATA[
+		转眼间，它们变成了细长的、像人一样的手臂，从指缝到指尖都出现了薄薄的蹼。
+		<br/>随着转化结束，[npc.nameIsFull]获得了似人且[style.boldOctopus(章鱼般的手臂和手)]，[npc.materialDescriptor][npc.armFullDescription]。
+	]]></transformationDescription>
+	<bodyDescription><![CDATA[
+	[npc.She]有着[npc.armRows]手臂，[npc.materialCompositionDescriptor]的[npc.armFullDescription(true)]。[npc.Her]双手似人且又如章鱼般，手指从指缝到指尖都有着完整的蹼。
+	]]></bodyDescription>
+</arm>
