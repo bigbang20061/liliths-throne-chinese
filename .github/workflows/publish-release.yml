@@ -1,0 +1,68 @@
+name: Publish Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version without the v prefix
+        required: true
+        default: 0.4.11.4
+        type: string
+      prerelease:
+        description: Mark this release as a prerelease
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Build and publish Windows release
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Build distribution
+        shell: pwsh
+        run: mvn --batch-mode clean package
+
+      - name: Package distribution
+        id: package
+        shell: pwsh
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          $distribution = "target\Lilith's Throne (win)"
+          if (-not (Test-Path "$distribution\res")) {
+            throw "The build output is missing its res directory."
+          }
+          $jar = Get-ChildItem -Path $distribution -Filter '*.jar' -File | Select-Object -First 1
+          if (-not $jar) {
+            throw "The build output is missing its runnable JAR."
+          }
+          $archive = "Liliths-Throne-Chinese-$env:VERSION-windows.zip"
+          Compress-Archive -Path "$distribution\*" -DestinationPath $archive -CompressionLevel Optimal
+          "archive=$archive" >> $env:GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ inputs.version }}
+          name: Lilith's Throne Chinese v${{ inputs.version }}
+          target_commitish: main
+          generate_release_notes: true
+          prerelease: ${{ inputs.prerelease }}
+          files: ${{ steps.package.outputs.archive }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
