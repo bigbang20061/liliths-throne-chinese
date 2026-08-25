@@ -636,6 +636,30 @@
 				]]></effects>
 			</response>
 			
+			<!-- Unbirth: -->
+			<response>
+				<availabilityConditional><![CDATA[[#game.canBeSwallowed(attacker)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<colour><![CDATA[GENERIC_SEX]]></colour>
+				<responseTitle><![CDATA[吞入]]></responseTitle>
+				<responseTooltip><![CDATA[将[attacker.name]纳入你的子宫。]]></responseTooltip>
+				<nextDialogue stripContent="true"><![CDATA[default]]></nextDialogue>
+				<effects><![CDATA[
+					[#game.setParserTarget('prey', attacker)]
+					[#game.appendToTextStartStringBuilder(game.parseFromFile('mods/unbirth/content', 'SWALLOW_SUCCESS'))]
+					[#game.addContainedCharacter(attacker, 'WOMB')]
+				]]></effects>
+			</response>
+			<response>
+				<availabilityConditional><![CDATA[[#!game.canBeSwallowed(attacker)]]]></availabilityConditional>
+				<responseTabIndex><![CDATA[0]]></responseTabIndex>
+				<index><![CDATA[8]]></index>
+				<responseTitle><![CDATA[吞入]]></responseTitle>
+				<responseTooltip><![CDATA[[#game.getSwallowBlockReason(attacker)]]]></responseTooltip>
+				<nextDialogue><![CDATA[null]]></nextDialogue>
+			</response>
+
 		</responses>
 	</scene>
 	

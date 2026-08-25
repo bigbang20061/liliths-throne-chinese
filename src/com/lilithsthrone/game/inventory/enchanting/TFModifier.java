@@ -1435,6 +1435,10 @@ public enum TFModifier {
 	TF_MOD_FETISH_KINK_GIVING(Fetish.FETISH_KINK_GIVING),
 	TF_MOD_FETISH_KINK_RECEIVING(Fetish.FETISH_KINK_RECEIVING),
 	TF_MOD_FETISH_SIZE_QUEEN(Fetish.FETISH_SIZE_QUEEN),
+	TF_MOD_FETISH_UNBIRTH_GIVING(Fetish.FETISH_UNBIRTH_GIVING),
+	TF_MOD_FETISH_UNBIRTH_RECEIVING(Fetish.FETISH_UNBIRTH_RECEIVING),
+	TF_MOD_FETISH_VORE_PRED(Fetish.FETISH_VORE_PRED),
+	TF_MOD_FETISH_VORE_PREY(Fetish.FETISH_VORE_PREY),
 	;
 
 	private static List<TFModifier> TFModStrengthList = new ArrayList<>();
@@ -1578,6 +1582,10 @@ public enum TFModifier {
 		TFBehaviouralFetishList.add(TF_MOD_FETISH_KINK_GIVING);
 		TFBehaviouralFetishList.add(TF_MOD_FETISH_KINK_RECEIVING);
 		TFBehaviouralFetishList.add(TF_MOD_FETISH_SIZE_QUEEN);
+		TFBehaviouralFetishList.add(TF_MOD_FETISH_UNBIRTH_GIVING);
+		TFBehaviouralFetishList.add(TF_MOD_FETISH_UNBIRTH_RECEIVING);
+		TFBehaviouralFetishList.add(TF_MOD_FETISH_VORE_PRED);
+		TFBehaviouralFetishList.add(TF_MOD_FETISH_VORE_PREY);
 
 		clothingPrimaryList.add(TFModifier.CLOTHING_MAJOR_ATTRIBUTE);
 		clothingPrimaryList.add(TFModifier.CLOTHING_ATTRIBUTE);
