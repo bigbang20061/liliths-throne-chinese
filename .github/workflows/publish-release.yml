@@ -61,7 +61,7 @@ jobs:
         shell: pwsh
         run: mvn --batch-mode clean package
 
-      - name: Package distribution
+      - name: Bundle Java runtime and package distribution
         id: package
         shell: pwsh
         env:
@@ -75,6 +75,23 @@ jobs:
           if (-not $jar) {
             throw "The build output is missing its runnable JAR."
           }
+          $runtime = Join-Path $distribution 'runtime'
+          & jlink --add-modules ALL-SYSTEM --output $runtime --strip-debug --no-header-files --no-man-pages --compress=zip-6
+          if ($LASTEXITCODE -ne 0 -or -not (Test-Path "$runtime\bin\java.exe")) {
+            throw "Could not create the bundled Java runtime."
+          }
+          @'
+          @echo off
+          setlocal
+          cd /d "%~dp0"
+          for %%F in (*.jar) do set "JAR=%%~fF"
+          if not defined JAR (
+            echo Game JAR not found.
+            pause
+            exit /b 1
+          )
+          "%~dp0runtime\bin\java.exe" -jar "%JAR%"
+          '@ | Set-Content -Path (Join-Path $distribution 'Start Liliths Throne.bat') -Encoding ascii
           $archive = "Liliths-Throne-Chinese-$env:VERSION-windows.zip"
           Compress-Archive -Path "$distribution\*" -DestinationPath $archive -CompressionLevel Optimal
           "archive=$archive" >> $env:GITHUB_OUTPUT
