@@ -77,7 +77,7 @@ jobs:
           }
           $runtime = Join-Path $distribution 'runtime'
           $modules = (Get-ChildItem "$env:JAVA_HOME\jmods\*.jmod" | ForEach-Object BaseName) -join ','
-          & jlink --add-modules $modules --output $runtime --strip-debug --no-header-files --no-man-pages --compress=zip-6
+          & jlink --add-modules $modules --output $runtime --strip-debug --no-header-files --no-man-pages --compress=2
           if ($LASTEXITCODE -ne 0 -or -not (Test-Path "$runtime\bin\java.exe")) {
             throw "Could not create the bundled Java runtime."
           }
