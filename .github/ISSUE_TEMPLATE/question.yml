@@ -1,0 +1,57 @@
+name: Question
+description: Ask a focused usage, build, or release question.
+title: "[Question]: "
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        每个 Issue 只讨论一个问题。不要上传存档，或粘贴用户名、邮箱、本地绝对路径、Token 等个人信息。
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提问前检查
+      options:
+        - label: 我已搜索 README、Release 说明和现有 Issue。
+          required: true
+        - label: 我已删除日志与截图中的个人信息。
+          required: true
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: 问题主题
+      options:
+        - 下载、安装或启动
+        - 游戏内容或中文翻译
+        - 构建与开发
+        - Release 与更新
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: 具体问题
+      description: 说明你想完成的事情、当前阻碍和期望答案。
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempted
+    attributes:
+      label: 已尝试的操作
+      description: 请列出已执行的步骤与观察到的结果；没有尝试时写“尚未尝试”。
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 版本与环境
+      placeholder: "例如：Release 版本、操作系统、Java 版本。请不要写用户名或本地路径。"
+    validations:
+      required: true

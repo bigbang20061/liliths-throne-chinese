@@ -1,0 +1,67 @@
+name: Bug report
+description: Report a reproducible game, translation, build, or release defect.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请只报告可复现的问题。不要粘贴存档、用户名、邮箱、绝对路径、Token 或其他个人信息。
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前检查
+      options:
+        - label: 我已确认这是该仓库的问题，而不是原版游戏或第三方 Mod 的问题。
+          required: true
+        - label: 我已搜索现有 Issue，未找到相同问题。
+          required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题范围
+      options:
+        - 游戏运行或玩法
+        - 中文翻译或文本
+        - 构建脚本或开发环境
+        - Release 下载、安装或启动
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 游戏或 Release 版本
+      placeholder: 例如 0.4.11.4
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 从启动游戏开始，按顺序列出每一步。
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果与实际结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 错误信息、截图或日志（可选）
+      description: 提交前请删除任何本地路径、用户名、存档内容、Token 和其他个人信息。
+      render: shell
