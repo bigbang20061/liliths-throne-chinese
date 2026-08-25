@@ -1,6 +1,10 @@
 name: Publish Release
 
 on:
+  push:
+    tags:
+      - 'v*'
+
   workflow_dispatch:
     inputs:
       version:
@@ -33,6 +37,26 @@ jobs:
           java-version: '17'
           cache: maven
 
+      - name: Resolve release metadata
+        id: release
+        shell: pwsh
+        run: |
+          if ("${{ github.event_name }}" -eq 'push') {
+            $tag = $env:GITHUB_REF_NAME
+            $version = $tag.Substring(1)
+            $prerelease = 'false'
+          } else {
+            $version = "${{ inputs.version }}"
+            $tag = "v$version"
+            $prerelease = "${{ inputs.prerelease }}"
+          }
+          if ([string]::IsNullOrWhiteSpace($version) -or $version -match '\s') {
+            throw 'The release version must be non-empty and contain no whitespace.'
+          }
+          "tag=$tag" >> $env:GITHUB_OUTPUT
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "prerelease=$prerelease" >> $env:GITHUB_OUTPUT
+
       - name: Build distribution
         shell: pwsh
         run: mvn --batch-mode clean package
@@ -41,7 +65,7 @@ jobs:
         id: package
         shell: pwsh
         env:
-          VERSION: ${{ inputs.version }}
+          VERSION: ${{ steps.release.outputs.version }}
         run: |
           $distribution = "target\Lilith's Throne (win)"
           if (-not (Test-Path "$distribution\res")) {
@@ -58,11 +82,11 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ inputs.version }}
-          name: Lilith's Throne Chinese v${{ inputs.version }}
+          tag_name: ${{ steps.release.outputs.tag }}
+          name: Lilith's Throne Chinese v${{ steps.release.outputs.version }}
           target_commitish: main
           generate_release_notes: true
-          prerelease: ${{ inputs.prerelease }}
+          prerelease: ${{ steps.release.outputs.prerelease }}
           files: ${{ steps.package.outputs.archive }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
