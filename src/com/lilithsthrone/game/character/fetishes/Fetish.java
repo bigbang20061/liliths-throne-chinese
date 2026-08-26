@@ -2121,16 +2121,16 @@ public class Fetish {
 		@Override
 		public String getDescription(GameCharacter owner) {
 			if(owner==null) {
-				return "该性癖与将他人整个人纳入子宫的欲望关联。";
+				return "该性癖与把人整个人从穴里吞进子宫、再用宫壁当成肉棒含着的欲望关联。";
 			} else if(owner.isPlayer()) {
-				return "你特别喜欢把人整个人吞进自己的子宫里，感受他们在体内蜷缩挣扎。";
+				return "你特别喜欢把人的头按进自己湿透的小穴，整个人吞进子宫，再夹着他们又踢又蹭的身体高潮。";
 			} else {
-				return UtilText.parse(owner, "[npc.Name]拥有将他人纳入子宫的性癖。");
+				return UtilText.parse(owner, "[npc.Name]特别喜欢把人整个人吞进子宫，用湿热的宫壁把对方绞紧。");
 			}
 		}
 		@Override
 		public String getFetishDesireDescription(GameCharacter target, FetishDesire desire) {
-			return getGenericFetishDesireDescription(target, desire, "将他人纳入子宫");
+			return getGenericFetishDesireDescription(target, desire, "把人整个人吞进子宫");
 		}
 		@Override
 		public CorruptionLevel getAssociatedCorruptionLevel() {
@@ -2157,16 +2157,16 @@ public class Fetish {
 		@Override
 		public String getDescription(GameCharacter owner) {
 			if(owner==null) {
-				return "该性癖与被他人整个人纳入子宫的欲望关联。";
+				return "该性癖与把自己整个人送进别人湿穴、被子宫含住的欲望关联。";
 			} else if(owner.isPlayer()) {
-				return "你幻想着自己被整个人吞进别人的子宫，被湿热的肉壁紧紧包裹。";
+				return "你幻想着把头埋进别人湿透的小穴，被穴肉一口口吞进去，最后整个人蜷在滚烫的子宫里，被宫壁当成肉棒含着、绞着。";
 			} else {
-				return UtilText.parse(owner, "[npc.Name]拥有被纳入子宫的性癖。");
+				return UtilText.parse(owner, "[npc.Name]特别想被整个人吞进别人的子宫，被湿热的宫壁紧紧包裹。");
 			}
 		}
 		@Override
 		public String getFetishDesireDescription(GameCharacter target, FetishDesire desire) {
-			return getGenericFetishDesireDescription(target, desire, "被纳入子宫");
+			return getGenericFetishDesireDescription(target, desire, "被整个人吞进子宫");
 		}
 		@Override
 		public CorruptionLevel getAssociatedCorruptionLevel() {
@@ -2191,16 +2191,16 @@ public class Fetish {
 		@Override
 		public String getDescription(GameCharacter owner) {
 			if(owner==null) {
-				return "该性癖与将他人整个人吞进胃里的欲望关联。";
+				return "该性癖与把人活活吞进胃里、用胃壁把对方绞软的欲望关联。";
 			} else if(owner.isPlayer()) {
-				return "你特别喜欢把人整个人吞进胃里，感受他们在腹中挣扎。";
+				return "你特别喜欢把人整个人塞进嘴里，一咽到底，再隔着肚皮感受他们在湿热胃袋里又踢又蹭。";
 			} else {
-				return UtilText.parse(owner, "[npc.Name]拥有将他人吞入胃中的性癖。");
+				return UtilText.parse(owner, "[npc.Name]特别喜欢把人整个人吞进胃里，用湿热的胃壁把对方揉软。");
 			}
 		}
 		@Override
 		public String getFetishDesireDescription(GameCharacter target, FetishDesire desire) {
-			return getGenericFetishDesireDescription(target, desire, "将他人吞入胃中");
+			return getGenericFetishDesireDescription(target, desire, "把人活活吞进胃里");
 		}
 		@Override
 		public CorruptionLevel getAssociatedCorruptionLevel() {
@@ -2227,16 +2227,16 @@ public class Fetish {
 		@Override
 		public String getDescription(GameCharacter owner) {
 			if(owner==null) {
-				return "该性癖与被他人整个人吞进胃里的欲望关联。";
+				return "该性癖与把自己送进别人嘴里、被胃袋含住的欲望关联。";
 			} else if(owner.isPlayer()) {
-				return "你幻想着自己被整个人吞进别人的胃，在湿热的黑暗中挣扎。";
+				return "你幻想着把头送进别人嘴里，被湿热的食道一口口吞下去，最后整个人摔进又紧又热的胃里，被肉壁缠着揉。";
 			} else {
-				return UtilText.parse(owner, "[npc.Name]拥有被吞入胃中的性癖。");
+				return UtilText.parse(owner, "[npc.Name]特别想被整个人吞进别人的胃，在湿热的黑暗里被肉壁绞紧。");
 			}
 		}
 		@Override
 		public String getFetishDesireDescription(GameCharacter target, FetishDesire desire) {
-			return getGenericFetishDesireDescription(target, desire, "被吞入胃中");
+			return getGenericFetishDesireDescription(target, desire, "被整个人吞进胃里");
 		}
 		@Override
 		public CorruptionLevel getAssociatedCorruptionLevel() {

@@ -3,7 +3,7 @@
 
 	<scene id="swallow_confirm">
 		<title><![CDATA[吞噬]]></title>
-		<tooltip><![CDATA[将眼前的人吞进你的胃里。]]></tooltip>
+		<tooltip><![CDATA[张开嘴，把眼前的人整个人吞进胃里。]]></tooltip>
 		<preParsingEffects><![CDATA[
 			[#game.setParserTarget('prey', npc)]
 		]]></preParsingEffects>
@@ -18,7 +18,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[1]]></index>
 				<responseTitle><![CDATA[确认吞噬]]></responseTitle>
-				<responseTooltip><![CDATA[将[prey.name]整个人吞进你的胃里。]]></responseTooltip>
+				<responseTooltip><![CDATA[把[prey.name]的头塞进嘴里，一咽到底。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
@@ -39,7 +39,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[0]]></index>
 				<responseTitle><![CDATA[取消]]></responseTitle>
-				<responseTooltip><![CDATA[还是先不把[prey.name]吞进去了。]]></responseTooltip>
+				<responseTooltip><![CDATA[先忍住，不把[prey.name]吞进胃里。]]></responseTooltip>
 				<nextDialogue><![CDATA[HC_encounter_alleyway_victory]]></nextDialogue>
 			</response>
 		</responses>
@@ -47,7 +47,7 @@
 
 	<scene id="digest">
 		<title><![CDATA[消化]]></title>
-		<tooltip><![CDATA[消化胃中的猎物。]]></tooltip>
+		<tooltip><![CDATA[催动胃袋，把里面的猎物化开。]]></tooltip>
 		<preParsingEffects><![CDATA[
 		]]></preParsingEffects>
 		<content folderPath="mods/unbirth/content">VORE_DIGEST</content>

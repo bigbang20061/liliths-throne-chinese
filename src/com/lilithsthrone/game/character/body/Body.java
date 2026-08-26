@@ -2922,17 +2922,34 @@ public class Body implements XMLSaving {
 			} else {
 				sb.append("[npc.Her]的肚子");
 			}
-			if(owner.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_3)
-					|| owner.hasStatusEffect(StatusEffect.VORE_CARRYING_3)
-					|| owner.hasStatusEffect(StatusEffect.VORE_DIGESTING_3)) {
-				sb.append("胀得巨大，只需要稍微朝这边扫一眼就能知道"
-						+ "<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]的体内正容纳着一个人</span>。");
-			} else if(owner.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_2)
+			boolean liveCarrying = owner.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_1)
+					|| owner.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_2)
+					|| owner.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_3)
+					|| owner.hasStatusEffect(StatusEffect.VORE_CARRYING_1)
 					|| owner.hasStatusEffect(StatusEffect.VORE_CARRYING_2)
-					|| owner.hasStatusEffect(StatusEffect.VORE_DIGESTING_2)) {
-				sb.append("高高隆起，只需要朝这边看一眼就能知道<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]体内正装着一个人</span>。");
+					|| owner.hasStatusEffect(StatusEffect.VORE_CARRYING_3);
+			boolean late = owner.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_3)
+					|| owner.hasStatusEffect(StatusEffect.VORE_CARRYING_3)
+					|| owner.hasStatusEffect(StatusEffect.VORE_DIGESTING_3);
+			boolean mid = owner.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_2)
+					|| owner.hasStatusEffect(StatusEffect.VORE_CARRYING_2)
+					|| owner.hasStatusEffect(StatusEffect.VORE_DIGESTING_2);
+			if(late) {
+				if(owner.hasStatusEffect(StatusEffect.VORE_DIGESTING_3) && !liveCarrying) {
+					sb.append("胀得巨大，只需要稍微朝这边扫一眼就能知道"
+							+ "<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]的胃里正把猎物化开，只剩一团沉重的充实</span>。");
+				} else {
+					sb.append("胀得巨大，只需要稍微朝这边扫一眼就能知道"
+							+ "<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]的体内正含着还在动的猎物，肚皮上还顶得出轮廓</span>。");
+				}
+			} else if(mid) {
+				if(owner.hasStatusEffect(StatusEffect.VORE_DIGESTING_2) && !liveCarrying) {
+					sb.append("高高隆起，只需要朝这边看一眼就能知道<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]胃里的猎物轮廓已经不如最初分明</span>。");
+				} else {
+					sb.append("高高隆起，只需要朝这边看一眼就能知道<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]体内正含着猎物，隔着肚皮还能看见里面在动</span>。");
+				}
 			} else {
-				sb.append("微微隆起，只需要仔细一看就能察觉到<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]腹中有活物在动</span>。");
+				sb.append("微微隆起，只需要仔细一看就能察觉到<span style='color:"+PresetColour.GENERIC_ARCANE.toWebHexString()+";'>[npc.her]腹中有猎物正被肉壁含着、轻轻挣动</span>。");
 			}
 
 		}

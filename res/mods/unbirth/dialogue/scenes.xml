@@ -4,7 +4,7 @@
 	<!-- 吞入确认：展示猎物信息，确认后调用 addContainedCharacter。 -->
 	<scene id="swallow_confirm">
 		<title><![CDATA[吞入]]></title>
-		<tooltip><![CDATA[将眼前的人纳入你的体内。]]></tooltip>
+		<tooltip><![CDATA[把眼前的人从穴里整个人吞进子宫。]]></tooltip>
 		<preParsingEffects><![CDATA[
 			[#game.setParserTarget('prey', npc)]
 		]]></preParsingEffects>
@@ -19,7 +19,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[1]]></index>
 				<responseTitle><![CDATA[确认吞入]]></responseTitle>
-				<responseTooltip><![CDATA[将[prey.name]整个人吞进你的子宫里。]]></responseTooltip>
+				<responseTooltip><![CDATA[把[prey.name]的头按进湿穴，整个人吞进子宫。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<secondsPassed minutes="true"><![CDATA[2]]></secondsPassed>
@@ -40,7 +40,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[0]]></index>
 				<responseTitle><![CDATA[取消]]></responseTitle>
-				<responseTooltip><![CDATA[还是先不把[prey.name]吞进去了。]]></responseTooltip>
+				<responseTooltip><![CDATA[先忍住，不把[prey.name]吞进体内。]]></responseTooltip>
 				<nextDialogue><![CDATA[HC_encounter_alleyway_victory]]></nextDialogue>
 			</response>
 		</responses>
@@ -49,7 +49,7 @@
 	<!-- 体内持续：列出猎物并提供逐人释放。 -->
 	<scene id="carrying">
 		<title><![CDATA[体内]]></title>
-		<tooltip><![CDATA[感受被你容纳在体内的人。]]></tooltip>
+		<tooltip><![CDATA[感受那些正被你的肉壁含着、绞着的人。]]></tooltip>
 		<preParsingEffects><![CDATA[
 			#IF(game.getContainedCharacterCount(pc)>=1)
 				[#game.setParserTarget('prey', game.getContainedCharacter(pc, 0))]
@@ -75,7 +75,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[1]]></index>
 				<responseTitle><![CDATA[释放 [prey.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[收缩子宫，将[prey.name]从你的体内释放出来。]]></responseTooltip>
+				<responseTooltip><![CDATA[#IF(game.getContainedCharacterType(pc, 0)=='STOMACH')把[prey.name]从喉咙里吐出来。#ELSE收缩子宫，把[prey.name]从湿穴里挤出来。#ENDIF]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
 				<effects><![CDATA[
@@ -90,7 +90,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[2]]></index>
 				<responseTitle><![CDATA[释放 [prey2.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[收缩子宫，将[prey2.name]从你的体内释放出来。]]></responseTooltip>
+				<responseTooltip><![CDATA[#IF(game.getContainedCharacterType(pc, 1)=='STOMACH')把[prey2.name]从喉咙里吐出来。#ELSE收缩子宫，把[prey2.name]从湿穴里挤出来。#ENDIF]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
 				<effects><![CDATA[
@@ -105,7 +105,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[3]]></index>
 				<responseTitle><![CDATA[释放 [prey3.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[收缩子宫，将[prey3.name]从你的体内释放出来。]]></responseTooltip>
+				<responseTooltip><![CDATA[#IF(game.getContainedCharacterType(pc, 2)=='STOMACH')把[prey3.name]从喉咙里吐出来。#ELSE收缩子宫，把[prey3.name]从湿穴里挤出来。#ENDIF]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
 				<effects><![CDATA[
@@ -120,7 +120,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[4]]></index>
 				<responseTitle><![CDATA[释放 [prey4.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[收缩子宫，将[prey4.name]从你的体内释放出来。]]></responseTooltip>
+				<responseTooltip><![CDATA[#IF(game.getContainedCharacterType(pc, 3)=='STOMACH')把[prey4.name]从喉咙里吐出来。#ELSE收缩子宫，把[prey4.name]从湿穴里挤出来。#ENDIF]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_release]]></nextDialogue>
 				<effects><![CDATA[
@@ -135,7 +135,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[5]]></index>
 				<responseTitle><![CDATA[消化 [prey.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[让胃袋收缩，彻底消化[prey.name]。[prey.She]将从游戏中永久消失。]]></responseTooltip>
+				<responseTooltip><![CDATA[让胃袋绞紧，把[prey.name]彻底化开。[prey.She]将从游戏中永久消失。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_BAD]]></colour>
 				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
 				<effects><![CDATA[
@@ -156,7 +156,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[6]]></index>
 				<responseTitle><![CDATA[缩小 [prey.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[让体内的压力把[prey.name]再压缩一截。]]></responseTooltip>
+				<responseTooltip><![CDATA[收紧肉壁，把[prey.name]含得更小、更紧。]]></responseTooltip>
 				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -177,7 +177,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[7]]></index>
 				<responseTitle><![CDATA[转化为后代]]></responseTitle>
-				<responseTooltip><![CDATA[让[prey.name]在子宫里融化重组，成为你的后代种子。[prey.She]将从世界中消失。]]></responseTooltip>
+				<responseTooltip><![CDATA[用子宫把[prey.name]舔化、揉开，变成你的后代种子。[prey.She]将从世界中消失。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -201,7 +201,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[1]]></index>
 				<responseTitle><![CDATA[消化 [prey2.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[彻底消化[prey2.name]。]]></responseTooltip>
+				<responseTooltip><![CDATA[催动胃袋，把[prey2.name]彻底化开。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_BAD]]></colour>
 				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
 				<effects><![CDATA[
@@ -214,7 +214,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[2]]></index>
 				<responseTitle><![CDATA[消化 [prey3.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[彻底消化[prey3.name]。]]></responseTooltip>
+				<responseTooltip><![CDATA[催动胃袋，把[prey3.name]彻底化开。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_BAD]]></colour>
 				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
 				<effects><![CDATA[
@@ -227,7 +227,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[3]]></index>
 				<responseTitle><![CDATA[消化 [prey4.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[彻底消化[prey4.name]。]]></responseTooltip>
+				<responseTooltip><![CDATA[催动胃袋，把[prey4.name]彻底化开。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_BAD]]></colour>
 				<nextDialogue><![CDATA[unbirth_vore_digest]]></nextDialogue>
 				<effects><![CDATA[
@@ -240,7 +240,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[5]]></index>
 				<responseTitle><![CDATA[缩小 [prey2.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[把[prey2.name]再压缩一截。]]></responseTooltip>
+				<responseTooltip><![CDATA[收紧肉壁，把[prey2.name]含得更小、更紧。]]></responseTooltip>
 				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -254,7 +254,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[6]]></index>
 				<responseTitle><![CDATA[缩小 [prey3.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[把[prey3.name]再压缩一截。]]></responseTooltip>
+				<responseTooltip><![CDATA[收紧肉壁，把[prey3.name]含得更小、更紧。]]></responseTooltip>
 				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -268,7 +268,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[7]]></index>
 				<responseTitle><![CDATA[缩小 [prey4.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[把[prey4.name]再压缩一截。]]></responseTooltip>
+				<responseTooltip><![CDATA[收紧肉壁，把[prey4.name]含得更小、更紧。]]></responseTooltip>
 				<colour><![CDATA[TRANSFORMATION_GENERIC]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -282,7 +282,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[9]]></index>
 				<responseTitle><![CDATA[转化 [prey2.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[将[prey2.name]转化为后代种子。]]></responseTooltip>
+				<responseTooltip><![CDATA[用子宫把[prey2.name]舔化，变成你的后代种子。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -296,7 +296,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[10]]></index>
 				<responseTitle><![CDATA[转化 [prey3.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[将[prey3.name]转化为后代种子。]]></responseTooltip>
+				<responseTooltip><![CDATA[用子宫把[prey3.name]舔化，变成你的后代种子。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -310,7 +310,7 @@
 				<responseTabIndex><![CDATA[1]]></responseTabIndex>
 				<index><![CDATA[11]]></index>
 				<responseTitle><![CDATA[转化 [prey4.Name]]]></responseTitle>
-				<responseTooltip><![CDATA[将[prey4.name]转化为后代种子。]]></responseTooltip>
+				<responseTooltip><![CDATA[用子宫把[prey4.name]舔化，变成你的后代种子。]]></responseTooltip>
 				<colour><![CDATA[GENERIC_SEX]]></colour>
 				<nextDialogue><![CDATA[unbirth_scenes_carrying]]></nextDialogue>
 				<effects><![CDATA[
@@ -324,7 +324,7 @@
 				<responseTabIndex><![CDATA[0]]></responseTabIndex>
 				<index><![CDATA[0]]></index>
 				<responseTitle><![CDATA[离开]]></responseTitle>
-				<responseTooltip><![CDATA[让他们继续待在你的体内，先去做别的事。]]></responseTooltip>
+				<responseTooltip><![CDATA[让他们继续被你含在体内，先去做别的事。]]></responseTooltip>
 				<nextDialogue><![CDATA[default]]></nextDialogue>
 			</response>
 		</responses>
@@ -333,7 +333,7 @@
 	<!-- 释放结果：effects 已在上一响应中调用 releaseContainedCharacter。 -->
 	<scene id="release">
 		<title><![CDATA[释放]]></title>
-		<tooltip><![CDATA[将体内的人释放出来。]]></tooltip>
+		<tooltip><![CDATA[把体内的人从肉壁里挤出来。]]></tooltip>
 		<preParsingEffects><![CDATA[
 		]]></preParsingEffects>
 		<content folderPath="mods/unbirth/content">RELEASE</content>

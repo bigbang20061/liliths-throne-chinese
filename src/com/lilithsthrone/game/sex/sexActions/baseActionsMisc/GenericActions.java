@@ -2648,11 +2648,21 @@ public class GenericActions {
 		}
 		@Override
 		public String getActionDescription() {
-			return "把[npc2.name]整个人纳入你的子宫。这会结束当前的性爱。";
+			return "把[npc2.name]的头按进你湿透的小穴，整个人吞进子宫。这会结束当前的性爱。";
 		}
 		@Override
 		public String getDescription() {
-			return "你决定不再继续这场性爱，而是把[npc2.name]整个人吞进子宫里……";
+			return "<p>"
+						+ "你已经不想再被普通地肏了。你抬起腰，把湿得发亮的[pc.pussy]对准[npc2.name]的脸，然后慢慢坐下去。"
+					+ "</p>"
+					+ "<p>"
+						+ "滚烫的阴唇先裹住[npc2.her]的额头，再一口含住整张脸。淫水糊得[npc2.she]睁不开眼。[npc2.Name]还想叫，声音全被你的穴心堵成闷哼。"
+						+ "你按着[npc2.her]的后脑往下坐——头、肩、胸，一寸寸挤过被撑开的穴口，再顶开宫口，整个人滑进你又热又紧的子宫。"
+					+ "</p>"
+					+ "<p>"
+						+ "最后只剩两只脚在外面乱蹬。你抓住它们，连脚尖一起塞进去。穴口吧嗒合拢，小腹立刻鼓起一团活人。"
+						+ "[npc2.Name]每挣扎一下，宫壁就绞得更紧。你夹着[npc2.herHim]，爽得腿根发颤。"
+					+ "</p>";
 		}
 		@Override
 		public String applyEffectsString() {
@@ -2697,11 +2707,22 @@ public class GenericActions {
 		}
 		@Override
 		public String getActionDescription() {
-			return "把[npc2.name]整个人吞进你的胃。这会结束当前的性爱。";
+			return "张开嘴，把[npc2.name]整个人吞进胃里。这会结束当前的性爱。";
 		}
 		@Override
 		public String getDescription() {
-			return "你张开嘴，决定把[npc2.name]整个人吞下去……";
+			return "<p>"
+						+ "你一把拽过[npc2.name]，先用舌头湿湿地舔过[npc2.her]的额头和嘴唇，再把下颌撑到极限。"
+					+ "</p>"
+					+ "<p>"
+						+ "温热的口腔罩住[npc2.her]的头顶。你猛地一咽，头颅挤过舌根，滑进紧热的食道；喉咙外侧立刻鼓起一个人形。"
+						+ "[npc2.Name]的手脚在你喉咙里乱蹬，每一次挣扎都让那条肉管爽得发颤。"
+						+ "肩、胸、腰、臀接连没入，最后两只脚也被你吸进去。喉结滚动，肚皮“咕”地鼓了起来。"
+					+ "</p>"
+					+ "<p>"
+						+ "[npc2.Name]整个人落进你的胃里。湿热的肉壁立刻缠上去，把[npc2.herHim]揉成一团。"
+						+ "隔着肚皮，你能摸到[npc2.her]的脸和膝盖一下下顶着自己。"
+					+ "</p>";
 		}
 		@Override
 		public String applyEffectsString() {
@@ -2746,11 +2767,21 @@ public class GenericActions {
 		}
 		@Override
 		public String getActionDescription() {
-			return "让[npc2.name]把你整个人纳入子宫。这会结束当前的性爱。";
+			return "把头埋进[npc2.name]湿透的小穴，让[npc2.herHim]把你整个人吞进子宫。这会结束当前的性爱。";
 		}
 		@Override
 		public String getDescription() {
-			return "你主动挤向[npc2.name]的下身，让[npc2.herHim]把你整个人吞进子宫里……";
+			return "<p>"
+						+ "你主动趴下去，把脸贴上[npc2.name]湿淋淋的[npc2.pussy]。浓稠的淫水立刻糊住你的嘴唇和鼻梁，热得发烫。"
+					+ "</p>"
+					+ "<p>"
+						+ "你把头往里挤。穴口先咬住你的额头，再一口含住整张脸。里面又湿又紧，肉壁四面八方地缠上来，把你往更深处吸。"
+						+ "[npc2.Name]按着你的后脑往下坐。肩、胸、腰一截截没入[npc2.her]的小穴；你的脸顶开宫口时，那圈紧热的肉环把你吞进子宫。"
+					+ "</p>"
+					+ "<p>"
+						+ "最后连脚尖都被吸了进去。你整个人蜷在[npc2.name]滚烫的宫腔里，被又黏又紧的肉壁当成一根肉棒含着、绞着。"
+						+ "外面，[npc2.her]的小腹鼓了起来，正一下下压着你。"
+					+ "</p>";
 		}
 		@Override
 		public String applyEffectsString() {
@@ -2796,11 +2827,21 @@ public class GenericActions {
 		}
 		@Override
 		public String getActionDescription() {
-			return "让[npc2.name]把你整个人吞进胃里。这会结束当前的性爱。";
+			return "把头送进[npc2.name]嘴里，让[npc2.herHim]把你整个人吞进胃里。这会结束当前的性爱。";
 		}
 		@Override
 		public String getDescription() {
-			return "你主动凑近[npc2.name]的嘴，让[npc2.herHim]把你整个人吞下去……";
+			return "<p>"
+						+ "你主动凑上去，把额头抵上[npc2.name]湿润的嘴唇。[npc2.Name]的舌头立刻舔过来，温热的唾液顺着你的脸往下淌。"
+					+ "</p>"
+					+ "<p>"
+						+ "[npc2.She]把下颌撑开，一口罩住你的头顶，然后猛地一咽。世界变成又湿又紧的肉管——食道一下下收缩，把你往深处送。"
+						+ "肩卡住时你还能听见[npc2.her]喉咙里含混的吞咽声；胸、腰、腿接连被吸进去，最后两只脚也没入那张嘴里。"
+					+ "</p>"
+					+ "<p>"
+						+ "你整个人摔进[npc2.name]的胃里。湿热、狭窄的肉壁立刻缠上来，把你揉成一团。"
+						+ "外面，[npc2.her]的肚皮鼓起你的轮廓；每一次蠕动都让你全身发麻。"
+					+ "</p>";
 		}
 		@Override
 		public String applyEffectsString() {

@@ -1357,9 +1357,9 @@ public class Game implements XMLSaving {
 			boolean digested = digestContainedCharacter(preyId);
 			if(host.isPlayer()) {
 				if(digested && !isCharacterExisting(preyId)) {
-					sb.append(UtilText.parse(prey, "<p>[style.boldBad([npc.Name]已经被你的胃完全消化，从游戏中消失了。)]</p>"));
+					sb.append(UtilText.parse(prey, "<p>胃袋最后一次狠狠收缩。[npc.Name]在你腹中化开的触感又烫又沉，随后只剩一团属于你的热量。</p><p>[style.boldBad([npc.Name]已经被你的胃完全消化，从游戏中消失了。)]</p>"));
 				} else {
-					sb.append(UtilText.parse(prey, "<p>[style.boldGood(你的胃无法消化[npc.name]，只能把[npc.herHim]吐了出来。)]</p>"));
+					sb.append(UtilText.parse(prey, "<p>胃壁绞了很久，却拿[npc.name]没办法。你只好张开嘴，把湿漉漉的[npc.herHim]整个人吐出来。</p><p>[style.boldGood(你的胃无法消化[npc.name]，只能把[npc.herHim]吐了出来。)]</p>"));
 				}
 			}
 		}
@@ -1384,7 +1384,10 @@ public class Game implements XMLSaving {
 			return "";
 		}
 		releaseContainedCharacter(player.getId());
-		return UtilText.parse(host, "<p>[npc.Name]再也含不住你，把你放了出来。</p>");
+		if("STOMACH".equals(typeName)) {
+			return UtilText.parse(host, "<p>[npc.Name]的胃猛地一阵逆蠕动。湿热的胃壁再也含不住你，把你整个人沿着食道又湿又软地挤上去，再从喉咙里吐了出来。</p>");
+		}
+		return UtilText.parse(host, "<p>[npc.Name]的子宫猛地一阵收缩。湿热的宫壁再也含不住你，把你整个人又湿又软地从穴口挤了出来。</p>");
 	}
 
 	public String pickAvailableSwallowType(GameCharacter host, GameCharacter prey) {
@@ -1403,9 +1406,9 @@ public class Game implements XMLSaving {
 		// SexAction.endsSex() already ends the scene; do not rebuild SMGeneric with an empty side.
 		addContainedCharacter(host, prey, type);
 		if("STOMACH".equals(type)) {
-			return UtilText.parse(host, prey, "<p>[npc.Name]张开嘴，把[npc2.name]整个人吞进了胃里。</p>");
+			return UtilText.parse(host, prey, "<p>[npc.Name]的喉咙还在发颤。小腹鼓着[npc2.name]完整的轮廓，胃壁一下下绞紧，把[npc2.herHim]含在最深处。</p>");
 		}
-		return UtilText.parse(host, prey, "<p>[npc.Name]把[npc2.name]整个人纳入了子宫之中。</p>");
+		return UtilText.parse(host, prey, "<p>[npc.Name]的[npc.pussy]吧嗒合拢。子宫里已经塞满了[npc2.name]，宫壁又湿又紧，把[npc2.herHim]当成一根最粗的肉棒含着。</p>");
 	}
 
 
@@ -1525,7 +1528,7 @@ public class Game implements XMLSaving {
 		new OffspringSeed((NPC)prey);
 		refreshContainmentStatusEffects(host);
 		return UtilText.parse(host,
-				"<p>"+name+"的身体在你的子宫里融化重组，最终成为了你的一枚后代种子。</p>"
+				"<p>"+name+"在你的子宫里被又热又黏的宫壁一点点舔化、揉开。等到那阵快感退去，腹中只剩下一枚属于你的后代种子。</p>"
 				+ "<p style='text-align:center;'>[style.boldSex("+name+"已成为你的后代。)]</p>");
 	}
 
@@ -1540,19 +1543,32 @@ public class Game implements XMLSaving {
 			try {
 				host = getNPCById(player.getContainmentHostId());
 			} catch(Exception e) {
-				return "<p>你用力挣扎，但周围的肉壁只是把你裹得更紧。</p>";
+				return "<p>你用力蹬腿、扭腰，可周围又湿又热的肉壁立刻绞紧，把你重新按回最深处。每一次挣扎都只是让自己被含得更死。</p>";
 			}
 			return UtilText.parse(host,
-					"<p>你在[npc.name]体内用力蹬腿、扭动。湿热的肉壁立刻绞紧，把你重新按回最深处。"
-					+ "[npc.Name]发出一声含混的轻哼，显然感觉到了你的动作。</p>");
+					"<p>你在[npc.name]体内用力蹬腿、扭动。湿热的肉壁立刻缠上来，像无数张小嘴同时吸吮，把你重新按回最深处。"
+					+ "[npc.Name]发出一声又软又浪的轻哼，小腹跟着一紧，显然被你顶得更爽了。</p>");
 		}
 		if(player.hasContainedCharacters()) {
-			GameCharacter prey = getContainedCharacter(player, 0);
+			if(isDigestingWithoutLiveCarrying(player)) {
+				GameCharacter prey = getContainedCharacter(player, 0);
+				if(prey==null) {
+					return "";
+				}
+				return UtilText.parse(prey,
+						"<p>腹中忽然一阵沉甸甸的挪动——胃里的猎物已经不像最初那样踢得清楚，只剩一团又烫又沉的充实一下下顶着你的腹壁。"
+						+ "你下意识地按住肚子，把那团热意夹得更紧。</p>");
+			}
+			GameCharacter prey = getLiveContainedPrey(player);
+			if(prey==null) {
+				prey = getContainedCharacter(player, 0);
+			}
 			if(prey==null) {
 				return "";
 			}
 			return UtilText.parse(prey,
-					"<p>你感到腹中一阵顶弄——[npc.name]正在你的体内挣扎。肚皮上浮现出短暂的轮廓，随即又被你的内壁压了回去。</p>");
+					"<p>腹中忽然一阵顶弄——[npc.name]正在里面又踢又蹭。肚皮上顶出[npc.her]的掌印和膝印，随即被你饥渴的内壁绞回去。"
+					+ "那一下正好擦过最敏感的地方，让你腿心发软。</p>");
 		}
 		return "";
 	}
@@ -1568,11 +1584,56 @@ public class Game implements XMLSaving {
 		if(Util.random.nextInt(5)!=0) {
 			return "";
 		}
-		return "<p>路过的人朝你隆起的小腹扫了一眼，神色复杂地快步走开了。</p>";
+		if(isDigestingWithoutLiveCarrying(player)) {
+			return "<p>路过的人朝你隆起的小腹扫了一眼。那鼓胀不像普通的怀孕，更像腹中一团沉重的热意在慢慢挪动。对方神色复杂地快步走开了，而你只是下意识地按了按肚子。</p>";
+		}
+		return "<p>路过的人朝你隆起的小腹扫了一眼。里面分明有人在动，把肚皮顶得一鼓一鼓。对方神色复杂地快步走开了，而你只是下意识地按了按肚子，把那团活物夹得更紧。</p>";
 	}
 
 
 
+
+	public boolean hasLiveContainmentCarrying(GameCharacter target) {
+		if(target==null) {
+			return false;
+		}
+		return target.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_1)
+				|| target.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_2)
+				|| target.hasStatusEffect(StatusEffect.UNBIRTH_CARRYING_3)
+				|| target.hasStatusEffect(StatusEffect.VORE_CARRYING_1)
+				|| target.hasStatusEffect(StatusEffect.VORE_CARRYING_2)
+				|| target.hasStatusEffect(StatusEffect.VORE_CARRYING_3);
+	}
+
+	public boolean isDigestingWithoutLiveCarrying(GameCharacter target) {
+		return target!=null
+				&& !hasLiveContainmentCarrying(target)
+				&& (target.hasStatusEffect(StatusEffect.VORE_DIGESTING_2)
+					|| target.hasStatusEffect(StatusEffect.VORE_DIGESTING_3));
+	}
+
+	private GameCharacter getLiveContainedPrey(GameCharacter host) {
+		if(host==null || !host.hasContainedCharacters()) {
+			return null;
+		}
+		boolean stomachDigestingLate = host.hasStatusEffect(StatusEffect.VORE_DIGESTING_2)
+				|| host.hasStatusEffect(StatusEffect.VORE_DIGESTING_3);
+		int count = getContainedCharacterCount(host);
+		for(int i=0; i<count; i++) {
+			GameCharacter prey = getContainedCharacter(host, i);
+			if(prey==null) {
+				continue;
+			}
+			String type = getContainedCharacterType(host, i);
+			if("WOMB".equals(type)) {
+				return prey;
+			}
+			if("STOMACH".equals(type) && !stomachDigestingLate) {
+				return prey;
+			}
+		}
+		return null;
+	}
 
 	public void setModdedCharacterParserTarget(Long id, String parserTarget) {
 		try {

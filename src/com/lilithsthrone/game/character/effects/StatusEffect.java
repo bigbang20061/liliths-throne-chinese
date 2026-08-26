@@ -4714,8 +4714,8 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的小腹微微隆起，有一个人正被容纳在[npc.her]的体内。"
-						+ "隔着[npc.her]的肚皮，隐约能看出一个蜷缩人形的轮廓……");
+					"[npc.NamePos]的小腹微微鼓起，有人正被湿热的宫壁整个人含在里面。"
+						+ "隔着肚皮能摸到蜷缩的轮廓，每一次轻轻挣动都让[npc.her]的穴心发软……");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4729,8 +4729,8 @@ public class StatusEffect {
 			}
 			StringBuilder sb = new StringBuilder();
 			sb.append("<p>"
-						+ "你感觉到体内的人轻轻挣动了几下，腹部的隆起也随之变得更加明显。"
-						+ "隔着肚皮传来的触感提醒着你，那个被你纳入体内的人已经完全安顿了下来……"
+						+ "你感觉到子宫里的人又踢又蹭，宫壁立刻绞紧，把那具身体含得更死。"
+						+ "小腹明显又鼓了一圈。隔着肚皮，你能清楚摸到对方正被你当成肉棒一样夹着……"
 					+ "</p>"
 					+ "<p style='text-align:center;'>"
 						+ "[style.boldSex(你腹部的隆起变得更明显了！)]"
@@ -4753,8 +4753,8 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的腹部明显隆起，体内的人已经安稳地待在了[npc.her]的身体里。"
-						+ "时不时能看到[npc.her]的肚皮上浮现出轻微的动作痕迹……");
+					"[npc.NamePos]的腹部已经明显隆起，子宫里正含着还在动的猎物。"
+						+ "时不时能看到肚皮上顶出掌印和膝印，随即又被饥渴的宫壁压回去……");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4768,8 +4768,8 @@ public class StatusEffect {
 			}
 			StringBuilder sb = new StringBuilder();
 			sb.append("<p>"
-						+ "你的腹部如今已经高高隆起，看上去就如同足月妊娠一般。"
-						+ "体内的人安稳地蜷缩在你的身体深处，偶尔传来的一阵轻微蠕动，让你清楚地意识到自己的体内正容纳着一个人……"
+						+ "你的腹部如今已经高高隆起，沉甸甸地往前坠，走一步就晃一下。"
+						+ "子宫里的人被挤在最深处，每一次蹬腿都从肚皮上顶出清晰的轮廓，把你夹得腿心发软……"
 					+ "</p>"
 					+ "<p style='text-align:center;'>"
 						+ "[style.boldSex(你的腹部已经胀到了极限！)]"
@@ -4792,8 +4792,8 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的腹部已经胀得巨大，只需要朝这边看一眼就知道[npc.her]的体内正装着一个人。"
-						+ "体内的人安静而安稳，[npc.she]随时都可以选择将其释放出来……");
+					"[npc.NamePos]的腹部已经胀得巨大，只需要看一眼就知道[npc.her]的子宫里正含着还在挣扎的猎物。"
+						+ "里面稍一动，[npc.her]的小腹就会跟着发颤。[npc.She]随时可以把里面的人从湿穴里生出来……");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4830,8 +4830,8 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的小腹微微鼓起，有一个人正被[npc.she]吞进胃里。"
-						+ "隔着肚皮，隐约能感到里面有人在轻轻挣动……");
+					"[npc.NamePos]的小腹微微鼓起，胃里正含着刚被吞下去的猎物。"
+						+ "隔着肚皮能感到里面又踢又蹭，每一次蠕动都让那具身体在湿热的胃袋里滑动……");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4844,7 +4844,7 @@ public class StatusEffect {
 				return "";
 			}
 			return UtilText.parse(target,
-					"<p>你胃里的人已经安顿下来，小腹的轮廓比刚才更明显了……</p>"
+					"<p>胃里的人还在动。湿热的胃壁一下下绞紧，小腹的轮廓比刚才更鼓、更清楚了……</p>"
 					+ "<p style='text-align:center;'>[style.boldSex(你腹部的隆起变得更明显了！)]</p>");
 		}
 		@Override
@@ -4863,7 +4863,7 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的腹部明显隆起，胃里正装着一个完整的人。");
+					"[npc.NamePos]的腹部明显隆起，胃里正完整地含着猎物。隔着肚皮能看到里面顶出的轮廓。");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4876,7 +4876,7 @@ public class StatusEffect {
 				return "";
 			}
 			return UtilText.parse(target,
-					"<p>你的腹部已经高高隆起，胃里的人被湿热的内壁紧紧裹着……</p>"
+					"<p>你的腹部已经高高隆起。胃里的人被又湿又热的内壁缠着揉，每一次挣扎都让你腹中发麻……</p>"
 					+ "<p style='text-align:center;'>[style.boldSex(你的腹部已经胀得很明显了！)]</p>");
 		}
 		@Override
@@ -4895,7 +4895,7 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的腹部胀得巨大，胃里正完整地容纳着一个人。[npc.She]随时可以把对方吐出来。");
+					"[npc.NamePos]的腹部胀得巨大，胃里正完整地含着猎物。里面稍一踢，[npc.her]的肚皮就会鼓起一块。[npc.She]随时可以把里面的人吐出来。");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4939,7 +4939,7 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的胃正开始消化被吞下的人。内壁一阵阵收缩，猎物还能清楚地感到自己还活着……");
+					"[npc.NamePos]的胃正开始消化被吞下的人。湿热的内壁一阵阵绞紧，消化液又烫又黏，猎物还能清楚地感到自己还活着……");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4948,7 +4948,7 @@ public class StatusEffect {
 			if(!target.isPlayer()) {
 				return "";
 			}
-			return "<p>胃里的消化明显加快了。隔着肚皮传来的挣扎比刚才弱了一些……</p>"
+			return "<p>胃里的消化明显加快了。里面的轮廓已经不如最初分明，挣扎也软了下去，只剩一团又烫又沉的充实顶着你的腹壁……</p>"
 					+ "<p style='text-align:center;'>[style.boldBad(消化进入了下一阶段！)]</p>";
 		}
 		@Override
@@ -4967,7 +4967,7 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的胃正在用力消化猎物。肚皮上的轮廓已经不像最初那么分明。");
+					"[npc.NamePos]的胃正在用力把猎物揉软。胃里的手脚轮廓已经不像最初那么分明，只剩一团又热又沉的充实。");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {
@@ -4976,7 +4976,7 @@ public class StatusEffect {
 			if(!target.isPlayer()) {
 				return "";
 			}
-			return "<p>胃袋剧烈收缩着，猎物的形状几乎要被完全揉碎了……</p>"
+			return "<p>胃袋剧烈收缩着，把里面的人又烫又黏地揉软。猎物的形状几乎要被完全化开了……</p>"
 					+ "<p style='text-align:center;'>[style.boldBad(消化即将完成！)]</p>";
 		}
 		@Override
@@ -4995,7 +4995,7 @@ public class StatusEffect {
 		@Override
 		public String getDescription(GameCharacter target) {
 			return UtilText.parse(target,
-					"[npc.NamePos]的胃即将完成消化。若消化内容已开启，猎物很快就会从游戏中消失。");
+					"[npc.NamePos]的胃即将把猎物彻底化开。胃里只剩温热沉重的充实感。不受保护的胃内猎物会被消化；独特或受保护的对象则会被胃拒绝并吐出来。");
 		}
 		@Override
 		public String extraRemovalEffects(GameCharacter target) {

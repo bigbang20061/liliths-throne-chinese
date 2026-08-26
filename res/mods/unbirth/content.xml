@@ -3,96 +3,208 @@
 
 	<htmlContent tag="SWALLOW_CONFIRM"><![CDATA[
 	<p>
-		你将目光落在[prey.name]身上。经过刚才的交手，[prey.she]已经没有余力反抗，只能靠在巷壁上急促地喘息。
+		你把[prey.name]按在身前。刚才的交手已经抽干了[prey.her]的力气，[prey.she]只能靠着墙急促喘息，胸膛一起一伏，目光却还死死盯着你。
 	</p>
 	<p>
-		你打量着[prey.her]的身形——[prey.height]的[prey.race]。你的[pc.pussy]现在是[pc.pussyDepth]，按深度大约能纳入身高 [#game.getSwallowDepthLimitDisplay(pc, 'WOMB')] 的人；入口太紧的话还得再扩一扩容量或弹性。
-		只要深度和入口都够，就可以把[prey.name]一点点吞进你的[pc.pussy]，让[prey.herHim]滑入子宫最深处，被你的身体完全包裹。
+		[prey.Name]是[prey.height]的[prey.race]。你的[pc.pussy]现在是[pc.pussyDepth]，按深度大约能纳入身高 [#game.getSwallowDepthLimitDisplay(pc, 'WOMB')] 的人；入口太紧的话还得再扩一扩容量或弹性。
+		可你现在想的根本不是数字——你只想把[prey.her]的头按进自己湿透的穴里，让[prey.her]整个人被你的[pc.pussy]一口一口吞进去，直到[prey.she]挤过宫口、整具身体都塞进你滚烫的子宫。
 	</p>
 	<p>
-		[prey.Name]似乎察觉到了你的意图。[prey.Her]的[prey.eyes]里闪过一丝难以置信，身体却再也使不上力气。
-		现在，只差你最后的决定……
+		你已经湿得一塌糊涂。穴口一张一缩，淫水顺着大腿往下淌，像是在饥渴地张嘴等着吃人。
+		[prey.Name]似乎终于明白了你要做什么。[prey.Her]的[prey.eyes]猛地睁大，身体却软得连并拢双腿都做不到。
+	</p>
+	<p>
+		现在，只差你把[prey.herHim]整个人肏进子宫里……
 	</p>
 	]]></htmlContent>
 
 	<htmlContent tag="SWALLOW_SUCCESS"><![CDATA[
 	<p>
-		你没有再给[prey.name]任何犹豫的机会。
-		你将[prey.herHim]拉近，让[prey.her]的头颅抵上你湿润的[pc.pussy]。温热的软肉随即缠了上来，像是饥渴地吞咽着送上门的猎物。
+		你不再给[prey.name]任何逃开的机会。
+		你跨坐上去，把湿淋淋的[pc.pussy]压上[prey.her]的脸。滚烫的阴唇立刻裹住[prey.her]的额头和鼻梁，浓稠的淫水糊了[prey.herHim]一脸。
 	</p>
-	#IF(pc.getVaginaRawCapacityValue()&lt;4)
+	#IF(pc.getVaginaRawCapacityValue()<4)
 	<p>
-		入口本就紧致，[prey.name]的头挤进来时你忍不住抽了口气；内壁被一点点撑开，酸胀顺着小腹往上爬。
+		入口本就紧得发疼。[prey.Name]的头挤进来时，你的穴口被撑成一个发白的圆圈，阴唇外翻，淫水被挤得四溅。
+		你忍不住仰头浪叫出声——那种被整颗头颅撑开的酸胀一直顶到宫口，小腹一阵阵发麻。
 	</p>
 	#ELSE
 	<p>
-		入口已经足够柔软，[prey.name]的头颅几乎是被轻轻含住，随即整个人被你的身体一寸寸吞没。
+		你的穴已经软得不像话。[prey.Name]的头几乎是被湿滑的阴唇含住，然后整张脸都陷进你温热的肉缝里。
+		穴肉立刻缠上去，像一张饥渴的嘴，吧唧吧唧地往里吞。
 	</p>
 	#ENDIF
 	<p>
-		[prey.Name]发出一声被捂住的惊喘。
-		先是头，再是肩，然后是胸口、腰肢与双腿——直到[prey.her]的脚尖也没入你的体内，你的小腹随之明显地鼓了起来。
+		[prey.Name]还想喊，声音却全被你的淫肉堵了回去，只剩闷在穴心里的呜咽。
+		你按着[prey.her]的后脑往下坐。先是头，再是肩——肩骨卡在穴口时你爽得大腿直抖，穴里却死死咬着，把[prey.herHim]一寸寸吸进去。
+		胸口挤过的时候，你能清楚感觉到[prey.her]的脸正顶着自己的宫口；那圈紧热的肉环被一点点撑开，然后“咕啾”一声，把[prey.her]的头颅吞进子宫。
 	</p>
 	<p>
-		你能感觉到[prey.name]正蜷缩在你的子宫里，被湿热的肉壁紧紧包裹。隔着肚皮，[prey.her]细微的挣扎一下下顶着你的腹壁。
+		腰、臀、腿……[prey.her]剩下的身体像被你的小穴活活吃掉。
+		最后只剩两只脚还在外面乱蹬，被你伸手抓住，连脚尖一起塞进湿得发亮的穴口。
+		穴口吧嗒一声合拢，只剩一缕被带出来的银丝还挂在阴唇上。
+	</p>
+	<p>
+		你的小腹立刻鼓了起来。隔着肚皮，你能摸到[prey.name]蜷成一团，被滚烫、湿滑、不断收缩的宫壁四面八方地裹住。
+		[prey.She]每挣扎一下，宫肉就更用力地绞紧，像是要把[prey.herHim]当成一根最粗的肉棒来肏。
+		快感从子宫底直冲上脑，你夹着一肚子活物，几乎当场高潮。
 	</p>
 	<p style='text-align:center;'>
-		[style.boldSex([prey.Name]已经被你纳入体内！)]
+		[style.boldSex([prey.Name]已经被你整个人吞进子宫里！)]
 	</p>
 	]]></htmlContent>
 
 	<htmlContent tag="CARRYING"><![CDATA[
 	<p>
-		你将注意力转向自己的小腹，感受着体内那些被你容纳的人。
+		你把手按上自己的小腹，感受里面那些被你吃进去的重量。
 	</p>
-	#IF(pc.hasStatusEffect(SE_UNBIRTH_CARRYING_3))
+	#IF(pc.hasStatusEffect(SE_UNBIRTH_CARRYING_3) || pc.hasStatusEffect(SE_VORE_CARRYING_3) || pc.hasStatusEffect(SE_VORE_DIGESTING_3))
+		#IF(game.isDigestingWithoutLiveCarrying(pc))
 		<p>
-			你的腹部已经高高隆起，如同足月妊娠一般。体内的人安稳地蜷缩在最深处，每一次轻微的蠕动都透过肚皮清晰地传来。
-			你走起路来必须小心托着自己的肚子，生怕惊扰到里面的人——或者说，生怕别人看出你的身体里正装着活生生的人。
+			你的肚子已经高高撑起，沉甸甸地往前坠，走一步就晃一下。
+			里面已经不像刚吞下去时那样踢得那么清楚，只剩一团又烫又沉的充实，随着你走路轻轻晃。
 		</p>
-	#ELSEIF(pc.hasStatusEffect(SE_UNBIRTH_CARRYING_2))
+		#ELSE
 		<p>
-			你的腹部明显隆起，能感觉到体内的人已经安顿下来。时不时有轻微的动作从肚皮上浮现出来，提醒你他们仍好好地待在你的子宫里。
+			你的肚子已经高高撑起，沉甸甸地往前坠，走一步就晃一下。
+			里面的人被挤在最深处，每一次蹬腿、每一次扭腰，都从肚皮上顶出清晰的掌印和膝印。
+			你必须用手托着自己的肚子，才能把那团又热又涨的快感按回去——可越按，体内就越痒。
 		</p>
-	#ELSEIF(pc.hasStatusEffect(SE_UNBIRTH_CARRYING_1))
+		#ENDIF
+	#ELSEIF(pc.hasStatusEffect(SE_UNBIRTH_CARRYING_2) || pc.hasStatusEffect(SE_VORE_CARRYING_2) || pc.hasStatusEffect(SE_VORE_DIGESTING_2))
+		#IF(game.isDigestingWithoutLiveCarrying(pc))
 		<p>
-			你的小腹微微鼓起，隔着肚皮隐约能感觉到里面有人正蜷缩着。那种被填满的充实感让你很难把注意力从自己的体内移开。
+			你的腹部已经明显隆起。里面的人还在动，但力气软了，轮廓已经不如最初分明。
+			每一次蠕动都更像被肉壁揉软，只剩一团又热又沉的充实。
 		</p>
+		#ELSE
+		<p>
+			你的腹部已经明显隆起。里面的人早就被湿热的肉壁裹软了，可还是会时不时顶你一下。
+			那一下正好擦过最敏感的地方，让你腿心发软，体内又一阵发痒。
+		</p>
+		#ENDIF
+	#ELSEIF(pc.hasStatusEffect(SE_UNBIRTH_CARRYING_1) || pc.hasStatusEffect(SE_VORE_CARRYING_1) || pc.hasStatusEffect(SE_VORE_DIGESTING_1))
+		#IF(pc.hasStatusEffect(SE_VORE_DIGESTING_1) && !game.hasLiveContainmentCarrying(pc))
+		<p>
+			小腹微微鼓着。胃里的人还活着，隔着肚皮能感到温热的挣扎，每一次蠕动都让腹壁轻轻发颤。
+		</p>
+		#ELSE
+		<p>
+			小腹微微鼓着，隔着肚皮就能摸到里面蜷着的身体。
+			被活人填满的充实感让你每走一步都在被里面顶弄，体内不受控制地收缩，像还想再吞一个。
+		</p>
+		#ENDIF
 	#ELSE
 		<p>
-			你的小腹因体内的存在而微微起伏，湿热的内壁正紧紧裹着那些被你吞入的人。
+			你的小腹因体内的活物而轻轻起伏。湿热的内壁正把他们缠紧、揉软，当作你身体里最下流的玩物。
 		</p>
 	#ENDIF
 	#IF(game.getContainedCharacterCount(pc)<=0)
 		<p>
-			不过此刻，你的体内空空如也。
+			不过此刻，你的体内空空如也。那种被整个人塞满的快感已经退了，只剩体内一阵发空的痒。
 		</p>
 	#ELSE
 		<p>
-			你仔细感受着体内的存在：
+			你仔细感受着体内每一具被含着的身体：
 		</p>
 		#IF(game.getContainedCharacterCount(pc)>=1)
+			#IF(game.getContainedCharacterType(pc, 0)=='STOMACH')
+				#IF(pc.hasStatusEffect(SE_VORE_DIGESTING_3))
+				<p>
+					[style.boldSex(其一：)][prey.Name]，[prey.race]。[prey.She]正被你的胃化开，已经不像刚吞下去时那样轮廓分明，只剩一团又烫又沉的充实。
+				</p>
+				#ELSEIF(pc.hasStatusEffect(SE_VORE_DIGESTING_2))
+				<p>
+					[style.boldSex(其一：)][prey.Name]，[prey.race]。[prey.She]还在胃里，但力气软了，轮廓已经不如最初分明。
+				</p>
+				#ELSE
+				<p>
+					[style.boldSex(其一：)][prey.Name]，[prey.race]。[prey.She]正被你的胃袋又湿又热地绞着，每一次蠕动都让[prey.her]整个人在你腹中滑动、摩擦。
+				</p>
+				#ENDIF
+			#ELSE
 			<p>
-				[style.boldSex(其一：)][prey.Name]，[prey.race]。[prey.She]正被你的子宫紧紧包裹着，偶尔会轻轻挣动一下。
+				[style.boldSex(其一：)][prey.Name]，[prey.race]。[prey.She]正被你的子宫当成肉棒一样含着，宫壁又黏又紧，把[prey.herHim]每一寸皮肤都舔得发亮。
 			</p>
+			#ENDIF
 		#ENDIF
 		#IF(game.getContainedCharacterCount(pc)>=2)
-			<p>
-				[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]同样蜷缩在你的体内，与[prey.name]挤在一起。
-			</p>
+			#IF(game.getContainedCharacterType(pc, 1)=='STOMACH')
+				#IF(game.getContainedCharacterType(pc, 0)=='STOMACH')
+					#IF(pc.hasStatusEffect(SE_VORE_DIGESTING_3))
+					<p>
+						[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]和[prey.name]一起被你的胃化开，已经不像两具完整的身体，只剩一团又烫又沉的充实。
+					</p>
+					#ELSEIF(pc.hasStatusEffect(SE_VORE_DIGESTING_2))
+					<p>
+						[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]和[prey.name]还挤在同一只胃里，但轮廓已经不如最初分明。
+					</p>
+					#ELSE
+					<p>
+						[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]和[prey.name]挤在同一只胃里，身体贴着身体，被你的消化液浸得湿透。
+					</p>
+					#ENDIF
+				#ELSE
+					#IF(pc.hasStatusEffect(SE_VORE_DIGESTING_3))
+					<p>
+						[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]正被你的胃化开，已经不像刚吞下去时那样轮廓分明，只剩一团又烫又沉的充实。
+					</p>
+					#ELSEIF(pc.hasStatusEffect(SE_VORE_DIGESTING_2))
+					<p>
+						[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]还在胃里，但力气软了，轮廓已经不如最初分明。
+					</p>
+					#ELSE
+					<p>
+						[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]正被你的胃袋又湿又热地绞着，每一次蠕动都让[prey2.her]整个人在你腹中滑动、摩擦。
+					</p>
+					#ENDIF
+				#ENDIF
+			#ELSE
+				#IF(game.getContainedCharacterType(pc, 0)!='STOMACH')
+				<p>
+					[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]同样蜷在你湿热的宫腔里，和[prey.name]挤在一起，稍一动就会互相摩擦。
+				</p>
+				#ELSE
+				<p>
+					[style.boldSex(其二：)][prey2.Name]，[prey2.race]。[prey2.She]正被你的子宫当成肉棒一样含着，宫壁又黏又紧，把[prey2.herHim]每一寸皮肤都舔得发亮。
+				</p>
+				#ENDIF
+			#ENDIF
 		#ENDIF
 		#IF(game.getContainedCharacterCount(pc)>=3)
+			#IF(game.getContainedCharacterType(pc, 2)=='STOMACH')
+				#IF(pc.hasStatusEffect(SE_VORE_DIGESTING_3))
+				<p>
+					[style.boldSex(其三：)][prey3.Name]，[prey3.race]。[prey3.She]正被你的胃化开，已经不像刚吞下去时那样轮廓分明。
+				</p>
+				#ELSEIF(pc.hasStatusEffect(SE_VORE_DIGESTING_2))
+				<p>
+					[style.boldSex(其三：)][prey3.Name]，[prey3.race]。[prey3.She]还在胃里，但力气软了，轮廓已经不如最初分明。
+				</p>
+				#ELSE
+				<p>
+					[style.boldSex(其三：)][prey3.Name]，[prey3.race]。[prey3.She]正被你的胃袋绞着，连喘气都会顶得你小腹发颤。
+				</p>
+				#ENDIF
+			#ELSE
 			<p>
-				[style.boldSex(其三：)][prey3.Name]，[prey3.race]。你的子宫被撑得很满，[prey3.she]只能勉强找到一点空隙。
+				[style.boldSex(其三：)][prey3.Name]，[prey3.race]。[prey3.She]正被你的子宫含着，连喘气都会顶得你小腹发颤。
 			</p>
+			#ENDIF
 		#ENDIF
 		#IF(game.getContainedCharacterCount(pc)>=4)
+			#IF(game.getContainedCharacterType(pc, 3)=='STOMACH')
 			<p>
-				[style.boldSex(其四：)][prey4.Name]，[prey4.race]。你的小腹沉甸甸的，几乎已经到了极限。
+				[style.boldSex(其四：)][prey4.Name]，[prey4.race]。你的肚子沉得发胀，喉咙还记得把[prey4.herHim]吞进去时那一下被撑开的爽。
 			</p>
+			#ELSE
+			<p>
+				[style.boldSex(其四：)][prey4.Name]，[prey4.race]。你的肚子沉得发胀，穴口还记得把[prey4.herHim]吞进去时那一下被撑开的爽。
+			</p>
+			#ENDIF
 		#ENDIF
 		<p>
-			只要你愿意，随时都可以将他们释放出来。
+			他们现在都是你的。你想夹紧就夹紧，想再往里吸就再往里吸，也可以随时把他们从那张吃过人的肉穴、或者从喉咙里挤出来。
 		</p>
 	#ENDIF
 	]]></htmlContent>
@@ -100,39 +212,48 @@
 	<htmlContent tag="RELEASE"><![CDATA[
 	#IF(flags.getString('unbirth_release_type')=='STOMACH')
 	<p>
-		你按住自己的小腹，用力收缩胃袋。体内的[prey.name]被一阵强烈的逆蠕动推向上方。
+		你按住鼓胀的小腹，强迫胃袋猛地收缩。里面的[prey.name]被逆蠕动托起来，整个人沿着湿滑的食道往上挤。
 	</p>
 	<p>
-		你张开嘴，[prey.name]的头先从喉咙里挤出来，接着是肩与胸口。你又干呕了几次，终于把[prey.herHim]完整地吐到地上。
+		喉咙先被顶开。[prey.Name]的头从你嘴里挤出来时，带出一大股温热的黏液；你下颌酸得发抖，却还是把嘴张到极限。
+		肩、胸、腰……[prey.she]一截截滑过你的舌头，最后“噗”地摔到地上，身上全是你的唾液和胃液。
 	</p>
 	<p>
-		[prey.Name]浑身湿漉漉地瘫软着，大口喘着气，还没从被你的胃完全包裹的体验中回过神来。
+		[prey.Name]瘫在那里大口喘气，头发湿漉漉地贴在脸上，还在发着抖。
+		刚从你胃里被吐出来的[prey.she]，皮肤上还留着被肉壁又舔又绞的热度。
 	</p>
 	#ELSE
 	<p>
-		你深吸一口气，主动收紧腹部，让子宫一阵强烈地收缩。
-		体内的[prey.name]被湿热的肉壁推挤着，一点点向出口挪去。
+		你深吸一口气，主动收紧小腹。子宫像要高潮那样一阵猛绞，把[prey.name]从最深处往外推。
 	</p>
 	<p>
-		随着一股黏滑的爱液涌出，[prey.name]的头先从你的[pc.pussy]里挤了出来，接着是肩与胸口。
-		你又用力收缩了几次，终于将[prey.herHim]完整地释放到体外。
+		宫口先被[prey.her]的头撑开。你的[pc.pussy]立刻涌出一大股黏滑的爱液，穴口被顶得外翻、发亮。
+		[prey.Name]的头从你湿透的阴唇间挤出来，接着是肩和胸口——每一次挤出，都带出响亮的水声，也把你的穴心磨得发麻。
+		你又夹了几次，终于把[prey.herHim]整个人从自己的小穴里生出来。
 	</p>
 	<p>
-		[prey.Name]浑身湿漉漉地瘫软在地上，大口喘着气，显然还没从被你的身体完全包裹的体验中回过神来。
-		[prey.Her]的皮肤上还残留着你体内的温度与气息。
+		[prey.Name]浑身亮晶晶地瘫软在地上，身上全是你子宫里的淫水。
+		[prey.She]还在发抖，显然没从被你当成精液那样含在宫里、又被你的穴活生生吐出来的感觉里回过神。
+		你自己的[pc.pussy]一时合不拢，穴口一张一缩，还在往外滴着把[prey.herHim]裹出来的黏液。
 	</p>
 	#ENDIF
 	#IF(game.getContainedCharacterCount(pc)<=0)
 		<p>
-			你的小腹随之平复下来，体内重新变得空虚。
+			小腹平了下去。体内突然空了，那种被活人塞满的饱胀一下子变成发痒的空虚。
 		</p>
 		<p style='text-align:center;'>
 			[style.boldGood(你将[prey.name]从体内释放了出来。)]
 		</p>
 	#ELSE
+		#IF(game.isDigestingWithoutLiveCarrying(pc))
 		<p>
-			你的体内仍有其他人在。你的小腹还保持着明显的轮廓。
+			你的胃里还剩一团沉重的热意。肚子仍然鼓着。
 		</p>
+		#ELSE
+		<p>
+			你的体内还有别人。肚子仍然鼓着。
+		</p>
+		#ENDIF
 		<p style='text-align:center;'>
 			[style.boldGood(你将[prey.name]从体内释放了出来。)]
 		</p>
@@ -141,35 +262,53 @@
 
 	<htmlContent tag="VORE_SWALLOW_CONFIRM"><![CDATA[
 	<p>
-		你将目光落在[prey.name]身上。经过刚才的交手，[prey.she]已经没有余力反抗。
+		你盯着[prey.name]。交手之后，[prey.she]已经软了，只能靠着墙喘气，喉结——或者锁骨——随着呼吸轻轻滚动。
 	</p>
 	<p>
-		你打量着[prey.her]的身形——[prey.height]的[prey.race]。你的喉咙现在是[pc.throatDepth]，按深度大约能纳入身高 [#game.getSwallowDepthLimitDisplay(pc, 'STOMACH')] 的人。
-		只要深度和入口都够，就可以把[prey.name]一点点吞进胃里。
+		[prey.Name]是[prey.height]的[prey.race]。你的喉咙现在是[pc.throatDepth]，按深度大约能纳入身高 [#game.getSwallowDepthLimitDisplay(pc, 'STOMACH')] 的人。
+		只要深度和入口都够，你就能把[prey.herHim]整个人塞进嘴里，用舌头卷着往喉咙里送，直到[prey.she]滑进你又热又紧的胃袋。
 	</p>
 	<p>
-		现在，只差你最后的决定……
+		你已经开始分泌唾液。下颌发酸，舌头发痒，小腹深处也跟着抽动——不是饿，是想把人活活吃进去，让[prey.herHim]在你肚子里又踢又蹭。
+		现在，只差你把嘴张开……
 	</p>
 	]]></htmlContent>
 
 	<htmlContent tag="VORE_SWALLOW_SUCCESS"><![CDATA[
 	<p>
-		你没有再给[prey.name]任何犹豫的机会。你把[prey.herHim]拉近，让[prey.her]的头抵上你的嘴。
+		你一把拽过[prey.name]，让[prey.her]的头抵上自己的嘴唇。
+		舌头先伸出去，湿湿地舔过[prey.her]的额头、眼睑和嘴角，像在品尝马上要下肚的肉。
 	</p>
 	<p>
-		下颌猛地张开，温热的口腔裹住[prey.her]的头顶。先是头，再是肩，然后是胸口、腰肢与双腿——直到[prey.her]的脚尖也没入你的喉咙，你的小腹随之明显鼓了起来。
+		然后你把下颌撑开。温热的口腔一下子罩住[prey.her]的整个头顶，唾液顺着[prey.her]的头发往下淌。
+		[prey.Name]还想叫，声音却直接灌进你的喉咙，变成一声被你吞掉的闷哼。
+	</p>
+	<p>
+		你猛地一咽。头先滑过舌根，再挤进紧热的食道；喉咙外侧立刻鼓起一个人形。
+		肩卡住的时候你又用力一吞，胸、腰、臀接连没入。你能感觉到[prey.her]的手脚在你食道里乱蹬，每一次挣扎都让那条肉管爽得发颤。
+		最后只剩两只脚还在外面踢。你仰头，把它们也吸了进去。喉结滚动，肚皮“咕”地鼓了起来。
+	</p>
+	<p>
+		[prey.Name]整个人落进你的胃里。湿热、狭窄、不断收缩的肉壁立刻缠上去，把[prey.herHim]揉成一团。
+		隔着肚皮，你能摸到[prey.her]的脸和膝盖一下下顶着自己。那种被活人填满的饱胀一直顶到穴心，让你忍不住夹紧双腿。
 	</p>
 	<p style='text-align:center;'>
-		[style.boldSex([prey.Name]已经被你吞进胃里！)]
+		[style.boldSex([prey.Name]已经被你整个人吞进胃里！)]
 	</p>
 	]]></htmlContent>
 
 	<htmlContent tag="VORE_DIGEST"><![CDATA[
 	<p>
-		你按住隆起的小腹，主动催动胃袋收缩。湿热的内壁绞紧[prey.name]，消化液涌了上来。
+		你按住隆起的小腹，主动催动胃袋收缩。湿热的内壁立刻绞紧[prey.name]，把[prey.herHim]整个人当成一块正在融化的肉来揉。
 	</p>
 	<p>
-		[prey.Name]的挣扎很快被淹没。过了一会儿，你腹中只剩下温热而沉重的充实感。
+		消化液涌上来，又烫又黏，顺着[prey.her]的皮肤往每一道缝里渗。
+		[prey.Name]还在踢、还在抓，可每一次挣扎都只是把自己更深地送进那些饥渴的褶皱里。
+		你爽得直哼——胃里那团活物正一点点变软、变热，变成属于你的重量和热量。
+	</p>
+	<p>
+		过了一会儿，胃里再没有[prey.name]完整的手脚轮廓，只剩温热、沉重、几乎要溢出来的充实感。
+		你摸着自己圆鼓鼓的肚子，清楚知道[prey.name]已经完完全全变成你胃里的一部分。
 	</p>
 	<p style='text-align:center;'>
 		[style.boldBad([prey.Name]已经被消化，从游戏中消失了。)]
@@ -178,16 +317,20 @@
 
 	<htmlContent tag="SHRINK"><![CDATA[
 	<p>
-		你收紧体内的肉壁，把[prey.name]再往更深处挤了挤。湿热的压力从四面八方压过来，[prey.her]的身体被迫缩得更小。
+		你故意收紧体内的肉壁，从四面八方把[prey.name]往更深处挤。
+		湿热的压力压上[prey.her]的胸、腰和大腿，像无数张小嘴同时吸吮。[prey.Her]的身体被迫缩得更小，好让你把[prey.herHim]含得更紧、磨得更爽。
 	</p>
 	]]></htmlContent>
 
 	<htmlContent tag="REBIRTH"><![CDATA[
 	<p>
-		你不再把[prey.name]当成一个完整的人来携带。子宫内壁缠上去，把[prey.herHim]一点点融化、重组。
+		你不再把[prey.name]当成一个完整的人来含着。
+		子宫内壁缠上去，又热又黏，把[prey.herHim]一点点舔化、揉开。
+		[prey.Name]的挣扎渐渐变成宫腔里一阵阵发颤的快感——你感觉自己像是在用整口子宫把[prey.herHim]肏到融化。
 	</p>
 	<p>
-		等到那阵温热退去，腹中只剩下属于你的后代种子。
+		等到那阵温热退去，腹中只剩下一枚属于你的后代种子。
+		[prey.Name]已经不再是被你吞进去的猎物，而是要在你身体里重新被生出来的东西。
 	</p>
 	]]></htmlContent>
 

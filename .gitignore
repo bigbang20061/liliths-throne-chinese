@@ -26,3 +26,8 @@ data/
 e2e-cp.txt
 
 dependency-reduced-pom.xml
+
+.claude
+.omp
+.codegraph
+.worktree
